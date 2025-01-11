@@ -1,0 +1,37 @@
+<map id="ZOPT220Sensor::readData" name="ZOPT220Sensor::readData">
+<area shape="rect" id="Node000001" title="Reads data from the ZOPT220x sensor and returns it in CSV format." alt="" coords="5,195,199,220"/>
+<area shape="rect" id="Node000002" href="$classZOPT220x__Control.html#af74c3620eaaa1ba7413ebd8417eee271" title=" " alt="" coords="521,165,761,191"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,192,195,181,246,173,381,165,508,167,508,172,381,170,247,178,196,186,149,197"/>
+<area shape="rect" id="Node000004" href="$classZOPT220x__Control.html#a27c0821f9341f36d87c9388ce7bf4ee5" title=" " alt="" coords="263,187,457,227"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="199,205,249,205,249,210,199,210"/>
+<area shape="rect" id="Node000007" href="$classZOPT220x__Control.html#a1172703928cf494b466ea2c3595bbbba" title=" " alt="" coords="263,251,457,291"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="155,218,266,245,265,251,154,223"/>
+<area shape="rect" id="Node000008" href="$classZOPT220x__Control.html#a28cf4beaf6bcebce91c1418790e9d843" title=" " alt="" coords="262,5,458,31"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="113,193,167,137,205,103,245,72,313,34,316,39,248,76,208,107,171,141,117,197"/>
+<area shape="rect" id="Node000010" href="$classZOPT220x__Control.html#a1233f73c507efe1393d84b9d88b4a023" title=" " alt="" coords="247,87,473,112"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="123,192,177,161,246,129,291,113,293,118,248,134,180,166,125,197"/>
+<area shape="rect" id="Node000013" href="$classZOPT220x__Control.html#afa9fab0ef429c9e7a46afd752a2ee44d" title=" " alt="" coords="541,361,742,387"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="114,218,166,278,204,311,248,337,317,360,390,374,461,380,526,380,526,386,461,385,389,379,316,365,246,342,201,315,162,282,110,222"/>
+<area shape="rect" id="Node000014" href="$classZOPT220x__Control.html#aa8d79db36ab65e003f87a493f720233d" title=" " alt="" coords="521,312,761,337"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="119,218,172,261,208,284,248,301,312,318,380,328,446,332,507,332,507,337,446,337,379,333,311,323,246,306,206,288,169,265,115,222"/>
+<area shape="rect" id="Node000003" href="$classZOPT220x__Control.html#a58c74577acc1183a66b1f9b9281551a3" title=" " alt="" coords="813,251,1025,291"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="681,188,847,244,845,249,680,193"/>
+<area shape="rect" id="Node000005" href="$classZOPT220x__Control.html#a70fedf9d112bc34ef55e21452acd3877" title=" " alt="" coords="538,259,745,284"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="449,225,572,253,571,258,448,230"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="745,269,799,269,799,274,745,274"/>
+<area shape="rect" id="Node000006" href="$classZOPT220x__Control.html#ab5f43fd630eaaadeea212559e12648be" title=" " alt="" coords="812,315,1027,355"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="698,282,819,310,818,315,697,287"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="458,269,524,269,524,274,458,274"/>
+<area shape="rect" id="Node000009" href="$classZOPT220x__Control.html#a76e8b5e30cc7b3a0f9e0dace481e8030" title=" " alt="" coords="809,51,1029,91"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="458,16,602,22,762,37,818,46,817,51,761,42,601,28,458,22"/>
+<area shape="poly" id="edge12_Node000010_Node000002" title=" " alt="" coords="412,109,474,129,522,150,556,160,555,165,520,155,472,134,411,115"/>
+<area shape="rect" id="Node000011" href="$classZOPT220x__Control.html#ac9b447f5665bc72e2cb357cc6700130e" title=" " alt="" coords="527,51,756,91"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="473,85,512,81,513,87,474,91"/>
+<area shape="rect" id="Node000012" href="$classZOPT220x__Control.html#a9d0197ab4de4731ecd692e39ee9c5e64" title=" " alt="" coords="541,116,741,141"/>
+<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="474,108,528,114,527,119,473,114"/>
+<area shape="poly" id="edge15_Node000012_Node000009" title=" " alt="" coords="703,113,808,92,809,97,704,119"/>
+<area shape="poly" id="edge17_Node000013_Node000003" title=" " alt="" coords="733,359,760,348,774,337,783,325,793,313,808,301,821,294,823,299,811,306,797,317,788,329,778,341,763,352,735,364"/>
+<area shape="poly" id="edge18_Node000013_Node000006" title=" " alt="" coords="733,359,798,350,799,355,734,364"/>
+<area shape="poly" id="edge20_Node000014_Node000003" title=" " alt="" coords="708,309,801,291,802,297,709,315"/>
+<area shape="poly" id="edge21_Node000014_Node000006" title=" " alt="" coords="762,327,798,328,798,333,761,332"/>
+</map>

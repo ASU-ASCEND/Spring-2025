@@ -1,0 +1,7 @@
+<map id="loop1" name="loop1">
+<area shape="rect" id="Node000001" title="Loop for core 1." alt="" coords="5,5,64,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="112,5,199,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,15,98,15,98,21,65,21"/>
+<area shape="rect" id="Node000003" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send data to storage device." alt="" coords="247,5,360,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="199,15,233,15,233,21,199,21"/>
+</map>

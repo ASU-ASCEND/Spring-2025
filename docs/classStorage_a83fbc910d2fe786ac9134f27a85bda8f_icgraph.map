@@ -1,0 +1,9 @@
+<map id="Storage::verify" name="Storage::verify">
+<area shape="rect" id="Node000001" title="Verifies connection with storage device." alt="" coords="277,31,395,56"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a339ac134cdee34bfe9d5f539ab14ba00" title="Verifies the connection with each storage device, and defines the header_condensed field." alt="" coords="120,31,229,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,46,230,46,230,41,263,41"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup for core 0." alt="" coords="9,5,68,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,33,68,26,69,21,107,28"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ac764ee28e2916a7de10b22927e02d1a4" title="Setup for core 1." alt="" coords="5,55,72,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="107,58,73,64,72,59,106,53"/>
+</map>

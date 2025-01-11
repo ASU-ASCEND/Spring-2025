@@ -1,0 +1,5 @@
+<map id="LSM9DS1Sensor" name="LSM9DS1Sensor">
+<area shape="rect" id="Node000001" title="Implementation of the Sensor class for the LSM9DS1 (9&#45;axis IMU)" alt="" coords="22,419,166,644"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,5,183,371"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,385,97,419,91,419,91,385"/>
+</map>

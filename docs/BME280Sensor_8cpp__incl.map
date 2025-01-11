@@ -1,0 +1,11 @@
+<map id="BME280Sensor.cpp" name="BME280Sensor.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="43,5,188,31"/>
+<area shape="rect" id="Node000002" href="$BME280Sensor_8h.html" title=" " alt="" coords="50,79,181,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,31,118,65,113,65,113,31"/>
+<area shape="rect" id="Node000003" href="$Sensor_8h.html" title=" " alt="" coords="9,152,86,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,106,70,144,66,140,102,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="110,152,257,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="128,102,165,140,161,144,125,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,225,89,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="50,178,50,212,45,212,45,178"/>
+</map>

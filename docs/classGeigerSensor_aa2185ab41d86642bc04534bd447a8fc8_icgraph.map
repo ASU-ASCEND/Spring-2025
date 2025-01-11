@@ -1,0 +1,5 @@
+<map id="GeigerSensor::geigerCounter" name="GeigerSensor::geigerCounter">
+<area shape="rect" id="Node000001" title="Interrupt function to count pulses from the Geiger counter." alt="" coords="208,5,417,31"/>
+<area shape="rect" id="Node000002" href="$classGeigerSensor.html#af9b257d10771ecc37b124ea067bc5354" title="Verifies the connection to the sensor and sets up the interrupt." alt="" coords="5,5,160,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,21,160,21,160,15,194,15"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="SHT31Sensor" name="SHT31Sensor">
+<area shape="rect" id="Node000001" title="Interfaces with SHT31 Sensor to collect temperature and humidity data." alt="" coords="333,496,458,621"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="144,148,321,433"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="329,444,360,494,355,497,324,447"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="66,70,74,97,86,123,108,158,135,191,131,195,104,161,81,125,69,98,61,72"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="312,5,364,71"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="367,69,379,94,393,168,399,271,400,479,395,480,394,271,387,168,374,96,362,72"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="314,62,286,96,268,133,263,131,281,93,309,59"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="191,5,221,71"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="208,71,210,124,211,132,205,132,205,124,203,71"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="561,258,675,323"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="607,325,581,378,544,435,510,472,473,505,469,501,506,468,540,432,577,376,603,323"/>
+</map>

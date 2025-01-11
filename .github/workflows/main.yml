@@ -1,0 +1,57 @@
+name: Auto-doc (ascend-nasa-asu)
+run-name: Auto-doc is formatting and documenting code
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./scripts
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_AUTH }}
+      - name: Install clang-format
+        run: |
+          sudo apt-get update
+          sudo apt-get install clang-format
+      - name: Checkout branch 
+        run: |
+          git checkout main
+          git status
+      - name: Run formatting script
+        run: 
+          bash standardizeFormat.sh
+      - name: Install Doxygen and Graphviz
+        run: |
+          sudo apt-get install doxygen 
+          sudo apt install graphviz
+      - name: Clean old docs
+        run:
+          rm -r ../docs/*
+      - name: Run doxygen on ascendfsw
+        run:
+          doxygen fswDoxyfile 
+      - name: Pull everything out of html folder
+        run: |
+          mv ../docs/html/* ../docs/
+          rmdir ../docs/html
+      - name: Push formatting changes to repo   
+        run: |
+          git config user.name "autoformatter[bot]"
+          git config user.email "autoformatter[bot]@users.noreply.github.com"
+          git status
+          if [ "$(git diff)" = "" ]; then
+            echo "No formatting needed"
+          else 
+            git add .. 
+            git commit -m "[bot] - autoformatted code"
+            git push
+          fi
+    
+

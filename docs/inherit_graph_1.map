@@ -1,0 +1,35 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,376,72,401"/>
+<area shape="rect" id="Node000001" href="$classAS7331Sensor.html" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="128,5,243,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="40,362,50,288,66,193,89,102,102,66,118,40,132,29,136,33,122,44,107,68,94,103,71,194,55,289,45,363"/>
+<area shape="rect" id="Node000002" href="$classAnalogSensor.html" title="Implementation of a Sensor for the analog readings." alt="" coords="130,55,241,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="37,362,40,306,51,234,61,195,75,157,94,122,118,89,133,78,136,82,122,93,98,125,80,160,66,197,56,235,45,307,42,362"/>
+<area shape="rect" id="Node000003" href="$classBME280Sensor.html" title="Implementation of a Sensor for the BME280." alt="" coords="126,104,245,129"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="39,362,44,315,57,256,80,194,97,165,118,139,133,127,137,132,122,143,102,168,85,196,62,257,49,316,44,363"/>
+<area shape="rect" id="Node000004" href="$classBME680Sensor.html" title="A class to interface with the Adafruit BME680 sensor for environmental data collection." alt="" coords="126,153,245,179"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="41,361,49,323,64,277,86,230,118,188,134,177,137,181,122,192,91,233,69,279,54,325,46,363"/>
+<area shape="rect" id="Node000005" href="$classDS3231Sensor.html" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="127,203,243,228"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="45,362,71,300,92,267,118,237,136,226,139,230,122,241,96,270,76,303,50,364"/>
+<area shape="rect" id="Node000006" href="$classENS160Sensor.html" title="Implementation of a Sensor for the ENS160." alt="" coords="127,252,243,277"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="52,362,80,324,118,287,139,275,142,280,122,291,84,327,57,365"/>
+<area shape="rect" id="Node000007" href="$classGeigerSensor.html" title="A class for interfacing with a Geiger counter sensor." alt="" coords="131,301,240,327"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="68,366,119,336,145,324,147,329,121,340,71,370"/>
+<area shape="rect" id="Node000008" href="$classICM20948Sensor.html" title="Implementation of the Sensor class for the Adafruit ICM20948 (9&#45;axis IMU)" alt="" coords="120,351,251,376"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="85,378,119,372,120,377,86,383"/>
+<area shape="rect" id="Node000009" href="$classINA260Sensor.html" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="129,400,242,425"/>
+<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="86,394,129,401,128,406,85,399"/>
+<area shape="rect" id="Node000010" href="$classLSM9DS1Sensor.html" title="Implementation of the Sensor class for the LSM9DS1 (9&#45;axis IMU)" alt="" coords="122,449,249,475"/>
+<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="72,406,121,434,150,447,148,452,119,439,69,411"/>
+<area shape="rect" id="Node000011" href="$classMTK3339Sensor.html" title="Implementation of the Adafruit MTK3339 GPS sensor." alt="" coords="122,499,249,524"/>
+<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="57,412,85,449,122,484,144,496,141,501,118,488,81,452,53,415"/>
+<area shape="rect" id="Node000012" href="$classPCF8523Sensor.html" title=" " alt="" coords="124,548,247,573"/>
+<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="50,413,76,473,97,505,122,533,141,546,138,550,118,537,92,509,72,476,45,415"/>
+<area shape="rect" id="Node000013" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="131,597,239,623"/>
+<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="47,414,55,452,69,496,91,542,122,583,139,595,136,599,118,587,87,545,64,498,50,453,41,416"/>
+<area shape="rect" id="Node000014" href="$classSHT31Sensor.html" title="Interfaces with SHT31 Sensor to collect temperature and humidity data." alt="" coords="131,647,239,672"/>
+<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="44,415,50,461,63,519,86,579,102,607,122,632,138,644,135,649,118,636,98,610,81,581,58,520,45,462,39,415"/>
+<area shape="rect" id="Node000015" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="135,696,236,721"/>
+<area shape="poly" id="edge15_Node000000_Node000015" title=" " alt="" coords="42,415,45,470,57,541,67,578,81,615,99,650,122,681,138,694,135,698,118,685,94,653,76,617,62,580,51,542,40,470,37,415"/>
+<area shape="rect" id="Node000016" href="$classZOPT220Sensor.html" title="A class to interface with the ZOPT220x UV and ambient light sensor." alt="" coords="123,745,248,771"/>
+<area shape="poly" id="edge16_Node000000_Node000016" title=" " alt="" coords="46,414,55,487,72,582,94,672,107,707,122,731,137,743,134,747,118,734,103,709,89,673,66,583,50,488,40,415"/>
+</map>

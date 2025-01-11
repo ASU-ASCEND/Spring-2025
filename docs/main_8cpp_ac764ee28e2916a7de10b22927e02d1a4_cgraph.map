@@ -1,0 +1,7 @@
+<map id="setup1" name="setup1">
+<area shape="rect" id="Node000001" title="Setup for core 1." alt="" coords="5,5,72,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a339ac134cdee34bfe9d5f539ab14ba00" title="Verifies the connection with each storage device, and defines the header_condensed field." alt="" coords="120,5,229,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,15,106,15,106,21,72,21"/>
+<area shape="rect" id="Node000003" href="$classStorage.html#a83fbc910d2fe786ac9134f27a85bda8f" title="Verifies connection with storage device." alt="" coords="277,5,395,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,15,264,15,264,21,230,21"/>
+</map>

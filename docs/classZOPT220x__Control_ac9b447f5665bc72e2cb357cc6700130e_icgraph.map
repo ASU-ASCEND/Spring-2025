@@ -1,0 +1,7 @@
+<map id="ZOPT220x_Control::getAdjustedUVIndex" name="ZOPT220x_Control::getAdjustedUVIndex">
+<area shape="rect" id="Node000001" title=" " alt="" coords="521,5,751,45"/>
+<area shape="rect" id="Node000002" href="$classZOPT220x__Control.html#a1233f73c507efe1393d84b9d88b4a023" title=" " alt="" coords="247,13,473,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,28,474,28,474,23,507,23"/>
+<area shape="rect" id="Node000003" href="$classZOPT220Sensor.html#a6aeb56062c5ff976d199ae407df9ed6c" title="Reads data from the ZOPT220x sensor and returns it in CSV format." alt="" coords="5,13,199,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,28,199,28,199,23,233,23"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="SHT31Sensor.h" name="SHT31Sensor.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="89,5,207,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="154,152,238,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,33,59,45,27,61,16,70,10,80,9,91,14,102,40,127,72,144,107,154,141,159,140,165,106,159,70,149,37,132,10,106,3,91,5,78,12,67,24,56,57,40,94,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="24,79,88,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,33,83,72,80,68,132,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="113,79,183,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,31,151,65,145,65,145,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="207,79,342,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="170,28,243,69,241,74,167,33"/>
+<area shape="rect" id="Node000006" href="$Sensor_8h.html" title=" " alt="" coords="367,79,444,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="190,28,354,73,353,78,189,33"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="373,107,244,150,242,145,371,101"/>
+</map>

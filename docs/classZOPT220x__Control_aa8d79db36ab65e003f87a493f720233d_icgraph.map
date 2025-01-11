@@ -1,0 +1,11 @@
+<map id="ZOPT220x_Control::setResolution" name="ZOPT220x_Control::setResolution">
+<area shape="rect" id="Node000001" title=" " alt="" coords="741,35,981,60"/>
+<area shape="rect" id="Node000002" href="$classZOPT220Sensor.html#a6aeb56062c5ff976d199ae407df9ed6c" title="Reads data from the ZOPT220x sensor and returns it in CSV format." alt="" coords="491,5,685,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="729,36,684,31,685,26,730,31"/>
+<area shape="rect" id="Node000003" href="$classZOPT220x__Control.html#adc20ce356a572b8039ba96b9160e97c4" title=" " alt="" coords="483,55,693,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="728,64,694,67,693,62,728,58"/>
+<area shape="rect" id="Node000004" href="$classZOPT220x__Control.html#aab772e9154760b2ddbee82953532f08e" title=" " alt="" coords="224,55,435,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="469,78,435,78,435,73,469,73"/>
+<area shape="rect" id="Node000005" href="$classZOPT220Sensor.html#a5fab507a3cadaab6d6026c3fea36d0e6" title="Verifies the connection to the ZOPT220x sensor." alt="" coords="5,63,176,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="210,78,176,78,176,73,210,73"/>
+</map>

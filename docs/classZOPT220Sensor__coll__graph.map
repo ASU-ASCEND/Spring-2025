@@ -1,0 +1,15 @@
+<map id="ZOPT220Sensor" name="ZOPT220Sensor">
+<area shape="rect" id="Node000001" title="A class to interface with the ZOPT220x UV and ambient light sensor." alt="" coords="245,496,386,621"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="117,148,295,433"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,445,292,494,287,497,267,447"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,70,86,123,111,166,106,169,81,125,62,72"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="180,5,232,71"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="209,71,209,131,203,131,203,71"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="315,5,345,71"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="323,72,303,125,299,134,294,132,298,123,318,70"/>
+<area shape="rect" id="Node000006" href="$classZOPT220x__Control.html" title=" " alt="" coords="319,158,536,423"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="374,425,350,482,345,480,369,422"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="406,5,449,71"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="430,71,430,141,425,141,425,71"/>
+</map>

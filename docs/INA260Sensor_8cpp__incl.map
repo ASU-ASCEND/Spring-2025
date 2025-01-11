@@ -1,0 +1,14 @@
+<map id="INA260Sensor.cpp" name="INA260Sensor.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="54,5,192,31"/>
+<area shape="rect" id="Node000002" href="$INA260Sensor_8h.html" title=" " alt="" coords="61,79,185,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,31,126,65,120,65,120,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="112,225,196,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="84,107,53,119,25,135,10,155,9,165,13,176,30,194,51,209,99,226,97,231,49,213,27,199,9,179,3,165,5,153,22,131,50,114,82,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="24,152,94,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="114,106,80,144,76,140,110,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="118,152,258,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="136,103,170,140,167,144,132,106"/>
+<area shape="rect" id="Node000006" href="$Sensor_8h.html" title=" " alt="" coords="283,152,360,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="156,102,277,145,275,150,154,107"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="296,180,195,222,193,217,294,175"/>
+</map>

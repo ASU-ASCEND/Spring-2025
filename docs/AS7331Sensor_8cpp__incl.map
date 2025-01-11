@@ -1,0 +1,16 @@
+<map id="AS7331Sensor.cpp" name="AS7331Sensor.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="77,5,218,31"/>
+<area shape="rect" id="Node000002" href="$AS7331Sensor_8h.html" title=" " alt="" coords="149,79,276,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,29,195,67,191,70,156,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,156,177"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="144,32,94,141,89,138,139,30"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="193,106,115,148,113,143,190,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,152,245,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="215,104,215,138,210,138,210,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="269,152,340,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="229,102,281,141,277,146,226,106"/>
+<area shape="rect" id="Node000006" href="$Sensor_8h.html" title=" " alt="" coords="365,152,442,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="244,102,360,144,358,149,242,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="361,225,445,251"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="406,178,406,212,401,212,401,178"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="ICM20948Sensor.h" name="ICM20948Sensor.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="416,5,559,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,164,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="423,33,163,79,162,74,422,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="188,79,331,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="451,33,310,77,309,72,450,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="355,79,491,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="479,33,445,70,441,67,475,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="516,79,587,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="500,29,534,67,530,70,496,33"/>
+<area shape="rect" id="Node000006" href="$PayloadConfig_8h.html" title=" " alt="" coords="611,79,737,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="518,28,632,71,630,76,516,33"/>
+<area shape="rect" id="Node000007" href="$Sensor_8h.html" title=" " alt="" coords="762,79,839,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="538,28,749,76,748,81,537,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="759,152,843,177"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="803,104,803,138,798,138,798,104"/>
+</map>

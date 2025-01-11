@@ -1,0 +1,4 @@
+__pycache__
+build
+dist/error_output.log
+error_output.log

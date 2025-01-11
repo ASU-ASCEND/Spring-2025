@@ -1,0 +1,15 @@
+<map id="ICM20948Sensor" name="ICM20948Sensor">
+<area shape="rect" id="Node000001" title="Implementation of the Sensor class for the Adafruit ICM20948 (9&#45;axis IMU)" alt="" coords="315,540,463,665"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="117,148,295,433"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,444,355,539,350,541,294,447"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,70,86,123,111,166,106,169,81,125,62,72"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="180,5,232,71"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="209,71,209,131,203,131,203,71"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="315,5,345,71"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="323,72,303,125,299,134,294,132,298,123,318,70"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="319,258,458,323"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="391,323,391,523,386,523,386,323"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="482,258,610,323"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="532,325,430,526,425,524,528,322"/>
+</map>

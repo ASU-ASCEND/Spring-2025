@@ -1,0 +1,10 @@
+<map id="AnalogSensor.h" name="AnalogSensor.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,128,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="37,152,121,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,33,40,47,27,64,19,84,21,103,34,124,52,141,48,145,30,127,16,105,14,83,22,62,36,43,50,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="31,79,102,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="69,31,69,65,64,65,64,31"/>
+<area shape="rect" id="Node000004" href="$Sensor_8h.html" title=" " alt="" coords="127,79,204,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="84,29,140,68,137,73,81,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="153,106,105,145,102,141,150,102"/>
+</map>
