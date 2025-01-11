@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ASCEND Flight Software: Fall-2024</title>
+<title>ASCEND Flight Software: Fall-2025</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,102 +69,26 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Fall-2024 </div></div>
+  <div class="headertitle"><div class="title">Fall-2025 </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2Fall-2024_2Fall-2024_2README"></a>Flight software for the ASU Fall 2024 ASCEND Payload</p>
+<div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2Spring-2025_2Spring-2025_2README"></a>Flight software for the ASU Fall 2025 ASCEND Payload</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 GitHub Subfolders</h1>
-<p><a href="https://github.com/ASU-ASCEND/Fall-2024/tree/main/DataProcessing">DataProcessing</a>: Scripts and programs for processing and visualizing flight data.</p>
-<p><a href="https://github.com/ASU-ASCEND/Fall-2024/tree/main/Testing">Testing</a>: Test and calibration information for sensor and storage modules.</p>
-<p><a href="https://github.com/ASU-ASCEND/Fall-2024/tree/main/Watchdog">Watchdog</a>: Software for watchdog Attiny85 chip.</p>
-<p><a href="https://github.com/ASU-ASCEND/Fall-2024/tree/main/ascendfsw">ascendfsw</a>: Payload flight software.</p>
-<p><a href="https://github.com/ASU-ASCEND/Fall-2024/tree/main/docs">docs</a>: Doxygen auto-generated documentation site for GitHub pages.</p>
-<p><a href="https://github.com/ASU-ASCEND/Fall-2024/tree/main/scripts">scripts</a>: Various organizational and automation scripts.</p>
-<p><a href="https://github.com/ASU-ASCEND/Fall-2024/tree/main/PCBs">PCBs</a>: Payload PCBs</p>
+<p><a href="https://github.com/ASU-ASCEND/Fall-2025/tree/main/DataProcessing">DataProcessing</a>: Scripts and programs for processing and visualizing flight data.</p>
+<p><a href="https://github.com/ASU-ASCEND/Fall-2025/tree/main/Testing">Testing</a>: Test and calibration information for sensor and storage modules.</p>
+<p><a href="https://github.com/ASU-ASCEND/Fall-2025/tree/main/Watchdog">Watchdog</a>: Software for watchdog Attiny85 chip.</p>
+<p><a href="https://github.com/ASU-ASCEND/Fall-2025/tree/main/ascendfsw">ascendfsw</a>: Payload flight software.</p>
+<p><a href="https://github.com/ASU-ASCEND/Fall-2025/tree/main/docs">docs</a>: Doxygen auto-generated documentation site for GitHub pages.</p>
+<p><a href="https://github.com/ASU-ASCEND/Fall-2025/tree/main/scripts">scripts</a>: Various organizational and automation scripts.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Meeting Schedule</h1>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Week   </th><th class="markdownTableHeadNone">Task   </th><th class="markdownTableHeadNone">Status    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">9/18   </td><td class="markdownTableBodyNone">Reviewing last semester, Github Org.   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">9/25   </td><td class="markdownTableBodyNone">Github, Arduino, Platform.io and FSWv1   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">10/2   </td><td class="markdownTableBodyNone">Merging, Datasheets, and Calibration   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">10/9   </td><td class="markdownTableBodyNone">Starting FSWv2 Improvements   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">10/16   </td><td class="markdownTableBodyNone">FSWv2 More Improvements and New Sensors   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">10/23   </td><td class="markdownTableBodyNone">FSWv2 (cont.)   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">10/30   </td><td class="markdownTableBodyNone">Testing and more FSWv2   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">11/6   </td><td class="markdownTableBodyNone">Finishing FSWv2, start DP:Tv1   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">11/13   </td><td class="markdownTableBodyNone">Testing FSWv2, integrate FSWv3, DP:Tv1   </td><td class="markdownTableBodyNone">Done.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">11/21   </td><td class="markdownTableBodyNone">Launch   </td><td class="markdownTableBodyNone">Done.   </td></tr>
-</table>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Potential Milestones</h1>
 <h2><a class="anchor" id="autotoc_md4"></a>
 FSW Versions</h2>
-<h4><a class="anchor" id="autotoc_md5"></a>
-v1 (Minimum Viable Product)</h4>
-<ul>
-<li>Reimplement old code into new system </li>
-</ul>
-<h4><a class="anchor" id="autotoc_md6"></a>
-v2 (New &amp; Improved)</h4>
-<ul>
-<li>Update sensors with fastest comm protocol</li>
-<li>Add this year’s new sensors</li>
-<li>Add watchdog </li>
-</ul>
-<h4><a class="anchor" id="autotoc_md7"></a>
-v3 (Multi Core)</h4>
-<ul>
-<li>Migrate storage code to core 1</li>
-<li>Implement safe transfer queue</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Data Processing</h2>
-<h3><a class="anchor" id="autotoc_md9"></a>
-Traditional</h3>
-<h4><a class="anchor" id="autotoc_md10"></a>
-v1 (Minimum Viable Product)</h4>
-<ul>
-<li>Visualization for each sensor with explaining the section and what is expected </li>
-</ul>
-<h4><a class="anchor" id="autotoc_md11"></a>
-v2 (Reusable Toolset)</h4>
-<ul>
-<li>Generalized format and add customization for different CSV input</li>
-<li>Create consistently styled reusable visualization template </li>
-</ul>
-<h3><a class="anchor" id="autotoc_md12"></a>
-3D Visualization</h3>
-<h4><a class="anchor" id="autotoc_md13"></a>
-v1 (Real Time Updating)</h4>
-<ul>
-<li>Using serial connection</li>
-<li>Live gimbaling box </li>
-</ul>
-<h4><a class="anchor" id="autotoc_md14"></a>
-v2 (Polishing and Saving)</h4>
-<ul>
-<li>Relevant data overlays</li>
-<li>Payload accurate model</li>
-<li>Output savable as video </li>
-</ul>
-<h4><a class="anchor" id="autotoc_md15"></a>
-v3 (Real World Use)</h4>
-<ul>
-<li>Integrate into radio reception </li>
-</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Data Processing Tools</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
