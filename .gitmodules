@@ -1,0 +1,3 @@
+[submodule "ascendfsw/lib/SparkFun_SPI_SerialFlash_Arduino_Library"]
+	path = ascendfsw/lib/SparkFun_SPI_SerialFlash_Arduino_Library
+	url = https://github.com/sparkfun/SparkFun_SPI_SerialFlash_Arduino_Library.git
