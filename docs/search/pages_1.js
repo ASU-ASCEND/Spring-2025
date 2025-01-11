@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fall_202025_0',['Fall-2025',['../index.html',1,'']]]
+  ['spring_202025_0',['Spring-2025',['../index.html',1,'']]]
 ];
