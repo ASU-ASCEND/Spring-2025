@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['bme_0',['bme',['../classBME280Sensor.html#a01b4337f58f7856cb66aa629a74b2767',1,'BME280Sensor::bme'],['../classBME680Sensor.html#ab3723bdbb8e0cb47210630d2d9d9fb4f',1,'BME680Sensor::bme']]],
-  ['bme280_5fsensor_1',['bme280_sensor',['../main_8cpp.html#a5e06902fdd9dd0f9e999683d83063577',1,'main.cpp']]],
-  ['bme280sensor_2',['bme280sensor',['../classBME280Sensor.html',1,'BME280Sensor'],['../classBME280Sensor.html#a316081d86f0e0b02f6c3a5d3d0da2fc9',1,'BME280Sensor::BME280Sensor()'],['../classBME280Sensor.html#a466a1da747b315a2b6e3755e656b3042',1,'BME280Sensor::BME280Sensor(unsigned long minium_period)']]],
-  ['bme280sensor_2ecpp_3',['BME280Sensor.cpp',['../BME280Sensor_8cpp.html',1,'']]],
-  ['bme280sensor_2eh_4',['BME280Sensor.h',['../BME280Sensor_8h.html',1,'']]],
-  ['bme680_5fspi_5fcs_5fpin_5',['BME680_SPI_CS_PIN',['../PayloadConfig_8h.html#aba104876166752f24fb0443b22075f76',1,'PayloadConfig.h']]],
-  ['bme680_5fspi_5fmode_6',['BME680_SPI_MODE',['../PayloadConfig_8h.html#a21c757a3dabd481c269e7decfdc3976c',1,'PayloadConfig.h']]],
-  ['bme680sensor_7',['bme680sensor',['../classBME680Sensor.html',1,'BME680Sensor'],['../classBME680Sensor.html#aef81ef59340d381e16b54c965f8f73c0',1,'BME680Sensor::BME680Sensor()'],['../classBME680Sensor.html#a0679871d405ed9cc332da90988e19750',1,'BME680Sensor::BME680Sensor(unsigned long minimum_period)']]],
-  ['bme680sensor_2ecpp_8',['BME680Sensor.cpp',['../BME680Sensor_8cpp.html',1,'']]],
-  ['bme680sensor_2eh_9',['BME680Sensor.h',['../BME680Sensor_8h.html',1,'']]],
-  ['bme_5fsensor_10',['bme_sensor',['../main_8cpp.html#a0acb6df8c6120cd2966d9a7ef67dc565',1,'main.cpp']]]
+  ['calibrate_0',['calibrate',['../classLSM9DS1Sensor.html#a108078a5fb9ce0e02d01bf5c664cf1b2',1,'LSM9DS1Sensor::calibrate()'],['../classPCF8523Sensor.html#ad82965660e65abcbfd781990addc4a47',1,'PCF8523Sensor::calibrate()']]],
+  ['checkpoweronstatus_1',['checkPowerOnStatus',['../classZOPT220x__Control.html#a8eb237d4b6eb8513893d99d3163fc094',1,'ZOPT220x_Control']]],
+  ['code_2',['code',['../classErrorDisplay.html#a5fe9c19644264ecda70d6a2ca192a0ab',1,'ErrorDisplay']]],
+  ['code_20only_20after_20this_20do_20not_20mix_20code_20for_20the_20cores_3',['CORE 1 CODE ONLY AFTER THIS, DO NOT MIX CODE FOR THE CORES',['../main_8cpp.html#autotoc_md6',1,'']]],
+  ['core_201_20code_20only_20after_20this_20do_20not_20mix_20code_20for_20the_20cores_4',['CORE 1 CODE ONLY AFTER THIS, DO NOT MIX CODE FOR THE CORES',['../main_8cpp.html#autotoc_md6',1,'']]],
+  ['cores_5',['CORE 1 CODE ONLY AFTER THIS, DO NOT MIX CODE FOR THE CORES',['../main_8cpp.html#autotoc_md6',1,'']]],
+  ['critical_5ffail_6',['CRITICAL_FAIL',['../ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a0b8cbe4a1604b3c87fa3207a2a38037e',1,'ErrorDisplay.h']]],
+  ['csv_5fheader_7',['csv_header',['../classSensor.html#a2ec9679548d0d3c876995aa3de551293',1,'Sensor']]],
+  ['csvheadercompiled_8',['csvHeaderCompiled',['../classSHT31Sensor.html#a521c9dc64bddf628a786c3f702544de9',1,'SHT31Sensor']]]
 ];
