@@ -1,6 +1,7 @@
 import tkinter as tk 
 from tkinter import ttk 
-from hardline import Hardline
+
+import hardline
 
 class Radio(tk.Frame): 
 
@@ -12,6 +13,6 @@ class Radio(tk.Frame):
     label.grid(row = 0, column = 4, padx = 10, pady = 10) 
 
     button1 = ttk.Button(self, text ="Hardline",
-                            command = lambda : controller.show_frame(Hardline))
+                            command = lambda : controller.show_frame(hardline.Hardline))
 
     button1.grid(row = 1, column = 1, padx = 10, pady = 10)

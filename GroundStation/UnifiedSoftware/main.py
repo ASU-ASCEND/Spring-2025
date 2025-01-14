@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 
-from hardline import Hardline
-from radio import Radio
+import hardline
+import radio
 
 class Main(tk.Tk):
 
@@ -17,14 +17,14 @@ class Main(tk.Tk):
 
     self.frames = {}
 
-    for F in (Hardline, Radio):
+    for F in (hardline.Hardline, radio.Radio):
 
       frame = F(container, self) 
       self.frames[F] = frame 
 
       frame.grid(row = 0, column = 0, sticky = "nsew")
     
-    self.show_frame(Hardline)
+    self.show_frame(hardline.Hardline)
   
   def show_frame(self, cont):
     frame = self.frames[cont]
