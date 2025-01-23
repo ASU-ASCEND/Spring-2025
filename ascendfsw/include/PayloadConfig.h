@@ -1,5 +1,14 @@
-#ifndef PAYLOAD_CONFIG_H
-/** @brief Central location for pinout and config defines */
+/**
+ * @file PayloadConfig.h
+ * @brief Central location for pinout and config defines
+ * 
+ * All pin definitions must include PIN in their name to allow the conflict checker to 
+ * catch pin conflits
+ * ex: SD_CS_PIN instead of just SD_CS
+ * 
+*/
+
+  #ifndef PAYLOAD_CONFIG_H
 #define PAYLOAD_CONFIG_H
 
 /** @brief Error display bit 2 */

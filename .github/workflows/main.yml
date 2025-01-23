@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.BOT_AUTH }}
+          token: ${{ GITHUB_TOKEN }}
       - name: Install clang-format
         run: |
           sudo apt-get update
