@@ -78,6 +78,9 @@ $(function() {
   <div class="headertitle"><div class="title">PayloadConfig.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Central location for pinout and config defines.  
+<a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
@@ -88,9 +91,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aa5acd16a8ceef08812ade79183b40f6e" id="r_aa5acd16a8ceef08812ade79183b40f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PayloadConfig_8h.html#aa5acd16a8ceef08812ade79183b40f6e">PAYLOAD_CONFIG_H</a></td></tr>
-<tr class="memdesc:aa5acd16a8ceef08812ade79183b40f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Central location for pinout and config defines.  <br /></td></tr>
-<tr class="separator:aa5acd16a8ceef08812ade79183b40f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af230e937fbf21c24dab2e1c834330a52" id="r_af230e937fbf21c24dab2e1c834330a52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PayloadConfig_8h.html#af230e937fbf21c24dab2e1c834330a52">ERROR_PIN_2</a>&#160;&#160;&#160;2</td></tr>
 <tr class="memdesc:af230e937fbf21c24dab2e1c834330a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error display bit 2.  <br /></td></tr>
 <tr class="separator:af230e937fbf21c24dab2e1c834330a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +164,10 @@ Macros</h2></td></tr>
   <br /></td></tr>
 <tr class="separator:a36df51ef7cb9a6bf22a094f4d347cad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Central location for pinout and config defines. </p>
+<p>All pin definitions must include PIN in their name to allow the conflict checker to catch pin conflits ex: SD_CS_PIN instead of just SD_CS </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aba104876166752f24fb0443b22075f76" name="aba104876166752f24fb0443b22075f76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba104876166752f24fb0443b22075f76">&#9670;&#160;</a></span>BME680_SPI_CS_PIN</h2>
 
@@ -403,22 +406,6 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Built-in LED Pin. </p>
-
-</div>
-</div>
-<a id="aa5acd16a8ceef08812ade79183b40f6e" name="aa5acd16a8ceef08812ade79183b40f6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5acd16a8ceef08812ade79183b40f6e">&#9670;&#160;</a></span>PAYLOAD_CONFIG_H</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PAYLOAD_CONFIG_H</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Central location for pinout and config defines. </p>
 
 </div>
 </div>

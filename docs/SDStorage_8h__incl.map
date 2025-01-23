@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="236,5,339,31"/>
 <area shape="rect" id="Node000002" href="$ErrorDisplay_8h.html" title=" " alt="" coords="178,79,290,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,33,253,69,249,66,276,29"/>
-<area shape="rect" id="Node000004" href="$PayloadConfig_8h.html" title=" " alt="" coords="5,152,132,177"/>
+<area shape="rect" id="Node000004" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="5,152,132,177"/>
 <area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="260,33,215,54,167,81,126,113,92,144,88,140,123,109,165,76,213,49,258,28"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="315,79,367,104"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="298,29,326,66,322,69,294,33"/>

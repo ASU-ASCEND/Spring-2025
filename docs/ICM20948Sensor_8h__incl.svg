@@ -138,7 +138,7 @@ var sectionId = 'dynsection-0';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="PayloadConfig_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="PayloadConfig_8h.html" target="_top" xlink:title="Central location for pinout and config defines.">
 <polygon fill="white" stroke="#666666" points="549,-74 454,-74 454,-55 549,-55 549,-74"/>
 <text text-anchor="middle" x="501.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">PayloadConfig.h</text>
 </a>
