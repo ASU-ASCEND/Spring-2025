@@ -2,6 +2,7 @@
 #define STORAGE_H
 
 #include <Arduino.h>
+#include "Logger.h"
 
 /**
  * @brief Parent class for all data storage devices (sd card, radio, etc)
