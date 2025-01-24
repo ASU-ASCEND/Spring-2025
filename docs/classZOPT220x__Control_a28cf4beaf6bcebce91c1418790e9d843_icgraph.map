@@ -1,5 +1,0 @@
-<map id="ZOPT220x_Control::getALS" name="ZOPT220x_Control::getALS">
-<area shape="rect" id="Node000001" title=" " alt="" coords="247,5,443,31"/>
-<area shape="rect" id="Node000002" href="$classZOPT220Sensor.html#a6aeb56062c5ff976d199ae407df9ed6c" title="Reads data from the ZOPT220x sensor and returns it in CSV format." alt="" coords="5,5,199,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,21,199,21,199,15,233,15"/>
-</map>
