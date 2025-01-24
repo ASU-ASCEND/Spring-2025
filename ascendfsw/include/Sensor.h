@@ -14,6 +14,18 @@ class Sensor {
   int fields;
 
  public:
+
+  Sensor(String sensor_name, String csv_header, unsigned long minimum_period) {
+    this->minimum_period = minimum_period; 
+    this->last_execution = 0; 
+    this->sensor_name = sensor_name; 
+    this->csv_header = csv_header;
+    this->fields = 1; 
+    for(size_t i = 0; i < csv_header.length(); i++){
+      this->fields++; 
+    }
+  }
+
   /**
    * @brief Construct a new Sensor object with default minimum_period of 0
    *
@@ -104,6 +116,32 @@ class Sensor {
    * @return String
    */
   virtual String readData() = 0;
+
+  /**
+   * @brief Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so 
+   * 
+   * @param packet Pointer to the packet byte array 
+   * @return int The number of bytes appended 
+   */
+  int readData(uint8_t*& packet){ return 0; }; 
+
+  /**
+   * @brief Append the data from a sensor to the packet if the minium period is satisfied 
+   * 
+   * @param sensor_id Header sensor packet section 
+   * @param packet Pointer to the packet byte array 
+   * @return int The number of bytes appended 
+   */
+  int getDataPacket(uint32_t& sensor_id, uint8_t*& packet){
+    if (millis() - this->last_execution >= this->minimum_period) {
+      this->last_execution = millis();
+      sensor_id = (sensor_id << 1) | 1; 
+      return readData(packet);
+    } else {
+      sensor_id = (sensor_id << 1) | 0; 
+      return 0;
+    }
+  }
 
   /**
    * @brief Returns CSV line in the same format as readData() but with "-"
