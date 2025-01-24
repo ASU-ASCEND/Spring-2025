@@ -2,7 +2,6 @@
 #define ERROR_DISPLAY_H
 
 #include <Arduino.h>
-#include "Log.h"
 
 #include "PayloadConfig.h"
 #include "pico/multicore.h"
