@@ -30,11 +30,19 @@ class Storage {
   virtual bool verify() = 0;
 
   /**
-   * @brief Send data to storage device
+   * @brief Send string data to storage device
    *
    * @param data Data to store
    */
   virtual void store(String data) = 0;
+
+  /**
+   * @brief Send packet data to storage device 
+   * 
+   * @param packet Packet to store 
+   */
+  void store(uint8_t* packet){}; 
+
 };
 
 #endif

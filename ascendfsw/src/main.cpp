@@ -291,7 +291,9 @@ int verifyStorage() {
  */
 void storeData(String data) {
   for (int i = 0; i < storages_len; i++) {
-    storages[i]->store(data);
+    if(storages_verify[i]){
+      storages[i]->store(data);
+    }
   }
 }
 
