@@ -1,9 +1,0 @@
-<map id="ZOPT220x_Control::checkPowerOnStatus" name="ZOPT220x_Control::checkPowerOnStatus">
-<area shape="rect" id="Node000001" title=" " alt="" coords="741,5,971,45"/>
-<area shape="rect" id="Node000002" href="$classZOPT220x__Control.html#adc20ce356a572b8039ba96b9160e97c4" title=" " alt="" coords="483,5,693,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="728,28,694,28,694,23,728,23"/>
-<area shape="rect" id="Node000003" href="$classZOPT220x__Control.html#aab772e9154760b2ddbee82953532f08e" title=" " alt="" coords="224,5,435,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="469,28,435,28,435,23,469,23"/>
-<area shape="rect" id="Node000004" href="$classZOPT220Sensor.html#a5fab507a3cadaab6d6026c3fea36d0e6" title="Verifies the connection to the ZOPT220x sensor." alt="" coords="5,13,176,38"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="210,28,176,28,176,23,210,23"/>
-</map>

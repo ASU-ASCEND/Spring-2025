@@ -10,7 +10,7 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="479,106,445,144,441,140,475,103"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="516,152,587,177"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="500,103,534,140,530,144,496,106"/>
-<area shape="rect" id="Node000007" href="$PayloadConfig_8h.html" title=" " alt="" coords="611,152,737,177"/>
+<area shape="rect" id="Node000007" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="611,152,737,177"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="518,102,632,145,630,149,516,107"/>
 <area shape="rect" id="Node000008" href="$Sensor_8h.html" title=" " alt="" coords="762,152,839,177"/>
 <area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="538,101,749,149,748,154,537,107"/>
