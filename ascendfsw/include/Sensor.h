@@ -123,7 +123,9 @@ class Sensor {
    * @param packet Pointer to the packet byte array 
    * @return int The number of bytes appended 
    */
-  int readData(uint8_t*& packet){ return 0; }; 
+  void readDataPacket(uint8_t*& packet){}; 
+
+  String decodeToCSV(uint8_t*& packet){ return ""; };
 
   /**
    * @brief Append the data from a sensor to the packet if the minium period is satisfied 
@@ -132,14 +134,13 @@ class Sensor {
    * @param packet Pointer to the packet byte array 
    * @return int The number of bytes appended 
    */
-  int getDataPacket(uint32_t& sensor_id, uint8_t*& packet){
+  void getDataPacket(uint32_t& sensor_id, uint8_t*& packet){
     if (millis() - this->last_execution >= this->minimum_period) {
       this->last_execution = millis();
       sensor_id = (sensor_id << 1) | 1; 
-      return readData(packet);
+      readDataPacket(packet);
     } else {
       sensor_id = (sensor_id << 1) | 0; 
-      return 0;
     }
   }
 

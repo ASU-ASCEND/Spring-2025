@@ -100,8 +100,8 @@ void setup() {
 
   // start serial
   Serial.begin(115200);
-  // while (!Serial)  // remove before flight
-  //   ;
+  while (!Serial)  // remove before flight
+    ;
 
   // setup heartbeat pins
   pinMode(HEARTBEAT_PIN_0, OUTPUT);
@@ -130,6 +130,7 @@ void setup() {
     Serial.println("No storages verified, output will be Serial only.");
     ErrorDisplay::instance().addCode(Error::CRITICAL_FAIL);
   }
+
 // spi0
 #if FLASH_SPI1 == 0
   if (flash_storage.verify()) {
@@ -157,6 +158,15 @@ void setup() {
 
   pinMode(ON_BOARD_LED_PIN, OUTPUT);
   Serial.println("Setup done.");
+
+  Serial.println("Testing...");
+  uint8_t packet[10]; 
+  uint8_t* packet_temp = packet; 
+  temp_sensor.readDataPacket(packet_temp); 
+  Serial.println("[Core 1] Packet size: " + String(packet_temp - packet)); 
+  packet_temp = packet; 
+  Serial.println("[Core 1] " + temp_sensor.decodeToCSV(packet_temp)); 
+  while(1); 
 }
 
 bool was_dumping = false;
@@ -174,7 +184,7 @@ void loop() {
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
   // switch to data recovery mode
-  if (digitalRead(DATA_INTERFACE_PIN) == LOW) {
+  /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) {
 #if FLASH_SPI1
     if (was_dumping == false) {
       while (queue_get_level(&qt) != 0);
@@ -185,7 +195,7 @@ void loop() {
     was_dumping = true;
     handleDataInterface();
     return;
-  }
+  }*/
 
   if (was_dumping == true) {
     Serial.println("\nErasing flash chip....");
