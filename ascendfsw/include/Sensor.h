@@ -10,8 +10,7 @@
 class Sensor {
  private:
   unsigned long minimum_period, last_execution;
-  String sensor_name, csv_header;
-  int fields;
+  String sensor_name, csv_header, empty_csv; 
 
  public:
 
@@ -20,29 +19,25 @@ class Sensor {
     this->last_execution = 0; 
     this->sensor_name = sensor_name; 
     this->csv_header = csv_header;
-    this->fields = 1; 
+    this->empty_csv = ""; 
     for(size_t i = 0; i < csv_header.length(); i++){
-      this->fields++; 
+      this->empty_csv += "-,"; 
     }
   }
 
+  Sensor(String sensor_name, String csv_header) : Sensor(sensor_name, csv_header, 0UL) {}
+
   /**
-   * @brief Construct a new Sensor object with default minimum_period of 0
+   * @brief Construct a new Sensor object with default minimum_period of 0 (depreciated)
    *
    * @param sensor_name The name of the sensor
    * @param csv_header The header for the sensor's csv cells
    * @param fields number of csv cells the sensor will return
    */
-  Sensor(String sensor_name, String csv_header, int fields) {
-    this->minimum_period = 0;
-    this->last_execution = 0;
-    this->sensor_name = sensor_name;
-    this->csv_header = csv_header;
-    this->fields = fields;
-  }
+  Sensor(String sensor_name, String csv_header, int fields) : Sensor(sensor_name, csv_header) {}
 
   /**
-   * @brief Construct a new Sensor object
+   * @brief Construct a new Sensor object (Depreciated) 
    *
    * @param sensor_name The name of the sensor
    * @param csv_header The header for the sensor's csv cells
@@ -50,13 +45,7 @@ class Sensor {
    * @param minimum_period Set the minimum time between sensor reads in ms
    */
   Sensor(String sensor_name, String csv_header, int fields,
-         unsigned long minimum_period) {
-    this->minimum_period = minimum_period;
-    this->last_execution = 0;
-    this->sensor_name = sensor_name;
-    this->csv_header = csv_header;
-    this->fields = fields;
-  }
+         unsigned long minimum_period) : Sensor(sensor_name, csv_header, minimum_period) {}
 
   /**
    * @brief Get the minimum minimum_period between sensor reads in ms
@@ -151,11 +140,7 @@ class Sensor {
    * @return String
    */
   String readEmpty() const {
-    String empty = "";
-    for (int i = 0; i < fields; i++) {
-      empty += "-,";
-    }
-    return empty;
+    return this->empty_csv;
   }
 
   /**
