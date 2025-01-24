@@ -48,7 +48,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="PayloadConfig_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="PayloadConfig_8h.html" target="_top" xlink:title="Central location for pinout and config defines.">
 <polygon fill="white" stroke="#666666" points="95,-19 0,-19 0,0 95,0 95,-19"/>
 <text text-anchor="middle" x="47.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">PayloadConfig.h</text>
 </a>

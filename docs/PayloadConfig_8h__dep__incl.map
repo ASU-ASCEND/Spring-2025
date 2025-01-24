@@ -1,5 +1,5 @@
 <map id="PayloadConfig.h" name="PayloadConfig.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="473,5,599,31"/>
+<area shape="rect" id="Node000001" title="Central location for pinout and config defines." alt="" coords="473,5,599,31"/>
 <area shape="rect" id="Node000002" href="$BME680Sensor_8h.html" title=" " alt="" coords="257,79,388,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="490,37,358,81,356,76,488,32"/>
 <area shape="rect" id="Node000004" href="$main_8cpp.html" title=" " alt="" coords="595,225,677,251"/>

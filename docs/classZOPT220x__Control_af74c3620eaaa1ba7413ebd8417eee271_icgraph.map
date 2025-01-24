@@ -1,8 +1,0 @@
-<map id="ZOPT220x_Control::dataAvailable" name="ZOPT220x_Control::dataAvailable">
-<area shape="rect" id="Node000001" title=" " alt="" coords="521,31,761,56"/>
-<area shape="rect" id="Node000002" href="$classZOPT220x__Control.html#a1233f73c507efe1393d84b9d88b4a023" title=" " alt="" coords="247,5,473,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,34,473,31,474,26,508,29"/>
-<area shape="rect" id="Node000003" href="$classZOPT220Sensor.html#a6aeb56062c5ff976d199ae407df9ed6c" title="Reads data from the ZOPT220x sensor and returns it in CSV format." alt="" coords="5,31,199,56"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="507,46,199,46,199,41,507,41"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,33,199,36,199,31,233,28"/>
-</map>

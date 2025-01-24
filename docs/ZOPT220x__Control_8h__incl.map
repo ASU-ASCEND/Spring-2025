@@ -1,9 +1,0 @@
-<map id="ZOPT220x_Control.h" name="ZOPT220x_Control.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="69,5,223,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,89,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,33,76,73,73,68,129,29"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="114,79,178,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,31,149,65,143,65,143,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="203,79,273,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,29,214,68,211,72,159,33"/>
-</map>
