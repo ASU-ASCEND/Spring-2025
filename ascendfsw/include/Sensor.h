@@ -2,6 +2,7 @@
 #define SENSOR_H
 
 #include <Arduino.h>
+
 #include "Logger.h"
 
 /**

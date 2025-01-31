@@ -1,14 +1,17 @@
 <map id="SGP30Sensor.h" name="SGP30Sensor.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="96,5,214,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="157,152,241,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,33,60,45,27,60,16,70,10,80,9,90,14,102,41,127,74,144,109,155,144,160,143,165,108,160,72,149,38,132,10,106,4,91,5,78,12,66,24,56,58,40,97,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="25,79,96,104"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="95,5,214,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="294,225,378,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,33,59,45,27,60,16,69,10,79,9,90,14,103,39,133,70,158,104,179,141,196,215,218,280,230,279,235,214,223,139,201,102,184,67,163,35,137,9,105,3,91,5,78,12,66,24,56,57,40,95,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="24,79,95,104"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,33,88,72,85,68,138,29"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="120,79,190,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,31,158,65,152,65,152,31"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="214,79,349,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="177,28,250,69,248,74,174,33"/>
-<area shape="rect" id="Node000006" href="$Sensor_8h.html" title=" " alt="" coords="374,79,451,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="197,28,361,73,360,78,196,33"/>
-<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="379,107,247,150,246,145,377,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="119,79,190,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,31,157,65,152,65,152,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="214,79,348,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="176,28,250,69,247,74,173,33"/>
+<area shape="rect" id="Node000006" href="$Sensor_8h.html" title=" " alt="" coords="373,79,450,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="196,28,361,73,359,78,195,33"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="401,106,382,127,363,153,351,183,343,212,338,211,346,181,359,151,378,124,397,102"/>
+<area shape="rect" id="Node000007" href="$Logger_8h.html" title=" " alt="" coords="373,152,450,177"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="414,104,414,138,409,138,409,104"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="401,179,360,218,356,214,398,175"/>
 </map>

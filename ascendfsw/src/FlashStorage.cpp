@@ -69,7 +69,7 @@ void FlashStorage::store(String data) {
   }
 
   log_core("Writing " + String(data.length()) + " bytes at " +
-                 String(this->position));
+           String(this->position));
 
   this->flash.blockingBusyWait();
 }
