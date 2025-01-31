@@ -260,7 +260,7 @@ int verifySensors() {
   return count;
 }
 
-#define INTER_PACKET 1
+#define INTER_PACKET 0
 #if INTER_PACKET
 /**
  * @brief Read data from each verified Sensor (using packet as an intermediary)
