@@ -2,6 +2,7 @@
 
 // error code framework
 #include "ErrorDisplay.h"
+#include "Logger.h"
 #include "PayloadConfig.h"
 
 // parent classes
@@ -109,32 +110,32 @@ void setup() {
   // verify sensors
   int verified_count = verifySensors();
   if (verified_count == 0) {
-    Serial.println("All sensor communications failed");
+    log_core("All sensor communications failed");
     ErrorDisplay::instance().addCode(Error::CRITICAL_FAIL);
     while (1) {
       ErrorDisplay::instance().toggle();
-      Serial.println("Error");
+      log_core("Error");
       delay(1000);
     }
   } else {
-    Serial.println("At least one sensor works, continuing");
+    log_core("At least one sensor works, continuing");
     if (verified_count < 5) {
       ErrorDisplay::instance().addCode(Error::LOW_SENSOR_COUNT);
     }
   }
 
   // verify storage
-  Serial.println("Verifying storage...");
+  log_core("Verifying storage...");
   verified_count = verifyStorage();
   if (verified_count == 0) {
-    Serial.println("No storages verified, output will be Serial only.");
+    log_core("No storages verified, output will be Serial only.");
     ErrorDisplay::instance().addCode(Error::CRITICAL_FAIL);
   }
 
 // spi0
 #if FLASH_SPI1 == 0
   if (flash_storage.verify()) {
-    Serial.println(flash_storage.getStorageName() + " verified.");
+    log_core(flash_storage.getStorageName() + " verified.");
   }
 #endif
 
@@ -145,7 +146,7 @@ void setup() {
       header += sensors[i]->getSensorCSVHeader();
     }
   }
-  Serial.println(header);
+  log_data(header);
 
 // store header
 // storeData(header);
@@ -157,16 +158,7 @@ void setup() {
   queue_add_blocking(&qt, header.c_str());
 
   pinMode(ON_BOARD_LED_PIN, OUTPUT);
-  Serial.println("Setup done.");
-
-  Serial.println("Testing...");
-  uint8_t packet[10];
-  uint8_t* packet_temp = packet;
-  temp_sensor.readDataPacket(packet_temp);
-  Serial.println("[Core 1] Packet size: " + String(packet_temp - packet));
-  packet_temp = packet;
-  Serial.println("[Core 1] " + temp_sensor.decodeToCSV(packet_temp));
-  while (1);
+  log_core("Setup done.");
 }
 
 bool was_dumping = false;
@@ -187,7 +179,8 @@ void loop() {
   /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) {
 #if FLASH_SPI1
     if (was_dumping == false) {
-      while (queue_get_level(&qt) != 0);
+      while (queue_get_level(&qt) != 0)
+        ;
       delay(10);
       rp2040.idleOtherCore();
     }
@@ -198,7 +191,7 @@ void loop() {
   }*/
 
   if (was_dumping == true) {
-    Serial.println("\nErasing flash chip....");
+    log_core("\nErasing flash chip....");
     was_dumping = false;
     flash_storage.erase();
 #if FLASH_SPI1
@@ -207,13 +200,13 @@ void loop() {
   }
 
   // start print line with iteration number
-  Serial.print("it: " + String(it) + "\t");
+  log_core("it: " + String(it) + "\t");
 
   // build csv row
   String csv_row = readSensorData();
 
   // print csv row
-  Serial.println(csv_row);
+  log_data(csv_row);
 
   // send data to flash
   flash_storage.store(csv_row);
@@ -247,14 +240,13 @@ int verifySensors() {
   header_condensed =
       String(bit_array, HEX);  // translate it to hex to condense it for the csv
 
-  Serial.println("Pin Verification Results:");
+  log_core("Pin Verification Results:");
   for (int i = 0; i < sensors_len; i++) {
-    Serial.print(sensors[i]->getSensorName());
-    Serial.print(": ");
-    Serial.println(sensors_verify[i]
-                       ? "Successful in Communication"
-                       : "Failure in Communication (check wirings and/ or pin "
-                         "definitions in the respective sensor header file)");
+    log_core((sensors[i]->getSensorName()) + ": " +
+             (sensors_verify[i]
+                  ? "Successful in Communication"
+                  : "Failure in Communication (check wirings and/ or pin "
+                    "definitions in the respective sensor header file)"));
   }
   Serial.println();
   return count;
@@ -370,7 +362,7 @@ int verifyStorage() {
   for (int i = 0; i < storages_len; i++) {
     storages_verify[i] = storages[i]->verify();
     if (storages_verify[i]) {
-      Serial.println(storages[i]->getStorageName() + " verified.");
+      log_core(storages[i]->getStorageName() + " verified.");
       count++;
     }
   }
@@ -424,7 +416,7 @@ void setup1() {
 
   // verify storage
   if (verifyStorage() == 0) {
-    Serial.println("No storages verified, output will be Serial only.");
+    log_core("No storages verified, output will be Serial only.");
   }
 }
 
@@ -443,7 +435,7 @@ void loop1() {
   // store csv row
   storeData(String(received_data));
 
-  // Serial.println("[CORE1]\t" + queue_get_level(&qt) + String(received_data));
+  // log_core("[CORE1]\t" + queue_get_level(&qt) + String(received_data));
 
   // radioStorage.store(String(received_data));
 }

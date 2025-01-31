@@ -45,11 +45,11 @@ bool FlashStorage::verify() {
   if (this->flash.begin(FLASH_CS_PIN) == false) return false;
 #endif
 
-  Serial.println("Initial position: " + String(this->position));
+  log_core("Initial position: " + String(this->position));
   this->position = 0;
   this->loadPosition();  // Get position from flash
 
-  Serial.println("Updated position: " + String(this->position));
+  log_core("Updated position: " + String(this->position));
 
   return true;
 }
@@ -68,15 +68,15 @@ void FlashStorage::store(String data) {
     this->flash.blockingBusyWait();
   }
 
-  Serial.println("Writing " + String(data.length()) + " bytes at " +
+  log_core("Writing " + String(data.length()) + " bytes at " +
                  String(this->position));
 
   this->flash.blockingBusyWait();
 }
 
 void FlashStorage::dump() {
-  Serial.println("\nStarting data transfer: ");
-  Serial.println("Position is at " + String(this->position));
+  log_core("\nStarting data transfer: ");
+  log_core("Position is at " + String(this->position));
   char data = '^';
   uint32_t pos = this->DATA_START_POSITION;
   // read until it hits end_code

@@ -49,15 +49,15 @@ bool SDStorage::verify() {
 void SDStorage::store(String data) {
   File output = SD.open(this->file_name, FILE_WRITE);
   if (!output) {
-    Serial.println("SD card write failed");
+    log_core("SD card write failed");
     // set error if fails at all, but might still be working
     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
     SD.end();  // close instance
 
     if (this->verify()) {  // try to reconnect
-      Serial.println("Reverify succeeded");
+      log_core("Reverify succeeded");
     } else {
-      Serial.println("Reverify failed");
+      log_core("Reverify failed");
     }
   }
 
