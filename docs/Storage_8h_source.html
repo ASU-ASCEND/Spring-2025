@@ -99,15 +99,18 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classStorage.html#a83fbc910d2fe786ac9134f27a85bda8f">   30</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classStorage.html#a83fbc910d2fe786ac9134f27a85bda8f">verify</a>() = 0;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classStorage.html#a08674ceb4404690065b1cf39963eb5a3">   37</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classStorage.html#a08674ceb4404690065b1cf39963eb5a3">store</a>(String data) = 0;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classStorage.html#ac25dac79a5ed478b978214d63c9bc271">   44</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classStorage.html#ac25dac79a5ed478b978214d63c9bc271">store</a>(uint8_t* packet) {};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassStorage_html"><div class="ttname"><a href="classStorage.html">Storage</a></div><div class="ttdoc">Parent class for all data storage devices (sd card, radio, etc)</div><div class="ttdef"><b>Definition</b> Storage.h:10</div></div>
-<div class="ttc" id="aclassStorage_html_a08674ceb4404690065b1cf39963eb5a3"><div class="ttname"><a href="classStorage.html#a08674ceb4404690065b1cf39963eb5a3">Storage::store</a></div><div class="ttdeci">virtual void store(String data)=0</div><div class="ttdoc">Send data to storage device.</div></div>
+<div class="ttc" id="aclassStorage_html_a08674ceb4404690065b1cf39963eb5a3"><div class="ttname"><a href="classStorage.html#a08674ceb4404690065b1cf39963eb5a3">Storage::store</a></div><div class="ttdeci">virtual void store(String data)=0</div><div class="ttdoc">Send string data to storage device.</div></div>
 <div class="ttc" id="aclassStorage_html_a2f5803f60b5c3cd8e9c35fc744ab3058"><div class="ttname"><a href="classStorage.html#a2f5803f60b5c3cd8e9c35fc744ab3058">Storage::Storage</a></div><div class="ttdeci">Storage(String storage_name)</div><div class="ttdef"><b>Definition</b> Storage.h:15</div></div>
 <div class="ttc" id="aclassStorage_html_a83fbc910d2fe786ac9134f27a85bda8f"><div class="ttname"><a href="classStorage.html#a83fbc910d2fe786ac9134f27a85bda8f">Storage::verify</a></div><div class="ttdeci">virtual bool verify()=0</div><div class="ttdoc">Verifies connection with storage device.</div></div>
 <div class="ttc" id="aclassStorage_html_a97174b0ffdac8fcddb79652a46b75268"><div class="ttname"><a href="classStorage.html#a97174b0ffdac8fcddb79652a46b75268">Storage::getStorageName</a></div><div class="ttdeci">const String &amp; getStorageName() const</div><div class="ttdoc">Get the name of the storage device.</div><div class="ttdef"><b>Definition</b> Storage.h:22</div></div>
+<div class="ttc" id="aclassStorage_html_ac25dac79a5ed478b978214d63c9bc271"><div class="ttname"><a href="classStorage.html#ac25dac79a5ed478b978214d63c9bc271">Storage::store</a></div><div class="ttdeci">void store(uint8_t *packet)</div><div class="ttdoc">Send packet data to storage device.</div><div class="ttdef"><b>Definition</b> Storage.h:44</div></div>
 <div class="ttc" id="aclassStorage_html_aff621d72ce660e62f0dbb2f87d835327"><div class="ttname"><a href="classStorage.html#aff621d72ce660e62f0dbb2f87d835327">Storage::storage_name</a></div><div class="ttdeci">String storage_name</div><div class="ttdef"><b>Definition</b> Storage.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

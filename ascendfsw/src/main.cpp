@@ -160,13 +160,13 @@ void setup() {
   Serial.println("Setup done.");
 
   Serial.println("Testing...");
-  uint8_t packet[10]; 
-  uint8_t* packet_temp = packet; 
-  temp_sensor.readDataPacket(packet_temp); 
-  Serial.println("[Core 1] Packet size: " + String(packet_temp - packet)); 
-  packet_temp = packet; 
-  Serial.println("[Core 1] " + temp_sensor.decodeToCSV(packet_temp)); 
-  while(1); 
+  uint8_t packet[10];
+  uint8_t* packet_temp = packet;
+  temp_sensor.readDataPacket(packet_temp);
+  Serial.println("[Core 1] Packet size: " + String(packet_temp - packet));
+  packet_temp = packet;
+  Serial.println("[Core 1] " + temp_sensor.decodeToCSV(packet_temp));
+  while (1);
 }
 
 bool was_dumping = false;
@@ -268,75 +268,78 @@ int verifySensors() {
  * @return String Complete CSV row for iteration
  */
 String readSensorData() {
-  //String csv_row = header_condensed + "," + String(millis()) + ",";
-  uint8_t packet[500]; 
-  uint32_t sync_bytes = 0x89ABCDEF; 
-  std::copy((uint8_t*)(&sync_bytes), (uint8_t*)(&sync_bytes) + sizeof(sync_bytes), packet); 
-  uint32_t sensor_id = 0; 
-  uint16_t data_len = 0; 
-  uint8_t* temp_packet = packet + sizeof(sync_bytes) + sizeof(sensor_id) + sizeof(data_len); 
+  // String csv_row = header_condensed + "," + String(millis()) + ",";
+  uint8_t packet[500];
+  uint32_t sync_bytes = 0x89ABCDEF;
+  std::copy((uint8_t*)(&sync_bytes),
+            (uint8_t*)(&sync_bytes) + sizeof(sync_bytes), packet);
+  uint32_t sensor_id = 0;
+  uint16_t data_len = 0;
+  uint8_t* temp_packet =
+      packet + sizeof(sync_bytes) + sizeof(sensor_id) + sizeof(data_len);
 
-  // build packet 
+  // build packet
   // millis()
-  unsigned long now = millis(); 
+  unsigned long now = millis();
   std::copy((uint8_t*)(&now), (uint8_t*)(&now) + sizeof(now), temp_packet);
-  temp_packet += sizeof(now); 
-  sensor_id = (sensor_id << 1) | 1; 
-  // rest of the packet 
+  temp_packet += sizeof(now);
+  sensor_id = (sensor_id << 1) | 1;
+  // rest of the packet
   for (int i = 0; i < sensors_len; i++) {
     if (sensors_verify[i]) {
       sensors[i]->getDataPacket(sensor_id, temp_packet);
     } else {
-      sensor_id <<= 1; 
+      sensor_id <<= 1;
     }
   }
-  // calc data len 
-  data_len = temp_packet - packet; 
+  // calc data len
+  data_len = temp_packet - packet;
 
   // write sensor_id
   temp_packet = packet + sizeof(sync_bytes);
-  std::copy((uint8_t*)(&sensor_id), (uint8_t*)(&sensor_id) + sizeof(sensor_id), temp_packet); 
+  std::copy((uint8_t*)(&sensor_id), (uint8_t*)(&sensor_id) + sizeof(sensor_id),
+            temp_packet);
 
-  // write data len 
-  temp_packet += sizeof(sensor_id); 
-  std::copy((uint8_t*)(&data_len), (uint8_t*)(&data_len) + sizeof(data_len), temp_packet); 
-  
+  // write data len
+  temp_packet += sizeof(sensor_id);
+  std::copy((uint8_t*)(&data_len), (uint8_t*)(&data_len) + sizeof(data_len),
+            temp_packet);
 
   // ---------------------------------------------------------------------
-  // decode packet (using only packet) 
-  temp_packet = packet; 
+  // decode packet (using only packet)
+  temp_packet = packet;
 
-  uint32_t r_sync_bytes = *((uint32_t*)temp_packet); 
-  temp_packet += sizeof(r_sync_bytes); 
+  uint32_t r_sync_bytes = *((uint32_t*)temp_packet);
+  temp_packet += sizeof(r_sync_bytes);
   uint32_t r_sensor_id = *((uint32_t*)temp_packet);
-  temp_packet += sizeof(r_sensor_id);  
+  temp_packet += sizeof(r_sensor_id);
   uint16_t r_data_len = *((uint16_t*)temp_packet);
-  temp_packet += sizeof(r_data_len);  
-  
-  String csv_row = ""; 
+  temp_packet += sizeof(r_data_len);
 
-  uint32_t temp_sensor_id = r_sensor_id; 
-  uint8_t id_offset = 0; 
-  for(int i = 0; i < 32; i++){
-    if(temp_sensor_id & (1 << i)){
-      id_offset = i; 
+  String csv_row = "";
+
+  uint32_t temp_sensor_id = r_sensor_id;
+  uint8_t id_offset = 0;
+  for (int i = 0; i < 32; i++) {
+    if (temp_sensor_id & (1 << i)) {
+      id_offset = i;
     }
   }
 
   // millis decode
-  unsigned long r_now = *((unsigned long*)temp_packet); 
-  temp_packet += sizeof(r_now); 
-  csv_row += String(r_now) + ","; 
+  unsigned long r_now = *((unsigned long*)temp_packet);
+  temp_packet += sizeof(r_now);
+  csv_row += String(r_now) + ",";
 
-  int curr_offset = id_offset - 1; 
-  while(temp_packet < packet + r_data_len){
-    if(r_sensor_id & (1 << curr_offset)){
-      csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet); 
-    } else if(sensors_verify[id_offset - curr_offset -1]){
-      csv_row += sensors[id_offset - curr_offset -1]->readEmpty(); 
+  int curr_offset = id_offset - 1;
+  while (temp_packet < packet + r_data_len) {
+    if (r_sensor_id & (1 << curr_offset)) {
+      csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
+    } else if (sensors_verify[id_offset - curr_offset - 1]) {
+      csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
     }
   }
-  
+
   return csv_row;
 }
 #else
@@ -382,7 +385,7 @@ int verifyStorage() {
  */
 void storeData(String data) {
   for (int i = 0; i < storages_len; i++) {
-    if(storages_verify[i]){
+    if (storages_verify[i]) {
       storages[i]->store(data);
     }
   }

@@ -37,12 +37,11 @@ class Storage {
   virtual void store(String data) = 0;
 
   /**
-   * @brief Send packet data to storage device 
-   * 
-   * @param packet Packet to store 
+   * @brief Send packet data to storage device
+   *
+   * @param packet Packet to store
    */
-  void store(uint8_t* packet){}; 
-
+  void store(uint8_t* packet) {};
 };
 
 #endif

@@ -31,24 +31,24 @@ bool TempSensor::verify() { return true; }
  */
 String TempSensor::readData() { return String(analogReadTemp()) + ","; }
 
-void TempSensor::readDataPacket(uint8_t*& packet){
+void TempSensor::readDataPacket(uint8_t*& packet) {
+  // read sensor value
+  float temp = analogReadTemp();
 
-    // read sensor value
-    float temp = analogReadTemp(); 
-
-    // cast the pointer to that value to a uint8_t pointer, copy the bytes at that pointer to packet 
-    std::copy((uint8_t*)(&temp), (uint8_t*)(&temp) + sizeof(temp), packet);
-    // increment the packet pointer past the new bytes 
-    packet += sizeof(temp);
-
+  // cast the pointer to that value to a uint8_t pointer, copy the bytes at that
+  // pointer to packet
+  std::copy((uint8_t*)(&temp), (uint8_t*)(&temp) + sizeof(temp), packet);
+  // increment the packet pointer past the new bytes
+  packet += sizeof(temp);
 }
 
-String TempSensor::decodeToCSV(uint8_t*& packet){
-    // cast the packet pointer to pointer of the data type to read (float) then dereference it 
-    float temp = *((float*)packet);
-    // increment packet by the size of the read data type (float) 
-    packet += sizeof(temp); 
+String TempSensor::decodeToCSV(uint8_t*& packet) {
+  // cast the packet pointer to pointer of the data type to read (float) then
+  // dereference it
+  float temp = *((float*)packet);
+  // increment packet by the size of the read data type (float)
+  packet += sizeof(temp);
 
-    // return in csv snippet format 
-    return String(temp) + ","; 
+  // return in csv snippet format
+  return String(temp) + ",";
 }
