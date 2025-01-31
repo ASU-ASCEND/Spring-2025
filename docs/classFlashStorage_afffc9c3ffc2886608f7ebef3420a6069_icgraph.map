@@ -1,7 +1,5 @@
 <map id="FlashStorage::dump" name="FlashStorage::dump">
-<area shape="rect" id="Node000001" title=" " alt="" coords="307,5,459,31"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html#a222d3cef3e43d77865ecbd2f95edba3a" title="Handles data interface mode for retrieving data from flash memory." alt="" coords="104,5,259,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,21,259,21,259,15,293,15"/>
-<area shape="rect" id="Node000003" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="5,5,56,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,21,56,21,56,15,90,15"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="208,5,360,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a222d3cef3e43d77865ecbd2f95edba3a" title="Handles data interface mode for retrieving data from flash memory." alt="" coords="5,5,160,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,21,161,21,161,15,194,15"/>
 </map>

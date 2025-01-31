@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Send data to storage device.">
+<g id="a_Node000001"><a xlink:title="Send string data to storage device.">
 <polygon fill="#999999" stroke="#666666" points="266,-19 181,-19 181,0 266,0 266,-19"/>
 <text text-anchor="middle" x="223.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Storage::store</text>
 </a>

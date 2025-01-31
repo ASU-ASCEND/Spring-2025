@@ -1,0 +1,5 @@
+<map id="Sensor::getDataPacket" name="Sensor::getDataPacket">
+<area shape="rect" id="Node000001" title="Append the data from a sensor to the packet if the minium period is satisfied." alt="" coords="5,5,173,31"/>
+<area shape="rect" id="Node000002" href="$classSensor.html#ad7534278a3d205320a41e4901bf650ab" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="221,5,397,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,15,208,15,208,21,173,21"/>
+</map>

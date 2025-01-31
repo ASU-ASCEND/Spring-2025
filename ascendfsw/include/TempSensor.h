@@ -14,6 +14,8 @@ class TempSensor : public Sensor {
   TempSensor(unsigned long minium_period);
   bool verify();
   String readData();
+  void readDataPacket(uint8_t*& packet);
+  String decodeToCSV(uint8_t*& packet);
 };
 
 #endif
