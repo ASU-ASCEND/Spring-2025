@@ -32,3 +32,17 @@ void RadioStorage::store(String data) {
     Serial1.println(data);
   }
 }
+
+/**
+ * @brief Send data to the radio for transmitting 
+ * 
+ * @param packet Packet to send 
+ */
+void RadioStorage::store(uint8_t* packet){
+  // length of packet will be after sync bytes (4) and sensor presence (4)
+  // it is uint16_t 
+  uint16_t len = *((uint16_t*)(packet + 8));
+
+  // write those bytes to the radio
+  Serial1.write(packet, len); 
+}
