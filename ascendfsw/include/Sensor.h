@@ -121,10 +121,10 @@ class Sensor {
   void readDataPacket(uint8_t*& packet) {};
 
   /**
-   * @brief Used for onboard decoding of packets 
-   * 
-   * @param packet  Pointer to the packet byte array 
-   * @return String The senors data decoded from the packet in csv format 
+   * @brief Used for onboard decoding of packets
+   *
+   * @param packet  Pointer to the packet byte array
+   * @return String The senors data decoded from the packet in csv format
    */
   String decodeToCSV(uint8_t*& packet) { return ""; };
 
