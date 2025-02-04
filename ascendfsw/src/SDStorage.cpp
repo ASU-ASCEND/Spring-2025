@@ -91,7 +91,7 @@ void SDStorage::store(uint8_t* packet){
     }
   }
 
-  // get lenght from the packet, after sync bytes (4) and sensor presense (4)
+  // get length from the packet, after sync bytes (4) and sensor presense (4)
   uint16_t packet_len = *((uint16_t*)(packet + 8));
 
   output.write(packet, packet_len);
