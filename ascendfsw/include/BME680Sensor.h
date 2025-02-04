@@ -42,6 +42,7 @@ class BME680Sensor : public Sensor {
 
   bool verify() override;
   String readData() override;
+  void readDataPacket(uint8_t*& packet) override;
 };
 
 #endif
