@@ -44,3 +44,36 @@ String AS7331Sensor::readData() {
 
   return String(uva) + "," + String(uvb) + "," + String(uvc) + ",";
 }
+
+/**
+* @brief Reads UV data
+* 
+*
+*
+ */
+void AS7331Sensor::readDataPacket(uint8_t*& packet) {
+  myUVSensor.readAllUV();
+
+  float uva = myUVSensor.getUVA();
+  float uvb = myUVSensor.getUVB();
+  float uvc = myUVSensor.getUVC();
+
+  std::copy((uint8_t*)(&uva), (uint8_t*)(&uva) + sizeof(uva), packet);
+  packet += sizeof(uva);
+  std::copy((uint8_t*)(&uvb), (uint8_t*)(&uvb) + sizeof(uvb), packet);
+  packet += sizeof(uvb);
+  std::copy((uint8_t*)(&uvc), (uint8_t*)(&uvc) + sizeof(uvc), packet);
+  packet += sizeof(uvc);
+}
+
+String AS7331Sensor::decodeToCSV(uint8_t*& packet) {
+  float uva, uvb, uvc;
+  std::copy(packet, packet + sizeof(uva), (uint8_t*)(&uva));
+  packet += sizeof(uva);
+  std::copy(packet, packet + sizeof(uvb), (uint8_t*)(&uvb));
+  packet += sizeof(uvb);
+  std::copy(packet, packet + sizeof(uvc), (uint8_t*)(&uvc));
+  packet += sizeof(uvc);
+
+  return String(uva) + "," + String(uvb) + "," + String(uvc) + ",";
+} 

@@ -32,9 +32,52 @@ bool DS3231Sensor::verify() { return rtc.begin(); }
 
 /**
  * @brief Reads timestamp data from RTC (plus temperature)
- *
- * @return String CSV line - year/month/day hour:minute:second, tempC
+ * git submodule update --init
  */
+
+//change to readDataPacket
+void DS3231Sensor::readDataPacket(uint8_t*& packet) {
+  DateTime now = rtc.now();
+
+  float temperature = rtc.getTemperature();
+
+  uint16_t year = now.year();
+  uint8_t month = now.month();
+  uint8_t day = now.day();
+  uint8_t hour = now.hour();
+  uint8_t minute = now.minute();
+  uint8_t second = now.second();
+
+  std::copy((uint8_t*)(&year), (uint8_t*)(&year) + sizeof(year), packet);
+  packet += sizeof(year);
+  *(packet++) = month;
+  *(packet++) = day;
+  *(packet++) = hour;
+  *(packet++) = minute;
+  *(packet++) = second;
+
+  std::copy((uint8_t*)(&temperature), (uint8_t*)(&temperature) + sizeof(temperature), packet);
+  packet += sizeof(temperature);
+}
+
+String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
+    uint16_t year = *((uint16_t*)packet);
+    packet += sizeof(year);
+    uint8_t month = *packet++;
+    uint8_t day = *packet++;
+    uint8_t hour = *packet++;
+    uint8_t minute = *packet++;
+    uint8_t second = *packet++;
+    
+    float temperature = *((float*)packet);
+    packet += sizeof(temperature);
+
+    return String(year) + "/" + String(month) + "/" + String(day) + " " +
+           String(hour) + ":" + String(minute) + ":" + String(second) + "," +
+           String(temperature) + ",";
+}
+
+
 String DS3231Sensor::readData() {
   DateTime now = rtc.now();
 
