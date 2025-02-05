@@ -46,9 +46,11 @@ String AS7331Sensor::readData() {
 }
 
 /**
-* @brief Reads UV data
+* @brief Reads UV data from the sensor and writes it to the packet
 * 
-*
+* @param uva UVA value
+* @param uvb UVB value
+* @param uvc UVC value
 *
  */
 void AS7331Sensor::readDataPacket(uint8_t*& packet) {
@@ -66,6 +68,9 @@ void AS7331Sensor::readDataPacket(uint8_t*& packet) {
   packet += sizeof(uvc);
 }
 
+/**
+ * @brief Decodes a packet into a CSV string
+ */
 String AS7331Sensor::decodeToCSV(uint8_t*& packet) {
   float uva, uvb, uvc;
   std::copy(packet, packet + sizeof(uva), (uint8_t*)(&uva));

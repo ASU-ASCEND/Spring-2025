@@ -35,7 +35,17 @@ bool DS3231Sensor::verify() { return rtc.begin(); }
  * git submodule update --init
  */
 
-//change to readDataPacket
+/**
+ * @brief Reads timestamp data from RTC (plus temperature)
+ *
+ * @param tempearture Temperature
+ * @param year Year
+ * @param month Month
+ * @param day Day
+ * @param hour Hour in 24h time
+ * @param minute Minute
+ * @param second Second
+ */
 void DS3231Sensor::readDataPacket(uint8_t*& packet) {
   DateTime now = rtc.now();
 
@@ -60,6 +70,18 @@ void DS3231Sensor::readDataPacket(uint8_t*& packet) {
   packet += sizeof(temperature);
 }
 
+
+/** 
+ * @brief Decodes a packet into a CSV string
+ * 
+ * @param tempearture Temperature
+ * @param year Year
+ * @param month Month
+ * @param day Day
+ * @param hour Hour in 24h time
+ * @param minute Minute
+ * @param second Second
+ */
 String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
     uint16_t year = *((uint16_t*)packet);
     packet += sizeof(year);
