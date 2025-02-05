@@ -9,7 +9,7 @@ RadioStorage::RadioStorage() : Storage("Radio") {}
 /**
  * @brief Initialize UART1 (Serial1)
  *
- * @return true UART1 bus was succesfully initialized
+ * @return true UART1 bus was successfully initialized
  * @return false otherwise
  */
 bool RadioStorage::verify() {
