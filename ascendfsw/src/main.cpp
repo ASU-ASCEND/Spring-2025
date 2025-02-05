@@ -83,6 +83,10 @@ bool storages_verify[storages_len];
 // loop counter
 unsigned int it = 0;
 
+// packet properties 
+#define MAX_PACKET_SIZE 500
+const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF};
+
 // multicore transfer queue
 #define QT_ENTRY_SIZE 1000
 #define QT_MAX_SIZE 10
@@ -252,6 +256,92 @@ int verifySensors() {
   return count;
 }
 
+
+void getSensorDataPacket(uint8_t* packet){
+  // set sync bytes 
+  uint8_t* temp_packet = packet; 
+  std::copy(SYNC_BYTES, SYNC_BYTES + sizeof(SYNC_BYTES), temp_packet);  
+  temp_packet += sizeof(SYNC_BYTES);
+
+  uint32_t sensor_id = 0; 
+  uint16_t packet_len = 0; 
+  temp_packet += sizeof(sensor_id) + sizeof(packet_len); 
+
+  // build packet 
+  // millis()
+  unsigned long now = millis(); 
+  std::copy((uint8_t*)(&now), (uint8_t*)(&now) + sizeof(now), temp_packet);
+  temp_packet += sizeof(now);
+  sensor_id = (sensor_id << 1) | 1;
+  // rest of the packet
+  for (int i = 0; i < sensors_len; i++) {
+    if (sensors_verify[i]) {
+      sensors[i]->getDataPacket(sensor_id, temp_packet);
+    } else {
+      sensor_id <<= 1;
+    }
+  }
+
+  // calc data len
+  packet_len = (temp_packet - packet) + 1; // + 1 for checksum 
+
+  // write sensor_id
+  temp_packet = packet + sizeof(SYNC_BYTES);
+  std::copy((uint8_t*)(&sensor_id), (uint8_t*)(&sensor_id) + sizeof(sensor_id),
+            temp_packet);
+
+  // write data len
+  temp_packet += sizeof(sensor_id);
+  std::copy((uint8_t*)(&packet_len), (uint8_t*)(&packet_len) + sizeof(packet_len),
+            temp_packet);
+
+  // calculate checksum with sum complement parity 
+  int8_t checksum = 0; 
+  for(size_t i = 0; i < packet_len - 1; i++){
+    checksum += packet[i]; 
+  }
+  *(packet + packet_len - 1) = -checksum; 
+
+}
+
+String decodePacket(uint8_t* packet){
+  uint8_t* temp_packet = packet;
+
+  uint32_t sync_bytes = *((uint32_t*)temp_packet);
+  temp_packet += sizeof(sync_bytes);
+  uint32_t sensor_id = *((uint32_t*)temp_packet);
+  temp_packet += sizeof(sensor_id);
+  uint16_t packet_len = *((uint16_t*)temp_packet);
+  temp_packet += sizeof(packet_len);
+
+  String csv_row = "";
+
+  uint32_t temp_sensor_id = sensor_id;
+  uint8_t id_offset = 0;
+  for (int i = 0; i < 32; i++) {
+    if (temp_sensor_id & (1 << i)) {
+      id_offset = i;
+    }
+  }
+
+  // millis decode
+  unsigned long r_now = *((unsigned long*)temp_packet);
+  temp_packet += sizeof(r_now);
+  csv_row += String(r_now) + ",";
+
+  int curr_offset = id_offset - 1;
+  while (temp_packet < packet + packet_len) {
+    if (sensor_id & (1 << curr_offset)) {
+      csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
+    } else if (sensors_verify[id_offset - curr_offset - 1]) {
+      csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
+    }
+  }
+
+  return csv_row;
+}
+
+
 #define INTER_PACKET 0
 #if INTER_PACKET
 /**
@@ -301,16 +391,16 @@ String readSensorData() {
   // decode packet (using only packet)
   temp_packet = packet;
 
-  uint32_t r_sync_bytes = *((uint32_t*)temp_packet);
-  temp_packet += sizeof(r_sync_bytes);
-  uint32_t r_sensor_id = *((uint32_t*)temp_packet);
-  temp_packet += sizeof(r_sensor_id);
-  uint16_t r_data_len = *((uint16_t*)temp_packet);
-  temp_packet += sizeof(r_data_len);
+  uint32_t sync_bytes = *((uint32_t*)temp_packet);
+  temp_packet += sizeof(sync_bytes);
+  uint32_t sensor_id = *((uint32_t*)temp_packet);
+  temp_packet += sizeof(sensor_id);
+  uint16_t packet_len = *((uint16_t*)temp_packet);
+  temp_packet += sizeof(packet_len);
 
   String csv_row = "";
 
-  uint32_t temp_sensor_id = r_sensor_id;
+  uint32_t temp_sensor_id = sensor_id;
   uint8_t id_offset = 0;
   for (int i = 0; i < 32; i++) {
     if (temp_sensor_id & (1 << i)) {
@@ -324,8 +414,8 @@ String readSensorData() {
   csv_row += String(r_now) + ",";
 
   int curr_offset = id_offset - 1;
-  while (temp_packet < packet + r_data_len) {
-    if (r_sensor_id & (1 << curr_offset)) {
+  while (temp_packet < packet + packet_len) {
+    if (sensor_id & (1 << curr_offset)) {
       csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
     } else if (sensors_verify[id_offset - curr_offset - 1]) {
       csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
