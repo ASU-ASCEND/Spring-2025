@@ -77,3 +77,48 @@ String BME680Sensor::readData() {
          String(bme.humidity) + "," + String(bme.gas_resistance) + "," +
          String(bme.readAltitude(SEALEVELPRESSURE_HPA)) + ",";
 }
+
+/**
+ * @brief Reads sensor data and appends it to the packet byte array.
+ *
+ * Reads data from the BME680 sensor and appends it to the passed uint8_t array
+ * pointer, incrementing it while doing so. The data includes temperature,
+ * pressure, humidity, gas resistance, and an approximate altitude based on
+ * sea-level pressure.
+ *
+ * @param packet - Pointer to the packet byte array.
+ */
+void BME680Sensor::readDataPacket(uint8_t*& packet) {
+  if (!bme.performReading()) {
+    return;
+  }
+
+  float data[5] = {bme.temperature, bme.pressure / 100.0, bme.humidity,
+                   bme.gas_resistance, bme.readAltitude(SEALEVELPRESSURE_HPA)};
+
+  for (int i = 0; i < 5; i++) {
+    memcpy(packet, &data[i], sizeof(float));
+    packet += sizeof(float);
+  }
+}
+
+/**
+ * @brief Decodes the packet data and returns it in CSV format.
+ *
+ * Decodes the packet data from the BME680 sensor and returns it in CSV format.
+ * The data includes temperature, pressure, humidity, gas resistance, and an
+ * approximate altitude based on sea-level pressure.
+ *
+ * @param packet - Packet to decode.
+ * @return String - A string containing the sensor readings
+ */
+String BME680Sensor::decodeToCSV(uint8_t* packet) {
+  float data[5];
+  for (int i = 0; i < 5; i++) {
+    memcpy(&data[i], packet, sizeof(float));
+    packet += sizeof(float);
+  }
+
+  return String(data[0]) + "," + String(data[1]) + "," + String(data[2]) + "," +
+         String(data[3]) + "," + String(data[4]) + ",";
+}
