@@ -84,12 +84,12 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for SDStorage:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage__inherit__graph.svg" width="160" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage__inherit__graph.svg" width="160" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for SDStorage:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage__coll__graph.svg" width="410" height="452"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage__coll__graph.svg" width="438" height="472"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -103,20 +103,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9450318396c536da92d44d9ebad33ec1" id="r_a9450318396c536da92d44d9ebad33ec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDStorage.html#a9450318396c536da92d44d9ebad33ec1">store</a> (String data)</td></tr>
 <tr class="memdesc:a9450318396c536da92d44d9ebad33ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store data on the SD card, ending with newline.  <br /></td></tr>
 <tr class="separator:a9450318396c536da92d44d9ebad33ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8111600087beeaf8519cfd3248d4426" id="r_ab8111600087beeaf8519cfd3248d4426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDStorage.html#ab8111600087beeaf8519cfd3248d4426">store</a> (uint8_t *packet)</td></tr>
+<tr class="memdesc:ab8111600087beeaf8519cfd3248d4426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store data on the SD card.  <br /></td></tr>
+<tr class="separator:ab8111600087beeaf8519cfd3248d4426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classStorage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classStorage')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classStorage.html">Storage</a></td></tr>
 <tr class="memitem:a2f5803f60b5c3cd8e9c35fc744ab3058 inherit pub_methods_classStorage" id="r_a2f5803f60b5c3cd8e9c35fc744ab3058"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a2f5803f60b5c3cd8e9c35fc744ab3058">Storage</a> (String <a class="el" href="classStorage.html#aff621d72ce660e62f0dbb2f87d835327">storage_name</a>)</td></tr>
 <tr class="separator:a2f5803f60b5c3cd8e9c35fc744ab3058 inherit pub_methods_classStorage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97174b0ffdac8fcddb79652a46b75268 inherit pub_methods_classStorage" id="r_a97174b0ffdac8fcddb79652a46b75268"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a97174b0ffdac8fcddb79652a46b75268">getStorageName</a> () const</td></tr>
 <tr class="memdesc:a97174b0ffdac8fcddb79652a46b75268 inherit pub_methods_classStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the storage device.  <br /></td></tr>
 <tr class="separator:a97174b0ffdac8fcddb79652a46b75268 inherit pub_methods_classStorage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac25dac79a5ed478b978214d63c9bc271 inherit pub_methods_classStorage" id="r_ac25dac79a5ed478b978214d63c9bc271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#ac25dac79a5ed478b978214d63c9bc271">store</a> (uint8_t *packet)</td></tr>
-<tr class="memdesc:ac25dac79a5ed478b978214d63c9bc271 inherit pub_methods_classStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send packet data to storage device.  <br /></td></tr>
-<tr class="separator:ac25dac79a5ed478b978214d63c9bc271 inherit pub_methods_classStorage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76076395916d9e7eda5811aabcc685a inherit pub_methods_classStorage" id="r_ac76076395916d9e7eda5811aabcc685a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#ac76076395916d9e7eda5811aabcc685a">store</a> (uint8_t *packet, int length)</td></tr>
+<tr class="memdesc:ac76076395916d9e7eda5811aabcc685a inherit pub_methods_classStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send packet data to storage device.  <br /></td></tr>
+<tr class="separator:ac76076395916d9e7eda5811aabcc685a inherit pub_methods_classStorage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a940beb3d7849473c7c96a4fe57479c1a" id="r_a940beb3d7849473c7c96a4fe57479c1a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDStorage.html#a940beb3d7849473c7c96a4fe57479c1a">file_name</a></td></tr>
 <tr class="separator:a940beb3d7849473c7c96a4fe57479c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724a20235ee222f0af3fe21d1cefca2c" id="r_a724a20235ee222f0af3fe21d1cefca2c"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDStorage.html#a724a20235ee222f0af3fe21d1cefca2c">bin_file_name</a></td></tr>
+<tr class="separator:a724a20235ee222f0af3fe21d1cefca2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa623d55594db1a3e97bc60169f8aa673" id="r_aa623d55594db1a3e97bc60169f8aa673"><td class="memItemLeft" align="right" valign="top">SPIClassRP2040&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDStorage.html#aa623d55594db1a3e97bc60169f8aa673">sd_spi_1</a></td></tr>
 <tr class="separator:aa623d55594db1a3e97bc60169f8aa673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -144,7 +149,7 @@ Private Attributes</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9450318396c536da92d44d9ebad33ec1" name="a9450318396c536da92d44d9ebad33ec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9450318396c536da92d44d9ebad33ec1">&#9670;&#160;</a></span>store()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9450318396c536da92d44d9ebad33ec1">&#9670;&#160;</a></span>store() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,6 +185,37 @@ Private Attributes</h2></td></tr>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage_a9450318396c536da92d44d9ebad33ec1_cgraph.svg" width="539" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab8111600087beeaf8519cfd3248d4426" name="ab8111600087beeaf8519cfd3248d4426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8111600087beeaf8519cfd3248d4426">&#9670;&#160;</a></span>store() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDStorage::store </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store data on the SD card. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to packet bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage_ab8111600087beeaf8519cfd3248d4426_cgraph.svg" width="539" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -221,12 +257,34 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage_a2a08793ce2cb22bc0675f5cf4916155a_icgraph.svg" width="324" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSDStorage_a2a08793ce2cb22bc0675f5cf4916155a_icgraph.svg" width="324" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a724a20235ee222f0af3fe21d1cefca2c" name="a724a20235ee222f0af3fe21d1cefca2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724a20235ee222f0af3fe21d1cefca2c">&#9670;&#160;</a></span>bin_file_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String SDStorage::bin_file_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a940beb3d7849473c7c96a4fe57479c1a" name="a940beb3d7849473c7c96a4fe57479c1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a940beb3d7849473c7c96a4fe57479c1a">&#9670;&#160;</a></span>file_name</h2>
 
