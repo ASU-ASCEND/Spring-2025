@@ -1,11 +1,11 @@
 <map id="MTK3339Sensor" name="MTK3339Sensor">
-<area shape="rect" id="Node000001" title="Implementation of the Adafruit MTK3339 GPS sensor." alt="" coords="141,491,285,616"/>
+<area shape="rect" id="Node000001" title="Implementation of the Adafruit MTK3339 GPS sensor." alt="" coords="141,491,285,656"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="43,163,220,428"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,440,196,490,190,491,175,442"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,440,191,490,186,491,171,442"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,71,58,104,62,138,64,146,59,147,57,139,52,104,52,71"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="180,5,232,71"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="199,72,177,148,172,146,194,70"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="245,263,343,328"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="286,329,240,476,235,474,281,328"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="287,329,244,476,239,474,282,327"/>
 </map>

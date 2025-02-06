@@ -85,7 +85,6 @@ String MTK3339Sensor::readData() {
   return "-,-,-,-,-,-,-,";
 }
 
-
 /**
  * @brief Appends the MTK3339 sensor data to the packet buffer as raw bytes.
  *
@@ -100,7 +99,8 @@ String MTK3339Sensor::readData() {
  *
  * If no valid fix is available, default value (0) is appended for all fields.
  *
- * @param packet Pointer to the packet byte array. This pointer is incremented as each value is copied.
+ * @param packet Pointer to the packet byte array. This pointer is incremented
+ * as each value is copied.
  */
 void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
   if (GPS.fix) {
@@ -163,11 +163,14 @@ void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
 }
 
 /**
- * @brief Decodes the MTK3339 sensor data from the packet buffer into a CSV string.
+ * @brief Decodes the MTK3339 sensor data from the packet buffer into a CSV
+ * string.
  *
- * The data are read in the same order they were written and  reconstructed as a string "day/month/year" and the remaining fields are appended as CSV values.
+ * The data are read in the same order they were written and  reconstructed as a
+ * string "day/month/year" and the remaining fields are appended as CSV values.
  *
- * @param packet Pointer to the packet byte array and this packet pointer is incremented.
+ * @param packet Pointer to the packet byte array and this packet pointer is
+ * incremented.
  * @return String The decoded sensor data in CSV format.
  */
 String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
@@ -179,7 +182,8 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   uint16_t year = *((uint16_t*)packet);
   packet += sizeof(uint16_t);
 
-  // Decode values: latitude, longitude, speed, angle, altitude. And then decode number of satellites.
+  // Decode values: latitude, longitude, speed, angle, altitude. And then decode
+  // number of satellites.
   float lat = *((float*)packet);
   packet += sizeof(float);
   float lon = *((float*)packet);
@@ -195,12 +199,8 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
 
   // Construct the CSV string
   String dateStr = String(day) + "/ " + String(month) + "/ " + String(year);
-  String csv = dateStr + "," +
-               String(lat) + "," +
-               String(lon) + "," +
-               String(speed) + "," +
-               String(angle) + "," +
-               String(alt) + "," +
+  String csv = dateStr + "," + String(lat) + "," + String(lon) + "," +
+               String(speed) + "," + String(angle) + "," + String(alt) + "," +
                String(sats) + ",";
   return csv;
 }

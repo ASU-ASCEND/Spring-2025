@@ -73,10 +73,11 @@ String ICM20948Sensor::readData() {
 
 /**
  * @brief Append the ICM sensor data to the packet buffer as raw bytes.
- * The data appended is: accel.x, accel.y, accel.z, gyro.x, gyro.y, gyro.z, 
+ * The data appended is: accel.x, accel.y, accel.z, gyro.x, gyro.y, gyro.z,
  * mag.x, mag.y, mag.z, and temperature.
  *
- * @param packet Pointer to the packet byte array which is incremented after copying each value.
+ * @param packet Pointer to the packet byte array which is incremented after
+ * copying each value.
  */
 void ICM20948Sensor::readDataPacket(uint8_t*& packet) {
   sensors_event_t accel, gyro, temp, mag;
@@ -86,7 +87,8 @@ void ICM20948Sensor::readDataPacket(uint8_t*& packet) {
   this->icm_mag->getEvent(&mag);
   this->icm_temp->getEvent(&temp);
   /**
-   * @brief The following is copying the values of the accelerometer(x,y,z), gyroscope(x,y,z), magnetometer(x,y,z), and temperature
+   * @brief The following is copying the values of the accelerometer(x,y,z),
+   * gyroscope(x,y,z), magnetometer(x,y,z), and temperature
    */
   memcpy(packet, &accel.acceleration.x, sizeof(accel.acceleration.x));
   packet += sizeof(accel.acceleration.x);
@@ -115,13 +117,16 @@ void ICM20948Sensor::readDataPacket(uint8_t*& packet) {
 
 /**
  * @brief Decodes the ICM sensor data from the packet buffer into a CSV string.
- * Reads the data in the same order as it was appended and increments the packet pointer.
+ * Reads the data in the same order as it was appended and increments the packet
+ * pointer.
  *
- * @param packet Pointer to the packet byte array which is incremented after extracting each value.
+ * @param packet Pointer to the packet byte array which is incremented after
+ * extracting each value.
  * @return String A CSV string of the sensor data.
  */
 String ICM20948Sensor::decodeToCSV(uint8_t*& packet) {
-  // Read values from the packet buffer by casting the pointer to a float pointer and dereferencing
+  // Read values from the packet buffer by casting the pointer to a float
+  // pointer and dereferencing
   float accX = *((float*)packet);
   packet += sizeof(float);
   float accY = *((float*)packet);
@@ -147,14 +152,8 @@ String ICM20948Sensor::decodeToCSV(uint8_t*& packet) {
   packet += sizeof(float);
 
   // Format the extracted values into a CSV string
-  return String(accX) + "," +
-         String(accY) + "," +
-         String(accZ) + "," +
-         String(gyroX) + "," +
-         String(gyroY) + "," +
-         String(gyroZ) + "," +
-         String(magX) + "," +
-         String(magY) + "," +
-         String(magZ) + "," +
+  return String(accX) + "," + String(accY) + "," + String(accZ) + "," +
+         String(gyroX) + "," + String(gyroY) + "," + String(gyroZ) + "," +
+         String(magX) + "," + String(magY) + "," + String(magZ) + "," +
          String(tempC) + ",";
 }
