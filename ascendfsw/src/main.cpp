@@ -21,7 +21,7 @@
 #include "PCF8523Sensor.h"
 #include "SGP30Sensor.h"
 #include "TempSensor.h"
-#include "DS3231Sensor.h"
+// #include "DS3231Sensor.h"
 
 // helper function definitions
 int verifySensors();
@@ -46,7 +46,7 @@ AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
 MTK3339Sensor   gps_sensor        (5000);
 ICM20948Sensor  icm_sensor        (20);
 PCF8523Sensor   rtc_sensor        (1000);
-DS3231Sensor    rtc_backup_sensor (1000);
+// DS3231Sensor    rtc_backup_sensor (1000);
 // clang-format on
 
 // sensor array
@@ -159,30 +159,6 @@ void setup() {
 
   pinMode(ON_BOARD_LED_PIN, OUTPUT);
   log_core("Setup done.");
-
-  uint8_t buf[100];
-  uint8_t* packet = buf;
-
-  uv_sensor_1.readDataPacket(packet);
-
-  packet = buf;
-
-  String test_output = uv_sensor_1.decodeToCSV(packet);
-  log_core("TEST: \n" + test_output);
-  
-  while(1);
-
-  uint8_t buf2[100];
-  uint8_t* packet2 = buf2;
-
-  rtc_backup_sensor.readDataPacket(packet2);
-
-  packet2 = buf2;
-
-  String new_test_output = rtc_backup_sensor.decodeToCSV(packet2);
-  log_core("DS TEST: \n" + new_test_output);
-
-  while(1);
 }
 
 bool was_dumping = false;
