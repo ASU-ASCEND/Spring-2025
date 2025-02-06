@@ -5,6 +5,11 @@
 
 #include "Sensor.h"
 
+/**
+ * @brief Implementation of the PCF8523 sensor
+ * 
+*/
+
 class PCF8523Sensor : public Sensor {
  private:
   RTC_PCF8523 rtc;
@@ -12,6 +17,7 @@ class PCF8523Sensor : public Sensor {
  public:
   PCF8523Sensor();
   PCF8523Sensor(unsigned long minimum_period);
+  
   bool verify();
   String readData();
   void calibrate();
