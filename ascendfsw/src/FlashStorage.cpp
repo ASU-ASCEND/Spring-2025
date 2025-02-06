@@ -1,14 +1,18 @@
 #include "FlashStorage.h"
 
 /**
- * @brief Construct a new Flash Storage:: Flash Storage object
+ * @brief Constructs a new FlashStorage object.
  *
+ * Initializes the internal write position to 0 and sets the storage name to
+ * "Flash Storage."
  */
 FlashStorage::FlashStorage() : position(0), Storage("Flash Storage") {}
 
 /**
- * @brief Read position from flash
+ * @brief Locates the next available write position in flash.
  *
+ * Reads bytes from flash starting at the current position and increments
+ * through memory until finding a free (0xFF) location or reaching the max size.
  */
 void FlashStorage::loadPosition() {
   uint8_t currentByte = this->flash.readByte(this->position);
@@ -20,10 +24,14 @@ void FlashStorage::loadPosition() {
 }
 
 /**
- * @brief Verify flash memory connection and create a new file
+ * @brief Verifies the flash connection and prepares for data storage.
  *
- * @return true
- * @return false
+ * Attempts to initialize the flash memory. If successful, resets the internal
+ * write position to 0, locates the next free position, and returns true.
+ * Returns false otherwise.
+ *
+ * @return true  - Flash initialization is successful
+ * @return false - Flash initialization failed
  */
 bool FlashStorage::verify() {
   // #if SD_SPI1
@@ -55,9 +63,12 @@ bool FlashStorage::verify() {
 }
 
 /**
- * @brief Store data on flash
+ * @brief Stores a string in flash memory, appending a newline at the end.
  *
- * @param data
+ * Iterates through each character of the string and writes it to flash. The
+ * internal write position is then advanced accordingly.
+ *
+ * @param data - The string to be stored in flash.
  */
 void FlashStorage::store(String data) {
   data = data + "\n";
@@ -74,6 +85,38 @@ void FlashStorage::store(String data) {
   this->flash.blockingBusyWait();
 }
 
+/**
+ * @brief Stores a packet of bytes in flash memory.
+ *
+ * Iterates through each byte of the packet and writes it to flash. Takes into 
+ * account initial header bytes, consisting of sync(4), presence(4), and length fields(2).
+ *
+ * @param packet - Pointer to the byte array containing the packet.
+ */
+void FlashStorage::store(uint8_t* packet) {
+  // -- 4 bytes (sync) -- 4 bytes (presence) -- 2 bytes (length) -- data...
+  uint16_t packet_len = *((uint16_t*)(packet + 4 + 4));
+  uint16_t packet_header = 4 + 4 + 2; // 10 bytes (sync, presence, length)
+
+  // Iterate through packet and write to flash
+  for (uint16_t i = 0; i < packet_len; i++) {
+    this->flash.writeByte(this->position, packet[packet_header + i]); 
+    ++this->position;
+    this->flash.blockingBusyWait();
+  }
+
+  // Log the number of bytes written
+  log_core("Writing " + String(packet_len) + " bytes at " + String(this->position));
+  this->flash.blockingBusyWait();
+}
+
+/**
+ * @brief Dumps the contents of flash memory to the serial monitor.
+ *
+ * Reads each byte of flash memory starting from the beginning and prints it to
+ * the serial monitor. The process continues until the end of the memory or the
+ * end code (0xFF) is reached.
+ */
 void FlashStorage::dump() {
   log_core("\nStarting data transfer: ");
   log_core("Position is at " + String(this->position));
@@ -90,6 +133,12 @@ void FlashStorage::dump() {
   }
 }
 
+/**
+ * @brief Erases all data stored in flash memory.
+ *
+ * Erases all data stored in flash memory by calling the flash erase function
+ * and resetting the internal write position to 0.
+ */
 void FlashStorage::erase() {
   this->flash.erase();
   this->position = 0;
