@@ -19,6 +19,8 @@ class PCF8523Sensor : public Sensor {
   PCF8523Sensor(unsigned long minimum_period);
   
   bool verify();
+  String decodeToCSV();
+  void readDataPacket();
   String readData();
   void calibrate();
 };
