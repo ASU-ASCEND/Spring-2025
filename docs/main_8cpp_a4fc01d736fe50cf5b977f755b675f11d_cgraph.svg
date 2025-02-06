@@ -102,7 +102,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" target="_top" xlink:title="Store data on flash.">
+<g id="a_Node000006"><a xlink:href="classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" target="_top" xlink:title="Stores a string in flash memory, appending a newline at the end.">
 <polygon fill="white" stroke="#666666" points="215,-167 104,-167 104,-148 215,-148 215,-167"/>
 <text text-anchor="middle" x="159.5" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::store</text>
 </a>
@@ -138,7 +138,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" target="_top" xlink:title="Verify flash memory connection and create a new file.">
+<g id="a_Node000008"><a xlink:href="classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" target="_top" xlink:title="Verifies the flash connection and prepares for data storage.">
 <polygon fill="white" stroke="#666666" points="216.5,-93 102.5,-93 102.5,-74 216.5,-74 216.5,-93"/>
 <text text-anchor="middle" x="159.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::verify</text>
 </a>
@@ -192,7 +192,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255" target="_top" xlink:title="Read position from flash.">
+<g id="a_Node000009"><a xlink:href="classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255" target="_top" xlink:title="Locates the next available write position in flash.">
 <polygon fill="white" stroke="#666666" points="421,-93 275,-93 275,-74 421,-74 421,-93"/>
 <text text-anchor="middle" x="348" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::loadPosition</text>
 </a>
