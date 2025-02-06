@@ -1,11 +1,11 @@
 <map id="DS3231Sensor" name="DS3231Sensor">
-<area shape="rect" id="Node000001" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="185,491,318,636"/>
+<area shape="rect" id="Node000001" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="181,491,322,676"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="43,163,220,428"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,440,221,489,217,492,194,442"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,439,215,489,210,491,189,441"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,71,58,104,62,138,64,146,59,147,57,139,52,104,52,71"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="180,5,232,71"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="199,72,177,148,172,146,194,70"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="244,263,339,328"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="289,329,267,475,262,474,284,328"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="290,329,269,475,264,474,284,328"/>
 </map>
