@@ -1,12 +1,12 @@
 <map id="loop" name="loop">
 <area shape="rect" id="Node000001" title="Loop for core 0, handling sensor reads." alt="" coords="5,104,56,129"/>
-<area shape="rect" id="Node000002" href="$classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727" title=" " alt="" coords="111,5,261,31"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727" title="Erases all data stored in flash memory." alt="" coords="111,5,261,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="39,102,65,71,103,40,114,34,117,38,105,44,69,75,43,105"/>
 <area shape="rect" id="Node000003" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="104,55,268,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="56,105,103,89,127,81,128,87,105,94,57,110"/>
 <area shape="rect" id="Node000004" href="$main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b" title="Read data from each verified Sensor." alt="" coords="123,104,249,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="56,114,109,114,109,119,56,119"/>
-<area shape="rect" id="Node000008" href="$classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" title="Store data on flash." alt="" coords="112,153,260,179"/>
+<area shape="rect" id="Node000008" href="$classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" title="Stores a string in flash memory, appending a newline at the end." alt="" coords="112,153,260,179"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="57,122,105,138,132,147,130,152,103,143,56,128"/>
 <area shape="rect" id="Node000009" href="$classErrorDisplay.html#a493bde338b369414abffe90e0d49e93b" title="Toggles the level of the error display." alt="" coords="111,203,261,228"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="43,128,69,158,105,188,120,195,117,200,103,192,66,162,39,131"/>

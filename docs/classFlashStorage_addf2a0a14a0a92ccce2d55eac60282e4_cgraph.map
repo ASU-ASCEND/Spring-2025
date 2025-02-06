@@ -1,5 +1,5 @@
 <map id="FlashStorage::verify" name="FlashStorage::verify">
-<area shape="rect" id="Node000001" title="Verify flash memory connection and create a new file." alt="" coords="5,5,157,31"/>
-<area shape="rect" id="Node000002" href="$classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255" title="Read position from flash." alt="" coords="205,5,400,31"/>
+<area shape="rect" id="Node000001" title="Verifies the flash connection and prepares for data storage." alt="" coords="5,5,157,31"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255" title="Locates the next available write position in flash." alt="" coords="205,5,400,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,15,192,15,192,21,158,21"/>
 </map>

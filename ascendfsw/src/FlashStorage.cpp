@@ -88,25 +88,27 @@ void FlashStorage::store(String data) {
 /**
  * @brief Stores a packet of bytes in flash memory.
  *
- * Iterates through each byte of the packet and writes it to flash. Takes into 
- * account initial header bytes, consisting of sync(4), presence(4), and length fields(2).
+ * Iterates through each byte of the packet and writes it to flash. Takes into
+ * account initial header bytes, consisting of sync(4), presence(4), and length
+ * fields(2).
  *
  * @param packet - Pointer to the byte array containing the packet.
  */
 void FlashStorage::store(uint8_t* packet) {
   // -- 4 bytes (sync) -- 4 bytes (presence) -- 2 bytes (length) -- data...
   uint16_t packet_len = *((uint16_t*)(packet + 4 + 4));
-  uint16_t packet_header = 4 + 4 + 2; // 10 bytes (sync, presence, length)
+  uint16_t packet_header = 4 + 4 + 2;  // 10 bytes (sync, presence, length)
 
   // Iterate through packet and write to flash
   for (uint16_t i = 0; i < packet_len; i++) {
-    this->flash.writeByte(this->position, packet[packet_header + i]); 
+    this->flash.writeByte(this->position, packet[packet_header + i]);
     ++this->position;
     this->flash.blockingBusyWait();
   }
 
   // Log the number of bytes written
-  log_core("Writing " + String(packet_len) + " bytes at " + String(this->position));
+  log_core("Writing " + String(packet_len) + " bytes at " +
+           String(this->position));
   this->flash.blockingBusyWait();
 }
 

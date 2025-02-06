@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727" target="_top" xlink:title="Erases all data stored in flash memory.">
 <polygon fill="white" stroke="#666666" points="192,-167 79,-167 79,-148 192,-148 192,-167"/>
 <text text-anchor="middle" x="135.5" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::erase</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" target="_top" xlink:title="Store data on flash.">
+<g id="a_Node000008"><a xlink:href="classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" target="_top" xlink:title="Stores a string in flash memory, appending a newline at the end.">
 <polygon fill="white" stroke="#666666" points="191,-56 80,-56 80,-37 191,-37 191,-56"/>
 <text text-anchor="middle" x="135.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::store</text>
 </a>
