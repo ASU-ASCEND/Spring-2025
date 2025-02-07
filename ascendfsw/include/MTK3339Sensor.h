@@ -24,6 +24,8 @@ class MTK3339Sensor : public Sensor {
 
   bool verify() override;
   String readData() override;
+  void readDataPacket(uint8_t*& packet);
+  String decodeToCSV(uint8_t*& packet);
 };
 
 #endif

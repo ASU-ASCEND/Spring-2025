@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Verify flash memory connection and create a new file.">
+<g id="a_Node000001"><a xlink:title="Verifies the flash connection and prepares for data storage.">
 <polygon fill="#999999" stroke="#666666" points="114,-19 0,-19 0,0 114,0 114,-19"/>
 <text text-anchor="middle" x="57" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::verify</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255" target="_top" xlink:title="Read position from flash.">
+<g id="a_Node000002"><a xlink:href="classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255" target="_top" xlink:title="Locates the next available write position in flash.">
 <polygon fill="white" stroke="#666666" points="296,-19 150,-19 150,0 296,0 296,-19"/>
 <text text-anchor="middle" x="223" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::loadPosition</text>
 </a>

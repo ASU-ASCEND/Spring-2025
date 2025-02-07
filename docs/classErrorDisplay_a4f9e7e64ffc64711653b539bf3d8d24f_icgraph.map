@@ -1,12 +1,15 @@
 <map id="ErrorDisplay::instance" name="ErrorDisplay::instance">
-<area shape="rect" id="Node000001" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="367,80,531,105"/>
+<area shape="rect" id="Node000001" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="367,105,531,131"/>
 <area shape="rect" id="Node000002" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="226,5,277,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="402,77,318,44,276,29,278,24,320,40,404,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="415,100,370,72,318,44,276,28,278,23,320,40,373,68,418,96"/>
 <area shape="rect" id="Node000003" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup for core 0." alt="" coords="222,55,281,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="353,83,280,74,281,68,353,78"/>
-<area shape="rect" id="Node000004" href="$classSDStorage.html#a9450318396c536da92d44d9ebad33ec1" title="Store data on the SD card, ending with newline." alt="" coords="5,131,136,156"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,108,136,137,136,132,353,103"/>
-<area shape="rect" id="Node000005" href="$classSDStorage.html#a2a08793ce2cb22bc0675f5cf4916155a" title="Verify SD card connection and create a new, unique file." alt="" coords="184,156,319,181"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="403,113,286,158,284,153,401,108"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="170,160,136,155,137,150,171,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="384,104,280,77,281,72,386,99"/>
+<area shape="rect" id="Node000004" href="$classSDStorage.html#a9450318396c536da92d44d9ebad33ec1" title="Store data on the SD card, ending with newline." alt="" coords="5,132,136,157"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,127,136,143,136,137,352,122"/>
+<area shape="rect" id="Node000005" href="$classSDStorage.html#ab8111600087beeaf8519cfd3248d4426" title="Store data on the SD card." alt="" coords="5,181,136,207"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="423,141,377,172,349,186,319,197,272,206,224,209,136,206,136,200,224,204,271,200,318,191,347,181,374,167,420,137"/>
+<area shape="rect" id="Node000006" href="$classSDStorage.html#a2a08793ce2cb22bc0675f5cf4916155a" title="Verify SD card connection and create a new, unique file." alt="" coords="184,156,319,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="386,137,302,159,301,153,385,132"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="170,161,136,156,137,151,171,155"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="171,183,137,187,136,182,170,177"/>
 </map>

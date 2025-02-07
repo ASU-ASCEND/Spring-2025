@@ -18,7 +18,7 @@ class DS3231Sensor : public Sensor {
   DS3231Sensor(unsigned long minimum_period);
 
   bool verify() override;
-  //String readData() override;
+  // String readData() override;
   void readDataPacket(uint8_t*& packet);
   String decodeToCSV(uint8_t*& packet);
   String readData() override;

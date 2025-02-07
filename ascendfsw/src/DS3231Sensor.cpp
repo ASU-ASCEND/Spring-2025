@@ -31,7 +31,7 @@ DS3231Sensor::DS3231Sensor(unsigned long minimum_period)
 bool DS3231Sensor::verify() { return rtc.begin(); }
 
 /**
- * @brief Reads timestamp data from RTC (plus temperature)
+ * @brief Decodes a packet into a CSV string
  *
  * @param packet The data packet to write to.
  */
@@ -58,7 +58,6 @@ void DS3231Sensor::readDataPacket(uint8_t*& packet) {
   std::copy((uint8_t*)(&temperature), (uint8_t*)(&temperature) + sizeof(temperature), packet);
   packet += sizeof(temperature);
 }
-
 
 /** 
  * @brief Decodes a packet into a CSV string
@@ -87,6 +86,23 @@ String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
  * @brief Reads timestamp data from RTC (plus temperature)
  *
  */
+String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
+  uint16_t year = *((uint16_t*)packet);
+  packet += sizeof(year);
+  uint8_t month = *packet++;
+  uint8_t day = *packet++;
+  uint8_t hour = *packet++;
+  uint8_t minute = *packet++;
+  uint8_t second = *packet++;
+
+  float temperature = *((float*)packet);
+  packet += sizeof(temperature);
+
+  return String(year) + "/" + String(month) + "/" + String(day) + " " +
+         String(hour) + ":" + String(minute) + ":" + String(second) + "," +
+         String(temperature) + ",";
+}
+
 String DS3231Sensor::readData() {
   DateTime now = rtc.now();
 

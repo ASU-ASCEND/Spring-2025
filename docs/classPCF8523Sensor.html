@@ -77,11 +77,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Implementation of the PCF8523 sensor.  
+ <a href="classPCF8523Sensor.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="PCF8523Sensor_8h_source.html">PCF8523Sensor.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for PCF8523Sensor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPCF8523Sensor__inherit__graph.svg" width="188" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPCF8523Sensor__inherit__graph.svg" width="188" height="590"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for PCF8523Sensor:</div>
@@ -98,6 +101,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e92adcd961a0dc27455e394847596d3" id="r_a3e92adcd961a0dc27455e394847596d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPCF8523Sensor.html#a3e92adcd961a0dc27455e394847596d3">verify</a> ()</td></tr>
 <tr class="memdesc:a3e92adcd961a0dc27455e394847596d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies if the sensor is connected and working.  <br /></td></tr>
 <tr class="separator:a3e92adcd961a0dc27455e394847596d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76aa327e949f84ca92d4cc5cf635c388" id="r_a76aa327e949f84ca92d4cc5cf635c388"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPCF8523Sensor.html#a76aa327e949f84ca92d4cc5cf635c388">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:a76aa327e949f84ca92d4cc5cf635c388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode the packet data and returns it in CSV format.  <br /></td></tr>
+<tr class="separator:a76aa327e949f84ca92d4cc5cf635c388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92a2f7e255bb700ed037394711cd8c47" id="r_a92a2f7e255bb700ed037394711cd8c47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPCF8523Sensor.html#a92a2f7e255bb700ed037394711cd8c47">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:a92a2f7e255bb700ed037394711cd8c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sensor data and appends it to the packet byte array.  <br /></td></tr>
+<tr class="separator:a92a2f7e255bb700ed037394711cd8c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11facaadc7eb4ea1ff1965d7db80f224" id="r_a11facaadc7eb4ea1ff1965d7db80f224"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPCF8523Sensor.html#a11facaadc7eb4ea1ff1965d7db80f224">readData</a> ()</td></tr>
 <tr class="memdesc:a11facaadc7eb4ea1ff1965d7db80f224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the collected data from the sensor in CSV format.  <br /></td></tr>
 <tr class="separator:a11facaadc7eb4ea1ff1965d7db80f224"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,7 +162,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a4b8554bc0b84da8c6429d8a201d5bd90" id="r_a4b8554bc0b84da8c6429d8a201d5bd90"><td class="memItemLeft" align="right" valign="top">RTC_PCF8523&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPCF8523Sensor.html#a4b8554bc0b84da8c6429d8a201d5bd90">rtc</a></td></tr>
 <tr class="separator:a4b8554bc0b84da8c6429d8a201d5bd90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the PCF8523 sensor. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0b4ee84247f99ecdc97c6207cd4c7165" name="a0b4ee84247f99ecdc97c6207cd4c7165"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b4ee84247f99ecdc97c6207cd4c7165">&#9670;&#160;</a></span>PCF8523Sensor() <span class="overload">[1/2]</span></h2>
 
@@ -207,6 +218,34 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a76aa327e949f84ca92d4cc5cf635c388" name="a76aa327e949f84ca92d4cc5cf635c388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76aa327e949f84ca92d4cc5cf635c388">&#9670;&#160;</a></span>decodeToCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String PCF8523Sensor::decodeToCSV </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode the packet data and returns it in CSV format. </p>
+<p>Decodes the packet data from the PCF8523 sesor and returns it in CSV format. The data includes date and time.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>- Packet to decode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String - A String containing the sensor readings </dd></dl>
+
+</div>
+</div>
 <a id="a11facaadc7eb4ea1ff1965d7db80f224" name="a11facaadc7eb4ea1ff1965d7db80f224"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11facaadc7eb4ea1ff1965d7db80f224">&#9670;&#160;</a></span>readData()</h2>
 
@@ -234,6 +273,33 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
 <p>Implements <a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8">Sensor</a>.</p>
+
+</div>
+</div>
+<a id="a92a2f7e255bb700ed037394711cd8c47" name="a92a2f7e255bb700ed037394711cd8c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92a2f7e255bb700ed037394711cd8c47">&#9670;&#160;</a></span>readDataPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCF8523Sensor::readDataPacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads sensor data and appends it to the packet byte array. </p>
+<p>Reads data from the PCF8523 sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so. The data includes Year, Month, Day, Hour, Minutes, Seconds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>- Pointer to the packet byte array. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

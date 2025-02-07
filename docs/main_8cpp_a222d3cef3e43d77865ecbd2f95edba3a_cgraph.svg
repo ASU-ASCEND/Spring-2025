@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classFlashStorage.html#afffc9c3ffc2886608f7ebef3420a6069" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="classFlashStorage.html#afffc9c3ffc2886608f7ebef3420a6069" target="_top" xlink:title="Dumps the contents of flash memory to the serial monitor.">
 <polygon fill="white" stroke="#666666" points="266,-19 152,-19 152,0 266,0 266,-19"/>
 <text text-anchor="middle" x="209" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage::dump</text>
 </a>
