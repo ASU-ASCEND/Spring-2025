@@ -18,8 +18,8 @@
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1065,311,1127,397,1139,414,1134,417,1122,400,1061,314"/>
 <area shape="rect" id="Node000010" href="$classMTK3339Sensor.html" title="Implementation of the Adafruit MTK3339 GPS sensor." alt="" coords="1305,439,1449,604"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1068,231,1181,304,1240,348,1295,397,1328,437,1324,440,1291,401,1237,352,1178,308,1065,236"/>
-<area shape="rect" id="Node000011" href="$classPCF8523Sensor.html" title=" " alt="" coords="1473,449,1613,594"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1069,204,1159,234,1262,275,1366,330,1416,361,1462,397,1486,420,1506,447,1502,450,1482,424,1459,401,1413,366,1363,334,1259,280,1157,239,1067,209"/>
+<area shape="rect" id="Node000011" href="$classPCF8523Sensor.html" title="Implementation of the PCF8523 sensor." alt="" coords="1473,429,1614,614"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1069,204,1159,234,1262,275,1366,330,1416,361,1462,397,1491,427,1487,430,1459,401,1413,366,1363,334,1259,280,1157,239,1067,209"/>
 <area shape="rect" id="Node000012" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="1638,459,1763,584"/>
 <area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1069,189,1191,211,1337,250,1414,278,1489,311,1561,350,1628,397,1655,425,1676,457,1671,460,1651,428,1624,401,1558,355,1487,316,1412,283,1336,256,1190,216,1068,194"/>
 <area shape="rect" id="Node000013" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="1787,439,1929,604"/>

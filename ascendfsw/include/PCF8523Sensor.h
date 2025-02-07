@@ -7,8 +7,8 @@
 
 /**
  * @brief Implementation of the PCF8523 sensor
- * 
-*/
+ *
+ */
 
 class PCF8523Sensor : public Sensor {
  private:
@@ -17,7 +17,7 @@ class PCF8523Sensor : public Sensor {
  public:
   PCF8523Sensor();
   PCF8523Sensor(unsigned long minimum_period);
-  
+
   bool verify();
   String decodeToCSV(uint8_t*& packet);
   void readDataPacket(uint8_t*& packet);
