@@ -70,3 +70,90 @@ String ICM20948Sensor::readData() {
          String(mag.magnetic.x) + "," + String(mag.magnetic.y) + "," +
          String(mag.magnetic.z) + "," + String(temp.temperature) + ",";
 }
+
+/**
+ * @brief Append the ICM sensor data to the packet buffer as raw bytes.
+ * The data appended is: accel.x, accel.y, accel.z, gyro.x, gyro.y, gyro.z,
+ * mag.x, mag.y, mag.z, and temperature.
+ *
+ * @param packet Pointer to the packet byte array which is incremented after
+ * copying each value.
+ */
+void ICM20948Sensor::readDataPacket(uint8_t*& packet) {
+  sensors_event_t accel, gyro, temp, mag;
+  // Obtain sensor data from each sensor
+  this->icm_accel->getEvent(&accel);
+  this->icm_gyro->getEvent(&gyro);
+  this->icm_mag->getEvent(&mag);
+  this->icm_temp->getEvent(&temp);
+  /**
+   * @brief The following is copying the values of the accelerometer(x,y,z),
+   * gyroscope(x,y,z), magnetometer(x,y,z), and temperature
+   */
+  memcpy(packet, &accel.acceleration.x, sizeof(accel.acceleration.x));
+  packet += sizeof(accel.acceleration.x);
+  memcpy(packet, &accel.acceleration.y, sizeof(accel.acceleration.y));
+  packet += sizeof(accel.acceleration.y);
+  memcpy(packet, &accel.acceleration.z, sizeof(accel.acceleration.z));
+  packet += sizeof(accel.acceleration.z);
+
+  memcpy(packet, &gyro.gyro.x, sizeof(gyro.gyro.x));
+  packet += sizeof(gyro.gyro.x);
+  memcpy(packet, &gyro.gyro.y, sizeof(gyro.gyro.y));
+  packet += sizeof(gyro.gyro.y);
+  memcpy(packet, &gyro.gyro.z, sizeof(gyro.gyro.z));
+  packet += sizeof(gyro.gyro.z);
+
+  memcpy(packet, &mag.magnetic.x, sizeof(mag.magnetic.x));
+  packet += sizeof(mag.magnetic.x);
+  memcpy(packet, &mag.magnetic.y, sizeof(mag.magnetic.y));
+  packet += sizeof(mag.magnetic.y);
+  memcpy(packet, &mag.magnetic.z, sizeof(mag.magnetic.z));
+  packet += sizeof(mag.magnetic.z);
+
+  memcpy(packet, &temp.temperature, sizeof(temp.temperature));
+  packet += sizeof(temp.temperature);
+}
+
+/**
+ * @brief Decodes the ICM sensor data from the packet buffer into a CSV string.
+ * Reads the data in the same order as it was appended and increments the packet
+ * pointer.
+ *
+ * @param packet Pointer to the packet byte array which is incremented after
+ * extracting each value.
+ * @return String A CSV string of the sensor data.
+ */
+String ICM20948Sensor::decodeToCSV(uint8_t*& packet) {
+  // Read values from the packet buffer by casting the pointer to a float
+  // pointer and dereferencing
+  float accX = *((float*)packet);
+  packet += sizeof(float);
+  float accY = *((float*)packet);
+  packet += sizeof(float);
+  float accZ = *((float*)packet);
+  packet += sizeof(float);
+
+  float gyroX = *((float*)packet);
+  packet += sizeof(float);
+  float gyroY = *((float*)packet);
+  packet += sizeof(float);
+  float gyroZ = *((float*)packet);
+  packet += sizeof(float);
+
+  float magX = *((float*)packet);
+  packet += sizeof(float);
+  float magY = *((float*)packet);
+  packet += sizeof(float);
+  float magZ = *((float*)packet);
+  packet += sizeof(float);
+
+  float tempC = *((float*)packet);
+  packet += sizeof(float);
+
+  // Format the extracted values into a CSV string
+  return String(accX) + "," + String(accY) + "," + String(accZ) + "," +
+         String(gyroX) + "," + String(gyroY) + "," + String(gyroZ) + "," +
+         String(magX) + "," + String(magY) + "," + String(magZ) + "," +
+         String(tempC) + ",";
+}

@@ -24,6 +24,8 @@ class ICM20948Sensor : public Sensor {
   ICM20948Sensor(unsigned long minimum_period);
   bool verify() override;
   String readData() override;
+  void readDataPacket(uint8_t*& packet);
+  String decodeToCSV(uint8_t*& packet);
 };
 
 #endif
