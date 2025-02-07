@@ -40,12 +40,16 @@ void PCF8523Sensor::readDataPacket(uint8_t*& packet){
 
   DateTime now = rtc.now();
 
-  float data[6] = {now.year(), now.month(), now.day(), now.hour(), now.minute() //float or int?
-                   now.second()}
+  uint16_t year = now.year();
+  uint8_t data[5] = { now.month(), now.day(), now.hour(), now.minute(), //float or int?
+                   now.second()};
   
-  for(int i = 0: i < 6; i++){
-    memcpy(packet, &data[i], sizeof(float)); //Float or int?
-    packet += sizeof(float);
+  memcpy(packet, &year, sizeof(uint16_t));
+  packet += sizeof(uint16_t);
+
+  for(int i = 0; i < 5; i++){
+    memcpy(packet, &data[i], sizeof(uint8_t)); //Float or int?
+    packet += sizeof(uint8_t);
   }
 }
 
@@ -58,13 +62,15 @@ void PCF8523Sensor::readDataPacket(uint8_t*& packet){
  * @param packet - Packet to decode
  * @return String - A String containing the sensor readings
  */
-String PCF8523Sensor::decodeToCSV(uint8_t* packet){
-  float data[6];
-  for (int i = 0; i < 6; i++) {
-    memcpy(&data[i], packet, sizeof(float));
-    packet += sizeof(float);
+String PCF8523Sensor::decodeToCSV(uint8_t*& packet){
+  uint16_t year = *((uint16_t*)packet);
+  
+  float data[5];
+  for (int i = 0; i < 5; i++) {
+    memcpy(&data[i], packet, sizeof(uint8_t));
+    packet += sizeof(uint8_t);
   }
 
-  return String(data[0]) + "," + String(data[1]) + "," + String(data[2]) + "," +
+  return String(year) + "," + String(data[0]) + "," + String(data[1]) + "," + String(data[2]) + "," +
          String(data[3]) + "," + String(data[4]) + ",";
 }
