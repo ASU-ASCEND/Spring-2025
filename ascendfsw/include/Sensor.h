@@ -22,7 +22,7 @@ class Sensor {
     this->csv_header = csv_header;
     this->empty_csv = "";
     for (size_t i = 0; i < csv_header.length(); i++) {
-      this->empty_csv += "-,";
+      if(csv_header[i] == ',') this->empty_csv += "-,";
     }
   }
 
