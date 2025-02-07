@@ -118,7 +118,7 @@ class Sensor {
    * @param packet Pointer to the packet byte array
    * @return int The number of bytes appended
    */
-  void readDataPacket(uint8_t*& packet) {};
+  virtual void readDataPacket(uint8_t*& packet) {};
 
   /**
    * @brief Used for onboard decoding of packets
@@ -126,7 +126,7 @@ class Sensor {
    * @param packet  Pointer to the packet byte array
    * @return String The senors data decoded from the packet in csv format
    */
-  String decodeToCSV(uint8_t*& packet) { return ""; };
+  virtual String decodeToCSV(uint8_t*& packet) { return "(" + this->getSensorName() + " data), "; };
 
   /**
    * @brief Append the data from a sensor to the packet if the minium period is

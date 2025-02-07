@@ -28,6 +28,9 @@ int verifySensors();
 int verifyStorage();
 void storeData(String data);
 String readSensorData();
+void readSensorDataPacket(uint8_t* packet);
+String decodePacket(uint8_t* packet);
+
 void handleDataInterface();
 
 // Global variables
@@ -37,7 +40,7 @@ void handleDataInterface();
 BME680Sensor    bme_sensor        (1000);
 INA260Sensor    ina260_sensor     (1000);
 LSM9DS1Sensor   lsm9ds1_sensor    (0);
-TempSensor      temp_sensor       (1000);
+TempSensor      temp_sensor       (0);
 SGP30Sensor     sgp30_sensor      (1000);
 BME280Sensor    bme280_sensor     (1000);
 ENS160Sensor    ens160_sensor     (1000);
@@ -86,6 +89,8 @@ unsigned int it = 0;
 // packet properties 
 #define MAX_PACKET_SIZE 500
 const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF};
+
+#define PACKET_SYSTEM_TEST 1
 
 // multicore transfer queue
 #define QT_ENTRY_SIZE 1000
@@ -206,19 +211,29 @@ void loop() {
   // start print line with iteration number
   log_core("it: " + String(it) + "\t");
 
+  #if PACKET_SYSTEM_TEST
   // build csv row
-  String csv_row = readSensorData();
+  uint8_t packet[50];
+  for(int i = 0; i < 50; i++) packet[i] = 0; 
+  log_core("Reading data"); 
+  readSensorDataPacket(packet);  
+  log_data_bytes(packet, 50); 
+  log_core("Decoding packet"); 
+  String csv_row = decodePacket(packet);
+  #else 
+  String csv_row = readSensorData(); 
+  #endif
 
   // print csv row
   log_data(csv_row);
 
   // send data to flash
-  flash_storage.store(csv_row);
+  //flash_storage.store(csv_row);
 
   // send data to core1
   queue_add_blocking(&qt, csv_row.c_str());
 
-  // delay(500);                                  // remove before flight
+  delay(1000);                                  // remove before flight
   digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
 }
 
@@ -257,7 +272,7 @@ int verifySensors() {
 }
 
 
-void getSensorDataPacket(uint8_t* packet){
+void readSensorDataPacket(uint8_t* packet){
   // set sync bytes 
   uint8_t* temp_packet = packet; 
   std::copy(SYNC_BYTES, SYNC_BYTES + sizeof(SYNC_BYTES), temp_packet);  
@@ -269,7 +284,7 @@ void getSensorDataPacket(uint8_t* packet){
 
   // build packet 
   // millis()
-  unsigned long now = millis(); 
+  uint32_t now = millis(); 
   std::copy((uint8_t*)(&now), (uint8_t*)(&now) + sizeof(now), temp_packet);
   temp_packet += sizeof(now);
   sensor_id = (sensor_id << 1) | 1;
@@ -284,6 +299,7 @@ void getSensorDataPacket(uint8_t* packet){
 
   // calc data len
   packet_len = (temp_packet - packet) + 1; // + 1 for checksum 
+  log_core("Len: " + String(packet_len)); 
 
   // write sensor_id
   temp_packet = packet + sizeof(SYNC_BYTES);
@@ -325,17 +341,24 @@ String decodePacket(uint8_t* packet){
   }
 
   // millis decode
-  unsigned long r_now = *((unsigned long*)temp_packet);
+  // the words aren't aligned because of the uint16_t len
+  // so casting will crash the pico 
+  uint32_t r_now;
+  memcpy(&r_now, temp_packet, sizeof(uint32_t));
+
   temp_packet += sizeof(r_now);
   csv_row += String(r_now) + ",";
 
   int curr_offset = id_offset - 1;
-  while (temp_packet < packet + packet_len) {
+  while (curr_offset >= 0) {
     if (sensor_id & (1 << curr_offset)) {
+      log_core("\tDecoding " + sensors[id_offset - curr_offset - 1]->getSensorName()); 
       csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
     } else if (sensors_verify[id_offset - curr_offset - 1]) {
       csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
+    } else {
     }
+    curr_offset--; 
   }
 
   return csv_row;
