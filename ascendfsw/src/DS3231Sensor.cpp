@@ -82,27 +82,6 @@ String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
            String(temperature) + ",";
 }
 
-/**
- * @brief Reads timestamp data from RTC (plus temperature)
- *
- */
-String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
-  uint16_t year = *((uint16_t*)packet);
-  packet += sizeof(year);
-  uint8_t month = *packet++;
-  uint8_t day = *packet++;
-  uint8_t hour = *packet++;
-  uint8_t minute = *packet++;
-  uint8_t second = *packet++;
-
-  float temperature = *((float*)packet);
-  packet += sizeof(temperature);
-
-  return String(year) + "/" + String(month) + "/" + String(day) + " " +
-         String(hour) + ":" + String(minute) + ":" + String(second) + "," +
-         String(temperature) + ",";
-}
-
 String DS3231Sensor::readData() {
   DateTime now = rtc.now();
 
