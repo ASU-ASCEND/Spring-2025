@@ -40,7 +40,7 @@ void handleDataInterface();
 BME680Sensor    bme_sensor        (1000);
 INA260Sensor    ina260_sensor     (1000);
 LSM9DS1Sensor   lsm9ds1_sensor    (0);
-TempSensor      temp_sensor       (0);
+TempSensor      temp_sensor       (1000);
 SGP30Sensor     sgp30_sensor      (1000);
 BME280Sensor    bme280_sensor     (1000);
 ENS160Sensor    ens160_sensor     (1000);
@@ -90,7 +90,7 @@ unsigned int it = 0;
 #define MAX_PACKET_SIZE 500
 const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF};
 
-#define PACKET_SYSTEM_TEST 1
+#define PACKET_SYSTEM_TESTING 1
 
 // multicore transfer queue
 #define QT_ENTRY_SIZE 1000
@@ -211,14 +211,11 @@ void loop() {
   // start print line with iteration number
   log_core("it: " + String(it) + "\t");
 
-  #if PACKET_SYSTEM_TEST
+  #if PACKET_SYSTEM_TESTING
   // build csv row
   uint8_t packet[50];
   for(int i = 0; i < 50; i++) packet[i] = 0; 
-  log_core("Reading data"); 
   readSensorDataPacket(packet);  
-  log_data_bytes(packet, 50); 
-  log_core("Decoding packet"); 
   String csv_row = decodePacket(packet);
   #else 
   String csv_row = readSensorData(); 
@@ -299,7 +296,7 @@ void readSensorDataPacket(uint8_t* packet){
 
   // calc data len
   packet_len = (temp_packet - packet) + 1; // + 1 for checksum 
-  log_core("Len: " + String(packet_len)); 
+  log_core("Packet Len: " + String(packet_len)); 
 
   // write sensor_id
   temp_packet = packet + sizeof(SYNC_BYTES);
@@ -332,10 +329,10 @@ String decodePacket(uint8_t* packet){
 
   String csv_row = "";
 
-  uint32_t temp_sensor_id = sensor_id;
+  uint32_t sensor_id_temp = sensor_id;
   uint8_t id_offset = 0;
   for (int i = 0; i < 32; i++) {
-    if (temp_sensor_id & (1 << i)) {
+    if (sensor_id_temp & (1 << i)) {
       id_offset = i;
     }
   }
@@ -352,7 +349,7 @@ String decodePacket(uint8_t* packet){
   int curr_offset = id_offset - 1;
   while (curr_offset >= 0) {
     if (sensor_id & (1 << curr_offset)) {
-      log_core("\tDecoding " + sensors[id_offset - curr_offset - 1]->getSensorName()); 
+      // log_core("\tDecoding " + sensors[id_offset - curr_offset - 1]->getSensorName()); 
       csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
     } else if (sensors_verify[id_offset - curr_offset - 1]) {
       csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
@@ -360,6 +357,14 @@ String decodePacket(uint8_t* packet){
     }
     curr_offset--; 
   }
+
+  // check parity 
+  uint8_t sum = 0; 
+  for(uint16_t i = 0; i < packet_len-1; i++){
+    sum += packet[i];
+  }
+  sum += *(int8_t*)(packet + packet_len - 1); 
+  // log_core("Sum = " + String(sum));
 
   return csv_row;
 }
@@ -423,10 +428,10 @@ String readSensorData() {
 
   String csv_row = "";
 
-  uint32_t temp_sensor_id = sensor_id;
+  uint32_t sensor_id_temp = sensor_id;
   uint8_t id_offset = 0;
   for (int i = 0; i < 32; i++) {
-    if (temp_sensor_id & (1 << i)) {
+    if (sensor_id_temp & (1 << i)) {
       id_offset = i;
     }
   }
