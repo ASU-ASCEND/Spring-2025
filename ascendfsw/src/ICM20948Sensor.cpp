@@ -127,16 +127,16 @@ void ICM20948Sensor::readDataPacket(uint8_t*& packet) {
 String ICM20948Sensor::decodeToCSV(uint8_t*& packet) {
   // Read values from the packet buffer by casting the pointer to a float
 
-  const size_t vals_len = 10; 
-  float vals[vals_len]; 
-  String csv_row; 
+  const size_t vals_len = 10;
+  float vals[vals_len];
+  String csv_row;
 
-  for(size_t i = 0; i < vals_len; i++){
+  for (size_t i = 0; i < vals_len; i++) {
     float temp;
-    memcpy(&temp, packet, sizeof(float)); 
-    packet += sizeof(float); 
+    memcpy(&temp, packet, sizeof(float));
+    packet += sizeof(float);
 
-    csv_row += String(temp) + ","; 
+    csv_row += String(temp) + ",";
   }
-  return csv_row; 
+  return csv_row;
 }

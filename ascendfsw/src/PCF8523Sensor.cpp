@@ -62,8 +62,8 @@ void PCF8523Sensor::readDataPacket(uint8_t*& packet) {
  */
 String PCF8523Sensor::decodeToCSV(uint8_t*& packet) {
   uint16_t year;
-  memcpy(&year, packet, sizeof(uint16_t)); 
-  packet += sizeof(uint16_t); 
+  memcpy(&year, packet, sizeof(uint16_t));
+  packet += sizeof(uint16_t);
 
   uint8_t data[5];
   for (int i = 0; i < 5; i++) {

@@ -94,7 +94,8 @@ void BME680Sensor::readDataPacket(uint8_t*& packet) {
   }
 
   float data[5] = {bme.temperature, (float)(bme.pressure / 100.0), bme.humidity,
-                   (float)(bme.gas_resistance), bme.readAltitude(SEALEVELPRESSURE_HPA)};
+                   (float)(bme.gas_resistance),
+                   bme.readAltitude(SEALEVELPRESSURE_HPA)};
 
   for (int i = 0; i < 5; i++) {
     memcpy(packet, &data[i], sizeof(float));

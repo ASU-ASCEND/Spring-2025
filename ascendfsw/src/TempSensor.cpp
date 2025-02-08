@@ -45,8 +45,8 @@ void TempSensor::readDataPacket(uint8_t*& packet) {
 String TempSensor::decodeToCSV(uint8_t*& packet) {
   // cast the packet pointer to pointer of the data type to read (float) then
   // dereference it
-  float temp; // = *((float*)packet);
-  memcpy(&temp, packet, sizeof(float)); 
+  float temp;  // = *((float*)packet);
+  memcpy(&temp, packet, sizeof(float));
 
   // increment packet by the size of the read data type (float)
   packet += sizeof(float);

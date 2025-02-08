@@ -43,7 +43,7 @@ class Storage {
    *
    * @param packet Packet to store
    */
-  void store(uint8_t* packet, int length) {};
+  void store(uint8_t* packet, int length){};
 };
 
 #endif

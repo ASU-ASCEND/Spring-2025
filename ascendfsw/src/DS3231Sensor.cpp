@@ -30,7 +30,6 @@ DS3231Sensor::DS3231Sensor(unsigned long minimum_period)
  */
 bool DS3231Sensor::verify() { return rtc.begin(); }
 
-
 /**
  * @brief Reads timestamp data from RTC (plus temperature)
  *
@@ -76,7 +75,7 @@ String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
   uint8_t second = *(packet++);
 
   float temperature;
-  memcpy(&temperature, packet, sizeof(float)); 
+  memcpy(&temperature, packet, sizeof(float));
   packet += sizeof(temperature);
 
   return String(year) + "/" + String(month) + "/" + String(day) + " " +

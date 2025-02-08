@@ -22,7 +22,7 @@ class Sensor {
     this->csv_header = csv_header;
     this->empty_csv = "";
     for (size_t i = 0; i < csv_header.length(); i++) {
-      if(csv_header[i] == ',') this->empty_csv += "-,";
+      if (csv_header[i] == ',') this->empty_csv += "-,";
     }
   }
 
@@ -118,7 +118,7 @@ class Sensor {
    * @param packet Pointer to the packet byte array
    * @return int The number of bytes appended
    */
-  virtual void readDataPacket(uint8_t*& packet) {};
+  virtual void readDataPacket(uint8_t*& packet){};
 
   /**
    * @brief Used for onboard decoding of packets
@@ -126,7 +126,9 @@ class Sensor {
    * @param packet  Pointer to the packet byte array
    * @return String The senors data decoded from the packet in csv format
    */
-  virtual String decodeToCSV(uint8_t*& packet) { return "(" + this->getSensorName() + " data), "; };
+  virtual String decodeToCSV(uint8_t*& packet) {
+    return "(" + this->getSensorName() + " data), ";
+  };
 
   /**
    * @brief Append the data from a sensor to the packet if the minium period is

@@ -186,23 +186,23 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   // Decode values: latitude, longitude, speed, angle, altitude. And then decode
   // number of satellites.
   float lat;
-  memcpy(&lat, packet, sizeof(float)); 
+  memcpy(&lat, packet, sizeof(float));
   packet += sizeof(float);
 
   float lon;
-  memcpy(&lon, packet, sizeof(float)); 
+  memcpy(&lon, packet, sizeof(float));
   packet += sizeof(float);
 
   float speed;
-  memcpy(&speed, packet, sizeof(float)); 
+  memcpy(&speed, packet, sizeof(float));
   packet += sizeof(float);
 
   float angle;
-  memcpy(&angle, packet, sizeof(float)); 
+  memcpy(&angle, packet, sizeof(float));
   packet += sizeof(float);
 
   float alt;
-  memcpy(&alt, packet, sizeof(float)); 
+  memcpy(&alt, packet, sizeof(float));
   packet += sizeof(float);
 
   uint8_t sats = *packet;
