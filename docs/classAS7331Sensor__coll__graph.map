@@ -1,7 +1,7 @@
 <map id="AS7331Sensor" name="AS7331Sensor">
-<area shape="rect" id="Node000001" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="241,491,373,616"/>
+<area shape="rect" id="Node000001" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="237,491,378,656"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="43,163,220,428"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,435,267,489,263,492,226,438"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,438,257,489,253,492,221,441"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,71,58,104,62,138,64,146,59,147,57,139,52,104,52,71"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="180,5,232,71"/>
@@ -9,5 +9,5 @@
 <area shape="rect" id="Node000005" title=" " alt="" coords="244,263,371,328"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="310,328,310,474,305,474,305,328"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="402,263,461,328"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="435,328,428,395,419,432,404,468,387,492,383,489,400,465,414,431,423,394,429,328"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="434,329,427,394,418,432,404,468,391,491,386,489,400,466,413,430,421,394,428,328"/>
 </map>
