@@ -374,7 +374,7 @@ String decodePacket(uint8_t* packet) {
     sum += packet[i];
   }
   sum += *(int8_t*)(packet + packet_len - 1);
-  // log_core("Sum = " + String(sum));
+  log_core("Sum = " + String(sum));
 
   return csv_row;
 }
