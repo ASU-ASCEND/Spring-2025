@@ -1,15 +1,13 @@
 <map id="AS7331Sensor" name="AS7331Sensor">
-<area shape="rect" id="Node000001" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="316,496,448,621"/>
-<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="117,148,295,433"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,436,343,494,339,497,300,439"/>
+<area shape="rect" id="Node000001" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="241,491,373,616"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="43,163,220,428"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,435,267,489,263,492,226,438"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,70,86,123,111,166,106,169,81,125,62,72"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,71,58,104,62,138,64,146,59,147,57,139,52,104,52,71"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="180,5,232,71"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="209,71,209,131,203,131,203,71"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="315,5,345,71"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="323,72,303,125,299,134,294,132,298,123,318,70"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="319,258,445,323"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="385,323,385,480,379,480,379,323"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="477,258,535,323"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="510,324,504,395,495,435,479,473,461,498,457,495,474,471,490,434,499,394,504,324"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="199,72,177,148,172,146,194,70"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="244,263,371,328"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="310,328,310,474,305,474,305,328"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="402,263,461,328"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="435,328,428,395,419,432,404,468,387,492,383,489,400,465,414,431,423,394,429,328"/>
 </map>

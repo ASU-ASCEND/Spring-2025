@@ -10,6 +10,9 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="257,102,310,141,307,146,254,106"/>
 <area shape="rect" id="Node000006" href="$Storage_8h.html" title=" " alt="" coords="459,152,543,177"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="283,101,446,146,445,151,282,107"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="459,225,543,251"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="503,178,503,212,498,212,498,178"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="457,299,541,324"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="500,178,490,226,490,256,495,285,490,286,485,257,485,225,495,177"/>
+<area shape="rect" id="Node000008" href="$Logger_8h.html" title=" " alt="" coords="499,225,577,251"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="509,176,528,212,523,215,504,179"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="534,252,514,288,510,285,529,250"/>
 </map>

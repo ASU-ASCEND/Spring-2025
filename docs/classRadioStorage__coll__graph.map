@@ -1,8 +1,8 @@
 <map id="RadioStorage" name="RadioStorage">
-<area shape="rect" id="Node000001" title="Implementation of a Storage device to interface with an SD card." alt="" coords="5,308,131,413"/>
-<area shape="rect" id="Node000002" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="115,133,264,259"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,271,109,309,104,306,133,268"/>
+<area shape="rect" id="Node000001" title="Implementation of a Storage device to interface with an SD card." alt="" coords="5,328,131,453"/>
+<area shape="rect" id="Node000002" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="115,133,264,279"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,292,111,329,107,326,132,289"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="13,5,65,71"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="36,71,27,156,26,207,32,258,41,292,36,293,27,259,21,208,21,156,30,71"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,65,120,120,117,123,63,68"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="36,71,27,165,26,222,32,278,40,312,35,313,27,279,21,222,21,164,31,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,66,115,120,111,123,63,70"/>
 </map>

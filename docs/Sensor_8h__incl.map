@@ -1,5 +1,8 @@
 <map id="Sensor.h" name="Sensor.h">
 <area shape="rect" id="Node000001" title=" " alt="" coords="9,5,86,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,89,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,31,50,65,45,65,45,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,152,89,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,32,38,79,38,110,43,138,38,139,33,110,33,78,42,31"/>
+<area shape="rect" id="Node000003" href="$Logger_8h.html" title=" " alt="" coords="47,79,125,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="56,30,76,65,71,68,51,32"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="82,106,62,141,58,139,77,103"/>
 </map>

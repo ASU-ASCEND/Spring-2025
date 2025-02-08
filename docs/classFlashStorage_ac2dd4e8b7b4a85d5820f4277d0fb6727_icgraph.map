@@ -1,5 +1,5 @@
 <map id="FlashStorage::erase" name="FlashStorage::erase">
-<area shape="rect" id="Node000001" title=" " alt="" coords="104,5,255,31"/>
+<area shape="rect" id="Node000001" title="Erases all data stored in flash memory." alt="" coords="104,5,255,31"/>
 <area shape="rect" id="Node000002" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="5,5,56,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,21,56,21,56,15,90,15"/>
 </map>

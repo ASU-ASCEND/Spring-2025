@@ -1,5 +1,5 @@
 <map id="BME680Sensor" name="BME680Sensor">
-<area shape="rect" id="Node000001" title="A class to interface with the Adafruit BME680 sensor for environmental data collection." alt="" coords="26,419,162,544"/>
-<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,5,183,371"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,385,97,418,91,418,91,385"/>
+<area shape="rect" id="Node000001" title="A class to interface with the Adafruit BME680 sensor for environmental data collection." alt="" coords="23,399,165,564"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,5,183,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,364,97,398,91,398,91,364"/>
 </map>

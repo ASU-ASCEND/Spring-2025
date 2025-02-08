@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 1423;
+var viewWidth = 1451;
 var viewHeight = 487;
 var sectionId = 'dynsection-0';
 </script>
@@ -58,46 +58,43 @@ var sectionId = 'dynsection-0';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Parent class for sensor objects.">
-<polygon fill="#999999" stroke="transparent" points="777,-479 644,-479 644,-205 777,-205 777,-479"/>
-<text text-anchor="start" x="694" y="-467" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor</text>
-<text text-anchor="start" x="651" y="-452" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="661.5" y="-452" font-family="Helvetica,sans-Serif" font-size="10.00">minimum_period</text>
-<text text-anchor="start" x="651" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="661.5" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00">last_execution</text>
-<text text-anchor="start" x="651" y="-422" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="661.5" y="-422" font-family="Helvetica,sans-Serif" font-size="10.00">sensor_name</text>
-<text text-anchor="start" x="651" y="-407" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="661.5" y="-407" font-family="Helvetica,sans-Serif" font-size="10.00">csv_header</text>
-<text text-anchor="start" x="651" y="-392" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="661.5" y="-392" font-family="Helvetica,sans-Serif" font-size="10.00">fields</text>
-<text text-anchor="start" x="648.5" y="-377" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-377" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
-<text text-anchor="start" x="648.5" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
-<text text-anchor="start" x="648.5" y="-347" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-347" font-family="Helvetica,sans-Serif" font-size="10.00">getPeriod()</text>
-<text text-anchor="start" x="648.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">setPeriod()</text>
-<text text-anchor="start" x="648.5" y="-317" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-317" font-family="Helvetica,sans-Serif" font-size="10.00">getLastExecution()</text>
-<text text-anchor="start" x="648.5" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">setLastExecution()</text>
-<text text-anchor="start" x="648.5" y="-287" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-287" font-family="Helvetica,sans-Serif" font-size="10.00">getSensorName()</text>
-<text text-anchor="start" x="648.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">getSensorCSVHeader()</text>
-<text text-anchor="start" x="648.5" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="648.5" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="648.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">readEmpty()</text>
-<text text-anchor="start" x="648.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="661.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">getDataCSV()</text>
-<polygon fill="#666666" stroke="#666666" points="644.5,-462 644.5,-462 777.5,-462 777.5,-462 644.5,-462"/>
-<polygon fill="#666666" stroke="#666666" points="644.5,-387 644.5,-387 659.5,-387 659.5,-387 644.5,-387"/>
-<polygon fill="#666666" stroke="#666666" points="659.5,-387 659.5,-387 777.5,-387 777.5,-387 659.5,-387"/>
-<polygon fill="none" stroke="#666666" points="644,-205 644,-479 777,-479 777,-205 644,-205"/>
+<polygon fill="#999999" stroke="transparent" points="787,-479 654,-479 654,-220 787,-220 787,-479"/>
+<text text-anchor="start" x="704" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor</text>
+<text text-anchor="start" x="661" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="671.5" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">minimum_period</text>
+<text text-anchor="start" x="661" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="671.5" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">last_execution</text>
+<text text-anchor="start" x="661" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="671.5" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">sensor_name</text>
+<text text-anchor="start" x="661" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="671.5" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">csv_header</text>
+<text text-anchor="start" x="661" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="671.5" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">empty_csv</text>
+<text text-anchor="start" x="658.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="658.5" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="658.5" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="658.5" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="658.5" y="-316.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-316.5" font-family="Helvetica,sans-Serif" font-size="10.00">getPeriod()</text>
+<text text-anchor="start" x="658.5" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">setPeriod()</text>
+<text text-anchor="start" x="658.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">getLastExecution()</text>
+<text text-anchor="start" x="658.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">setLastExecution()</text>
+<text text-anchor="start" x="658.5" y="-256.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-256.5" font-family="Helvetica,sans-Serif" font-size="10.00">getSensorName()</text>
+<text text-anchor="start" x="658.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="671.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">getSensorCSVHeader()</text>
+<text text-anchor="start" x="671.5" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<polygon fill="#666666" stroke="#666666" points="654.5,-461.5 654.5,-461.5 787.5,-461.5 787.5,-461.5 654.5,-461.5"/>
+<polygon fill="#666666" stroke="#666666" points="654.5,-386.5 654.5,-386.5 669.5,-386.5 669.5,-386.5 654.5,-386.5"/>
+<polygon fill="#666666" stroke="#666666" points="669.5,-386.5 669.5,-386.5 787.5,-386.5 787.5,-386.5 669.5,-386.5"/>
+<polygon fill="none" stroke="#666666" points="654,-220 654,-479 787,-479 787,-220 654,-220"/>
 </a>
 </g>
 </g>
@@ -105,24 +102,24 @@ var sectionId = 'dynsection-0';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="classAS7331Sensor.html" target="_top" xlink:title="Implementation of a Sensor for UVA/B/C sensor.">
-<polygon fill="white" stroke="transparent" points="99,-139 0,-139 0,-30 99,-30 99,-139"/>
-<text text-anchor="start" x="15" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">AS7331Sensor</text>
-<text text-anchor="start" x="7" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="17.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">myUVSensor</text>
-<text text-anchor="start" x="7" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="17.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">i2c_addr</text>
-<text text-anchor="start" x="4.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">AS7331Sensor()</text>
-<text text-anchor="start" x="4.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">AS7331Sensor()</text>
-<text text-anchor="start" x="4.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="4.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="0.5,-121.5 0.5,-121.5 99.5,-121.5 99.5,-121.5 0.5,-121.5"/>
-<polygon fill="#666666" stroke="#666666" points="0.5,-91.5 0.5,-91.5 15.5,-91.5 15.5,-91.5 0.5,-91.5"/>
-<polygon fill="#666666" stroke="#666666" points="15.5,-91.5 15.5,-91.5 99.5,-91.5 99.5,-91.5 15.5,-91.5"/>
-<polygon fill="none" stroke="#666666" points="0,-30 0,-139 99,-139 99,-30 0,-30"/>
+<polygon fill="white" stroke="transparent" points="99,-146.5 0,-146.5 0,-37.5 99,-37.5 99,-146.5"/>
+<text text-anchor="start" x="15" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">AS7331Sensor</text>
+<text text-anchor="start" x="7" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="17.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">myUVSensor</text>
+<text text-anchor="start" x="7" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="17.5" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">i2c_addr</text>
+<text text-anchor="start" x="4.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="17.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">AS7331Sensor()</text>
+<text text-anchor="start" x="4.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="17.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">AS7331Sensor()</text>
+<text text-anchor="start" x="4.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="17.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="4.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="17.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<polygon fill="#666666" stroke="#666666" points="0.5,-129 0.5,-129 99.5,-129 99.5,-129 0.5,-129"/>
+<polygon fill="#666666" stroke="#666666" points="0.5,-99 0.5,-99 15.5,-99 15.5,-99 0.5,-99"/>
+<polygon fill="#666666" stroke="#666666" points="15.5,-99 15.5,-99 99.5,-99 99.5,-99 15.5,-99"/>
+<polygon fill="none" stroke="#666666" points="0,-37.5 0,-146.5 99,-146.5 99,-37.5 0,-37.5"/>
 </a>
 </g>
 </g>
@@ -130,8 +127,8 @@ var sectionId = 'dynsection-0';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M633.77,-335.36C512.08,-323.08 271.91,-284.92 108.5,-169 97.35,-161.09 87.57,-150.39 79.35,-139.28"/>
-<polygon fill="none" stroke="#63b8ff" points="633.46,-338.85 643.75,-336.34 634.14,-331.88 633.46,-338.85"/>
+<path fill="none" stroke="#63b8ff" d="M643.46,-345.2C519.52,-336.36 273.12,-303.79 108.5,-184 95.1,-174.25 83.94,-160.45 75.07,-146.54"/>
+<polygon fill="none" stroke="#63b8ff" points="643.4,-348.71 653.62,-345.89 643.88,-341.72 643.4,-348.71"/>
 </a>
 </g>
 </g>
@@ -139,22 +136,22 @@ var sectionId = 'dynsection-0';
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:href="classBME280Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the BME280.">
-<polygon fill="white" stroke="transparent" points="219.5,-131.5 117.5,-131.5 117.5,-37.5 219.5,-37.5 219.5,-131.5"/>
-<text text-anchor="start" x="132" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor</text>
-<text text-anchor="start" x="124" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="134.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">bme</text>
-<text text-anchor="start" x="121.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="134.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
-<text text-anchor="start" x="121.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="134.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
-<text text-anchor="start" x="121.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="134.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="121.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="134.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="117.5,-114.5 117.5,-114.5 219.5,-114.5 219.5,-114.5 117.5,-114.5"/>
-<polygon fill="#666666" stroke="#666666" points="117.5,-99.5 117.5,-99.5 132.5,-99.5 132.5,-99.5 117.5,-99.5"/>
-<polygon fill="#666666" stroke="#666666" points="132.5,-99.5 132.5,-99.5 219.5,-99.5 219.5,-99.5 132.5,-99.5"/>
-<polygon fill="none" stroke="#666666" points="117.5,-37.5 117.5,-131.5 219.5,-131.5 219.5,-37.5 117.5,-37.5"/>
+<polygon fill="white" stroke="transparent" points="219.5,-139 117.5,-139 117.5,-45 219.5,-45 219.5,-139"/>
+<text text-anchor="start" x="132" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor</text>
+<text text-anchor="start" x="124" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="134.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">bme</text>
+<text text-anchor="start" x="121.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="134.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
+<text text-anchor="start" x="121.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="134.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
+<text text-anchor="start" x="121.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="134.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="121.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="134.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<polygon fill="#666666" stroke="#666666" points="117.5,-122 117.5,-122 219.5,-122 219.5,-122 117.5,-122"/>
+<polygon fill="#666666" stroke="#666666" points="117.5,-107 117.5,-107 132.5,-107 132.5,-107 117.5,-107"/>
+<polygon fill="#666666" stroke="#666666" points="132.5,-107 132.5,-107 219.5,-107 219.5,-107 132.5,-107"/>
+<polygon fill="none" stroke="#666666" points="117.5,-45 117.5,-139 219.5,-139 219.5,-45 117.5,-45"/>
 </a>
 </g>
 </g>
@@ -162,8 +159,8 @@ var sectionId = 'dynsection-0';
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M633.87,-328.38C532.69,-308.64 352.84,-262.6 228.5,-169 215.24,-159.02 203.69,-145.27 194.37,-131.8"/>
-<polygon fill="none" stroke="#63b8ff" points="633.23,-331.82 643.71,-330.26 634.55,-324.95 633.23,-331.82"/>
+<path fill="none" stroke="#63b8ff" d="M643.87,-338.75C540.39,-322.3 354.45,-280.8 228.5,-184 213.2,-172.24 200.56,-155.4 190.9,-139.4"/>
+<polygon fill="none" stroke="#63b8ff" points="643.51,-342.24 653.93,-340.31 644.59,-335.32 643.51,-342.24"/>
 </a>
 </g>
 </g>
@@ -171,22 +168,26 @@ var sectionId = 'dynsection-0';
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="classBME680Sensor.html" target="_top" xlink:title="A class to interface with the Adafruit BME680 sensor for environmental data collection.">
-<polygon fill="white" stroke="transparent" points="339.5,-131.5 237.5,-131.5 237.5,-37.5 339.5,-37.5 339.5,-131.5"/>
-<text text-anchor="start" x="252" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME680Sensor</text>
-<text text-anchor="start" x="244" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="254.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">bme</text>
-<text text-anchor="start" x="241.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="254.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME680Sensor()</text>
-<text text-anchor="start" x="241.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="254.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME680Sensor()</text>
-<text text-anchor="start" x="241.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="254.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="241.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="254.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="237.5,-114.5 237.5,-114.5 339.5,-114.5 339.5,-114.5 237.5,-114.5"/>
-<polygon fill="#666666" stroke="#666666" points="237.5,-99.5 237.5,-99.5 252.5,-99.5 252.5,-99.5 237.5,-99.5"/>
-<polygon fill="#666666" stroke="#666666" points="252.5,-99.5 252.5,-99.5 339.5,-99.5 339.5,-99.5 252.5,-99.5"/>
-<polygon fill="none" stroke="#666666" points="237.5,-37.5 237.5,-131.5 339.5,-131.5 339.5,-37.5 237.5,-37.5"/>
+<polygon fill="white" stroke="transparent" points="343.5,-154 237.5,-154 237.5,-30 343.5,-30 343.5,-154"/>
+<text text-anchor="start" x="254" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">BME680Sensor</text>
+<text text-anchor="start" x="244" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="254.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">bme</text>
+<text text-anchor="start" x="241.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="254.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">BME680Sensor()</text>
+<text text-anchor="start" x="241.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="254.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">BME680Sensor()</text>
+<text text-anchor="start" x="241.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="254.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="241.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="254.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="241.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="254.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="241.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="254.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="237.5,-137 237.5,-137 343.5,-137 343.5,-137 237.5,-137"/>
+<polygon fill="#666666" stroke="#666666" points="237.5,-122 237.5,-122 252.5,-122 252.5,-122 237.5,-122"/>
+<polygon fill="#666666" stroke="#666666" points="252.5,-122 252.5,-122 343.5,-122 343.5,-122 252.5,-122"/>
+<polygon fill="none" stroke="#666666" points="237.5,-30 237.5,-154 343.5,-154 343.5,-30 237.5,-30"/>
 </a>
 </g>
 </g>
@@ -194,8 +195,8 @@ var sectionId = 'dynsection-0';
 <g id="edge3_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
 <g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M633.98,-317.36C556.03,-290.53 434.68,-240.95 348.5,-169 336.03,-158.59 324.84,-145.03 315.6,-131.87"/>
-<polygon fill="none" stroke="#63b8ff" points="633.14,-320.77 643.74,-320.67 635.4,-314.14 633.14,-320.77"/>
+<path fill="none" stroke="#63b8ff" d="M643.72,-327.81C564.2,-303.47 439.63,-256.87 352.5,-184 342.38,-175.54 333.21,-165.03 325.22,-154.18"/>
+<polygon fill="none" stroke="#63b8ff" points="643.08,-331.27 653.66,-330.81 645.1,-324.57 643.08,-331.27"/>
 </a>
 </g>
 </g>
@@ -203,24 +204,28 @@ var sectionId = 'dynsection-0';
 <g id="Node000005" class="node">
 <title>Node5</title>
 <g id="a_Node000005"><a xlink:href="classDS3231Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the DS3231 Real Time Clock.">
-<polygon fill="white" stroke="transparent" points="457.5,-139 357.5,-139 357.5,-30 457.5,-30 457.5,-139"/>
-<text text-anchor="start" x="372" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">DS3231Sensor</text>
-<text text-anchor="start" x="364" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="374.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">rtc</text>
-<text text-anchor="start" x="361.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="374.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">DS3231Sensor()</text>
-<text text-anchor="start" x="361.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="374.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">DS3231Sensor()</text>
-<text text-anchor="start" x="361.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="374.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="361.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="374.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="361.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="374.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">setTime()</text>
-<polygon fill="#666666" stroke="#666666" points="357.5,-121.5 357.5,-121.5 457.5,-121.5 457.5,-121.5 357.5,-121.5"/>
-<polygon fill="#666666" stroke="#666666" points="357.5,-106.5 357.5,-106.5 372.5,-106.5 372.5,-106.5 357.5,-106.5"/>
-<polygon fill="#666666" stroke="#666666" points="372.5,-106.5 372.5,-106.5 457.5,-106.5 457.5,-106.5 372.5,-106.5"/>
-<polygon fill="none" stroke="#666666" points="357.5,-30 357.5,-139 457.5,-139 457.5,-30 357.5,-30"/>
+<polygon fill="white" stroke="transparent" points="467.5,-161.5 361.5,-161.5 361.5,-22.5 467.5,-22.5 467.5,-161.5"/>
+<text text-anchor="start" x="379" y="-149" font-family="Helvetica,sans-Serif" font-size="10.00">DS3231Sensor</text>
+<text text-anchor="start" x="368" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="378.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">rtc</text>
+<text text-anchor="start" x="365.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="378.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">DS3231Sensor()</text>
+<text text-anchor="start" x="365.5" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="378.5" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">DS3231Sensor()</text>
+<text text-anchor="start" x="365.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="378.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="365.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="378.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="365.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="378.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<text text-anchor="start" x="365.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="378.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="365.5" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="378.5" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">setTime()</text>
+<polygon fill="#666666" stroke="#666666" points="361.5,-144 361.5,-144 467.5,-144 467.5,-144 361.5,-144"/>
+<polygon fill="#666666" stroke="#666666" points="361.5,-129 361.5,-129 376.5,-129 376.5,-129 361.5,-129"/>
+<polygon fill="#666666" stroke="#666666" points="376.5,-129 376.5,-129 467.5,-129 467.5,-129 376.5,-129"/>
+<polygon fill="none" stroke="#666666" points="361.5,-22.5 361.5,-161.5 467.5,-161.5 467.5,-22.5 361.5,-22.5"/>
 </a>
 </g>
 </g>
@@ -228,8 +233,8 @@ var sectionId = 'dynsection-0';
 <g id="edge4_Node000001_Node000005" class="edge">
 <title>Node1&#45;&gt;Node5</title>
 <g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M635.3,-297.45C584.3,-265.75 517.19,-219.64 466.5,-169 457.58,-160.09 449.07,-149.7 441.43,-139.34"/>
-<polygon fill="none" stroke="#63b8ff" points="633.64,-300.53 643.98,-302.8 637.31,-294.58 633.64,-300.53"/>
+<path fill="none" stroke="#63b8ff" d="M645.16,-307.88C593.95,-277.96 526.65,-233.91 476.5,-184 469.72,-177.26 463.23,-169.68 457.17,-161.84"/>
+<polygon fill="none" stroke="#63b8ff" points="643.48,-310.95 653.88,-312.93 646.98,-304.89 643.48,-310.95"/>
 </a>
 </g>
 </g>
@@ -237,22 +242,22 @@ var sectionId = 'dynsection-0';
 <g id="Node000006" class="node">
 <title>Node6</title>
 <g id="a_Node000006"><a xlink:href="classENS160Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the ENS160.">
-<polygon fill="white" stroke="transparent" points="575.5,-131.5 475.5,-131.5 475.5,-37.5 575.5,-37.5 575.5,-131.5"/>
-<text text-anchor="start" x="490" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ENS160Sensor</text>
-<text text-anchor="start" x="482" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="492.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">ens</text>
-<text text-anchor="start" x="479.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="492.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">ENS160Sensor()</text>
-<text text-anchor="start" x="479.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="492.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">ENS160Sensor()</text>
-<text text-anchor="start" x="479.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="492.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="479.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="492.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="475.5,-114.5 475.5,-114.5 575.5,-114.5 575.5,-114.5 475.5,-114.5"/>
-<polygon fill="#666666" stroke="#666666" points="475.5,-99.5 475.5,-99.5 490.5,-99.5 490.5,-99.5 475.5,-99.5"/>
-<polygon fill="#666666" stroke="#666666" points="490.5,-99.5 490.5,-99.5 575.5,-99.5 575.5,-99.5 490.5,-99.5"/>
-<polygon fill="none" stroke="#666666" points="475.5,-37.5 475.5,-131.5 575.5,-131.5 575.5,-37.5 475.5,-37.5"/>
+<polygon fill="white" stroke="transparent" points="585.5,-139 485.5,-139 485.5,-45 585.5,-45 585.5,-139"/>
+<text text-anchor="start" x="500" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">ENS160Sensor</text>
+<text text-anchor="start" x="492" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="502.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">ens</text>
+<text text-anchor="start" x="489.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="502.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">ENS160Sensor()</text>
+<text text-anchor="start" x="489.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="502.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">ENS160Sensor()</text>
+<text text-anchor="start" x="489.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="502.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="489.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="502.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<polygon fill="#666666" stroke="#666666" points="485.5,-122 485.5,-122 585.5,-122 585.5,-122 485.5,-122"/>
+<polygon fill="#666666" stroke="#666666" points="485.5,-107 485.5,-107 500.5,-107 500.5,-107 485.5,-107"/>
+<polygon fill="#666666" stroke="#666666" points="500.5,-107 500.5,-107 585.5,-107 585.5,-107 500.5,-107"/>
+<polygon fill="none" stroke="#666666" points="485.5,-45 485.5,-139 585.5,-139 585.5,-45 485.5,-45"/>
 </a>
 </g>
 </g>
@@ -260,8 +265,8 @@ var sectionId = 'dynsection-0';
 <g id="edge5_Node000001_Node000006" class="edge">
 <title>Node1&#45;&gt;Node6</title>
 <g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M637.92,-242.54C620.36,-218.53 601.69,-192.89 584.5,-169 575.79,-156.9 566.45,-143.75 557.82,-131.54"/>
-<polygon fill="none" stroke="#63b8ff" points="635.1,-244.61 643.84,-250.61 640.75,-240.47 635.1,-244.61"/>
+<path fill="none" stroke="#63b8ff" d="M647.58,-255.94C629.85,-232.71 611.2,-207.66 594.5,-184 584.41,-169.69 573.86,-153.77 564.52,-139.3"/>
+<polygon fill="none" stroke="#63b8ff" points="644.95,-258.26 653.81,-264.07 650.51,-254 644.95,-258.26"/>
 </a>
 </g>
 </g>
@@ -269,30 +274,34 @@ var sectionId = 'dynsection-0';
 <g id="Node000007" class="node">
 <title>Node7</title>
 <g id="a_Node000007"><a xlink:href="classICM20948Sensor.html" target="_top" xlink:title="Implementation of the Sensor class for the Adafruit ICM20948 (9&#45;axis IMU)">
-<polygon fill="white" stroke="transparent" points="705,-161.5 594,-161.5 594,-7.5 705,-7.5 705,-161.5"/>
-<text text-anchor="start" x="609" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">ICM20948Sensor</text>
-<text text-anchor="start" x="601" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="611.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">icm</text>
-<text text-anchor="start" x="601" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="611.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">icm_accel</text>
-<text text-anchor="start" x="601" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="611.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">icm_gyro</text>
-<text text-anchor="start" x="601" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="611.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">icm_mag</text>
-<text text-anchor="start" x="601" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="611.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">icm_temp</text>
-<text text-anchor="start" x="598.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="611.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">ICM20948Sensor()</text>
-<text text-anchor="start" x="598.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="611.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">ICM20948Sensor()</text>
-<text text-anchor="start" x="598.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="611.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="598.5" y="-14.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="611.5" y="-14.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="594.5,-144.5 594.5,-144.5 705.5,-144.5 705.5,-144.5 594.5,-144.5"/>
-<polygon fill="#666666" stroke="#666666" points="594.5,-69.5 594.5,-69.5 609.5,-69.5 609.5,-69.5 594.5,-69.5"/>
-<polygon fill="#666666" stroke="#666666" points="609.5,-69.5 609.5,-69.5 705.5,-69.5 705.5,-69.5 609.5,-69.5"/>
-<polygon fill="none" stroke="#666666" points="594,-7.5 594,-161.5 705,-161.5 705,-7.5 594,-7.5"/>
+<polygon fill="white" stroke="transparent" points="715,-184 604,-184 604,0 715,0 715,-184"/>
+<text text-anchor="start" x="619" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">ICM20948Sensor</text>
+<text text-anchor="start" x="611" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="621.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">icm</text>
+<text text-anchor="start" x="611" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="621.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">icm_accel</text>
+<text text-anchor="start" x="611" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="621.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">icm_gyro</text>
+<text text-anchor="start" x="611" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="621.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">icm_mag</text>
+<text text-anchor="start" x="611" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="621.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">icm_temp</text>
+<text text-anchor="start" x="608.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="621.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">ICM20948Sensor()</text>
+<text text-anchor="start" x="608.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="621.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">ICM20948Sensor()</text>
+<text text-anchor="start" x="608.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="621.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="608.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="621.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="608.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="621.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="608.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="621.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="604.5,-167 604.5,-167 715.5,-167 715.5,-167 604.5,-167"/>
+<polygon fill="#666666" stroke="#666666" points="604.5,-92 604.5,-92 619.5,-92 619.5,-92 604.5,-92"/>
+<polygon fill="#666666" stroke="#666666" points="619.5,-92 619.5,-92 715.5,-92 715.5,-92 619.5,-92"/>
+<polygon fill="none" stroke="#666666" points="604,0 604,-184 715,-184 715,0 604,0"/>
 </a>
 </g>
 </g>
@@ -300,8 +309,8 @@ var sectionId = 'dynsection-0';
 <g id="edge6_Node000001_Node000007" class="edge">
 <title>Node1&#45;&gt;Node7</title>
 <g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M675.56,-194.66C672.86,-183.34 670.2,-172.22 667.68,-161.66"/>
-<polygon fill="none" stroke="#63b8ff" points="672.22,-195.73 677.95,-204.65 679.03,-194.11 672.22,-195.73"/>
+<path fill="none" stroke="#63b8ff" d="M687.38,-209.77C685.3,-201.06 683.24,-192.41 681.23,-184"/>
+<polygon fill="none" stroke="#63b8ff" points="684.01,-210.71 689.73,-219.63 690.81,-209.09 684.01,-210.71"/>
 </a>
 </g>
 </g>
@@ -309,22 +318,22 @@ var sectionId = 'dynsection-0';
 <g id="Node000008" class="node">
 <title>Node8</title>
 <g id="a_Node000008"><a xlink:href="classINA260Sensor.html" target="_top" xlink:title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements.">
-<polygon fill="white" stroke="transparent" points="820,-131.5 723,-131.5 723,-37.5 820,-37.5 820,-131.5"/>
-<text text-anchor="start" x="737.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">INA260Sensor</text>
-<text text-anchor="start" x="730" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="740.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">ina260</text>
-<text text-anchor="start" x="727.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="740.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">INA260Sensor()</text>
-<text text-anchor="start" x="727.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="740.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">INA260Sensor()</text>
-<text text-anchor="start" x="727.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="740.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="727.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="740.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="723.5,-114.5 723.5,-114.5 820.5,-114.5 820.5,-114.5 723.5,-114.5"/>
-<polygon fill="#666666" stroke="#666666" points="723.5,-99.5 723.5,-99.5 738.5,-99.5 738.5,-99.5 723.5,-99.5"/>
-<polygon fill="#666666" stroke="#666666" points="738.5,-99.5 738.5,-99.5 820.5,-99.5 820.5,-99.5 738.5,-99.5"/>
-<polygon fill="none" stroke="#666666" points="723,-37.5 723,-131.5 820,-131.5 820,-37.5 723,-37.5"/>
+<polygon fill="white" stroke="transparent" points="830,-139 733,-139 733,-45 830,-45 830,-139"/>
+<text text-anchor="start" x="747.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">INA260Sensor</text>
+<text text-anchor="start" x="740" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="750.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">ina260</text>
+<text text-anchor="start" x="737.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="750.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">INA260Sensor()</text>
+<text text-anchor="start" x="737.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="750.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">INA260Sensor()</text>
+<text text-anchor="start" x="737.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="750.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="737.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="750.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<polygon fill="#666666" stroke="#666666" points="733.5,-122 733.5,-122 830.5,-122 830.5,-122 733.5,-122"/>
+<polygon fill="#666666" stroke="#666666" points="733.5,-107 733.5,-107 748.5,-107 748.5,-107 733.5,-107"/>
+<polygon fill="#666666" stroke="#666666" points="748.5,-107 748.5,-107 830.5,-107 830.5,-107 748.5,-107"/>
+<polygon fill="none" stroke="#666666" points="733,-45 733,-139 830,-139 830,-45 733,-45"/>
 </a>
 </g>
 </g>
@@ -332,8 +341,8 @@ var sectionId = 'dynsection-0';
 <g id="edge7_Node000001_Node000008" class="edge">
 <title>Node1&#45;&gt;Node8</title>
 <g id="a_edge7_Node000001_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M745.4,-194.82C750.85,-172 756.11,-149.97 760.46,-131.75"/>
-<polygon fill="none" stroke="#63b8ff" points="741.97,-194.11 743.05,-204.65 748.78,-195.73 741.97,-194.11"/>
+<path fill="none" stroke="#63b8ff" d="M753.61,-209.82C759.71,-184.28 765.67,-159.32 770.5,-139.08"/>
+<polygon fill="none" stroke="#63b8ff" points="750.19,-209.09 751.27,-219.63 756.99,-210.71 750.19,-209.09"/>
 </a>
 </g>
 </g>
@@ -341,32 +350,32 @@ var sectionId = 'dynsection-0';
 <g id="Node000009" class="node">
 <title>Node9</title>
 <g id="a_Node000009"><a xlink:href="classLSM9DS1Sensor.html" target="_top" xlink:title="Implementation of the Sensor class for the LSM9DS1 (9&#45;axis IMU)">
-<polygon fill="white" stroke="transparent" points="946.5,-169 838.5,-169 838.5,0 946.5,0 946.5,-169"/>
-<text text-anchor="start" x="853" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">LSM9DS1Sensor</text>
-<text text-anchor="start" x="845" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="855.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">lsm</text>
-<text text-anchor="start" x="845" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="855.5" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">accel_offsets</text>
-<text text-anchor="start" x="845" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="855.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">gyro_offsets</text>
-<text text-anchor="start" x="845" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="855.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">mag_offsets</text>
-<text text-anchor="start" x="842.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="855.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">LSM9DS1Sensor()</text>
-<text text-anchor="start" x="842.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="855.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">LSM9DS1Sensor()</text>
-<text text-anchor="start" x="842.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="855.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="842.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="855.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="842.5" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="855.5" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">calibrate()</text>
-<text text-anchor="start" x="845" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="855.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">setupSensor()</text>
-<polygon fill="#666666" stroke="#666666" points="838.5,-151.5 838.5,-151.5 946.5,-151.5 946.5,-151.5 838.5,-151.5"/>
-<polygon fill="#666666" stroke="#666666" points="838.5,-91.5 838.5,-91.5 853.5,-91.5 853.5,-91.5 838.5,-91.5"/>
-<polygon fill="#666666" stroke="#666666" points="853.5,-91.5 853.5,-91.5 946.5,-91.5 946.5,-91.5 853.5,-91.5"/>
-<polygon fill="none" stroke="#666666" points="838.5,0 838.5,-169 946.5,-169 946.5,0 838.5,0"/>
+<polygon fill="white" stroke="transparent" points="956.5,-176.5 848.5,-176.5 848.5,-7.5 956.5,-7.5 956.5,-176.5"/>
+<text text-anchor="start" x="863" y="-164" font-family="Helvetica,sans-Serif" font-size="10.00">LSM9DS1Sensor</text>
+<text text-anchor="start" x="855" y="-149" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="865.5" y="-149" font-family="Helvetica,sans-Serif" font-size="10.00">lsm</text>
+<text text-anchor="start" x="855" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="865.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">accel_offsets</text>
+<text text-anchor="start" x="855" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="865.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">gyro_offsets</text>
+<text text-anchor="start" x="855" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="865.5" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">mag_offsets</text>
+<text text-anchor="start" x="852.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="865.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">LSM9DS1Sensor()</text>
+<text text-anchor="start" x="852.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="865.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">LSM9DS1Sensor()</text>
+<text text-anchor="start" x="852.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="865.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="852.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="865.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="852.5" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="865.5" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">calibrate()</text>
+<text text-anchor="start" x="855" y="-14" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="865.5" y="-14" font-family="Helvetica,sans-Serif" font-size="10.00">setupSensor()</text>
+<polygon fill="#666666" stroke="#666666" points="848.5,-159 848.5,-159 956.5,-159 956.5,-159 848.5,-159"/>
+<polygon fill="#666666" stroke="#666666" points="848.5,-99 848.5,-99 863.5,-99 863.5,-99 848.5,-99"/>
+<polygon fill="#666666" stroke="#666666" points="863.5,-99 863.5,-99 956.5,-99 956.5,-99 863.5,-99"/>
+<polygon fill="none" stroke="#666666" points="848.5,-7.5 848.5,-176.5 956.5,-176.5 956.5,-7.5 848.5,-7.5"/>
 </a>
 </g>
 </g>
@@ -374,8 +383,8 @@ var sectionId = 'dynsection-0';
 <g id="edge8_Node000001_Node000009" class="edge">
 <title>Node1&#45;&gt;Node9</title>
 <g id="a_edge8_Node000001_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M783.17,-238.99C801.55,-213.17 820.98,-185.9 838.28,-161.61"/>
-<polygon fill="none" stroke="#63b8ff" points="780.19,-237.14 777.24,-247.31 785.89,-241.2 780.19,-237.14"/>
+<path fill="none" stroke="#63b8ff" d="M793.1,-248.83C808.5,-227.5 824.6,-205.05 839.5,-184 842.39,-179.92 845.34,-175.73 848.31,-171.5"/>
+<polygon fill="none" stroke="#63b8ff" points="790.26,-246.79 787.24,-256.95 795.93,-250.89 790.26,-246.79"/>
 </a>
 </g>
 </g>
@@ -383,22 +392,26 @@ var sectionId = 'dynsection-0';
 <g id="Node000010" class="node">
 <title>Node10</title>
 <g id="a_Node000010"><a xlink:href="classMTK3339Sensor.html" target="_top" xlink:title="Implementation of the Adafruit MTK3339 GPS sensor.">
-<polygon fill="white" stroke="transparent" points="1072.5,-131.5 964.5,-131.5 964.5,-37.5 1072.5,-37.5 1072.5,-131.5"/>
-<text text-anchor="start" x="979" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">MTK3339Sensor</text>
-<text text-anchor="start" x="971" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="981.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">GPS</text>
-<text text-anchor="start" x="968.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="981.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">MTK3339Sensor()</text>
-<text text-anchor="start" x="968.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="981.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">MTK3339Sensor()</text>
-<text text-anchor="start" x="968.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="981.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="968.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="981.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="964.5,-114.5 964.5,-114.5 1072.5,-114.5 1072.5,-114.5 964.5,-114.5"/>
-<polygon fill="#666666" stroke="#666666" points="964.5,-99.5 964.5,-99.5 979.5,-99.5 979.5,-99.5 964.5,-99.5"/>
-<polygon fill="#666666" stroke="#666666" points="979.5,-99.5 979.5,-99.5 1072.5,-99.5 1072.5,-99.5 979.5,-99.5"/>
-<polygon fill="none" stroke="#666666" points="964.5,-37.5 964.5,-131.5 1072.5,-131.5 1072.5,-37.5 964.5,-37.5"/>
+<polygon fill="white" stroke="transparent" points="1082.5,-154 974.5,-154 974.5,-30 1082.5,-30 1082.5,-154"/>
+<text text-anchor="start" x="989" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">MTK3339Sensor</text>
+<text text-anchor="start" x="981" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="991.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">GPS</text>
+<text text-anchor="start" x="978.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="991.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">MTK3339Sensor()</text>
+<text text-anchor="start" x="978.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="991.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">MTK3339Sensor()</text>
+<text text-anchor="start" x="978.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="991.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="978.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="991.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="978.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="991.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="978.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="991.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="974.5,-137 974.5,-137 1082.5,-137 1082.5,-137 974.5,-137"/>
+<polygon fill="#666666" stroke="#666666" points="974.5,-122 974.5,-122 989.5,-122 989.5,-122 974.5,-122"/>
+<polygon fill="#666666" stroke="#666666" points="989.5,-122 989.5,-122 1082.5,-122 1082.5,-122 989.5,-122"/>
+<polygon fill="none" stroke="#666666" points="974.5,-30 974.5,-154 1082.5,-154 1082.5,-30 974.5,-30"/>
 </a>
 </g>
 </g>
@@ -406,33 +419,37 @@ var sectionId = 'dynsection-0';
 <g id="edge9_Node000001_Node000010" class="edge">
 <title>Node1&#45;&gt;Node10</title>
 <g id="a_edge9_Node000001_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M785.78,-296.83C836.75,-264.93 903.92,-218.84 955.5,-169 966.99,-157.9 978.03,-144.56 987.56,-131.84"/>
-<polygon fill="none" stroke="#63b8ff" points="783.75,-293.97 777.11,-302.23 787.45,-299.92 783.75,-293.97"/>
+<path fill="none" stroke="#63b8ff" d="M795.78,-307.98C847.18,-278.02 914.89,-233.9 965.5,-184 974.53,-175.1 983.09,-164.74 990.83,-154.26"/>
+<polygon fill="none" stroke="#63b8ff" points="793.93,-305 787.02,-313.03 797.43,-311.06 793.93,-305"/>
 </a>
 </g>
 </g>
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="classPCF8523Sensor.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="transparent" points="1196,-139 1091,-139 1091,-30 1196,-30 1196,-139"/>
-<text text-anchor="start" x="1106" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">PCF8523Sensor</text>
-<text text-anchor="start" x="1098" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1108.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">rtc</text>
-<text text-anchor="start" x="1095.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1108.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">PCF8523Sensor()</text>
-<text text-anchor="start" x="1095.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1108.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">PCF8523Sensor()</text>
-<text text-anchor="start" x="1095.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1108.5" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1095.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1108.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="1095.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1108.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">calibrate()</text>
-<polygon fill="#666666" stroke="#666666" points="1091.5,-121.5 1091.5,-121.5 1196.5,-121.5 1196.5,-121.5 1091.5,-121.5"/>
-<polygon fill="#666666" stroke="#666666" points="1091.5,-106.5 1091.5,-106.5 1106.5,-106.5 1106.5,-106.5 1091.5,-106.5"/>
-<polygon fill="#666666" stroke="#666666" points="1106.5,-106.5 1106.5,-106.5 1196.5,-106.5 1196.5,-106.5 1106.5,-106.5"/>
-<polygon fill="none" stroke="#666666" points="1091,-30 1091,-139 1196,-139 1196,-30 1091,-30"/>
+<g id="a_Node000011"><a xlink:href="classPCF8523Sensor.html" target="_top" xlink:title="Implementation of the PCF8523 sensor.">
+<polygon fill="white" stroke="transparent" points="1206.5,-161.5 1100.5,-161.5 1100.5,-22.5 1206.5,-22.5 1206.5,-161.5"/>
+<text text-anchor="start" x="1115.5" y="-149" font-family="Helvetica,sans-Serif" font-size="10.00">PCF8523Sensor</text>
+<text text-anchor="start" x="1107" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1117.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">rtc</text>
+<text text-anchor="start" x="1104.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1117.5" y="-119" font-family="Helvetica,sans-Serif" font-size="10.00">PCF8523Sensor()</text>
+<text text-anchor="start" x="1104.5" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1117.5" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">PCF8523Sensor()</text>
+<text text-anchor="start" x="1104.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1117.5" y="-89" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1104.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1117.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<text text-anchor="start" x="1104.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1117.5" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="1104.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1117.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="1104.5" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1117.5" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">calibrate()</text>
+<polygon fill="#666666" stroke="#666666" points="1100.5,-144 1100.5,-144 1206.5,-144 1206.5,-144 1100.5,-144"/>
+<polygon fill="#666666" stroke="#666666" points="1100.5,-129 1100.5,-129 1115.5,-129 1115.5,-129 1100.5,-129"/>
+<polygon fill="#666666" stroke="#666666" points="1115.5,-129 1115.5,-129 1206.5,-129 1206.5,-129 1115.5,-129"/>
+<polygon fill="none" stroke="#666666" points="1100.5,-22.5 1100.5,-161.5 1206.5,-161.5 1206.5,-22.5 1100.5,-22.5"/>
 </a>
 </g>
 </g>
@@ -440,8 +457,8 @@ var sectionId = 'dynsection-0';
 <g id="edge10_Node000001_Node000011" class="edge">
 <title>Node1&#45;&gt;Node11</title>
 <g id="a_edge10_Node000001_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M787.29,-317.98C866.95,-291.38 992.13,-241.73 1081.5,-169 1091.86,-160.57 1101.42,-150.03 1109.76,-139.31"/>
-<polygon fill="none" stroke="#63b8ff" points="785.73,-314.81 777.33,-321.26 787.92,-321.45 785.73,-314.81"/>
+<path fill="none" stroke="#63b8ff" d="M797.2,-328.17C877.34,-304.01 1003.41,-257.45 1091.5,-184 1099.28,-177.51 1106.5,-169.81 1113.05,-161.67"/>
+<polygon fill="none" stroke="#63b8ff" points="795.77,-324.94 787.18,-331.15 797.76,-331.65 795.77,-324.94"/>
 </a>
 </g>
 </g>
@@ -449,22 +466,22 @@ var sectionId = 'dynsection-0';
 <g id="Node000012" class="node">
 <title>Node12</title>
 <g id="a_Node000012"><a xlink:href="classSGP30Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the SGP Air Quality sensor.">
-<polygon fill="white" stroke="transparent" points="1308.5,-131.5 1214.5,-131.5 1214.5,-37.5 1308.5,-37.5 1308.5,-131.5"/>
-<text text-anchor="start" x="1229" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">SGP30Sensor</text>
-<text text-anchor="start" x="1221" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1231.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">sgp</text>
-<text text-anchor="start" x="1218.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1231.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">SGP30Sensor()</text>
-<text text-anchor="start" x="1218.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1231.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">SGP30Sensor()</text>
-<text text-anchor="start" x="1218.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1231.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1218.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1231.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="1214.5,-114.5 1214.5,-114.5 1308.5,-114.5 1308.5,-114.5 1214.5,-114.5"/>
-<polygon fill="#666666" stroke="#666666" points="1214.5,-99.5 1214.5,-99.5 1229.5,-99.5 1229.5,-99.5 1214.5,-99.5"/>
-<polygon fill="#666666" stroke="#666666" points="1229.5,-99.5 1229.5,-99.5 1308.5,-99.5 1308.5,-99.5 1229.5,-99.5"/>
-<polygon fill="none" stroke="#666666" points="1214.5,-37.5 1214.5,-131.5 1308.5,-131.5 1308.5,-37.5 1214.5,-37.5"/>
+<polygon fill="white" stroke="transparent" points="1318.5,-139 1224.5,-139 1224.5,-45 1318.5,-45 1318.5,-139"/>
+<text text-anchor="start" x="1239" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">SGP30Sensor</text>
+<text text-anchor="start" x="1231" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1241.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">sgp</text>
+<text text-anchor="start" x="1228.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1241.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">SGP30Sensor()</text>
+<text text-anchor="start" x="1228.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1241.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">SGP30Sensor()</text>
+<text text-anchor="start" x="1228.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1241.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1228.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1241.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<polygon fill="#666666" stroke="#666666" points="1224.5,-122 1224.5,-122 1318.5,-122 1318.5,-122 1224.5,-122"/>
+<polygon fill="#666666" stroke="#666666" points="1224.5,-107 1224.5,-107 1239.5,-107 1239.5,-107 1224.5,-107"/>
+<polygon fill="#666666" stroke="#666666" points="1239.5,-107 1239.5,-107 1318.5,-107 1318.5,-107 1239.5,-107"/>
+<polygon fill="none" stroke="#666666" points="1224.5,-45 1224.5,-139 1318.5,-139 1318.5,-45 1224.5,-45"/>
 </a>
 </g>
 </g>
@@ -472,8 +489,8 @@ var sectionId = 'dynsection-0';
 <g id="edge11_Node000001_Node000012" class="edge">
 <title>Node1&#45;&gt;Node12</title>
 <g id="a_edge11_Node000001_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M787.5,-329.88C891.51,-311.63 1078.46,-267.03 1205.5,-169 1218.35,-159.08 1229.26,-145.35 1237.93,-131.89"/>
-<polygon fill="none" stroke="#63b8ff" points="786.65,-326.48 777.39,-331.62 787.84,-333.38 786.65,-326.48"/>
+<path fill="none" stroke="#63b8ff" d="M797.18,-339.57C901.62,-324.01 1089.96,-283.46 1215.5,-184 1230.33,-172.25 1242.23,-155.42 1251.19,-139.42"/>
+<polygon fill="none" stroke="#63b8ff" points="796.42,-336.15 787.03,-341.05 797.43,-343.07 796.42,-336.15"/>
 </a>
 </g>
 </g>
@@ -481,20 +498,24 @@ var sectionId = 'dynsection-0';
 <g id="Node000013" class="node">
 <title>Node13</title>
 <g id="a_Node000013"><a xlink:href="classTempSensor.html" target="_top" xlink:title="Implementation of a Sensor for the onboard temperature sensor.">
-<polygon fill="white" stroke="transparent" points="1414.5,-131.5 1326.5,-131.5 1326.5,-37.5 1414.5,-37.5 1414.5,-131.5"/>
-<text text-anchor="start" x="1340.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor</text>
-<text text-anchor="start" x="1368.5" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="1330.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1343.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
-<text text-anchor="start" x="1330.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1343.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
-<text text-anchor="start" x="1330.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1343.5" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1330.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1343.5" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<polygon fill="#666666" stroke="#666666" points="1326.5,-114.5 1326.5,-114.5 1414.5,-114.5 1414.5,-114.5 1326.5,-114.5"/>
-<polygon fill="#666666" stroke="#666666" points="1326.5,-99.5 1326.5,-99.5 1414.5,-99.5 1414.5,-99.5 1326.5,-99.5"/>
-<polygon fill="none" stroke="#666666" points="1326.5,-37.5 1326.5,-131.5 1414.5,-131.5 1414.5,-37.5 1326.5,-37.5"/>
+<polygon fill="white" stroke="transparent" points="1442.5,-154 1336.5,-154 1336.5,-30 1442.5,-30 1442.5,-154"/>
+<text text-anchor="start" x="1359.5" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor</text>
+<text text-anchor="start" x="1387.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="1340.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1353.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
+<text text-anchor="start" x="1340.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1353.5" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
+<text text-anchor="start" x="1340.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1353.5" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1340.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1353.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="1340.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1353.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="1340.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1353.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="1336.5,-137 1336.5,-137 1442.5,-137 1442.5,-137 1336.5,-137"/>
+<polygon fill="#666666" stroke="#666666" points="1336.5,-122 1336.5,-122 1442.5,-122 1442.5,-122 1336.5,-122"/>
+<polygon fill="none" stroke="#666666" points="1336.5,-30 1336.5,-154 1442.5,-154 1442.5,-30 1336.5,-30"/>
 </a>
 </g>
 </g>
@@ -502,8 +523,8 @@ var sectionId = 'dynsection-0';
 <g id="edge12_Node000001_Node000013" class="edge">
 <title>Node1&#45;&gt;Node13</title>
 <g id="a_edge12_Node000001_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M787.58,-336.56C910.91,-325.93 1155.22,-289.99 1317.5,-169 1330.44,-159.35 1341.02,-145.53 1349.23,-131.9"/>
-<polygon fill="none" stroke="#63b8ff" points="787.14,-333.09 777.47,-337.4 787.72,-340.06 787.14,-333.09"/>
+<path fill="none" stroke="#63b8ff" d="M797.09,-344.56C919.75,-334.82 1163.12,-301.02 1327.5,-184 1338.71,-176.02 1348.52,-165.33 1356.83,-154.08"/>
+<polygon fill="none" stroke="#63b8ff" points="796.74,-341.08 787.04,-345.33 797.27,-348.06 796.74,-341.08"/>
 </a>
 </g>
 </g>

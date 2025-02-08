@@ -1,5 +1,5 @@
 <map id="DS3231Sensor" name="DS3231Sensor">
-<area shape="rect" id="Node000001" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="27,419,161,564"/>
-<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,5,183,371"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,384,97,418,91,418,91,384"/>
+<area shape="rect" id="Node000001" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="23,399,165,584"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,5,183,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,365,97,398,91,398,91,365"/>
 </map>

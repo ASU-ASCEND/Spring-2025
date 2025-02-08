@@ -1,23 +1,19 @@
 <map id="loop" name="loop">
-<area shape="rect" id="Node000001" title="Loop for core 0, handling sensor reads." alt="" coords="5,129,56,155"/>
-<area shape="rect" id="Node000002" href="$classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727" title=" " alt="" coords="111,5,261,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="35,128,60,85,79,61,102,40,111,34,114,39,106,44,83,64,65,88,40,131"/>
-<area shape="rect" id="Node000003" href="$main_8cpp.html#a222d3cef3e43d77865ecbd2f95edba3a" title="Handles data interface mode for retrieving data from flash memory." alt="" coords="109,55,263,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="45,127,71,108,103,89,119,82,121,87,105,94,74,112,49,131"/>
-<area shape="rect" id="Node000005" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="104,104,268,129"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="56,135,94,129,95,134,57,141"/>
-<area shape="rect" id="Node000006" href="$main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b" title="Read data from each verified Sensor." alt="" coords="123,153,249,179"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="57,143,110,151,109,157,56,148"/>
-<area shape="rect" id="Node000010" href="$classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" title="Store data on flash." alt="" coords="112,203,260,228"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="50,153,105,188,125,196,123,201,103,192,47,157"/>
-<area shape="rect" id="Node000011" href="$classErrorDisplay.html#a493bde338b369414abffe90e0d49e93b" title="Toggles the level of the error display." alt="" coords="111,252,261,277"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="40,153,65,195,84,218,106,237,117,244,114,249,102,241,80,221,61,198,36,156"/>
-<area shape="rect" id="Node000004" href="$classFlashStorage.html#afffc9c3ffc2886608f7ebef3420a6069" title=" " alt="" coords="316,55,468,80"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,65,303,65,303,70,264,70"/>
-<area shape="rect" id="Node000007" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="316,153,468,179"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="249,163,302,163,302,169,249,169"/>
-<area shape="rect" id="Node000008" href="$classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format." alt="" coords="521,128,656,153"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="468,154,507,148,508,154,469,159"/>
-<area shape="rect" id="Node000009" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="516,177,661,203"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="469,173,502,177,502,182,468,178"/>
+<area shape="rect" id="Node000001" title="Loop for core 0, handling sensor reads." alt="" coords="5,104,56,129"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727" title="Erases all data stored in flash memory." alt="" coords="111,5,261,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="39,102,65,71,103,40,114,34,117,38,105,44,69,75,43,105"/>
+<area shape="rect" id="Node000003" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="104,55,268,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="56,105,103,89,127,81,128,87,105,94,57,110"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b" title="Read data from each verified Sensor." alt="" coords="123,104,249,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="56,114,109,114,109,119,56,119"/>
+<area shape="rect" id="Node000008" href="$classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1" title="Stores a string in flash memory, appending a newline at the end." alt="" coords="112,153,260,179"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="57,122,105,138,132,147,130,152,103,143,56,128"/>
+<area shape="rect" id="Node000009" href="$classErrorDisplay.html#a493bde338b369414abffe90e0d49e93b" title="Toggles the level of the error display." alt="" coords="111,203,261,228"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="43,128,69,158,105,188,120,195,117,200,103,192,66,162,39,131"/>
+<area shape="rect" id="Node000005" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="316,104,468,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="249,114,302,114,302,119,249,119"/>
+<area shape="rect" id="Node000006" href="$classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format." alt="" coords="521,79,656,104"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="468,104,507,99,508,104,469,110"/>
+<area shape="rect" id="Node000007" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="516,128,661,153"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="469,123,502,127,502,133,468,129"/>
 </map>

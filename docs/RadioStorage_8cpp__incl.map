@@ -1,12 +1,15 @@
 <map id="RadioStorage.cpp" name="RadioStorage.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="17,5,153,31"/>
-<area shape="rect" id="Node000002" href="$RadioStorage_8h.html" title=" " alt="" coords="25,79,146,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,31,88,65,83,65,83,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="57,225,141,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="63,106,41,120,21,137,9,156,8,166,12,176,31,200,57,217,54,222,28,204,7,179,3,166,4,154,17,133,38,115,60,102"/>
-<area shape="rect" id="Node000004" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="22,152,149,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="88,104,88,138,83,138,83,104"/>
-<area shape="rect" id="Node000005" href="$Storage_8h.html" title=" " alt="" coords="173,152,257,177"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="107,102,182,143,180,147,105,106"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="197,180,131,220,128,216,195,175"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="16,5,152,31"/>
+<area shape="rect" id="Node000002" href="$RadioStorage_8h.html" title=" " alt="" coords="23,79,145,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,31,87,65,81,65,81,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="95,299,179,324"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,106,41,119,21,136,10,156,8,166,10,176,30,211,56,242,110,289,106,293,52,246,25,214,5,178,3,166,4,154,17,133,37,115,59,102"/>
+<area shape="rect" id="Node000004" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="21,152,147,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="87,104,87,138,81,138,81,104"/>
+<area shape="rect" id="Node000005" href="$Storage_8h.html" title=" " alt="" coords="171,152,255,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="106,102,181,143,179,147,103,106"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="203,179,183,200,165,227,152,256,144,286,139,284,147,255,160,224,179,197,199,176"/>
+<area shape="rect" id="Node000006" href="$Logger_8h.html" title=" " alt="" coords="175,225,252,251"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="216,178,216,212,211,212,211,178"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="203,253,162,291,158,287,199,249"/>
 </map>

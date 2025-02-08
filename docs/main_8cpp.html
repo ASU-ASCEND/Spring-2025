@@ -82,6 +82,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="ErrorDisplay_8h_source.html">ErrorDisplay.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Logger_8h_source.html">Logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PayloadConfig_8h_source.html">PayloadConfig.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Sensor_8h_source.html">Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Storage_8h_source.html">Storage.h</a>&quot;</code><br />
@@ -102,7 +103,7 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -111,6 +112,8 @@ Macros</h2></td></tr>
 <tr class="separator:a8201d54530a1f4d0365d64f9b719abf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5633633d812e26b17cde137daa3df4" id="r_a7b5633633d812e26b17cde137daa3df4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7b5633633d812e26b17cde137daa3df4">QT_MAX_SIZE</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a7b5633633d812e26b17cde137daa3df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad714eb991501039e126ceb562be1ebe9" id="r_ad714eb991501039e126ceb562be1ebe9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad714eb991501039e126ceb562be1ebe9">INTER_PACKET</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ad714eb991501039e126ceb562be1ebe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -198,6 +201,20 @@ Variables</h2></td></tr>
 <tr class="separator:a0a8b4e2a5f762856b9eec173ed046fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad714eb991501039e126ceb562be1ebe9" name="ad714eb991501039e126ceb562be1ebe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad714eb991501039e126ceb562be1ebe9">&#9670;&#160;</a></span>INTER_PACKET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTER_PACKET&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8201d54530a1f4d0365d64f9b719abf0" name="a8201d54530a1f4d0365d64f9b719abf0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8201d54530a1f4d0365d64f9b719abf0">&#9670;&#160;</a></span>QT_ENTRY_SIZE</h2>
 
@@ -248,11 +265,6 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a222d3cef3e43d77865ecbd2f95edba3a_cgraph.svg" width="366" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a222d3cef3e43d77865ecbd2f95edba3a_icgraph.svg" width="264" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -275,7 +287,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="667" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="667" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

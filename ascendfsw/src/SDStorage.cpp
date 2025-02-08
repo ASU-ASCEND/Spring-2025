@@ -32,13 +32,18 @@ bool SDStorage::verify() {
   while (SD.exists("DATA" + String(num) + ".CSV")) num++;
   if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
   this->file_name = "DATA" + String(num) + ".CSV";
+  // for bin (eventually just have 1 of these)
+  num = 0;
+  while (SD.exists("RAWDATA" + String(num) + ".BIN")) num++;
+  if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
+  this->bin_file_name = "RAWDATA" + String(num) + ".BIN";
 
   // create file
   File f = SD.open(this->file_name, FILE_WRITE);
   if (!f) return false;  // check to see if the open operation worked
   f.close();
 
-  return true;
+  return true;  // we never want to give up on the SD card, it is a failsafe
 }
 
 /**
@@ -49,19 +54,47 @@ bool SDStorage::verify() {
 void SDStorage::store(String data) {
   File output = SD.open(this->file_name, FILE_WRITE);
   if (!output) {
-    Serial.println("SD card write failed");
+    log_core("SD card write failed");
     // set error if fails at all, but might still be working
     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
     SD.end();  // close instance
 
     if (this->verify()) {  // try to reconnect
-      Serial.println("Reverify succeeded");
+      log_core("Reverify succeeded");
     } else {
-      Serial.println("Reverify failed");
+      log_core("Reverify failed");
     }
   }
 
   output.println(data);
+
+  output.close();
+}
+
+/**
+ * @brief Store data on the SD card
+ *
+ * @param packet Pointer to packet bytes
+ */
+void SDStorage::store(uint8_t* packet) {
+  File output = SD.open(this->bin_file_name, FILE_WRITE);
+  if (!output) {
+    log_core("SD card write failed");
+    // set error if fails at all, but might still be working
+    ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
+    SD.end();  // close instance
+
+    if (this->verify()) {  // try to reconnect
+      log_core("Reverify succeeded");
+    } else {
+      log_core("Reverify failed");
+    }
+  }
+
+  // get length from the packet, after sync bytes (4) and sensor presense (4)
+  uint16_t packet_len = *((uint16_t*)(packet + 8));
+
+  output.write(packet, packet_len);
 
   output.close();
 }

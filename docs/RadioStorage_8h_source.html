@@ -98,10 +98,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_function" href="classRadioStorage.html#ab46ed262770c99c8049617ca479192ba">RadioStorage</a>();</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classRadioStorage.html#a6d15a136027e899fb2124afe82c0629e">verify</a>();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRadioStorage.html#ad9afb493f9783fecca7e82ec5543b98e">store</a>(String data);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classRadioStorage.html#ad9afb493f9783fecca7e82ec5543b98e">store</a>(uint8_t* packet);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aPayloadConfig_8h_html"><div class="ttname"><a href="PayloadConfig_8h.html">PayloadConfig.h</a></div><div class="ttdoc">Central location for pinout and config defines.</div></div>
 <div class="ttc" id="aStorage_8h_html"><div class="ttname"><a href="Storage_8h.html">Storage.h</a></div></div>
 <div class="ttc" id="aclassRadioStorage_html"><div class="ttname"><a href="classRadioStorage.html">RadioStorage</a></div><div class="ttdoc">Implementation of a Storage device to interface with an SD card.</div><div class="ttdef"><b>Definition</b> RadioStorage.h:13</div></div>
@@ -109,7 +110,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclassRadioStorage_html_a81c2bff39345dd63c62b166a59af678c"><div class="ttname"><a href="classRadioStorage.html#a81c2bff39345dd63c62b166a59af678c">RadioStorage::file_name</a></div><div class="ttdeci">String file_name</div><div class="ttdef"><b>Definition</b> RadioStorage.h:15</div></div>
 <div class="ttc" id="aclassRadioStorage_html_ab46ed262770c99c8049617ca479192ba"><div class="ttname"><a href="classRadioStorage.html#ab46ed262770c99c8049617ca479192ba">RadioStorage::RadioStorage</a></div><div class="ttdeci">RadioStorage()</div><div class="ttdoc">Construct a new RadioStorage object.</div><div class="ttdef"><b>Definition</b> RadioStorage.cpp:7</div></div>
 <div class="ttc" id="aclassRadioStorage_html_ad9afb493f9783fecca7e82ec5543b98e"><div class="ttname"><a href="classRadioStorage.html#ad9afb493f9783fecca7e82ec5543b98e">RadioStorage::store</a></div><div class="ttdeci">void store(String data)</div><div class="ttdoc">Send data to the radio for transmitting.</div><div class="ttdef"><b>Definition</b> RadioStorage.cpp:28</div></div>
-<div class="ttc" id="aclassStorage_html"><div class="ttname"><a href="classStorage.html">Storage</a></div><div class="ttdoc">Parent class for all data storage devices (sd card, radio, etc)</div><div class="ttdef"><b>Definition</b> Storage.h:10</div></div>
+<div class="ttc" id="aclassStorage_html"><div class="ttname"><a href="classStorage.html">Storage</a></div><div class="ttdoc">Parent class for all data storage devices (sd card, radio, etc)</div><div class="ttdef"><b>Definition</b> Storage.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -83,28 +83,33 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for FlashStorage:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage__inherit__graph.svg" width="190" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage__inherit__graph.svg" width="190" height="450"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for FlashStorage:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage__coll__graph.svg" width="596" height="507"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage__coll__graph.svg" width="596" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af66fb7c3d6072e26071e862b11b09a07" id="r_af66fb7c3d6072e26071e862b11b09a07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#af66fb7c3d6072e26071e862b11b09a07">FlashStorage</a> ()</td></tr>
-<tr class="memdesc:af66fb7c3d6072e26071e862b11b09a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Flash <a class="el" href="classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)">Storage</a>:: Flash <a class="el" href="classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)">Storage</a> object.  <br /></td></tr>
+<tr class="memdesc:af66fb7c3d6072e26071e862b11b09a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classFlashStorage.html">FlashStorage</a> object.  <br /></td></tr>
 <tr class="separator:af66fb7c3d6072e26071e862b11b09a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addf2a0a14a0a92ccce2d55eac60282e4" id="r_addf2a0a14a0a92ccce2d55eac60282e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4">verify</a> () <a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">override</a></td></tr>
-<tr class="memdesc:addf2a0a14a0a92ccce2d55eac60282e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify flash memory connection and create a new file.  <br /></td></tr>
+<tr class="memdesc:addf2a0a14a0a92ccce2d55eac60282e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies the flash connection and prepares for data storage.  <br /></td></tr>
 <tr class="separator:addf2a0a14a0a92ccce2d55eac60282e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4890571487bb855dd72c050dc37a73f1" id="r_a4890571487bb855dd72c050dc37a73f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1">store</a> (String) <a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">override</a></td></tr>
-<tr class="memdesc:a4890571487bb855dd72c050dc37a73f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store data on flash.  <br /></td></tr>
+<tr class="memdesc:a4890571487bb855dd72c050dc37a73f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a string in flash memory, appending a newline at the end.  <br /></td></tr>
 <tr class="separator:a4890571487bb855dd72c050dc37a73f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33d3a0f058d2be6a45caea87b165751" id="r_ad33d3a0f058d2be6a45caea87b165751"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#ad33d3a0f058d2be6a45caea87b165751">store</a> (uint8_t *)</td></tr>
+<tr class="memdesc:ad33d3a0f058d2be6a45caea87b165751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a packet of bytes in flash memory.  <br /></td></tr>
+<tr class="separator:ad33d3a0f058d2be6a45caea87b165751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afffc9c3ffc2886608f7ebef3420a6069" id="r_afffc9c3ffc2886608f7ebef3420a6069"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#afffc9c3ffc2886608f7ebef3420a6069">dump</a> ()</td></tr>
+<tr class="memdesc:afffc9c3ffc2886608f7ebef3420a6069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the contents of flash memory to the serial monitor.  <br /></td></tr>
 <tr class="separator:afffc9c3ffc2886608f7ebef3420a6069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2dd4e8b7b4a85d5820f4277d0fb6727" id="r_ac2dd4e8b7b4a85d5820f4277d0fb6727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727">erase</a> ()</td></tr>
+<tr class="memdesc:ac2dd4e8b7b4a85d5820f4277d0fb6727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all data stored in flash memory.  <br /></td></tr>
 <tr class="separator:ac2dd4e8b7b4a85d5820f4277d0fb6727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classStorage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classStorage')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classStorage.html">Storage</a></td></tr>
 <tr class="memitem:a2f5803f60b5c3cd8e9c35fc744ab3058 inherit pub_methods_classStorage" id="r_a2f5803f60b5c3cd8e9c35fc744ab3058"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a2f5803f60b5c3cd8e9c35fc744ab3058">Storage</a> (String <a class="el" href="classStorage.html#aff621d72ce660e62f0dbb2f87d835327">storage_name</a>)</td></tr>
@@ -112,11 +117,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a97174b0ffdac8fcddb79652a46b75268 inherit pub_methods_classStorage" id="r_a97174b0ffdac8fcddb79652a46b75268"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a97174b0ffdac8fcddb79652a46b75268">getStorageName</a> () const</td></tr>
 <tr class="memdesc:a97174b0ffdac8fcddb79652a46b75268 inherit pub_methods_classStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the storage device.  <br /></td></tr>
 <tr class="separator:a97174b0ffdac8fcddb79652a46b75268 inherit pub_methods_classStorage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76076395916d9e7eda5811aabcc685a inherit pub_methods_classStorage" id="r_ac76076395916d9e7eda5811aabcc685a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#ac76076395916d9e7eda5811aabcc685a">store</a> (uint8_t *packet, int length)</td></tr>
+<tr class="memdesc:ac76076395916d9e7eda5811aabcc685a inherit pub_methods_classStorage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send packet data to storage device.  <br /></td></tr>
+<tr class="separator:ac76076395916d9e7eda5811aabcc685a inherit pub_methods_classStorage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a859b93e00991f74dd5abc09e3065c255" id="r_a859b93e00991f74dd5abc09e3065c255"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255">loadPosition</a> ()</td></tr>
-<tr class="memdesc:a859b93e00991f74dd5abc09e3065c255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read position from flash.  <br /></td></tr>
+<tr class="memdesc:a859b93e00991f74dd5abc09e3065c255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locates the next available write position in flash.  <br /></td></tr>
 <tr class="separator:a859b93e00991f74dd5abc09e3065c255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -149,7 +157,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Flash <a class="el" href="classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)">Storage</a>:: Flash <a class="el" href="classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)">Storage</a> object. </p>
+<p>Constructs a new <a class="el" href="classFlashStorage.html">FlashStorage</a> object. </p>
+<p>Initializes the internal write position to 0 and sets the storage name to "Flash Storage." </p>
 
 </div>
 </div>
@@ -168,10 +177,13 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Dumps the contents of flash memory to the serial monitor. </p>
+<p>Reads each byte of flash memory starting from the beginning and prints it to the serial monitor. The process continues until the end of the memory or the end code (0xFF) is reached. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_afffc9c3ffc2886608f7ebef3420a6069_icgraph.svg" width="464" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_afffc9c3ffc2886608f7ebef3420a6069_icgraph.svg" width="366" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -190,6 +202,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Erases all data stored in flash memory. </p>
+<p>Erases all data stored in flash memory by calling the flash erase function and resetting the internal write position to 0. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -221,7 +236,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Read position from flash. </p>
+<p>Locates the next available write position in flash. </p>
+<p>Reads bytes from flash starting at the current position and increments through memory until finding a free (0xFF) location or reaching the max size. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -231,7 +247,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="a4890571487bb855dd72c050dc37a73f1" name="a4890571487bb855dd72c050dc37a73f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4890571487bb855dd72c050dc37a73f1">&#9670;&#160;</a></span>store()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4890571487bb855dd72c050dc37a73f1">&#9670;&#160;</a></span>store() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,10 +270,11 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Store data on flash. </p>
+<p>Stores a string in flash memory, appending a newline at the end. </p>
+<p>Iterates through each character of the string and writes it to flash. The internal write position is then advanced accordingly.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">data</td><td>- The string to be stored in flash. </td></tr>
   </table>
   </dd>
 </dl>
@@ -268,6 +285,33 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_a4890571487bb855dd72c050dc37a73f1_icgraph.svg" width="266" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="ad33d3a0f058d2be6a45caea87b165751" name="ad33d3a0f058d2be6a45caea87b165751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33d3a0f058d2be6a45caea87b165751">&#9670;&#160;</a></span>store() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">void</a> FlashStorage::store </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stores a packet of bytes in flash memory. </p>
+<p>Iterates through each byte of the packet and writes it to flash. Takes into account initial header bytes, consisting of <a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">sync(4)</a>, <a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">presence(4)</a>, and length <a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">fields(2)</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>- Pointer to the byte array containing the packet. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -294,10 +338,11 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Verify flash memory connection and create a new file. </p>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<p>Verifies the flash connection and prepares for data storage. </p>
+<p>Attempts to initialize the flash memory. If successful, resets the internal write position to 0, locates the next free position, and returns true. Returns false otherwise.</p>
+<dl class="section return"><dt>Returns</dt><dd>true - Flash initialization is successful </dd>
 <dd>
-false </dd></dl>
+false - Flash initialization failed </dd></dl>
 
 <p>Implements <a class="el" href="classStorage.html#a83fbc910d2fe786ac9134f27a85bda8f">Storage</a>.</p>
 <div class="dynheader">
