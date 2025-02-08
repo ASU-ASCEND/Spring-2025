@@ -55,31 +55,32 @@ void DS3231Sensor::readDataPacket(uint8_t*& packet) {
   *(packet++) = minute;
   *(packet++) = second;
 
-  std::copy((uint8_t*)(&temperature), (uint8_t*)(&temperature) + sizeof(temperature), packet);
+  std::copy((uint8_t*)(&temperature),
+            (uint8_t*)(&temperature) + sizeof(temperature), packet);
   packet += sizeof(temperature);
 }
 
-/** 
+/**
  * @brief Decodes a packet into a CSV string
- * 
+ *
  * @param packet The packet to decode
  * @return String CSV line - year/month/day hour:minute:second,temperature,
  */
 String DS3231Sensor::decodeToCSV(uint8_t*& packet) {
-    uint16_t year = *((uint16_t*)packet);
-    packet += sizeof(year);
-    uint8_t month = *packet++;
-    uint8_t day = *packet++;
-    uint8_t hour = *packet++;
-    uint8_t minute = *packet++;
-    uint8_t second = *packet++;
-    
-    float temperature = *((float*)packet);
-    packet += sizeof(temperature);
+  uint16_t year = *((uint16_t*)packet);
+  packet += sizeof(year);
+  uint8_t month = *packet++;
+  uint8_t day = *packet++;
+  uint8_t hour = *packet++;
+  uint8_t minute = *packet++;
+  uint8_t second = *packet++;
 
-    return String(year) + "/" + String(month) + "/" + String(day) + " " +
-           String(hour) + ":" + String(minute) + ":" + String(second) + "," +
-           String(temperature) + ",";
+  float temperature = *((float*)packet);
+  packet += sizeof(temperature);
+
+  return String(year) + "/" + String(month) + "/" + String(day) + " " +
+         String(hour) + ":" + String(minute) + ":" + String(second) + "," +
+         String(temperature) + ",";
 }
 
 String DS3231Sensor::readData() {

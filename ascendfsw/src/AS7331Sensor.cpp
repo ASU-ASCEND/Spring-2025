@@ -46,9 +46,9 @@ String AS7331Sensor::readData() {
 }
 
 /**
-* @brief Reads UV data from the sensor and writes it to the packet
-* 
-* @param packet The data packet to write to.
+ * @brief Reads UV data from the sensor and writes it to the packet
+ *
+ * @param packet The data packet to write to.
  */
 void AS7331Sensor::readDataPacket(uint8_t*& packet) {
   myUVSensor.readAllUV();
@@ -67,7 +67,7 @@ void AS7331Sensor::readDataPacket(uint8_t*& packet) {
 
 /**
  * @brief Decodes a packet into a CSV string
- * 
+ *
  * @param packet The packet to decode
  * @return String CSV line - UVA, UVB, UVC,
  */
@@ -81,4 +81,4 @@ String AS7331Sensor::decodeToCSV(uint8_t*& packet) {
   packet += sizeof(uvc);
 
   return String(uva) + "," + String(uvb) + "," + String(uvc) + ",";
-} 
+}
