@@ -21,8 +21,8 @@ class PCF8523Sensor : public Sensor {
   bool verify();
   String decodeToCSV(uint8_t*& packet);
   void readDataPacket(uint8_t*& packet);
-  String readData();
-  void calibrate();
+  String readData() override;
+  void calibrate() override;
 };
 
 #endif  // PCF8523SENSOR_H
