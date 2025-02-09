@@ -184,11 +184,11 @@ void loop() {
   // toggle heartbeats
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
-  // switch to data recovery mode is commented out for testing without switch installed 
-  /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) { // will be replaced with Software control
-#if FLASH_SPI1
-    if (was_dumping == false) {
-      while (queue_get_level(&qt) != 0)
+  // switch to data recovery mode is commented out for testing without switch
+  // installed
+  /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) { // will be replaced with
+Software control #if FLASH_SPI1 if (was_dumping == false) { while
+(queue_get_level(&qt) != 0)
         ;
       delay(10);
       rp2040.idleOtherCore();
@@ -214,7 +214,8 @@ void loop() {
 #if PACKET_SYSTEM_TESTING
   // build csv row
   uint8_t packet[MAX_PACKET_SIZE];
-  // for (int i = 0; i < MAX_PACKET_SIZE; i++) packet[i] = 0; // useful for debugging
+  // for (int i = 0; i < MAX_PACKET_SIZE; i++) packet[i] = 0; // useful for
+  // debugging
   readSensorDataPacket(packet);
   String csv_row = decodePacket(packet);
 #else

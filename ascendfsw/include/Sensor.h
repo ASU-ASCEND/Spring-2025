@@ -118,7 +118,7 @@ class Sensor {
    * @param packet Pointer to the packet byte array
    * @return int The number of bytes appended
    */
-  virtual void readDataPacket(uint8_t*& packet){};
+  virtual void readDataPacket(uint8_t*& packet) {};
 
   /**
    * @brief Used for onboard decoding of packets

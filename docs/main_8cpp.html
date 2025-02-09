@@ -108,12 +108,14 @@ Include dependency graph for main.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a879456c3b8e2853f7044d764e9c180d4" id="r_a879456c3b8e2853f7044d764e9c180d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a879456c3b8e2853f7044d764e9c180d4">MAX_PACKET_SIZE</a>&#160;&#160;&#160;500</td></tr>
+<tr class="separator:a879456c3b8e2853f7044d764e9c180d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4168244e83bfe6fdfb37b001daea31ba" id="r_a4168244e83bfe6fdfb37b001daea31ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4168244e83bfe6fdfb37b001daea31ba">PACKET_SYSTEM_TESTING</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a4168244e83bfe6fdfb37b001daea31ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8201d54530a1f4d0365d64f9b719abf0" id="r_a8201d54530a1f4d0365d64f9b719abf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8201d54530a1f4d0365d64f9b719abf0">QT_ENTRY_SIZE</a>&#160;&#160;&#160;1000</td></tr>
 <tr class="separator:a8201d54530a1f4d0365d64f9b719abf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5633633d812e26b17cde137daa3df4" id="r_a7b5633633d812e26b17cde137daa3df4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7b5633633d812e26b17cde137daa3df4">QT_MAX_SIZE</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a7b5633633d812e26b17cde137daa3df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad714eb991501039e126ceb562be1ebe9" id="r_ad714eb991501039e126ceb562be1ebe9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad714eb991501039e126ceb562be1ebe9">INTER_PACKET</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ad714eb991501039e126ceb562be1ebe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -129,6 +131,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a9db5e6113d9a0bd03a1b044059ae787b" id="r_a9db5e6113d9a0bd03a1b044059ae787b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b">readSensorData</a> ()</td></tr>
 <tr class="memdesc:a9db5e6113d9a0bd03a1b044059ae787b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from each verified <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a>.  <br /></td></tr>
 <tr class="separator:a9db5e6113d9a0bd03a1b044059ae787b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2720be1478ba44e12c6b983bfffab7b2" id="r_a2720be1478ba44e12c6b983bfffab7b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2720be1478ba44e12c6b983bfffab7b2">readSensorDataPacket</a> (uint8_t *packet)</td></tr>
+<tr class="memdesc:a2720be1478ba44e12c6b983bfffab7b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sensor data into a packet byte array.  <br /></td></tr>
+<tr class="separator:a2720be1478ba44e12c6b983bfffab7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9163644b089001958496a71b73b9091a" id="r_a9163644b089001958496a71b73b9091a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9163644b089001958496a71b73b9091a">decodePacket</a> (uint8_t *packet)</td></tr>
+<tr class="memdesc:a9163644b089001958496a71b73b9091a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes the packet to a CSV row.  <br /></td></tr>
+<tr class="separator:a9163644b089001958496a71b73b9091a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a222d3cef3e43d77865ecbd2f95edba3a" id="r_a222d3cef3e43d77865ecbd2f95edba3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a222d3cef3e43d77865ecbd2f95edba3a">handleDataInterface</a> ()</td></tr>
 <tr class="memdesc:a222d3cef3e43d77865ecbd2f95edba3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles data interface mode for retrieving data from flash memory.  <br /></td></tr>
 <tr class="separator:a222d3cef3e43d77865ecbd2f95edba3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,6 +201,8 @@ Variables</h2></td></tr>
 <tr class="separator:a45010841f3644338adefc6120a95e51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac65d766d5179dcc67a8e61e09a1ce969" id="r_ac65d766d5179dcc67a8e61e09a1ce969"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac65d766d5179dcc67a8e61e09a1ce969">it</a> = 0</td></tr>
 <tr class="separator:ac65d766d5179dcc67a8e61e09a1ce969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaacb8cdda17b6340a4d5aeaf72e2ca6" id="r_abaacb8cdda17b6340a4d5aeaf72e2ca6"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a> [] = {0x89, 0xAB, 0xCD, 0xEF}</td></tr>
+<tr class="separator:abaacb8cdda17b6340a4d5aeaf72e2ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afabd161670122f5293f38657d84ef4c4" id="r_afabd161670122f5293f38657d84ef4c4"><td class="memItemLeft" align="right" valign="top">queue_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afabd161670122f5293f38657d84ef4c4">qt</a></td></tr>
 <tr class="separator:afabd161670122f5293f38657d84ef4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab068caac15d62ecf406acd1986797797" id="r_ab068caac15d62ecf406acd1986797797"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab068caac15d62ecf406acd1986797797">was_dumping</a> = false</td></tr>
@@ -201,14 +211,28 @@ Variables</h2></td></tr>
 <tr class="separator:a0a8b4e2a5f762856b9eec173ed046fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ad714eb991501039e126ceb562be1ebe9" name="ad714eb991501039e126ceb562be1ebe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad714eb991501039e126ceb562be1ebe9">&#9670;&#160;</a></span>INTER_PACKET</h2>
+<a id="a879456c3b8e2853f7044d764e9c180d4" name="a879456c3b8e2853f7044d764e9c180d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879456c3b8e2853f7044d764e9c180d4">&#9670;&#160;</a></span>MAX_PACKET_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INTER_PACKET&#160;&#160;&#160;0</td>
+          <td class="memname">#define MAX_PACKET_SIZE&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4168244e83bfe6fdfb37b001daea31ba" name="a4168244e83bfe6fdfb37b001daea31ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4168244e83bfe6fdfb37b001daea31ba">&#9670;&#160;</a></span>PACKET_SYSTEM_TESTING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PACKET_SYSTEM_TESTING&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -244,6 +268,43 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9163644b089001958496a71b73b9091a" name="a9163644b089001958496a71b73b9091a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9163644b089001958496a71b73b9091a">&#9670;&#160;</a></span>decodePacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String decodePacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decodes the packet to a CSV row. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to the packet array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String The resulting CSV row </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a9163644b089001958496a71b73b9091a_cgraph.svg" width="558" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a9163644b089001958496a71b73b9091a_icgraph.svg" width="220" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a222d3cef3e43d77865ecbd2f95edba3a" name="a222d3cef3e43d77865ecbd2f95edba3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a222d3cef3e43d77865ecbd2f95edba3a">&#9670;&#160;</a></span>handleDataInterface()</h2>
 
@@ -287,7 +348,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="667" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -342,6 +403,42 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a9db5e6113d9a0bd03a1b044059ae787b_icgraph.svg" width="236" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a2720be1478ba44e12c6b983bfffab7b2" name="a2720be1478ba44e12c6b983bfffab7b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2720be1478ba44e12c6b983bfffab7b2">&#9670;&#160;</a></span>readSensorDataPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readSensorDataPacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads sensor data into a packet byte array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to the packet array </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2720be1478ba44e12c6b983bfffab7b2_cgraph.svg" width="619" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2720be1478ba44e12c6b983bfffab7b2_icgraph.svg" width="278" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -849,6 +946,20 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">bool storages_verify[<a class="el" href="main_8cpp.html#a12b260a884350838d7056cd758cd8cbe">storages_len</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abaacb8cdda17b6340a4d5aeaf72e2ca6" name="abaacb8cdda17b6340a4d5aeaf72e2ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaacb8cdda17b6340a4d5aeaf72e2ca6">&#9670;&#160;</a></span>SYNC_BYTES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF}</td>
         </tr>
       </table>
 </div><div class="memdoc">

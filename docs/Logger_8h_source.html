@@ -90,11 +90,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  Serial.print(<span class="stringliteral">&quot;[Core &quot;</span> + String(get_core_num()) + <span class="stringliteral">&quot;] &quot;</span> + str + <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> log_data_raw(uint8_t* packet, uint8_t len) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> log_data_raw(<span class="keyword">const</span> uint8_t* packet, <span class="keyword">const</span> uint8_t len) {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  Serial.write((<span class="keyword">const</span> <span class="keywordtype">char</span>*)packet, len);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> log_data_bytes(uint8_t* packet, uint8_t len) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> log_data_bytes(<span class="keyword">const</span> uint8_t* packet, <span class="keyword">const</span> uint8_t len) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  String packet_as_hex = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++) {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    packet_as_hex += String(packet[i], HEX) + <span class="stringliteral">&quot; &quot;</span>;</div>

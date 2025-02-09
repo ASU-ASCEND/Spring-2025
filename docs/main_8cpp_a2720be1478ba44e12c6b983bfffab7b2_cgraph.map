@@ -1,0 +1,7 @@
+<map id="readSensorDataPacket" name="readSensorDataPacket">
+<area shape="rect" id="Node000001" title="Reads sensor data into a packet byte array." alt="" coords="5,5,173,31"/>
+<area shape="rect" id="Node000002" href="$classSensor.html#a1d128dc295e634de6506da5cbb716b64" title="Append the data from a sensor to the packet if the minium period is satisfied." alt="" coords="221,5,389,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,15,208,15,208,21,174,21"/>
+<area shape="rect" id="Node000003" href="$classSensor.html#ae835436cbb1fd60580e72a4ee7014c48" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="437,5,613,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,15,424,15,424,21,389,21"/>
+</map>

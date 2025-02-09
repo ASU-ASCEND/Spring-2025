@@ -103,15 +103,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acecc9cc8ee162220e28c9907ba7dd722" id="r_acecc9cc8ee162220e28c9907ba7dd722"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDS3231Sensor.html#acecc9cc8ee162220e28c9907ba7dd722">verify</a> () override</td></tr>
 <tr class="memdesc:acecc9cc8ee162220e28c9907ba7dd722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the sensor is connected.  <br /></td></tr>
 <tr class="separator:acecc9cc8ee162220e28c9907ba7dd722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796277dc5eb15ae0972addd9edd2b2f7" id="r_a796277dc5eb15ae0972addd9edd2b2f7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDS3231Sensor.html#a796277dc5eb15ae0972addd9edd2b2f7">readData</a> () override</td></tr>
+<tr class="memdesc:a796277dc5eb15ae0972addd9edd2b2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads timestamp data from RTC (plus temperature)  <br /></td></tr>
+<tr class="separator:a796277dc5eb15ae0972addd9edd2b2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da08bdba6a6c1e1c20392130917155d" id="r_a4da08bdba6a6c1e1c20392130917155d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDS3231Sensor.html#a4da08bdba6a6c1e1c20392130917155d">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:a4da08bdba6a6c1e1c20392130917155d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes a packet into a CSV string.  <br /></td></tr>
+<tr class="memdesc:a4da08bdba6a6c1e1c20392130917155d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads timestamp data from RTC (plus temperature)  <br /></td></tr>
 <tr class="separator:a4da08bdba6a6c1e1c20392130917155d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec7d7f7a9524424019197ed9179e83c1" id="r_aec7d7f7a9524424019197ed9179e83c1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDS3231Sensor.html#aec7d7f7a9524424019197ed9179e83c1">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
 <tr class="memdesc:aec7d7f7a9524424019197ed9179e83c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes a packet into a CSV string.  <br /></td></tr>
 <tr class="separator:aec7d7f7a9524424019197ed9179e83c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a796277dc5eb15ae0972addd9edd2b2f7" id="r_a796277dc5eb15ae0972addd9edd2b2f7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDS3231Sensor.html#a796277dc5eb15ae0972addd9edd2b2f7">readData</a> () override</td></tr>
-<tr class="memdesc:a796277dc5eb15ae0972addd9edd2b2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the collected data from the sensor in CSV format.  <br /></td></tr>
-<tr class="separator:a796277dc5eb15ae0972addd9edd2b2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e9bf415e7787be9c0e176383a2141a" id="r_a85e9bf415e7787be9c0e176383a2141a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDS3231Sensor.html#a85e9bf415e7787be9c0e176383a2141a">setTime</a> (int year, int month, int day, int hour, int minute, int second)</td></tr>
 <tr class="memdesc:a85e9bf415e7787be9c0e176383a2141a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function to set the RTC's time, easier to use a separate Arduino program to do this.  <br /></td></tr>
 <tr class="separator:a85e9bf415e7787be9c0e176383a2141a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,12 +144,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor" id="r_a7a1b80d366c585dd9c85992f0ca96d39"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a7a1b80d366c585dd9c85992f0ca96d39">getSensorCSVHeader</a> () const</td></tr>
 <tr class="memdesc:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the csv header string associated with this sensor.  <br /></td></tr>
 <tr class="separator:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7534278a3d205320a41e4901bf650ab inherit pub_methods_classSensor" id="r_ad7534278a3d205320a41e4901bf650ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ad7534278a3d205320a41e4901bf650ab">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ad7534278a3d205320a41e4901bf650ab inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
-<tr class="separator:ad7534278a3d205320a41e4901bf650ab inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ec204dabece138e3d17816ee1961db4 inherit pub_methods_classSensor" id="r_a3ec204dabece138e3d17816ee1961db4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a3ec204dabece138e3d17816ee1961db4">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:a3ec204dabece138e3d17816ee1961db4 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
-<tr class="separator:a3ec204dabece138e3d17816ee1961db4 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor" id="r_a1d128dc295e634de6506da5cbb716b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a1d128dc295e634de6506da5cbb716b64">getDataPacket</a> (uint32_t &amp;sensor_id, uint8_t *&amp;packet)</td></tr>
 <tr class="memdesc:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the data from a sensor to the packet if the minium period is satisfied.  <br /></td></tr>
 <tr class="separator:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,6 +215,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">String DS3231Sensor::decodeToCSV </td>
@@ -230,16 +227,16 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Decodes a packet into a CSV string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">packet</td><td>The packet to decode </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>String CSV line - year/month/day hour:minute:second,temperature, </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">Sensor</a>.</p>
 
 </div>
 </div>
@@ -266,8 +263,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the collected data from the sensor in CSV format. </p>
-<dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
+<p>Reads timestamp data from RTC (plus temperature) </p>
 
 <p>Implements <a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8">Sensor</a>.</p>
 
@@ -278,6 +274,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void DS3231Sensor::readDataPacket </td>
@@ -287,15 +286,16 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Decodes a packet into a CSV string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">packet</td><td>The data packet to write to. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Reads timestamp data from RTC (plus temperature) </p>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">Sensor</a>.</p>
 
 </div>
 </div>

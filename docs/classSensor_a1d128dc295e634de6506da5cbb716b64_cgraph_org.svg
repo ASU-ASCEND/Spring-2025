@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classSensor.html#ad7534278a3d205320a41e4901bf650ab" target="_top" xlink:title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin...">
+<g id="a_Node000002"><a xlink:href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48" target="_top" xlink:title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin...">
 <polygon fill="white" stroke="#666666" points="294,-19 162,-19 162,0 294,0 294,-19"/>
 <text text-anchor="middle" x="228" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor::readDataPacket</text>
 </a>
