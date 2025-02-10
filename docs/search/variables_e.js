@@ -11,5 +11,6 @@ var searchData=
   ['storage_5fname_8',['storage_name',['../classStorage.html#aff621d72ce660e62f0dbb2f87d835327',1,'Storage']]],
   ['storages_9',['storages',['../main_8cpp.html#a39db351a5a127ccbd3893f4de5936b05',1,'main.cpp']]],
   ['storages_5flen_10',['storages_len',['../main_8cpp.html#a12b260a884350838d7056cd758cd8cbe',1,'main.cpp']]],
-  ['storages_5fverify_11',['storages_verify',['../main_8cpp.html#a45010841f3644338adefc6120a95e51d',1,'main.cpp']]]
+  ['storages_5fverify_11',['storages_verify',['../main_8cpp.html#a45010841f3644338adefc6120a95e51d',1,'main.cpp']]],
+  ['sync_5fbytes_12',['SYNC_BYTES',['../main_8cpp.html#abaacb8cdda17b6340a4d5aeaf72e2ca6',1,'main.cpp']]]
 ];

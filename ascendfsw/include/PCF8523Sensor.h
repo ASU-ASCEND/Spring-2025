@@ -18,10 +18,10 @@ class PCF8523Sensor : public Sensor {
   PCF8523Sensor();
   PCF8523Sensor(unsigned long minimum_period);
 
-  bool verify();
+  bool verify() override;
   String decodeToCSV(uint8_t*& packet);
   void readDataPacket(uint8_t*& packet);
-  String readData();
+  String readData() override;
   void calibrate();
 };
 

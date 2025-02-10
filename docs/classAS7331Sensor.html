@@ -84,7 +84,7 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for AS7331Sensor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classAS7331Sensor__inherit__graph.svg" width="188" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classAS7331Sensor__inherit__graph.svg" width="188" height="590"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for AS7331Sensor:</div>
@@ -103,6 +103,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7232fc7844005125bd323cd2798d5e5c" id="r_a7232fc7844005125bd323cd2798d5e5c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAS7331Sensor.html#a7232fc7844005125bd323cd2798d5e5c">verify</a> () override</td></tr>
 <tr class="memdesc:a7232fc7844005125bd323cd2798d5e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the sensor can be reached.  <br /></td></tr>
 <tr class="separator:a7232fc7844005125bd323cd2798d5e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36432b0932aeb4c96ed8aeb22bfbad37" id="r_a36432b0932aeb4c96ed8aeb22bfbad37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAS7331Sensor.html#a36432b0932aeb4c96ed8aeb22bfbad37">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:a36432b0932aeb4c96ed8aeb22bfbad37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads UV data from the sensor and writes it to the packet.  <br /></td></tr>
+<tr class="separator:a36432b0932aeb4c96ed8aeb22bfbad37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad193fb1d9c61b5bf29c2bd693f7873f4" id="r_ad193fb1d9c61b5bf29c2bd693f7873f4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAS7331Sensor.html#ad193fb1d9c61b5bf29c2bd693f7873f4">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:ad193fb1d9c61b5bf29c2bd693f7873f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes a packet into a CSV string.  <br /></td></tr>
+<tr class="separator:ad193fb1d9c61b5bf29c2bd693f7873f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35dc4a11152a841a48eeb79795d18492" id="r_a35dc4a11152a841a48eeb79795d18492"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAS7331Sensor.html#a35dc4a11152a841a48eeb79795d18492">readData</a> () override</td></tr>
 <tr class="memdesc:a35dc4a11152a841a48eeb79795d18492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads UV data.  <br /></td></tr>
 <tr class="separator:a35dc4a11152a841a48eeb79795d18492"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,12 +141,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor" id="r_a7a1b80d366c585dd9c85992f0ca96d39"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a7a1b80d366c585dd9c85992f0ca96d39">getSensorCSVHeader</a> () const</td></tr>
 <tr class="memdesc:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the csv header string associated with this sensor.  <br /></td></tr>
 <tr class="separator:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7534278a3d205320a41e4901bf650ab inherit pub_methods_classSensor" id="r_ad7534278a3d205320a41e4901bf650ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ad7534278a3d205320a41e4901bf650ab">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ad7534278a3d205320a41e4901bf650ab inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
-<tr class="separator:ad7534278a3d205320a41e4901bf650ab inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ec204dabece138e3d17816ee1961db4 inherit pub_methods_classSensor" id="r_a3ec204dabece138e3d17816ee1961db4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a3ec204dabece138e3d17816ee1961db4">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:a3ec204dabece138e3d17816ee1961db4 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
-<tr class="separator:a3ec204dabece138e3d17816ee1961db4 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor" id="r_a1d128dc295e634de6506da5cbb716b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a1d128dc295e634de6506da5cbb716b64">getDataPacket</a> (uint32_t &amp;sensor_id, uint8_t *&amp;packet)</td></tr>
 <tr class="memdesc:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the data from a sensor to the packet if the minium period is satisfied.  <br /></td></tr>
 <tr class="separator:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,6 +218,43 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad193fb1d9c61b5bf29c2bd693f7873f4" name="ad193fb1d9c61b5bf29c2bd693f7873f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad193fb1d9c61b5bf29c2bd693f7873f4">&#9670;&#160;</a></span>decodeToCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String AS7331Sensor::decodeToCSV </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decodes a packet into a CSV string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>The packet to decode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String CSV line - UVA, UVB, UVC, </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">Sensor</a>.</p>
+
+</div>
+</div>
 <a id="a35dc4a11152a841a48eeb79795d18492" name="a35dc4a11152a841a48eeb79795d18492"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35dc4a11152a841a48eeb79795d18492">&#9670;&#160;</a></span>readData()</h2>
 
@@ -245,6 +282,42 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>String CSV line - UVA, UVB, UVC, </dd></dl>
 
 <p>Implements <a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8">Sensor</a>.</p>
+
+</div>
+</div>
+<a id="a36432b0932aeb4c96ed8aeb22bfbad37" name="a36432b0932aeb4c96ed8aeb22bfbad37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36432b0932aeb4c96ed8aeb22bfbad37">&#9670;&#160;</a></span>readDataPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AS7331Sensor::readDataPacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads UV data from the sensor and writes it to the packet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>The data packet to write to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">Sensor</a>.</p>
 
 </div>
 </div>

@@ -179,26 +179,37 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   packet += sizeof(uint8_t);
   uint8_t month = *packet;
   packet += sizeof(uint8_t);
-  uint16_t year = *((uint16_t*)packet);
+  uint16_t year;
+  memcpy(&year, packet, sizeof(uint16_t));
   packet += sizeof(uint16_t);
 
   // Decode values: latitude, longitude, speed, angle, altitude. And then decode
   // number of satellites.
-  float lat = *((float*)packet);
+  float lat;
+  memcpy(&lat, packet, sizeof(float));
   packet += sizeof(float);
-  float lon = *((float*)packet);
+
+  float lon;
+  memcpy(&lon, packet, sizeof(float));
   packet += sizeof(float);
-  float speed = *((float*)packet);
+
+  float speed;
+  memcpy(&speed, packet, sizeof(float));
   packet += sizeof(float);
-  float angle = *((float*)packet);
+
+  float angle;
+  memcpy(&angle, packet, sizeof(float));
   packet += sizeof(float);
-  float alt = *((float*)packet);
+
+  float alt;
+  memcpy(&alt, packet, sizeof(float));
   packet += sizeof(float);
+
   uint8_t sats = *packet;
   packet += sizeof(uint8_t);
 
   // Construct the CSV string
-  String dateStr = String(day) + "/ " + String(month) + "/ " + String(year);
+  String dateStr = String(day) + "/" + String(month) + "/" + String(year);
   String csv = dateStr + "," + String(lat) + "," + String(lon) + "," +
                String(speed) + "," + String(angle) + "," + String(alt) + "," +
                String(sats) + ",";

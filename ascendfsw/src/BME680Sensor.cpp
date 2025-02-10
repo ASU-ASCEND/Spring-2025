@@ -93,8 +93,9 @@ void BME680Sensor::readDataPacket(uint8_t*& packet) {
     return;
   }
 
-  float data[5] = {bme.temperature, bme.pressure / 100.0, bme.humidity,
-                   bme.gas_resistance, bme.readAltitude(SEALEVELPRESSURE_HPA)};
+  float data[5] = {bme.temperature, (float)(bme.pressure / 100.0), bme.humidity,
+                   (float)(bme.gas_resistance),
+                   bme.readAltitude(SEALEVELPRESSURE_HPA)};
 
   for (int i = 0; i < 5; i++) {
     memcpy(packet, &data[i], sizeof(float));
@@ -112,7 +113,7 @@ void BME680Sensor::readDataPacket(uint8_t*& packet) {
  * @param packet - Packet to decode.
  * @return String - A string containing the sensor readings
  */
-String BME680Sensor::decodeToCSV(uint8_t* packet) {
+String BME680Sensor::decodeToCSV(uint8_t*& packet) {
   float data[5];
   for (int i = 0; i < 5; i++) {
     memcpy(&data[i], packet, sizeof(float));

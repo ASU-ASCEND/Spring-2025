@@ -126,34 +126,17 @@ void ICM20948Sensor::readDataPacket(uint8_t*& packet) {
  */
 String ICM20948Sensor::decodeToCSV(uint8_t*& packet) {
   // Read values from the packet buffer by casting the pointer to a float
-  // pointer and dereferencing
-  float accX = *((float*)packet);
-  packet += sizeof(float);
-  float accY = *((float*)packet);
-  packet += sizeof(float);
-  float accZ = *((float*)packet);
-  packet += sizeof(float);
 
-  float gyroX = *((float*)packet);
-  packet += sizeof(float);
-  float gyroY = *((float*)packet);
-  packet += sizeof(float);
-  float gyroZ = *((float*)packet);
-  packet += sizeof(float);
+  const size_t vals_len = 10;
+  float vals[vals_len];
+  String csv_row;
 
-  float magX = *((float*)packet);
-  packet += sizeof(float);
-  float magY = *((float*)packet);
-  packet += sizeof(float);
-  float magZ = *((float*)packet);
-  packet += sizeof(float);
+  for (size_t i = 0; i < vals_len; i++) {
+    float temp;
+    memcpy(&temp, packet, sizeof(float));
+    packet += sizeof(float);
 
-  float tempC = *((float*)packet);
-  packet += sizeof(float);
-
-  // Format the extracted values into a CSV string
-  return String(accX) + "," + String(accY) + "," + String(accZ) + "," +
-         String(gyroX) + "," + String(gyroY) + "," + String(gyroZ) + "," +
-         String(magX) + "," + String(magY) + "," + String(magZ) + "," +
-         String(tempC) + ",";
+    csv_row += String(temp) + ",";
+  }
+  return csv_row;
 }

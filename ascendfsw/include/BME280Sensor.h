@@ -17,6 +17,9 @@ class BME280Sensor : public Sensor {
   BME280Sensor(unsigned long minium_period);
   bool verify();
   String readData();
+
+  // Function to integrate sensor data into a packet buffer.
+  void readDataPacket(uint8_t*& packet);
 };
 
 #endif

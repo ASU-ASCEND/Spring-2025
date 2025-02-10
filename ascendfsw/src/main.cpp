@@ -28,6 +28,9 @@ int verifySensors();
 int verifyStorage();
 void storeData(String data);
 String readSensorData();
+void readSensorDataPacket(uint8_t* packet);
+String decodePacket(uint8_t* packet);
+
 void handleDataInterface();
 
 // Global variables
@@ -82,6 +85,12 @@ bool storages_verify[storages_len];
 // global variables for main
 // loop counter
 unsigned int it = 0;
+
+// packet properties
+#define MAX_PACKET_SIZE 500
+const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF};
+
+#define PACKET_SYSTEM_TESTING 1
 
 // multicore transfer queue
 #define QT_ENTRY_SIZE 1000
@@ -175,11 +184,11 @@ void loop() {
   // toggle heartbeats
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
-  // switch to data recovery mode
-  /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) {
-#if FLASH_SPI1
-    if (was_dumping == false) {
-      while (queue_get_level(&qt) != 0)
+  // switch to data recovery mode is commented out for testing without switch
+  // installed
+  /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) { // will be replaced with
+Software control #if FLASH_SPI1 if (was_dumping == false) { while
+(queue_get_level(&qt) != 0)
         ;
       delay(10);
       rp2040.idleOtherCore();
@@ -188,7 +197,7 @@ void loop() {
     was_dumping = true;
     handleDataInterface();
     return;
-  }*/
+  }
 
   if (was_dumping == true) {
     log_core("\nErasing flash chip....");
@@ -197,24 +206,32 @@ void loop() {
 #if FLASH_SPI1
     rp2040.resumeOtherCore();
 #endif
-  }
+  }*/
 
   // start print line with iteration number
   log_core("it: " + String(it) + "\t");
 
+#if PACKET_SYSTEM_TESTING
   // build csv row
+  uint8_t packet[MAX_PACKET_SIZE];
+  // for (int i = 0; i < MAX_PACKET_SIZE; i++) packet[i] = 0; // useful for
+  // debugging
+  readSensorDataPacket(packet);
+  String csv_row = decodePacket(packet);
+#else
   String csv_row = readSensorData();
+#endif
 
   // print csv row
   log_data(csv_row);
 
   // send data to flash
-  flash_storage.store(csv_row);
+  // flash_storage.store(csv_row);
 
   // send data to core1
   queue_add_blocking(&qt, csv_row.c_str());
 
-  // delay(500);                                  // remove before flight
+  delay(1000);                                 // remove before flight
   digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
 }
 
@@ -252,27 +269,24 @@ int verifySensors() {
   return count;
 }
 
-#define INTER_PACKET 0
-#if INTER_PACKET
 /**
- * @brief Read data from each verified Sensor (using packet as an intermediary)
+ * @brief Reads sensor data into a packet byte array
  *
- * @return String Complete CSV row for iteration
+ * @param packet Pointer to the packet array
  */
-String readSensorData() {
-  // String csv_row = header_condensed + "," + String(millis()) + ",";
-  uint8_t packet[500];
-  uint32_t sync_bytes = 0x89ABCDEF;
-  std::copy((uint8_t*)(&sync_bytes),
-            (uint8_t*)(&sync_bytes) + sizeof(sync_bytes), packet);
+void readSensorDataPacket(uint8_t* packet) {
+  // set sync bytes
+  uint8_t* temp_packet = packet;
+  std::copy(SYNC_BYTES, SYNC_BYTES + sizeof(SYNC_BYTES), temp_packet);
+  temp_packet += sizeof(SYNC_BYTES);
+
   uint32_t sensor_id = 0;
-  uint16_t data_len = 0;
-  uint8_t* temp_packet =
-      packet + sizeof(sync_bytes) + sizeof(sensor_id) + sizeof(data_len);
+  uint16_t packet_len = 0;
+  temp_packet += sizeof(sensor_id) + sizeof(packet_len);
 
   // build packet
   // millis()
-  unsigned long now = millis();
+  uint32_t now = millis();
   std::copy((uint8_t*)(&now), (uint8_t*)(&now) + sizeof(now), temp_packet);
   temp_packet += sizeof(now);
   sensor_id = (sensor_id << 1) | 1;
@@ -284,57 +298,88 @@ String readSensorData() {
       sensor_id <<= 1;
     }
   }
+
   // calc data len
-  data_len = temp_packet - packet;
+  packet_len = (temp_packet - packet) + 1;  // + 1 for checksum
+  log_core("Packet Len: " + String(packet_len));
 
   // write sensor_id
-  temp_packet = packet + sizeof(sync_bytes);
+  temp_packet = packet + sizeof(SYNC_BYTES);
   std::copy((uint8_t*)(&sensor_id), (uint8_t*)(&sensor_id) + sizeof(sensor_id),
             temp_packet);
 
   // write data len
   temp_packet += sizeof(sensor_id);
-  std::copy((uint8_t*)(&data_len), (uint8_t*)(&data_len) + sizeof(data_len),
-            temp_packet);
+  std::copy((uint8_t*)(&packet_len),
+            (uint8_t*)(&packet_len) + sizeof(packet_len), temp_packet);
 
-  // ---------------------------------------------------------------------
-  // decode packet (using only packet)
-  temp_packet = packet;
+  // calculate checksum with sum complement parity
+  int8_t checksum = 0;
+  for (size_t i = 0; i < packet_len - 1; i++) {
+    checksum += packet[i];
+  }
+  *(packet + packet_len - 1) = -checksum;
+}
 
-  uint32_t r_sync_bytes = *((uint32_t*)temp_packet);
-  temp_packet += sizeof(r_sync_bytes);
-  uint32_t r_sensor_id = *((uint32_t*)temp_packet);
-  temp_packet += sizeof(r_sensor_id);
-  uint16_t r_data_len = *((uint16_t*)temp_packet);
-  temp_packet += sizeof(r_data_len);
+/**
+ * @brief Decodes the packet to a CSV row
+ *
+ * @param packet Pointer to the packet array
+ * @return String The resulting CSV row
+ */
+String decodePacket(uint8_t* packet) {
+  uint8_t* temp_packet = packet;
+
+  uint32_t sync_bytes = *((uint32_t*)temp_packet);
+  temp_packet += sizeof(sync_bytes);
+  uint32_t sensor_id = *((uint32_t*)temp_packet);
+  temp_packet += sizeof(sensor_id);
+  uint16_t packet_len = *((uint16_t*)temp_packet);
+  temp_packet += sizeof(packet_len);
 
   String csv_row = "";
 
-  uint32_t temp_sensor_id = r_sensor_id;
+  uint32_t sensor_id_temp = sensor_id;
   uint8_t id_offset = 0;
   for (int i = 0; i < 32; i++) {
-    if (temp_sensor_id & (1 << i)) {
+    if (sensor_id_temp & (1 << i)) {
       id_offset = i;
     }
   }
 
   // millis decode
-  unsigned long r_now = *((unsigned long*)temp_packet);
+  // the words aren't aligned because of the uint16_t len
+  // so casting will crash the pico
+  uint32_t r_now;
+  memcpy(&r_now, temp_packet, sizeof(uint32_t));
+
   temp_packet += sizeof(r_now);
   csv_row += String(r_now) + ",";
 
   int curr_offset = id_offset - 1;
-  while (temp_packet < packet + r_data_len) {
-    if (r_sensor_id & (1 << curr_offset)) {
+  while (curr_offset >= 0) {
+    if (sensor_id & (1 << curr_offset)) {
+      // log_core("\tDecoding " + sensors[id_offset - curr_offset -
+      // 1]->getSensorName());
       csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
     } else if (sensors_verify[id_offset - curr_offset - 1]) {
       csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
+    } else {
     }
+    curr_offset--;
   }
+
+  // check parity
+  uint8_t sum = 0;
+  for (uint16_t i = 0; i < packet_len - 1; i++) {
+    sum += packet[i];
+  }
+  sum += *(int8_t*)(packet + packet_len - 1);
+  log_core("Sum = " + String(sum));
 
   return csv_row;
 }
-#else
+
 /**
  * @brief Read data from each verified Sensor
  *
@@ -349,7 +394,6 @@ String readSensorData() {
   }
   return csv_row;
 }
-#endif
 
 /**
  * @brief Verifies the connection with each storage device, and defines the

@@ -128,12 +128,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56153cab066abc01692301d11965f9b8" id="r_a56153cab066abc01692301d11965f9b8"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8">readData</a> ()=0</td></tr>
 <tr class="memdesc:a56153cab066abc01692301d11965f9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the collected data from the sensor in CSV format.  <br /></td></tr>
 <tr class="separator:a56153cab066abc01692301d11965f9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7534278a3d205320a41e4901bf650ab" id="r_ad7534278a3d205320a41e4901bf650ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ad7534278a3d205320a41e4901bf650ab">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ad7534278a3d205320a41e4901bf650ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
-<tr class="separator:ad7534278a3d205320a41e4901bf650ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ec204dabece138e3d17816ee1961db4" id="r_a3ec204dabece138e3d17816ee1961db4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a3ec204dabece138e3d17816ee1961db4">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:a3ec204dabece138e3d17816ee1961db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
-<tr class="separator:a3ec204dabece138e3d17816ee1961db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae835436cbb1fd60580e72a4ee7014c48" id="r_ae835436cbb1fd60580e72a4ee7014c48"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:ae835436cbb1fd60580e72a4ee7014c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
+<tr class="separator:ae835436cbb1fd60580e72a4ee7014c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6" id="r_ab344e7fbc9acdc5dcc7ae59d0a3fb5f6"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
+<tr class="separator:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d128dc295e634de6506da5cbb716b64" id="r_a1d128dc295e634de6506da5cbb716b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a1d128dc295e634de6506da5cbb716b64">getDataPacket</a> (uint32_t &amp;sensor_id, uint8_t *&amp;packet)</td></tr>
 <tr class="memdesc:a1d128dc295e634de6506da5cbb716b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the data from a sensor to the packet if the minium period is satisfied.  <br /></td></tr>
 <tr class="separator:a1d128dc295e634de6506da5cbb716b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -350,8 +350,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3ec204dabece138e3d17816ee1961db4" name="a3ec204dabece138e3d17816ee1961db4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ec204dabece138e3d17816ee1961db4">&#9670;&#160;</a></span>decodeToCSV()</h2>
+<a id="ab344e7fbc9acdc5dcc7ae59d0a3fb5f6" name="ab344e7fbc9acdc5dcc7ae59d0a3fb5f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">&#9670;&#160;</a></span>decodeToCSV()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +360,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String Sensor::decodeToCSV </td>
+          <td class="memname">virtual String Sensor::decodeToCSV </td>
           <td>(</td>
           <td class="paramtype">uint8_t *&amp;&#160;</td>
           <td class="paramname"><em>packet</em></td><td>)</td>
@@ -369,7 +369,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -382,6 +382,18 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>String The senors data decoded from the packet in csv format </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classAS7331Sensor.html#ad193fb1d9c61b5bf29c2bd693f7873f4">AS7331Sensor</a>, <a class="el" href="classBME680Sensor.html#af2d23cec5fdf336e3a5570a8520ea997">BME680Sensor</a>, <a class="el" href="classDS3231Sensor.html#aec7d7f7a9524424019197ed9179e83c1">DS3231Sensor</a>, <a class="el" href="classICM20948Sensor.html#aefb544b09df1cb7c2393e714d5ca7750">ICM20948Sensor</a>, <a class="el" href="classMTK3339Sensor.html#a552ec8bfe421efba3fc7a70ae10f6e01">MTK3339Sensor</a>, <a class="el" href="classPCF8523Sensor.html#a76aa327e949f84ca92d4cc5cf635c388">PCF8523Sensor</a>, and <a class="el" href="classTempSensor.html#a46405a547edfea61de51aa897e7d353a">TempSensor</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_ab344e7fbc9acdc5dcc7ae59d0a3fb5f6_cgraph.svg" width="399" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_ab344e7fbc9acdc5dcc7ae59d0a3fb5f6_icgraph.svg" width="430" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -470,6 +482,11 @@ Here is the caller graph for this function:</div>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_a1d128dc295e634de6506da5cbb716b64_cgraph.svg" width="403" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_a1d128dc295e634de6506da5cbb716b64_icgraph.svg" width="494" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -588,6 +605,11 @@ Here is the caller graph for this function:</div>
 
 <p>Get the <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> Name as an Arduino string. </p>
 <dl class="section return"><dt>Returns</dt><dd>const String&amp; </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_ac2fad054e890947b02322eb31e7967bf_icgraph.svg" width="656" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -617,7 +639,7 @@ Here is the caller graph for this function:</div>
 <p>Returns the collected data from the sensor in CSV format. </p>
 <dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
 
-<p>Implemented in <a class="el" href="classBME280Sensor.html#ab54514df45ba3c8f66889180f2e9fd87">BME280Sensor</a>, <a class="el" href="classENS160Sensor.html#a4c6fb31bf074f299bc7c0d4bb1c344ac">ENS160Sensor</a>, <a class="el" href="classPCF8523Sensor.html#a11facaadc7eb4ea1ff1965d7db80f224">PCF8523Sensor</a>, <a class="el" href="classTempSensor.html#a3e5875aa6fad21ed69aa3ac15b59f7b9">TempSensor</a>, <a class="el" href="classAS7331Sensor.html#a35dc4a11152a841a48eeb79795d18492">AS7331Sensor</a>, <a class="el" href="classBME680Sensor.html#a2fe0b9adb49b816f610039e8495f2bc2">BME680Sensor</a>, <a class="el" href="classDS3231Sensor.html#a796277dc5eb15ae0972addd9edd2b2f7">DS3231Sensor</a>, <a class="el" href="classICM20948Sensor.html#ade76b92e100f84353a5f5884dbbdec4b">ICM20948Sensor</a>, <a class="el" href="classINA260Sensor.html#a40a7b8158adfe1742ab7ce746b2830c4">INA260Sensor</a>, <a class="el" href="classLSM9DS1Sensor.html#ab7bb3fa7c86f10b340d25912d143baf3">LSM9DS1Sensor</a>, <a class="el" href="classMTK3339Sensor.html#a632c895115930d476540fed7d6537635">MTK3339Sensor</a>, and <a class="el" href="classSGP30Sensor.html#a4a14ecfe1a86d4872b0f6f27de80f25a">SGP30Sensor</a>.</p>
+<p>Implemented in <a class="el" href="classBME280Sensor.html#ab54514df45ba3c8f66889180f2e9fd87">BME280Sensor</a>, <a class="el" href="classENS160Sensor.html#a4c6fb31bf074f299bc7c0d4bb1c344ac">ENS160Sensor</a>, <a class="el" href="classAS7331Sensor.html#a35dc4a11152a841a48eeb79795d18492">AS7331Sensor</a>, <a class="el" href="classBME680Sensor.html#a2fe0b9adb49b816f610039e8495f2bc2">BME680Sensor</a>, <a class="el" href="classDS3231Sensor.html#a796277dc5eb15ae0972addd9edd2b2f7">DS3231Sensor</a>, <a class="el" href="classICM20948Sensor.html#ade76b92e100f84353a5f5884dbbdec4b">ICM20948Sensor</a>, <a class="el" href="classINA260Sensor.html#a40a7b8158adfe1742ab7ce746b2830c4">INA260Sensor</a>, <a class="el" href="classLSM9DS1Sensor.html#ab7bb3fa7c86f10b340d25912d143baf3">LSM9DS1Sensor</a>, <a class="el" href="classMTK3339Sensor.html#a632c895115930d476540fed7d6537635">MTK3339Sensor</a>, <a class="el" href="classPCF8523Sensor.html#a2dcbefc95a7ad1fe2f34365eeed3a430">PCF8523Sensor</a>, <a class="el" href="classSGP30Sensor.html#a4a14ecfe1a86d4872b0f6f27de80f25a">SGP30Sensor</a>, and <a class="el" href="classTempSensor.html#abcdf93f43fbac7fc22ef05172dcc6b19">TempSensor</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -626,8 +648,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad7534278a3d205320a41e4901bf650ab" name="ad7534278a3d205320a41e4901bf650ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7534278a3d205320a41e4901bf650ab">&#9670;&#160;</a></span>readDataPacket()</h2>
+<a id="ae835436cbb1fd60580e72a4ee7014c48" name="ae835436cbb1fd60580e72a4ee7014c48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae835436cbb1fd60580e72a4ee7014c48">&#9670;&#160;</a></span>readDataPacket()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -636,7 +658,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Sensor::readDataPacket </td>
+          <td class="memname">virtual void Sensor::readDataPacket </td>
           <td>(</td>
           <td class="paramtype">uint8_t *&amp;&#160;</td>
           <td class="paramname"><em>packet</em></td><td>)</td>
@@ -645,7 +667,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -658,10 +680,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int The number of bytes appended </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classAS7331Sensor.html#a36432b0932aeb4c96ed8aeb22bfbad37">AS7331Sensor</a>, <a class="el" href="classBME280Sensor.html#ad8347afc37ce721b1d2b176fc26dc4fd">BME280Sensor</a>, <a class="el" href="classBME680Sensor.html#a898231728c9540101ad7c878e7f4f3d9">BME680Sensor</a>, <a class="el" href="classDS3231Sensor.html#a4da08bdba6a6c1e1c20392130917155d">DS3231Sensor</a>, <a class="el" href="classICM20948Sensor.html#a8dfb4aa482c981f513dd556652a3c39b">ICM20948Sensor</a>, <a class="el" href="classMTK3339Sensor.html#a6b09298bf398297a51aeb62c15459504">MTK3339Sensor</a>, <a class="el" href="classPCF8523Sensor.html#a92a2f7e255bb700ed037394711cd8c47">PCF8523Sensor</a>, and <a class="el" href="classTempSensor.html#af9e28a9976681915dbe9343d2675787b">TempSensor</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_ad7534278a3d205320a41e4901bf650ab_icgraph.svg" width="403" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classSensor_ae835436cbb1fd60580e72a4ee7014c48_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -694,7 +718,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_a62d72a2f81422ac2d2fa8ae86ba08571_icgraph.svg" width="662" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSensor_a62d72a2f81422ac2d2fa8ae86ba08571_icgraph.svg" width="662" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -795,7 +819,7 @@ Here is the caller graph for this function:</div>
 <dd>
 false, if not connected </dd></dl>
 
-<p>Implemented in <a class="el" href="classBME280Sensor.html#a912cb1dac291afe2e80f099c95229489">BME280Sensor</a>, <a class="el" href="classENS160Sensor.html#addd37045fa8828b7c1f437bd8043c54e">ENS160Sensor</a>, <a class="el" href="classPCF8523Sensor.html#a3e92adcd961a0dc27455e394847596d3">PCF8523Sensor</a>, <a class="el" href="classTempSensor.html#ab110bdca4c570053b16da6481b00bba5">TempSensor</a>, <a class="el" href="classAS7331Sensor.html#a7232fc7844005125bd323cd2798d5e5c">AS7331Sensor</a>, <a class="el" href="classBME680Sensor.html#accc4dcd1322c9578c549b5f68df06844">BME680Sensor</a>, <a class="el" href="classDS3231Sensor.html#acecc9cc8ee162220e28c9907ba7dd722">DS3231Sensor</a>, <a class="el" href="classICM20948Sensor.html#aa612d43f7d31da2e8a5646ec58e04944">ICM20948Sensor</a>, <a class="el" href="classINA260Sensor.html#a799f491fe1496b33b1d985e5672a7e6d">INA260Sensor</a>, <a class="el" href="classLSM9DS1Sensor.html#a245f95f4d1174bf884bb47781f21f055">LSM9DS1Sensor</a>, <a class="el" href="classMTK3339Sensor.html#a5e39435a4f8f037a3b9a7d949e736e6f">MTK3339Sensor</a>, and <a class="el" href="classSGP30Sensor.html#a1fd4a6f8ad76aacb6c2aebda3eddb3ac">SGP30Sensor</a>.</p>
+<p>Implemented in <a class="el" href="classBME280Sensor.html#a912cb1dac291afe2e80f099c95229489">BME280Sensor</a>, <a class="el" href="classENS160Sensor.html#addd37045fa8828b7c1f437bd8043c54e">ENS160Sensor</a>, <a class="el" href="classAS7331Sensor.html#a7232fc7844005125bd323cd2798d5e5c">AS7331Sensor</a>, <a class="el" href="classBME680Sensor.html#accc4dcd1322c9578c549b5f68df06844">BME680Sensor</a>, <a class="el" href="classDS3231Sensor.html#acecc9cc8ee162220e28c9907ba7dd722">DS3231Sensor</a>, <a class="el" href="classICM20948Sensor.html#aa612d43f7d31da2e8a5646ec58e04944">ICM20948Sensor</a>, <a class="el" href="classINA260Sensor.html#a799f491fe1496b33b1d985e5672a7e6d">INA260Sensor</a>, <a class="el" href="classLSM9DS1Sensor.html#a245f95f4d1174bf884bb47781f21f055">LSM9DS1Sensor</a>, <a class="el" href="classMTK3339Sensor.html#a5e39435a4f8f037a3b9a7d949e736e6f">MTK3339Sensor</a>, <a class="el" href="classPCF8523Sensor.html#a75182668f669b3b145b2529e946e16a4">PCF8523Sensor</a>, <a class="el" href="classSGP30Sensor.html#a1fd4a6f8ad76aacb6c2aebda3eddb3ac">SGP30Sensor</a>, and <a class="el" href="classTempSensor.html#a9ce8bd4f1c2ed4d6fe28de2d59977e90">TempSensor</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
