@@ -209,7 +209,7 @@ void LSM9DS1Sensor::readDataPacket(uint8_t*& packet) {
 }
 
 /**
- * @brief Decodes the MTK3339 sensor data from the packet buffer into a CSV string.
+ * @brief Decodes the LSM9DS1 sensor data from the packet buffer into a CSV string.
  *
  * The data are read in the same order they were written and  reconstructed as a string "day/month/year" and the remaining fields are appended as CSV values.
  *
