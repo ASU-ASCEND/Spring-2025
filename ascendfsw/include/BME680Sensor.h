@@ -42,8 +42,10 @@ class BME680Sensor : public Sensor {
 
   bool verify() override;
   String readData() override;
-  void readDataPacket(uint8_t*& packet);
-  String decodeToCSV(uint8_t* packet);
+  //Reads sensor data and appends it to the packet byte array.
+  int readDataPacket(uint8_t*& packet) override;
+  //Decodes the sensor data from the packet and returns a CSV string.
+  String decodeToCSV(uint8_t*& packet) override;
 };
 
 #endif

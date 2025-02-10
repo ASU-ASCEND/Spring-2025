@@ -88,19 +88,29 @@ String BME680Sensor::readData() {
  *
  * @param packet - Pointer to the packet byte array.
  */
-void BME680Sensor::readDataPacket(uint8_t*& packet) {
+int BME680Sensor::readDataPacket(uint8_t*& packet) {
+  // Perform sensor reading; if unsuccessful, return 0 bytes appended.
   if (!bme.performReading()) {
-    return;
+    return 0;
   }
 
-  float data[5] = {bme.temperature, (float)(bme.pressure / 100.0), bme.humidity,
+  float data[5] = {bme.temperature,
+                   (float)(bme.pressure / 100.0),
+                   bme.humidity,
                    (float)(bme.gas_resistance),
                    bme.readAltitude(SEALEVELPRESSURE_HPA)};
 
+  int bytesAppended = 0;  // Counter for the number of bytes appended
+
+  // Append each float value to the packet buffer.
   for (int i = 0; i < 5; i++) {
     memcpy(packet, &data[i], sizeof(float));
-    packet += sizeof(float);
+    packet += sizeof(float);  // Move the pointer past the written bytes
+    bytesAppended += sizeof(float);
   }
+
+  // Return the total number of bytes appended (should be 5 * sizeof(float))
+  return bytesAppended;
 }
 
 /**
@@ -113,7 +123,7 @@ void BME680Sensor::readDataPacket(uint8_t*& packet) {
  * @param packet - Packet to decode.
  * @return String - A string containing the sensor readings
  */
-String BME680Sensor::decodeToCSV(uint8_t* packet) {
+String BME680Sensor::decodeToCSV(uint8_t*& packet) {
   float data[5];
   for (int i = 0; i < 5; i++) {
     memcpy(&data[i], packet, sizeof(float));
