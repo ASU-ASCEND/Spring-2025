@@ -1,4 +1,5 @@
 #include "BME280Sensor.h"
+
 #include <algorithm>  //For std::copy
 #include <cstdint>    // For uint8_t
 
@@ -39,27 +40,25 @@ bool BME280Sensor::verify() {
 String BME280Sensor::readData() {
   return String(bme.readFloatHumidity()) + "," +
          String(bme.readFloatPressure()) + "," +
-         String(bme.readFloatAltitudeMeters()) + "," +
-         String(bme.readTempC()) + "," + 
-         String(bme.dewPointC()) + ",";
+         String(bme.readFloatAltitudeMeters()) + "," + String(bme.readTempC()) +
+         "," + String(bme.dewPointC()) + ",";
 }
 
-//Reads sensor data and appends it to the packet byte array using std::copy
+// Reads sensor data and appends it to the packet byte array using std::copy
 void BME280Sensor::readDataPacket(uint8_t*& packet) {
   // Read sensor values into float variables.
-  float relHum   = bme.readFloatHumidity();
+  float relHum = bme.readFloatHumidity();
   float pressure = bme.readFloatPressure();
   float altitude = bme.readFloatAltitudeMeters();
-  float temp     = bme.readTempC();
+  float temp = bme.readTempC();
   float dewPoint = bme.dewPointC();
 
   // Store the sensor values in an array.
-  float data[5] = { relHum, pressure, altitude, temp, dewPoint };
+  float data[5] = {relHum, pressure, altitude, temp, dewPoint};
 
   // Copy the raw bytes of the sensor data into the packet buffer
   std::copy(reinterpret_cast<uint8_t*>(data),
-            reinterpret_cast<uint8_t*>(data) + 5 * sizeof(float),
-            packet);
+            reinterpret_cast<uint8_t*>(data) + 5 * sizeof(float), packet);
 
   // Increment the packet pointer by the number of bytes copied
   packet += 5 * sizeof(float);

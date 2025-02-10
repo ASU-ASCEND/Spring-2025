@@ -18,7 +18,7 @@ class BME280Sensor : public Sensor {
   bool verify();
   String readData();
 
-  //Function to integrate sensor data into a packet buffer.
+  // Function to integrate sensor data into a packet buffer.
   void readDataPacket(uint8_t*& packet);
 };
 
