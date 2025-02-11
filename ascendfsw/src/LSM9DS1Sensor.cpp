@@ -149,7 +149,7 @@ void LSM9DS1Sensor::calibrate() {
  * @param packet Pointer to the packet byte array. This pointer is incremented as each value is copied.
  */
 void LSM9DS1Sensor::readDataPacket(uint8_t*& packet) {
-  lsm.read()
+  lsm.read();
   sensors_event_t aevent, mevent, gevent, temp_event;
   lsm.getEvent(&aevent, &mevent, &gevent, &temp_event);
 
