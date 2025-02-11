@@ -63,6 +63,7 @@ void BME280Sensor::readDataPacket(uint8_t*& packet) {
 
   // Increment the packet pointer by the number of bytes copied
   packet += 5 * sizeof(float);
+}
 
 //Decodes sensor data from the packet and returns it as a CSV string
 String BME280Sensor::decodeToCSV(uint8_t*& packet) {
