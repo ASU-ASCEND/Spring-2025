@@ -4,12 +4,13 @@
 #include <Arduino.h>
 
 #include "Logger.h"
+#include "Device.h"
 
 /**
  * @brief Parent class for sensor objects
  *
  */
-class Sensor {
+class Sensor : public Device {
  private:
   unsigned long minimum_period, last_execution;
   String sensor_name, csv_header, empty_csv;

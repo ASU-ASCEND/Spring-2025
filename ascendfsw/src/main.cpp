@@ -133,14 +133,6 @@ void setup() {
     }
   }
 
-  // verify storage
-  log_core("Verifying storage...");
-  verified_count = verifyStorage();
-  if (verified_count == 0) {
-    log_core("No storages verified, output will be Serial only.");
-    ErrorDisplay::instance().addCode(Error::CRITICAL_FAIL);
-  }
-
 // spi0
 #if FLASH_SPI1 == 0
   if (flash_storage.verify()) {
@@ -236,6 +228,32 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
 }
 
 /**
+ * @brief Uses Device abstraction to verify sensors
+ * Incompatible with initial header generation 
+ * 
+ * @return int Number of sensors verified 
+ */
+int verifySensorRecovery(){
+  int count = 0;
+  for (int i = 0; i < sensors_len; i++) {
+    if (sensors[i]->attemptConnection()) {
+      count++;
+    }
+  }
+
+  log_core("Pin Verification Results:");
+  for (int i = 0; i < sensors_len; i++) {
+    log_core((sensors[i]->getSensorName()) + ": " +
+             (sensors[i]->getVerified()
+                  ? "Successful in Communication"
+                  : "Failure in Communication (check wirings and/ or pin "
+                    "definitions)"));
+  }
+  log_core("");
+  return count;
+}
+
+/**
  * @brief Verifies each sensor by calling each verify() function
  *
  * @return int The number of verified sensors
@@ -263,9 +281,9 @@ int verifySensors() {
              (sensors_verify[i]
                   ? "Successful in Communication"
                   : "Failure in Communication (check wirings and/ or pin "
-                    "definitions in the respective sensor header file)"));
+                    "definitions)"));
   }
-  Serial.println();
+  log_core("");
   return count;
 }
 
@@ -337,7 +355,8 @@ String decodePacket(uint8_t* packet) {
   uint16_t packet_len = *((uint16_t*)temp_packet);
   temp_packet += sizeof(packet_len);
 
-  String csv_row = "";
+  // start with sensor_id in a cell in Hex
+  String csv_row = String(sensor_id, HEX) + ",";
 
   uint32_t sensor_id_temp = sensor_id;
   uint8_t id_offset = 0;
@@ -454,14 +473,23 @@ void handleDataInterface() {
  *
  */
 void setup1() {
-  delay(500);  // wait for other setup to run
-
+  // set up heartbeat 
   pinMode(HEARTBEAT_PIN_1, OUTPUT);
 
   // verify storage
-  if (verifyStorage() == 0) {
+  log_core("Verifying storage...");
+  int verified_count = verifyStorage();
+  if (verified_count == 0) {
     log_core("No storages verified, output will be Serial only.");
+    ErrorDisplay::instance().addCode(Error::CRITICAL_FAIL);
   }
+
+  delay(500);  // wait for other setup to run
+
+  // // verify storage
+  // if (verifyStorage() == 0) {
+  //   log_core("No storages verified, output will be Serial only.");
+  // }
 }
 
 int it2 = 0;
@@ -481,5 +509,4 @@ void loop1() {
 
   // log_core("[CORE1]\t" + queue_get_level(&qt) + String(received_data));
 
-  // radioStorage.store(String(received_data));
 }

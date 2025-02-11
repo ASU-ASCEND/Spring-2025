@@ -4,12 +4,13 @@
 #include <Arduino.h>
 
 #include "Logger.h"
+#include "Device.h"
 
 /**
  * @brief Parent class for all data storage devices (sd card, radio, etc)
  *
  */
-class Storage {
+class Storage : public Device {
  private:
   String storage_name;
 
