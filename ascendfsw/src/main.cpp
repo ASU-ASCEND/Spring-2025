@@ -26,7 +26,12 @@
 // helper function definitions
 int verifySensors();
 int verifyStorage();
+int verifySensorRecovery(); 
+int verifyStorageRecovery(); 
+
 void storeData(String data);
+void storeDataPacket(uint8_t* packet); 
+
 String readSensorData();
 void readSensorDataPacket(uint8_t* packet);
 String decodePacket(uint8_t* packet);
@@ -99,6 +104,8 @@ const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF};
 queue_t qt;
 // char qt_entry[QT_ENTRY_SIZE];
 
+#define RECOVERY_SYSTEM 1
+
 /**
  * @brief Setup for core 0
  *
@@ -117,7 +124,12 @@ void setup() {
   pinMode(HEARTBEAT_PIN_0, OUTPUT);
 
   // verify sensors
+  #if RECOVERY_SYSTEM
+  int verified_count = verifySensorRecovery(); 
+  #else
   int verified_count = verifySensors();
+  #endif
+
   if (verified_count == 0) {
     log_core("All sensor communications failed");
     ErrorDisplay::instance().addCode(Error::CRITICAL_FAIL);
@@ -140,6 +152,7 @@ void setup() {
   }
 #endif
 
+#if RECOVERY_SYSTEM == 0
   // build csv header
   String header = "Header,Millis,";
   for (int i = 0; i < sensors_len; i++) {
@@ -157,6 +170,7 @@ void setup() {
 
   // send header to core1
   queue_add_blocking(&qt, header.c_str());
+#endif 
 
   pinMode(ON_BOARD_LED_PIN, OUTPUT);
   log_core("Setup done.");
@@ -310,7 +324,11 @@ void readSensorDataPacket(uint8_t* packet) {
   sensor_id = (sensor_id << 1) | 1;
   // rest of the packet
   for (int i = 0; i < sensors_len; i++) {
+    #if RECOVERY_SYSTEM
+    if (sensors[i]->attemptConnection()) {
+    #else
     if (sensors_verify[i]) {
+    #endif
       sensors[i]->getDataPacket(sensor_id, temp_packet);
     } else {
       sensor_id <<= 1;
@@ -407,11 +425,32 @@ String decodePacket(uint8_t* packet) {
 String readSensorData() {
   String csv_row = header_condensed + "," + String(millis()) + ",";
   for (int i = 0; i < sensors_len; i++) {
+    #if RECOVERY_SYSTEM 
+    if (sensors[i]->attemptConnection()) {
+    #else
     if (sensors_verify[i]) {
+    #endif
       csv_row += sensors[i]->getDataCSV();
     }
   }
   return csv_row;
+}
+
+/**
+ * @brief Verifies the connection with each storage device, and defines the
+ * header_condensed field, uses recovery system 
+ *
+ * @return int The number of verified storage devices
+ */
+int verifyStorageRecovery() {
+  int count = 0;
+  for (int i = 0; i < storages_len; i++) {
+    if (storages[i]->attemptConnection()) {
+      log_core(storages[i]->getStorageName() + " verified.");
+      count++;
+    }
+  }
+  return count;
 }
 
 /**
@@ -440,8 +479,29 @@ int verifyStorage() {
  */
 void storeData(String data) {
   for (int i = 0; i < storages_len; i++) {
+    #if RECOVERY_SYSTEM
+    if (storages[i]->attemptConnection()) {
+    #else
     if (storages_verify[i]) {
+    #endif
       storages[i]->store(data);
+    }
+  }
+}
+
+void storeDataPacket(uint8_t* packet){
+  // pull length of packet out 
+  uint16_t packet_len; 
+  memcpy(&packet_len, packet + sizeof(SYNC_BYTES) + sizeof(uint32_t), sizeof(uint16_t)); 
+
+
+  for (int i = 0; i < storages_len; i++) {
+    #if RECOVERY_SYSTEM
+    if (storages[i]->attemptConnection()) {
+    #else
+    if (storages_verify[i]) {
+    #endif
+      storages[i]->store(packet, packet_len);
     }
   }
 }
@@ -467,6 +527,9 @@ void handleDataInterface() {
  *
  */
 
+// separate 8k stacks 
+bool core1_separate_stack = true;
+
 /**
  * @brief Setup for core 1
  *
@@ -475,6 +538,11 @@ void handleDataInterface() {
 void setup1() {
   // set up heartbeat 
   pinMode(HEARTBEAT_PIN_1, OUTPUT);
+
+  // set storages to be tried forever, with 5 second recovery factor  
+  for(size_t i = 0; i < storages_len; i++){
+    storages[i]->recoveryConfig(-1, 5000); 
+  }
 
   // verify storage
   log_core("Verifying storage...");
