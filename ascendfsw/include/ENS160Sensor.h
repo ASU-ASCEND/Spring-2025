@@ -19,6 +19,8 @@ class ENS160Sensor : public Sensor {
   ENS160Sensor(unsigned long minium_period);
   bool verify();
   String readData();
+  void readDataPacket(uint8_t*& packet);
+  String decodeToCSV(uint8_t* packet);
 };
 
 #endif
