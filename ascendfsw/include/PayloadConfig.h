@@ -76,4 +76,16 @@
 /** @brief Flash Data Interface Enable Pin  */
 #define DATA_INTERFACE_PIN 15
 
+// multicore transfer queue
+#define QT_ENTRY_SIZE 1000
+#define QT_MAX_SIZE 10
+
+// packet properties
+#define MAX_PACKET_SIZE 500
+const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF};
+
+// temporary toggle macros for testing
+#define PACKET_SYSTEM_TESTING 1
+#define RECOVERY_SYSTEM 1
+
 #endif

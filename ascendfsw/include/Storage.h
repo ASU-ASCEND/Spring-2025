@@ -3,8 +3,8 @@
 
 #include <Arduino.h>
 
-#include "Logger.h"
 #include "Device.h"
+#include "Logger.h"
 
 /**
  * @brief Parent class for all data storage devices (sd card, radio, etc)
@@ -44,7 +44,7 @@ class Storage : public Device {
    *
    * @param packet Packet to store
    */
-  void store(uint8_t* packet, int length) {};
+  void store(uint8_t* packet, int length){};
 };
 
 #endif

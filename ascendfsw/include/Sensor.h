@@ -3,8 +3,8 @@
 
 #include <Arduino.h>
 
-#include "Logger.h"
 #include "Device.h"
+#include "Logger.h"
 
 /**
  * @brief Parent class for sensor objects
@@ -119,7 +119,7 @@ class Sensor : public Device {
    * @param packet Pointer to the packet byte array
    * @return int The number of bytes appended
    */
-  virtual void readDataPacket(uint8_t*& packet) {};
+  virtual void readDataPacket(uint8_t*& packet){};
 
   /**
    * @brief Used for onboard decoding of packets
