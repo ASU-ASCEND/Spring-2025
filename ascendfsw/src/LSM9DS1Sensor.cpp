@@ -149,62 +149,30 @@ void LSM9DS1Sensor::calibrate() {
  * @param packet Pointer to the packet byte array. This pointer is incremented as each value is copied.
  */
 void LSM9DS1Sensor::readDataPacket(uint8_t*& packet) {
-  if (GPS.fix) {
-    // Pack date values
-    uint8_t day = GPS.day;
-    uint8_t month = GPS.month;
-    uint16_t year = GPS.year;
-    memcpy(packet, &day, sizeof(day));
-    packet += sizeof(day);
-    memcpy(packet, &month, sizeof(month));
-    packet += sizeof(month);
-    memcpy(packet, &year, sizeof(year));
-    packet += sizeof(year);
-    // Pack latitude, longitude, speed, angle, and altitude as floats
-    float lat = GPS.latitude;
-    float lon = GPS.longitude;
-    float speed = GPS.speed;
-    float angle = GPS.angle;
-    float alt = GPS.altitude;
-    memcpy(packet, &lat, sizeof(lat));
-    packet += sizeof(lat);
-    memcpy(packet, &lon, sizeof(lon));
-    packet += sizeof(lon);
-    memcpy(packet, &speed, sizeof(speed));
-    packet += sizeof(speed);
-    memcpy(packet, &angle, sizeof(angle));
-    packet += sizeof(angle);
-    memcpy(packet, &alt, sizeof(alt));
-    packet += sizeof(alt);
-    // Pack number of satellites as uint8_t
-    uint8_t sats = GPS.satellites;
-    memcpy(packet, &sats, sizeof(sats));
-    packet += sizeof(sats);
-  } else {
-    // If there's no fix, append default zero values
-    uint8_t day = 0;
-    uint8_t month = 0;
-    uint16_t year = 0;
-    memcpy(packet, &day, sizeof(day));
-    packet += sizeof(day);
-    memcpy(packet, &month, sizeof(month));
-    packet += sizeof(month);
-    memcpy(packet, &year, sizeof(year));
-    packet += sizeof(year);
-    float zero = 0.0;
-    memcpy(packet, &zero, sizeof(zero));  // Latitude
-    packet += sizeof(zero);
-    memcpy(packet, &zero, sizeof(zero));  // Longitude
-    packet += sizeof(zero);
-    memcpy(packet, &zero, sizeof(zero));  // Speed
-    packet += sizeof(zero);
-    memcpy(packet, &zero, sizeof(zero));  // Angle
-    packet += sizeof(zero);
-    memcpy(packet, &zero, sizeof(zero));  // Altitude
-    packet += sizeof(zero);
-    uint8_t sats = 0;
-    memcpy(packet, &sats, sizeof(sats));
-    packet += sizeof(sats);
+  lsm.read()
+  sensors_event_t aevent, mevent, gevent, temp_event;
+  lsm.getEvent(&aevent, &mevent, &gevent, &temp_event);
+
+  // calibration offsets to accelerometer data
+  float accX = aevent.acceleration.x - accel_offsets[0];
+  float accY = aevent.acceleration.y - accel_offsets[1];
+  float accZ = aevent.acceleration.z - accel_offsets[2];
+
+  // calibration offsets to gyroscope data
+  float gyroX = gevent.gyro.x - gyro_offsets[0];
+  float gyroY = gevent.gyro.y - gyro_offsets[1];
+  float gyroZ = gevent.gyro.z - gyro_offsets[2];
+
+  // calibration offsets to magnetometer data
+  float magX = mevent.magnetic.x - mag_offsets[0];
+  float magY = mevent.magnetic.y - mag_offsets[1];
+  float magZ = mevent.magnetic.z - mag_offsets[2];
+
+  float data[9] = {accX, accY, accZ, gyroX, gyroY, gyroZ, magX, magY, magZ};
+
+  for (int i = 0; i < 9; i++) {
+    memcpy(packet, &data[i], sizeof(float));
+    packet += sizeof(float);
   }
 }
 
@@ -217,36 +185,14 @@ void LSM9DS1Sensor::readDataPacket(uint8_t*& packet) {
  * @return String The decoded sensor data in CSV format.
  */
 String LSM9DS1Sensor::decodeToCSV(uint8_t*& packet) {
-  // Decode date components
-  uint8_t day = *packet;
-  packet += sizeof(uint8_t);
-  uint8_t month = *packet;
-  packet += sizeof(uint8_t);
-  uint16_t year = *((uint16_t*)packet);
-  packet += sizeof(uint16_t);
+  float data[9];
+  for (int i = 0; i < 9; i++) {
+    memcpy(&data[i], packet, sizeof(float));
+    packet += sizeof(float);
+  }
 
-  // Decode values: latitude, longitude, speed, angle, altitude. And then decode number of satellites.
-  float lat = *((float*)packet);
-  packet += sizeof(float);
-  float lon = *((float*)packet);
-  packet += sizeof(float);
-  float speed = *((float*)packet);
-  packet += sizeof(float);
-  float angle = *((float*)packet);
-  packet += sizeof(float);
-  float alt = *((float*)packet);
-  packet += sizeof(float);
-  uint8_t sats = *packet;
-  packet += sizeof(uint8_t);
-
-  // Construct the CSV string
-  String dateStr = String(day) + "/ " + String(month) + "/ " + String(year);
-  String csv = dateStr + "," +
-               String(lat) + "," +
-               String(lon) + "," +
-               String(speed) + "," +
-               String(angle) + "," +
-               String(alt) + "," +
-               String(sats) + ",";
-  return csv;
+  return String(data[0]) + "," + String(data[1]) + "," + String(data[2]) + "," +
+         String(data[3]) + "," + String(data[4]) + "," + String(data[5]) + "," + 
+         String(data[6]) + "," + String(data[7]) + "," + String(data[8]) + "," + 
+         String(data[8]) + ",";
 }
