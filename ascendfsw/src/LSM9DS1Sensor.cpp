@@ -131,3 +131,68 @@ void LSM9DS1Sensor::calibrate() {
 
   Serial.println("Calibration complete.");
 }
+
+/**
+ * @brief Appends the LSM9DS1 sensor data to the packet buffer as raw bytes.
+ *
+ * The following data are appended in order:
+ *   - Date: day (uint8_t), month (uint8_t), year (uint16_t)
+ *   - Latitude (float)
+ *   - Longitude (float)
+ *   - Speed (float)
+ *   - Angle (float)
+ *   - Altitude (float)
+ *   - Satellites (uint8_t)
+ *
+ * If no valid fix is available, default value (0) is appended for all fields.
+ *
+ * @param packet Pointer to the packet byte array. This pointer is incremented as each value is copied.
+ */
+void LSM9DS1Sensor::readDataPacket(uint8_t*& packet) {
+  lsm.read();
+  sensors_event_t aevent, mevent, gevent, temp_event;
+  lsm.getEvent(&aevent, &mevent, &gevent, &temp_event);
+
+  // calibration offsets to accelerometer data
+  float accX = aevent.acceleration.x - accel_offsets[0];
+  float accY = aevent.acceleration.y - accel_offsets[1];
+  float accZ = aevent.acceleration.z - accel_offsets[2];
+
+  // calibration offsets to gyroscope data
+  float gyroX = gevent.gyro.x - gyro_offsets[0];
+  float gyroY = gevent.gyro.y - gyro_offsets[1];
+  float gyroZ = gevent.gyro.z - gyro_offsets[2];
+
+  // calibration offsets to magnetometer data
+  float magX = mevent.magnetic.x - mag_offsets[0];
+  float magY = mevent.magnetic.y - mag_offsets[1];
+  float magZ = mevent.magnetic.z - mag_offsets[2];
+
+  float data[9] = {accX, accY, accZ, gyroX, gyroY, gyroZ, magX, magY, magZ};
+
+  for (int i = 0; i < 9; i++) {
+    memcpy(packet, &data[i], sizeof(float));
+    packet += sizeof(float);
+  }
+}
+
+/**
+ * @brief Decodes the LSM9DS1 sensor data from the packet buffer into a CSV string.
+ *
+ * The data are read in the same order they were written and  reconstructed as a string "day/month/year" and the remaining fields are appended as CSV values.
+ *
+ * @param packet Pointer to the packet byte array and this packet pointer is incremented.
+ * @return String The decoded sensor data in CSV format.
+ */
+String LSM9DS1Sensor::decodeToCSV(uint8_t*& packet) {
+  float data[9];
+  for (int i = 0; i < 9; i++) {
+    memcpy(&data[i], packet, sizeof(float));
+    packet += sizeof(float);
+  }
+
+  return String(data[0]) + "," + String(data[1]) + "," + String(data[2]) + "," +
+         String(data[3]) + "," + String(data[4]) + "," + String(data[5]) + "," + 
+         String(data[6]) + "," + String(data[7]) + "," + String(data[8]) + "," + 
+         String(data[8]) + ",";
+}
