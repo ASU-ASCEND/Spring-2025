@@ -110,6 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a108078a5fb9ce0e02d01bf5c664cf1b2" id="r_a108078a5fb9ce0e02d01bf5c664cf1b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLSM9DS1Sensor.html#a108078a5fb9ce0e02d01bf5c664cf1b2">calibrate</a> ()</td></tr>
 <tr class="memdesc:a108078a5fb9ce0e02d01bf5c664cf1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calibrates the LSM9DS1 sensor by collecting offset data for gyro and accel.  <br /></td></tr>
 <tr class="separator:a108078a5fb9ce0e02d01bf5c664cf1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ad0edd1f2ff6a0d3f885537a11c4c1" id="r_ab5ad0edd1f2ff6a0d3f885537a11c4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLSM9DS1Sensor.html#ab5ad0edd1f2ff6a0d3f885537a11c4c1">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:ab5ad0edd1f2ff6a0d3f885537a11c4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the LSM9DS1 sensor data to the packet buffer as raw bytes.  <br /></td></tr>
+<tr class="separator:ab5ad0edd1f2ff6a0d3f885537a11c4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51bf822ca597be749781bcf5fb1cf4f" id="r_af51bf822ca597be749781bcf5fb1cf4f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLSM9DS1Sensor.html#af51bf822ca597be749781bcf5fb1cf4f">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:af51bf822ca597be749781bcf5fb1cf4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes the LSM9DS1 sensor data from the packet buffer into a CSV string.  <br /></td></tr>
+<tr class="separator:af51bf822ca597be749781bcf5fb1cf4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSensor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSensor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSensor.html">Sensor</a></td></tr>
 <tr class="memitem:a47013fb0a7d3e8d95944e309ce2bf88f inherit pub_methods_classSensor" id="r_a47013fb0a7d3e8d95944e309ce2bf88f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a47013fb0a7d3e8d95944e309ce2bf88f">Sensor</a> (String <a class="el" href="classSensor.html#a51529bb4324e61954a2d181ec4629b77">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, unsigned long <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
 <tr class="separator:a47013fb0a7d3e8d95944e309ce2bf88f inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,12 +145,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor" id="r_a7a1b80d366c585dd9c85992f0ca96d39"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a7a1b80d366c585dd9c85992f0ca96d39">getSensorCSVHeader</a> () const</td></tr>
 <tr class="memdesc:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the csv header string associated with this sensor.  <br /></td></tr>
 <tr class="separator:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor" id="r_ae835436cbb1fd60580e72a4ee7014c48"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
-<tr class="separator:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor" id="r_ab344e7fbc9acdc5dcc7ae59d0a3fb5f6"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
-<tr class="separator:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor" id="r_a1d128dc295e634de6506da5cbb716b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a1d128dc295e634de6506da5cbb716b64">getDataPacket</a> (uint32_t &amp;sensor_id, uint8_t *&amp;packet)</td></tr>
 <tr class="memdesc:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the data from a sensor to the packet if the minium period is satisfied.  <br /></td></tr>
 <tr class="separator:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,6 +240,44 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af51bf822ca597be749781bcf5fb1cf4f" name="af51bf822ca597be749781bcf5fb1cf4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af51bf822ca597be749781bcf5fb1cf4f">&#9670;&#160;</a></span>decodeToCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String LSM9DS1Sensor::decodeToCSV </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decodes the LSM9DS1 sensor data from the packet buffer into a CSV string. </p>
+<p>The data are read in the same order they were written and reconstructed as a string "day/month/year" and the remaining fields are appended as CSV values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to the packet byte array and this packet pointer is incremented. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String The decoded sensor data in CSV format. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">Sensor</a>.</p>
+
+</div>
+</div>
 <a id="ab7bb3fa7c86f10b340d25912d143baf3" name="ab7bb3fa7c86f10b340d25912d143baf3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7bb3fa7c86f10b340d25912d143baf3">&#9670;&#160;</a></span>readData()</h2>
 
@@ -267,6 +305,52 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>String A CSV section in format AccX, AccY, AccZ, GyroX, GyroY, GyroZ, MagX, MagY, MagZ, </dd></dl>
 
 <p>Implements <a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8">Sensor</a>.</p>
+
+</div>
+</div>
+<a id="ab5ad0edd1f2ff6a0d3f885537a11c4c1" name="ab5ad0edd1f2ff6a0d3f885537a11c4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5ad0edd1f2ff6a0d3f885537a11c4c1">&#9670;&#160;</a></span>readDataPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LSM9DS1Sensor::readDataPacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends the LSM9DS1 sensor data to the packet buffer as raw bytes. </p>
+<p>The following data are appended in order:</p><ul>
+<li>Date: day (uint8_t), month (uint8_t), year (uint16_t)</li>
+<li>Latitude (float)</li>
+<li>Longitude (float)</li>
+<li>Speed (float)</li>
+<li>Angle (float)</li>
+<li>Altitude (float)</li>
+<li>Satellites (uint8_t)</li>
+</ul>
+<p>If no valid fix is available, default value (0) is appended for all fields.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to the packet byte array. This pointer is incremented as each value is copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">Sensor</a>.</p>
 
 </div>
 </div>

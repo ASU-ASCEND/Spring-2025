@@ -146,7 +146,8 @@ void LSM9DS1Sensor::calibrate() {
  *
  * If no valid fix is available, default value (0) is appended for all fields.
  *
- * @param packet Pointer to the packet byte array. This pointer is incremented as each value is copied.
+ * @param packet Pointer to the packet byte array. This pointer is incremented
+ * as each value is copied.
  */
 void LSM9DS1Sensor::readDataPacket(uint8_t*& packet) {
   lsm.read();
@@ -177,11 +178,14 @@ void LSM9DS1Sensor::readDataPacket(uint8_t*& packet) {
 }
 
 /**
- * @brief Decodes the LSM9DS1 sensor data from the packet buffer into a CSV string.
+ * @brief Decodes the LSM9DS1 sensor data from the packet buffer into a CSV
+ * string.
  *
- * The data are read in the same order they were written and  reconstructed as a string "day/month/year" and the remaining fields are appended as CSV values.
+ * The data are read in the same order they were written and  reconstructed as a
+ * string "day/month/year" and the remaining fields are appended as CSV values.
  *
- * @param packet Pointer to the packet byte array and this packet pointer is incremented.
+ * @param packet Pointer to the packet byte array and this packet pointer is
+ * incremented.
  * @return String The decoded sensor data in CSV format.
  */
 String LSM9DS1Sensor::decodeToCSV(uint8_t*& packet) {
@@ -192,7 +196,7 @@ String LSM9DS1Sensor::decodeToCSV(uint8_t*& packet) {
   }
 
   return String(data[0]) + "," + String(data[1]) + "," + String(data[2]) + "," +
-         String(data[3]) + "," + String(data[4]) + "," + String(data[5]) + "," + 
-         String(data[6]) + "," + String(data[7]) + "," + String(data[8]) + "," + 
+         String(data[3]) + "," + String(data[4]) + "," + String(data[5]) + "," +
+         String(data[6]) + "," + String(data[7]) + "," + String(data[8]) + "," +
          String(data[8]) + ",";
 }
