@@ -46,3 +46,37 @@ String ENS160Sensor::readData() {
     return this->readEmpty();
   }
 }
+void ENS160Sensor::readDataPacket(uint8_t*& packet) {
+
+  if (!ens.checkDataStatus()) {
+    return;
+  }
+  uint8_t aqi = ens.getAQI();
+  uint16_t tvoc = ens.getTVOC();
+  uint16_t eco2 = ens.getECO2();
+
+  memcpy(packet, &aqi, sizeof(aqi));
+  packet += sizeof(aqi);
+
+  memcpy(packet, &tvoc, sizeof(tvoc));
+  packet += sizeof(tvoc);
+
+  memcpy(packet, &eco2, sizeof(eco2));
+  packet += sizeof(eco2);
+}
+
+String ENS160Sensor::decodeToCSV(uint8_t* packet) {
+  uint8_t aqi = *packet;
+  packet += sizeof(uint8_t);
+
+  uint16_t tvoc;
+  memcpy(&tvoc, packet, sizeof(uint16_t));
+  packet += sizeof(uint16_t);
+
+  uint16_t eco2;
+  memcpy(&eco2, packet, sizeof(uint16_t));
+  packet += sizeof(uint16_t);
+
+  return String(aqi) + "," + String(tvoc) + "," + String(eco2) + ",";
+
+}
