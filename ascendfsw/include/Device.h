@@ -11,12 +11,14 @@
  */
 class Device {
  private:
-  bool verified;
   unsigned long last_attempt;
   // set max_attempts to -1 to have remove attempt limit
   int max_attempts;
   int attempt_number;
   unsigned long wait_factor;
+
+ protected: 
+   bool verified;
 
  public:
   /**
@@ -115,7 +117,12 @@ class Device {
       this->verified = this->verify();
       // update record
       this->last_attempt = millis();
-      this->attempt_number++;
+      if(this->verified){
+        this->attempt_number = 0; 
+      }
+      else {
+        this->attempt_number++;
+      }
     }
     // return result
     return this->verified;

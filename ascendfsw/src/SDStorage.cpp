@@ -60,11 +60,7 @@ void SDStorage::store(String data) {
     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
     SD.end();  // close instance
 
-    if (this->verify()) {  // try to reconnect
-      log_core("Reverify succeeded");
-    } else {
-      log_core("Reverify failed");
-    }
+    this->verified = false; // flag the device for reverification  
   }
 
   output.println(data);
