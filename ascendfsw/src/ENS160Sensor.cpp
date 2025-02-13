@@ -47,7 +47,6 @@ String ENS160Sensor::readData() {
   }
 }
 void ENS160Sensor::readDataPacket(uint8_t*& packet) {
-
   if (!ens.checkDataStatus()) {
     return;
   }
@@ -78,5 +77,4 @@ String ENS160Sensor::decodeToCSV(uint8_t* packet) {
   packet += sizeof(uint16_t);
 
   return String(aqi) + "," + String(tvoc) + "," + String(eco2) + ",";
-
 }
