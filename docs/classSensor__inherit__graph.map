@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title="Parent class for sensor objects." alt="" coords="891,5,1069,351"/>
 <area shape="rect" id="Node000002" href="$classAS7331Sensor.html" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="5,439,147,624"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="878,186,727,201,636,216,539,237,440,265,342,300,247,346,160,401,140,419,123,440,119,437,136,415,157,397,245,341,340,296,438,259,538,231,635,211,726,196,877,180"/>
-<area shape="rect" id="Node000003" href="$classBME280Sensor.html" title="Implementation of a Sensor for the BME280." alt="" coords="171,459,312,604"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="878,194,757,217,612,257,537,284,462,317,391,355,326,401,298,428,276,460,272,457,294,425,322,397,389,351,460,312,535,279,610,252,755,212,877,189"/>
+<area shape="rect" id="Node000003" href="$classBME280Sensor.html" title="Implementation of a Sensor for the BME280." alt="" coords="171,449,312,614"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="878,194,757,217,612,257,537,284,462,317,391,355,326,401,302,423,283,450,278,447,298,420,322,397,389,351,460,312,535,279,610,252,755,212,877,189"/>
 <area shape="rect" id="Node000004" href="$classBME680Sensor.html" title="A class to interface with the Adafruit BME680 sensor for environmental data collection." alt="" coords="336,449,477,614"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="879,208,789,238,688,279,585,333,536,365,491,401,469,424,450,450,445,447,465,420,488,397,533,361,582,329,686,274,787,233,877,203"/>
 <area shape="rect" id="Node000005" href="$classDS3231Sensor.html" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="501,439,643,624"/>

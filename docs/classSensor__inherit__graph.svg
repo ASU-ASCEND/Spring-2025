@@ -140,24 +140,26 @@ var sectionId = 'dynsection-0';
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:href="classBME280Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the BME280.">
-<polygon fill="white" stroke="transparent" points="230,-154 124,-154 124,-45 230,-45 230,-154"/>
-<text text-anchor="start" x="140.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor</text>
-<text text-anchor="start" x="130.5" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="141" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">bme</text>
-<text text-anchor="start" x="128" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="141" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
-<text text-anchor="start" x="128" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="141" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
-<text text-anchor="start" x="128" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="141" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="128" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="141" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="128" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="141" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
-<polygon fill="#666666" stroke="#666666" points="124,-136.5 124,-136.5 230,-136.5 230,-136.5 124,-136.5"/>
-<polygon fill="#666666" stroke="#666666" points="124,-121.5 124,-121.5 139,-121.5 139,-121.5 124,-121.5"/>
-<polygon fill="#666666" stroke="#666666" points="139,-121.5 139,-121.5 230,-121.5 230,-121.5 139,-121.5"/>
-<polygon fill="none" stroke="#666666" points="124,-45 124,-154 230,-154 230,-45 124,-45"/>
+<polygon fill="white" stroke="transparent" points="230,-161.5 124,-161.5 124,-37.5 230,-37.5 230,-161.5"/>
+<text text-anchor="start" x="140.5" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor</text>
+<text text-anchor="start" x="130.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="141" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">bme</text>
+<text text-anchor="start" x="128" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="141" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
+<text text-anchor="start" x="128" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="141" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">BME280Sensor()</text>
+<text text-anchor="start" x="128" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="141" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="128" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="141" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="128" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="141" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="128" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="141" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="124,-144.5 124,-144.5 230,-144.5 230,-144.5 124,-144.5"/>
+<polygon fill="#666666" stroke="#666666" points="124,-129.5 124,-129.5 139,-129.5 139,-129.5 124,-129.5"/>
+<polygon fill="#666666" stroke="#666666" points="139,-129.5 139,-129.5 230,-129.5 230,-129.5 139,-129.5"/>
+<polygon fill="none" stroke="#666666" points="124,-37.5 124,-161.5 230,-161.5 230,-37.5 124,-37.5"/>
 </a>
 </g>
 </g>
@@ -165,7 +167,7 @@ var sectionId = 'dynsection-0';
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M654.08,-354.14C550.25,-338.13 363.92,-297.13 239,-199 223.82,-187.08 211.34,-170.35 201.66,-154.05"/>
+<path fill="none" stroke="#63b8ff" d="M654.08,-354.14C550.25,-338.13 363.92,-297.13 239,-199 226.21,-188.95 215.33,-175.48 206.43,-161.74"/>
 <polygon fill="none" stroke="#63b8ff" points="653.76,-357.63 664.17,-355.65 654.8,-350.71 653.76,-357.63"/>
 </a>
 </g>
