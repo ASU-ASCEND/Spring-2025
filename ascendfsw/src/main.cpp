@@ -92,12 +92,15 @@ void setup() {
   Serial.begin(115200);
   while (!Serial)  // remove before flight
     ;
+  log_core("setup begin"); 
 
   // setup heartbeat pins
   pinMode(HEARTBEAT_PIN_0, OUTPUT);
 
 // verify sensors
 #if RECOVERY_SYSTEM
+  sgp30_sensor.recoveryConfig(10, 1000); 
+
   int verified_count = verifySensorRecovery();
 #else
   int verified_count = verifySensors();
@@ -421,3 +424,16 @@ void handleDataInterface() {
     last_dump = millis();
   }
 }
+
+//-------------------------------------
+// Core 1 Calls
+//-------------------------------------
+// declarations - definitions are in main1.cpp 
+void real_setup1(); 
+void real_loop1(); 
+
+void setup1() { real_setup1(); }
+
+void loop1() { real_loop1(); }
+
+//-------------------------------------

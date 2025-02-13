@@ -47,7 +47,11 @@ bool core1_separate_stack = true;
  *
  *
  */
-void setup1() {
+void real_setup1() {
+  while(!Serial); 
+  delay(500);  // wait for other setup to run
+  log_core("Setup1 begin"); 
+
   // set up heartbeat
   pinMode(HEARTBEAT_PIN_1, OUTPUT);
 
@@ -58,7 +62,7 @@ void setup1() {
 
   // verify storage
   log_core("Verifying storage...");
-  int verified_count = verifyStorage();
+  int verified_count = verifyStorageRecovery();
   if (verified_count == 0) {
     log_core("No storages verified, output will be Serial only.");
     ErrorDisplay::instance().addCode(Error::CRITICAL_FAIL);
@@ -72,7 +76,7 @@ int it2 = 0;
  * @brief Loop for core 1
  *
  */
-void loop1() {
+void real_loop1() {
   it2++;
   digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
 
@@ -95,6 +99,8 @@ int verifyStorageRecovery() {
     if (storages[i]->attemptConnection()) {
       log_core(storages[i]->getStorageName() + " verified.");
       count++;
+    } else {
+      log_core(storages[i]->getStorageName() + " NOT verified");
     }
   }
   return count;

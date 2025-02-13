@@ -37,13 +37,14 @@ bool SDStorage::verify() {
   while (SD.exists("RAWDATA" + String(num) + ".BIN")) num++;
   if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
   this->bin_file_name = "RAWDATA" + String(num) + ".BIN";
+  log_core("Created file: " + this->file_name); 
 
   // create file
   File f = SD.open(this->file_name, FILE_WRITE);
   if (!f) return false;  // check to see if the open operation worked
   f.close();
 
-  return true;  // we never want to give up on the SD card, it is a failsafe
+  return false;  // recovery system will handle this now 
 }
 
 /**
