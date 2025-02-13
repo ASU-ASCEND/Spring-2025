@@ -20,6 +20,9 @@ class BME280Sensor : public Sensor {
 
   // Function to integrate sensor data into a packet buffer.
   void readDataPacket(uint8_t*& packet);
+
+  // Function to decode sensor data from a packet and return a CSV string
+  String decodeToCSV(uint8_t*& packet);
 };
 
 #endif

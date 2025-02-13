@@ -63,3 +63,26 @@ void BME280Sensor::readDataPacket(uint8_t*& packet) {
   // Increment the packet pointer by the number of bytes copied
   packet += 5 * sizeof(float);
 }
+
+// Decodes sensor data from the packet and returns it as a CSV string
+String BME280Sensor::decodeToCSV(uint8_t*& packet) {
+  // Decode each float value from the packet.
+  float relHum = *(reinterpret_cast<float*>(packet));
+  packet += sizeof(float);
+
+  float pressure = *(reinterpret_cast<float*>(packet));
+  packet += sizeof(float);
+
+  float altitude = *(reinterpret_cast<float*>(packet));
+  packet += sizeof(float);
+
+  float temp = *(reinterpret_cast<float*>(packet));
+  packet += sizeof(float);
+
+  float dewPoint = *(reinterpret_cast<float*>(packet));
+  packet += sizeof(float);
+
+  // Construct and return the CSV string.
+  return String(relHum) + "," + String(pressure) + "," + String(altitude) +
+         "," + String(temp) + "," + String(dewPoint) + ",";
+}
