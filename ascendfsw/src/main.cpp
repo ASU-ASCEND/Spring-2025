@@ -66,11 +66,10 @@ const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 bool sensors_verify[sensors_len];
 String header_condensed = "";
 
-// remnant
-#if FLASH_SPI1 == 0
+// for flash data recovery 
 #include "FlashStorage.h"
-FlashStorage flash_storage;
-#endif
+// defined in main1.cpp
+extern FlashStorage flash_storage;
 
 // global variables for main
 // loop counter

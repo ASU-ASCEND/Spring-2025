@@ -61,6 +61,7 @@ void SDStorage::store(String data) {
     SD.end();  // close instance
 
     this->verified = false; // flag the device for reverification  
+    return;
   }
 
   output.println(data);
@@ -81,11 +82,8 @@ void SDStorage::store(uint8_t* packet) {
     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
     SD.end();  // close instance
 
-    if (this->verify()) {  // try to reconnect
-      log_core("Reverify succeeded");
-    } else {
-      log_core("Reverify failed");
-    }
+    this->verified = false; // flag the device for reverification  
+    return;
   }
 
   // get length from the packet, after sync bytes (4) and sensor presense (4)

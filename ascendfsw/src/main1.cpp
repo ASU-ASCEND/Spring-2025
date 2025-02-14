@@ -24,12 +24,12 @@ void storeDataPacket(uint8_t* packet);
 // storage classes
 SDStorage sd_storage;
 RadioStorage radio_storage;
+FlashStorage flash_storage;
 
 // storage array
 #if FLASH_SPI1 == 0
 Storage* storages[] = {&sd_storage, &radio_storage};
 #else
-FlashStorage flash_storage;
 Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
 #endif
 
