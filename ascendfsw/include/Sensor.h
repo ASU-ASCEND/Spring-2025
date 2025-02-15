@@ -13,7 +13,7 @@
 class Sensor : public Device {
  private:
   unsigned long minimum_period, last_execution;
-  String sensor_name, csv_header, empty_csv;
+  String csv_header, empty_csv;
 
  public:
   Sensor(String sensor_name, String csv_header, unsigned long minimum_period) {

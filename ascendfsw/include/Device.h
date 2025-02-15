@@ -2,6 +2,7 @@
 #define DEVICE_H
 
 #include <Arduino.h>
+#include "Logger.h"
 
 #define MINUTE_IN_MILLIS (1000 * 60)
 
@@ -19,6 +20,8 @@ class Device {
 
  protected: 
    bool verified;
+   // duplicate to avoid changing children, eventually refactor 
+   String sensor_name, storage_name, device_name;
 
  public:
   /**
@@ -83,7 +86,7 @@ class Device {
    * each failed attempt
    */
   void setWaitFactor(int wait_factor) {
-    if (wait_factor > 1) this->wait_factor = wait_factor;
+    this->wait_factor = wait_factor;
   }
 
   /**
@@ -93,7 +96,7 @@ class Device {
    * sensor
    */
   void setMaxAttempts(int max_attempts) {
-    if (max_attempts > 1) this->max_attempts = max_attempts;
+    this->max_attempts = max_attempts;
   }
 
   /**
@@ -106,13 +109,18 @@ class Device {
    * @return false If unverified 
    */
   bool attemptConnection() {
+    // refactor 
+    if(this->storage_name == "") this->device_name = this->sensor_name; 
+    else this->device_name = this->storage_name; 
+
     // if it isn't verified and is time to try again
     // time between tests scales with attempt_number to spread out attempts
-    if (this->verified == false &&
+    if (  this->verified == false &&
         (this->max_attempts == -1 ||
          this->attempt_number < this->max_attempts) &&
-        (millis() - this->last_attempt >
+        ((millis() - this->last_attempt) >
          (this->wait_factor * this->attempt_number))) {
+      log_core("Attempt on " + this->device_name); 
       // try to verify again
       this->verified = this->verify();
       // update record

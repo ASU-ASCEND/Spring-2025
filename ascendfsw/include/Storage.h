@@ -12,7 +12,6 @@
  */
 class Storage : public Device {
  private:
-  String storage_name;
 
  public:
   Storage(String storage_name) { this->storage_name = storage_name; }

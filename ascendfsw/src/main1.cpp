@@ -57,7 +57,7 @@ void real_setup1() {
 
   // set storages to be tried forever, with 5 second recovery factor
   for (size_t i = 0; i < storages_len; i++) {
-    storages[i]->recoveryConfig(-1, 5000);
+    storages[i]->recoveryConfig(-1, 1000);
   }
 
   // verify storage
@@ -77,11 +77,14 @@ int it2 = 0;
  *
  */
 void real_loop1() {
+  log_core("it2: " + String(it2)); 
   it2++;
   digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
 
   char received_data[QT_ENTRY_SIZE];
   queue_remove_blocking(&qt, received_data);
+
+  log_core("Received: " + String(received_data)); 
 
   // store csv row
   storeData(String(received_data));
@@ -115,8 +118,12 @@ int verifyStorageRecovery() {
 int verifyStorage() {
   int count = 0;
   for (int i = 0; i < storages_len; i++) {
+    #if RECOVERY_SYSTEM 
+    if (storages[i]->attemptConnection()) {
+    #else
     storages_verify[i] = storages[i]->verify();
     if (storages_verify[i]) {
+    #endif 
       log_core(storages[i]->getStorageName() + " verified.");
       count++;
     }

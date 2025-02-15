@@ -44,7 +44,7 @@ bool SDStorage::verify() {
   if (!f) return false;  // check to see if the open operation worked
   f.close();
 
-  return false;  // recovery system will handle this now 
+  return true;  // recovery system will handle this now 
 }
 
 /**
@@ -53,6 +53,7 @@ bool SDStorage::verify() {
  * @param data Data to store
  */
 void SDStorage::store(String data) {
+  log_core("SD Store call"); 
   File output = SD.open(this->file_name, FILE_WRITE);
   if (!output) {
     log_core("SD card write failed");
@@ -60,6 +61,7 @@ void SDStorage::store(String data) {
     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
     SD.end();  // close instance
 
+    log_core("Flagged for reverification"); 
     this->verified = false; // flag the device for reverification  
     return;
   }
