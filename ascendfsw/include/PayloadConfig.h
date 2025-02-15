@@ -77,12 +77,11 @@
 #define DATA_INTERFACE_PIN 15
 
 // multicore transfer queue
-#define QT_ENTRY_SIZE 1000
+#define QT_ENTRY_SIZE 500
 #define QT_MAX_SIZE 10
 
 // packet properties
-#define MAX_PACKET_SIZE 500
-const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF};
+const uint8_t SYNC_BYTES[] = {'A', 'S', 'U', '!'};
 
 // temporary toggle macros for testing
 #define PACKET_SYSTEM_TESTING 1

@@ -194,8 +194,8 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
 
 #if PACKET_SYSTEM_TESTING
   // build csv row
-  uint8_t packet[MAX_PACKET_SIZE];
-  // for (int i = 0; i < MAX_PACKET_SIZE; i++) packet[i] = 0; // useful for
+  uint8_t packet[QT_ENTRY_SIZE];
+  // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
   // debugging
   readSensorDataPacket(packet);
   String csv_row = decodePacket(packet);
