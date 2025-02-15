@@ -17,11 +17,10 @@ class Device {
   int max_attempts;
   int attempt_number;
   unsigned long wait_factor;
+  String device_name;
 
  protected: 
    bool verified;
-   // duplicate to avoid changing children, eventually refactor 
-   String sensor_name, storage_name, device_name;
 
  public:
   /**
@@ -29,12 +28,13 @@ class Device {
    * be attempted)
    *
    */
-  Device() {
+  Device(String device_name) {
     this->verified = false;
     this->last_attempt = -1;
     this->max_attempts = 1;
     this->attempt_number = 0;
     this->wait_factor = 1 * MINUTE_IN_MILLIS;
+    this->device_name = device_name; 
   }
 
   /**
@@ -45,9 +45,13 @@ class Device {
    * @param wait_factor Amount to increase wait time between each attempt by for
    * each failed attempt
    */
-  Device(int max_attempts, int wait_factor) : Device() {
+  Device(String device_name, int max_attempts, int wait_factor) : Device(device_name) {
     this->max_attempts = max_attempts;
     this->wait_factor = wait_factor;
+  }
+
+  const String& getDeviceName(){
+    return this->device_name; 
   }
 
   /**
@@ -109,10 +113,6 @@ class Device {
    * @return false If unverified 
    */
   bool attemptConnection() {
-    // refactor 
-    if(this->storage_name == "") this->device_name = this->sensor_name; 
-    else this->device_name = this->storage_name; 
-
     // if it isn't verified and is time to try again
     // time between tests scales with attempt_number to spread out attempts
     if (  this->verified == false &&

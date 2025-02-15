@@ -100,10 +100,10 @@ int verifyStorageRecovery() {
   int count = 0;
   for (int i = 0; i < storages_len; i++) {
     if (storages[i]->attemptConnection()) {
-      log_core(storages[i]->getStorageName() + " verified.");
+      log_core(storages[i]->getDeviceName() + " verified.");
       count++;
     } else {
-      log_core(storages[i]->getStorageName() + " NOT verified");
+      log_core(storages[i]->getDeviceName() + " NOT verified");
     }
   }
   return count;
@@ -124,7 +124,7 @@ int verifyStorage() {
     storages_verify[i] = storages[i]->verify();
     if (storages_verify[i]) {
     #endif 
-      log_core(storages[i]->getStorageName() + " verified.");
+      log_core(storages[i]->getDeviceName() + " verified.");
       count++;
     }
   }

@@ -123,7 +123,7 @@ void setup() {
 // spi0
 #if FLASH_SPI1 == 0
   if (flash_storage.verify()) {
-    log_core(flash_storage.getStorageName() + " verified.");
+    log_core(flash_storage.getDeviceName() + " verified.");
   }
 #endif
 
@@ -232,7 +232,7 @@ int verifySensorRecovery() {
 
   log_core("Pin Verification Results:");
   for (int i = 0; i < sensors_len; i++) {
-    log_core((sensors[i]->getSensorName()) + ": " +
+    log_core((sensors[i]->getDeviceName()) + ": " +
              (sensors[i]->getVerified()
                   ? "Successful in Communication"
                   : "Failure in Communication (check wirings and/ or pin "
@@ -266,7 +266,7 @@ int verifySensors() {
 
   log_core("Pin Verification Results:");
   for (int i = 0; i < sensors_len; i++) {
-    log_core((sensors[i]->getSensorName()) + ": " +
+    log_core((sensors[i]->getDeviceName()) + ": " +
              (sensors_verify[i]
                   ? "Successful in Communication"
                   : "Failure in Communication (check wirings and/ or pin "
@@ -372,7 +372,7 @@ String decodePacket(uint8_t* packet) {
   while (curr_offset >= 0) {
     if (sensor_id & (1 << curr_offset)) {
       // log_core("\tDecoding " + sensors[id_offset - curr_offset -
-      // 1]->getSensorName());
+      // 1]->getDeviceName());
       csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
     } else if (sensors_verify[id_offset - curr_offset - 1]) {
       csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();

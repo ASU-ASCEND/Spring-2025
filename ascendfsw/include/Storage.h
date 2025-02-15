@@ -14,14 +14,7 @@ class Storage : public Device {
  private:
 
  public:
-  Storage(String storage_name) { this->storage_name = storage_name; }
-
-  /**
-   * @brief Get the name of the storage device
-   *
-   * @return const String&
-   */
-  const String& getStorageName() const { return this->storage_name; }
+  Storage(String storage_name) : Device(storage_name){}
 
   /**
    * @brief Verifies connection with storage device
