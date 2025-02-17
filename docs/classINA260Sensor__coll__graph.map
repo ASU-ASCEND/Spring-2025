@@ -1,11 +1,11 @@
 <map id="INA260Sensor" name="INA260Sensor">
-<area shape="rect" id="Node000001" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="153,491,283,616"/>
+<area shape="rect" id="Node000001" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="147,491,289,656"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="43,163,220,428"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,440,200,490,195,491,178,442"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,440,195,490,190,491,174,442"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,71,58,104,62,138,64,146,59,147,57,139,52,104,52,71"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="180,5,232,71"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="199,72,177,148,172,146,194,70"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="245,263,365,328"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="296,329,247,476,242,474,291,328"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="297,329,251,476,246,474,292,327"/>
 </map>

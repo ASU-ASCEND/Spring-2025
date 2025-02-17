@@ -1,5 +1,5 @@
 <map id="INA260Sensor" name="INA260Sensor">
-<area shape="rect" id="Node000001" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="29,399,159,524"/>
+<area shape="rect" id="Node000001" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="23,399,165,564"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,5,183,351"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,364,97,398,91,398,91,364"/>
 </map>
