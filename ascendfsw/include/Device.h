@@ -20,6 +20,7 @@ class Device {
   String device_name;
 
  protected: 
+ // current verification of the sensor, can be set by children to trigger a verify
    bool verified;
 
  public:

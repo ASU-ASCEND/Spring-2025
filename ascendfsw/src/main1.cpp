@@ -34,7 +34,9 @@ Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
 #endif
 
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
+#if RECOVERY_SYSTEM == 0
 bool storages_verify[storages_len];
+#endif 
 
 // use definition in main.cpp
 extern queue_t qt;
@@ -55,7 +57,7 @@ void real_setup1() {
   // set up heartbeat
   pinMode(HEARTBEAT_PIN_1, OUTPUT);
 
-  // set storages to be tried forever, with 5 second recovery factor
+  // set storages to be tried forever, with 1 second recovery factor
   for (size_t i = 0; i < storages_len; i++) {
     storages[i]->recoveryConfig(-1, 1000);
   }

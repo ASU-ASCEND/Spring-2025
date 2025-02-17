@@ -63,7 +63,9 @@ Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
 //&gps_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
+// kept for compile, remove soon 
 bool sensors_verify[sensors_len];
+ 
 String header_condensed = "";
 
 // for flash data recovery 
@@ -98,6 +100,7 @@ void setup() {
 
 // verify sensors
 #if RECOVERY_SYSTEM
+// recovery config for sensors 
   sgp30_sensor.recoveryConfig(10, 1000); 
 
   int verified_count = verifySensorRecovery();
