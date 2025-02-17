@@ -49,7 +49,7 @@ String SGP30Sensor::readData() {
  * @param packet Pointer to the current position in the packet buffer.
  * @return The number of bytes appended (6).
  */
-int SGP30Sensor::readDataPacket(uint8_t*& packet) {
+void SGP30Sensor::readDataPacket(uint8_t*& packet) {
  
   uint16_t eCO2 = 0;
   uint16_t TVOC = 0;
