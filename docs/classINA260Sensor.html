@@ -84,7 +84,7 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for INA260Sensor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classINA260Sensor__inherit__graph.svg" width="188" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classINA260Sensor__inherit__graph.svg" width="188" height="570"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for INA260Sensor:</div>
@@ -100,6 +100,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a15132c8e875b5cd00b243bf42b65efd9" id="r_a15132c8e875b5cd00b243bf42b65efd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a15132c8e875b5cd00b243bf42b65efd9">INA260Sensor</a> (unsigned long <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
 <tr class="memdesc:a15132c8e875b5cd00b243bf42b65efd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterized constructor for the <a class="el" href="classINA260Sensor.html" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements.">INA260Sensor</a> class.  <br /></td></tr>
 <tr class="separator:a15132c8e875b5cd00b243bf42b65efd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c61c774236a8d42b17b29a3ccfde35" id="r_aa3c61c774236a8d42b17b29a3ccfde35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#aa3c61c774236a8d42b17b29a3ccfde35">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:aa3c61c774236a8d42b17b29a3ccfde35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sensor data and appends to packet byte array, data includes current(mA), voltage(mV), and power (mW).  <br /></td></tr>
+<tr class="separator:aa3c61c774236a8d42b17b29a3ccfde35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584bc9560de962e52e61d4c4ee6ffe79" id="r_a584bc9560de962e52e61d4c4ee6ffe79"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a584bc9560de962e52e61d4c4ee6ffe79">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
+<tr class="memdesc:a584bc9560de962e52e61d4c4ee6ffe79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes sensor data from the packet into a CSV string.  <br /></td></tr>
+<tr class="separator:a584bc9560de962e52e61d4c4ee6ffe79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a799f491fe1496b33b1d985e5672a7e6d" id="r_a799f491fe1496b33b1d985e5672a7e6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a799f491fe1496b33b1d985e5672a7e6d">verify</a> () override</td></tr>
 <tr class="memdesc:a799f491fe1496b33b1d985e5672a7e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies the connection to the INA260 sensor.  <br /></td></tr>
 <tr class="separator:a799f491fe1496b33b1d985e5672a7e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,12 +141,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor" id="r_a7a1b80d366c585dd9c85992f0ca96d39"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a7a1b80d366c585dd9c85992f0ca96d39">getSensorCSVHeader</a> () const</td></tr>
 <tr class="memdesc:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the csv header string associated with this sensor.  <br /></td></tr>
 <tr class="separator:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor" id="r_ae835436cbb1fd60580e72a4ee7014c48"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
-<tr class="separator:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor" id="r_ab344e7fbc9acdc5dcc7ae59d0a3fb5f6"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
-<tr class="separator:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor" id="r_a1d128dc295e634de6506da5cbb716b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a1d128dc295e634de6506da5cbb716b64">getDataPacket</a> (uint32_t &amp;sensor_id, uint8_t *&amp;packet)</td></tr>
 <tr class="memdesc:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the data from a sensor to the packet if the minium period is satisfied.  <br /></td></tr>
 <tr class="separator:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,6 +212,44 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a584bc9560de962e52e61d4c4ee6ffe79" name="a584bc9560de962e52e61d4c4ee6ffe79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584bc9560de962e52e61d4c4ee6ffe79">&#9670;&#160;</a></span>decodeToCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String INA260Sensor::decodeToCSV </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decodes sensor data from the packet into a CSV string. </p>
+<p>Data includes current(mA), voltage(mV), and power (mW).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to packet byte array that will be decoded. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String Decoded sensor data in CSV format. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">Sensor</a>.</p>
+
+</div>
+</div>
 <a id="a40a7b8158adfe1742ab7ce746b2830c4" name="a40a7b8158adfe1742ab7ce746b2830c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40a7b8158adfe1742ab7ce746b2830c4">&#9670;&#160;</a></span>readData()</h2>
 
@@ -240,6 +278,42 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>String A string containing the sensor data in the format: "Current (mA), Voltage (mV), Power (mW), ". </dd></dl>
 
 <p>Implements <a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8">Sensor</a>.</p>
+
+</div>
+</div>
+<a id="aa3c61c774236a8d42b17b29a3ccfde35" name="aa3c61c774236a8d42b17b29a3ccfde35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c61c774236a8d42b17b29a3ccfde35">&#9670;&#160;</a></span>readDataPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void INA260Sensor::readDataPacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads sensor data and appends to packet byte array, data includes current(mA), voltage(mV), and power (mW). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to the packet byte array. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">Sensor</a>.</p>
 
 </div>
 </div>
