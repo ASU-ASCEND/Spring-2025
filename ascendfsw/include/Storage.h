@@ -3,25 +3,18 @@
 
 #include <Arduino.h>
 
+#include "Device.h"
 #include "Logger.h"
 
 /**
  * @brief Parent class for all data storage devices (sd card, radio, etc)
  *
  */
-class Storage {
+class Storage : public Device {
  private:
-  String storage_name;
 
  public:
-  Storage(String storage_name) { this->storage_name = storage_name; }
-
-  /**
-   * @brief Get the name of the storage device
-   *
-   * @return const String&
-   */
-  const String& getStorageName() const { return this->storage_name; }
+  Storage(String storage_name) : Device(storage_name){}
 
   /**
    * @brief Verifies connection with storage device
@@ -43,7 +36,7 @@ class Storage {
    *
    * @param packet Packet to store
    */
-  void store(uint8_t* packet, int length) {};
+  void store(uint8_t* packet, int length){};
 };
 
 #endif
