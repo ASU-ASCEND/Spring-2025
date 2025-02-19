@@ -1,0 +1,7 @@
+<map id="verifyStorageRecovery" name="verifyStorageRecovery">
+<area shape="rect" id="Node000001" title="Verifies the connection with each storage device, and defines the header_condensed field,..." alt="" coords="267,5,437,31"/>
+<area shape="rect" id="Node000002" href="$main1_8cpp.html#a335f1df8d0b267769cb9842c12616214" title="Setup for core 1." alt="" coords="120,5,219,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,21,219,21,219,15,253,15"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ac764ee28e2916a7de10b22927e02d1a4" title=" " alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,21,72,21,72,15,106,15"/>
+</map>

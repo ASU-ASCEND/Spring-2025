@@ -127,7 +127,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a1e93fe19ad4ef78d366cc8f619da977a">   75</a></span><span class="preprocessor">#define HEARTBEAT_PIN_1 13</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a36df51ef7cb9a6bf22a094f4d347cad6">   77</a></span><span class="preprocessor">#define DATA_INTERFACE_PIN 15</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">// multicore transfer queue</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a8201d54530a1f4d0365d64f9b719abf0">   80</a></span><span class="preprocessor">#define QT_ENTRY_SIZE 500</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a7b5633633d812e26b17cde137daa3df4">   81</a></span><span class="preprocessor">#define QT_MAX_SIZE 10</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">// packet properties</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">   84</a></span><span class="keyword">const</span> uint8_t <a class="code hl_variable" href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a>[] = {<span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">// temporary toggle macros for testing</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a4168244e83bfe6fdfb37b001daea31ba">   87</a></span><span class="preprocessor">#define PACKET_SYSTEM_TESTING 1</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a8990e8d3087dcdd3e84e72375881cce1">   88</a></span><span class="preprocessor">#define RECOVERY_SYSTEM 1</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aPayloadConfig_8h_html_abaacb8cdda17b6340a4d5aeaf72e2ca6"><div class="ttname"><a href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a></div><div class="ttdeci">const uint8_t SYNC_BYTES[]</div><div class="ttdef"><b>Definition</b> PayloadConfig.h:84</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

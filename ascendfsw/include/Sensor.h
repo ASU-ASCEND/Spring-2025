@@ -3,22 +3,23 @@
 
 #include <Arduino.h>
 
+#include "Device.h"
 #include "Logger.h"
 
 /**
  * @brief Parent class for sensor objects
  *
  */
-class Sensor {
+class Sensor : public Device {
  private:
   unsigned long minimum_period, last_execution;
-  String sensor_name, csv_header, empty_csv;
+  String csv_header, empty_csv;
 
  public:
-  Sensor(String sensor_name, String csv_header, unsigned long minimum_period) {
+  Sensor(String sensor_name, String csv_header, unsigned long minimum_period)
+      : Device(sensor_name) {
     this->minimum_period = minimum_period;
     this->last_execution = 0;
-    this->sensor_name = sensor_name;
     this->csv_header = csv_header;
     this->empty_csv = "";
     for (size_t i = 0; i < csv_header.length(); i++) {
@@ -83,13 +84,6 @@ class Sensor {
   }
 
   /**
-   * @brief Get the Sensor Name as an Arduino string
-   *
-   * @return const String&
-   */
-  const String& getSensorName() const { return this->sensor_name; }
-
-  /**
    * @brief Get the csv header string associated with this sensor
    *
    * @return const String&
@@ -127,7 +121,7 @@ class Sensor {
    * @return String The senors data decoded from the packet in csv format
    */
   virtual String decodeToCSV(uint8_t*& packet) {
-    return "(" + this->getSensorName() + " data), ";
+    return "(" + this->getDeviceName() + " data), ";
   };
 
   /**

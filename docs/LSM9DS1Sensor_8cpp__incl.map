@@ -12,9 +12,13 @@
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="401,102,472,143,470,147,398,106"/>
 <area shape="rect" id="Node000007" href="$Sensor_8h.html" title=" " alt="" coords="591,152,668,177"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="421,101,578,146,577,151,419,107"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="586,299,670,324"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="629,178,619,226,619,256,624,285,619,286,614,257,613,225,623,177"/>
-<area shape="rect" id="Node000009" href="$Logger_8h.html" title=" " alt="" coords="628,225,705,251"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="638,176,657,212,652,215,633,179"/>
-<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="663,252,643,288,638,285,658,250"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="574,372,658,397"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="617,179,597,200,581,226,575,262,580,298,592,332,605,359,600,361,587,334,575,299,570,262,576,224,593,196,613,176"/>
+<area shape="rect" id="Node000009" href="$Device_8h.html" title=" " alt="" coords="590,225,669,251"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="632,178,632,212,627,212,627,178"/>
+<area shape="rect" id="Node000010" href="$Logger_8h.html" title=" " alt="" coords="653,299,731,324"/>
+<area shape="poly" id="edge12_Node000007_Node000010" title=" " alt="" coords="645,176,666,197,684,224,693,255,695,285,690,285,687,256,679,226,662,200,641,179"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="631,251,621,359,616,358,626,251"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="642,249,675,286,671,290,638,253"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="682,326,640,364,637,361,678,322"/>
 </map>

@@ -1,13 +1,21 @@
 <map id="FlashStorage" name="FlashStorage">
-<area shape="rect" id="Node000001" title=" " alt="" coords="285,356,409,541"/>
-<area shape="rect" id="Node000002" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="5,133,155,279"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,282,286,389,283,393,163,286"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="54,5,106,71"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,71,83,117,77,117,77,71"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="179,173,325,239"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="249,239,248,284,250,308,256,331,277,371,273,374,251,333,245,309,242,284,244,239"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="385,173,500,239"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="440,239,431,284,416,333,412,342,407,340,411,331,426,283,435,238"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="524,173,591,239"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="541,240,514,280,470,334,423,383,419,379,466,331,510,277,536,237"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="432,625,556,811"/>
+<area shape="rect" id="Node000002" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="212,423,301,548"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,543,316,546,434,658,430,662,312,550,309,547"/>
+<area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="175,148,339,373"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="259,387,259,423,254,423,254,387"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,111,71"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="64,70,71,97,83,123,119,165,163,201,159,205,116,169,78,125,66,99,59,71"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="167,5,197,71"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="182,71,182,97,186,123,188,132,183,133,181,125,177,97,176,71"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="305,5,357,71"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="323,72,302,134,297,132,318,70"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="438,5,481,71"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="448,72,434,99,416,126,386,159,353,190,349,186,382,155,412,122,430,96,444,70"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="326,453,473,518"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="397,518,396,558,403,600,425,641,420,643,398,602,390,559,392,518"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="533,453,647,518"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="587,519,577,559,563,602,559,612,554,610,558,600,572,558,582,517"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="671,453,738,518"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="684,520,661,550,619,603,570,652,566,648,615,600,657,546,680,516"/>
 </map>

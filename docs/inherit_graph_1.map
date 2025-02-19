@@ -1,27 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,277,72,303"/>
-<area shape="rect" id="Node000001" href="$classAS7331Sensor.html" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="128,5,243,31"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="39,264,44,217,57,157,80,95,97,66,118,40,133,29,137,33,122,44,102,69,85,97,62,159,49,218,44,264"/>
-<area shape="rect" id="Node000002" href="$classBME280Sensor.html" title="Implementation of a Sensor for the BME280." alt="" coords="126,55,245,80"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="41,263,49,225,64,179,86,131,118,89,134,78,137,82,122,93,91,134,69,180,54,226,46,264"/>
-<area shape="rect" id="Node000003" href="$classBME680Sensor.html" title="A class to interface with the Adafruit BME680 sensor for environmental data collection." alt="" coords="126,104,245,129"/>
-<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="45,263,71,202,92,168,118,139,136,127,139,132,122,143,96,171,76,204,50,265"/>
-<area shape="rect" id="Node000004" href="$classDS3231Sensor.html" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="127,153,243,179"/>
-<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="52,264,80,225,118,188,139,176,142,181,122,192,84,229,57,267"/>
-<area shape="rect" id="Node000005" href="$classENS160Sensor.html" title="Implementation of a Sensor for the ENS160." alt="" coords="127,203,243,228"/>
-<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="68,267,119,237,145,226,147,230,121,242,71,272"/>
-<area shape="rect" id="Node000006" href="$classICM20948Sensor.html" title="Implementation of the Sensor class for the Adafruit ICM20948 (9&#45;axis IMU)" alt="" coords="120,252,251,277"/>
-<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="85,279,119,273,120,279,86,285"/>
-<area shape="rect" id="Node000007" href="$classINA260Sensor.html" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="129,301,242,327"/>
-<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="86,295,129,302,128,307,85,300"/>
-<area shape="rect" id="Node000008" href="$classLSM9DS1Sensor.html" title="Implementation of the Sensor class for the LSM9DS1 (9&#45;axis IMU)" alt="" coords="122,351,249,376"/>
-<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="72,308,121,336,150,348,148,353,119,340,69,312"/>
-<area shape="rect" id="Node000009" href="$classMTK3339Sensor.html" title="Implementation of the Adafruit MTK3339 GPS sensor." alt="" coords="122,400,249,425"/>
-<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="57,313,85,350,122,385,144,398,141,402,118,389,81,353,53,316"/>
-<area shape="rect" id="Node000010" href="$classPCF8523Sensor.html" title="Implementation of the PCF8523 sensor." alt="" coords="124,449,247,475"/>
-<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="50,315,76,375,97,407,122,435,141,447,138,451,118,439,92,410,72,377,45,317"/>
-<area shape="rect" id="Node000011" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="131,499,239,524"/>
-<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="47,316,55,353,69,398,91,444,122,484,139,496,136,501,118,488,87,447,64,400,50,354,41,317"/>
-<area shape="rect" id="Node000012" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="135,548,236,573"/>
-<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="44,316,50,362,63,420,86,480,102,508,122,533,138,546,135,550,118,537,98,511,81,483,58,422,45,363,39,317"/>
+<area shape="rect" id="Node000000" href="$classErrorDisplay.html" title="Singleton class for the 3 GPIO LED Error Display." alt="" coords="5,5,108,31"/>
 </map>

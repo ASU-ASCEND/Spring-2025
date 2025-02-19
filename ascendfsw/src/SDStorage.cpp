@@ -37,13 +37,14 @@ bool SDStorage::verify() {
   while (SD.exists("RAWDATA" + String(num) + ".BIN")) num++;
   if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
   this->bin_file_name = "RAWDATA" + String(num) + ".BIN";
+  log_core("Created file: " + this->file_name);
 
   // create file
   File f = SD.open(this->file_name, FILE_WRITE);
   if (!f) return false;  // check to see if the open operation worked
   f.close();
 
-  return true;  // we never want to give up on the SD card, it is a failsafe
+  return true;  // recovery system will handle this now
 }
 
 /**
@@ -52,6 +53,7 @@ bool SDStorage::verify() {
  * @param data Data to store
  */
 void SDStorage::store(String data) {
+  log_core("SD Store call");
   File output = SD.open(this->file_name, FILE_WRITE);
   if (!output) {
     log_core("SD card write failed");
@@ -59,11 +61,9 @@ void SDStorage::store(String data) {
     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
     SD.end();  // close instance
 
-    if (this->verify()) {  // try to reconnect
-      log_core("Reverify succeeded");
-    } else {
-      log_core("Reverify failed");
-    }
+    log_core("Flagged for reverification");
+    this->verified = false;  // flag the device for reverification
+    return;
   }
 
   output.println(data);
@@ -84,11 +84,8 @@ void SDStorage::store(uint8_t* packet) {
     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
     SD.end();  // close instance
 
-    if (this->verify()) {  // try to reconnect
-      log_core("Reverify succeeded");
-    } else {
-      log_core("Reverify failed");
-    }
+    this->verified = false;  // flag the device for reverification
+    return;
   }
 
   // get length from the packet, after sync bytes (4) and sensor presense (4)

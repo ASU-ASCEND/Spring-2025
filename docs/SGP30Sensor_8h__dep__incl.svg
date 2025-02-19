@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="main_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="main_8cpp.html" target="_top" xlink:title="Main functions for Core 0, responsible for reading data from sensor peripherals.">
 <polygon fill="white" stroke="#666666" points="181.5,-19 119.5,-19 119.5,0 181.5,0 181.5,-19"/>
 <text text-anchor="middle" x="150.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">main.cpp</text>
 </a>

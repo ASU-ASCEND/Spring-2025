@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5fpacket_5fsize_0',['MAX_PACKET_SIZE',['../main_8cpp.html#a879456c3b8e2853f7044d764e9c180d4',1,'main.cpp']]]
+  ['minute_5fin_5fmillis_0',['MINUTE_IN_MILLIS',['../Device_8h.html#ae3f14d5c786fb27f4cb9a5b934590f10',1,'Device.h']]]
 ];
