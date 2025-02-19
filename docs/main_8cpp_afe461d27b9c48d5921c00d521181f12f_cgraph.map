@@ -12,17 +12,17 @@
 <area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="43,131,69,162,105,192,117,198,115,203,103,196,65,165,39,134"/>
 <area shape="rect" id="Node000003" href="$classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6" title="Used for onboard decoding of packets." alt="" coords="323,5,485,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,17,309,17,309,22,244,23"/>
-<area shape="rect" id="Node000005" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="553,56,698,81"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="244,28,320,39,539,60,539,66,320,45,243,33"/>
-<area shape="rect" id="Node000004" href="$classSensor.html#ac2fad054e890947b02322eb31e7967bf" title="Get the Sensor Name as an Arduino string." alt="" coords="536,5,715,31"/>
+<area shape="rect" id="Node000005" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="553,56,699,81"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="244,28,320,39,540,60,539,66,320,45,243,33"/>
+<area shape="rect" id="Node000004" href="$classDevice.html#abbc7184e7fb286208c3b30357cf53f88" title=" " alt="" coords="536,5,716,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="485,15,522,15,522,21,485,21"/>
 <area shape="rect" id="Node000008" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="328,107,480,132"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="252,117,314,117,314,122,252,122"/>
-<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="460,104,555,82,557,87,461,109"/>
-<area shape="rect" id="Node000009" href="$classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format." alt="" coords="558,107,693,132"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="481,117,544,117,544,122,481,122"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="460,104,556,82,557,87,461,109"/>
+<area shape="rect" id="Node000009" href="$classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format." alt="" coords="559,107,693,132"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="480,117,545,117,545,122,480,122"/>
 <area shape="rect" id="Node000011" href="$classSensor.html#a1d128dc295e634de6506da5cbb716b64" title="Append the data from a sensor to the packet if the minium period is satisfied." alt="" coords="320,156,488,181"/>
 <area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="272,166,306,166,306,171,272,171"/>
-<area shape="rect" id="Node000012" href="$classSensor.html#ae835436cbb1fd60580e72a4ee7014c48" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="537,156,713,181"/>
+<area shape="rect" id="Node000012" href="$classSensor.html#ae835436cbb1fd60580e72a4ee7014c48" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="538,156,714,181"/>
 <area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="488,166,524,166,524,171,488,171"/>
 </map>

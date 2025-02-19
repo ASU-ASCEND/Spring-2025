@@ -2,6 +2,7 @@
 #define DEVICE_H
 
 #include <Arduino.h>
+
 #include "Logger.h"
 
 #define MINUTE_IN_MILLIS (1000 * 60)
@@ -19,9 +20,10 @@ class Device {
   unsigned long wait_factor;
   String device_name;
 
- protected: 
- // current verification of the sensor, can be set by children to trigger a verify
-   bool verified;
+ protected:
+  // current verification of the sensor, can be set by children to trigger a
+  // verify
+  bool verified;
 
  public:
   /**
@@ -35,7 +37,7 @@ class Device {
     this->max_attempts = 1;
     this->attempt_number = 0;
     this->wait_factor = 1 * MINUTE_IN_MILLIS;
-    this->device_name = device_name; 
+    this->device_name = device_name;
   }
 
   /**
@@ -46,14 +48,13 @@ class Device {
    * @param wait_factor Amount to increase wait time between each attempt by for
    * each failed attempt
    */
-  Device(String device_name, int max_attempts, int wait_factor) : Device(device_name) {
+  Device(String device_name, int max_attempts, int wait_factor)
+      : Device(device_name) {
     this->max_attempts = max_attempts;
     this->wait_factor = wait_factor;
   }
 
-  const String& getDeviceName(){
-    return this->device_name; 
-  }
+  const String& getDeviceName() { return this->device_name; }
 
   /**
    * @brief Verifies if the Device is connected and working
@@ -90,9 +91,7 @@ class Device {
    * @param wait_factor Amount to increase wait time between each attempt by for
    * each failed attempt
    */
-  void setWaitFactor(int wait_factor) {
-    this->wait_factor = wait_factor;
-  }
+  void setWaitFactor(int wait_factor) { this->wait_factor = wait_factor; }
 
   /**
    * @brief Set max_attempts
@@ -100,9 +99,7 @@ class Device {
    * @param max_attempts Maximum attempts before no longer trying to recover the
    * sensor
    */
-  void setMaxAttempts(int max_attempts) {
-    this->max_attempts = max_attempts;
-  }
+  void setMaxAttempts(int max_attempts) { this->max_attempts = max_attempts; }
 
   /**
    * @brief If the sensor is verified, return true, if not and it has been long
@@ -110,26 +107,25 @@ class Device {
    * attempt to reverify (reinitialize) it.
    *
    *
-   * @return true If verified 
-   * @return false If unverified 
+   * @return true If verified
+   * @return false If unverified
    */
   bool attemptConnection() {
     // if it isn't verified and is time to try again
     // time between tests scales with attempt_number to spread out attempts
-    if (  this->verified == false &&
+    if (this->verified == false &&
         (this->max_attempts == -1 ||
          this->attempt_number < this->max_attempts) &&
         ((millis() - this->last_attempt) >
          (this->wait_factor * this->attempt_number))) {
-      log_core("Attempt on " + this->device_name); 
+      log_core("Attempt on " + this->device_name);
       // try to verify again
       this->verified = this->verify();
       // update record
       this->last_attempt = millis();
-      if(this->verified){
-        this->attempt_number = 0; 
-      }
-      else {
+      if (this->verified) {
+        this->attempt_number = 0;
+      } else {
         this->attempt_number++;
       }
     }

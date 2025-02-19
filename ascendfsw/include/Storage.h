@@ -12,9 +12,8 @@
  */
 class Storage : public Device {
  private:
-
  public:
-  Storage(String storage_name) : Device(storage_name){}
+  Storage(String storage_name) : Device(storage_name) {}
 
   /**
    * @brief Verifies connection with storage device
@@ -36,7 +35,7 @@ class Storage : public Device {
    *
    * @param packet Packet to store
    */
-  void store(uint8_t* packet, int length){};
+  void store(uint8_t* packet, int length) {};
 };
 
 #endif

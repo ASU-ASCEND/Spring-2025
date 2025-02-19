@@ -8,8 +8,7 @@ void setup() {
   Serial.begin(115200);
   if (!IMU.begin()) {
     Serial.println("Failed to communicate with LSM9DS1.");
-    while (1)
-      ;
+    while (1);
   }
 
   // Calibrate sensors

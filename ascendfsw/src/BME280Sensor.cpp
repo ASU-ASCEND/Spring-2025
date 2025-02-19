@@ -66,14 +66,13 @@ void BME280Sensor::readDataPacket(uint8_t*& packet) {
 
 // Decodes sensor data from the packet and returns it as a CSV string
 String BME280Sensor::decodeToCSV(uint8_t*& packet) {
+  float data[5];  // relHum, pressure, altitude, temp, dew point
+  memcpy(&data, packet, sizeof(data));
 
-  float data[5]; // relHum, pressure, altitude, temp, dew point 
-  memcpy(&data, packet, sizeof(data)); 
-
-  String csv_row = ""; 
-  for(size_t i = 0; i < 5; i++){
-    csv_row += String(data[i]) + ","; 
+  String csv_row = "";
+  for (size_t i = 0; i < 5; i++) {
+    csv_row += String(data[i]) + ",";
   }
 
-  return csv_row; 
+  return csv_row;
 }

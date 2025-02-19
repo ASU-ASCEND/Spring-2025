@@ -13,10 +13,14 @@
 <area shape="rect" id="Node000007" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="599,79,726,104"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="483,28,616,72,614,77,482,33"/>
 <area shape="rect" id="Node000008" href="$Sensor_8h.html" title=" " alt="" coords="751,79,828,104"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="505,28,738,76,736,81,504,33"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="746,225,830,251"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="789,105,779,152,779,183,784,212,779,213,774,184,773,152,783,104"/>
-<area shape="rect" id="Node000010" href="$Logger_8h.html" title=" " alt="" coords="788,152,865,177"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="798,103,817,139,812,141,793,106"/>
-<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="823,179,803,215,798,212,818,176"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="506,28,738,76,737,81,505,33"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="734,299,818,324"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="777,106,757,126,741,153,735,188,740,225,752,258,765,286,760,288,747,260,735,226,730,188,736,151,753,123,773,102"/>
+<area shape="rect" id="Node000010" href="$Device_8h.html" title=" " alt="" coords="750,152,829,177"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="792,104,792,138,787,138,787,104"/>
+<area shape="rect" id="Node000011" href="$Logger_8h.html" title=" " alt="" coords="813,225,891,251"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="805,102,826,123,844,151,853,182,855,211,850,212,847,183,839,153,822,127,801,106"/>
+<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="791,178,781,285,776,285,786,178"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="802,176,835,213,831,217,798,179"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="842,253,800,291,797,287,838,249"/>
 </map>

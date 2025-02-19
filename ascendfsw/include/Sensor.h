@@ -16,7 +16,8 @@ class Sensor : public Device {
   String csv_header, empty_csv;
 
  public:
-  Sensor(String sensor_name, String csv_header, unsigned long minimum_period) : Device(sensor_name) {
+  Sensor(String sensor_name, String csv_header, unsigned long minimum_period)
+      : Device(sensor_name) {
     this->minimum_period = minimum_period;
     this->last_execution = 0;
     this->csv_header = csv_header;
@@ -111,7 +112,7 @@ class Sensor : public Device {
    * @param packet Pointer to the packet byte array
    * @return int The number of bytes appended
    */
-  virtual void readDataPacket(uint8_t*& packet){};
+  virtual void readDataPacket(uint8_t*& packet) {};
 
   /**
    * @brief Used for onboard decoding of packets

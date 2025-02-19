@@ -36,7 +36,7 @@ Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
 #if RECOVERY_SYSTEM == 0
 bool storages_verify[storages_len];
-#endif 
+#endif
 
 // use definition in main.cpp
 extern queue_t qt;
@@ -50,9 +50,9 @@ bool core1_separate_stack = true;
  *
  */
 void real_setup1() {
-  while(!Serial); 
+  while (!Serial);
   delay(500);  // wait for other setup to run
-  log_core("Setup1 begin"); 
+  log_core("Setup1 begin");
 
   // set up heartbeat
   pinMode(HEARTBEAT_PIN_1, OUTPUT);
@@ -79,14 +79,14 @@ int it2 = 0;
  *
  */
 void real_loop1() {
-  log_core("it2: " + String(it2)); 
+  log_core("it2: " + String(it2));
   it2++;
   digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
 
   char received_data[QT_ENTRY_SIZE];
   queue_remove_blocking(&qt, received_data);
 
-  log_core("Received: " + String(received_data)); 
+  log_core("Received: " + String(received_data));
 
   // store csv row
   storeData(String(received_data));
@@ -120,12 +120,12 @@ int verifyStorageRecovery() {
 int verifyStorage() {
   int count = 0;
   for (int i = 0; i < storages_len; i++) {
-    #if RECOVERY_SYSTEM 
+#if RECOVERY_SYSTEM
     if (storages[i]->attemptConnection()) {
-    #else
+#else
     storages_verify[i] = storages[i]->verify();
     if (storages_verify[i]) {
-    #endif 
+#endif
       log_core(storages[i]->getDeviceName() + " verified.");
       count++;
     }

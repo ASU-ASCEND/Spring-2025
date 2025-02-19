@@ -63,12 +63,12 @@ Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
 //&gps_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
-// kept for compile, remove soon 
+// kept for compile, remove soon
 bool sensors_verify[sensors_len];
- 
+
 String header_condensed = "";
 
-// for flash data recovery 
+// for flash data recovery
 #include "FlashStorage.h"
 // defined in main1.cpp
 extern FlashStorage flash_storage;
@@ -93,15 +93,15 @@ void setup() {
   Serial.begin(115200);
   while (!Serial)  // remove before flight
     ;
-  log_core("setup begin"); 
+  log_core("setup begin");
 
   // setup heartbeat pins
   pinMode(HEARTBEAT_PIN_0, OUTPUT);
 
 // verify sensors
 #if RECOVERY_SYSTEM
-// recovery config for sensors 
-  sgp30_sensor.recoveryConfig(10, 1000); 
+  // recovery config for sensors
+  sgp30_sensor.recoveryConfig(10, 1000);
 
   int verified_count = verifySensorRecovery();
 #else
@@ -430,9 +430,9 @@ void handleDataInterface() {
 //-------------------------------------
 // Core 1 Calls
 //-------------------------------------
-// declarations - definitions are in main1.cpp 
-void real_setup1(); 
-void real_loop1(); 
+// declarations - definitions are in main1.cpp
+void real_setup1();
+void real_loop1();
 
 void setup1() { real_setup1(); }
 
