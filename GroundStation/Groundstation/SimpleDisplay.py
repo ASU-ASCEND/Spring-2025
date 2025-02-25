@@ -3,6 +3,7 @@ from queue import Queue
 import tkinter as tk
 import random # for testing
 import time
+from tkinter import scrolledtext
 
 class SimpleDisplay(threading.Thread): 
 
@@ -19,45 +20,66 @@ class SimpleDisplay(threading.Thread):
     window = tk.Tk()
     window.title("ASCEND")
     window.minsize(800,400)
+    window.tk_setPalette(background="white")
+    window.grid_columnconfigure(0, weight=1)
+
+    scroller_config = {
+      "master": window,
+      "wrap": tk.WORD,
+      "height": 5,
+      "font": ("Times New Roman", 12),
+    }
 
     data_label = tk.Label(text="Data")
-    data_label.grid(row=0, column=0)
+    data_label.grid(row=0, column=0, sticky=tk.W)
 
-    data_content_label = tk.Label(text="")
-    data_content_label.grid(row=1, column=0)
+    data_scrolled = scrolledtext.ScrolledText(**scroller_config)
+    data_scrolled.grid(row=1, column=0, sticky=tk.W+tk.E)
+    data_scrolled.configure(state="disabled")
 
     
     core0_label = tk.Label(text="Core 0")
-    core0_label.grid(row=2, column=0)
+    core0_label.grid(row=2, column=0, sticky=tk.W)
 
-    core0_content_label = tk.Label(text="")
-    core0_content_label.grid(row=3, column=0)
+    core0_scrolled = scrolledtext.ScrolledText(**scroller_config)
+    core0_scrolled.grid(row=3, column=0, sticky=tk.W+tk.E)
+    core0_scrolled.configure(state="disabled")
 
     
     core1_label = tk.Label(text="Core 1")
-    core1_label.grid(row=4, column=0)
+    core1_label.grid(row=4, column=0, sticky=tk.W)
 
-    core1_content_label = tk.Label(text="")
-    core1_content_label.grid(row=5, column=0)
+    core1_scrolled = scrolledtext.ScrolledText(**scroller_config)
+    core1_scrolled.grid(row=5, column=0, sticky=tk.W+tk.E)
+    core1_scrolled.configure(state="disabled")
     
     
     misc_label = tk.Label(text="Misc")
-    misc_label.grid(row=6, column=0)
+    misc_label.grid(row=6, column=0, sticky=tk.W)
 
-    misc_content_label = tk.Label(text="")
-    misc_content_label.grid(row=7, column=0)
+    misc_scrolled = scrolledtext.ScrolledText(**scroller_config)
+    misc_scrolled.grid(row=7, column=0, sticky=tk.W+tk.E)
+    misc_scrolled.configure(state="disabled")
 
     def update():
       print("update")
       if self.decoder_packets.empty() == False:
-        data_content_label.config(text=self.decoder_packets.get())
+        data_scrolled.configure(state="normal")
+        data_scrolled.insert(tk.INSERT, "--> " + str(self.decoder_packets.get()) + "\n")
+        data_scrolled.configure(state="disabled")
       if self.sorter_core0.empty() == False:
-        core0_content_label.config(text=self.sorter_core0.get())
+        core0_scrolled.configure(state="normal")
+        core0_scrolled.insert(tk.INSERT, "--> " + str(self.sorter_core0.get()) + "\n")
+        core0_scrolled.configure(state="disabled")
       if self.sorter_core1.empty() == False:
-        core1_content_label.config(text=self.sorter_core1.get())
+        core1_scrolled.configure(state="normal")
+        core1_scrolled.insert(tk.INSERT, "--> " + str(self.sorter_core1.get()) + "\n")
+        core1_scrolled.configure(state="disabled")      
       if self.sorter_misc.empty() == False:
-        misc_content_label.config(text=self.sorter_misc.get())
-      
+        misc_scrolled.configure(state="normal")
+        misc_scrolled.insert(tk.INSERT, "--> " + str(self.sorter_misc.get()) + "\n")
+        misc_scrolled.configure(state="disabled")
+
       window.after(500, update)
 
     window.after(0, update)
@@ -74,7 +96,7 @@ if __name__ == '__main__':
 
   simple_display.start()
 
-  for i in range(5):
+  for i in range(8):
     qs = [["core0", sorter_core0], ["core1", sorter_core1], ["misc", sorter_misc], ["packet", decoder_packets]]
     random.shuffle(qs)
 
@@ -82,6 +104,6 @@ if __name__ == '__main__':
       r = str(int(random.random() * 5))
       print("Adding", r, "to", q[0])
       q[1].put(q[0] + " " + r)
-      time.sleep(int(r))
+      time.sleep(int(r)/10)
 
   simple_display.join()
