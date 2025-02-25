@@ -13,3 +13,15 @@ class SimpleDisplay(threading.Thread):
   def run(self):
     # do thread stuff
     pass
+
+
+if __name__ == '__main__':
+  sorter_core0 = Queue()
+  sorter_core1 = Queue()
+  sorter_misc = Queue()
+  decoder_packets = Queue()
+  simple_display = SimpleDisplay(sorter_core0, sorter_core1, sorter_misc, decoder_packets, )
+
+  simple_display.start()
+
+  simple_display.join()
