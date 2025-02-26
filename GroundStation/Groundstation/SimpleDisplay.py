@@ -17,6 +17,7 @@ class SimpleDisplay(threading.Thread):
   def run(self):
     # do thread stuff
     print("Thread start")
+    # create and configure Tkinter window 
     window = tk.Tk()
     window.title("ASCEND")
     window.minsize(800,400)
@@ -30,6 +31,7 @@ class SimpleDisplay(threading.Thread):
       "font": ("Times New Roman", 12),
     }
 
+    #create labels and scrolled text 
     data_label = tk.Label(text="Data")
     data_label.grid(row=0, column=0, sticky=tk.W)
 
@@ -61,23 +63,28 @@ class SimpleDisplay(threading.Thread):
     misc_scrolled.grid(row=7, column=0, sticky=tk.W+tk.E)
     misc_scrolled.configure(state="disabled")
 
+    # update function called every half second 
     def update():
       print("update")
       if self.decoder_packets.empty() == False:
         data_scrolled.configure(state="normal")
         data_scrolled.insert(tk.INSERT, "--> " + str(self.decoder_packets.get()) + "\n")
+        data_scrolled.yview(tk.END)
         data_scrolled.configure(state="disabled")
       if self.sorter_core0.empty() == False:
         core0_scrolled.configure(state="normal")
         core0_scrolled.insert(tk.INSERT, "--> " + str(self.sorter_core0.get()) + "\n")
+        core0_scrolled.yview(tk.END)
         core0_scrolled.configure(state="disabled")
       if self.sorter_core1.empty() == False:
         core1_scrolled.configure(state="normal")
         core1_scrolled.insert(tk.INSERT, "--> " + str(self.sorter_core1.get()) + "\n")
+        core1_scrolled.yview(tk.END)
         core1_scrolled.configure(state="disabled")      
       if self.sorter_misc.empty() == False:
         misc_scrolled.configure(state="normal")
         misc_scrolled.insert(tk.INSERT, "--> " + str(self.sorter_misc.get()) + "\n")
+        misc_scrolled.yview(tk.END)
         misc_scrolled.configure(state="disabled")
 
       window.after(500, update)
@@ -86,6 +93,7 @@ class SimpleDisplay(threading.Thread):
     window.mainloop()
 
 
+# testing code 
 if __name__ == '__main__':
   sorter_core0 = Queue()
   sorter_core1 = Queue()
