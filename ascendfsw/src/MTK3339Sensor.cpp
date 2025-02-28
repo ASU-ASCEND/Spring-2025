@@ -31,7 +31,7 @@ bool MTK3339Sensor::verify() {
   // Serial2.end();
   Serial2.setRX(SERIAL1_RX_PIN);
   Serial2.setTX(SERIAL1_TX_PIN);
-  Serial.println("Done"); 
+  Serial.println("Done");
 
   if (!GPS.begin(9600)) {  // returns 0 on success
     GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);

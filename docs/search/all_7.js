@@ -9,8 +9,7 @@ var searchData=
   ['getverified_6',['getVerified',['../classDevice.html#a030b016bedb9a917634091199a946c94',1,'Device']]],
   ['github_20subfolders_7',['GitHub Subfolders',['../index.html#autotoc_md1',1,'']]],
   ['gps_8',['GPS',['../classMTK3339Sensor.html#a4a809ba92d7a99aff32c8a4114cb54e5',1,'MTK3339Sensor']]],
-  ['gps_5fsensor_9',['gps_sensor',['../main_8cpp.html#a1ad969436b83a3feb79af6deebf60d1b',1,'main.cpp']]],
-  ['groundstation_20gui_10',['Groundstation GUI',['../index.html#autotoc_md11',1,'']]],
-  ['gui_11',['Groundstation GUI',['../index.html#autotoc_md11',1,'']]],
-  ['gyro_5foffsets_12',['gyro_offsets',['../classLSM9DS1Sensor.html#aad1c0e961086e5c538a526ed9a660951',1,'LSM9DS1Sensor']]]
+  ['groundstation_20gui_9',['Groundstation GUI',['../index.html#autotoc_md11',1,'']]],
+  ['gui_10',['Groundstation GUI',['../index.html#autotoc_md11',1,'']]],
+  ['gyro_5foffsets_11',['gyro_offsets',['../classLSM9DS1Sensor.html#aad1c0e961086e5c538a526ed9a660951',1,'LSM9DS1Sensor']]]
 ];
