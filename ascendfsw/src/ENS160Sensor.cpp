@@ -64,7 +64,7 @@ void ENS160Sensor::readDataPacket(uint8_t*& packet) {
   packet += sizeof(eco2);
 }
 
-String ENS160Sensor::decodeToCSV(uint8_t* packet) {
+String ENS160Sensor::decodeToCSV(uint8_t*& packet) {
   uint8_t aqi = *packet;
   packet += sizeof(uint8_t);
 

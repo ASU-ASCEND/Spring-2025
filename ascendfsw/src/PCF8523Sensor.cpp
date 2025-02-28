@@ -71,6 +71,6 @@ String PCF8523Sensor::decodeToCSV(uint8_t*& packet) {
     packet += sizeof(uint8_t);
   }
 
-  return String(year) + "," + String(data[0]) + "," + String(data[1]) + "," +
-         String(data[2]) + "," + String(data[3]) + "," + String(data[4]) + ",";
+  return String(year) + "/" + String(data[0]) + "/" + String(data[1]) + " " +
+         String(data[2]) + ":" + String(data[3]) + ":" + String(data[4]) + ",";
 }

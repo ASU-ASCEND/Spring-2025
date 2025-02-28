@@ -21,7 +21,7 @@
 #include "ICM20948Sensor.h"
 #include "INA260Sensor.h"
 #include "LSM9DS1Sensor.h"
-#include "MTK3339Sensor.h"
+// #include "MTK3339Sensor.h"
 #include "PCF8523Sensor.h"
 #include "SGP30Sensor.h"
 #include "TempSensor.h"
@@ -49,7 +49,7 @@ BME280Sensor    bme280_sensor     (1000);
 ENS160Sensor    ens160_sensor     (1000);
 AS7331Sensor    uv_sensor_1       (1000, UV_I2C_ADDR_1);
 AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
-MTK3339Sensor   gps_sensor        (5000);
+// MTK3339Sensor   gps_sensor        (5000);
 ICM20948Sensor  icm_sensor        (20);
 PCF8523Sensor   rtc_sensor        (1000);
 // DS3231Sensor    rtc_backup_sensor (1000);
@@ -59,7 +59,7 @@ PCF8523Sensor   rtc_sensor        (1000);
 Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
                      &lsm9ds1_sensor, &temp_sensor,   &sgp30_sensor,
                      &bme280_sensor,  &ens160_sensor, &uv_sensor_1,
-                     &uv_sensor_2,    &icm_sensor,    &gps_sensor};
+                     &uv_sensor_2,    &icm_sensor};//,    &gps_sensor};
 //&gps_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
