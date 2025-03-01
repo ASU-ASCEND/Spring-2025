@@ -64,19 +64,6 @@ void SGP30Sensor::readDataPacket(uint8_t*& packet) {
 
   memcpy(packet, &TVOC, sizeof(TVOC));
   packet += sizeof(TVOC);
-
-  uint16_t checksum = 0;
-  for (int i = 0; i < sizeof(eCO2); i++) {
-    checksum += ((uint8_t*)&eCO2)[i];
-  }
-  for (int i = 0; i < sizeof(TVOC); i++) {
-    checksum += ((uint8_t*)&TVOC)[i];
-  }
-
-  memcpy(packet, &checksum, sizeof(checksum));
-  packet += sizeof(checksum);
-
-  return (sizeof(eCO2) + sizeof(TVOC) + sizeof(checksum));
 }
 
 /**
@@ -104,16 +91,5 @@ String SGP30Sensor::decodeToCSV(uint8_t*& packet) {
   memcpy(&storedChecksum, packet, sizeof(storedChecksum));
   packet += sizeof(storedChecksum);
 
-  uint16_t computedChecksum = 0;
-  for (int i = 0; i < sizeof(eCO2); i++) {
-    computedChecksum += ((uint8_t*)&eCO2)[i];
-  }
-  for (int i = 0; i < sizeof(TVOC); i++) {
-    computedChecksum += ((uint8_t*)&TVOC)[i];
-  }
-
-  String csv = String(eCO2) + "," + String(TVOC) + ",";
-  csv += "Checksum: " + String(storedChecksum);
-  csv += " (computed: " + String(computedChecksum) + "),";
-  return csv;
+  return String(eCO2) + "," + String(TVOC) + ",";
 }
