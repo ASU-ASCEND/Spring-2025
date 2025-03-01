@@ -7,7 +7,7 @@
 
 MTK3339Sensor::MTK3339Sensor()
     : Sensor("MTK3339",
-             "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,", 7),
+             "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,MTKAnt,", 8),
       GPS(&Serial2) {}
 
 /**
@@ -17,7 +17,7 @@ MTK3339Sensor::MTK3339Sensor()
  */
 MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)
     : Sensor("MTK3339",
-             "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,", 7,
+             "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,MTKAnt,", 8,
              minimum_period),
       GPS(&Serial2) {  // Initialize GPS with SPI using the defined macro
 }
@@ -29,13 +29,15 @@ MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)
  */
 bool MTK3339Sensor::verify() {
   // Serial2.end();
-  Serial2.setRX(SERIAL1_RX_PIN);
-  Serial2.setTX(SERIAL1_TX_PIN);
+  Serial2.setRX(SERIAL2_RX_PIN);
+  Serial2.setTX(SERIAL2_TX_PIN);
   Serial.println("Done"); 
 
-  if (!GPS.begin(9600)) {  // returns 0 on success
+  if (GPS.begin(38400)) {  
     GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
     GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);  // 1 Hz update rate
+    GPS.sendCommand(PGCMD_ANTENNA);
+
     delay(1000);
     return true;
   }
@@ -51,43 +53,23 @@ bool MTK3339Sensor::verify() {
  */
 String MTK3339Sensor::readData() {
   if (GPS.newNMEAreceived()) {
-    // a tricky thing here is if we print the NMEA sentence, or data
-    // we end up not listening and catching other sentences!
-    // so be very wary if using OUTPUT_ALLDATA and trying to print out data
-    Serial.println(
-        GPS.lastNMEA());  // this also sets the newNMEAreceived() flag to false
+
     if (!GPS.parse(GPS.lastNMEA())) {  // this also sets the newNMEAreceived()
                                        // flag to false
-      return "-,-,-,-,-,-,-,";         // we can fail to parse a sentence in
+      return "-,-,-,-,-,-,-,-,";         // we can fail to parse a sentence in
                                        // which case we should just wait for
                                        // another
     }
   }
 
-  // Serial.println(GPS.milliseconds);
-  //  Serial.print("Date: ");
-  // Serial.print(GPS.day, DEC); Serial.print('/');
-  // Serial.print(GPS.month, DEC); Serial.print("/20");
-  // Serial.println(GPS.year, DEC);
-  // Serial.print("Fix: "); //Serial.print((int)GPS.fix);
-  // Serial.print(" quality: "); Serial.println((int)GPS.fixquality);
-
   if (GPS.fix) {
-    // Serial.print("Location: ");
-    // Serial.print(GPS.latitude, 4); Serial.print(GPS.lat);
-    // Serial.print(", ");
-    // Serial.print(GPS.longitude, 4); Serial.println(GPS.lon);
-    // Serial.print("Speed (knots): "); Serial.println(GPS.speed);
-    // Serial.print("Angle: "); Serial.println(GPS.angle);
-    // Serial.print("Altitude: "); Serial.println(GPS.altitude);
-    // Serial.print("Satellites: "); Serial.println((int)GPS.satellites);
     return String(GPS.day) + "/ " + String(GPS.month) + "/ " +
            String(GPS.year) + "," + String(GPS.latitude) + "," +
            String(GPS.longitude) + "," + String(GPS.speed) + "," +
            String(GPS.angle) + "," + String(GPS.altitude) + "," +
-           String(GPS.satellites) + ",";
+           String(GPS.satellites) + "," + String(GPS.antenna) + ",";
   }
-  return "-,-,-,-,-,-,-,";
+  return "-,-,-,-,-,-,-,-,";
 }
 
 /**
@@ -108,7 +90,15 @@ String MTK3339Sensor::readData() {
  * as each value is copied.
  */
 void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
-  if (GPS.fix) {
+  bool good_parse = true; 
+  if (GPS.newNMEAreceived()) {
+
+    if (!GPS.parse(GPS.lastNMEA())) { 
+      good_parse = false; 
+    }
+  }
+  
+  if (good_parse && GPS.fix) {
     // Pack date values
     uint8_t day = GPS.day;
     uint8_t month = GPS.month;
@@ -139,6 +129,10 @@ void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
     uint8_t sats = GPS.satellites;
     memcpy(packet, &sats, sizeof(sats));
     packet += sizeof(sats);
+    uint8_t antenna_status = GPS.antenna;
+    memcpy(packet, &antenna_status, sizeof(antenna_status));
+    packet += sizeof(antenna_status);
+
   } else {
     // If there's no fix, append default zero values
     uint8_t day = 0;
@@ -164,6 +158,9 @@ void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
     uint8_t sats = 0;
     memcpy(packet, &sats, sizeof(sats));
     packet += sizeof(sats);
+    uint8_t antenna_status = 0;
+    memcpy(packet, &antenna_status, sizeof(antenna_status));
+    packet += sizeof(antenna_status);
   }
 }
 
@@ -213,10 +210,13 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   uint8_t sats = *packet;
   packet += sizeof(uint8_t);
 
+  uint8_t antenna_status = *packet; 
+  packet += sizeof(uint8_t); 
+
   // Construct the CSV string
   String dateStr = String(day) + "/" + String(month) + "/" + String(year);
   String csv = dateStr + "," + String(lat) + "," + String(lon) + "," +
                String(speed) + "," + String(angle) + "," + String(alt) + "," +
-               String(sats) + ",";
+               String(sats) + "," + String(antenna_status) + ",";
   return csv;
 }
