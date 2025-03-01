@@ -8,7 +8,7 @@
 MTK3339Sensor::MTK3339Sensor()
     : Sensor("MTK3339",
              "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,", 7),
-      GPS(&Wire) {}
+      GPS(&Serial2) {}
 
 /**
  * @brief Constructor for the MTK3339Sensor
@@ -19,7 +19,7 @@ MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)
     : Sensor("MTK3339",
              "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,", 7,
              minimum_period),
-      GPS(&Wire) {  // Initialize GPS with SPI using the defined macro
+      GPS(&Serial2) {  // Initialize GPS with SPI using the defined macro
 }
 /**
  * @brief Verifies if the sensor is connected and working
@@ -28,7 +28,12 @@ MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)
  * @return false if it is not connected and working
  */
 bool MTK3339Sensor::verify() {
-  if (!GPS.begin(0x10)) {  // returns 0 on success
+  // Serial2.end();
+  Serial2.setRX(SERIAL1_RX_PIN);
+  Serial2.setTX(SERIAL1_TX_PIN);
+  Serial.println("Done");
+
+  if (!GPS.begin(9600)) {  // returns 0 on success
     GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
     GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);  // 1 Hz update rate
     delay(1000);

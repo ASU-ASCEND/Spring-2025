@@ -74,18 +74,19 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main functions for Core 0, responsible for reading data from sensor peripherals.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="ErrorDisplay_8h_source.html">ErrorDisplay.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Logger_8h_source.html">Logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PayloadConfig_8h_source.html">PayloadConfig.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Sensor_8h_source.html">Sensor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Storage_8h_source.html">Storage.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AS7331Sensor_8h_source.html">AS7331Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BME280Sensor_8h_source.html">BME280Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BME680Sensor_8h_source.html">BME680Sensor.h</a>&quot;</code><br />
@@ -93,41 +94,24 @@ $(function() {
 <code>#include &quot;<a class="el" href="ICM20948Sensor_8h_source.html">ICM20948Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="INA260Sensor_8h_source.html">INA260Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="LSM9DS1Sensor_8h_source.html">LSM9DS1Sensor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MTK3339Sensor_8h_source.html">MTK3339Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PCF8523Sensor_8h_source.html">PCF8523Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="SGP30Sensor_8h_source.html">SGP30Sensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TempSensor_8h_source.html">TempSensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="FlashStorage_8h_source.html">FlashStorage.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RadioStorage_8h_source.html">RadioStorage.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SDStorage_8h_source.html">SDStorage.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a879456c3b8e2853f7044d764e9c180d4" id="r_a879456c3b8e2853f7044d764e9c180d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a879456c3b8e2853f7044d764e9c180d4">MAX_PACKET_SIZE</a>&#160;&#160;&#160;500</td></tr>
-<tr class="separator:a879456c3b8e2853f7044d764e9c180d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4168244e83bfe6fdfb37b001daea31ba" id="r_a4168244e83bfe6fdfb37b001daea31ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4168244e83bfe6fdfb37b001daea31ba">PACKET_SYSTEM_TESTING</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a4168244e83bfe6fdfb37b001daea31ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8201d54530a1f4d0365d64f9b719abf0" id="r_a8201d54530a1f4d0365d64f9b719abf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8201d54530a1f4d0365d64f9b719abf0">QT_ENTRY_SIZE</a>&#160;&#160;&#160;1000</td></tr>
-<tr class="separator:a8201d54530a1f4d0365d64f9b719abf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b5633633d812e26b17cde137daa3df4" id="r_a7b5633633d812e26b17cde137daa3df4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7b5633633d812e26b17cde137daa3df4">QT_MAX_SIZE</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a7b5633633d812e26b17cde137daa3df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aef42a5a8a5d889c599fa964be60eca24" id="r_aef42a5a8a5d889c599fa964be60eca24"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aef42a5a8a5d889c599fa964be60eca24">verifySensors</a> ()</td></tr>
 <tr class="memdesc:aef42a5a8a5d889c599fa964be60eca24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies each sensor by calling each verify() function.  <br /></td></tr>
 <tr class="separator:aef42a5a8a5d889c599fa964be60eca24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a339ac134cdee34bfe9d5f539ab14ba00" id="r_a339ac134cdee34bfe9d5f539ab14ba00"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a339ac134cdee34bfe9d5f539ab14ba00">verifyStorage</a> ()</td></tr>
-<tr class="memdesc:a339ac134cdee34bfe9d5f539ab14ba00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies the connection with each storage device, and defines the header_condensed field.  <br /></td></tr>
-<tr class="separator:a339ac134cdee34bfe9d5f539ab14ba00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f14b13edaa51207f1ff6752e4696ee7" id="r_a0f14b13edaa51207f1ff6752e4696ee7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7">storeData</a> (String data)</td></tr>
-<tr class="memdesc:a0f14b13edaa51207f1ff6752e4696ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends data to each storage device, assumes storage devices take care of newline/data end themselves.  <br /></td></tr>
-<tr class="separator:a0f14b13edaa51207f1ff6752e4696ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa425d367210d5186b9622823077556fb" id="r_aa425d367210d5186b9622823077556fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa425d367210d5186b9622823077556fb">verifySensorRecovery</a> ()</td></tr>
+<tr class="memdesc:aa425d367210d5186b9622823077556fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses <a class="el" href="classDevice.html" title="Implements the recovery system for Sensor and Storage objects.">Device</a> abstraction to verify sensors Incompatible with initial header generation.  <br /></td></tr>
+<tr class="separator:aa425d367210d5186b9622823077556fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9db5e6113d9a0bd03a1b044059ae787b" id="r_a9db5e6113d9a0bd03a1b044059ae787b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b">readSensorData</a> ()</td></tr>
 <tr class="memdesc:a9db5e6113d9a0bd03a1b044059ae787b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from each verified <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a>.  <br /></td></tr>
 <tr class="separator:a9db5e6113d9a0bd03a1b044059ae787b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,11 +130,15 @@ Functions</h2></td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
 <tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loop for core 0, handling sensor reads.  <br /></td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335f1df8d0b267769cb9842c12616214" id="r_a335f1df8d0b267769cb9842c12616214"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a335f1df8d0b267769cb9842c12616214">real_setup1</a> ()</td></tr>
+<tr class="memdesc:a335f1df8d0b267769cb9842c12616214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup for core 1.  <br /></td></tr>
+<tr class="separator:a335f1df8d0b267769cb9842c12616214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5c43a90af6e8b0e11c818a7e1681e7" id="r_a5d5c43a90af6e8b0e11c818a7e1681e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7">real_loop1</a> ()</td></tr>
+<tr class="memdesc:a5d5c43a90af6e8b0e11c818a7e1681e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loop for core 1.  <br /></td></tr>
+<tr class="separator:a5d5c43a90af6e8b0e11c818a7e1681e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac764ee28e2916a7de10b22927e02d1a4" id="r_ac764ee28e2916a7de10b22927e02d1a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac764ee28e2916a7de10b22927e02d1a4">setup1</a> ()</td></tr>
-<tr class="memdesc:ac764ee28e2916a7de10b22927e02d1a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup for core 1.  <br /></td></tr>
 <tr class="separator:ac764ee28e2916a7de10b22927e02d1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39ceba300a80e348e278539f57e0ca79" id="r_a39ceba300a80e348e278539f57e0ca79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a39ceba300a80e348e278539f57e0ca79">loop1</a> ()</td></tr>
-<tr class="memdesc:a39ceba300a80e348e278539f57e0ca79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loop for core 1.  <br /></td></tr>
 <tr class="separator:a39ceba300a80e348e278539f57e0ca79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -173,8 +161,6 @@ Variables</h2></td></tr>
 <tr class="separator:a3ed9b2801c5393f81d792e952c21f403"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ae1b693163ff6962d1163d5e28e4606" id="r_a2ae1b693163ff6962d1163d5e28e4606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2ae1b693163ff6962d1163d5e28e4606">uv_sensor_2</a> (1000, <a class="el" href="PayloadConfig_8h.html#ad58bcae54cd4fb77890d7bb18bfb76ea">UV_I2C_ADDR_2</a>)</td></tr>
 <tr class="separator:a2ae1b693163ff6962d1163d5e28e4606"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad969436b83a3feb79af6deebf60d1b" id="r_a1ad969436b83a3feb79af6deebf60d1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMTK3339Sensor.html">MTK3339Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1ad969436b83a3feb79af6deebf60d1b">gps_sensor</a> (5000)</td></tr>
-<tr class="separator:a1ad969436b83a3feb79af6deebf60d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c4fa06dc1db8181a76e881f4848ce4f" id="r_a5c4fa06dc1db8181a76e881f4848ce4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classICM20948Sensor.html">ICM20948Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5c4fa06dc1db8181a76e881f4848ce4f">icm_sensor</a> (20)</td></tr>
 <tr class="separator:a5c4fa06dc1db8181a76e881f4848ce4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9730d7033cb371fd86349cf1f7b0ad21" id="r_a9730d7033cb371fd86349cf1f7b0ad21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPCF8523Sensor.html">PCF8523Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a> (1000)</td></tr>
@@ -187,87 +173,18 @@ Variables</h2></td></tr>
 <tr class="separator:aeefd7b47f4c282cba9dbee667418920a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0745405a2027325a40f1c9cf7420db60" id="r_a0745405a2027325a40f1c9cf7420db60"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0745405a2027325a40f1c9cf7420db60">header_condensed</a> = &quot;&quot;</td></tr>
 <tr class="separator:a0745405a2027325a40f1c9cf7420db60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad957b3f59d6aa0ac31f6b666528f798d" id="r_ad957b3f59d6aa0ac31f6b666528f798d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSDStorage.html">SDStorage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad957b3f59d6aa0ac31f6b666528f798d">sd_storage</a></td></tr>
-<tr class="separator:ad957b3f59d6aa0ac31f6b666528f798d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9bf2d87eb422349a53cce59be5d5fe7" id="r_aa9bf2d87eb422349a53cce59be5d5fe7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRadioStorage.html">RadioStorage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa9bf2d87eb422349a53cce59be5d5fe7">radio_storage</a></td></tr>
-<tr class="separator:aa9bf2d87eb422349a53cce59be5d5fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38404ff215fdd423068709aafb8b772b" id="r_a38404ff215fdd423068709aafb8b772b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFlashStorage.html">FlashStorage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a38404ff215fdd423068709aafb8b772b">flash_storage</a></td></tr>
 <tr class="separator:a38404ff215fdd423068709aafb8b772b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39db351a5a127ccbd3893f4de5936b05" id="r_a39db351a5a127ccbd3893f4de5936b05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStorage.html">Storage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a39db351a5a127ccbd3893f4de5936b05">storages</a> [] = {&amp;<a class="el" href="main_8cpp.html#ad957b3f59d6aa0ac31f6b666528f798d">sd_storage</a>, &amp;<a class="el" href="main_8cpp.html#aa9bf2d87eb422349a53cce59be5d5fe7">radio_storage</a>}</td></tr>
-<tr class="separator:a39db351a5a127ccbd3893f4de5936b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12b260a884350838d7056cd758cd8cbe" id="r_a12b260a884350838d7056cd758cd8cbe"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a12b260a884350838d7056cd758cd8cbe">storages_len</a> = sizeof(<a class="el" href="main_8cpp.html#a39db351a5a127ccbd3893f4de5936b05">storages</a>) / sizeof(<a class="el" href="main_8cpp.html#a39db351a5a127ccbd3893f4de5936b05">storages</a>[0])</td></tr>
-<tr class="separator:a12b260a884350838d7056cd758cd8cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45010841f3644338adefc6120a95e51d" id="r_a45010841f3644338adefc6120a95e51d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a45010841f3644338adefc6120a95e51d">storages_verify</a> [<a class="el" href="main_8cpp.html#a12b260a884350838d7056cd758cd8cbe">storages_len</a>]</td></tr>
-<tr class="separator:a45010841f3644338adefc6120a95e51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac65d766d5179dcc67a8e61e09a1ce969" id="r_ac65d766d5179dcc67a8e61e09a1ce969"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac65d766d5179dcc67a8e61e09a1ce969">it</a> = 0</td></tr>
 <tr class="separator:ac65d766d5179dcc67a8e61e09a1ce969"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaacb8cdda17b6340a4d5aeaf72e2ca6" id="r_abaacb8cdda17b6340a4d5aeaf72e2ca6"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a> [] = {0x89, 0xAB, 0xCD, 0xEF}</td></tr>
-<tr class="separator:abaacb8cdda17b6340a4d5aeaf72e2ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afabd161670122f5293f38657d84ef4c4" id="r_afabd161670122f5293f38657d84ef4c4"><td class="memItemLeft" align="right" valign="top">queue_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afabd161670122f5293f38657d84ef4c4">qt</a></td></tr>
 <tr class="separator:afabd161670122f5293f38657d84ef4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab068caac15d62ecf406acd1986797797" id="r_ab068caac15d62ecf406acd1986797797"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab068caac15d62ecf406acd1986797797">was_dumping</a> = false</td></tr>
 <tr class="separator:ab068caac15d62ecf406acd1986797797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a8b4e2a5f762856b9eec173ed046fca" id="r_a0a8b4e2a5f762856b9eec173ed046fca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0a8b4e2a5f762856b9eec173ed046fca">it2</a> = 0</td></tr>
-<tr class="separator:a0a8b4e2a5f762856b9eec173ed046fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a879456c3b8e2853f7044d764e9c180d4" name="a879456c3b8e2853f7044d764e9c180d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a879456c3b8e2853f7044d764e9c180d4">&#9670;&#160;</a></span>MAX_PACKET_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_PACKET_SIZE&#160;&#160;&#160;500</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4168244e83bfe6fdfb37b001daea31ba" name="a4168244e83bfe6fdfb37b001daea31ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4168244e83bfe6fdfb37b001daea31ba">&#9670;&#160;</a></span>PACKET_SYSTEM_TESTING</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PACKET_SYSTEM_TESTING&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8201d54530a1f4d0365d64f9b719abf0" name="a8201d54530a1f4d0365d64f9b719abf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8201d54530a1f4d0365d64f9b719abf0">&#9670;&#160;</a></span>QT_ENTRY_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define QT_ENTRY_SIZE&#160;&#160;&#160;1000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7b5633633d812e26b17cde137daa3df4" name="a7b5633633d812e26b17cde137daa3df4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b5633633d812e26b17cde137daa3df4">&#9670;&#160;</a></span>QT_MAX_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define QT_MAX_SIZE&#160;&#160;&#160;10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main functions for Core 0, responsible for reading data from sensor peripherals. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a9163644b089001958496a71b73b9091a" name="a9163644b089001958496a71b73b9091a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9163644b089001958496a71b73b9091a">&#9670;&#160;</a></span>decodePacket()</h2>
 
@@ -295,7 +212,7 @@ Variables</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a9163644b089001958496a71b73b9091a_cgraph.svg" width="558" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a9163644b089001958496a71b73b9091a_cgraph.svg" width="559" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -367,12 +284,10 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Loop for core 1. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a39ceba300a80e348e278539f57e0ca79_cgraph.svg" width="366" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a39ceba300a80e348e278539f57e0ca79_cgraph.svg" width="504" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -443,6 +358,64 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a5d5c43a90af6e8b0e11c818a7e1681e7" name="a5d5c43a90af6e8b0e11c818a7e1681e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d5c43a90af6e8b0e11c818a7e1681e7">&#9670;&#160;</a></span>real_loop1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void real_loop1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loop for core 1. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a5d5c43a90af6e8b0e11c818a7e1681e7_cgraph.svg" width="398" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a5d5c43a90af6e8b0e11c818a7e1681e7_icgraph.svg" width="208" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a335f1df8d0b267769cb9842c12616214" name="a335f1df8d0b267769cb9842c12616214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335f1df8d0b267769cb9842c12616214">&#9670;&#160;</a></span>real_setup1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void real_setup1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setup for core 1. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a335f1df8d0b267769cb9842c12616214_cgraph.svg" width="562" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a335f1df8d0b267769cb9842c12616214_icgraph.svg" width="224" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
 
@@ -462,7 +435,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a4fc01d736fe50cf5b977f755b675f11d_cgraph.svg" width="572" height="431"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a4fc01d736fe50cf5b977f755b675f11d_cgraph.svg" width="572" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -481,52 +454,35 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Setup for core 1. </p>
-<hr  />
- <h2><a class="anchor" id="autotoc_md14"></a>
-CORE 1 CODE ONLY AFTER THIS, DO NOT MIX CODE FOR THE CORES</h2>
-<p>TODO: Implement multicore for communication here setup queue for data transfer between cores  </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_ac764ee28e2916a7de10b22927e02d1a4_cgraph.svg" width="400" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_ac764ee28e2916a7de10b22927e02d1a4_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="a0f14b13edaa51207f1ff6752e4696ee7" name="a0f14b13edaa51207f1ff6752e4696ee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f14b13edaa51207f1ff6752e4696ee7">&#9670;&#160;</a></span>storeData()</h2>
+<a id="aa425d367210d5186b9622823077556fb" name="aa425d367210d5186b9622823077556fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa425d367210d5186b9622823077556fb">&#9670;&#160;</a></span>verifySensorRecovery()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void storeData </td>
+          <td class="memname">int verifySensorRecovery </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sends data to each storage device, assumes storage devices take care of newline/data end themselves. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Data in a CSV formatted string </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a0f14b13edaa51207f1ff6752e4696ee7_cgraph.svg" width="259" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Uses <a class="el" href="classDevice.html" title="Implements the recovery system for Sensor and Storage objects.">Device</a> abstraction to verify sensors Incompatible with initial header generation. </p>
+<dl class="section return"><dt>Returns</dt><dd>int Number of sensors verified </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a0f14b13edaa51207f1ff6752e4696ee7_icgraph.svg" width="204" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_aa425d367210d5186b9622823077556fb_icgraph.svg" width="282" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -557,36 +513,6 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_aef42a5a8a5d889c599fa964be60eca24_icgraph.svg" width="228" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a339ac134cdee34bfe9d5f539ab14ba00" name="a339ac134cdee34bfe9d5f539ab14ba00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a339ac134cdee34bfe9d5f539ab14ba00">&#9670;&#160;</a></span>verifyStorage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int verifyStorage </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifies the connection with each storage device, and defines the header_condensed field. </p>
-<dl class="section return"><dt>Returns</dt><dd>int The number of verified storage devices </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a339ac134cdee34bfe9d5f539ab14ba00_cgraph.svg" width="286" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a339ac134cdee34bfe9d5f539ab14ba00_icgraph.svg" width="235" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -651,29 +577,19 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classFlashStorage.html">FlashStorage</a> flash_storage</td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1ad969436b83a3feb79af6deebf60d1b" name="a1ad969436b83a3feb79af6deebf60d1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ad969436b83a3feb79af6deebf60d1b">&#9670;&#160;</a></span>gps_sensor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classMTK3339Sensor.html">MTK3339Sensor</a> gps_sensor(5000) </td>
-          <td>(</td>
-          <td class="paramtype">5000&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -742,20 +658,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a0a8b4e2a5f762856b9eec173ed046fca" name="a0a8b4e2a5f762856b9eec173ed046fca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a8b4e2a5f762856b9eec173ed046fca">&#9670;&#160;</a></span>it2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int it2 = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="adf611c8353be37ac1eec20148673511c" name="adf611c8353be37ac1eec20148673511c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf611c8353be37ac1eec20148673511c">&#9670;&#160;</a></span>lsm9ds1_sensor</h2>
 
@@ -788,20 +690,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aa9bf2d87eb422349a53cce59be5d5fe7" name="aa9bf2d87eb422349a53cce59be5d5fe7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9bf2d87eb422349a53cce59be5d5fe7">&#9670;&#160;</a></span>radio_storage</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRadioStorage.html">RadioStorage</a> radio_storage</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9730d7033cb371fd86349cf1f7b0ad21" name="a9730d7033cb371fd86349cf1f7b0ad21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9730d7033cb371fd86349cf1f7b0ad21">&#9670;&#160;</a></span>rtc_sensor</h2>
 
@@ -814,20 +702,6 @@ Here is the caller graph for this function:</div>
           <td class="paramtype">1000&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad957b3f59d6aa0ac31f6b666528f798d" name="ad957b3f59d6aa0ac31f6b666528f798d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad957b3f59d6aa0ac31f6b666528f798d">&#9670;&#160;</a></span>sd_storage</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classSDStorage.html">SDStorage</a> sd_storage</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -848,9 +722,8 @@ Here is the caller graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">= {&amp;<a class="code hl_variable" href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a>,     &amp;<a class="code hl_variable" href="main_8cpp.html#a0acb6df8c6120cd2966d9a7ef67dc565">bme_sensor</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a6aaec7a466546ae9ce387852e01e5536">ina260_sensor</a>,</div>
 <div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#adf611c8353be37ac1eec20148673511c">lsm9ds1_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a>,   &amp;<a class="code hl_variable" href="main_8cpp.html#abb9eac58e2aca040baa096195577058f">sgp30_sensor</a>,</div>
 <div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a5e06902fdd9dd0f9e999683d83063577">bme280_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#a3e98eb3264715a4fd62974bf534291db">ens160_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a3ed9b2801c5393f81d792e952c21f403">uv_sensor_1</a>,</div>
-<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a2ae1b693163ff6962d1163d5e28e4606">uv_sensor_2</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a5c4fa06dc1db8181a76e881f4848ce4f">icm_sensor</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a1ad969436b83a3feb79af6deebf60d1b">gps_sensor</a>}</div>
+<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a2ae1b693163ff6962d1163d5e28e4606">uv_sensor_2</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a5c4fa06dc1db8181a76e881f4848ce4f">icm_sensor</a>}</div>
 <div class="ttc" id="amain_8cpp_html_a0acb6df8c6120cd2966d9a7ef67dc565"><div class="ttname"><a href="main_8cpp.html#a0acb6df8c6120cd2966d9a7ef67dc565">bme_sensor</a></div><div class="ttdeci">BME680Sensor bme_sensor(1000)</div></div>
-<div class="ttc" id="amain_8cpp_html_a1ad969436b83a3feb79af6deebf60d1b"><div class="ttname"><a href="main_8cpp.html#a1ad969436b83a3feb79af6deebf60d1b">gps_sensor</a></div><div class="ttdeci">MTK3339Sensor gps_sensor(5000)</div></div>
 <div class="ttc" id="amain_8cpp_html_a24a54c1dabc1e13f503b7d5bb72fd588"><div class="ttname"><a href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a></div><div class="ttdeci">TempSensor temp_sensor(1000)</div></div>
 <div class="ttc" id="amain_8cpp_html_a2ae1b693163ff6962d1163d5e28e4606"><div class="ttname"><a href="main_8cpp.html#a2ae1b693163ff6962d1163d5e28e4606">uv_sensor_2</a></div><div class="ttdeci">AS7331Sensor uv_sensor_2(1000, UV_I2C_ADDR_2)</div></div>
 <div class="ttc" id="amain_8cpp_html_a3e98eb3264715a4fd62974bf534291db"><div class="ttname"><a href="main_8cpp.html#a3e98eb3264715a4fd62974bf534291db">ens160_sensor</a></div><div class="ttdeci">ENS160Sensor ens160_sensor(1000)</div></div>
@@ -904,62 +777,6 @@ Here is the caller graph for this function:</div>
           <td class="paramtype">1000&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a39db351a5a127ccbd3893f4de5936b05" name="a39db351a5a127ccbd3893f4de5936b05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39db351a5a127ccbd3893f4de5936b05">&#9670;&#160;</a></span>storages</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classStorage.html">Storage</a>* storages[] = {&amp;<a class="el" href="main_8cpp.html#ad957b3f59d6aa0ac31f6b666528f798d">sd_storage</a>, &amp;<a class="el" href="main_8cpp.html#aa9bf2d87eb422349a53cce59be5d5fe7">radio_storage</a>}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a12b260a884350838d7056cd758cd8cbe" name="a12b260a884350838d7056cd758cd8cbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12b260a884350838d7056cd758cd8cbe">&#9670;&#160;</a></span>storages_len</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int storages_len = sizeof(<a class="el" href="main_8cpp.html#a39db351a5a127ccbd3893f4de5936b05">storages</a>) / sizeof(<a class="el" href="main_8cpp.html#a39db351a5a127ccbd3893f4de5936b05">storages</a>[0])</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a45010841f3644338adefc6120a95e51d" name="a45010841f3644338adefc6120a95e51d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45010841f3644338adefc6120a95e51d">&#9670;&#160;</a></span>storages_verify</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool storages_verify[<a class="el" href="main_8cpp.html#a12b260a884350838d7056cd758cd8cbe">storages_len</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abaacb8cdda17b6340a4d5aeaf72e2ca6" name="abaacb8cdda17b6340a4d5aeaf72e2ca6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abaacb8cdda17b6340a4d5aeaf72e2ca6">&#9670;&#160;</a></span>SYNC_BYTES</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint8_t SYNC_BYTES[] = {0x89, 0xAB, 0xCD, 0xEF}</td>
         </tr>
       </table>
 </div><div class="memdoc">

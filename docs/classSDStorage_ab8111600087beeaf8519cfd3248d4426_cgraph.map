@@ -1,11 +1,7 @@
 <map id="SDStorage::store" name="SDStorage::store">
-<area shape="rect" id="Node000001" title="Store data on the SD card." alt="" coords="5,29,136,55"/>
-<area shape="rect" id="Node000002" href="$classErrorDisplay.html#a25018c85cd6b4055a5e796153b997d13" title="Sets the error code to the given value if the given error is of a higher priority then the current er..." alt="" coords="367,5,533,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,27,184,14,270,9,352,9,352,15,270,14,184,19,118,32"/>
-<area shape="rect" id="Node000003" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="368,55,532,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,52,184,65,271,70,354,70,354,75,271,75,184,70,117,57"/>
-<area shape="rect" id="Node000004" href="$classSDStorage.html#a2a08793ce2cb22bc0675f5cf4916155a" title="Verify SD card connection and create a new, unique file." alt="" coords="184,29,319,55"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,39,170,39,170,45,136,45"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="319,31,353,27,353,32,319,37"/>
-<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="319,48,355,52,354,58,319,53"/>
+<area shape="rect" id="Node000001" title="Store data on the SD card." alt="" coords="5,31,136,56"/>
+<area shape="rect" id="Node000002" href="$classErrorDisplay.html#a25018c85cd6b4055a5e796153b997d13" title="Sets the error code to the given value if the given error is of a higher priority then the current er..." alt="" coords="184,5,351,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,32,170,28,170,33,136,38"/>
+<area shape="rect" id="Node000003" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="185,55,349,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,49,172,53,171,58,136,54"/>
 </map>

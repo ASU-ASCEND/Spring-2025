@@ -52,3 +52,42 @@ String INA260Sensor::readData() {
 
   return String(current) + "," + String(busVoltage) + "," + String(power) + ",";
 }
+
+/**
+ * @brief Reads sensor data and appends to packet byte array, data includes
+ * current(mA), voltage(mV), and power (mW).
+ *
+ * @param packet Pointer to the packet byte array.
+ */
+
+void INA260Sensor::readDataPacket(uint8_t*& packet) {
+  float current = ina260.readCurrent();
+  float busVoltage = ina260.readBusVoltage();
+  float power = ina260.readPower();
+
+  float data[3] = {current, busVoltage, power};
+
+  for (int i = 0; i < 3; i++) {
+    memcpy(packet, &data[i], sizeof(float));
+    packet += sizeof(float);
+  }
+}
+
+/**
+ * @brief Decodes sensor data from the packet into a CSV string.
+ *
+ * Data includes current(mA), voltage(mV), and power (mW).
+ *
+ * @param packet Pointer to packet byte array that will be decoded.
+ * @return String Decoded sensor data in CSV format.
+ */
+String INA260Sensor::decodeToCSV(uint8_t*& packet) {
+  float data[3];
+
+  for (int i = 0; i < 3; i++) {
+    memcpy(packet, &data[i], sizeof(float));
+    packet += sizeof(float);
+  }
+
+  return String(data[0]) + "," + String(data[1]) + "," + String(data[2]) + ",";
+}

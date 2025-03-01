@@ -84,7 +84,7 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for INA260Sensor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classINA260Sensor__inherit__graph.svg" width="188" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classINA260Sensor__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Collaboration diagram for INA260Sensor:</div>
@@ -97,64 +97,90 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a042f617dabe0fdd117cd1ba7cdb8723d" id="r_a042f617dabe0fdd117cd1ba7cdb8723d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a042f617dabe0fdd117cd1ba7cdb8723d">INA260Sensor</a> ()</td></tr>
 <tr class="memdesc:a042f617dabe0fdd117cd1ba7cdb8723d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classINA260Sensor.html" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements.">INA260Sensor</a> class.  <br /></td></tr>
 <tr class="separator:a042f617dabe0fdd117cd1ba7cdb8723d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15132c8e875b5cd00b243bf42b65efd9" id="r_a15132c8e875b5cd00b243bf42b65efd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a15132c8e875b5cd00b243bf42b65efd9">INA260Sensor</a> (unsigned long <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
+<tr class="memitem:a15132c8e875b5cd00b243bf42b65efd9" id="r_a15132c8e875b5cd00b243bf42b65efd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a15132c8e875b5cd00b243bf42b65efd9">INA260Sensor</a> (<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a> <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
 <tr class="memdesc:a15132c8e875b5cd00b243bf42b65efd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterized constructor for the <a class="el" href="classINA260Sensor.html" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements.">INA260Sensor</a> class.  <br /></td></tr>
 <tr class="separator:a15132c8e875b5cd00b243bf42b65efd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a799f491fe1496b33b1d985e5672a7e6d" id="r_a799f491fe1496b33b1d985e5672a7e6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a799f491fe1496b33b1d985e5672a7e6d">verify</a> () override</td></tr>
+<tr class="memitem:aa3c61c774236a8d42b17b29a3ccfde35" id="r_aa3c61c774236a8d42b17b29a3ccfde35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#aa3c61c774236a8d42b17b29a3ccfde35">readDataPacket</a> (uint8_t *&amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>)</td></tr>
+<tr class="memdesc:aa3c61c774236a8d42b17b29a3ccfde35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sensor data and appends to packet byte array, data includes <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">current(mA)</a>, <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">voltage(mV)</a>, and power (mW).  <br /></td></tr>
+<tr class="separator:aa3c61c774236a8d42b17b29a3ccfde35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584bc9560de962e52e61d4c4ee6ffe79" id="r_a584bc9560de962e52e61d4c4ee6ffe79"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a584bc9560de962e52e61d4c4ee6ffe79">decodeToCSV</a> (uint8_t *&amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>)</td></tr>
+<tr class="memdesc:a584bc9560de962e52e61d4c4ee6ffe79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes sensor data from the packet into a CSV string.  <br /></td></tr>
+<tr class="separator:a584bc9560de962e52e61d4c4ee6ffe79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a799f491fe1496b33b1d985e5672a7e6d" id="r_a799f491fe1496b33b1d985e5672a7e6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a799f491fe1496b33b1d985e5672a7e6d">verify</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">override</a></td></tr>
 <tr class="memdesc:a799f491fe1496b33b1d985e5672a7e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies the connection to the INA260 sensor.  <br /></td></tr>
 <tr class="separator:a799f491fe1496b33b1d985e5672a7e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40a7b8158adfe1742ab7ce746b2830c4" id="r_a40a7b8158adfe1742ab7ce746b2830c4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a40a7b8158adfe1742ab7ce746b2830c4">readData</a> () override</td></tr>
+<tr class="memitem:a40a7b8158adfe1742ab7ce746b2830c4" id="r_a40a7b8158adfe1742ab7ce746b2830c4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a40a7b8158adfe1742ab7ce746b2830c4">readData</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">override</a></td></tr>
 <tr class="memdesc:a40a7b8158adfe1742ab7ce746b2830c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the INA260 sensor and returns it in CSV format.  <br /></td></tr>
 <tr class="separator:a40a7b8158adfe1742ab7ce746b2830c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSensor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSensor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSensor.html">Sensor</a></td></tr>
-<tr class="memitem:a47013fb0a7d3e8d95944e309ce2bf88f inherit pub_methods_classSensor" id="r_a47013fb0a7d3e8d95944e309ce2bf88f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a47013fb0a7d3e8d95944e309ce2bf88f">Sensor</a> (String <a class="el" href="classSensor.html#a51529bb4324e61954a2d181ec4629b77">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, unsigned long <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
+<tr class="memitem:a47013fb0a7d3e8d95944e309ce2bf88f inherit pub_methods_classSensor" id="r_a47013fb0a7d3e8d95944e309ce2bf88f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a47013fb0a7d3e8d95944e309ce2bf88f">Sensor</a> (String <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a> <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
 <tr class="separator:a47013fb0a7d3e8d95944e309ce2bf88f inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a292d8088e6839fa9a9cce7d64220ce69 inherit pub_methods_classSensor" id="r_a292d8088e6839fa9a9cce7d64220ce69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a292d8088e6839fa9a9cce7d64220ce69">Sensor</a> (String <a class="el" href="classSensor.html#a51529bb4324e61954a2d181ec4629b77">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>)</td></tr>
+<tr class="memitem:a292d8088e6839fa9a9cce7d64220ce69 inherit pub_methods_classSensor" id="r_a292d8088e6839fa9a9cce7d64220ce69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a292d8088e6839fa9a9cce7d64220ce69">Sensor</a> (String <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>)</td></tr>
 <tr class="separator:a292d8088e6839fa9a9cce7d64220ce69 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac961611fe726ecce2236efa3b9ee450c inherit pub_methods_classSensor" id="r_ac961611fe726ecce2236efa3b9ee450c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ac961611fe726ecce2236efa3b9ee450c">Sensor</a> (String <a class="el" href="classSensor.html#a51529bb4324e61954a2d181ec4629b77">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, int fields)</td></tr>
+<tr class="memitem:ac961611fe726ecce2236efa3b9ee450c inherit pub_methods_classSensor" id="r_ac961611fe726ecce2236efa3b9ee450c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ac961611fe726ecce2236efa3b9ee450c">Sensor</a> (String <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, int <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">fields</a>)</td></tr>
 <tr class="memdesc:ac961611fe726ecce2236efa3b9ee450c inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> object with default minimum_period of 0 (depreciated)  <br /></td></tr>
 <tr class="separator:ac961611fe726ecce2236efa3b9ee450c inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a861ed177b65f0d04543e7b6fae6b8c85 inherit pub_methods_classSensor" id="r_a861ed177b65f0d04543e7b6fae6b8c85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a861ed177b65f0d04543e7b6fae6b8c85">Sensor</a> (String <a class="el" href="classSensor.html#a51529bb4324e61954a2d181ec4629b77">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, int fields, unsigned long <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
+<tr class="memitem:a861ed177b65f0d04543e7b6fae6b8c85 inherit pub_methods_classSensor" id="r_a861ed177b65f0d04543e7b6fae6b8c85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a861ed177b65f0d04543e7b6fae6b8c85">Sensor</a> (String <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, int <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">fields</a>, <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a> <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
 <tr class="memdesc:a861ed177b65f0d04543e7b6fae6b8c85 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> object (Depreciated)  <br /></td></tr>
 <tr class="separator:a861ed177b65f0d04543e7b6fae6b8c85 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8763e8f8a73198127db17e0b9e79c5f5 inherit pub_methods_classSensor" id="r_a8763e8f8a73198127db17e0b9e79c5f5"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a8763e8f8a73198127db17e0b9e79c5f5">getPeriod</a> () const</td></tr>
+<tr class="memitem:a8763e8f8a73198127db17e0b9e79c5f5 inherit pub_methods_classSensor" id="r_a8763e8f8a73198127db17e0b9e79c5f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a8763e8f8a73198127db17e0b9e79c5f5">getPeriod</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a></td></tr>
 <tr class="memdesc:a8763e8f8a73198127db17e0b9e79c5f5 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the minimum minimum_period between sensor reads in ms.  <br /></td></tr>
 <tr class="separator:a8763e8f8a73198127db17e0b9e79c5f5 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecd2cfc8a5d16e306f6369adcc3e208a inherit pub_methods_classSensor" id="r_aecd2cfc8a5d16e306f6369adcc3e208a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#aecd2cfc8a5d16e306f6369adcc3e208a">setPeriod</a> (int <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
+<tr class="memitem:aecd2cfc8a5d16e306f6369adcc3e208a inherit pub_methods_classSensor" id="r_aecd2cfc8a5d16e306f6369adcc3e208a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#aecd2cfc8a5d16e306f6369adcc3e208a">setPeriod</a> (int <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
 <tr class="memdesc:aecd2cfc8a5d16e306f6369adcc3e208a inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum minimum_period between sensor reads in ms.  <br /></td></tr>
 <tr class="separator:aecd2cfc8a5d16e306f6369adcc3e208a inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac44e20195df40674efb539e0aea1f789 inherit pub_methods_classSensor" id="r_ac44e20195df40674efb539e0aea1f789"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ac44e20195df40674efb539e0aea1f789">getLastExecution</a> () const</td></tr>
+<tr class="memitem:ac44e20195df40674efb539e0aea1f789 inherit pub_methods_classSensor" id="r_ac44e20195df40674efb539e0aea1f789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ac44e20195df40674efb539e0aea1f789">getLastExecution</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a></td></tr>
 <tr class="memdesc:ac44e20195df40674efb539e0aea1f789 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the system time of the last execution in ms.  <br /></td></tr>
 <tr class="separator:ac44e20195df40674efb539e0aea1f789 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea739069d8009fdb9b4026b4b3afc3ab inherit pub_methods_classSensor" id="r_aea739069d8009fdb9b4026b4b3afc3ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#aea739069d8009fdb9b4026b4b3afc3ab">setLastExecution</a> (int <a class="el" href="classSensor.html#abd94c964e6cf265293cfb4cd5d01708d">last_execution</a>)</td></tr>
+<tr class="memitem:aea739069d8009fdb9b4026b4b3afc3ab inherit pub_methods_classSensor" id="r_aea739069d8009fdb9b4026b4b3afc3ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#aea739069d8009fdb9b4026b4b3afc3ab">setLastExecution</a> (int <a class="el" href="classSensor.html#abd94c964e6cf265293cfb4cd5d01708d">last_execution</a>)</td></tr>
 <tr class="memdesc:aea739069d8009fdb9b4026b4b3afc3ab inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the system time of the last execution in ms.  <br /></td></tr>
 <tr class="separator:aea739069d8009fdb9b4026b4b3afc3ab inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2fad054e890947b02322eb31e7967bf inherit pub_methods_classSensor" id="r_ac2fad054e890947b02322eb31e7967bf"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ac2fad054e890947b02322eb31e7967bf">getSensorName</a> () const</td></tr>
-<tr class="memdesc:ac2fad054e890947b02322eb31e7967bf inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> Name as an Arduino string.  <br /></td></tr>
-<tr class="separator:ac2fad054e890947b02322eb31e7967bf inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor" id="r_a7a1b80d366c585dd9c85992f0ca96d39"><td class="memItemLeft" align="right" valign="top">const String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a7a1b80d366c585dd9c85992f0ca96d39">getSensorCSVHeader</a> () const</td></tr>
+<tr class="memitem:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor" id="r_a7a1b80d366c585dd9c85992f0ca96d39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a7a1b80d366c585dd9c85992f0ca96d39">getSensorCSVHeader</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a></td></tr>
 <tr class="memdesc:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the csv header string associated with this sensor.  <br /></td></tr>
 <tr class="separator:a7a1b80d366c585dd9c85992f0ca96d39 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor" id="r_ae835436cbb1fd60580e72a4ee7014c48"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">readDataPacket</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
-<tr class="separator:ae835436cbb1fd60580e72a4ee7014c48 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor" id="r_ab344e7fbc9acdc5dcc7ae59d0a3fb5f6"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">decodeToCSV</a> (uint8_t *&amp;packet)</td></tr>
-<tr class="memdesc:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
-<tr class="separator:ab344e7fbc9acdc5dcc7ae59d0a3fb5f6 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor" id="r_a1d128dc295e634de6506da5cbb716b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a1d128dc295e634de6506da5cbb716b64">getDataPacket</a> (uint32_t &amp;sensor_id, uint8_t *&amp;packet)</td></tr>
+<tr class="memitem:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor" id="r_a1d128dc295e634de6506da5cbb716b64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a1d128dc295e634de6506da5cbb716b64">getDataPacket</a> (uint32_t &amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">sensor_id</a>, uint8_t *&amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>)</td></tr>
 <tr class="memdesc:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the data from a sensor to the packet if the minium period is satisfied.  <br /></td></tr>
 <tr class="separator:a1d128dc295e634de6506da5cbb716b64 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62d72a2f81422ac2d2fa8ae86ba08571 inherit pub_methods_classSensor" id="r_a62d72a2f81422ac2d2fa8ae86ba08571"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571">readEmpty</a> () const</td></tr>
+<tr class="memitem:a62d72a2f81422ac2d2fa8ae86ba08571 inherit pub_methods_classSensor" id="r_a62d72a2f81422ac2d2fa8ae86ba08571"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571">readEmpty</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a></td></tr>
 <tr class="memdesc:a62d72a2f81422ac2d2fa8ae86ba08571 inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns CSV line in the same format as <a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format.">readData()</a> but with "-" instead of data.  <br /></td></tr>
 <tr class="separator:a62d72a2f81422ac2d2fa8ae86ba08571 inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d5ecda6a046ddba40d0e37921226d2f inherit pub_methods_classSensor" id="r_a2d5ecda6a046ddba40d0e37921226d2f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f">getDataCSV</a> ()</td></tr>
 <tr class="memdesc:a2d5ecda6a046ddba40d0e37921226d2f inherit pub_methods_classSensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses readData and readEmpty to get the data-filled or empty-celled CSV line for the sensor.  <br /></td></tr>
 <tr class="separator:a2d5ecda6a046ddba40d0e37921226d2f inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classDevice"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDevice')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classDevice.html">Device</a></td></tr>
+<tr class="memitem:a0a1bb0e6339958fb2aab9161e2449537 inherit pub_methods_classDevice" id="r_a0a1bb0e6339958fb2aab9161e2449537"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#a0a1bb0e6339958fb2aab9161e2449537">Device</a> (String <a class="el" href="classDevice.html#aa7c06f47307932859953bf976827c26b">device_name</a>)</td></tr>
+<tr class="memdesc:a0a1bb0e6339958fb2aab9161e2449537 inherit pub_methods_classDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, sets a max_attempt of 1 (device recovery won't be attempted)  <br /></td></tr>
+<tr class="separator:a0a1bb0e6339958fb2aab9161e2449537 inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202d889eda8970e5f606b2a1b9a7be48 inherit pub_methods_classDevice" id="r_a202d889eda8970e5f606b2a1b9a7be48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#a202d889eda8970e5f606b2a1b9a7be48">Device</a> (String <a class="el" href="classDevice.html#aa7c06f47307932859953bf976827c26b">device_name</a>, int <a class="el" href="classDevice.html#ae27da3b2ca8c3821a65d5e1b2f13393d">max_attempts</a>, int <a class="el" href="classDevice.html#a2f547cda3dccb0deaa92d68e3665996b">wait_factor</a>)</td></tr>
+<tr class="separator:a202d889eda8970e5f606b2a1b9a7be48 inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc7184e7fb286208c3b30357cf53f88 inherit pub_methods_classDevice" id="r_abbc7184e7fb286208c3b30357cf53f88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> String &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#abbc7184e7fb286208c3b30357cf53f88">getDeviceName</a> ()</td></tr>
+<tr class="separator:abbc7184e7fb286208c3b30357cf53f88 inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a030b016bedb9a917634091199a946c94 inherit pub_methods_classDevice" id="r_a030b016bedb9a917634091199a946c94"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#a030b016bedb9a917634091199a946c94">getVerified</a> ()</td></tr>
+<tr class="memdesc:a030b016bedb9a917634091199a946c94 inherit pub_methods_classDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if the <a class="el" href="classDevice.html" title="Implements the recovery system for Sensor and Storage objects.">Device</a> is Verified.  <br /></td></tr>
+<tr class="separator:a030b016bedb9a917634091199a946c94 inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64c14c9b8d2c9001f81c1ce6776a565 inherit pub_methods_classDevice" id="r_af64c14c9b8d2c9001f81c1ce6776a565"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565">recoveryConfig</a> (int <a class="el" href="classDevice.html#ae27da3b2ca8c3821a65d5e1b2f13393d">max_attempts</a>, int <a class="el" href="classDevice.html#a2f547cda3dccb0deaa92d68e3665996b">wait_factor</a>)</td></tr>
+<tr class="memdesc:af64c14c9b8d2c9001f81c1ce6776a565 inherit pub_methods_classDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set recovery config (used keep default constructor)  <br /></td></tr>
+<tr class="separator:af64c14c9b8d2c9001f81c1ce6776a565 inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71d2f19c89f1ebfcd756c030458f3b5 inherit pub_methods_classDevice" id="r_ae71d2f19c89f1ebfcd756c030458f3b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5">setWaitFactor</a> (int <a class="el" href="classDevice.html#a2f547cda3dccb0deaa92d68e3665996b">wait_factor</a>)</td></tr>
+<tr class="memdesc:ae71d2f19c89f1ebfcd756c030458f3b5 inherit pub_methods_classDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set wait_factor.  <br /></td></tr>
+<tr class="separator:ae71d2f19c89f1ebfcd756c030458f3b5 inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55cbddb95f3d79876d10e8d5bc85ba5d inherit pub_methods_classDevice" id="r_a55cbddb95f3d79876d10e8d5bc85ba5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#a55cbddb95f3d79876d10e8d5bc85ba5d">setMaxAttempts</a> (int <a class="el" href="classDevice.html#ae27da3b2ca8c3821a65d5e1b2f13393d">max_attempts</a>)</td></tr>
+<tr class="memdesc:a55cbddb95f3d79876d10e8d5bc85ba5d inherit pub_methods_classDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set max_attempts.  <br /></td></tr>
+<tr class="separator:a55cbddb95f3d79876d10e8d5bc85ba5d inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cb26e459b67a43a3e96033044d2d11 inherit pub_methods_classDevice" id="r_aa8cb26e459b67a43a3e96033044d2d11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#aa8cb26e459b67a43a3e96033044d2d11">attemptConnection</a> ()</td></tr>
+<tr class="memdesc:aa8cb26e459b67a43a3e96033044d2d11 inherit pub_methods_classDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the sensor is verified, return true, if not and it has been long enough since the last attempt (decided by wait_factor and attempt_number), attempt to reverify (reinitialize) it.  <br /></td></tr>
+<tr class="separator:aa8cb26e459b67a43a3e96033044d2d11 inherit pub_methods_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a81348d4fdf3a040932de924c09db4358" id="r_a81348d4fdf3a040932de924c09db4358"><td class="memItemLeft" align="right" valign="top">Adafruit_INA260&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classINA260Sensor.html#a81348d4fdf3a040932de924c09db4358">ina260</a></td></tr>
 <tr class="separator:a81348d4fdf3a040932de924c09db4358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classDevice"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classDevice')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classDevice.html">Device</a></td></tr>
+<tr class="memitem:a7cee06f8730926452106f35771eaf792 inherit pro_attribs_classDevice" id="r_a7cee06f8730926452106f35771eaf792"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#a7cee06f8730926452106f35771eaf792">verified</a></td></tr>
+<tr class="separator:a7cee06f8730926452106f35771eaf792 inherit pro_attribs_classDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements. </p>
@@ -193,7 +219,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">INA260Sensor::INA260Sensor </td>
           <td>(</td>
-          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramtype"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a>&#160;</td>
           <td class="paramname"><em>minimum_period</em></td><td>)</td>
           <td></td>
         </tr>
@@ -212,6 +238,44 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a584bc9560de962e52e61d4c4ee6ffe79" name="a584bc9560de962e52e61d4c4ee6ffe79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584bc9560de962e52e61d4c4ee6ffe79">&#9670;&#160;</a></span>decodeToCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String INA260Sensor::decodeToCSV </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decodes sensor data from the packet into a CSV string. </p>
+<p>Data includes <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">current(mA)</a>, <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">voltage(mV)</a>, and power (mW).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to packet byte array that will be decoded. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String Decoded sensor data in CSV format. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6">Sensor</a>.</p>
+
+</div>
+</div>
 <a id="a40a7b8158adfe1742ab7ce746b2830c4" name="a40a7b8158adfe1742ab7ce746b2830c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40a7b8158adfe1742ab7ce746b2830c4">&#9670;&#160;</a></span>readData()</h2>
 
@@ -240,6 +304,42 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>String A string containing the sensor data in the format: "Current (mA), Voltage (mV), Power (mW), ". </dd></dl>
 
 <p>Implements <a class="el" href="classSensor.html#a56153cab066abc01692301d11965f9b8">Sensor</a>.</p>
+
+</div>
+</div>
+<a id="aa3c61c774236a8d42b17b29a3ccfde35" name="aa3c61c774236a8d42b17b29a3ccfde35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c61c774236a8d42b17b29a3ccfde35">&#9670;&#160;</a></span>readDataPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> INA260Sensor::readDataPacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads sensor data and appends to packet byte array, data includes <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">current(mA)</a>, <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">voltage(mV)</a>, and power (mW). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pointer to the packet byte array. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classSensor.html#ae835436cbb1fd60580e72a4ee7014c48">Sensor</a>.</p>
 
 </div>
 </div>

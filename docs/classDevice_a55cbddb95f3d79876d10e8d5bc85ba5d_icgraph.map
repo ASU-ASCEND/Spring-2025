@@ -1,0 +1,11 @@
+<map id="Device::setMaxAttempts" name="Device::setMaxAttempts">
+<area shape="rect" id="Node000001" title="Set max_attempts." alt="" coords="488,31,671,56"/>
+<area shape="rect" id="Node000002" href="$classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565" title="Set recovery config (used keep default constructor)" alt="" coords="267,31,440,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="474,46,440,46,440,41,474,41"/>
+<area shape="rect" id="Node000003" href="$main1_8cpp.html#a335f1df8d0b267769cb9842c12616214" title="Setup for core 1." alt="" coords="120,5,219,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="253,32,219,27,219,22,254,27"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="Setup for core 0." alt="" coords="140,55,199,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="253,59,199,66,199,61,253,54"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ac764ee28e2916a7de10b22927e02d1a4" title=" " alt="" coords="5,5,72,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="106,21,72,21,72,15,106,15"/>
+</map>
