@@ -35,8 +35,9 @@
 
 /** @brief MTK3339 GPS CS Pin*/
 // #define MTK3339_CS_PIN 20
-#define SERIAL2_RX_PIN 8
-#define SERIAL2_TX_PIN 9
+#define SERIAL2_RX_PIN 9
+#define SERIAL2_TX_PIN 8
+#define GPS_I2C 1 
 
 /** @brief UV sensor I2C Addresses */
 // [1, 1, 1, 0, 1, A1, A0]

@@ -1,9 +1,8 @@
 #ifndef MTK3339SENSOR_H
 #define MTK3339SENSOR_H
 
-#include <Adafruit_GPS.h>
 #include <Arduino.h>
-#include <SPI.h>
+#include <SparkFun_u-blox_GNSS_Arduino_Library.h>
 #include <Wire.h>
 
 #include "PayloadConfig.h"
@@ -16,7 +15,7 @@
 class MTK3339Sensor : public Sensor {
  private:
   // int pin; chip select pin
-  Adafruit_GPS GPS;
+  SFE_UBLOX_GNSS GPS;
 
  public:
   MTK3339Sensor();  // pass pin in constructor
