@@ -23,11 +23,6 @@
 /** @brief BME680 SPI Mode Toggle Pin */
 #define BME680_SPI_MODE 0
 
-/** @brief ICM20948 IMU CS Pin */
-#define ICM_CS_PIN 6
-/** @brief ICM20948 IMU I2C Toggle Pin */
-#define ICM_I2C_MODE 1
-
 /** @brief LSM9DS1 IMU Accelerometer/Gyroscope Pin */
 #define LSM9DS1_XGCS_PIN 27
 /** @brief LSM9DS1 IMU Magnetometer Pin */
