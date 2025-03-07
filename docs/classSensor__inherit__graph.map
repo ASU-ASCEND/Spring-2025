@@ -20,10 +20,10 @@
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1093,601,1211,674,1273,720,1329,770,1368,820,1364,824,1325,774,1269,724,1208,679,1090,606"/>
 <area shape="rect" id="Node000012" href="$classPCF8523Sensor.html" title="Implementation of the PCF8523 sensor." alt="" coords="1507,812,1648,997"/>
 <area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1093,575,1186,604,1291,646,1398,701,1449,733,1496,770,1532,810,1528,814,1493,774,1446,738,1396,705,1289,650,1184,609,1092,580"/>
-<area shape="rect" id="Node000013" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="1672,842,1797,967"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1093,560,1218,582,1291,599,1367,621,1445,648,1521,682,1595,722,1662,770,1692,803,1714,840,1709,843,1687,806,1658,774,1592,727,1519,686,1443,653,1366,626,1289,604,1217,587,1092,566"/>
-<area shape="rect" id="Node000014" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="1821,822,1963,987"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1094,554,1245,570,1335,584,1432,605,1531,633,1629,669,1724,714,1811,770,1836,793,1856,820,1852,824,1832,797,1808,774,1721,719,1627,674,1529,638,1431,610,1334,590,1244,575,1093,559"/>
+<area shape="rect" id="Node000013" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="1672,822,1813,987"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1094,562,1218,584,1290,601,1366,623,1444,651,1520,684,1594,723,1662,770,1686,793,1706,820,1702,824,1682,797,1658,774,1591,728,1518,689,1442,656,1364,628,1289,606,1217,589,1093,567"/>
+<area shape="rect" id="Node000014" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="1837,822,1979,987"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1094,553,1247,568,1340,583,1439,603,1540,631,1641,668,1738,713,1827,770,1852,793,1872,820,1868,823,1848,797,1824,774,1735,718,1639,673,1539,636,1438,609,1339,588,1247,573,1093,559"/>
 <area shape="rect" id="Node000002" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="909,5,1073,331"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="993,344,993,379,988,379,988,344"/>
 </map>

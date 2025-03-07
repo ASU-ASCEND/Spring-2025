@@ -3,8 +3,7 @@
 /**
  * @brief Default constructor for the SGP30Sensor.
  */
-SGP30Sensor::SGP30Sensor()
-    : Sensor("SGP30", "SGP_eCO2,SGP_TVOC,", 2) {}
+SGP30Sensor::SGP30Sensor() : Sensor("SGP30", "SGP_eCO2,SGP_TVOC,", 2) {}
 
 /**
  * @brief Constructor that sets a minimum period between sensor reads.
@@ -20,7 +19,6 @@ SGP30Sensor::SGP30Sensor(unsigned long minimum_period)
  * @return true if sensor initializes correctly, false otherwise.
  */
 bool SGP30Sensor::verify() {
-
   if (!sgp.begin()) {
     return false;
   }
@@ -50,7 +48,6 @@ String SGP30Sensor::readData() {
  * @return The number of bytes appended (6).
  */
 void SGP30Sensor::readDataPacket(uint8_t*& packet) {
- 
   uint16_t eCO2 = 0;
   uint16_t TVOC = 0;
   if (sgp.IAQmeasure()) {
@@ -58,7 +55,6 @@ void SGP30Sensor::readDataPacket(uint8_t*& packet) {
     TVOC = sgp.TVOC;
   }
 
-  
   memcpy(packet, &eCO2, sizeof(eCO2));
   packet += sizeof(eCO2);
 
@@ -75,7 +71,8 @@ void SGP30Sensor::readDataPacket(uint8_t*& packet) {
  *   - TVOC: uint16_t
  *   - checksum: uint16_t
  *
- * @param packet Pointer to the packet buffer. This pointer is advanced by 6 bytes.
+ * @param packet Pointer to the packet buffer. This pointer is advanced by 6
+ * bytes.
  * @return String "eCO2,TVOC,Checksum: X (computed: Y),"
  */
 String SGP30Sensor::decodeToCSV(uint8_t*& packet) {
@@ -86,7 +83,7 @@ String SGP30Sensor::decodeToCSV(uint8_t*& packet) {
   uint16_t TVOC;
   memcpy(&TVOC, packet, sizeof(TVOC));
   packet += sizeof(TVOC);
-    
+
   uint16_t storedChecksum;
   memcpy(&storedChecksum, packet, sizeof(storedChecksum));
   packet += sizeof(storedChecksum);
