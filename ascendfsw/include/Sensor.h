@@ -15,8 +15,8 @@ class Sensor : public Device {
   unsigned long minimum_period, last_execution;
   String csv_header, empty_csv;
 
- protected: 
-  int num_fields; 
+ protected:
+  int num_fields;
 
  public:
   Sensor(String sensor_name, String csv_header, unsigned long minimum_period)
@@ -25,11 +25,11 @@ class Sensor : public Device {
     this->last_execution = 0;
     this->csv_header = csv_header;
     this->empty_csv = "";
-    this->num_fields = 0; 
+    this->num_fields = 0;
     for (size_t i = 0; i < csv_header.length(); i++) {
-      if (csv_header[i] == ','){
+      if (csv_header[i] == ',') {
         this->empty_csv += "-,";
-        this->num_fields++; 
+        this->num_fields++;
       }
     }
   }

@@ -5,8 +5,7 @@
  *
  */
 
-MTK3339Sensor::MTK3339Sensor()
-    : MTK3339Sensor(0) {}
+MTK3339Sensor::MTK3339Sensor() : MTK3339Sensor(0) {}
 
 /**
  * @brief Constructor for the MTK3339Sensor
@@ -24,28 +23,28 @@ MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)
  * @return false if it is not connected and working
  */
 bool MTK3339Sensor::verify() {
-  #if GPS_I2C
-  Wire.begin(); 
-  if(GPS.begin() == false){
-    return false; 
+#if GPS_I2C
+  Wire.begin();
+  if (GPS.begin() == false) {
+    return false;
   }
 
-  GPS.setI2COutput(COM_TYPE_UBX); 
-  GPS.setNavigationFrequency(1); 
+  GPS.setI2COutput(COM_TYPE_UBX);
+  GPS.setNavigationFrequency(1);
 
-  return true; 
-  #else
+  return true;
+#else
   Serial2.setRX(SERIAL2_RX_PIN);
   Serial2.setTX(SERIAL2_TX_PIN);
 
-  Serial2.begin(38400); 
-  if(GPS.begin(Serial2) == false){
-    return false; 
-  }   
-  GPS.setUART1Output(COM_TYPE_UBX); 
+  Serial2.begin(38400);
+  if (GPS.begin(Serial2) == false) {
+    return false;
+  }
+  GPS.setUART1Output(COM_TYPE_UBX);
 
   return true;
-  #endif 
+#endif
 }
 
 /**
@@ -56,13 +55,14 @@ bool MTK3339Sensor::verify() {
  * Angle, Altitude, Satellites,
  */
 String MTK3339Sensor::readData() {
-  
   if (GPS.getPVT()) {
     return String(GPS.getYear()) + "/" + String(GPS.getMonth()) + "/" +
-           String(GPS.getDay()) + " " + String(GPS.getHour()) + ":" + String(GPS.getMinute()) + ":" + String(GPS.getSecond()) + "," + String(GPS.getLatitude() / 10000000.0) + "," +
-           String(GPS.getLongitude() / 10000000.0) + "," + String(GPS.getGroundSpeed()) + "," +
-           String(GPS.getHeading()) + "," + String(GPS.getAltitude()) + "," +
-           String(GPS.getSIV()) + ",";
+           String(GPS.getDay()) + " " + String(GPS.getHour()) + ":" +
+           String(GPS.getMinute()) + ":" + String(GPS.getSecond()) + "," +
+           String(GPS.getLatitude() / 10000000.0) + "," +
+           String(GPS.getLongitude() / 10000000.0) + "," +
+           String(GPS.getGroundSpeed()) + "," + String(GPS.getHeading()) + "," +
+           String(GPS.getAltitude()) + "," + String(GPS.getSIV()) + ",";
   }
   return this->readEmpty();
 }
@@ -85,7 +85,7 @@ String MTK3339Sensor::readData() {
  * as each value is copied.
  */
 void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
-  if(GPS.getPVT()){
+  if (GPS.getPVT()) {
     // Pack date values
     uint16_t year = GPS.getYear();
     uint8_t month = GPS.getMonth();
@@ -97,9 +97,9 @@ void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
     memcpy(packet, &day, sizeof(day));
     packet += sizeof(day);
 
-    uint8_t hour = GPS.getHour(); 
-    uint8_t minute = GPS.getMinute(); 
-    uint8_t second = GPS.getSecond(); 
+    uint8_t hour = GPS.getHour();
+    uint8_t minute = GPS.getMinute();
+    uint8_t second = GPS.getSecond();
     memcpy(packet, &hour, sizeof(hour));
     packet += sizeof(hour);
     memcpy(packet, &minute, sizeof(minute));
@@ -140,9 +140,9 @@ void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
     memcpy(packet, &day, sizeof(day));
     packet += sizeof(day);
 
-    uint8_t hour = 0;  
-    uint8_t minute = 0; 
-    uint8_t second = 0; 
+    uint8_t hour = 0;
+    uint8_t minute = 0;
+    uint8_t second = 0;
     memcpy(packet, &hour, sizeof(hour));
     packet += sizeof(hour);
     memcpy(packet, &minute, sizeof(minute));
@@ -188,15 +188,15 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   uint8_t day = *packet;
   packet += sizeof(uint8_t);
 
-  uint8_t hour = *packet; 
-  packet += sizeof(uint8_t); 
-  uint8_t minute = *packet; 
-  packet += sizeof(uint8_t); 
-  uint8_t second = *packet; 
-  packet += sizeof(uint8_t); 
+  uint8_t hour = *packet;
+  packet += sizeof(uint8_t);
+  uint8_t minute = *packet;
+  packet += sizeof(uint8_t);
+  uint8_t second = *packet;
+  packet += sizeof(uint8_t);
 
-  // Decode values: latitude, longitude, speed, heading, altitude. And then decode
-  // number of satellites.
+  // Decode values: latitude, longitude, speed, heading, altitude. And then
+  // decode number of satellites.
   float lat;
   memcpy(&lat, packet, sizeof(float));
   packet += sizeof(float);
@@ -221,7 +221,9 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   packet += sizeof(uint8_t);
 
   // Construct the CSV string
-  String timeStamp = String(year) + "/" + String(month) + "/" + String(day) + " " + String(hour) + ":" + String(minute) + ":" + String(second);
+  String timeStamp = String(year) + "/" + String(month) + "/" + String(day) +
+                     " " + String(hour) + ":" + String(minute) + ":" +
+                     String(second);
   String csv = timeStamp + "," + String(lat, 10) + "," + String(lon, 10) + "," +
                String(speed) + "," + String(heading) + "," + String(alt) + "," +
                String(sats) + ",";
