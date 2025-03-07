@@ -94,9 +94,10 @@ void FlashStorage::store(String data) {
  *
  * @param packet - Pointer to the byte array containing the packet.
  */
-void FlashStorage::store(uint8_t* packet) {
+void FlashStorage::storePacket(uint8_t* packet) {
   // -- 4 bytes (sync) -- 4 bytes (presence) -- 2 bytes (length) -- data...
-  uint16_t packet_len = *((uint16_t*)(packet + 4 + 4));
+  uint16_t packet_len;
+  memcpy(&packet_len, (packet + 8), sizeof(uint16_t));
   uint16_t packet_header = 4 + 4 + 2;  // 10 bytes (sync, presence, length)
 
   // Iterate through packet and write to flash

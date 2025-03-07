@@ -15,14 +15,14 @@ class BME280Sensor : public Sensor {
  public:
   BME280Sensor();
   BME280Sensor(unsigned long minium_period);
-  bool verify();
-  String readData();
+  bool verify() override;
+  String readData() override;
 
   // Function to integrate sensor data into a packet buffer.
-  void readDataPacket(uint8_t*& packet);
+  void readDataPacket(uint8_t*& packet) override;
 
   // Function to decode sensor data from a packet and return a CSV string
-  String decodeToCSV(uint8_t*& packet);
+  String decodeToCSV(uint8_t*& packet) override;
 };
 
 #endif

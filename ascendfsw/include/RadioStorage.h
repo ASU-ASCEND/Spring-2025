@@ -16,9 +16,9 @@ class RadioStorage : public Storage {
 
  public:
   RadioStorage();
-  bool verify();
-  void store(String data);
-  void store(uint8_t* packet);
+  bool verify() override;
+  void store(String data) override;
+  void storePacket(uint8_t* packet) override;
 };
 
 #endif

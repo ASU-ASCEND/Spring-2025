@@ -38,11 +38,12 @@ void RadioStorage::store(String data) {
  *
  * @param packet Packet to send
  */
-void RadioStorage::store(uint8_t* packet) {
+void RadioStorage::storePacket(uint8_t* packet) {
   // length of packet will be after sync bytes (4) and sensor presence (4)
   // it is uint16_t
-  uint16_t packet_len = *((uint16_t*)(packet + 8));
-
+  uint16_t packet_len;
+  memcpy(&packet_len, (packet + 8), sizeof(uint16_t));
+  
   // write those bytes to the radio
   Serial1.write(packet, packet_len);
 }
