@@ -86,7 +86,7 @@ String BME680Sensor::readData() {
  */
 void BME680Sensor::readDataPacket(uint8_t*& packet) {
   if (!bme.performReading()) {
-    float zero = 0; 
+    float zero = 0;
     for (int i = 0; i < 5; i++) {
       memcpy(packet, &zero, sizeof(float));
       packet += sizeof(float);

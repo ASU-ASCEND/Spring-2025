@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gps_5fi2c_0',['GPS_I2C',['../PayloadConfig_8h.html#a2d26ccf6ba15b11e8128e20a87d65326',1,'PayloadConfig.h']]]
+  ['i2c1_5fscl_5fpin_0',['I2C1_SCL_PIN',['../PayloadConfig_8h.html#add009e081e638094ee54b280661d862e',1,'PayloadConfig.h']]],
+  ['i2c1_5fsda_5fpin_1',['I2C1_SDA_PIN',['../PayloadConfig_8h.html#a68697a8aca56f616b38aa23f82edecd5',1,'PayloadConfig.h']]]
 ];

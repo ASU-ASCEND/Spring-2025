@@ -43,7 +43,7 @@ void RadioStorage::storePacket(uint8_t* packet) {
   // it is uint16_t
   uint16_t packet_len;
   memcpy(&packet_len, (packet + 8), sizeof(uint16_t));
-  
+
   // write those bytes to the radio
   Serial1.write(packet, packet_len);
 }

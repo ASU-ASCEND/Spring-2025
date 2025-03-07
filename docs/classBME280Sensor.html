@@ -100,18 +100,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a466a1da747b315a2b6e3755e656b3042" id="r_a466a1da747b315a2b6e3755e656b3042"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#a466a1da747b315a2b6e3755e656b3042">BME280Sensor</a> (<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">minium_period</a>)</td></tr>
 <tr class="memdesc:a466a1da747b315a2b6e3755e656b3042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Temp <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> object.  <br /></td></tr>
 <tr class="separator:a466a1da747b315a2b6e3755e656b3042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a912cb1dac291afe2e80f099c95229489" id="r_a912cb1dac291afe2e80f099c95229489"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#a912cb1dac291afe2e80f099c95229489">verify</a> ()</td></tr>
-<tr class="memdesc:a912cb1dac291afe2e80f099c95229489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if sensor is connected and working.  <br /></td></tr>
-<tr class="separator:a912cb1dac291afe2e80f099c95229489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54514df45ba3c8f66889180f2e9fd87" id="r_ab54514df45ba3c8f66889180f2e9fd87"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#ab54514df45ba3c8f66889180f2e9fd87">readData</a> ()</td></tr>
-<tr class="memdesc:ab54514df45ba3c8f66889180f2e9fd87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads Relative Humidity (%), Pressure (Pa), Altitude (m), Temp (C) from the BME280.  <br /></td></tr>
-<tr class="separator:ab54514df45ba3c8f66889180f2e9fd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8347afc37ce721b1d2b176fc26dc4fd" id="r_ad8347afc37ce721b1d2b176fc26dc4fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#ad8347afc37ce721b1d2b176fc26dc4fd">readDataPacket</a> (uint8_t *&amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>)</td></tr>
-<tr class="memdesc:ad8347afc37ce721b1d2b176fc26dc4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
-<tr class="separator:ad8347afc37ce721b1d2b176fc26dc4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a917acd961dfd443cac58664ba2e0b33b" id="r_a917acd961dfd443cac58664ba2e0b33b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#a917acd961dfd443cac58664ba2e0b33b">decodeToCSV</a> (uint8_t *&amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>)</td></tr>
-<tr class="memdesc:a917acd961dfd443cac58664ba2e0b33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
-<tr class="separator:a917acd961dfd443cac58664ba2e0b33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f8b55a3d48f7c3693491ac093c253e5" id="r_a9f8b55a3d48f7c3693491ac093c253e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#a9f8b55a3d48f7c3693491ac093c253e5">verify</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">override</a></td></tr>
+<tr class="memdesc:a9f8b55a3d48f7c3693491ac093c253e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if sensor is connected and working.  <br /></td></tr>
+<tr class="separator:a9f8b55a3d48f7c3693491ac093c253e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599009a25a3ad9fb41102e1e7e80414d" id="r_a599009a25a3ad9fb41102e1e7e80414d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#a599009a25a3ad9fb41102e1e7e80414d">readData</a> () <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">override</a></td></tr>
+<tr class="memdesc:a599009a25a3ad9fb41102e1e7e80414d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads Relative Humidity (%), Pressure (Pa), Altitude (m), Temp (C) from the BME280.  <br /></td></tr>
+<tr class="separator:a599009a25a3ad9fb41102e1e7e80414d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac078e1ef7c6ddf04025526be15113e59" id="r_ac078e1ef7c6ddf04025526be15113e59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#ac078e1ef7c6ddf04025526be15113e59">readDataPacket</a> (uint8_t *&amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>) <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">override</a></td></tr>
+<tr class="memdesc:ac078e1ef7c6ddf04025526be15113e59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array pointer, incrementing it while doing so.  <br /></td></tr>
+<tr class="separator:ac078e1ef7c6ddf04025526be15113e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1657a3b19ba2916a0c62436c80a64bdc" id="r_a1657a3b19ba2916a0c62436c80a64bdc"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBME280Sensor.html#a1657a3b19ba2916a0c62436c80a64bdc">decodeToCSV</a> (uint8_t *&amp;<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>) <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">override</a></td></tr>
+<tr class="memdesc:a1657a3b19ba2916a0c62436c80a64bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for onboard decoding of packets.  <br /></td></tr>
+<tr class="separator:a1657a3b19ba2916a0c62436c80a64bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSensor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSensor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSensor.html">Sensor</a></td></tr>
 <tr class="memitem:a47013fb0a7d3e8d95944e309ce2bf88f inherit pub_methods_classSensor" id="r_a47013fb0a7d3e8d95944e309ce2bf88f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSensor.html#a47013fb0a7d3e8d95944e309ce2bf88f">Sensor</a> (String <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">sensor_name</a>, String <a class="el" href="classSensor.html#a2ec9679548d0d3c876995aa3de551293">csv_header</a>, <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">unsigned</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">long</a> <a class="el" href="classSensor.html#ab44ddb52915d3308953718c4ba3f63c4">minimum_period</a>)</td></tr>
 <tr class="separator:a47013fb0a7d3e8d95944e309ce2bf88f inherit pub_methods_classSensor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,8 +234,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a917acd961dfd443cac58664ba2e0b33b" name="a917acd961dfd443cac58664ba2e0b33b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a917acd961dfd443cac58664ba2e0b33b">&#9670;&#160;</a></span>decodeToCSV()</h2>
+<a id="a1657a3b19ba2916a0c62436c80a64bdc" name="a1657a3b19ba2916a0c62436c80a64bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1657a3b19ba2916a0c62436c80a64bdc">&#9670;&#160;</a></span>decodeToCSV()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,7 +253,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -271,8 +271,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab54514df45ba3c8f66889180f2e9fd87" name="ab54514df45ba3c8f66889180f2e9fd87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54514df45ba3c8f66889180f2e9fd87">&#9670;&#160;</a></span>readData()</h2>
+<a id="a599009a25a3ad9fb41102e1e7e80414d" name="a599009a25a3ad9fb41102e1e7e80414d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599009a25a3ad9fb41102e1e7e80414d">&#9670;&#160;</a></span>readData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +289,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -301,8 +301,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad8347afc37ce721b1d2b176fc26dc4fd" name="ad8347afc37ce721b1d2b176fc26dc4fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8347afc37ce721b1d2b176fc26dc4fd">&#9670;&#160;</a></span>readDataPacket()</h2>
+<a id="ac078e1ef7c6ddf04025526be15113e59" name="ac078e1ef7c6ddf04025526be15113e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac078e1ef7c6ddf04025526be15113e59">&#9670;&#160;</a></span>readDataPacket()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +320,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -338,8 +338,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a912cb1dac291afe2e80f099c95229489" name="a912cb1dac291afe2e80f099c95229489"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a912cb1dac291afe2e80f099c95229489">&#9670;&#160;</a></span>verify()</h2>
+<a id="a9f8b55a3d48f7c3693491ac093c253e5" name="a9f8b55a3d48f7c3693491ac093c253e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f8b55a3d48f7c3693491ac093c253e5">&#9670;&#160;</a></span>verify()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,7 +356,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

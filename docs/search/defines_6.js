@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['icm_5fcs_5fpin_0',['ICM_CS_PIN',['../PayloadConfig_8h.html#a97e46f2363905b2fc7a4beac75efdd7b',1,'PayloadConfig.h']]],
-  ['icm_5fi2c_5fmode_1',['ICM_I2C_MODE',['../PayloadConfig_8h.html#adc49fe1adc2606f6604a29ac1ea43394',1,'PayloadConfig.h']]]
+  ['minute_5fin_5fmillis_0',['MINUTE_IN_MILLIS',['../Device_8h.html#ae3f14d5c786fb27f4cb9a5b934590f10',1,'Device.h']]]
 ];

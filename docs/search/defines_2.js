@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['error_5fpin_5f0_0',['ERROR_PIN_0',['../PayloadConfig_8h.html#a48a86006eb436b950e5277fdf8a3ae53',1,'PayloadConfig.h']]],
-  ['error_5fpin_5f1_1',['ERROR_PIN_1',['../PayloadConfig_8h.html#a5d6e22e2c3ab3c12e8cd61594815925a',1,'PayloadConfig.h']]],
-  ['error_5fpin_5f2_2',['ERROR_PIN_2',['../PayloadConfig_8h.html#af230e937fbf21c24dab2e1c834330a52',1,'PayloadConfig.h']]]
+  ['gps_5fi2c_0',['GPS_I2C',['../PayloadConfig_8h.html#a2d26ccf6ba15b11e8128e20a87d65326',1,'PayloadConfig.h']]]
 ];

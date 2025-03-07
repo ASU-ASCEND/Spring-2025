@@ -71,7 +71,6 @@
 /** @brief Core 1 Heartbeat Pin */
 #define HEARTBEAT_PIN_1 21
 
-
 // multicore transfer queue
 #define QT_ENTRY_SIZE 500
 #define QT_MAX_SIZE 10
