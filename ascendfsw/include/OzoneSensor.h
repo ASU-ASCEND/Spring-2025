@@ -4,6 +4,10 @@
 #include "Sensor.h"
 #include "DFRobot_OzoneSensor.h"
 
+/**
+ * @brief Implementation of a Sensor for the onboard temperature sensor
+ *
+ */
 class OzoneSensor : public Sensor {
 private:
   DFRobot_OzoneSensor ozone; 
