@@ -15,8 +15,7 @@ ICM20948Sensor::ICM20948Sensor() : ICM20948Sensor(0) {}
 ICM20948Sensor::ICM20948Sensor(unsigned long minimum_period)
     : Sensor("ICM20948",
              "ICM AccX,ICM AccY,ICM AccZ,ICM GyroX,ICM "
-             "GyroY,ICM GyroZ,ICM MagX,ICM MagY,ICM MagZ, ICM TempC,",
-             10, minimum_period) {}
+             "GyroY,ICM GyroZ,ICM MagX,ICM MagY,ICM MagZ,ICM TempC,", minimum_period) {}
 
 /**
  * @brief Verifies that the ICM is connected and working
