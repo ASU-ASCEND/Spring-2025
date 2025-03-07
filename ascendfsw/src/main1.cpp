@@ -168,7 +168,7 @@ void storeDataPacket(uint8_t* packet) {
 #else
     if (storages_verify[i]) {
 #endif
-      storages[i]->store(packet, packet_len);
+      storages[i]->storePacket(packet);
     }
   }
 }

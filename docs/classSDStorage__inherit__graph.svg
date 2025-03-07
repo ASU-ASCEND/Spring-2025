@@ -73,7 +73,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="20.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="33.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
 <text text-anchor="start" x="20.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="33.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="33.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
 <polygon fill="#666666" stroke="#666666" points="16.5,-107 16.5,-107 106.5,-107 106.5,-107 16.5,-107"/>
 <polygon fill="#666666" stroke="#666666" points="16.5,-62 16.5,-62 31.5,-62 31.5,-62 16.5,-62"/>
 <polygon fill="#666666" stroke="#666666" points="31.5,-62 31.5,-62 106.5,-62 106.5,-62 31.5,-62"/>
@@ -85,20 +85,20 @@ var sectionId = 'dynsection-0';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="classStorage.html" target="_top" xlink:title="Parent class for all data storage devices (sd card, radio, etc)">
-<polygon fill="white" stroke="transparent" points="95,-254 28,-254 28,-160 95,-160 95,-254"/>
+<polygon fill="white" stroke="transparent" points="104,-254 19,-254 19,-160 104,-160 104,-254"/>
 <text text-anchor="start" x="43" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">Storage</text>
 <text text-anchor="start" x="60" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="32.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="45.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">Storage()</text>
-<text text-anchor="start" x="32.5" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="45.5" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="32.5" y="-182" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="45.5" y="-182" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
-<text text-anchor="start" x="32.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="45.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
-<polygon fill="#666666" stroke="#666666" points="28.5,-237 28.5,-237 95.5,-237 95.5,-237 28.5,-237"/>
-<polygon fill="#666666" stroke="#666666" points="28.5,-222 28.5,-222 95.5,-222 95.5,-222 28.5,-222"/>
-<polygon fill="none" stroke="#666666" points="28,-160 28,-254 95,-254 95,-160 28,-160"/>
+<text text-anchor="start" x="23.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="36.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">Storage()</text>
+<text text-anchor="start" x="23.5" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="36.5" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="23.5" y="-182" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="36.5" y="-182" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="23.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="36.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
+<polygon fill="#666666" stroke="#666666" points="19.5,-237 19.5,-237 104.5,-237 104.5,-237 19.5,-237"/>
+<polygon fill="#666666" stroke="#666666" points="19.5,-222 19.5,-222 104.5,-222 104.5,-222 19.5,-222"/>
+<polygon fill="none" stroke="#666666" points="19,-160 19,-254 104,-254 104,-160 19,-160"/>
 </a>
 </g>
 </g>

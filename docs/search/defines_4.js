@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['heartbeat_5fpin_5f0_0',['HEARTBEAT_PIN_0',['../PayloadConfig_8h.html#abaa3035bca6ee12a60c3b4b03aa7574a',1,'PayloadConfig.h']]],
-  ['heartbeat_5fpin_5f1_1',['HEARTBEAT_PIN_1',['../PayloadConfig_8h.html#a1e93fe19ad4ef78d366cc8f619da977a',1,'PayloadConfig.h']]]
+  ['i2c1_5fscl_5fpin_0',['I2C1_SCL_PIN',['../PayloadConfig_8h.html#add009e081e638094ee54b280661d862e',1,'PayloadConfig.h']]],
+  ['i2c1_5fsda_5fpin_1',['I2C1_SDA_PIN',['../PayloadConfig_8h.html#a68697a8aca56f616b38aa23f82edecd5',1,'PayloadConfig.h']]]
 ];

@@ -23,11 +23,7 @@ BME680Sensor::BME680Sensor(unsigned long minimum_period)
     : Sensor("BME680",
              "BMETemp(C),BMEPress(hPa),BMEHum(%),BMEGas(KOhms),BMEAlt(m),", 5,
              minimum_period) {
-#if BME680_SPI_MODE
-  bme = Adafruit_BME680(BME680_SPI_CS_PIN);
-#else
   bme = Adafruit_BME680();
-#endif
 }
 
 /**
@@ -90,6 +86,11 @@ String BME680Sensor::readData() {
  */
 void BME680Sensor::readDataPacket(uint8_t*& packet) {
   if (!bme.performReading()) {
+    float zero = 0;
+    for (int i = 0; i < 5; i++) {
+      memcpy(packet, &zero, sizeof(float));
+      packet += sizeof(float);
+    }
     return;
   }
 

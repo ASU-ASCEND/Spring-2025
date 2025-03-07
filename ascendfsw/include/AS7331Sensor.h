@@ -21,8 +21,8 @@ class AS7331Sensor : public Sensor {
   AS7331Sensor(unsigned long minimum_period, uint8_t i2c_addr);
 
   bool verify() override;
-  void readDataPacket(uint8_t*& packet);
-  String decodeToCSV(uint8_t*& packet);
+  void readDataPacket(uint8_t*& packet) override;
+  String decodeToCSV(uint8_t*& packet) override;
   String readData() override;
 };
 

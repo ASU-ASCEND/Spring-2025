@@ -35,7 +35,7 @@ class Storage : public Device {
    *
    * @param packet Packet to store
    */
-  void store(uint8_t* packet, int length) {};
+  virtual void storePacket(uint8_t* packet) {};
 };
 
 #endif

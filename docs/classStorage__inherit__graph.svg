@@ -58,20 +58,20 @@ var sectionId = 'dynsection-0';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Parent class for all data storage devices (sd card, radio, etc)">
-<polygon fill="#999999" stroke="transparent" points="232.5,-314 165.5,-314 165.5,-220 232.5,-220 232.5,-314"/>
+<polygon fill="#999999" stroke="transparent" points="241.5,-314 156.5,-314 156.5,-220 241.5,-220 241.5,-314"/>
 <text text-anchor="start" x="180.5" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">Storage</text>
 <text text-anchor="start" x="197.5" y="-287" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="170" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="183" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">Storage()</text>
-<text text-anchor="start" x="170" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="183" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="170" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="183" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
-<text text-anchor="start" x="170" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="183" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
-<polygon fill="#666666" stroke="#666666" points="166,-297 166,-297 233,-297 233,-297 166,-297"/>
-<polygon fill="#666666" stroke="#666666" points="166,-282 166,-282 233,-282 233,-282 166,-282"/>
-<polygon fill="none" stroke="#666666" points="165.5,-220 165.5,-314 232.5,-314 232.5,-220 165.5,-220"/>
+<text text-anchor="start" x="161" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="174" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">Storage()</text>
+<text text-anchor="start" x="161" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="174" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="161" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="174" y="-242" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="161" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="174" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
+<polygon fill="#666666" stroke="#666666" points="157,-297 157,-297 242,-297 242,-297 157,-297"/>
+<polygon fill="#666666" stroke="#666666" points="157,-282 157,-282 242,-282 242,-282 157,-282"/>
+<polygon fill="none" stroke="#666666" points="156.5,-220 156.5,-314 241.5,-314 241.5,-220 156.5,-220"/>
 </a>
 </g>
 </g>
@@ -96,7 +96,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="4" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
 <text text-anchor="start" x="4" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="17" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
 <text text-anchor="start" x="4" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">dump()</text>
 <text text-anchor="start" x="4" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -114,8 +114,8 @@ var sectionId = 'dynsection-0';
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M159.11,-213.72C151.15,-203.29 142.59,-192.06 134,-180.81"/>
-<polygon fill="none" stroke="#63b8ff" points="156.5,-216.07 165.35,-221.9 162.07,-211.82 156.5,-216.07"/>
+<path fill="none" stroke="#63b8ff" d="M157.48,-211.58C150.01,-201.79 142.05,-191.36 134.08,-180.91"/>
+<polygon fill="none" stroke="#63b8ff" points="154.78,-213.81 163.63,-219.64 160.34,-209.57 154.78,-213.81"/>
 </a>
 </g>
 </g>
@@ -134,7 +134,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="156" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="169" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
 <text text-anchor="start" x="156" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="169" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="169" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
 <polygon fill="#666666" stroke="#666666" points="152,-122 152,-122 246,-122 246,-122 152,-122"/>
 <polygon fill="#666666" stroke="#666666" points="152,-107 152,-107 167,-107 167,-107 152,-107"/>
 <polygon fill="#666666" stroke="#666666" points="167,-107 167,-107 246,-107 246,-107 167,-107"/>
@@ -170,7 +170,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="268" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="281" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
 <text text-anchor="start" x="268" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="281" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="281" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
 <polygon fill="#666666" stroke="#666666" points="264,-137 264,-137 354,-137 354,-137 264,-137"/>
 <polygon fill="#666666" stroke="#666666" points="264,-92 264,-92 279,-92 279,-92 264,-92"/>
 <polygon fill="#666666" stroke="#666666" points="279,-92 279,-92 354,-92 354,-92 279,-92"/>

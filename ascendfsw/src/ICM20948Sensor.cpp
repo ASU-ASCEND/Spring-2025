@@ -15,8 +15,8 @@ ICM20948Sensor::ICM20948Sensor() : ICM20948Sensor(0) {}
 ICM20948Sensor::ICM20948Sensor(unsigned long minimum_period)
     : Sensor("ICM20948",
              "ICM AccX,ICM AccY,ICM AccZ,ICM GyroX,ICM "
-             "GyroY,ICM GyroZ,ICM MagX,ICM MagY,ICM MagZ, ICM TempC,",
-             10, minimum_period) {}
+             "GyroY,ICM GyroZ,ICM MagX,ICM MagY,ICM MagZ,ICM TempC,",
+             minimum_period) {}
 
 /**
  * @brief Verifies that the ICM is connected and working
@@ -25,15 +25,9 @@ ICM20948Sensor::ICM20948Sensor(unsigned long minimum_period)
  * @return false if not connected and working
  */
 bool ICM20948Sensor::verify() {
-#if ICM_I2C_MODE
   if (!this->icm.begin_I2C()) {
     return false;
   }
-#else
-  if (!this->icm.begin_SPI(ICM_CS_PIN)) {
-    return false;
-  }
-#endif
 
   icm.setAccelRange(icm20948_accel_range_t::ICM20948_ACCEL_RANGE_16_G);
   icm.setGyroRange(icm20948_gyro_range_t::ICM20948_GYRO_RANGE_1000_DPS);
@@ -87,7 +81,7 @@ void ICM20948Sensor::readDataPacket(uint8_t*& packet) {
   this->icm_mag->getEvent(&mag);
   this->icm_temp->getEvent(&temp);
   /**
-   * @brief The following is copying the values of the accelerometer(x,y,z),
+   * The following is copying the values of the accelerometer(x,y,z),
    * gyroscope(x,y,z), magnetometer(x,y,z), and temperature
    */
   memcpy(packet, &accel.acceleration.x, sizeof(accel.acceleration.x));
