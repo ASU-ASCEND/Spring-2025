@@ -20,6 +20,7 @@ class FlashStorage : public Storage {
       15'000'000;  // 16 MByte (less for safety)
   SFE_SPI_FLASH flash;
   uint32_t position;
+  void indexFlash();
   void loadPosition();
 
  public:

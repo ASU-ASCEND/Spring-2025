@@ -9,6 +9,24 @@
 FlashStorage::FlashStorage() : position(0), Storage("Flash Storage") {}
 
 /**
+ * @brief Locates the next available file block & tracks existing files
+ * 
+ * Reads 4KB blocks from flash starting at 0 and increments through memory
+ * until finding a free (0xFF) location or reaching the max size. Furthermore, 
+ * checking for file headers to record their locations as variables for quick
+ * reference. 
+ */
+void FlashStorage::indexFlash() {
+  uint8_t currentByte = this->flash.readByte(this->DATA_START_POSITION);
+
+  // Shuffle through data by 4KB until free space is reached
+  while ((currentByte != 0xFF) && (this->position < this->MAX_SIZE)) {
+    currentByte = this->flash.readByte(this->position);
+    position += 4'000; // 4 KB (shift to next block)
+  }
+}
+
+/**
  * @brief Locates the next available write position in flash.
  *
  * Reads bytes from flash starting at the current position and increments
