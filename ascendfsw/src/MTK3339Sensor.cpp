@@ -6,9 +6,7 @@
  */
 
 MTK3339Sensor::MTK3339Sensor()
-    : Sensor("MTK3339",
-             "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,", 7),
-      GPS(&Serial2) {}
+    : MTK3339Sensor(0) {}
 
 /**
  * @brief Constructor for the MTK3339Sensor
@@ -17,10 +15,8 @@ MTK3339Sensor::MTK3339Sensor()
  */
 MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)
     : Sensor("MTK3339",
-             "MTK_Date,MTK_Lat,MTKLong,MTKSpeed,MTKAngle,MTKAlt,MTKSats,", 7,
-             minimum_period),
-      GPS(&Serial2) {  // Initialize GPS with SPI using the defined macro
-}
+             "MTKTime,MTKLat,MTKLong,MTKGndSpeed,MTKHeading,MTKAlt,MTKSats,",
+             minimum_period) {}
 /**
  * @brief Verifies if the sensor is connected and working
  *
@@ -28,18 +24,28 @@ MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)
  * @return false if it is not connected and working
  */
 bool MTK3339Sensor::verify() {
-  // Serial2.end();
-  Serial2.setRX(SERIAL1_RX_PIN);
-  Serial2.setTX(SERIAL1_TX_PIN);
-  Serial.println("Done");
-
-  if (!GPS.begin(9600)) {  // returns 0 on success
-    GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA);
-    GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);  // 1 Hz update rate
-    delay(1000);
-    return true;
+  #if GPS_I2C
+  Wire.begin(); 
+  if(GPS.begin() == false){
+    return false; 
   }
-  return false;
+
+  GPS.setI2COutput(COM_TYPE_UBX); 
+  GPS.setNavigationFrequency(1); 
+
+  return true; 
+  #else
+  Serial2.setRX(SERIAL2_RX_PIN);
+  Serial2.setTX(SERIAL2_TX_PIN);
+
+  Serial2.begin(38400); 
+  if(GPS.begin(Serial2) == false){
+    return false; 
+  }   
+  GPS.setUART1Output(COM_TYPE_UBX); 
+
+  return true;
+  #endif 
 }
 
 /**
@@ -50,44 +56,15 @@ bool MTK3339Sensor::verify() {
  * Angle, Altitude, Satellites,
  */
 String MTK3339Sensor::readData() {
-  if (GPS.newNMEAreceived()) {
-    // a tricky thing here is if we print the NMEA sentence, or data
-    // we end up not listening and catching other sentences!
-    // so be very wary if using OUTPUT_ALLDATA and trying to print out data
-    Serial.println(
-        GPS.lastNMEA());  // this also sets the newNMEAreceived() flag to false
-    if (!GPS.parse(GPS.lastNMEA())) {  // this also sets the newNMEAreceived()
-                                       // flag to false
-      return "-,-,-,-,-,-,-,";         // we can fail to parse a sentence in
-                                       // which case we should just wait for
-                                       // another
-    }
+  
+  if (GPS.getPVT()) {
+    return String(GPS.getYear()) + "/" + String(GPS.getMonth()) + "/" +
+           String(GPS.getDay()) + " " + String(GPS.getHour()) + ":" + String(GPS.getMinute()) + ":" + String(GPS.getSecond()) + "," + String(GPS.getLatitude() / 10000000.0) + "," +
+           String(GPS.getLongitude() / 10000000.0) + "," + String(GPS.getGroundSpeed()) + "," +
+           String(GPS.getHeading()) + "," + String(GPS.getAltitude()) + "," +
+           String(GPS.getSIV()) + ",";
   }
-
-  // Serial.println(GPS.milliseconds);
-  //  Serial.print("Date: ");
-  // Serial.print(GPS.day, DEC); Serial.print('/');
-  // Serial.print(GPS.month, DEC); Serial.print("/20");
-  // Serial.println(GPS.year, DEC);
-  // Serial.print("Fix: "); //Serial.print((int)GPS.fix);
-  // Serial.print(" quality: "); Serial.println((int)GPS.fixquality);
-
-  if (GPS.fix) {
-    // Serial.print("Location: ");
-    // Serial.print(GPS.latitude, 4); Serial.print(GPS.lat);
-    // Serial.print(", ");
-    // Serial.print(GPS.longitude, 4); Serial.println(GPS.lon);
-    // Serial.print("Speed (knots): "); Serial.println(GPS.speed);
-    // Serial.print("Angle: "); Serial.println(GPS.angle);
-    // Serial.print("Altitude: "); Serial.println(GPS.altitude);
-    // Serial.print("Satellites: "); Serial.println((int)GPS.satellites);
-    return String(GPS.day) + "/ " + String(GPS.month) + "/ " +
-           String(GPS.year) + "," + String(GPS.latitude) + "," +
-           String(GPS.longitude) + "," + String(GPS.speed) + "," +
-           String(GPS.angle) + "," + String(GPS.altitude) + "," +
-           String(GPS.satellites) + ",";
-  }
-  return "-,-,-,-,-,-,-,";
+  return this->readEmpty();
 }
 
 /**
@@ -108,48 +85,71 @@ String MTK3339Sensor::readData() {
  * as each value is copied.
  */
 void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
-  if (GPS.fix) {
+  if(GPS.getPVT()){
     // Pack date values
-    uint8_t day = GPS.day;
-    uint8_t month = GPS.month;
-    uint16_t year = GPS.year;
-    memcpy(packet, &day, sizeof(day));
-    packet += sizeof(day);
-    memcpy(packet, &month, sizeof(month));
-    packet += sizeof(month);
+    uint16_t year = GPS.getYear();
+    uint8_t month = GPS.getMonth();
+    uint8_t day = GPS.getDay();
     memcpy(packet, &year, sizeof(year));
     packet += sizeof(year);
-    // Pack latitude, longitude, speed, angle, and altitude as floats
-    float lat = GPS.latitude;
-    float lon = GPS.longitude;
-    float speed = GPS.speed;
-    float angle = GPS.angle;
-    float alt = GPS.altitude;
+    memcpy(packet, &month, sizeof(month));
+    packet += sizeof(month);
+    memcpy(packet, &day, sizeof(day));
+    packet += sizeof(day);
+
+    uint8_t hour = GPS.getHour(); 
+    uint8_t minute = GPS.getMinute(); 
+    uint8_t second = GPS.getSecond(); 
+    memcpy(packet, &hour, sizeof(hour));
+    packet += sizeof(hour);
+    memcpy(packet, &minute, sizeof(minute));
+    packet += sizeof(minute);
+    memcpy(packet, &second, sizeof(second));
+    packet += sizeof(second);
+
+    // Pack latitude, longitude, speed, heading, and altitude as floats
+    float lat = GPS.getLatitude() / 10000000.0;
+    float lon = GPS.getLongitude() / 10000000.0;
+    float speed = GPS.getGroundSpeed();
+    float heading = GPS.getHeading();
+    float alt = GPS.getAltitude();
     memcpy(packet, &lat, sizeof(lat));
     packet += sizeof(lat);
     memcpy(packet, &lon, sizeof(lon));
     packet += sizeof(lon);
     memcpy(packet, &speed, sizeof(speed));
     packet += sizeof(speed);
-    memcpy(packet, &angle, sizeof(angle));
-    packet += sizeof(angle);
+    memcpy(packet, &heading, sizeof(heading));
+    packet += sizeof(heading);
     memcpy(packet, &alt, sizeof(alt));
     packet += sizeof(alt);
     // Pack number of satellites as uint8_t
-    uint8_t sats = GPS.satellites;
+    uint8_t sats = GPS.getSIV();
     memcpy(packet, &sats, sizeof(sats));
     packet += sizeof(sats);
+
   } else {
     // If there's no fix, append default zero values
-    uint8_t day = 0;
-    uint8_t month = 0;
     uint16_t year = 0;
-    memcpy(packet, &day, sizeof(day));
-    packet += sizeof(day);
-    memcpy(packet, &month, sizeof(month));
-    packet += sizeof(month);
+    uint8_t month = 0;
+    uint8_t day = 0;
     memcpy(packet, &year, sizeof(year));
     packet += sizeof(year);
+    memcpy(packet, &month, sizeof(month));
+    packet += sizeof(month);
+    memcpy(packet, &day, sizeof(day));
+    packet += sizeof(day);
+
+    uint8_t hour = 0;  
+    uint8_t minute = 0; 
+    uint8_t second = 0; 
+    memcpy(packet, &hour, sizeof(hour));
+    packet += sizeof(hour);
+    memcpy(packet, &minute, sizeof(minute));
+    packet += sizeof(minute);
+    memcpy(packet, &second, sizeof(second));
+    packet += sizeof(second);
+
     float zero = 0.0;
     memcpy(packet, &zero, sizeof(zero));  // Latitude
     packet += sizeof(zero);
@@ -180,15 +180,22 @@ void MTK3339Sensor::readDataPacket(uint8_t*& packet) {
  */
 String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   // Decode date components
-  uint8_t day = *packet;
-  packet += sizeof(uint8_t);
-  uint8_t month = *packet;
-  packet += sizeof(uint8_t);
   uint16_t year;
   memcpy(&year, packet, sizeof(uint16_t));
   packet += sizeof(uint16_t);
+  uint8_t month = *packet;
+  packet += sizeof(uint8_t);
+  uint8_t day = *packet;
+  packet += sizeof(uint8_t);
 
-  // Decode values: latitude, longitude, speed, angle, altitude. And then decode
+  uint8_t hour = *packet; 
+  packet += sizeof(uint8_t); 
+  uint8_t minute = *packet; 
+  packet += sizeof(uint8_t); 
+  uint8_t second = *packet; 
+  packet += sizeof(uint8_t); 
+
+  // Decode values: latitude, longitude, speed, heading, altitude. And then decode
   // number of satellites.
   float lat;
   memcpy(&lat, packet, sizeof(float));
@@ -202,8 +209,8 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   memcpy(&speed, packet, sizeof(float));
   packet += sizeof(float);
 
-  float angle;
-  memcpy(&angle, packet, sizeof(float));
+  float heading;
+  memcpy(&heading, packet, sizeof(float));
   packet += sizeof(float);
 
   float alt;
@@ -214,9 +221,9 @@ String MTK3339Sensor::decodeToCSV(uint8_t*& packet) {
   packet += sizeof(uint8_t);
 
   // Construct the CSV string
-  String dateStr = String(day) + "/" + String(month) + "/" + String(year);
-  String csv = dateStr + "," + String(lat) + "," + String(lon) + "," +
-               String(speed) + "," + String(angle) + "," + String(alt) + "," +
+  String timeStamp = String(year) + "/" + String(month) + "/" + String(day) + " " + String(hour) + ":" + String(minute) + ":" + String(second);
+  String csv = timeStamp + "," + String(lat, 10) + "," + String(lon, 10) + "," +
+               String(speed) + "," + String(heading) + "," + String(alt) + "," +
                String(sats) + ",";
   return csv;
 }
