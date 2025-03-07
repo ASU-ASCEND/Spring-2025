@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['minute_5fin_5fmillis_0',['MINUTE_IN_MILLIS',['../Device_8h.html#ae3f14d5c786fb27f4cb9a5b934590f10',1,'Device.h']]]
+  ['lsm9ds1_5fmcs_5fpin_0',['LSM9DS1_MCS_PIN',['../PayloadConfig_8h.html#a14287a16ed8b281fe0f7434d7f4d0119',1,'PayloadConfig.h']]],
+  ['lsm9ds1_5fxgcs_5fpin_1',['LSM9DS1_XGCS_PIN',['../PayloadConfig_8h.html#ac497176d73ec84d742887962d6a6f47a',1,'PayloadConfig.h']]]
 ];
