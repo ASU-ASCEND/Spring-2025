@@ -76,7 +76,7 @@ void SDStorage::store(String data) {
  *
  * @param packet Pointer to packet bytes
  */
-void SDStorage::store(uint8_t* packet) {
+void SDStorage::storePacket(uint8_t* packet) {
   File output = SD.open(this->bin_file_name, FILE_WRITE);
   if (!output) {
     log_core("SD card write failed");
@@ -89,7 +89,8 @@ void SDStorage::store(uint8_t* packet) {
   }
 
   // get length from the packet, after sync bytes (4) and sensor presense (4)
-  uint16_t packet_len = *((uint16_t*)(packet + 8));
+  uint16_t packet_len;
+  memcpy(&packet_len, (packet + 8), sizeof(uint16_t));
 
   output.write(packet, packet_len);
 

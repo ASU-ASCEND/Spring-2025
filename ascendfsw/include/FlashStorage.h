@@ -27,7 +27,7 @@ class FlashStorage : public Storage {
   FlashStorage();
   bool verify() override;
   void store(String) override;
-  void store(uint8_t*);
+  void storePacket(uint8_t*) override;
   void dump();
   void erase();
 };

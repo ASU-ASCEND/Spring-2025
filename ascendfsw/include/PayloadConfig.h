@@ -18,30 +18,25 @@
 #define ERROR_PIN_0 14
 
 // sensors
-/** @brief BME680 CS Pin */
-#define BME680_SPI_CS_PIN 3
-/** @brief BME680 SPI Mode Toggle Pin */
-#define BME680_SPI_MODE 0
-
-/** @brief ICM20948 IMU CS Pin */
-#define ICM_CS_PIN 6
-/** @brief ICM20948 IMU I2C Toggle Pin */
-#define ICM_I2C_MODE 1
-
 /** @brief LSM9DS1 IMU Accelerometer/Gyroscope Pin */
-#define LSM9DS1_XGCS_PIN 27
+#define LSM9DS1_XGCS_PIN 3
 /** @brief LSM9DS1 IMU Magnetometer Pin */
 #define LSM9DS1_MCS_PIN 28
 
 /** @brief MTK3339 GPS CS Pin*/
 // #define MTK3339_CS_PIN 20
-#define SERIAL2_RX_PIN 8
-#define SERIAL2_TX_PIN 9
+#define SERIAL2_RX_PIN 9
+#define SERIAL2_TX_PIN 8
+#define GPS_I2C 1
 
 /** @brief UV sensor I2C Addresses */
 // [1, 1, 1, 0, 1, A1, A0]
 #define UV_I2C_ADDR_1 0b1110110
 #define UV_I2C_ADDR_2 0b1110100
+
+/** @brief I2C1 pins */
+#define I2C1_SCL_PIN 27
+#define I2C1_SDA_PIN 26
 
 // storages
 // for radio
@@ -72,11 +67,9 @@
 /** @brief Built-in LED Pin */
 #define ON_BOARD_LED_PIN 25
 /** @brief Core 0 Heartbeat Pin */
-#define HEARTBEAT_PIN_0 21
+#define HEARTBEAT_PIN_0 20
 /** @brief Core 1 Heartbeat Pin */
-#define HEARTBEAT_PIN_1 20
-/** @brief Flash Data Interface Enable Pin  */
-#define DATA_INTERFACE_PIN 26
+#define HEARTBEAT_PIN_1 21
 
 // multicore transfer queue
 #define QT_ENTRY_SIZE 500

@@ -30,8 +30,8 @@ class INA260Sensor : public Sensor {
  public:
   INA260Sensor();
   INA260Sensor(unsigned long minimum_period);
-  void readDataPacket(uint8_t*& packet);
-  String decodeToCSV(uint8_t*& packet);
+  void readDataPacket(uint8_t*& packet) override;
+  String decodeToCSV(uint8_t*& packet) override;
 
   bool verify() override;
   String readData() override;

@@ -101,9 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a08674ceb4404690065b1cf39963eb5a3" id="r_a08674ceb4404690065b1cf39963eb5a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">virtual</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a08674ceb4404690065b1cf39963eb5a3">store</a> (String <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">data</a>)=0</td></tr>
 <tr class="memdesc:a08674ceb4404690065b1cf39963eb5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send string data to storage device.  <br /></td></tr>
 <tr class="separator:a08674ceb4404690065b1cf39963eb5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac76076395916d9e7eda5811aabcc685a" id="r_ac76076395916d9e7eda5811aabcc685a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#ac76076395916d9e7eda5811aabcc685a">store</a> (uint8_t *<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>, int <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">length</a>)</td></tr>
-<tr class="memdesc:ac76076395916d9e7eda5811aabcc685a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send packet data to storage device.  <br /></td></tr>
-<tr class="separator:ac76076395916d9e7eda5811aabcc685a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee18f7841fdd0f70091764a59110db2" id="r_a6ee18f7841fdd0f70091764a59110db2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">virtual</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a6ee18f7841fdd0f70091764a59110db2">storePacket</a> (uint8_t *<a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>)</td></tr>
+<tr class="memdesc:a6ee18f7841fdd0f70091764a59110db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send packet data to storage device.  <br /></td></tr>
+<tr class="separator:a6ee18f7841fdd0f70091764a59110db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classDevice"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDevice')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classDevice.html">Device</a></td></tr>
 <tr class="memitem:a0a1bb0e6339958fb2aab9161e2449537 inherit pub_methods_classDevice" id="r_a0a1bb0e6339958fb2aab9161e2449537"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDevice.html#a0a1bb0e6339958fb2aab9161e2449537">Device</a> (String <a class="el" href="classDevice.html#aa7c06f47307932859953bf976827c26b">device_name</a>)</td></tr>
 <tr class="memdesc:a0a1bb0e6339958fb2aab9161e2449537 inherit pub_methods_classDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, sets a max_attempt of 1 (device recovery won't be attempted)  <br /></td></tr>
@@ -165,7 +165,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a08674ceb4404690065b1cf39963eb5a3" name="a08674ceb4404690065b1cf39963eb5a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08674ceb4404690065b1cf39963eb5a3">&#9670;&#160;</a></span>store() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a08674ceb4404690065b1cf39963eb5a3">&#9670;&#160;</a></span>store()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,17 +196,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classRadioStorage.html#ad9afb493f9783fecca7e82ec5543b98e">RadioStorage</a>, <a class="el" href="classSDStorage.html#a9450318396c536da92d44d9ebad33ec1">SDStorage</a>, and <a class="el" href="classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1">FlashStorage</a>.</p>
+<p>Implemented in <a class="el" href="classRadioStorage.html#a72c09891b0f77bef7a53f710415a503c">RadioStorage</a>, <a class="el" href="classSDStorage.html#a731b7e40012d3ab63bbf2ae0afe2d800">SDStorage</a>, and <a class="el" href="classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1">FlashStorage</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classStorage_a08674ceb4404690065b1cf39963eb5a3_icgraph.svg" width="546" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classStorage_a08674ceb4404690065b1cf39963eb5a3_icgraph.svg" width="504" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="ac76076395916d9e7eda5811aabcc685a" name="ac76076395916d9e7eda5811aabcc685a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac76076395916d9e7eda5811aabcc685a">&#9670;&#160;</a></span>store() <span class="overload">[2/2]</span></h2>
+<a id="a6ee18f7841fdd0f70091764a59110db2" name="a6ee18f7841fdd0f70091764a59110db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ee18f7841fdd0f70091764a59110db2">&#9670;&#160;</a></span>storePacket()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,26 +215,16 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> Storage::store </td>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">virtual</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> Storage::storePacket </td>
           <td>(</td>
           <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>packet</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -246,6 +236,13 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
+
+<p>Reimplemented in <a class="el" href="classFlashStorage.html#af9382cead1d4681dc2040bff95277cfa">FlashStorage</a>, <a class="el" href="classRadioStorage.html#aca6bfee27f7e459cad2d4c5f8c522af1">RadioStorage</a>, and <a class="el" href="classSDStorage.html#a2f5cfea215ba9e388fcc37b2376e47b0">SDStorage</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classStorage_a6ee18f7841fdd0f70091764a59110db2_icgraph.svg" width="342" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -279,7 +276,7 @@ false </dd></dl>
 
 <p>Implements <a class="el" href="classDevice.html#a184e51f1823af3e3b828e09ab571cbc5">Device</a>.</p>
 
-<p>Implemented in <a class="el" href="classRadioStorage.html#a6d15a136027e899fb2124afe82c0629e">RadioStorage</a>, <a class="el" href="classSDStorage.html#a2a08793ce2cb22bc0675f5cf4916155a">SDStorage</a>, and <a class="el" href="classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4">FlashStorage</a>.</p>
+<p>Implemented in <a class="el" href="classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4">FlashStorage</a>, <a class="el" href="classRadioStorage.html#a42c908f19134e0cb57027e545b0fe7f5">RadioStorage</a>, and <a class="el" href="classSDStorage.html#af3c32c732ded4f54f72ec81ab22531d2">SDStorage</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

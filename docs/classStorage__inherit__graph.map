@@ -1,7 +1,7 @@
 <map id="Storage" name="Storage">
-<area shape="rect" id="Node000001" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="226,379,315,504"/>
+<area shape="rect" id="Node000001" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="214,379,327,504"/>
 <area shape="rect" id="Node000003" href="$classFlashStorage.html" title=" " alt="" coords="5,552,184,797"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,514,186,558,182,555,215,511"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,517,186,558,182,555,213,514"/>
 <area shape="rect" id="Node000004" href="$classRadioStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="208,612,333,737"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="273,518,273,612,268,612,268,518"/>
 <area shape="rect" id="Node000005" href="$classSDStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="357,592,477,757"/>

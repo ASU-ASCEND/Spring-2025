@@ -22,7 +22,7 @@ for line in branch_lines:
   tokens = line.split()
   if tokens[2] == "[gone]": gone_branches.append(tokens[0])
 
-print("Branches deleted on remote: ", "".join(gone_branches))
+print("Branches deleted on remote: ", " ".join(gone_branches))
 
 print("Pruning on local...")
 for branch in gone_branches:
