@@ -16,12 +16,14 @@ class FlashStorage : public Storage {
 
   // position after position bytes + 2 bytes for buffer
   inline static const uint32_t DATA_START_POSITION = 0;
+  inline static const uint32_t SECTOR_SIZE = 4'096;
   inline static const uint32_t MAX_SIZE =
       15'000'000;  // 16 MByte (less for safety)
   SFE_SPI_FLASH flash;
   uint32_t position;
   void indexFlash();
   void loadPosition();
+  bool isSectorEmpty();
 
  public:
   FlashStorage();

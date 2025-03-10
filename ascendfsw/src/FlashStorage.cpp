@@ -17,12 +17,10 @@ FlashStorage::FlashStorage() : position(0), Storage("Flash Storage") {}
  * reference. 
  */
 void FlashStorage::indexFlash() {
-  uint8_t currentByte = this->flash.readByte(this->DATA_START_POSITION);
-
   // Shuffle through data by 4KB until free space is reached
-  while ((currentByte != 0xFF) && (this->position < this->MAX_SIZE)) {
-    currentByte = this->flash.readByte(this->position);
-    position += 4'000; // 4 KB (shift to next block)
+  while (!isSectorEmpty() && (this->position < this->MAX_SIZE)) {
+    log_core("Sector " + String(this->position / this->SECTOR_SIZE) + " full");
+    this->position += this->SECTOR_SIZE; // 4 KB (shift to next block)
   }
 }
 
@@ -39,6 +37,22 @@ void FlashStorage::loadPosition() {
   while ((currentByte != 0xFF) && (this->position < this->MAX_SIZE)) {
     currentByte = this->flash.readByte(++this->position);
   }
+}
+
+/**
+ * @brief Determines if the current sector is empty.
+ * 
+ * Checks the next 16 bytes for 0xFF to determine if the sector is empty.
+ * 
+ * @return true  - Sector is empty 
+ * @return false - Sector is not empty
+ */
+bool FlashStorage::isSectorEmpty() {
+  // Check the next 16 bytes for 0xFF
+  for (int i = 0; i < 16; ++i) {
+    if (this->flash.readByte(this->position + i) != 0xFF) return false;
+  }
+  return true;
 }
 
 /**
@@ -71,11 +85,22 @@ bool FlashStorage::verify() {
   if (this->flash.begin(FLASH_CS_PIN) == false) return false;
 #endif
 
+  // Log initial position and find next available sector
   log_core("Initial position: " + String(this->position));
-  this->position = 0;
-  this->loadPosition();  // Get position from flash
+  this->position = this->DATA_START_POSITION;
+  this->indexFlash(); // Get position from flash
 
-  log_core("Updated position: " + String(this->position));
+  // Check if flash is full
+  if (this->position >= this->MAX_SIZE) {
+    log_core("Flash memory is full.");
+    return false;
+  }
+
+  // Log flash information
+  uint32_t sector = this->position / this->SECTOR_SIZE;
+  log_core("Updated position: " + String(this->position) + " in sector " + 
+           String(sector));
+  log_core("Remaining space: " + String(this->MAX_SIZE - this->position) + " bytes");
 
   return true;
 }
