@@ -48,7 +48,7 @@
 /** @brief SD Card SPI Toggle */
 #define SD_SPI1 1
 /** @brief SD Card SPI CS Pin */
-#define SD_CS_PIN 7
+#define SD_CS_PIN 13
 
 /** @brief Flash memory SPI Toggle */
 #define FLASH_SPI1 0
