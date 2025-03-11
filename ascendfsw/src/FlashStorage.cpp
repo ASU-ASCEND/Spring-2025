@@ -22,12 +22,11 @@ void FlashStorage::indexFlash() {
   while (!empty && (this->address < this->MAX_SIZE)) {
     // Check for file at sector start
     if (!empty && this->readFileHeader()) {
-      this->file_data.push_back({++this->num_files, this->address});
-      log_core("File " + String(this->num_files) + " at address " + String(this->address));
+      this->file_data.push_back({(this->file_data.size() + 1), this->address});
+      log_core("File " + String(this->file_data.size()) + " at address " + String(this->address));
     }
 
-    // Log the occupied sector & iterate the address
-    log_core("Sector " + String(this->address / this->SECTOR_SIZE) + " occupied");
+    // Iterate the address
     this->address += this->SECTOR_SIZE; // 4 KB (shift to next block)
 
     // Check if the next sector is empty
@@ -36,6 +35,7 @@ void FlashStorage::indexFlash() {
 
   // Write a file header at the beginning of the sector
   this->writeFileHeader();
+  this->active_file = true; // Prevent new file from being created unless power is disconnected
 }
 
 /**
@@ -88,8 +88,9 @@ void FlashStorage::writeFileHeader() {
   }
 
   // Store necessary file data for quick reference
-  log_core("New file " + String(++this->num_files) + " at address " + String(this->address) + " created");
-  this->file_data.push_back({this->num_files, this->address - 4});
+  this->file_data.push_back({(this->file_data.size() + 1), this->address - 4});
+  log_core("New file " + String(this->file_data.size()) + " at address " + 
+           String(this->address - 4) + " created");
 }
 
 /**
@@ -122,18 +123,6 @@ bool FlashStorage::readFileHeader() {
  * @return false - Flash initialization failed
  */
 bool FlashStorage::verify() {
-  // #if SD_SPI1
-  // if (!SD.begin(SD_CS_PIN, this->sd_spi_1)) {
-  //   ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
-  //   return false;
-  // }
-  // #else
-  //   if (!SD.begin(SD_CS_PIN)) {
-  //     ErrorDisplay::instance().addCode(Error::SD_CARD_FAIL);
-  //     return false;
-  //   }
-  // #endif
-
 #if FLASH_SPI1
   if (this->flash.begin(FLASH_CS_PIN, 2000000UL, this->flash_spi_1) == false)
     return false;
@@ -141,22 +130,30 @@ bool FlashStorage::verify() {
   if (this->flash.begin(FLASH_CS_PIN) == false) return false;
 #endif
 
-  // Log initial address and find next available sector
-  log_core("Initial address: " + String(this->address));
-  this->address = this->START_ADDRESS;
-  this->num_files = 0;
-  this->indexFlash(); // Get address from flash and track files
-
   // Check if flash is full
   if (this->address >= this->MAX_SIZE) {
     log_core("Flash memory is full.");
     return false;
   }
 
-  // Log flash information
-  uint32_t sector = this->address / this->SECTOR_SIZE;
-  log_core("Updated address: " + String(this->address) + " in sector " + 
-           String(sector));
+  // Check, update, and log current flash storage status
+  if (!active) { // Activate if no file is currently being written to
+    this->address = this->START_ADDRESS;
+    log_core("Initial flash address: " + String(this->address));
+
+    this->indexFlash(); // Get address from flash and track files
+
+    log_core("Updated address: " + String(this->address) + " in sector " + 
+    String(this->address / this->SECTOR_SIZE));
+  }
+  else { // Provide status information if file is currently active
+    log_core("Flash storage is active, writing to File " + 
+             String(this->file_data.back().file_number) + " at address " + 
+             String(this->address) + " in sector " + 
+             String(this->address / this->SECTOR_SIZE));
+  }
+
+  // Log flash size
   log_core("Remaining space: " + String(this->MAX_SIZE - this->address) + " bytes");
 
   return true;

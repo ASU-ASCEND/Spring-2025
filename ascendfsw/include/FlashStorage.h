@@ -27,8 +27,8 @@ class FlashStorage : public Storage {
 
   std::vector<FileHeader> file_data;
   SFE_SPI_FLASH flash;
-  uint32_t num_files = 0;
   uint32_t address = 0;
+  bool active_file = false;
 
   void indexFlash();
   void loadAddress();
