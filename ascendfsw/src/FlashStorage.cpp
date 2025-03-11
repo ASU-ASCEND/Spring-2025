@@ -137,7 +137,7 @@ bool FlashStorage::verify() {
   }
 
   // Check, update, and log current flash storage status
-  if (!active) { // Activate if no file is currently being written to
+  if (!active_file) { // Activate if no file is currently being written to
     this->address = this->START_ADDRESS;
     log_core("Initial flash address: " + String(this->address));
 
