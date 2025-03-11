@@ -25,6 +25,7 @@
 #include "PCF8523Sensor.h"
 #include "SGP30Sensor.h"
 #include "TempSensor.h"
+#include "BMP390Sensor.h"
 // #include "DS3231Sensor.h"
 
 // helper function definitions
@@ -52,6 +53,7 @@ AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
 MTK3339Sensor   gps_sensor        (5000);
 ICM20948Sensor  icm_sensor        (20);
 PCF8523Sensor   rtc_sensor        (1000);
+BMP390Sensor    bmp_sensor        (1000); 
 // DS3231Sensor    rtc_backup_sensor (1000);
 // clang-format on
 
@@ -59,7 +61,7 @@ PCF8523Sensor   rtc_sensor        (1000);
 Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
                      &lsm9ds1_sensor, &temp_sensor,   &sgp30_sensor,
                      &bme280_sensor,  &ens160_sensor, &uv_sensor_1,
-                     &uv_sensor_2,    &icm_sensor,    &gps_sensor};
+                     &uv_sensor_2,    &icm_sensor,    &gps_sensor, &bmp_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 // kept for compile, remove soon
