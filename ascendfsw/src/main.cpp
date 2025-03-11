@@ -25,7 +25,7 @@
 #include "PCF8523Sensor.h"
 #include "SGP30Sensor.h"
 #include "TempSensor.h"
-#include "BMP384Sensor.h"
+#include "BMP390Sensor.h"
 // #include "DS3231Sensor.h"
 
 // helper function definitions
@@ -53,7 +53,7 @@ AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
 MTK3339Sensor   gps_sensor        (5000);
 ICM20948Sensor  icm_sensor        (20);
 PCF8523Sensor   rtc_sensor        (1000);
-BMP384Sensor    bmp_sensor        (1000); 
+BMP390Sensor    bmp_sensor        (1000); 
 // DS3231Sensor    rtc_backup_sensor (1000);
 // clang-format on
 

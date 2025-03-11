@@ -2,19 +2,18 @@
 #define BMP384_SENSOR_H
 
 #include "Sensor.h"
-#include "Wire.h"
-#include "SparkFunBMP384.h"
+#include "Adafruit_BMP3XX.h"
 
 /**
  * @brief Implementation of a Sensor for BMP384 Pressure and Temperature sensor
  *
  */
-class BMP384Sensor : public Sensor {
+class BMP390Sensor : public Sensor {
   private:
-   BMP384 bmp; 
+   Adafruit_BMP3XX bmp; 
   public:
-   BMP384Sensor();
-   BMP384Sensor(unsigned long minium_period);
+   BMP390Sensor();
+   BMP390Sensor(unsigned long minium_period);
 
    bool verify() override;
    String readData() override;
