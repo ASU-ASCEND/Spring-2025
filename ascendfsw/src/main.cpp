@@ -17,6 +17,7 @@
 #include "AS7331Sensor.h"
 #include "BME280Sensor.h"
 #include "BME680Sensor.h"
+#include "BMP390Sensor.h"
 #include "ENS160Sensor.h"
 #include "ICM20948Sensor.h"
 #include "INA260Sensor.h"
@@ -25,7 +26,6 @@
 #include "PCF8523Sensor.h"
 #include "SGP30Sensor.h"
 #include "TempSensor.h"
-#include "BMP390Sensor.h"
 // #include "DS3231Sensor.h"
 
 // helper function definitions
@@ -61,7 +61,8 @@ BMP390Sensor    bmp_sensor        (1000);
 Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
                      &lsm9ds1_sensor, &temp_sensor,   &sgp30_sensor,
                      &bme280_sensor,  &ens160_sensor, &uv_sensor_1,
-                     &uv_sensor_2,    &icm_sensor,    &gps_sensor, &bmp_sensor};
+                     &uv_sensor_2,    &icm_sensor,    &gps_sensor,
+                     &bmp_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 // kept for compile, remove soon
