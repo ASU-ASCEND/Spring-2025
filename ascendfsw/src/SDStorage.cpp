@@ -32,7 +32,7 @@ bool SDStorage::verify() {
   while (SD.exists("DATA" + String(num) + ".CSV")) num++;
   if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
   this->file_name = "DATA" + String(num) + ".CSV";
-  
+
   // for bin (eventually just have 1 of these)
   num = 0;
   while (SD.exists("RAWDATA" + String(num) + ".BIN")) num++;
