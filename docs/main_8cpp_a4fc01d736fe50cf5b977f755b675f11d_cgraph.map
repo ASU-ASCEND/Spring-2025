@@ -16,16 +16,22 @@
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="54,251,81,269,113,286,137,295,136,300,111,291,78,274,51,256"/>
 <area shape="rect" id="Node000011" href="$classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" title="Verifies the flash connection and prepares for data storage." alt="" coords="142,351,294,376"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="45,252,71,294,90,317,113,336,130,345,128,349,111,340,87,321,67,297,40,255"/>
-<area shape="rect" id="Node000013" href="$main_8cpp.html#aa425d367210d5186b9622823077556fb" title="Uses Device abstraction to verify sensors Incompatible with initial header generation." alt="" coords="136,400,300,425"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="41,253,49,281,64,317,85,354,114,385,125,393,122,397,110,389,80,357,59,319,44,282,36,254"/>
-<area shape="rect" id="Node000014" href="$main_8cpp.html#aef42a5a8a5d889c599fa964be60eca24" title="Verifies each sensor by calling each verify() function." alt="" coords="163,449,273,475"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="40,253,45,289,57,339,79,391,95,414,114,435,131,446,150,453,149,458,128,451,110,439,90,418,74,393,52,340,40,290,34,254"/>
-<area shape="rect" id="Node000007" href="$classDevice.html#a55cbddb95f3d79876d10e8d5bc85ba5d" title="Set max_attempts." alt="" coords="378,179,561,204"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="305,204,364,199,364,204,305,210"/>
-<area shape="rect" id="Node000008" href="$classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5" title="Set wait_factor." alt="" coords="388,228,551,253"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="305,221,374,228,374,234,305,227"/>
-<area shape="rect" id="Node000012" href="$classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255" title="Locates the next available write position in flash." alt="" coords="372,351,567,376"/>
+<area shape="rect" id="Node000016" href="$main_8cpp.html#aa425d367210d5186b9622823077556fb" title="Uses Device abstraction to verify sensors Incompatible with initial header generation." alt="" coords="136,400,300,425"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="41,253,49,281,64,317,85,354,114,385,125,393,122,397,110,389,80,357,59,319,44,282,36,254"/>
+<area shape="rect" id="Node000017" href="$main_8cpp.html#aef42a5a8a5d889c599fa964be60eca24" title="Verifies each sensor by calling each verify() function." alt="" coords="163,449,273,475"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="40,253,45,289,57,339,79,391,95,414,114,435,131,446,150,453,149,458,128,451,110,439,90,418,74,393,52,340,40,290,34,254"/>
+<area shape="rect" id="Node000007" href="$classDevice.html#a55cbddb95f3d79876d10e8d5bc85ba5d" title="Set max_attempts." alt="" coords="374,179,557,204"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="305,204,360,199,361,204,305,210"/>
+<area shape="rect" id="Node000008" href="$classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5" title="Set wait_factor." alt="" coords="384,228,547,253"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="305,222,370,228,370,234,305,227"/>
+<area shape="rect" id="Node000012" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="372,351,559,376"/>
 <area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="294,361,358,361,358,366,294,366"/>
-<area shape="rect" id="Node000015" href="$classSensor.html#a45975aa760bbab8224775ae5d78da333" title="Verifies if the sensor is connected and working." alt="" coords="414,449,525,475"/>
-<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="274,459,400,459,400,465,274,465"/>
+<area shape="rect" id="Node000013" href="$classFlashStorage.html#a97b10db97f42549e197feeff3f3f9abb" title="Determines if the current sector is empty." alt="" coords="611,301,821,327"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="530,348,637,327,638,332,531,353"/>
+<area shape="rect" id="Node000014" href="$classFlashStorage.html#aa64883a0b4aa2c9124d0be9b4722d729" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="609,351,823,376"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="559,361,595,361,595,366,559,366"/>
+<area shape="rect" id="Node000015" href="$classFlashStorage.html#a3f4de49bad97284528ebd5279abf3985" title="Writes the file header to the start of a new sector." alt="" coords="607,400,825,425"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="531,373,638,395,637,400,530,379"/>
+<area shape="rect" id="Node000018" href="$classSensor.html#a45975aa760bbab8224775ae5d78da333" title="Verifies if the sensor is connected and working." alt="" coords="410,449,521,475"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="274,459,396,459,396,465,274,465"/>
 </map>

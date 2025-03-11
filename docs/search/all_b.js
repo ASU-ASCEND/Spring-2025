@@ -2,7 +2,7 @@ var searchData=
 [
   ['last_5fattempt_0',['last_attempt',['../classDevice.html#a1fb49e0b88e993c2f99421a6807c5035',1,'Device']]],
   ['last_5fexecution_1',['last_execution',['../classSensor.html#abd94c964e6cf265293cfb4cd5d01708d',1,'Sensor']]],
-  ['loadposition_2',['loadPosition',['../classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255',1,'FlashStorage']]],
+  ['loadaddress_2',['loadAddress',['../classFlashStorage.html#a2c3d4a238320d643d8387e35260496ab',1,'FlashStorage']]],
   ['logger_2eh_3',['Logger.h',['../Logger_8h.html',1,'']]],
   ['loop_4',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]],
   ['loop1_5',['loop1',['../main_8cpp.html#a39ceba300a80e348e278539f57e0ca79',1,'main.cpp']]],

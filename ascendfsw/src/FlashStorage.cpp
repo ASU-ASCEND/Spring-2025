@@ -10,11 +10,11 @@ FlashStorage::FlashStorage() : address(0), Storage("Flash Storage") {}
 
 /**
  * @brief Locates the next available file block & tracks existing files
- * 
+ *
  * Reads 4KB blocks from flash starting at 0 and increments through memory
- * until finding a free (0xFF) location or reaching the max size. Furthermore, 
+ * until finding a free (0xFF) location or reaching the max size. Furthermore,
  * checking for file headers to record their locations as variables for quick
- * reference. 
+ * reference.
  */
 void FlashStorage::indexFlash() {
   bool empty = this->isSectorEmpty();
@@ -23,11 +23,12 @@ void FlashStorage::indexFlash() {
     // Check for file at sector start
     if (!empty && this->readFileHeader()) {
       this->file_data.push_back({(this->file_data.size() + 1), this->address});
-      log_core("File " + String(this->file_data.size()) + " at address " + String(this->address));
+      log_core("File " + String(this->file_data.size()) + " at address " +
+               String(this->address));
     }
 
     // Iterate the address
-    this->address += this->SECTOR_SIZE; // 4 KB (shift to next block)
+    this->address += this->SECTOR_SIZE;  // 4 KB (shift to next block)
 
     // Check if the next sector is empty
     empty = this->isSectorEmpty();
@@ -35,7 +36,8 @@ void FlashStorage::indexFlash() {
 
   // Write a file header at the beginning of the sector
   this->writeFileHeader();
-  this->active_file = true; // Prevent new file from being created unless power is disconnected
+  this->active_file =
+      true;  // Prevent new file from being created unless power is disconnected
 }
 
 /**
@@ -55,10 +57,10 @@ void FlashStorage::loadAddress() {
 
 /**
  * @brief Determines if the current sector is empty.
- * 
+ *
  * Checks the next 16 bytes for 0xFF to determine if the sector is empty.
- * 
- * @return true  - Sector is empty 
+ *
+ * @return true  - Sector is empty
  * @return false - Sector is not empty
  */
 bool FlashStorage::isSectorEmpty() {
@@ -71,11 +73,11 @@ bool FlashStorage::isSectorEmpty() {
 
 /**
  * @brief Writes the file header to the start of a new sector.
- * 
+ *
  * Write a file header (0xDEADBEEF) to indicate the start of a new file at the
  * beginning of a sector. Then, store the file number, along with the start
  * and end address in a data structure.
- * 
+ *
  */
 void FlashStorage::writeFileHeader() {
   uint8_t num_bytes = sizeof(this->FILE_HEADER) * 8;
@@ -83,29 +85,31 @@ void FlashStorage::writeFileHeader() {
   // Write 0xDEADBEEF to the start of the sector
   while (num_bytes != 0) {
     num_bytes -= 8;
-    this->flash.writeByte(this->address++, (this->FILE_HEADER >> num_bytes) & 0xFF);
+    this->flash.writeByte(this->address++,
+                          (this->FILE_HEADER >> num_bytes) & 0xFF);
     this->flash.blockingBusyWait();
   }
 
   // Store necessary file data for quick reference
   this->file_data.push_back({(this->file_data.size() + 1), this->address - 4});
-  log_core("New file " + String(this->file_data.size()) + " at address " + 
+  log_core("New file " + String(this->file_data.size()) + " at address " +
            String(this->address - 4) + " created");
 }
 
 /**
  * @brief Determines if the first 4 bytes of a sector are a file header.
- * 
+ *
  * @return true  - File header is present
  * @return false - File header is not present
  */
 bool FlashStorage::readFileHeader() {
   uint8_t num_bytes = sizeof(this->FILE_HEADER) * 8;
-  
+
   // Read 0xDEADBEEF from the start of the sector
   for (int i = 0; i < sizeof(FILE_HEADER); ++i) {
     num_bytes -= 8;
-    if (this->flash.readByte(this->address + i) != ((this->FILE_HEADER >> num_bytes) & 0xFF)) {
+    if (this->flash.readByte(this->address + i) !=
+        ((this->FILE_HEADER >> num_bytes) & 0xFF)) {
       return false;
     }
   }
@@ -137,24 +141,24 @@ bool FlashStorage::verify() {
   }
 
   // Check, update, and log current flash storage status
-  if (!active_file) { // Activate if no file is currently being written to
+  if (!active_file) {  // Activate if no file is currently being written to
     this->address = this->START_ADDRESS;
     log_core("Initial flash address: " + String(this->address));
 
-    this->indexFlash(); // Get address from flash and track files
+    this->indexFlash();  // Get address from flash and track files
 
-    log_core("Updated address: " + String(this->address) + " in sector " + 
-    String(this->address / this->SECTOR_SIZE));
-  }
-  else { // Provide status information if file is currently active
-    log_core("Flash storage is active, writing to File " + 
-             String(this->file_data.back().file_number) + " at address " + 
-             String(this->address) + " in sector " + 
+    log_core("Updated address: " + String(this->address) + " in sector " +
+             String(this->address / this->SECTOR_SIZE));
+  } else {  // Provide status information if file is currently active
+    log_core("Flash storage is active, writing to File " +
+             String(this->file_data.back().file_number) + " at address " +
+             String(this->address) + " in sector " +
              String(this->address / this->SECTOR_SIZE));
   }
 
   // Log flash size
-  log_core("Remaining space: " + String(this->MAX_SIZE - this->address) + " bytes");
+  log_core("Remaining space: " + String(this->MAX_SIZE - this->address) +
+           " bytes");
 
   return true;
 }

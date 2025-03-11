@@ -140,23 +140,43 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a859b93e00991f74dd5abc09e3065c255" id="r_a859b93e00991f74dd5abc09e3065c255"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a859b93e00991f74dd5abc09e3065c255">loadPosition</a> ()</td></tr>
-<tr class="memdesc:a859b93e00991f74dd5abc09e3065c255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locates the next available write position in flash.  <br /></td></tr>
-<tr class="separator:a859b93e00991f74dd5abc09e3065c255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959ed7240cf70430f05686720e1ead5a" id="r_a959ed7240cf70430f05686720e1ead5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a">indexFlash</a> ()</td></tr>
+<tr class="memdesc:a959ed7240cf70430f05686720e1ead5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locates the next available file block &amp; tracks existing files.  <br /></td></tr>
+<tr class="separator:a959ed7240cf70430f05686720e1ead5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c3d4a238320d643d8387e35260496ab" id="r_a2c3d4a238320d643d8387e35260496ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a2c3d4a238320d643d8387e35260496ab">loadAddress</a> ()</td></tr>
+<tr class="memdesc:a2c3d4a238320d643d8387e35260496ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locates the next available write address in flash.  <br /></td></tr>
+<tr class="separator:a2c3d4a238320d643d8387e35260496ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b10db97f42549e197feeff3f3f9abb" id="r_a97b10db97f42549e197feeff3f3f9abb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a97b10db97f42549e197feeff3f3f9abb">isSectorEmpty</a> ()</td></tr>
+<tr class="memdesc:a97b10db97f42549e197feeff3f3f9abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the current sector is empty.  <br /></td></tr>
+<tr class="separator:a97b10db97f42549e197feeff3f3f9abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa64883a0b4aa2c9124d0be9b4722d729" id="r_aa64883a0b4aa2c9124d0be9b4722d729"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#aa64883a0b4aa2c9124d0be9b4722d729">readFileHeader</a> ()</td></tr>
+<tr class="memdesc:aa64883a0b4aa2c9124d0be9b4722d729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the first 4 bytes of a sector are a file header.  <br /></td></tr>
+<tr class="separator:aa64883a0b4aa2c9124d0be9b4722d729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4de49bad97284528ebd5279abf3985" id="r_a3f4de49bad97284528ebd5279abf3985"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a3f4de49bad97284528ebd5279abf3985">writeFileHeader</a> ()</td></tr>
+<tr class="memdesc:a3f4de49bad97284528ebd5279abf3985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the file header to the start of a new sector.  <br /></td></tr>
+<tr class="separator:a3f4de49bad97284528ebd5279abf3985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:aeba3016a30603e66520e2756ae897f82" id="r_aeba3016a30603e66520e2756ae897f82"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structFileHeader.html">FileHeader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#aeba3016a30603e66520e2756ae897f82">file_data</a></td></tr>
+<tr class="separator:aeba3016a30603e66520e2756ae897f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5188d338465ba1c2056d775a7e0bcb8b" id="r_a5188d338465ba1c2056d775a7e0bcb8b"><td class="memItemLeft" align="right" valign="top">SFE_SPI_FLASH&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a5188d338465ba1c2056d775a7e0bcb8b">flash</a></td></tr>
 <tr class="separator:a5188d338465ba1c2056d775a7e0bcb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31cfbafb772ae2ed11535354db878dc0" id="r_a31cfbafb772ae2ed11535354db878dc0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a31cfbafb772ae2ed11535354db878dc0">position</a></td></tr>
-<tr class="separator:a31cfbafb772ae2ed11535354db878dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e320c5766c1b073739f9320506a5d8c" id="r_a8e320c5766c1b073739f9320506a5d8c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a8e320c5766c1b073739f9320506a5d8c">address</a> = 0</td></tr>
+<tr class="separator:a8e320c5766c1b073739f9320506a5d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a833fef41087b95dda03ad99dbd75591b" id="r_a833fef41087b95dda03ad99dbd75591b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a833fef41087b95dda03ad99dbd75591b">active_file</a> = <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">false</a></td></tr>
+<tr class="separator:a833fef41087b95dda03ad99dbd75591b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:adbac64b3df6f7a1c63ae7dc41f83ae21" id="r_adbac64b3df6f7a1c63ae7dc41f83ae21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">static</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#adbac64b3df6f7a1c63ae7dc41f83ae21">DATA_START_POSITION</a> = 0</td></tr>
-<tr class="separator:adbac64b3df6f7a1c63ae7dc41f83ae21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2a6dcd06802fce141a5c54186b4912" id="r_abe2a6dcd06802fce141a5c54186b4912"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">static</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#abe2a6dcd06802fce141a5c54186b4912">FILE_HEADER</a> = 0xDEADBEEF</td></tr>
+<tr class="separator:abe2a6dcd06802fce141a5c54186b4912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c65f1e55370a07f427a18b7a2fe1536" id="r_a4c65f1e55370a07f427a18b7a2fe1536"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">static</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a4c65f1e55370a07f427a18b7a2fe1536">MAX_SIZE</a></td></tr>
 <tr class="separator:a4c65f1e55370a07f427a18b7a2fe1536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8240098dbc0dc372a3098d976de0f0" id="r_acc8240098dbc0dc372a3098d976de0f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">static</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#acc8240098dbc0dc372a3098d976de0f0">SECTOR_SIZE</a> = 4'096</td></tr>
+<tr class="separator:acc8240098dbc0dc372a3098d976de0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5216340e4a74290300e21e318ba019a8" id="r_a5216340e4a74290300e21e318ba019a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">static</a> <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a5216340e4a74290300e21e318ba019a8">START_ADDRESS</a> = 0</td></tr>
+<tr class="separator:a5216340e4a74290300e21e318ba019a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -181,7 +201,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a new <a class="el" href="classFlashStorage.html">FlashStorage</a> object. </p>
-<p>Initializes the internal write position to 0 and sets the storage name to "Flash Storage." </p>
+<p>Initializes the internal write address to 0 and sets the storage name to "Flash Storage." </p>
 
 </div>
 </div>
@@ -227,12 +247,12 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Erases all data stored in flash memory. </p>
-<p>Erases all data stored in flash memory by calling the flash erase function and resetting the internal write position to 0. </p>
+<p>Erases all data stored in flash memory by calling the flash erase function and resetting the internal write address to 0. </p>
 
 </div>
 </div>
-<a id="a859b93e00991f74dd5abc09e3065c255" name="a859b93e00991f74dd5abc09e3065c255"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a859b93e00991f74dd5abc09e3065c255">&#9670;&#160;</a></span>loadPosition()</h2>
+<a id="a959ed7240cf70430f05686720e1ead5a" name="a959ed7240cf70430f05686720e1ead5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959ed7240cf70430f05686720e1ead5a">&#9670;&#160;</a></span>indexFlash()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +261,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> FlashStorage::loadPosition </td>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> FlashStorage::indexFlash </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -254,12 +274,116 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Locates the next available write position in flash. </p>
-<p>Reads bytes from flash starting at the current position and increments through memory until finding a free (0xFF) location or reaching the max size. </p>
+<p>Locates the next available file block &amp; tracks existing files. </p>
+<p>Reads 4KB blocks from flash starting at 0 and increments through memory until finding a free (0xFF) location or reaching the max size. Furthermore, checking for file headers to record their locations as variables for quick reference. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_a959ed7240cf70430f05686720e1ead5a_cgraph.svg" width="464" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_a859b93e00991f74dd5abc09e3065c255_icgraph.svg" width="512" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_a959ed7240cf70430f05686720e1ead5a_icgraph.svg" width="504" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a97b10db97f42549e197feeff3f3f9abb" name="a97b10db97f42549e197feeff3f3f9abb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b10db97f42549e197feeff3f3f9abb">&#9670;&#160;</a></span>isSectorEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlashStorage::isSectorEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines if the current sector is empty. </p>
+<p>Checks the next 16 bytes for 0xFF to determine if the sector is empty.</p>
+<dl class="section return"><dt>Returns</dt><dd>true - Sector is empty </dd>
+<dd>
+false - Sector is not empty </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classFlashStorage_a97b10db97f42549e197feeff3f3f9abb_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a2c3d4a238320d643d8387e35260496ab" name="a2c3d4a238320d643d8387e35260496ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3d4a238320d643d8387e35260496ab">&#9670;&#160;</a></span>loadAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> FlashStorage::loadAddress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locates the next available write address in flash. </p>
+<p>Reads bytes from flash starting at the current address and increments through memory until finding a free (0xFF) location or reaching the max size. </p>
+
+</div>
+</div>
+<a id="aa64883a0b4aa2c9124d0be9b4722d729" name="aa64883a0b4aa2c9124d0be9b4722d729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa64883a0b4aa2c9124d0be9b4722d729">&#9670;&#160;</a></span>readFileHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlashStorage::readFileHeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines if the first 4 bytes of a sector are a file header. </p>
+<dl class="section return"><dt>Returns</dt><dd>true - File header is present </dd>
+<dd>
+false - File header is not present </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classFlashStorage_aa64883a0b4aa2c9124d0be9b4722d729_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -289,7 +413,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Stores a string in flash memory, appending a newline at the end. </p>
-<p>Iterates through each character of the string and writes it to flash. The internal write position is then advanced accordingly.</p>
+<p>Iterates through each character of the string and writes it to flash. The internal write address is then advanced accordingly.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>- The string to be stored in flash. </td></tr>
@@ -367,7 +491,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Verifies the flash connection and prepares for data storage. </p>
-<p>Attempts to initialize the flash memory. If successful, resets the internal write position to 0, locates the next free position, and returns true. Returns false otherwise.</p>
+<p>Attempts to initialize the flash memory. If successful, resets the internal write address to 0, locates the next free address, and returns true. Returns false otherwise.</p>
 <dl class="section return"><dt>Returns</dt><dd>true - Flash initialization is successful </dd>
 <dd>
 false - Flash initialization failed </dd></dl>
@@ -376,7 +500,7 @@ false - Flash initialization failed </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_addf2a0a14a0a92ccce2d55eac60282e4_cgraph.svg" width="406" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_addf2a0a14a0a92ccce2d55eac60282e4_cgraph.svg" width="664" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -386,9 +510,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="adbac64b3df6f7a1c63ae7dc41f83ae21" name="adbac64b3df6f7a1c63ae7dc41f83ae21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbac64b3df6f7a1c63ae7dc41f83ae21">&#9670;&#160;</a></span>DATA_START_POSITION</h2>
+<a id="a3f4de49bad97284528ebd5279abf3985" name="a3f4de49bad97284528ebd5279abf3985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4de49bad97284528ebd5279abf3985">&#9670;&#160;</a></span>writeFileHeader()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,7 +520,107 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t FlashStorage::DATA_START_POSITION = 0</td>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> FlashStorage::writeFileHeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the file header to the start of a new sector. </p>
+<p>Write a file header (0xDEADBEEF) to indicate the start of a new file at the beginning of a sector. Then, store the file number, along with the start and end address in a data structure. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classFlashStorage_a3f4de49bad97284528ebd5279abf3985_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a833fef41087b95dda03ad99dbd75591b" name="a833fef41087b95dda03ad99dbd75591b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a833fef41087b95dda03ad99dbd75591b">&#9670;&#160;</a></span>active_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FlashStorage::active_file = <a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">false</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e320c5766c1b073739f9320506a5d8c" name="a8e320c5766c1b073739f9320506a5d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e320c5766c1b073739f9320506a5d8c">&#9670;&#160;</a></span>address</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FlashStorage::address = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeba3016a30603e66520e2756ae897f82" name="aeba3016a30603e66520e2756ae897f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeba3016a30603e66520e2756ae897f82">&#9670;&#160;</a></span>file_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structFileHeader.html">FileHeader</a>&gt; FlashStorage::file_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe2a6dcd06802fce141a5c54186b4912" name="abe2a6dcd06802fce141a5c54186b4912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2a6dcd06802fce141a5c54186b4912">&#9670;&#160;</a></span>FILE_HEADER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t FlashStorage::FILE_HEADER = 0xDEADBEEF</td>
         </tr>
       </table>
   </td>
@@ -455,8 +678,8 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a31cfbafb772ae2ed11535354db878dc0" name="a31cfbafb772ae2ed11535354db878dc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31cfbafb772ae2ed11535354db878dc0">&#9670;&#160;</a></span>position</h2>
+<a id="acc8240098dbc0dc372a3098d976de0f0" name="acc8240098dbc0dc372a3098d976de0f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc8240098dbc0dc372a3098d976de0f0">&#9670;&#160;</a></span>SECTOR_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,12 +688,34 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t FlashStorage::position</td>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t FlashStorage::SECTOR_SIZE = 4'096</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5216340e4a74290300e21e318ba019a8" name="a5216340e4a74290300e21e318ba019a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5216340e4a74290300e21e318ba019a8">&#9670;&#160;</a></span>START_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">const</a> uint32_t FlashStorage::START_ADDRESS = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
