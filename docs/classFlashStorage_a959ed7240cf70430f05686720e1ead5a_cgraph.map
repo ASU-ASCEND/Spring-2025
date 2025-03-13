@@ -1,0 +1,9 @@
+<map id="FlashStorage::indexFlash" name="FlashStorage::indexFlash">
+<area shape="rect" id="Node000001" title="Locates the next available file block &amp; tracks existing files." alt="" coords="5,55,192,80"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#a97b10db97f42549e197feeff3f3f9abb" title="Determines if the current sector is empty." alt="" coords="245,5,454,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,52,270,31,271,36,164,57"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html#aa64883a0b4aa2c9124d0be9b4722d729" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="242,55,457,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,65,228,65,228,70,192,70"/>
+<area shape="rect" id="Node000004" href="$classFlashStorage.html#a3f4de49bad97284528ebd5279abf3985" title="Writes the file header to the start of a new sector." alt="" coords="240,104,459,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,77,271,99,270,104,163,83"/>
+</map>

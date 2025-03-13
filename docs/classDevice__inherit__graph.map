@@ -1,37 +1,39 @@
 <map id="Device" name="Device">
-<area shape="rect" id="Node000001" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="1502,5,1666,331"/>
-<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="987,379,1165,724"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1492,241,1167,486,1163,481,1489,237"/>
-<area shape="rect" id="Node000015" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="2123,489,2237,614"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1679,227,2125,511,2122,516,1676,231"/>
-<area shape="rect" id="Node000003" href="$classAS7331Sensor.html" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="5,812,147,997"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="974,555,805,566,703,579,593,599,480,627,368,665,260,713,209,742,160,774,140,792,122,813,118,810,136,788,157,770,206,738,257,709,366,660,479,622,592,594,702,574,805,561,973,550"/>
-<area shape="rect" id="Node000004" href="$classBME280Sensor.html" title="Implementation of a Sensor for the BME280." alt="" coords="171,822,312,987"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="974,562,835,581,752,597,665,618,576,646,488,681,404,723,326,774,302,797,282,823,278,820,298,793,322,770,401,718,486,676,575,641,664,613,751,592,834,576,973,557"/>
-<area shape="rect" id="Node000005" href="$classBME680Sensor.html" title="A class to interface with the Adafruit BME680 sensor for environmental data collection." alt="" coords="336,822,477,987"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="974,573,866,599,740,639,674,666,610,697,548,733,491,774,468,797,449,823,444,820,464,793,488,770,545,728,607,692,672,661,738,634,865,593,973,567"/>
-<area shape="rect" id="Node000006" href="$classDS3231Sensor.html" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="501,812,643,997"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="975,590,900,622,817,663,733,714,657,774,623,814,619,810,653,770,730,710,814,659,898,617,973,585"/>
-<area shape="rect" id="Node000007" href="$classENS160Sensor.html" title="Implementation of a Sensor for the ENS160." alt="" coords="667,822,808,987"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="978,628,899,696,822,774,785,823,781,820,818,770,895,692,975,624"/>
-<area shape="rect" id="Node000008" href="$classICM20948Sensor.html" title="Implementation of the Sensor class for the Adafruit ICM20948 (9&#45;axis IMU)" alt="" coords="833,782,981,1027"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="990,738,968,783,963,781,985,736"/>
-<area shape="rect" id="Node000009" href="$classINA260Sensor.html" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="1005,822,1147,987"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="1079,738,1079,822,1073,822,1073,738"/>
-<area shape="rect" id="Node000010" href="$classLSM9DS1Sensor.html" title="Implementation of the Sensor class for the LSM9DS1 (9&#45;axis IMU)" alt="" coords="1171,772,1315,1037"/>
-<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="1166,736,1183,771,1178,773,1161,738"/>
-<area shape="rect" id="Node000011" href="$classMTK3339Sensor.html" title="Implementation of the Adafruit MTK3339 GPS sensor." alt="" coords="1339,822,1483,987"/>
-<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="1178,627,1255,694,1329,770,1366,820,1362,824,1325,774,1251,698,1174,631"/>
-<area shape="rect" id="Node000012" href="$classPCF8523Sensor.html" title="Implementation of the PCF8523 sensor." alt="" coords="1507,812,1648,997"/>
-<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="1178,586,1253,617,1337,659,1420,710,1497,770,1531,810,1527,814,1493,774,1417,714,1334,664,1251,622,1176,591"/>
-<area shape="rect" id="Node000013" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="1672,822,1813,987"/>
-<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="1179,568,1287,594,1413,634,1479,661,1543,692,1605,729,1662,770,1685,793,1705,820,1701,823,1681,797,1658,774,1602,733,1540,697,1476,666,1411,639,1285,599,1178,573"/>
-<area shape="rect" id="Node000014" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="1837,822,1979,987"/>
-<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="1179,557,1317,576,1400,592,1487,613,1576,641,1664,676,1749,719,1827,770,1852,793,1872,820,1867,823,1848,797,1824,774,1746,723,1662,681,1574,646,1485,618,1398,597,1316,581,1178,562"/>
-<area shape="rect" id="Node000016" href="$classFlashStorage.html" title=" " alt="" coords="2003,782,2181,1027"/>
-<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="2164,628,2125,783,2120,781,2159,627"/>
-<area shape="rect" id="Node000017" href="$classRadioStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="2205,842,2331,967"/>
-<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="2201,627,2255,841,2250,843,2196,628"/>
-<area shape="rect" id="Node000018" href="$classSDStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="2355,822,2475,987"/>
-<area shape="poly" id="edge17_Node000015_Node000018" title=" " alt="" coords="2240,624,2292,694,2345,771,2374,820,2370,823,2340,773,2288,697,2236,627"/>
+<area shape="rect" id="Node000001" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="1574,5,1738,331"/>
+<area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="1069,379,1246,724"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1564,243,1248,484,1244,480,1561,238"/>
+<area shape="rect" id="Node000016" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="2261,489,2374,614"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1752,221,2262,515,2259,520,1749,226"/>
+<area shape="rect" id="Node000003" href="$classAS7331Sensor.html" title="Implementation of a Sensor for UVA/B/C sensor." alt="" coords="5,882,147,1067"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1055,566,839,593,573,637,443,665,325,697,228,734,190,753,160,774,138,797,121,824,96,883,91,881,116,821,134,794,157,770,187,749,226,729,323,692,442,660,572,631,838,588,1055,560"/>
+<area shape="rect" id="Node000004" href="$classBME280Sensor.html" title="Implementation of a Sensor for the BME280." alt="" coords="171,892,312,1057"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1056,571,874,602,657,648,552,676,458,707,380,739,350,756,326,774,303,799,284,829,259,893,254,891,279,827,298,796,322,770,347,752,378,735,456,702,551,671,656,643,873,597,1055,565"/>
+<area shape="rect" id="Node000005" href="$classBME680Sensor.html" title="A class to interface with the Adafruit BME680 sensor for environmental data collection." alt="" coords="336,892,477,1057"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="1055,563,928,581,855,597,779,619,701,646,626,681,555,723,491,774,469,800,450,830,425,893,421,891,446,827,464,797,487,770,552,719,623,676,699,641,777,614,854,592,928,576,1054,557"/>
+<area shape="rect" id="Node000006" href="$classBMP390Sensor.html" title="Implementation of a Sensor for BMP384 Pressure and Temperature sensor." alt="" coords="501,892,643,1057"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="1056,576,962,602,856,643,802,669,750,699,701,734,657,774,635,800,617,830,593,893,588,891,613,828,631,797,653,770,697,730,747,695,799,664,853,638,960,597,1055,571"/>
+<area shape="rect" id="Node000007" href="$classDS3231Sensor.html" title="Implementation of a Sensor for the DS3231 Real Time Clock." alt="" coords="667,882,808,1067"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1057,600,998,632,936,672,875,719,822,774,788,826,764,883,759,881,784,824,818,770,872,715,933,668,996,628,1055,595"/>
+<area shape="rect" id="Node000008" href="$classENS160Sensor.html" title="Implementation of a Sensor for the ENS160." alt="" coords="832,892,973,1057"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1062,666,1023,718,988,773,957,833,933,893,928,891,953,831,983,771,1019,715,1058,663"/>
+<area shape="rect" id="Node000009" href="$classICM20948Sensor.html" title="Implementation of the Sensor class for the Adafruit ICM20948 (9&#45;axis IMU)" alt="" coords="998,852,1146,1097"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="1122,738,1099,852,1094,851,1117,737"/>
+<area shape="rect" id="Node000010" href="$classINA260Sensor.html" title="A class to interface with the Adafruit INA260 sensor for current, voltage, and power measurements." alt="" coords="1171,892,1312,1057"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="1197,737,1228,891,1222,892,1192,738"/>
+<area shape="rect" id="Node000011" href="$classLSM9DS1Sensor.html" title="Implementation of the Sensor class for the LSM9DS1 (9&#45;axis IMU)" alt="" coords="1336,842,1480,1107"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="1257,667,1293,718,1326,771,1361,840,1356,843,1322,773,1289,721,1252,671"/>
+<area shape="rect" id="Node000012" href="$classMTK3339Sensor.html" title="Implementation of the Adafruit MTK3339 GPS sensor." alt="" coords="1504,892,1648,1057"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="1260,596,1318,628,1380,668,1441,716,1494,770,1514,798,1531,829,1557,891,1552,893,1527,831,1510,801,1490,774,1437,720,1377,673,1315,633,1257,601"/>
+<area shape="rect" id="Node000013" href="$classPCF8523Sensor.html" title="Implementation of the PCF8523 sensor." alt="" coords="1672,882,1813,1067"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="1260,571,1354,597,1461,638,1515,664,1568,695,1617,730,1662,770,1682,795,1699,823,1724,881,1719,883,1695,825,1678,798,1658,774,1614,734,1565,699,1513,669,1459,643,1353,602,1258,576"/>
+<area shape="rect" id="Node000014" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="1837,892,1979,1057"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="1260,557,1387,576,1461,592,1538,614,1615,641,1691,676,1763,719,1827,770,1850,797,1869,827,1894,891,1889,893,1864,830,1846,800,1823,774,1760,723,1689,681,1613,646,1536,619,1459,597,1386,581,1260,563"/>
+<area shape="rect" id="Node000015" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="2003,892,2144,1057"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="1260,565,1442,597,1659,643,1764,671,1859,702,1937,735,1968,752,1992,770,2016,796,2035,827,2060,891,2055,893,2031,829,2012,799,1989,774,1965,756,1935,739,1857,707,1763,676,1657,648,1441,602,1259,571"/>
+<area shape="rect" id="Node000017" href="$classFlashStorage.html" title=" " alt="" coords="2168,772,2309,1177"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="2306,628,2279,772,2274,771,2301,627"/>
+<area shape="rect" id="Node000018" href="$classRadioStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="2333,912,2459,1037"/>
+<area shape="poly" id="edge17_Node000016_Node000018" title=" " alt="" coords="2334,627,2387,911,2382,912,2329,628"/>
+<area shape="rect" id="Node000019" href="$classSDStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="2483,892,2603,1057"/>
+<area shape="poly" id="edge18_Node000016_Node000019" title=" " alt="" coords="2377,623,2427,693,2473,771,2500,831,2522,891,2517,893,2495,833,2468,773,2422,696,2373,626"/>
 </map>

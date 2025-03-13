@@ -17,7 +17,9 @@ var searchData=
   ['ina260sensor_14',['ina260sensor',['../classINA260Sensor.html',1,'INA260Sensor'],['../classINA260Sensor.html#a15132c8e875b5cd00b243bf42b65efd9',1,'INA260Sensor::INA260Sensor(unsigned long minimum_period)'],['../classINA260Sensor.html#a042f617dabe0fdd117cd1ba7cdb8723d',1,'INA260Sensor::INA260Sensor()']]],
   ['ina260sensor_2ecpp_15',['INA260Sensor.cpp',['../INA260Sensor_8cpp.html',1,'']]],
   ['ina260sensor_2eh_16',['INA260Sensor.h',['../INA260Sensor_8h.html',1,'']]],
-  ['instance_17',['instance',['../classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f',1,'ErrorDisplay']]],
-  ['it_18',['it',['../main_8cpp.html#ac65d766d5179dcc67a8e61e09a1ce969',1,'main.cpp']]],
-  ['it2_19',['it2',['../main1_8cpp.html#a0a8b4e2a5f762856b9eec173ed046fca',1,'main1.cpp']]]
+  ['indexflash_17',['indexFlash',['../classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a',1,'FlashStorage']]],
+  ['instance_18',['instance',['../classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f',1,'ErrorDisplay']]],
+  ['issectorempty_19',['isSectorEmpty',['../classFlashStorage.html#a97b10db97f42549e197feeff3f3f9abb',1,'FlashStorage']]],
+  ['it_20',['it',['../main_8cpp.html#ac65d766d5179dcc67a8e61e09a1ce969',1,'main.cpp']]],
+  ['it2_21',['it2',['../main1_8cpp.html#a0a8b4e2a5f762856b9eec173ed046fca',1,'main1.cpp']]]
 ];

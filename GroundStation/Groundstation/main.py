@@ -6,6 +6,7 @@ import SerialInput
 import SerialSorter
 import SimpleDisplay
 
+end_event = threading.Event()
 input_to_sorter = Queue()
 sorter_to_decoder = Queue()
 sorter_core0 = Queue()
@@ -14,9 +15,9 @@ sorter_misc = Queue()
 decoder_packets = Queue()
 
 serial_input = SerialInput.SerialInput(input_to_sorter)
-serial_sorter = SerialSorter.SerialSorter(input_to_sorter, sorter_to_decoder, sorter_core0, sorter_core1, sorter_misc)
+serial_sorter = SerialSorter.SerialSorter(end_event, input_to_sorter, sorter_to_decoder, sorter_core0, sorter_core1, sorter_misc)
 packet_decoder = PacketDecoder.PacketDecoder(sorter_to_decoder, decoder_packets)
-simple_display = SimpleDisplay.SimpleDisplay(sorter_core0, sorter_core1, sorter_misc, decoder_packets)
+simple_display = SimpleDisplay.SimpleDisplay(end_event, sorter_core0, sorter_core1, sorter_misc, decoder_packets)
 
 serial_input.start()
 serial_sorter.start()

@@ -17,6 +17,7 @@
 #include "AS7331Sensor.h"
 #include "BME280Sensor.h"
 #include "BME680Sensor.h"
+#include "BMP390Sensor.h"
 #include "ENS160Sensor.h"
 #include "ICM20948Sensor.h"
 #include "INA260Sensor.h"
@@ -54,6 +55,7 @@ MTK3339Sensor   gps_sensor        (5000);
 ICM20948Sensor  icm_sensor        (20);
 PCF8523Sensor   rtc_sensor        (1000);
 OzoneSensor     ozone_sensor      (1000); 
+BMP390Sensor    bmp_sensor        (1000); 
 // DS3231Sensor    rtc_backup_sensor (1000);
 // clang-format on
 
@@ -61,7 +63,8 @@ OzoneSensor     ozone_sensor      (1000);
 Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
                      &lsm9ds1_sensor, &temp_sensor,   &sgp30_sensor,
                      &bme280_sensor,  &ens160_sensor, &uv_sensor_1,
-                     &uv_sensor_2,    &icm_sensor,    &gps_sensor, &ozone_sensor};
+                     &uv_sensor_2,    &icm_sensor,    &gps_sensor,
+                     &bmp_sensor,     &ozone_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 // kept for compile, remove soon
