@@ -21,9 +21,7 @@
 #include "INA260Sensor.h"
 #include "MTK3339Sensor.h"
 #include "PCF8523Sensor.h"
-#include "SGP30Sensor.h"
 #include "TempSensor.h"
-// #include "DS3231Sensor.h"
 
 // helper function definitions
 int verifySensors();
@@ -40,7 +38,6 @@ void handleDataInterface();
 // class        sensor            minimum period in ms
 INA260Sensor    ina260_sensor     (1000);
 TempSensor      temp_sensor       (1000);
-SGP30Sensor     sgp30_sensor      (1000);
 ENS160Sensor    ens160_sensor     (1000);
 AS7331Sensor    uv_sensor_1       (1000, UV_I2C_ADDR_1);
 AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
@@ -48,12 +45,11 @@ MTK3339Sensor   gps_sensor        (5000);
 ICM20948Sensor  icm_sensor        (20);
 PCF8523Sensor   rtc_sensor        (1000);
 BMP390Sensor    bmp_sensor        (1000); 
-// DS3231Sensor    rtc_backup_sensor (1000);
 // clang-format on
 
 // sensor array
 Sensor* sensors[] = {
-    &rtc_sensor,  &ina260_sensor, &temp_sensor, &sgp30_sensor, &ens160_sensor,
+    &rtc_sensor,  &ina260_sensor, &temp_sensor, &ens160_sensor,
     &uv_sensor_1, &uv_sensor_2,   &icm_sensor,  &gps_sensor,   &bmp_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
