@@ -6,3 +6,4 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
   terrain: Cesium.Terrain.fromWorldTerrain(),
 });    
 viewer.scene.globe.enableLighting = true;
+
