@@ -15,18 +15,13 @@
 
 // include sensor headers here
 #include "AS7331Sensor.h"
-#include "BME280Sensor.h"
-#include "BME680Sensor.h"
 #include "BMP390Sensor.h"
 #include "ENS160Sensor.h"
 #include "ICM20948Sensor.h"
 #include "INA260Sensor.h"
-#include "LSM9DS1Sensor.h"
 #include "MTK3339Sensor.h"
 #include "PCF8523Sensor.h"
-#include "SGP30Sensor.h"
 #include "TempSensor.h"
-// #include "DS3231Sensor.h"
 
 // helper function definitions
 int verifySensors();
@@ -41,32 +36,23 @@ void handleDataInterface();
 // sensor classes
 // clang-format off
 // class        sensor            minimum period in ms
-BME680Sensor    bme_sensor        (1000);
 INA260Sensor    ina260_sensor     (1000);
-LSM9DS1Sensor   lsm9ds1_sensor    (0);
 TempSensor      temp_sensor       (1000);
-SGP30Sensor     sgp30_sensor      (1000);
-BME280Sensor    bme280_sensor     (1000);
 ENS160Sensor    ens160_sensor     (1000);
 AS7331Sensor    uv_sensor_1       (1000, UV_I2C_ADDR_1);
 AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
 MTK3339Sensor   gps_sensor        (5000);
 ICM20948Sensor  icm_sensor        (20);
 PCF8523Sensor   rtc_sensor        (1000);
-BMP390Sensor    bmp_sensor        (1000); 
-// DS3231Sensor    rtc_backup_sensor (1000);
+BMP390Sensor    bmp_sensor        (1000);
 // clang-format on
 
 // sensor array
-Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
-                     &lsm9ds1_sensor, &temp_sensor,   &sgp30_sensor,
-                     &bme280_sensor,  &ens160_sensor, &uv_sensor_1,
-                     &uv_sensor_2,    &icm_sensor,    &gps_sensor,
-                     &bmp_sensor};
+Sensor* sensors[] = {&rtc_sensor,    &ina260_sensor, &temp_sensor,
+                     &ens160_sensor, &uv_sensor_1,   &uv_sensor_2,
+                     &icm_sensor,    &gps_sensor,    &bmp_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
-// kept for compile, remove soon
-bool sensors_verify[sensors_len];
 
 String header_condensed = "";
 
@@ -100,15 +86,13 @@ void setup() {
   // setup heartbeat pins
   pinMode(HEARTBEAT_PIN_0, OUTPUT);
 
-// verify sensors
-#if RECOVERY_SYSTEM
+  // verify sensors
   // recovery config for sensors
-  sgp30_sensor.recoveryConfig(10, 1000);
+  for (int i = 0; i < sensors_len; i++) {
+    sensors[i]->recoveryConfig(5, 1000);
+  }
 
   int verified_count = verifySensorRecovery();
-#else
-  int verified_count = verifySensors();
-#endif
 
   if (verified_count == 0) {
     log_core("All sensor communications failed");
@@ -132,7 +116,7 @@ void setup() {
   }
 #endif
 
-#if RECOVERY_SYSTEM == 0
+#if 0  // header stuff
   // build csv header
   String header = "Header,Millis,";
   for (int i = 0; i < sensors_len; i++) {
@@ -247,6 +231,7 @@ int verifySensorRecovery() {
   return count;
 }
 
+#if 0  // part of the old verification system 
 /**
  * @brief Verifies each sensor by calling each verify() function
  *
@@ -280,6 +265,7 @@ int verifySensors() {
   log_core("");
   return count;
 }
+#endif
 
 /**
  * @brief Reads sensor data into a packet byte array
@@ -304,11 +290,7 @@ void readSensorDataPacket(uint8_t* packet) {
   sensor_id = (sensor_id << 1) | 1;
   // rest of the packet
   for (int i = 0; i < sensors_len; i++) {
-#if RECOVERY_SYSTEM
     if (sensors[i]->attemptConnection()) {
-#else
-    if (sensors_verify[i]) {
-#endif
       sensors[i]->getDataPacket(sensor_id, temp_packet);
     } else {
       sensor_id <<= 1;
@@ -379,7 +361,7 @@ String decodePacket(uint8_t* packet) {
       // log_core("\tDecoding " + sensors[id_offset - curr_offset -
       // 1]->getDeviceName());
       csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
-    } else if (sensors_verify[id_offset - curr_offset - 1]) {
+    } else if (sensors[id_offset - curr_offset - 1]->getVerified()) {
       csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
     } else {
     }
@@ -405,11 +387,7 @@ String decodePacket(uint8_t* packet) {
 String readSensorData() {
   String csv_row = header_condensed + "," + String(millis()) + ",";
   for (int i = 0; i < sensors_len; i++) {
-#if RECOVERY_SYSTEM
     if (sensors[i]->attemptConnection()) {
-#else
-    if (sensors_verify[i]) {
-#endif
       csv_row += sensors[i]->getDataCSV();
     }
   }
