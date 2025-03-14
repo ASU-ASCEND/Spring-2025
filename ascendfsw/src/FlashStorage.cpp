@@ -23,6 +23,7 @@ void FlashStorage::indexFlash() {
     // Check for file at sector start
     if (!empty && this->readFileHeader()) {
       // Update end address of previous file
+      // commit check
       if (!this->file_data.empty()) {
         this->file_data.back().end_address = this->address - 4;
         log_core("File " + String(this->file_data.back().file_number) + " Size: " +
