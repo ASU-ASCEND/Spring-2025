@@ -21,7 +21,7 @@ with open(input_csv, 'r', newline='') as csv_file:
         data_dict = {
             'latitude': row[position['latitude']],
             'longitude': row[position['longitude']],
-            'altitude': row[position['altitude']],
+            'height': row[position['altitude']],
         }
         data_list.append(data_dict)
 
