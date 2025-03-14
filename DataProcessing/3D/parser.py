@@ -1,29 +1,30 @@
 import csv
 import json
 
-with open('./data/aprs-data-fall-2024.csv', 'r', newline='') as csv_file, \
-     open('./data/aprs-data-fall-2024.json', 'w') as json_file:
-    
+input_csv = './data/aprs-data-fall-2024.csv'
+output_json = './data/aprs-data-fall-2024.json'
+
+with open(input_csv, 'r', newline='') as csv_file:
     reader = csv.reader(csv_file)
-
-    # Read the CSV header
+    
+    # Read the header
     header = next(reader)
-
-    # Locate the indices of our columns of interest
     position = {
         'latitude': header.index('lat'),
         'longitude': header.index('lng'),
         'altitude': header.index('altitude'),
     }
 
-    # Convert each row to JSON and write to the file line-by-line
+    # Build a list of all rows as dictionaries
+    data_list = []
     for row in reader:
-        # Build a dictionary with the data you care about
         data_dict = {
             'latitude': row[position['latitude']],
             'longitude': row[position['longitude']],
             'altitude': row[position['altitude']],
         }
-        
-        # Write each record as one line of JSON in the output file
-        json_file.write(json.dumps(data_dict) + '\n')
+        data_list.append(data_dict)
+
+# Now write out the entire list as a JSON array
+with open(output_json, 'w') as json_file:
+    json.dump(data_list, json_file, indent=2)   # indent=2 for pretty printing
