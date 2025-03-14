@@ -80,6 +80,5 @@ const uint8_t SYNC_BYTES[] = {'A', 'S', 'U', '!'};
 
 // temporary toggle macros for testing
 #define PACKET_SYSTEM_TESTING 1
-#define RECOVERY_SYSTEM 1
 
 #endif
