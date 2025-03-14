@@ -65,8 +65,7 @@ Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
                      &bmp_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
-// kept for compile, remove soon
-bool sensors_verify[sensors_len];
+
 
 String header_condensed = "";
 
@@ -101,14 +100,11 @@ void setup() {
   pinMode(HEARTBEAT_PIN_0, OUTPUT);
 
 // verify sensors
-#if RECOVERY_SYSTEM
   // recovery config for sensors
   sgp30_sensor.recoveryConfig(10, 1000);
 
   int verified_count = verifySensorRecovery();
-#else
-  int verified_count = verifySensors();
-#endif
+
 
   if (verified_count == 0) {
     log_core("All sensor communications failed");
@@ -132,7 +128,7 @@ void setup() {
   }
 #endif
 
-#if RECOVERY_SYSTEM == 0
+#if 0 // header stuff
   // build csv header
   String header = "Header,Millis,";
   for (int i = 0; i < sensors_len; i++) {
@@ -247,6 +243,7 @@ int verifySensorRecovery() {
   return count;
 }
 
+#if 0 // part of the old verification system 
 /**
  * @brief Verifies each sensor by calling each verify() function
  *
@@ -280,6 +277,7 @@ int verifySensors() {
   log_core("");
   return count;
 }
+#endif 
 
 /**
  * @brief Reads sensor data into a packet byte array
@@ -304,11 +302,7 @@ void readSensorDataPacket(uint8_t* packet) {
   sensor_id = (sensor_id << 1) | 1;
   // rest of the packet
   for (int i = 0; i < sensors_len; i++) {
-#if RECOVERY_SYSTEM
     if (sensors[i]->attemptConnection()) {
-#else
-    if (sensors_verify[i]) {
-#endif
       sensors[i]->getDataPacket(sensor_id, temp_packet);
     } else {
       sensor_id <<= 1;
@@ -379,7 +373,7 @@ String decodePacket(uint8_t* packet) {
       // log_core("\tDecoding " + sensors[id_offset - curr_offset -
       // 1]->getDeviceName());
       csv_row += sensors[id_offset - curr_offset - 1]->decodeToCSV(temp_packet);
-    } else if (sensors_verify[id_offset - curr_offset - 1]) {
+    } else if (sensors[id_offset - curr_offset - 1]->getVerified()) {
       csv_row += sensors[id_offset - curr_offset - 1]->readEmpty();
     } else {
     }
@@ -405,11 +399,7 @@ String decodePacket(uint8_t* packet) {
 String readSensorData() {
   String csv_row = header_condensed + "," + String(millis()) + ",";
   for (int i = 0; i < sensors_len; i++) {
-#if RECOVERY_SYSTEM
     if (sensors[i]->attemptConnection()) {
-#else
-    if (sensors_verify[i]) {
-#endif
       csv_row += sensors[i]->getDataCSV();
     }
   }
