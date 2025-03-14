@@ -1,5 +1,5 @@
 // Provide access token for Cesium Ion
-Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmNzRmZDQ5MS0zODY1LTRjYjEtOGI3Ny0wZGMwNWQ1MjVhOGMiLCJpZCI6MjI1Mjg3LCJpYXQiOjE3MjA0NTM1NzV9.k5jpBA4KmrErsokf_kxNKNcYbE8tNwCavyzJNRQOFeQ';
+Cesium.Ion.defaultAccessToken = 'your_access_token';
 
 // Initialize the Cesium viewer with customized settings
 const viewer = new Cesium.Viewer('cesiumContainer', {
@@ -7,56 +7,69 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.globe.enableLighting = true;
 
-// Declare these variables in a scope accessible to all functions
+// Declare global variables
 let flightData = [];
 let start, stop, timeStepInSeconds;
 let sampledPositionProperty;
 
-// Initialize the viewer's clock using flightData length
-function setClock() {
-  timeStepInSeconds = 30;
-  const totalSeconds = timeStepInSeconds * (flightData.length - 1);
-  start = Cesium.JulianDate.fromIso8601("2020-03-09T23:10:00Z");
-  stop = Cesium.JulianDate.addSeconds(start, totalSeconds, new Cesium.JulianDate());
+// Initialize the viewer's clock 
+function setClockFromData() {
+  const times = flightData.map(dp => Cesium.JulianDate.fromIso8601(dp.timestamp));
   
+  // Determine the earliest and latest times in data (start & stop)
+  start = times.reduce((min, t) => Cesium.JulianDate.lessThan(t, min) ? t : min, times[0]);
+  stop = times.reduce((max, t) => Cesium.JulianDate.greaterThan(t, max) ? t : max, times[0]);
   viewer.clock.startTime = Cesium.JulianDate.clone(start);
   viewer.clock.stopTime = Cesium.JulianDate.clone(stop);
   viewer.clock.currentTime = Cesium.JulianDate.clone(start);
+
   viewer.timeline.zoomTo(start, stop);
   viewer.clock.shouldAnimate = true;
 }
 
 // Create flight entities and sample the positions
 function createFlight() {
-  // Initialize the sampled position property
   sampledPositionProperty = new Cesium.SampledPositionProperty();
 
+  // Iterate through the flight data and add samples to the position property
   for (let i = 0; i < flightData.length; i++) {
     const dataPoint = flightData[i];
   
-    // Calculate time for each sample using global start and timeStepInSeconds
-    const time = Cesium.JulianDate.addSeconds(start, i * timeStepInSeconds, new Cesium.JulianDate());
-    const position = Cesium.Cartesian3.fromDegrees(dataPoint.longitude, dataPoint.latitude, dataPoint.height);
-    
-    // Add the sample to the position property
+    // Update the time and position for each data point
+    const time = Cesium.JulianDate.fromIso8601(dataPoint.timestamp);
+    const position = Cesium.Cartesian3.fromDegrees(
+      parseFloat(dataPoint.longitude), 
+      parseFloat(dataPoint.latitude), 
+      parseFloat(dataPoint.height)
+    );
     sampledPositionProperty.addSample(time, position);
-    
-    // Optionally, add an entity for each point (if needed for visualization)
-    viewer.entities.add({
-      description: `Location: (${dataPoint.longitude}, ${dataPoint.latitude}, ${dataPoint.height})`,
-      position: position,
-      point: { pixelSize: 10, color: Cesium.Color.RED }
-    });
+
+    // Add a description to each data point
+    let description = `
+    <strong>Longitude:</strong> ${dataPoint.longitude}</br>
+    <strong>Latitude:</strong> ${dataPoint.latitude}</br>
+    <strong>Height:</strong> ${(dataPoint.height * 3.28084).toFixed(2)} ft</br>
+    <strong>Time:</strong> ${dataPoint.timestamp}</br>`;
+  
+  // Create a point entity for each data point
+  viewer.entities.add({
+    name: "Flight Data Point",
+    description: description,
+    position: position,
+    point: { pixelSize: 10, color: Cesium.Color.RED }
+  });
+  
   }
 }
 
 // Create the main flight entity that uses the sampled positions
 function createEntity() {
-  const airplaneEntity = viewer.entities.add({
+  const payloadEntity = viewer.entities.add({
     availability: new Cesium.TimeIntervalCollection([ 
       new Cesium.TimeInterval({ start: start, stop: stop }) 
     ]),
     position: sampledPositionProperty,
+    name: 'ASU ASCEND Payload',
     billboard: {
       image: '../images/payload.png',
       width: 150,
@@ -64,26 +77,26 @@ function createEntity() {
       horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
       verticalOrigin: Cesium.VerticalOrigin.BOTTOM
     },
-    path: new Cesium.PathGraphics({width: 2})
+    path: new Cesium.PathGraphics({ width: 2 })
   });
   // Make the camera track this moving entity.
-  viewer.trackedEntity = airplaneEntity;
+  viewer.trackedEntity = payloadEntity;
 }
 
-// Load JSON data from a aprs-data-fall-2024.json file and initialize everything
+// Load JSON data from the aprs-data-fall-2024.json file and initialize everything
 async function init() {
   try {
     const response = await fetch('../data/aprs-data-fall-2024.json');
     flightData = await response.json();
     console.log(flightData);
     
-    // Set up the clock based on flightData
-    setClock();
+    // Set the clock
+    setClockFromData();
 
-    // Create flight samples and individual entities
+    // Create flight entities and sample the positions
     createFlight();
 
-    // Create the main flight entity to animate along the path
+    // Create the main flight entity that uses the sampled positions
     createEntity();
 
   } catch (error) {
@@ -91,4 +104,5 @@ async function init() {
   }
 }
 
+// Call main function to initialize the viewer
 init();
