@@ -15,13 +15,10 @@
 
 // include sensor headers here
 #include "AS7331Sensor.h"
-#include "BME280Sensor.h"
-#include "BME680Sensor.h"
 #include "BMP390Sensor.h"
 #include "ENS160Sensor.h"
 #include "ICM20948Sensor.h"
 #include "INA260Sensor.h"
-#include "LSM9DS1Sensor.h"
 #include "MTK3339Sensor.h"
 #include "PCF8523Sensor.h"
 #include "SGP30Sensor.h"
@@ -41,12 +38,9 @@ void handleDataInterface();
 // sensor classes
 // clang-format off
 // class        sensor            minimum period in ms
-BME680Sensor    bme_sensor        (1000);
 INA260Sensor    ina260_sensor     (1000);
-LSM9DS1Sensor   lsm9ds1_sensor    (0);
 TempSensor      temp_sensor       (1000);
 SGP30Sensor     sgp30_sensor      (1000);
-BME280Sensor    bme280_sensor     (1000);
 ENS160Sensor    ens160_sensor     (1000);
 AS7331Sensor    uv_sensor_1       (1000, UV_I2C_ADDR_1);
 AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
@@ -58,14 +52,11 @@ BMP390Sensor    bmp_sensor        (1000);
 // clang-format on
 
 // sensor array
-Sensor* sensors[] = {&rtc_sensor,     &bme_sensor,    &ina260_sensor,
-                     &lsm9ds1_sensor, &temp_sensor,   &sgp30_sensor,
-                     &bme280_sensor,  &ens160_sensor, &uv_sensor_1,
-                     &uv_sensor_2,    &icm_sensor,    &gps_sensor,
-                     &bmp_sensor};
+Sensor* sensors[] = {
+    &rtc_sensor,  &ina260_sensor, &temp_sensor, &sgp30_sensor, &ens160_sensor,
+    &uv_sensor_1, &uv_sensor_2,   &icm_sensor,  &gps_sensor,   &bmp_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
-
 
 String header_condensed = "";
 
@@ -99,12 +90,13 @@ void setup() {
   // setup heartbeat pins
   pinMode(HEARTBEAT_PIN_0, OUTPUT);
 
-// verify sensors
+  // verify sensors
   // recovery config for sensors
-  sgp30_sensor.recoveryConfig(10, 1000);
+  for (int i = 0; i < sensors_len; i++) {
+    sensors[i]->recoveryConfig(5, 1000);
+  }
 
   int verified_count = verifySensorRecovery();
-
 
   if (verified_count == 0) {
     log_core("All sensor communications failed");
@@ -128,7 +120,7 @@ void setup() {
   }
 #endif
 
-#if 0 // header stuff
+#if 0  // header stuff
   // build csv header
   String header = "Header,Millis,";
   for (int i = 0; i < sensors_len; i++) {
@@ -243,7 +235,7 @@ int verifySensorRecovery() {
   return count;
 }
 
-#if 0 // part of the old verification system 
+#if 0  // part of the old verification system 
 /**
  * @brief Verifies each sensor by calling each verify() function
  *
@@ -277,7 +269,7 @@ int verifySensors() {
   log_core("");
   return count;
 }
-#endif 
+#endif
 
 /**
  * @brief Reads sensor data into a packet byte array
