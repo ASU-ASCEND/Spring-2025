@@ -22,7 +22,16 @@ void FlashStorage::indexFlash() {
   while (!empty && (this->address < this->MAX_SIZE)) {
     // Check for file at sector start
     if (!empty && this->readFileHeader()) {
-      this->file_data.push_back({(this->file_data.size() + 1), this->address});
+      // Update end address of previous file
+      if (!this->file_data.empty()) {
+        this->file_data.back().end_address = this->address - 4;
+        log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+                 String(this->file_data.back().start_address) + " to " +
+                 String(this->file_data.back().end_address));
+      }
+
+      // Store new detected file
+      this->file_data.push_back({(this->file_data.size() + 1), this->address, this->address});
       log_core("File " + String(this->file_data.size()) + " at address " +
                String(this->address));
     }
@@ -90,8 +99,17 @@ void FlashStorage::writeFileHeader() {
     this->flash.blockingBusyWait();
   }
 
+  // Update end address of previous file
+  if (!this->file_data.empty()) {
+    this->file_data.back().end_address = this->address - 4;
+    log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+             String(this->file_data.back().start_address) + " to " +
+             String(this->file_data.back().end_address));
+  }
+
   // Store necessary file data for quick reference
-  this->file_data.push_back({(this->file_data.size() + 1), this->address - 4});
+  this->file_data.push_back({(this->file_data.size() + 1), (this->address - 4),
+                             (this->address - 4)});
   log_core("New file " + String(this->file_data.size()) + " at address " +
            String(this->address - 4) + " created");
 }
@@ -179,8 +197,15 @@ void FlashStorage::store(String data) {
     this->flash.blockingBusyWait();
   }
 
+  // Update file length tracking
+  this->file_data.back().end_address += data.length();
+
+  // Log the number of bytes written
   log_core("Writing " + String(data.length()) + " bytes at " +
            String(this->address));
+  log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+           String(this->file_data.back().start_address) + " to " +
+           String(this->file_data.back().end_address));
 
   this->flash.blockingBusyWait();
 }
@@ -206,9 +231,16 @@ void FlashStorage::storePacket(uint8_t* packet) {
     this->flash.blockingBusyWait();
   }
 
+  // Update file length tracking
+  this->file_data.back().end_address += packet_len;
+
   // Log the number of bytes written
   log_core("Writing " + String(packet_len) + " bytes at " +
            String(this->address));
+  log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+           String(this->file_data.back().start_address) + " to " +
+           String(this->file_data.back().end_address));
+           
   this->flash.blockingBusyWait();
 }
 
