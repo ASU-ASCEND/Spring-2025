@@ -27,8 +27,8 @@ class LSM9DS1Sensor : public Sensor {
   bool verify() override;
   String readData() override;
   void calibrate();  // calibration function
-  void readDataPacket(uint8_t*& packet);
-  String decodeToCSV(uint8_t*& packet);
+  void readDataPacket(uint8_t*& packet) override;
+  String decodeToCSV(uint8_t*& packet) override;
 };
 
 #endif

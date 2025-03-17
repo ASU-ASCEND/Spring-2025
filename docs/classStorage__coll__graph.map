@@ -1,5 +1,5 @@
 <map id="Storage" name="Storage">
-<area shape="rect" id="Node000001" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="212,423,301,548"/>
+<area shape="rect" id="Node000001" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="200,423,313,548"/>
 <area shape="rect" id="Node000002" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="175,148,339,373"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="259,387,259,423,254,423,254,387"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>

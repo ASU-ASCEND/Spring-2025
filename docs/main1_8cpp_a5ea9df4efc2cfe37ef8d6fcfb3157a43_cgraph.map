@@ -1,5 +1,5 @@
 <map id="storeDataPacket" name="storeDataPacket">
 <area shape="rect" id="Node000001" title="Sends data to each storage device." alt="" coords="5,5,133,31"/>
-<area shape="rect" id="Node000002" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send string data to storage device." alt="" coords="181,5,295,31"/>
+<area shape="rect" id="Node000002" href="$classStorage.html#a6ee18f7841fdd0f70091764a59110db2" title="Send packet data to storage device." alt="" coords="181,5,336,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,15,167,15,167,21,133,21"/>
 </map>

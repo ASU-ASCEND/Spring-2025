@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['bme680_5fspi_5fcs_5fpin_0',['BME680_SPI_CS_PIN',['../PayloadConfig_8h.html#aba104876166752f24fb0443b22075f76',1,'PayloadConfig.h']]],
-  ['bme680_5fspi_5fmode_1',['BME680_SPI_MODE',['../PayloadConfig_8h.html#a21c757a3dabd481c269e7decfdc3976c',1,'PayloadConfig.h']]]
+  ['error_5fpin_5f0_0',['ERROR_PIN_0',['../PayloadConfig_8h.html#a48a86006eb436b950e5277fdf8a3ae53',1,'PayloadConfig.h']]],
+  ['error_5fpin_5f1_1',['ERROR_PIN_1',['../PayloadConfig_8h.html#a5d6e22e2c3ab3c12e8cd61594815925a',1,'PayloadConfig.h']]],
+  ['error_5fpin_5f2_2',['ERROR_PIN_2',['../PayloadConfig_8h.html#af230e937fbf21c24dab2e1c834330a52',1,'PayloadConfig.h']]]
 ];

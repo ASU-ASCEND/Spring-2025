@@ -1,21 +1,22 @@
 <map id="FlashStorage" name="FlashStorage">
-<area shape="rect" id="Node000001" title=" " alt="" coords="432,625,556,811"/>
-<area shape="rect" id="Node000002" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="212,423,301,548"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,543,316,546,434,658,430,662,312,550,309,547"/>
-<area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="175,148,339,373"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="259,387,259,423,254,423,254,387"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="539,683,681,948"/>
+<area shape="rect" id="Node000002" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="364,436,477,561"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,572,541,695,537,698,463,575"/>
+<area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="249,148,413,373"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,385,400,435,395,437,376,387"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="5,5,111,71"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="64,70,71,97,83,123,119,165,163,201,159,205,116,169,78,125,66,99,59,71"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="70,70,81,97,99,122,129,151,164,177,235,218,233,222,161,181,126,155,95,126,77,100,65,72"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="167,5,197,71"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="182,71,182,97,186,123,188,132,183,133,181,125,177,97,176,71"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="190,70,198,97,210,123,241,168,237,171,205,125,193,98,185,72"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="305,5,357,71"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="323,72,302,134,297,132,318,70"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="438,5,481,71"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="448,72,434,99,416,126,386,159,353,190,349,186,382,155,412,122,430,96,444,70"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="326,453,473,518"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="397,518,396,558,403,600,425,641,420,643,398,602,390,559,392,518"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="533,453,647,518"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="587,519,577,559,563,602,559,612,554,610,558,600,572,558,582,517"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="671,453,738,518"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="684,520,661,550,619,603,570,652,566,648,615,600,657,546,680,516"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="334,71,334,131,329,131,329,71"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="481,5,523,71"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="520,70,529,94,544,164,554,223,560,326,562,429,573,561,588,666,582,667,567,562,557,430,555,326,548,224,539,165,523,95,515,72"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="482,69,425,142,421,139,478,66"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="582,466,649,531"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="616,532,614,585,613,666,607,666,609,585,611,531"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="678,466,833,531"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="756,532,748,592,740,627,728,660,693,722,688,719,724,658,735,625,743,591,751,531"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="857,466,971,531"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="901,533,867,594,844,629,819,660,759,717,696,764,693,759,755,712,815,657,840,625,863,592,897,530"/>
 </map>
