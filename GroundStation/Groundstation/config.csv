@@ -1,0 +1,14 @@
+Header
+Millis
+PCF8523, Time
+BME688, Temp (°C), Pressure (hPa), Humidity (%), Gas (KΩ), Altitude (m)
+INA260, Current (mA), Voltage (mV), Power (mW)
+LSM9DS1, AccX (g), AccY (g), AccZ (g), GyroX (°/s), GyroY (°/s), GyroZ (°/s), MagX (µT), MagY (µT), MagZ (µT)
+PicoTemp, Temperature (°C)
+SGP30, TVOC (ppb), eCO2 (ppm), TVOC Base (ppb), eCO2 Base (ppb), H2, Ethanol
+BME280, Relative Humidity (%), Pressure (Pa), Altitude (m), Temperature (°C), Dew Point (°C)
+ENS160, AQI, TVOC (ppb), eCO2 (ppm)
+UV Sensor 1, UVA2 (nm), UVB2 (nm), UVC2 (nm)
+UV Sensor 2, UVA0 (nm), UVB0 (nm), UVC0 (nm)
+ICM20948, AccX (g), AccY (g), AccZ (g), GyroX (°/s), GyroY (°/s), GyroZ (°/s), MagX (µT), MagY (µT), MagZ (µT), Temperature (°C)
+MTK3339, Date, Latitude, Longitude, Speed, Angle, Altitude, Satellites
