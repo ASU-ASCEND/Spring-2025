@@ -1,12 +1,10 @@
 #ifndef TMP117_SENSOR_H
 #define TMP117_SENSOR_H
 
-#include <Wire.h>
 #include <SparkFun_TMP117.h>
+#include <Wire.h>
 
 #include "Sensor.h"
-
-
 
 /**
  * @brief Implementation of a Sensor for the TMP117
