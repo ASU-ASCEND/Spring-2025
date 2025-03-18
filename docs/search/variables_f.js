@@ -6,8 +6,9 @@ var searchData=
   ['sensors_3',['sensors',['../main_8cpp.html#a6fab47e83fc30a637dd287c8a920f070',1,'main.cpp']]],
   ['sensors_5flen_4',['sensors_len',['../main_8cpp.html#aa2e2e34d5a2889006d561d83bd0287a6',1,'main.cpp']]],
   ['sgp_5',['sgp',['../classSGP30Sensor.html#a90ee5ad5963451ea1ee1304d99264754',1,'SGP30Sensor']]],
-  ['start_5faddress_6',['START_ADDRESS',['../classFlashStorage.html#a5216340e4a74290300e21e318ba019a8',1,'FlashStorage']]],
-  ['storages_7',['storages',['../main1_8cpp.html#a39db351a5a127ccbd3893f4de5936b05',1,'main1.cpp']]],
-  ['storages_5flen_8',['storages_len',['../main1_8cpp.html#a12b260a884350838d7056cd758cd8cbe',1,'main1.cpp']]],
-  ['sync_5fbytes_9',['SYNC_BYTES',['../PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6',1,'PayloadConfig.h']]]
+  ['shtc3_6',['shtc3',['../classSHTC3Sensor.html#a4ea5c1c9a1ba42a5a6ba58728b98a43d',1,'SHTC3Sensor']]],
+  ['start_5faddress_7',['START_ADDRESS',['../classFlashStorage.html#a5216340e4a74290300e21e318ba019a8',1,'FlashStorage']]],
+  ['storages_8',['storages',['../main1_8cpp.html#a39db351a5a127ccbd3893f4de5936b05',1,'main1.cpp']]],
+  ['storages_5flen_9',['storages_len',['../main1_8cpp.html#a12b260a884350838d7056cd758cd8cbe',1,'main1.cpp']]],
+  ['sync_5fbytes_10',['SYNC_BYTES',['../PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6',1,'PayloadConfig.h']]]
 ];

@@ -9,17 +9,17 @@
  *
  */
 class SHTC3Sensor : public Sensor {
-    private:
-    Adafruit_SHTC3 shtc3;
+ private:
+  Adafruit_SHTC3 shtc3;
 
-    public:
-    SHTC3Sensor();
-    SHTC3Sensor(unsigned long minimum_period);
-    bool verify() override;
-    String readData() override;
+ public:
+  SHTC3Sensor();
+  SHTC3Sensor(unsigned long minimum_period);
+  bool verify() override;
+  String readData() override;
 
-    void readDataPacket(uint8_t*& packet) override;
-    String decodeToCSV(uint8_t*& packet) override;
+  void readDataPacket(uint8_t*& packet) override;
+  String decodeToCSV(uint8_t*& packet) override;
 };
 
 #endif
