@@ -63,8 +63,8 @@ void SHTC3Sensor::readDataPacket(uint8_t*& packet){
  * @return String CSV stub Temperature, Humidity
  */
 String SHTC3Sensor::decodeToCSV(uint8_t *&packet){
-    double temperature = 0;
-    double humidity = 0; 
+    float temperature = 0;
+    float humidity = 0; 
 
     memcpy(&temperature, packet, sizeof(temperature));
     packet += sizeof(temperature);
