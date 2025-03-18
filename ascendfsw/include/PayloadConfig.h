@@ -38,6 +38,12 @@
 #define I2C1_SCL_PIN 27
 #define I2C1_SDA_PIN 26
 
+/** @brief toggle LED driver */
+#define USE_LED_DRIVER 1
+#define LED_0_CHANNEL 0
+#define LED_1_CHANNEL 1
+#define LED_2_CHANNEL 2
+
 // storages
 // for radio
 /** @brief UART0 RX Pin */

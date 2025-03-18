@@ -6,6 +6,8 @@
 #include "PayloadConfig.h"
 #include "pico/multicore.h"
 #include "pico/stdlib.h"
+#include "TLC59108.h"
+#include <Wire.h>
 
 /**
  * Error codes:
@@ -23,6 +25,10 @@ typedef enum {
   NONE           // default state, lowest priority
 } Error;
 
+// LED driver: tlc59108
+#define TLC_I2C_ADDR 0x40
+
+
 /**
  * @brief Singleton class for the 3 GPIO LED Error Display
  *
@@ -32,14 +38,22 @@ class ErrorDisplay {
   mutex_t error_display_mutex;
   int pin_level;
   Error code;
+  TLC59108 leds = TLC59108(Wire, TLC_I2C_ADDR); 
 
   ErrorDisplay() {
     mutex_init(&error_display_mutex);
     this->pin_level = 1;
     this->code = NONE;
+    #if USE_LED_DRIVER
+    Wire.begin(); 
+    this->leds.init(); 
+    this->leds.setLedOutputMode(TLC59108::LED_MODE::PWM_IND); 
+    this->leds.setAllBrightness((uint8_t)0); 
+    #else 
     pinMode(ERROR_PIN_2, OUTPUT);
     pinMode(ERROR_PIN_1, OUTPUT);
     pinMode(ERROR_PIN_0, OUTPUT);
+    #endif 
   }
 
  public:
@@ -78,13 +92,19 @@ class ErrorDisplay {
 
     this->pin_level = !(this->pin_level);
 
-    uint8_t display_code = 7 - this->code;  // 0 is heightest
+    uint8_t display_code = 7 - this->code;  // 0 is highest
 
     if (this->code == Error::NONE) display_code = 0b001;
 
+    #if USE_LED_DRIVER
+    leds.setBrightness(LED_2_CHANNEL, (this->pin_level && (display_code & 0b100)) * 0xFF);
+    leds.setBrightness(LED_1_CHANNEL, (this->pin_level && (display_code & 0b010)) * 0xFF);
+    leds.setBrightness(LED_0_CHANNEL, (this->pin_level && (display_code & 0b001)) * 0xFF);
+    #else
     digitalWrite(ERROR_PIN_2, this->pin_level && (display_code & 0b100));
     digitalWrite(ERROR_PIN_1, this->pin_level && (display_code & 0b010));
     digitalWrite(ERROR_PIN_0, this->pin_level && (display_code & 0b001));
+    #endif 
 
     mutex_exit(&error_display_mutex);
   }
