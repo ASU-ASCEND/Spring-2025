@@ -11,9 +11,10 @@ var searchData=
   ['setupsensor_8',['setupSensor',['../classLSM9DS1Sensor.html#a3f06cfc776d797dbb8d454794a7c9fc2',1,'LSM9DS1Sensor']]],
   ['setwaitfactor_9',['setWaitFactor',['../classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5',1,'Device']]],
   ['sgp30sensor_10',['sgp30sensor',['../classSGP30Sensor.html#a884d39d3cbdde603d75d43d6c4f5b89d',1,'SGP30Sensor::SGP30Sensor()'],['../classSGP30Sensor.html#a22e23104fef4d49ab10260ca2730c5b7',1,'SGP30Sensor::SGP30Sensor(unsigned long minimum_period)']]],
-  ['storage_11',['Storage',['../classStorage.html#a2f5803f60b5c3cd8e9c35fc744ab3058',1,'Storage']]],
-  ['store_12',['store',['../classSDStorage.html#a731b7e40012d3ab63bbf2ae0afe2d800',1,'SDStorage::store()'],['../classStorage.html#a08674ceb4404690065b1cf39963eb5a3',1,'Storage::store()'],['../classRadioStorage.html#a72c09891b0f77bef7a53f710415a503c',1,'RadioStorage::store()'],['../classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1',1,'FlashStorage::store()']]],
-  ['storedata_13',['storeData',['../main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7',1,'main1.cpp']]],
-  ['storedatapacket_14',['storeDataPacket',['../main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43',1,'main1.cpp']]],
-  ['storepacket_15',['storepacket',['../classFlashStorage.html#af9382cead1d4681dc2040bff95277cfa',1,'FlashStorage::storePacket()'],['../classRadioStorage.html#aca6bfee27f7e459cad2d4c5f8c522af1',1,'RadioStorage::storePacket()'],['../classSDStorage.html#a2f5cfea215ba9e388fcc37b2376e47b0',1,'SDStorage::storePacket()'],['../classStorage.html#a6ee18f7841fdd0f70091764a59110db2',1,'Storage::storePacket()']]]
+  ['shtc3sensor_11',['shtc3sensor',['../classSHTC3Sensor.html#ae694fdbfa9383289a2ed4cf19f82086d',1,'SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)'],['../classSHTC3Sensor.html#a55d1d6106b108e69399b52e75916b051',1,'SHTC3Sensor::SHTC3Sensor()']]],
+  ['storage_12',['Storage',['../classStorage.html#a2f5803f60b5c3cd8e9c35fc744ab3058',1,'Storage']]],
+  ['store_13',['store',['../classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1',1,'FlashStorage::store()'],['../classRadioStorage.html#a72c09891b0f77bef7a53f710415a503c',1,'RadioStorage::store()'],['../classSDStorage.html#a731b7e40012d3ab63bbf2ae0afe2d800',1,'SDStorage::store()'],['../classStorage.html#a08674ceb4404690065b1cf39963eb5a3',1,'Storage::store()']]],
+  ['storedata_14',['storeData',['../main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7',1,'main1.cpp']]],
+  ['storedatapacket_15',['storeDataPacket',['../main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43',1,'main1.cpp']]],
+  ['storepacket_16',['storepacket',['../classFlashStorage.html#af9382cead1d4681dc2040bff95277cfa',1,'FlashStorage::storePacket()'],['../classRadioStorage.html#aca6bfee27f7e459cad2d4c5f8c522af1',1,'RadioStorage::storePacket()'],['../classSDStorage.html#a2f5cfea215ba9e388fcc37b2376e47b0',1,'SDStorage::storePacket()'],['../classStorage.html#a6ee18f7841fdd0f70091764a59110db2',1,'Storage::storePacket()']]]
 ];

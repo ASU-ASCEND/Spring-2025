@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 2080;
+var viewWidth = 2204;
 var viewHeight = 887;
 var sectionId = 'dynsection-0';
 </script>
@@ -58,42 +58,42 @@ var sectionId = 'dynsection-0';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Implements the recovery system for Sensor and Storage objects.">
-<polygon fill="#999999" stroke="transparent" points="1424.5,-879 1301.5,-879 1301.5,-635 1424.5,-635 1424.5,-879"/>
-<text text-anchor="start" x="1346.5" y="-867" font-family="Helvetica,sans-Serif" font-size="10.00">Device</text>
-<text text-anchor="start" x="1306" y="-852" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="1319" y="-852" font-family="Helvetica,sans-Serif" font-size="10.00">verified</text>
-<text text-anchor="start" x="1308.5" y="-837" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1319" y="-837" font-family="Helvetica,sans-Serif" font-size="10.00">last_attempt</text>
-<text text-anchor="start" x="1308.5" y="-822" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1319" y="-822" font-family="Helvetica,sans-Serif" font-size="10.00">max_attempts</text>
-<text text-anchor="start" x="1308.5" y="-807" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1319" y="-807" font-family="Helvetica,sans-Serif" font-size="10.00">attempt_number</text>
-<text text-anchor="start" x="1308.5" y="-792" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1319" y="-792" font-family="Helvetica,sans-Serif" font-size="10.00">wait_factor</text>
-<text text-anchor="start" x="1308.5" y="-777" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1319" y="-777" font-family="Helvetica,sans-Serif" font-size="10.00">device_name</text>
-<text text-anchor="start" x="1306" y="-762" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-762" font-family="Helvetica,sans-Serif" font-size="10.00">Device()</text>
-<text text-anchor="start" x="1306" y="-747" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-747" font-family="Helvetica,sans-Serif" font-size="10.00">Device()</text>
-<text text-anchor="start" x="1306" y="-732" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-732" font-family="Helvetica,sans-Serif" font-size="10.00">getDeviceName()</text>
-<text text-anchor="start" x="1306" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1306" y="-702" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-702" font-family="Helvetica,sans-Serif" font-size="10.00">getVerified()</text>
-<text text-anchor="start" x="1306" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">recoveryConfig()</text>
-<text text-anchor="start" x="1306" y="-672" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-672" font-family="Helvetica,sans-Serif" font-size="10.00">setWaitFactor()</text>
-<text text-anchor="start" x="1306" y="-657" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-657" font-family="Helvetica,sans-Serif" font-size="10.00">setMaxAttempts()</text>
-<text text-anchor="start" x="1306" y="-642" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1319" y="-642" font-family="Helvetica,sans-Serif" font-size="10.00">attemptConnection()</text>
-<polygon fill="#666666" stroke="#666666" points="1302,-862 1302,-862 1425,-862 1425,-862 1302,-862"/>
-<polygon fill="#666666" stroke="#666666" points="1302,-772 1302,-772 1317,-772 1317,-772 1302,-772"/>
-<polygon fill="#666666" stroke="#666666" points="1317,-772 1317,-772 1425,-772 1425,-772 1317,-772"/>
-<polygon fill="none" stroke="#666666" points="1301.5,-635 1301.5,-879 1424.5,-879 1424.5,-635 1301.5,-635"/>
+<polygon fill="#999999" stroke="transparent" points="1486.5,-879 1363.5,-879 1363.5,-635 1486.5,-635 1486.5,-879"/>
+<text text-anchor="start" x="1408.5" y="-867" font-family="Helvetica,sans-Serif" font-size="10.00">Device</text>
+<text text-anchor="start" x="1368" y="-852" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="1381" y="-852" font-family="Helvetica,sans-Serif" font-size="10.00">verified</text>
+<text text-anchor="start" x="1370.5" y="-837" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1381" y="-837" font-family="Helvetica,sans-Serif" font-size="10.00">last_attempt</text>
+<text text-anchor="start" x="1370.5" y="-822" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1381" y="-822" font-family="Helvetica,sans-Serif" font-size="10.00">max_attempts</text>
+<text text-anchor="start" x="1370.5" y="-807" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1381" y="-807" font-family="Helvetica,sans-Serif" font-size="10.00">attempt_number</text>
+<text text-anchor="start" x="1370.5" y="-792" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1381" y="-792" font-family="Helvetica,sans-Serif" font-size="10.00">wait_factor</text>
+<text text-anchor="start" x="1370.5" y="-777" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1381" y="-777" font-family="Helvetica,sans-Serif" font-size="10.00">device_name</text>
+<text text-anchor="start" x="1368" y="-762" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-762" font-family="Helvetica,sans-Serif" font-size="10.00">Device()</text>
+<text text-anchor="start" x="1368" y="-747" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-747" font-family="Helvetica,sans-Serif" font-size="10.00">Device()</text>
+<text text-anchor="start" x="1368" y="-732" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-732" font-family="Helvetica,sans-Serif" font-size="10.00">getDeviceName()</text>
+<text text-anchor="start" x="1368" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1368" y="-702" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-702" font-family="Helvetica,sans-Serif" font-size="10.00">getVerified()</text>
+<text text-anchor="start" x="1368" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">recoveryConfig()</text>
+<text text-anchor="start" x="1368" y="-672" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-672" font-family="Helvetica,sans-Serif" font-size="10.00">setWaitFactor()</text>
+<text text-anchor="start" x="1368" y="-657" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-657" font-family="Helvetica,sans-Serif" font-size="10.00">setMaxAttempts()</text>
+<text text-anchor="start" x="1368" y="-642" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1381" y="-642" font-family="Helvetica,sans-Serif" font-size="10.00">attemptConnection()</text>
+<polygon fill="#666666" stroke="#666666" points="1364,-862 1364,-862 1487,-862 1487,-862 1364,-862"/>
+<polygon fill="#666666" stroke="#666666" points="1364,-772 1364,-772 1379,-772 1379,-772 1364,-772"/>
+<polygon fill="#666666" stroke="#666666" points="1379,-772 1379,-772 1487,-772 1487,-772 1379,-772"/>
+<polygon fill="none" stroke="#666666" points="1363.5,-635 1363.5,-879 1486.5,-879 1486.5,-635 1363.5,-635"/>
 </a>
 </g>
 </g>
@@ -101,43 +101,43 @@ var sectionId = 'dynsection-0';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="classSensor.html" target="_top" xlink:title="Parent class for sensor objects.">
-<polygon fill="white" stroke="transparent" points="993.5,-599 860.5,-599 860.5,-340 993.5,-340 993.5,-599"/>
-<text text-anchor="start" x="910.5" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor</text>
-<text text-anchor="start" x="865" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text text-anchor="start" x="878" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">num_fields</text>
-<text text-anchor="start" x="867.5" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="878" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">minimum_period</text>
-<text text-anchor="start" x="867.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="878" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">last_execution</text>
-<text text-anchor="start" x="867.5" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="878" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">csv_header</text>
-<text text-anchor="start" x="867.5" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="878" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">empty_csv</text>
-<text text-anchor="start" x="865" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
-<text text-anchor="start" x="865" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
-<text text-anchor="start" x="865" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
-<text text-anchor="start" x="865" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
-<text text-anchor="start" x="865" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">getPeriod()</text>
-<text text-anchor="start" x="865" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">setPeriod()</text>
-<text text-anchor="start" x="865" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">getLastExecution()</text>
-<text text-anchor="start" x="865" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">setLastExecution()</text>
-<text text-anchor="start" x="865" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">getSensorCSVHeader()</text>
-<text text-anchor="start" x="865" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="878" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="878" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
-<polygon fill="#666666" stroke="#666666" points="861,-581.5 861,-581.5 994,-581.5 994,-581.5 861,-581.5"/>
-<polygon fill="#666666" stroke="#666666" points="861,-506.5 861,-506.5 876,-506.5 876,-506.5 861,-506.5"/>
-<polygon fill="#666666" stroke="#666666" points="876,-506.5 876,-506.5 994,-506.5 994,-506.5 876,-506.5"/>
-<polygon fill="none" stroke="#666666" points="860.5,-340 860.5,-599 993.5,-599 993.5,-340 860.5,-340"/>
+<polygon fill="white" stroke="transparent" points="1056.5,-599 923.5,-599 923.5,-340 1056.5,-340 1056.5,-599"/>
+<text text-anchor="start" x="973.5" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor</text>
+<text text-anchor="start" x="928" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text text-anchor="start" x="941" y="-571.5" font-family="Helvetica,sans-Serif" font-size="10.00">num_fields</text>
+<text text-anchor="start" x="930.5" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="941" y="-556.5" font-family="Helvetica,sans-Serif" font-size="10.00">minimum_period</text>
+<text text-anchor="start" x="930.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="941" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">last_execution</text>
+<text text-anchor="start" x="930.5" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="941" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">csv_header</text>
+<text text-anchor="start" x="930.5" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="941" y="-511.5" font-family="Helvetica,sans-Serif" font-size="10.00">empty_csv</text>
+<text text-anchor="start" x="928" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-496.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="928" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-481.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="928" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="928" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sensor()</text>
+<text text-anchor="start" x="928" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">getPeriod()</text>
+<text text-anchor="start" x="928" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">setPeriod()</text>
+<text text-anchor="start" x="928" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-406.5" font-family="Helvetica,sans-Serif" font-size="10.00">getLastExecution()</text>
+<text text-anchor="start" x="928" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">setLastExecution()</text>
+<text text-anchor="start" x="928" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">getSensorCSVHeader()</text>
+<text text-anchor="start" x="928" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="941" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="941" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 6 more...</text>
+<polygon fill="#666666" stroke="#666666" points="924,-581.5 924,-581.5 1057,-581.5 1057,-581.5 924,-581.5"/>
+<polygon fill="#666666" stroke="#666666" points="924,-506.5 924,-506.5 939,-506.5 939,-506.5 924,-506.5"/>
+<polygon fill="#666666" stroke="#666666" points="939,-506.5 939,-506.5 1057,-506.5 1057,-506.5 939,-506.5"/>
+<polygon fill="none" stroke="#666666" points="923.5,-340 923.5,-599 1056.5,-599 1056.5,-340 923.5,-340"/>
 </a>
 </g>
 </g>
@@ -145,38 +145,38 @@ var sectionId = 'dynsection-0';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1292.91,-710.1C1210.43,-656.1 1074.51,-567.09 993.59,-514.1"/>
-<polygon fill="none" stroke="#63b8ff" points="1291.17,-713.15 1301.46,-715.7 1295.01,-707.29 1291.17,-713.15"/>
+<path fill="none" stroke="#63b8ff" d="M1354.36,-709.64C1272.08,-655.63 1137.17,-567.09 1056.64,-514.24"/>
+<polygon fill="none" stroke="#63b8ff" points="1352.86,-712.84 1363.14,-715.4 1356.7,-706.98 1352.86,-712.84"/>
 </a>
 </g>
 </g>
-<!-- Node17 -->
-<g id="Node000017" class="node">
-<title>Node17</title>
-<g id="a_Node000017"><a xlink:href="classStorage.html" target="_top" xlink:title="Parent class for all data storage devices (sd card, radio, etc)">
-<polygon fill="white" stroke="transparent" points="1900.5,-516.5 1815.5,-516.5 1815.5,-422.5 1900.5,-422.5 1900.5,-516.5"/>
-<text text-anchor="start" x="1839.5" y="-504.5" font-family="Helvetica,sans-Serif" font-size="10.00">Storage</text>
-<text text-anchor="start" x="1856.5" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="1820" y="-474.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1833" y="-474.5" font-family="Helvetica,sans-Serif" font-size="10.00">Storage()</text>
-<text text-anchor="start" x="1820" y="-459.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1833" y="-459.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1820" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1833" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
-<text text-anchor="start" x="1820" y="-429.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1833" y="-429.5" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
-<polygon fill="#666666" stroke="#666666" points="1816,-499.5 1816,-499.5 1901,-499.5 1901,-499.5 1816,-499.5"/>
-<polygon fill="#666666" stroke="#666666" points="1816,-484.5 1816,-484.5 1901,-484.5 1901,-484.5 1816,-484.5"/>
-<polygon fill="none" stroke="#666666" points="1815.5,-422.5 1815.5,-516.5 1900.5,-516.5 1900.5,-422.5 1815.5,-422.5"/>
+<!-- Node18 -->
+<g id="Node000018" class="node">
+<title>Node18</title>
+<g id="a_Node000018"><a xlink:href="classStorage.html" target="_top" xlink:title="Parent class for all data storage devices (sd card, radio, etc)">
+<polygon fill="white" stroke="transparent" points="2024.5,-516.5 1939.5,-516.5 1939.5,-422.5 2024.5,-422.5 2024.5,-516.5"/>
+<text text-anchor="start" x="1963.5" y="-504.5" font-family="Helvetica,sans-Serif" font-size="10.00">Storage</text>
+<text text-anchor="start" x="1980.5" y="-489.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="1944" y="-474.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1957" y="-474.5" font-family="Helvetica,sans-Serif" font-size="10.00">Storage()</text>
+<text text-anchor="start" x="1944" y="-459.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1957" y="-459.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1944" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1957" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="1944" y="-429.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1957" y="-429.5" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
+<polygon fill="#666666" stroke="#666666" points="1940,-499.5 1940,-499.5 2025,-499.5 2025,-499.5 1940,-499.5"/>
+<polygon fill="#666666" stroke="#666666" points="1940,-484.5 1940,-484.5 2025,-484.5 2025,-484.5 1940,-484.5"/>
+<polygon fill="none" stroke="#666666" points="1939.5,-422.5 1939.5,-516.5 2024.5,-516.5 2024.5,-422.5 1939.5,-422.5"/>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node17 -->
-<g id="edge16_Node000001_Node000017" class="edge">
-<title>Node1&#45;&gt;Node17</title>
-<g id="a_edge16_Node000001_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1433.59,-715.29C1537.98,-655.08 1730.33,-544.14 1815.5,-495.01"/>
-<polygon fill="none" stroke="#63b8ff" points="1431.6,-712.39 1424.69,-720.42 1435.1,-718.45 1431.6,-712.39"/>
+<!-- Node1&#45;&gt;Node18 -->
+<g id="edge17_Node000001_Node000018" class="edge">
+<title>Node1&#45;&gt;Node18</title>
+<g id="a_edge17_Node000001_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1495.66,-719.78C1612.88,-659.7 1844.06,-541.2 1939.37,-492.35"/>
+<polygon fill="none" stroke="#63b8ff" points="1494.04,-716.68 1486.74,-724.36 1497.23,-722.91 1494.04,-716.68"/>
 </a>
 </g>
 </g>
@@ -213,8 +213,8 @@ var sectionId = 'dynsection-0';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M849.99,-462.09C669.76,-445.67 227.24,-396.74 115,-304 90.09,-283.42 75.08,-251.23 66.08,-221.84"/>
-<polygon fill="none" stroke="#63b8ff" points="849.92,-465.6 860.19,-463.01 850.55,-458.63 849.92,-465.6"/>
+<path fill="none" stroke="#63b8ff" d="M913.2,-463.35C723.19,-449.18 237.61,-403.86 115,-304 89.84,-283.51 74.78,-251.14 65.83,-221.62"/>
+<polygon fill="none" stroke="#63b8ff" points="913.15,-466.85 923.38,-464.1 913.67,-459.87 913.15,-466.85"/>
 </a>
 </g>
 </g>
@@ -249,8 +249,8 @@ var sectionId = 'dynsection-0';
 <g id="edge3_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
 <g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M850.16,-459.02C690.74,-437.97 331.15,-382.88 239,-304 212.41,-281.24 197.05,-245.3 188.27,-214.19"/>
-<polygon fill="none" stroke="#63b8ff" points="850,-462.53 860.37,-460.36 850.91,-455.59 850,-462.53"/>
+<path fill="none" stroke="#63b8ff" d="M913.31,-460.73C743.23,-442.1 341.37,-389.95 239,-304 212.09,-281.4 196.7,-245.27 187.99,-214.02"/>
+<polygon fill="none" stroke="#63b8ff" points="913.12,-464.23 923.44,-461.83 913.88,-457.27 913.12,-464.23"/>
 </a>
 </g>
 </g>
@@ -285,8 +285,8 @@ var sectionId = 'dynsection-0';
 <g id="edge4_Node000002_Node000005" class="edge">
 <title>Node2&#45;&gt;Node5</title>
 <g id="a_edge4_Node000002_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M850.21,-466.5C731.36,-459.38 502.09,-429.1 363,-304 337.08,-280.69 321.76,-244.92 312.83,-214.05"/>
-<polygon fill="none" stroke="#63b8ff" points="850.14,-470 860.32,-467.06 850.53,-463.01 850.14,-470"/>
+<path fill="none" stroke="#63b8ff" d="M913.44,-457.11C765,-433.68 445.43,-376.13 363,-304 336.77,-281.05 321.43,-245.29 312.57,-214.33"/>
+<polygon fill="none" stroke="#63b8ff" points="912.97,-460.58 923.39,-458.68 914.06,-453.67 912.97,-460.58"/>
 </a>
 </g>
 </g>
@@ -321,8 +321,8 @@ var sectionId = 'dynsection-0';
 <g id="edge5_Node000002_Node000006" class="edge">
 <title>Node2&#45;&gt;Node6</title>
 <g id="a_edge5_Node000002_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M850.4,-458.83C753.89,-442.83 588.41,-402.23 487,-304 462.17,-279.94 446.92,-244.52 437.77,-214.03"/>
-<polygon fill="none" stroke="#63b8ff" points="849.95,-462.3 860.38,-460.43 851.06,-455.39 849.95,-462.3"/>
+<path fill="none" stroke="#63b8ff" d="M913.08,-463.14C804.81,-451.66 607.31,-415.77 487,-304 461.57,-280.37 446.28,-244.78 437.25,-214.09"/>
+<polygon fill="none" stroke="#63b8ff" points="912.97,-466.64 923.27,-464.17 913.67,-459.68 912.97,-466.64"/>
 </a>
 </g>
 </g>
@@ -359,8 +359,8 @@ var sectionId = 'dynsection-0';
 <g id="edge6_Node000002_Node000007" class="edge">
 <title>Node2&#45;&gt;Node7</title>
 <g id="a_edge6_Node000002_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M850.66,-445.72C780.02,-421.11 676.34,-375.53 611,-304 589.98,-280.98 575.57,-249.87 565.98,-221.86"/>
-<polygon fill="none" stroke="#63b8ff" points="849.81,-449.12 860.4,-449.05 852.08,-442.5 849.81,-449.12"/>
+<path fill="none" stroke="#63b8ff" d="M913.57,-453.39C829.24,-433.04 694.44,-389.12 611,-304 588.98,-281.54 574.4,-250.16 564.95,-221.83"/>
+<polygon fill="none" stroke="#63b8ff" points="912.81,-456.81 923.35,-455.7 914.42,-449.99 912.81,-456.81"/>
 </a>
 </g>
 </g>
@@ -395,8 +395,8 @@ var sectionId = 'dynsection-0';
 <g id="edge7_Node000002_Node000008" class="edge">
 <title>Node2&#45;&gt;Node8</title>
 <g id="a_edge7_Node000002_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M852.1,-417.7C813.06,-388.19 766.93,-348.17 735,-304 715.49,-277.02 700.83,-242.99 690.67,-214.07"/>
-<polygon fill="none" stroke="#63b8ff" points="850.2,-420.65 860.31,-423.83 854.39,-415.04 850.2,-420.65"/>
+<path fill="none" stroke="#63b8ff" d="M914.12,-435.08C858.11,-407.08 783.5,-362.32 735,-304 713.44,-278.07 698.52,-243.62 688.74,-214.17"/>
+<polygon fill="none" stroke="#63b8ff" points="912.77,-438.32 923.29,-439.6 915.87,-432.04 912.77,-438.32"/>
 </a>
 </g>
 </g>
@@ -439,8 +439,8 @@ var sectionId = 'dynsection-0';
 <g id="edge8_Node000002_Node000009" class="edge">
 <title>Node2&#45;&gt;Node9</title>
 <g id="a_edge8_Node000002_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M871.37,-330.29C859.63,-301.14 847.54,-271.09 836.71,-244.2"/>
-<polygon fill="none" stroke="#63b8ff" points="868.18,-331.75 875.16,-339.72 874.67,-329.14 868.18,-331.75"/>
+<path fill="none" stroke="#63b8ff" d="M917.11,-380.76C898.86,-356.68 880.18,-330.03 865,-304 854.07,-285.26 843.9,-264.34 835,-244.19"/>
+<polygon fill="none" stroke="#63b8ff" points="914.42,-383 923.27,-388.82 919.98,-378.75 914.42,-383"/>
 </a>
 </g>
 </g>
@@ -475,8 +475,8 @@ var sectionId = 'dynsection-0';
 <g id="edge9_Node000002_Node000010" class="edge">
 <title>Node2&#45;&gt;Node10</title>
 <g id="a_edge9_Node000002_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M927,-329.49C927,-289.07 927,-246.99 927,-214.06"/>
-<polygon fill="none" stroke="#63b8ff" points="923.5,-329.72 927,-339.72 930.5,-329.72 923.5,-329.72"/>
+<path fill="none" stroke="#63b8ff" d="M962.29,-329.74C954.21,-289.25 945.78,-247.06 939.19,-214.06"/>
+<polygon fill="none" stroke="#63b8ff" points="958.89,-330.6 964.28,-339.72 965.76,-329.23 958.89,-330.6"/>
 </a>
 </g>
 </g>
@@ -521,8 +521,8 @@ var sectionId = 'dynsection-0';
 <g id="edge10_Node000002_Node000011" class="edge">
 <title>Node2&#45;&gt;Node11</title>
 <g id="a_edge10_Node000002_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M981.71,-330.41C992.19,-303.97 1002.96,-276.79 1012.82,-251.89"/>
-<polygon fill="none" stroke="#63b8ff" points="978.45,-329.13 978.02,-339.72 984.96,-331.71 978.45,-329.13"/>
+<path fill="none" stroke="#63b8ff" d="M1017.27,-329.71C1022.43,-303.5 1027.72,-276.57 1032.57,-251.89"/>
+<polygon fill="none" stroke="#63b8ff" points="1013.8,-329.23 1015.31,-339.72 1020.67,-330.58 1013.8,-329.23"/>
 </a>
 </g>
 </g>
@@ -557,8 +557,8 @@ var sectionId = 'dynsection-0';
 <g id="edge11_Node000002_Node000012" class="edge">
 <title>Node2&#45;&gt;Node12</title>
 <g id="a_edge11_Node000002_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1001.5,-416.33C1039.4,-386.82 1083.91,-347.22 1115,-304 1134.41,-277.02 1149.24,-243.16 1159.61,-214.35"/>
-<polygon fill="none" stroke="#63b8ff" points="999.31,-413.6 993.51,-422.47 1003.57,-419.15 999.31,-413.6"/>
+<path fill="none" stroke="#63b8ff" d="M1062.8,-381.26C1081.13,-357.08 1099.88,-330.25 1115,-304 1131.3,-275.69 1145.67,-242.35 1156.55,-214.2"/>
+<polygon fill="none" stroke="#63b8ff" points="1059.9,-379.28 1056.6,-389.35 1065.46,-383.54 1059.9,-379.28"/>
 </a>
 </g>
 </g>
@@ -595,8 +595,8 @@ var sectionId = 'dynsection-0';
 <g id="edge12_Node000002_Node000013" class="edge">
 <title>Node2&#45;&gt;Node13</title>
 <g id="a_edge12_Node000002_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1003.5,-445.37C1073.68,-420.62 1176.28,-375.04 1241,-304 1261.99,-280.96 1276.39,-249.84 1285.99,-221.84"/>
-<polygon fill="none" stroke="#63b8ff" points="1002.12,-442.14 993.82,-448.72 1004.41,-448.76 1002.12,-442.14"/>
+<path fill="none" stroke="#63b8ff" d="M1065.77,-434.25C1120.77,-406.07 1193.56,-361.47 1241,-304 1260.67,-280.18 1274.82,-249.27 1284.6,-221.62"/>
+<polygon fill="none" stroke="#63b8ff" points="1064.11,-431.17 1056.76,-438.8 1067.26,-437.41 1064.11,-431.17"/>
 </a>
 </g>
 </g>
@@ -631,23 +631,23 @@ var sectionId = 'dynsection-0';
 <g id="edge13_Node000002_Node000014" class="edge">
 <title>Node2&#45;&gt;Node14</title>
 <g id="a_edge13_Node000002_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1003.66,-458.66C1099.8,-442.52 1264.21,-401.78 1365,-304 1389.82,-279.93 1405.06,-244.5 1414.22,-214.02"/>
-<polygon fill="none" stroke="#63b8ff" points="1003.02,-455.22 993.72,-460.28 1004.15,-462.13 1003.02,-455.22"/>
+<path fill="none" stroke="#63b8ff" d="M1066.61,-452.93C1150.12,-432.28 1282.79,-388.19 1365,-304 1388.96,-279.47 1404.12,-244.39 1413.45,-214.22"/>
+<polygon fill="none" stroke="#63b8ff" points="1065.57,-449.58 1056.67,-455.33 1067.22,-456.38 1065.57,-449.58"/>
 </a>
 </g>
 </g>
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="classTMP117Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the TMP117.">
+<g id="a_Node000015"><a xlink:href="classSHTC3Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the SHTC3.">
 <polygon fill="white" stroke="transparent" points="1604,-214 1498,-214 1498,-90 1604,-90 1604,-214"/>
-<text text-anchor="start" x="1514.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor</text>
+<text text-anchor="start" x="1518.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">SHTC3Sensor</text>
 <text text-anchor="start" x="1504.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1515" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">tmp</text>
+<text text-anchor="start" x="1515" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">shtc3</text>
 <text text-anchor="start" x="1502" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
+<text text-anchor="start" x="1515" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">SHTC3Sensor()</text>
 <text text-anchor="start" x="1502" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
+<text text-anchor="start" x="1515" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">SHTC3Sensor()</text>
 <text text-anchor="start" x="1502" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1515" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
 <text text-anchor="start" x="1502" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -667,22 +667,23 @@ var sectionId = 'dynsection-0';
 <g id="edge14_Node000002_Node000015" class="edge">
 <title>Node2&#45;&gt;Node15</title>
 <g id="a_edge14_Node000002_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1003.99,-466.38C1122.56,-459.11 1350.61,-428.59 1489,-304 1514.91,-280.68 1530.23,-244.91 1539.16,-214.04"/>
-<polygon fill="none" stroke="#63b8ff" points="1003.69,-462.9 993.91,-466.96 1004.09,-469.88 1003.69,-462.9"/>
+<path fill="none" stroke="#63b8ff" d="M1066.76,-462.91C1174.27,-451.16 1369.85,-414.96 1489,-304 1514.41,-280.34 1529.69,-244.75 1538.73,-214.06"/>
+<polygon fill="none" stroke="#63b8ff" points="1066.22,-459.45 1056.64,-463.97 1066.95,-466.41 1066.22,-459.45"/>
 </a>
 </g>
 </g>
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="classTempSensor.html" target="_top" xlink:title="Implementation of a Sensor for the onboard temperature sensor.">
+<g id="a_Node000016"><a xlink:href="classTMP117Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the TMP117.">
 <polygon fill="white" stroke="transparent" points="1728,-214 1622,-214 1622,-90 1728,-90 1728,-214"/>
-<text text-anchor="start" x="1645" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor</text>
-<text text-anchor="start" x="1673" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="1638.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor</text>
+<text text-anchor="start" x="1628.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1639" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">tmp</text>
 <text text-anchor="start" x="1626" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1639" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
+<text text-anchor="start" x="1639" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
 <text text-anchor="start" x="1626" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1639" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
+<text text-anchor="start" x="1639" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
 <text text-anchor="start" x="1626" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1639" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
 <text text-anchor="start" x="1626" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -692,7 +693,8 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="1626" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1639" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
 <polygon fill="#666666" stroke="#666666" points="1622,-197 1622,-197 1728,-197 1728,-197 1622,-197"/>
-<polygon fill="#666666" stroke="#666666" points="1622,-182 1622,-182 1728,-182 1728,-182 1622,-182"/>
+<polygon fill="#666666" stroke="#666666" points="1622,-182 1622,-182 1637,-182 1637,-182 1622,-182"/>
+<polygon fill="#666666" stroke="#666666" points="1637,-182 1637,-182 1728,-182 1728,-182 1637,-182"/>
 <polygon fill="none" stroke="#666666" points="1622,-90 1622,-214 1728,-214 1728,-90 1622,-90"/>
 </a>
 </g>
@@ -701,136 +703,170 @@ var sectionId = 'dynsection-0';
 <g id="edge15_Node000002_Node000016" class="edge">
 <title>Node2&#45;&gt;Node16</title>
 <g id="a_edge15_Node000002_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1003.91,-458.95C1163.03,-437.82 1521.18,-382.64 1613,-304 1639.58,-281.23 1654.94,-245.29 1663.73,-214.18"/>
-<polygon fill="none" stroke="#63b8ff" points="1003.18,-455.52 993.72,-460.3 1004.09,-462.46 1003.18,-455.52"/>
+<path fill="none" stroke="#63b8ff" d="M1066.63,-456.96C1214.37,-433.36 1531.23,-375.67 1613,-304 1639.21,-281.02 1654.55,-245.27 1663.41,-214.32"/>
+<polygon fill="none" stroke="#63b8ff" points="1066.05,-453.51 1056.72,-458.54 1067.15,-460.42 1066.05,-453.51"/>
 </a>
 </g>
 </g>
-<!-- Node18 -->
-<g id="Node000018" class="node">
-<title>Node18</title>
-<g id="a_Node000018"><a xlink:href="classFlashStorage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="transparent" points="1852,-304 1746,-304 1746,0 1852,0 1852,-304"/>
-<text text-anchor="start" x="1767" y="-292" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage</text>
-<text text-anchor="start" x="1752.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">file_data</text>
-<text text-anchor="start" x="1752.5" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">flash</text>
-<text text-anchor="start" x="1752.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">address</text>
-<text text-anchor="start" x="1752.5" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">active_file</text>
-<text text-anchor="start" x="1752.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">FILE_HEADER</text>
-<text text-anchor="start" x="1752.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">MAX_SIZE</text>
-<text text-anchor="start" x="1752.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">SECTOR_SIZE</text>
-<text text-anchor="start" x="1752.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">START_ADDRESS</text>
+<!-- Node17 -->
+<g id="Node000017" class="node">
+<title>Node17</title>
+<g id="a_Node000017"><a xlink:href="classTempSensor.html" target="_top" xlink:title="Implementation of a Sensor for the onboard temperature sensor.">
+<polygon fill="white" stroke="transparent" points="1852,-214 1746,-214 1746,-90 1852,-90 1852,-214"/>
+<text text-anchor="start" x="1769" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor</text>
+<text text-anchor="start" x="1797" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="1750" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1763" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
 <text text-anchor="start" x="1750" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1763" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage()</text>
+<text text-anchor="start" x="1763" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
 <text text-anchor="start" x="1750" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1763" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
 <text text-anchor="start" x="1750" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1763" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="1763" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
 <text text-anchor="start" x="1750" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1763" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
+<text text-anchor="start" x="1763" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
 <text text-anchor="start" x="1750" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1763" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">dump()</text>
-<text text-anchor="start" x="1750" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1763" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">erase()</text>
-<text text-anchor="start" x="1752.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">indexFlash()</text>
-<text text-anchor="start" x="1752.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">loadAddress()</text>
-<text text-anchor="start" x="1752.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">isSectorEmpty()</text>
-<text text-anchor="start" x="1752.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">readFileHeader()</text>
-<text text-anchor="start" x="1752.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">writeFileHeader()</text>
-<polygon fill="#666666" stroke="#666666" points="1746,-287 1746,-287 1852,-287 1852,-287 1746,-287"/>
-<polygon fill="#666666" stroke="#666666" points="1746,-167 1746,-167 1761,-167 1761,-167 1746,-167"/>
-<polygon fill="#666666" stroke="#666666" points="1761,-167 1761,-167 1852,-167 1852,-167 1761,-167"/>
-<polygon fill="none" stroke="#666666" points="1746,0 1746,-304 1852,-304 1852,0 1746,0"/>
+<text text-anchor="start" x="1763" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="1746,-197 1746,-197 1852,-197 1852,-197 1746,-197"/>
+<polygon fill="#666666" stroke="#666666" points="1746,-182 1746,-182 1852,-182 1852,-182 1746,-182"/>
+<polygon fill="none" stroke="#666666" points="1746,-90 1746,-214 1852,-214 1852,-90 1746,-90"/>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node18 -->
-<g id="edge17_Node000017_Node000018" class="edge">
-<title>Node17&#45;&gt;Node18</title>
-<g id="a_edge17_Node000017_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1847.5,-412.33C1841.81,-381.94 1834.49,-342.79 1827.27,-304.17"/>
-<polygon fill="none" stroke="#63b8ff" points="1844.08,-413.1 1849.36,-422.29 1850.96,-411.81 1844.08,-413.1"/>
+<!-- Node2&#45;&gt;Node17 -->
+<g id="edge16_Node000002_Node000017" class="edge">
+<title>Node2&#45;&gt;Node17</title>
+<g id="a_edge16_Node000002_Node000017"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1066.59,-460.64C1235.95,-441.87 1635.26,-389.51 1737,-304 1763.9,-281.39 1779.29,-245.26 1788,-214"/>
+<polygon fill="none" stroke="#63b8ff" points="1066.07,-457.18 1056.51,-461.75 1066.83,-464.14 1066.07,-457.18"/>
 </a>
 </g>
 </g>
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="classRadioStorage.html" target="_top" xlink:title="Implementation of a Storage device to interface with an SD card.">
-<polygon fill="white" stroke="transparent" points="1964,-199 1870,-199 1870,-105 1964,-105 1964,-199"/>
-<text text-anchor="start" x="1884" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">RadioStorage</text>
+<g id="a_Node000019"><a xlink:href="classFlashStorage.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="transparent" points="1976,-304 1870,-304 1870,0 1976,0 1976,-304"/>
+<text text-anchor="start" x="1891" y="-292" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage</text>
+<text text-anchor="start" x="1876.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">file_data</text>
+<text text-anchor="start" x="1876.5" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">flash</text>
+<text text-anchor="start" x="1876.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">address</text>
+<text text-anchor="start" x="1876.5" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-232" font-family="Helvetica,sans-Serif" font-size="10.00">active_file</text>
+<text text-anchor="start" x="1876.5" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-217" font-family="Helvetica,sans-Serif" font-size="10.00">FILE_HEADER</text>
+<text text-anchor="start" x="1876.5" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">MAX_SIZE</text>
+<text text-anchor="start" x="1876.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">SECTOR_SIZE</text>
 <text text-anchor="start" x="1876.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1887" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">file_name</text>
+<text text-anchor="start" x="1887" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">START_ADDRESS</text>
 <text text-anchor="start" x="1874" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1887" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">RadioStorage()</text>
+<text text-anchor="start" x="1887" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">FlashStorage()</text>
 <text text-anchor="start" x="1874" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1887" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
 <text text-anchor="start" x="1874" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1887" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
 <text text-anchor="start" x="1874" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1887" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
-<polygon fill="#666666" stroke="#666666" points="1870,-182 1870,-182 1964,-182 1964,-182 1870,-182"/>
+<text text-anchor="start" x="1874" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1887" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">dump()</text>
+<text text-anchor="start" x="1874" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1887" y="-82" font-family="Helvetica,sans-Serif" font-size="10.00">erase()</text>
+<text text-anchor="start" x="1876.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">indexFlash()</text>
+<text text-anchor="start" x="1876.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">loadAddress()</text>
+<text text-anchor="start" x="1876.5" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">isSectorEmpty()</text>
+<text text-anchor="start" x="1876.5" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">readFileHeader()</text>
+<text text-anchor="start" x="1876.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1887" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">writeFileHeader()</text>
+<polygon fill="#666666" stroke="#666666" points="1870,-287 1870,-287 1976,-287 1976,-287 1870,-287"/>
 <polygon fill="#666666" stroke="#666666" points="1870,-167 1870,-167 1885,-167 1885,-167 1870,-167"/>
-<polygon fill="#666666" stroke="#666666" points="1885,-167 1885,-167 1964,-167 1964,-167 1885,-167"/>
-<polygon fill="none" stroke="#666666" points="1870,-105 1870,-199 1964,-199 1964,-105 1870,-105"/>
+<polygon fill="#666666" stroke="#666666" points="1885,-167 1885,-167 1976,-167 1976,-167 1885,-167"/>
+<polygon fill="none" stroke="#666666" points="1870,0 1870,-304 1976,-304 1976,0 1870,0"/>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node19 -->
-<g id="edge18_Node000017_Node000019" class="edge">
-<title>Node17&#45;&gt;Node19</title>
-<g id="a_edge18_Node000017_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1868.55,-412.09C1879.92,-351.26 1897.82,-255.57 1908.38,-199.08"/>
-<polygon fill="none" stroke="#63b8ff" points="1865.04,-411.81 1866.64,-422.29 1871.92,-413.1 1865.04,-411.81"/>
+<!-- Node18&#45;&gt;Node19 -->
+<g id="edge18_Node000018_Node000019" class="edge">
+<title>Node18&#45;&gt;Node19</title>
+<g id="a_edge18_Node000018_Node000019"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1971.5,-412.33C1965.81,-381.94 1958.49,-342.79 1951.27,-304.17"/>
+<polygon fill="none" stroke="#63b8ff" points="1968.08,-413.1 1973.36,-422.29 1974.96,-411.81 1968.08,-413.1"/>
 </a>
 </g>
 </g>
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="classSDStorage.html" target="_top" xlink:title="Implementation of a Storage device to interface with an SD card.">
-<polygon fill="white" stroke="transparent" points="2072,-214 1982,-214 1982,-90 2072,-90 2072,-214"/>
-<text text-anchor="start" x="2001" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">SDStorage</text>
-<text text-anchor="start" x="1988.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1999" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">file_name</text>
-<text text-anchor="start" x="1988.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1999" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">bin_file_name</text>
-<text text-anchor="start" x="1988.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1999" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">sd_spi_1</text>
-<text text-anchor="start" x="1986" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1999" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">SDStorage()</text>
-<text text-anchor="start" x="1986" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1999" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1986" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1999" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
-<text text-anchor="start" x="1986" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1999" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
-<polygon fill="#666666" stroke="#666666" points="1982,-197 1982,-197 2072,-197 2072,-197 1982,-197"/>
-<polygon fill="#666666" stroke="#666666" points="1982,-152 1982,-152 1997,-152 1997,-152 1982,-152"/>
-<polygon fill="#666666" stroke="#666666" points="1997,-152 1997,-152 2072,-152 2072,-152 1997,-152"/>
-<polygon fill="none" stroke="#666666" points="1982,-90 1982,-214 2072,-214 2072,-90 1982,-90"/>
+<g id="a_Node000020"><a xlink:href="classRadioStorage.html" target="_top" xlink:title="Implementation of a Storage device to interface with an SD card.">
+<polygon fill="white" stroke="transparent" points="2088,-199 1994,-199 1994,-105 2088,-105 2088,-199"/>
+<text text-anchor="start" x="2008" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">RadioStorage</text>
+<text text-anchor="start" x="2000.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2011" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">file_name</text>
+<text text-anchor="start" x="1998" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2011" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">RadioStorage()</text>
+<text text-anchor="start" x="1998" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2011" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1998" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2011" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="1998" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2011" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
+<polygon fill="#666666" stroke="#666666" points="1994,-182 1994,-182 2088,-182 2088,-182 1994,-182"/>
+<polygon fill="#666666" stroke="#666666" points="1994,-167 1994,-167 2009,-167 2009,-167 1994,-167"/>
+<polygon fill="#666666" stroke="#666666" points="2009,-167 2009,-167 2088,-167 2088,-167 2009,-167"/>
+<polygon fill="none" stroke="#666666" points="1994,-105 1994,-199 2088,-199 2088,-105 1994,-105"/>
 </a>
 </g>
 </g>
-<!-- Node17&#45;&gt;Node20 -->
-<g id="edge19_Node000017_Node000020" class="edge">
-<title>Node17&#45;&gt;Node20</title>
-<g id="a_edge19_Node000017_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1901.39,-414.32C1924.78,-383.32 1952.89,-342.94 1973,-304 1987.69,-275.55 2000.08,-242.19 2009.27,-214.07"/>
-<polygon fill="none" stroke="#63b8ff" points="1898.51,-412.33 1895.24,-422.41 1904.08,-416.57 1898.51,-412.33"/>
+<!-- Node18&#45;&gt;Node20 -->
+<g id="edge19_Node000018_Node000020" class="edge">
+<title>Node18&#45;&gt;Node20</title>
+<g id="a_edge19_Node000018_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1992.55,-412.09C2003.92,-351.26 2021.82,-255.57 2032.38,-199.08"/>
+<polygon fill="none" stroke="#63b8ff" points="1989.04,-411.81 1990.64,-422.29 1995.92,-413.1 1989.04,-411.81"/>
+</a>
+</g>
+</g>
+<!-- Node21 -->
+<g id="Node000021" class="node">
+<title>Node21</title>
+<g id="a_Node000021"><a xlink:href="classSDStorage.html" target="_top" xlink:title="Implementation of a Storage device to interface with an SD card.">
+<polygon fill="white" stroke="transparent" points="2196,-214 2106,-214 2106,-90 2196,-90 2196,-214"/>
+<text text-anchor="start" x="2125" y="-202" font-family="Helvetica,sans-Serif" font-size="10.00">SDStorage</text>
+<text text-anchor="start" x="2112.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2123" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">file_name</text>
+<text text-anchor="start" x="2112.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2123" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">bin_file_name</text>
+<text text-anchor="start" x="2112.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="2123" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">sd_spi_1</text>
+<text text-anchor="start" x="2110" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2123" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">SDStorage()</text>
+<text text-anchor="start" x="2110" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2123" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="2110" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2123" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">store()</text>
+<text text-anchor="start" x="2110" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2123" y="-97" font-family="Helvetica,sans-Serif" font-size="10.00">storePacket()</text>
+<polygon fill="#666666" stroke="#666666" points="2106,-197 2106,-197 2196,-197 2196,-197 2106,-197"/>
+<polygon fill="#666666" stroke="#666666" points="2106,-152 2106,-152 2121,-152 2121,-152 2106,-152"/>
+<polygon fill="#666666" stroke="#666666" points="2121,-152 2121,-152 2196,-152 2196,-152 2121,-152"/>
+<polygon fill="none" stroke="#666666" points="2106,-90 2106,-214 2196,-214 2196,-90 2106,-90"/>
+</a>
+</g>
+</g>
+<!-- Node18&#45;&gt;Node21 -->
+<g id="edge20_Node000018_Node000021" class="edge">
+<title>Node18&#45;&gt;Node21</title>
+<g id="a_edge20_Node000018_Node000021"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M2025.39,-414.32C2048.78,-383.32 2076.89,-342.94 2097,-304 2111.69,-275.55 2124.08,-242.19 2133.27,-214.07"/>
+<polygon fill="none" stroke="#63b8ff" points="2022.51,-412.33 2019.24,-422.41 2028.08,-416.57 2022.51,-412.33"/>
 </a>
 </g>
 </g>
