@@ -1,37 +1,90 @@
-import csv
 import threading
-from queue import Queue 
-from construct import Struct, Const, Int32ul, Int16ul, Array, Byte, Checksum, this
+from queue import Queue
+from construct import (
+    Checksum, ConstError, ChecksumError, ConstructError,
+    Const, Array, Struct,
+    Int32ul, Int16ul,
+    Byte, this
+)
 
 class PacketDecoder(threading.Thread):
-    # Define checksum function
-    def validate(sensor_data):
-        pass
-
-    # Define packet structure
-    packet = Struct(
-        "sync" / Const(b"\x41\x53\x55\x21"), # ASU!
-        "sensor_id" / Int32ub,
-        "length" / Int16ub,
-        "timestamp" / Int32ub,
-        "sensor_data" / Array(this.length, Byte),
-        "checksum" / Checksum(Byte, validate, this.sensor_data)
-    )
-
-    # Configure packet decoder
-    config = {}
-    with open('config.csv', mode='r') as file:
-        reader = csv.reader(file)
-        for row in reader: # Create a dictionary from the CSV file
-            if row: 
-                sensor_name = row[0]
-                measurements = ', '.join(item.strip() for item in row[1:])
-                config[sensor_name] = measurements
-    
-    def __init__(self, sorter_to_decoder: Queue, decoder_packets: Queue):
+    # Initialize PacketDecoder
+    def __init__(
+            self, sorter_to_decoder: Queue, 
+            decoder_packets: Queue,
+            bitmask_to_struct: dict,
+            bitmask_to_name: dict
+    ):
         super().__init__()
         self.sorter_to_decoder = sorter_to_decoder
         self.decoder_packets = decoder_packets
+        self.bitmask_to_struct = bitmask_to_struct
+        self.bitmask_to_name = bitmask_to_name 
 
-if __name__ == '__main__':
-    pass
+        # Define packet structure
+        self.packet_struct = Struct(
+            "sync"        / Const(b"ASU!"), # Sync byte: b"\x41\x53\x55\x21"
+            "bitmask"     / Int32ul,
+            "length"      / Int16ul,
+            "timestamp"   / Int32ul,
+            "sensor_data" / Array(this.length, Byte),
+            "checksum"    / Checksum(Byte, self.validate, this.sensor_data)
+        )
+
+    # Validate checksum
+    def validate(self, sensor_data):
+        total = sum(sensor_data) & 0xFF
+        return ((~total) + 1) & 0xFF
+    
+    # Run PacketDecoder
+    def run(self):
+        while True:
+            # Get packet bytes from sorter
+            packet_bytes = self.sorter_to_decoder.get()
+
+            # Parse packet bytes & catch possible errors
+            try:
+                parsed_packet = self.packet_struct.parse(packet_bytes)
+            except ConstError as e: # Catch sync byte mistmatch
+                print(f"[ERROR] Sync byte mismatch: {e}")
+                continue
+            except ChecksumError as e: # Catch checksum validation errors
+                print(f"[ERROR] Checksum validation failed: {e}")
+                continue
+            except ConstructError as e: # Catch-all for other parse errors
+                print(f"[ERROR] Packet parsing failed: {e}")
+                continue
+
+            # Extract sensor ID & sensor data
+            bitmask = parsed_packet.bitmask
+            sensor_data = bytes(parsed_packet.sensor_data)
+            timestamp = parsed_packet.timestamp
+
+            # Parse each sensor data field
+            offset = 0
+            parsed = {}
+            for bitmask_index in range(2, 32): # Ignore the first two bits (Header & Millis)
+                if bitmask & (1 << bitmask_index):
+                    if bitmask_index not in self.bitmask_to_struct: # Check if sensor exists
+                        print(f"[ERROR] No sensor found for bitmask index: {bitmask_index}")
+                        continue
+
+                    # Extract sensor data fields & sensor name
+                    sensor_fields = self.bitmask_to_struct[bitmask_index]
+                    sensor_name = self.bitmask_to_name[bitmask_index]
+
+                    try: # Parse sensor data fields
+                        temp_parsed = sensor_fields.parse(sensor_data[offset:])
+                    except ConstructError as e: # Catch errors in parsing sensor data
+                        print(f"[ERROR] Parsing sensor {sensor_name} (bitmask {bitmask_index}) failed: {e}")
+                        break
+
+                    # Store parsed sensor data
+                    parsed[sensor_name] = temp_parsed
+                    offset += sensor_fields.sizeof()
+
+            # Store pass parsed packets to queue
+            self.decoder_packets.put({
+                "timestamp": timestamp,
+                "sensor_data": parsed
+            })
