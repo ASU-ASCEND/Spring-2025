@@ -142,12 +142,12 @@ class Sensor : public Device {
   void getDataPacket(uint32_t& sensor_id, uint8_t*& packet) {
     if (millis() - this->last_execution >= this->minimum_period) {
       this->last_execution = millis();
-      uint8_t* before = packet; 
+      uint8_t* before = packet;
       readDataPacket(packet);
-      
+
       sensor_id = (sensor_id << 1);
-      if(packet != before){
-        sensor_id |= 1; 
+      if (packet != before) {
+        sensor_id |= 1;
       }
     } else {
       sensor_id = (sensor_id << 1) | 0;
