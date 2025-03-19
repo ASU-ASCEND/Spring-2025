@@ -1,14 +1,13 @@
-Header
-Millis
-PCF8523, Time
-BME688, Temp (°C), Pressure (hPa), Humidity (%), Gas (KΩ), Altitude (m)
-INA260, Current (mA), Voltage (mV), Power (mW)
-LSM9DS1, AccX (g), AccY (g), AccZ (g), GyroX (°/s), GyroY (°/s), GyroZ (°/s), MagX (µT), MagY (µT), MagZ (µT)
-PicoTemp, Temperature (°C)
-SGP30, TVOC (ppb), eCO2 (ppm), TVOC Base (ppb), eCO2 Base (ppb), H2, Ethanol
-BME280, Relative Humidity (%), Pressure (Pa), Altitude (m), Temperature (°C), Dew Point (°C)
-ENS160, AQI, TVOC (ppb), eCO2 (ppm)
-UV Sensor 1, UVA2 (nm), UVB2 (nm), UVC2 (nm)
-UV Sensor 2, UVA0 (nm), UVB0 (nm), UVC0 (nm)
-ICM20948, AccX (g), AccY (g), AccZ (g), GyroX (°/s), GyroY (°/s), GyroZ (°/s), MagX (µT), MagY (µT), MagZ (µT), Temperature (°C)
-MTK3339, Date, Latitude, Longitude, Speed, Angle, Altitude, Satellites
+BitIndex, SensorName, FieldLabel_1, FieldType_1, FieldLabel_2, FieldType_2, FieldLabel_3, FieldType_3, FieldLabel_4, FieldType_4, FieldLabel_5, FieldType_5, FieldLabel_6, FieldType_6, FieldLabel_7, FieldType_7, FieldLabel_8, FieldType_8, FieldLabel_9, FieldType_9, FieldLabel_10, FieldType_10, FieldLabel_11, FieldType_11, FieldLabel_12, FieldType_12 
+0, PCF8523, Year, uint16_t, Month, uint8_t, Day, uint8_t, Hour, uint8_t, Minute, uint8_t, Second, uint8_t
+1, BME688, Temp (°C), float, Pressure (hPa), uint32_t, Humidity (%), float, Gas (KΩ), uint32_t, Altitude (m), float
+2, INA260, Current (mA), float, Voltage (mV), float, Power (mW), float
+3, LSM9DS1, AccX (g), float, AccY (g), float, AccZ (g), float, GyroX (°/s), float, GyroY (°/s), float, GyroZ (°/s), float, MagX (µT), float, MagY (µT), float, MagZ (µT), float
+4, PicoTemp, Temperature (°C), float
+5, SGP30, eCO2 (ppm), uint16_t, TVOC (ppb), uint16_t
+6, BME280, Relative Humidity (%), float, Pressure (Pa), float, Altitude (m), float, Temperature (°C), float, Dew Point (°C), double
+7, ENS160, AQI, uint8_t, TVOC (ppb), uint16_t, eCO2 (ppm), uint16_t
+8, UV Sensor 1, UVA2 (nm), float, UVB2 (nm), float, UVC2 (nm), float
+9, UV Sensor 2, UVA0 (nm), float, UVB0 (nm), float, UVC0 (nm), float
+10, ICM20948, AccX (g), float, AccY (g), float, AccZ (g), float, GyroX (°/s), float, GyroY (°/s), float, GyroZ (°/s), float, MagX (µT), float, MagY (µT), float, MagZ (µT), float, Temperature (°C), float
+11, MTK3339, Year, uint16_t, Month, uint8_t, Day, uint8_t, Hour, uint8_t, Minute, uint8_t, Second, uint8_t, Latitude, float, Longitude, float, Speed, float, Heading, float, Altitude, float, Satellites, uint8_t
