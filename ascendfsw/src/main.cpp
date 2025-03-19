@@ -29,7 +29,7 @@
 int verifySensors();
 int verifySensorRecovery();
 String readSensorData();
-void readSensorDataPacket(uint8_t* packet);
+uint16_t readSensorDataPacket(uint8_t* packet);
 String decodePacket(uint8_t* packet);
 
 void handleDataInterface();
@@ -190,17 +190,15 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
   uint8_t packet[QT_ENTRY_SIZE];
   // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
   // debugging
-  readSensorDataPacket(packet);
+  uint16_t packet_len = readSensorDataPacket(packet);
   String csv_row = decodePacket(packet);
 #else
   String csv_row = readSensorData();
 #endif
 
   // print csv row
-  log_data(csv_row);
-
-  // send data to flash
-  // flash_storage.store(csv_row);
+  // log_data(csv_row);
+  log_data_raw(packet, packet_len); 
 
   // send data to core1
   queue_add_blocking(&qt, csv_row.c_str());
@@ -276,7 +274,7 @@ int verifySensors() {
  *
  * @param packet Pointer to the packet array
  */
-void readSensorDataPacket(uint8_t* packet) {
+uint16_t readSensorDataPacket(uint8_t* packet) {
   // set sync bytes
   uint8_t* temp_packet = packet;
   std::copy(SYNC_BYTES, SYNC_BYTES + sizeof(SYNC_BYTES), temp_packet);
@@ -321,6 +319,8 @@ void readSensorDataPacket(uint8_t* packet) {
     checksum += packet[i];
   }
   *(packet + packet_len - 1) = -checksum;
+
+  return packet_len;
 }
 
 /**

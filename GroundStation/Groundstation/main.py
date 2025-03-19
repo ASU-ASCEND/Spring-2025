@@ -5,6 +5,7 @@ import PacketDecoder
 import SerialInput
 import SerialSorter
 import SimpleDisplay
+import GUI
 from time import sleep
 
 from ConfigLoader import load_config
@@ -48,19 +49,30 @@ if __name__ == "__main__":
         num_sensors
     )
     
-    simple_display = SimpleDisplay.SimpleDisplay(
-        end_event, 
-        sorter_core0, 
-        sorter_core1, 
-        sorter_misc, 
+    # simple_display = SimpleDisplay.SimpleDisplay(
+    #     end_event, 
+    #     sorter_core0, 
+    #     sorter_core1, 
+    #     sorter_misc, 
+    #     decoder_packets
+    # )
+    gui = GUI.GUI(
+        end_event,
+        sorter_core0,
+        sorter_core1,
+        sorter_misc,
         decoder_packets
     )
+
 
     # Start threads
     serial_input.start()
     serial_sorter.start()
     packet_decoder.start()
-    simple_display.start()
+    # simple_display.start()
+
+    # run the gui in the main thread 
+    gui.run()
 
     # useful for finding straggling threads 
     # while True:
@@ -77,4 +89,4 @@ if __name__ == "__main__":
     serial_input.join()
     serial_sorter.join()
     packet_decoder.join()
-    simple_display.join()
+    # simple_display.join()

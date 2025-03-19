@@ -4,7 +4,7 @@ from construct import (
     Checksum, ConstError, ChecksumError, ConstructError,
     Const, Array, Struct,
     Int32ul, Int16ul,
-    Byte, this
+    Byte, Bytes, this, Pointer
 )
 from time import sleep
 from queue import Empty
@@ -28,20 +28,31 @@ class PacketDecoder(threading.Thread):
         self.bitmask_to_name = bitmask_to_name 
         self.num_sensors = num_sensors
 
+        self.header_size = 4 + 4 + 2 + 4
+        self.checksum_size = 1
         # Define packet structure
         self.packet_struct = Struct(
             "sync"        / Const(b"ASU!"), # Sync byte: b"\x41\x53\x55\x21"
             "bitmask"     / Int32ul,
             "length"      / Int16ul,
             "timestamp"   / Int32ul,
-            "sensor_data" / Array(this.length, Byte),
-            "checksum"    / Checksum(Byte, self.validate, this.sensor_data)
+            "sensor_data" / Array(this.length - self.header_size - self.checksum_size, Byte),
+            "checksum"    / Checksum(Byte, self.validate, this)
         )
 
     # Validate checksum
-    def validate(self, sensor_data):
-        total = sum(sensor_data) & 0xFF
-        return ((~total) + 1) & 0xFF
+    def validate(self, packet):
+        full_bytes = Pointer(packet, Bytes(packet.length))
+        print(full_bytes)
+        packet_bytes = full_bytes.parse(packet)
+        print(packet_bytes)
+        sum = 0
+        for byte in packet_bytes: 
+            sum += byte
+
+        return sum == 0
+        # total = sum(sensor_data) & 0xFF
+        # return total == 0 #((~total) + 1) & 0xFF
     
     # Run PacketDecoder
     def run(self):
