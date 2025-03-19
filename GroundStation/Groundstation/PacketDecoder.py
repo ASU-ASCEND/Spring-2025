@@ -13,13 +13,15 @@ class PacketDecoder(threading.Thread):
             self, sorter_to_decoder: Queue, 
             decoder_packets: Queue,
             bitmask_to_struct: dict,
-            bitmask_to_name: dict
+            bitmask_to_name: dict,
+            num_sensors: int
     ):
         super().__init__()
         self.sorter_to_decoder = sorter_to_decoder
         self.decoder_packets = decoder_packets
         self.bitmask_to_struct = bitmask_to_struct
         self.bitmask_to_name = bitmask_to_name 
+        self.num_sensors = num_sensors
 
         # Define packet structure
         self.packet_struct = Struct(
@@ -63,7 +65,7 @@ class PacketDecoder(threading.Thread):
             # Parse each sensor data field
             offset = 0
             parsed = {}
-            for bitmask_index in range(2, 32): # Ignore the first two bits (Header & Millis)
+            for bitmask_index in range(self.num_sensors): # Iterate through each sensor (0 -> num_sensors)
                 if bitmask & (1 << bitmask_index):
                     if bitmask_index not in self.bitmask_to_struct: # Check if sensor exists
                         print(f"[ERROR] No sensor found for bitmask index: {bitmask_index}")

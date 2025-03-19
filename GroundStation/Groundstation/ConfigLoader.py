@@ -21,6 +21,7 @@ TYPE_KEY = {
 def load_config(filepath):
     bitmask_to_struct = {}
     bitmask_to_name = {}
+    num_sensors = 0
 
     with open(filepath, 'r', newline='') as f:
         reader = csv.reader(f)
@@ -54,8 +55,11 @@ def load_config(filepath):
                 # Adjust format for Construct: "FieldName" / <construct_type>
                 struct_fields.append(label / construct_type)
 
+            # Increment sensor count
+            num_sensors += 1
+
             # Build Construct struct & store for later use
-            bitmask_to_name[index]   = name
+            bitmask_to_name[index] = name
             bitmask_to_struct[index] = Struct(*struct_fields)
 
-    return bitmask_to_struct, bitmask_to_name
+    return bitmask_to_struct, bitmask_to_name, num_sensors

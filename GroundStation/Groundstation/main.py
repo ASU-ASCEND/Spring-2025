@@ -21,7 +21,7 @@ if __name__ == "__main__":
     decoder_packets = Queue()
 
     # Load configuration file
-    bitmask_to_struct, bitmask_to_name = load_config(FILE_PATH)
+    bitmask_to_struct, bitmask_to_name, num_sensors = load_config(FILE_PATH)
 
     # Create threads
     serial_input = SerialInput.SerialInput(input_to_sorter)
@@ -38,7 +38,8 @@ if __name__ == "__main__":
         sorter_to_decoder, 
         decoder_packets,
         bitmask_to_struct,
-        bitmask_to_name
+        bitmask_to_name,
+        num_sensors
     )
     
     simple_display = SimpleDisplay.SimpleDisplay(
