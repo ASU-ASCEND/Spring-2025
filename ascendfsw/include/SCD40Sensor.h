@@ -1,5 +1,5 @@
-#ifndef SCD41SENSOR_H
-#define SCD41SENSOR_H
+#ifndef SCD40Sensor_H
+#define SCD40Sensor_H
 
 #include <SensirionI2cScd4x.h>
 #include <Adafruit_Sensor.h>
@@ -10,17 +10,17 @@
 #include "Sensor.h"
 
 /**
- * @class SCD41Sensor
- * @brief A class to interface with the Sensirion SCD41 sensor for CO2 data
+ * @class SCD40Sensor
+ * @brief A class to interface with the Sensirion SCD40 sensor for CO2 data
  * collection.
  *
- * The SCD41Sensor class is responsible for interacting with the SCD41 sensor to
+ * The SCD40Sensor class is responsible for interacting with the SCD40 sensor to
  * gather CO2 data. It provides the CO2 concentration in parts per million (ppm)
  * and the temperature in degrees Celsius.
  *
  * This class inherits from the Sensor base class and overrides its virtual
  * methods to implement the specific functionality required to read and verify
- * data from the SCD41 sensor.
+ * data from the SCD40 sensor.
  *
  * Key functionalities:
  * - Verify sensor connection and setup.
@@ -28,13 +28,13 @@
  * systems.
  * - Get sensor name and CSV header for consistency in data handling.
  */
-class SCD41Sensor : public Sensor {
+class SCD40Sensor : public Sensor {
  private:
  SensirionI2cScd4x scd;
 
  public:
-  SCD41Sensor();
-  SCD41Sensor(unsigned long minimum_period);
+  SCD40Sensor();
+  SCD40Sensor(unsigned long minimum_period);
 
   bool verify() override;
   String readData() override;

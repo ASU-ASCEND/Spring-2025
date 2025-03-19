@@ -1,17 +1,17 @@
-#include "SCD41Sensor.h"
+#include "SCD40Sensor.h"
 
 /**
- * @brief Default constructor for the SCD41Sensor class.
+ * @brief Default constructor for the SCD40Sensor class.
  *
  * Initializes the sensor object with a default minimum period of 0
  * milliseconds.
  */
-SCD41Sensor::SCD41Sensor() : SCD41Sensor(0) {}
+SCD40Sensor::SCD40Sensor() : SCD40Sensor(0) {}
 
 /**
- * @brief Parameterized constructor for the SCD41Sensor class.
+ * @brief Parameterized constructor for the SCD40Sensor class.
  *
- * This constructor initializes the SCD41Sensor with a specified minimum period
+ * This constructor initializes the SCD40Sensor with a specified minimum period
  * between sensor readings. It passes sensor-specific information like the name,
  * CSV header, number of fields, and the minimum period between reads to the
  * base Sensor class constructor
@@ -19,13 +19,13 @@ SCD41Sensor::SCD41Sensor() : SCD41Sensor(0) {}
  * @param minimum_period The minimum time (in milliseconds) between consecutive
  * sensor reads.
  */
-SCD41Sensor::SCD41Sensor(unsigned long minimum_period) 
-    : Sensor("SCD41", "SCD41CO2(ppm),SCD41Temp(C),SCD41Hum(%RH),", 2, minimum_period) {
+SCD40Sensor::SCD40Sensor(unsigned long minimum_period) 
+    : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3, minimum_period) {
     this->scd = SensirionI2cScd4x();
 }
 
 /**
- * @brief Verifies the connection and readiness of the SCD41 sensor.
+ * @brief Verifies the connection and readiness of the SCD40 sensor.
  *
  * This function initializes the sensor and checks if the sensor is properly
  * connected and ready for reading data.
@@ -33,7 +33,7 @@ SCD41Sensor::SCD41Sensor(unsigned long minimum_period)
  * @return true  - If the sensor is detected and successfully initialized.
  * @return false - If the sensor is not detected or fails to initialize.
  */
-bool SCD41Sensor::verify() {
+bool SCD40Sensor::verify() {
     Wire.begin();
     this->scd.begin(Wire, SCD40_I2C_ADDR_62);
 
@@ -49,13 +49,13 @@ bool SCD41Sensor::verify() {
 /**
  * @brief Reads sensor data and returns it in CSV format.
  *
- * Reads data from the SCD41 sensor and returns it in CSV format. The data
+ * Reads data from the SCD40 sensor and returns it in CSV format. The data
  * includes CO2 concentration in parts per million (ppm) and temperature in
  * degrees Celsius.
  *
  * @return String - A string containing the sensor readings
  */
-String SCD41Sensor::readData() {
+String SCD40Sensor::readData() {
     uint16_t co2_concentration;
     float temperature, relative_humidity;
     
@@ -74,13 +74,13 @@ String SCD41Sensor::readData() {
 /**
  * @brief Reads sensor data and appends it to the packet byte array.
  *
- * Reads data from the SCD41 sensor and appends it to the passed uint8_t array
+ * Reads data from the SCD40 sensor and appends it to the passed uint8_t array
  * pointer, incrementing it while doing so. The data includes CO2 concentration
  * in parts per million (ppm) and temperature in degrees Celsius.
  *
  * @param packet - Pointer to the packet byte array.
  */
-void SCD41Sensor::readDataPacket(uint8_t*& packet) {
+void SCD40Sensor::readDataPacket(uint8_t*& packet) {
     uint16_t co2_concentration;
     float temperature, relative_humidity;
 
@@ -104,14 +104,14 @@ void SCD41Sensor::readDataPacket(uint8_t*& packet) {
 /**
  * @brief Decodes the packet data and returns it in CSV format.
  *
- * Decodes the packet data from the SCD41 sensor and returns it in CSV format.
+ * Decodes the packet data from the SCD40 sensor and returns it in CSV format.
  * The data includes CO2 concentration in parts per million (ppm) and temperature
  * in degrees Celsius.
  *
  * @param packet - Packet to decode.
  * @return String - A string containing the sensor readings
  */
-String SCD41Sensor::decodeToCSV(uint8_t*& packet) {
+String SCD40Sensor::decodeToCSV(uint8_t*& packet) {
     uint16_t co2_concentration;
     float temperature, relative_humidity;
 
