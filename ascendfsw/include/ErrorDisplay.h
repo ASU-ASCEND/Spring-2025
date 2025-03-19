@@ -25,7 +25,7 @@ typedef enum {
   NONE           // default state, lowest priority
 } Error;
 
-// LED driver: tlc59108
+// LED driver: https://www.ti.com/product/TLC59108
 #define TLC_I2C_ADDR 0x40
 
 
