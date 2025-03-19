@@ -1,5 +1,0 @@
-<map id="verifyStorage" name="verifyStorage">
-<area shape="rect" id="Node000001" title="Verifies the connection with each storage device, and defines the header_condensed field." alt="" coords="5,5,115,31"/>
-<area shape="rect" id="Node000002" href="$classStorage.html#a83fbc910d2fe786ac9134f27a85bda8f" title="Verifies connection with storage device." alt="" coords="163,5,280,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,15,149,15,149,21,115,21"/>
-</map>

@@ -34,9 +34,6 @@ Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
 #endif
 
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
-#if RECOVERY_SYSTEM == 0
-bool storages_verify[storages_len];
-#endif
 
 // use definition in main.cpp
 extern queue_t qt;
@@ -120,12 +117,7 @@ int verifyStorageRecovery() {
 int verifyStorage() {
   int count = 0;
   for (int i = 0; i < storages_len; i++) {
-#if RECOVERY_SYSTEM
     if (storages[i]->attemptConnection()) {
-#else
-    storages_verify[i] = storages[i]->verify();
-    if (storages_verify[i]) {
-#endif
       log_core(storages[i]->getDeviceName() + " verified.");
       count++;
     }
@@ -141,11 +133,7 @@ int verifyStorage() {
  */
 void storeData(String data) {
   for (int i = 0; i < storages_len; i++) {
-#if RECOVERY_SYSTEM
     if (storages[i]->attemptConnection()) {
-#else
-    if (storages_verify[i]) {
-#endif
       storages[i]->store(data);
     }
   }
@@ -163,11 +151,7 @@ void storeDataPacket(uint8_t* packet) {
          sizeof(uint16_t));
 
   for (int i = 0; i < storages_len; i++) {
-#if RECOVERY_SYSTEM
     if (storages[i]->attemptConnection()) {
-#else
-    if (storages_verify[i]) {
-#endif
       storages[i]->storePacket(packet);
     }
   }
