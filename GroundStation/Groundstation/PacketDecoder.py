@@ -65,6 +65,7 @@ class PacketDecoder(threading.Thread):
             # Parse each sensor data field
             offset = 0
             parsed = {}
+            parse_error = False
             for bitmask_index in range(self.num_sensors): # Iterate through each sensor (0 -> num_sensors)
                 if bitmask & (1 << bitmask_index):
                     if bitmask_index not in self.bitmask_to_struct: # Check if sensor exists
@@ -79,14 +80,18 @@ class PacketDecoder(threading.Thread):
                         temp_parsed = sensor_fields.parse(sensor_data[offset:])
                     except ConstructError as e: # Catch errors in parsing sensor data
                         print(f"[ERROR] Parsing sensor {sensor_name} (bitmask {bitmask_index}) failed: {e}")
+                        parse_error = True 
                         break
 
                     # Store parsed sensor data
                     parsed[sensor_name] = temp_parsed
                     offset += sensor_fields.sizeof()
 
-            # Store pass parsed packets to queue
-            self.decoder_packets.put({
-                "timestamp": timestamp,
-                "sensor_data": parsed
-            })
+            if parse_error == False: 
+                # Store pass parsed packets to queue
+                self.decoder_packets.put({
+                    "timestamp": timestamp,
+                    "sensor_data": parsed
+                })
+            else: 
+                self.decoder_packets.put("ERROR")
