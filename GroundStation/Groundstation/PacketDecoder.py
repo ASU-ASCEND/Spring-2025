@@ -3,7 +3,7 @@ from queue import Queue
 from construct import (
     Checksum, ConstError, ChecksumError, ConstructError,
     Const, Array, Struct,
-    Int32ul, Int16ul,
+    Int32ul, Int16ul, Int8sl,
     Byte, Bytes, this, Pointer
 )
 from time import sleep
@@ -37,22 +37,17 @@ class PacketDecoder(threading.Thread):
             "length"      / Int16ul,
             "timestamp"   / Int32ul,
             "sensor_data" / Array(this.length - self.header_size - self.checksum_size, Byte),
-            "checksum"    / Checksum(Byte, self.validate, this)
+            "checksum"    / Int8sl #Checksum(Byte, self.validate, this)
         )
 
     # Validate checksum
-    def validate(self, packet):
-        full_bytes = Pointer(packet, Bytes(packet.length))
-        print(full_bytes)
-        packet_bytes = full_bytes.parse(packet)
-        print(packet_bytes)
-        sum = 0
-        for byte in packet_bytes: 
-            sum += byte
+    def validate(self, packet: bytearray):
+        total = 0
+        for i in range(len(packet)-1):
+            total += int.from_bytes(bytes(packet[i]), byteorder='little', signed=False)
 
-        return sum == 0
-        # total = sum(sensor_data) & 0xFF
-        # return total == 0 #((~total) + 1) & 0xFF
+        checksum = int.from_bytes(bytes(packet[-1]), byteorder='little', signed=True)
+        return total + checksum == 0
     
     # Run PacketDecoder
     def run(self):
@@ -66,6 +61,7 @@ class PacketDecoder(threading.Thread):
 
             # Parse packet bytes & catch possible errors
             try:
+                if self.validate(packet_bytes) == False: raise ChecksumError("Checksum Error")
                 parsed_packet = self.packet_struct.parse(packet_bytes)
             except ConstError as e: # Catch sync byte mistmatch
                 print(f"[ERROR] Sync byte mismatch: {e}")
