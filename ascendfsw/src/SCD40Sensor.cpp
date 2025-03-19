@@ -15,12 +15,13 @@ SCD40Sensor::SCD40Sensor() : SCD40Sensor(0) {}
  * between sensor readings. It passes sensor-specific information like the name,
  * CSV header, number of fields, and the minimum period between reads to the
  * base Sensor class constructor
- * 
+ *
  * @param minimum_period The minimum time (in milliseconds) between consecutive
  * sensor reads.
  */
-SCD40Sensor::SCD40Sensor(unsigned long minimum_period) 
-    : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3, minimum_period) {}
+SCD40Sensor::SCD40Sensor(unsigned long minimum_period)
+    : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3,
+             minimum_period) {}
 
 /**
  * @brief Verifies the connection and readiness of the SCD40 sensor.
@@ -32,12 +33,12 @@ SCD40Sensor::SCD40Sensor(unsigned long minimum_period)
  * @return false - If the sensor is not detected or fails to initialize.
  */
 bool SCD40Sensor::verify() {
-    Wire.begin();
-    this->scd.begin(Wire, SCD40_I2C_ADDR_62);
+  Wire.begin();
+  this->scd.begin(Wire, SCD40_I2C_ADDR_62);
 
-    // Verify sensor has been initialized
-    uint64_t serial_number;
-    return (this->scd.getSerialNumber(serial_number) == 0);
+  // Verify sensor has been initialized
+  uint64_t serial_number;
+  return (this->scd.getSerialNumber(serial_number) == 0);
 }
 
 /**
@@ -50,19 +51,19 @@ bool SCD40Sensor::verify() {
  * @return String - A string containing the sensor readings
  */
 String SCD40Sensor::readData() {
-    uint16_t co2_concentration;
-    float temperature, relative_humidity;
-    
-    // Read data & check for errors
-    int16_t error = this->scd.readMeasurement(co2_concentration, temperature, relative_humidity);
-    if(error != 0) {
-        return "-,-,-,";
-    }
+  uint16_t co2_concentration;
+  float temperature, relative_humidity;
 
-    // Return data in CSV format
-    return String(co2_concentration) + "," + 
-           String(temperature)       + "," + 
-           String(relative_humidity) + ",";
+  // Read data & check for errors
+  int16_t error = this->scd.readMeasurement(co2_concentration, temperature,
+                                            relative_humidity);
+  if (error != 0) {
+    return "-,-,-,";
+  }
+
+  // Return data in CSV format
+  return String(co2_concentration) + "," + String(temperature) + "," +
+         String(relative_humidity) + ",";
 }
 
 /**
@@ -75,52 +76,52 @@ String SCD40Sensor::readData() {
  * @param packet - Pointer to the packet byte array.
  */
 void SCD40Sensor::readDataPacket(uint8_t*& packet) {
-    if (!packet) return; // Check for nullptr
-    
-    uint16_t co2_concentration;
-    float temperature, relative_humidity;
+  if (!packet) return;  // Check for nullptr
 
-    // Read data & check for errors
-    int16_t error = this->scd.readMeasurement(co2_concentration, temperature, relative_humidity);
-    if(error != 0) return;
+  uint16_t co2_concentration;
+  float temperature, relative_humidity;
 
-    // Write data to packet
-    memcpy(packet, &co2_concentration, sizeof(uint16_t));
-    packet += sizeof(uint16_t);
+  // Read data & check for errors
+  int16_t error = this->scd.readMeasurement(co2_concentration, temperature,
+                                            relative_humidity);
+  if (error != 0) return;
 
-    memcpy(packet, &temperature, sizeof(float));
-    packet += sizeof(float);
+  // Write data to packet
+  memcpy(packet, &co2_concentration, sizeof(uint16_t));
+  packet += sizeof(uint16_t);
 
-    memcpy(packet, &relative_humidity, sizeof(float));
-    packet += sizeof(float);
+  memcpy(packet, &temperature, sizeof(float));
+  packet += sizeof(float);
+
+  memcpy(packet, &relative_humidity, sizeof(float));
+  packet += sizeof(float);
 }
 
 /**
  * @brief Decodes the packet data and returns it in CSV format.
  *
  * Decodes the packet data from the SCD40 sensor and returns it in CSV format.
- * The data includes CO2 concentration in parts per million (ppm) and temperature
- * in degrees Celsius.
+ * The data includes CO2 concentration in parts per million (ppm) and
+ * temperature in degrees Celsius.
  *
  * @param packet - Packet to decode.
  * @return String - A string containing the sensor readings
  */
 String SCD40Sensor::decodeToCSV(uint8_t*& packet) {
-    uint16_t co2_concentration;
-    float temperature, relative_humidity;
+  uint16_t co2_concentration;
+  float temperature, relative_humidity;
 
-    // Extract data
-    memcpy(&co2_concentration, packet, sizeof(uint16_t));
-    packet += sizeof(uint16_t);
+  // Extract data
+  memcpy(&co2_concentration, packet, sizeof(uint16_t));
+  packet += sizeof(uint16_t);
 
-    memcpy(&temperature, packet, sizeof(float));
-    packet += sizeof(float);
+  memcpy(&temperature, packet, sizeof(float));
+  packet += sizeof(float);
 
-    memcpy(&relative_humidity, packet, sizeof(float));
-    packet += sizeof(float);
+  memcpy(&relative_humidity, packet, sizeof(float));
+  packet += sizeof(float);
 
-    // Return data in CSV format
-    return String(co2_concentration) + "," + 
-           String(temperature)       + "," + 
-           String(relative_humidity) + ",";
+  // Return data in CSV format
+  return String(co2_concentration) + "," + String(temperature) + "," +
+         String(relative_humidity) + ",";
 }

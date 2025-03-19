@@ -1,8 +1,8 @@
 #ifndef SCD40Sensor_H
 #define SCD40Sensor_H
 
-#include <SensirionI2cScd4x.h>
 #include <Adafruit_Sensor.h>
+#include <SensirionI2cScd4x.h>
 #include <Wire.h>
 #include <string.h>
 
@@ -24,13 +24,13 @@
  *
  * Key functionalities:
  * - Verify sensor connection and setup.
- * - Retrieve sensor readings in CSV format for easy integration with data logging
- * systems.
+ * - Retrieve sensor readings in CSV format for easy integration with data
+ * logging systems.
  * - Get sensor name and CSV header for consistency in data handling.
  */
 class SCD40Sensor : public Sensor {
  private:
- SensirionI2cScd4x scd;
+  SensirionI2cScd4x scd;
 
  public:
   SCD40Sensor();
