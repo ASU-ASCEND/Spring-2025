@@ -20,8 +20,8 @@ SCD41Sensor::SCD41Sensor() : SCD41Sensor(0) {}
  * sensor reads.
  */
 SCD41Sensor::SCD41Sensor(unsigned long minimum_period) 
-    : Sensor("SCD41", "SCD41CO2(ppm),SCD41Temp(C),", 2, minimum_period) {
-    scd = SensirionI2cScd4x();
+    : Sensor("SCD41", "SCD41CO2(ppm),SCD41Temp(C),SCD41Hum(%RH),", 2, minimum_period) {
+    this->scd = SensirionI2cScd4x();
 }
 
 /**
@@ -34,8 +34,16 @@ SCD41Sensor::SCD41Sensor(unsigned long minimum_period)
  * @return false - If the sensor is not detected or fails to initialize.
  */
 bool SCD41Sensor::verify() {
-    // TODO: Implement this function
-    return false;
+    Wire.begin();
+    this->scd.begin(Wire, SCD40_I2C_ADDR_62);
+
+    // Verify sensor has been initialized
+    uint64_t serial_number;
+    int16_t error = this->scd.getSerialNumber(serial_number);
+    if(error != 0) {
+        return false; // Sensor not responding
+    }
+    return true; // Sensor initialized successfully
 }
 
 /**
@@ -48,8 +56,19 @@ bool SCD41Sensor::verify() {
  * @return String - A string containing the sensor readings
  */
 String SCD41Sensor::readData() {
-    // TODO: Implement this function
-    return "-,-,";
+    uint16_t co2_concentration;
+    float temperature, relative_humidity;
+    
+    // Read data & check for errors
+    int16_t error = this->scd.readMeasurement(co2_concentration, temperature, relative_humidity);
+    if(error != 0) {
+        return "-,-,-,";
+    }
+
+    // Return data in CSV format
+    return String(co2_concentration)  + "," + 
+           String(temperature)      + "," + 
+           String(relative_humidity) + ",";
 }
 
 /**
@@ -62,7 +81,24 @@ String SCD41Sensor::readData() {
  * @param packet - Pointer to the packet byte array.
  */
 void SCD41Sensor::readDataPacket(uint8_t*& packet) {
-    // TODO: Implement this function
+    uint16_t co2_concentration;
+    float temperature, relative_humidity;
+
+    // Read data & check for errors
+    int16_t error = this->scd.readMeasurement(co2_concentration, temperature, relative_humidity);
+    if(error != 0) {
+        return;
+    }
+
+    // Write data to packet
+    memcpy(packet, &co2_concentration, sizeof(uint16_t));
+    packet += sizeof(uint16_t);
+
+    memcpy(packet, &temperature, sizeof(float));
+    packet += sizeof(float);
+
+    memcpy(packet, &relative_humidity, sizeof(float));
+    packet += sizeof(float);
 }
 
 /**
@@ -76,6 +112,21 @@ void SCD41Sensor::readDataPacket(uint8_t*& packet) {
  * @return String - A string containing the sensor readings
  */
 String SCD41Sensor::decodeToCSV(uint8_t*& packet) {
-    // TODO: Implement this function
-    return "-,-,";
+    uint16_t co2_concentration;
+    float temperature, relative_humidity;
+
+    // Extract data
+    memcpy(&co2_concentration, packet, sizeof(uint16_t));
+    packet += sizeof(uint16_t);
+
+    memcpy(&temperature, packet, sizeof(float));
+    packet += sizeof(float);
+
+    memcpy(&relative_humidity, packet, sizeof(float));
+    packet += sizeof(float);
+
+    // Return data in CSV format
+    return String(co2_concentration)  + "," + 
+           String(temperature)      + "," + 
+           String(relative_humidity) + ",";
 }
