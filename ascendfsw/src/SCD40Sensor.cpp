@@ -20,9 +20,7 @@ SCD40Sensor::SCD40Sensor() : SCD40Sensor(0) {}
  * sensor reads.
  */
 SCD40Sensor::SCD40Sensor(unsigned long minimum_period) 
-    : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3, minimum_period) {
-    this->scd = SensirionI2cScd4x();
-}
+    : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3, minimum_period) {}
 
 /**
  * @brief Verifies the connection and readiness of the SCD40 sensor.
@@ -39,11 +37,7 @@ bool SCD40Sensor::verify() {
 
     // Verify sensor has been initialized
     uint64_t serial_number;
-    int16_t error = this->scd.getSerialNumber(serial_number);
-    if(error != 0) {
-        return false; // Sensor not responding
-    }
-    return true; // Sensor initialized successfully
+    return (this->scd.getSerialNumber(serial_number) == 0);
 }
 
 /**
@@ -66,8 +60,8 @@ String SCD40Sensor::readData() {
     }
 
     // Return data in CSV format
-    return String(co2_concentration)  + "," + 
-           String(temperature)      + "," + 
+    return String(co2_concentration) + "," + 
+           String(temperature)       + "," + 
            String(relative_humidity) + ",";
 }
 
@@ -81,14 +75,14 @@ String SCD40Sensor::readData() {
  * @param packet - Pointer to the packet byte array.
  */
 void SCD40Sensor::readDataPacket(uint8_t*& packet) {
+    if (!packet) return; // Check for nullptr
+    
     uint16_t co2_concentration;
     float temperature, relative_humidity;
 
     // Read data & check for errors
     int16_t error = this->scd.readMeasurement(co2_concentration, temperature, relative_humidity);
-    if(error != 0) {
-        return;
-    }
+    if(error != 0) return;
 
     // Write data to packet
     memcpy(packet, &co2_concentration, sizeof(uint16_t));
@@ -126,7 +120,7 @@ String SCD40Sensor::decodeToCSV(uint8_t*& packet) {
     packet += sizeof(float);
 
     // Return data in CSV format
-    return String(co2_concentration)  + "," + 
-           String(temperature)      + "," + 
+    return String(co2_concentration) + "," + 
+           String(temperature)       + "," + 
            String(relative_humidity) + ",";
 }
