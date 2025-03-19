@@ -62,8 +62,6 @@ class GSEFrame(tk.Frame):
 
 
   def createTable(self): 
-      
-    table_width = self.winfo_width()
     row_offset = 1 
     # set headers from config file
     header_arr = self.header_info[1]
@@ -87,24 +85,25 @@ class GSEFrame(tk.Frame):
       packet = self.decoder_packets.get()
 
       if packet == "ERROR":
-        return # count these for radio 
-      
-      # read millis
-      self.data_cells[0][1].set(packet["timestamp"])
+        pass # count these for radio 
+      else:
+        # read millis
+        self.data_cells[0][1].set(packet["timestamp"])
+        self.data_cells[0][0].configure(background="lightblue")
 
-      # read the rest of the sensors 
-      col_index = 1
-      for sensor in self.header_info[0].keys():
-        if sensor == "Millis": continue  
-        if sensor in packet["sensor_data"]:
-          for i in packet["sensor_data"][sensor].keys():
-            self.data_cells[col_index][0].configure(background="lightblue")
-            self.data_cells[col_index][1].set(packet["sensor_data"][sensor][i])
-            col_index += 1
-        else: 
-          for i in range(self.header_info[0][sensor]):
-            self.data_cells[col_index][0].configure(background="pink")
-            col_index += 1 
+        # read the rest of the sensors 
+        col_index = 1
+        for sensor in self.header_info[0].keys():
+          if sensor == "Millis": continue  
+          if sensor in packet["sensor_data"]:
+            for i in packet["sensor_data"][sensor].keys():
+              self.data_cells[col_index][0].configure(background="lightblue")
+              self.data_cells[col_index][1].set(packet["sensor_data"][sensor][i])
+              col_index += 1
+          else: 
+            for i in range(self.header_info[0][sensor]):
+              self.data_cells[col_index][0].configure(background="pink")
+              col_index += 1 
 
   def update(self):
     self.updateTable()

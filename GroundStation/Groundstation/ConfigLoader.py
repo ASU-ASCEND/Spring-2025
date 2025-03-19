@@ -26,6 +26,7 @@ def load_config(filepath):
     with open(filepath, 'r', newline='') as f:
         reader = csv.reader(f)
         header = next(reader)
+        header = [str(i).strip() for i in header]
 
         # Identify columns
         bit_index   = header.index('BitIndex')

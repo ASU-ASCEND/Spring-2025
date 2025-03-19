@@ -1,5 +1,6 @@
 import threading
 from queue import Queue, Empty
+from time import sleep 
 
 # .encode("UTF-8")
 
@@ -23,7 +24,7 @@ class SerialSorter(threading.Thread):
     self.end_event = end_event
 
   def run(self):
-    while end_event.is_set() == False: 
+    while self.end_event.is_set() == False: 
       try: 
         c_in = self.input_to_sorter.get_nowait()
         self.buf.append(c_in)
@@ -32,13 +33,13 @@ class SerialSorter(threading.Thread):
           print("hit packet")
           # flush before to misc 
           before, sep, after = self.buf.partition(self.encodings["ASU!"])
-          if before.decode().strip() != "": sorter_misc.put(before.decode())
+          if before.decode().strip() != "": self.sorter_misc.put(before.decode())
           self.buf = sep + after 
 
           while(len(self.buf) < 4+4+2):
             if self.end_event.is_set(): return 
             try: 
-              c_in = input_to_sorter.get_nowait()
+              c_in = self.input_to_sorter.get_nowait()
               self.buf.append(c_in)
             except Empty:
               sleep(0.1)
@@ -49,7 +50,7 @@ class SerialSorter(threading.Thread):
           while len(self.buf) < packet_len:
             if self.end_event.is_set(): return 
             try: 
-              c_in = input_to_sorter.get_nowait()
+              c_in = self.input_to_sorter.get_nowait()
               self.buf.append(c_in)
             except Empty:
               sleep(0.1)
@@ -64,17 +65,17 @@ class SerialSorter(threading.Thread):
         elif self.buf.find(self.encodings["[Core 0]"]) != -1: 
           # flush before to misc
           before, sep, after = self.buf.partition(self.encodings["[Core 0]"])
-          if before.decode().strip() != "": sorter_misc.put(before.decode())
+          if before.decode().strip() != "": self.sorter_misc.put(before.decode())
           self.buf = after 
 
           # wait for \n to end message if not already received (probably not)
           if self.buf.find("\n".encode()) == -1: 
-            c_in = input_to_sorter.get(block=True)
+            c_in = self.input_to_sorter.get(block=True)
             self.buf.append(c_in)
             while c_in != "\n".encode()[0]:
               if self.end_event.is_set(): return 
               try: 
-                c_in = input_to_sorter.get_nowait()
+                c_in = self.input_to_sorter.get_nowait()
                 self.buf.append(c_in)
               except Empty:
                 sleep(0.1)
@@ -82,23 +83,23 @@ class SerialSorter(threading.Thread):
           # pull out message until '\n' 
           message, endline, after = self.buf.partition("\n".encode())
 
-          sorter_core0.put(sep.decode() + message.decode())
+          self.sorter_core0.put(sep.decode() + message.decode())
           self.buf = after
 
         elif self.buf.find(self.encodings["[Core 1]"]) != -1: 
           # flush before to misc
           before, sep, after = self.buf.partition(self.encodings["[Core 1]"])
-          if before.decode().strip() != "": sorter_misc.put(before.decode())
+          if before.decode().strip() != "": self.sorter_misc.put(before.decode())
           self.buf = after 
 
           # wait for \n to end message if not already received (probably not)
           if self.buf.find("\n".encode()) == -1: 
-            c_in = input_to_sorter.get(block=True)
+            c_in = self.input_to_sorter.get(block=True)
             self.buf.append(c_in)
             while c_in != "\n".encode()[0]:
               if self.end_event.is_set(): return
               try: 
-                c_in = input_to_sorter.get_nowait()
+                c_in = self.input_to_sorter.get_nowait()
                 self.buf.append(c_in)
               except Empty:
                 sleep(0.1)
@@ -106,12 +107,12 @@ class SerialSorter(threading.Thread):
           # pull out message until '\n' 
           message, endline, after = self.buf.partition("\n".encode())
 
-          sorter_core1.put(sep.decode() + message.decode())
+          self.sorter_core1.put(sep.decode() + message.decode())
           self.buf = after         
         elif self.buf.find("\n".encode()) != -1:
           before, sep, after = self.buf.partition("\n".encode())
           # flush before to misc 
-          sorter_misc.put(before.decode())
+          self.sorter_misc.put(before.decode())
           # erase it 
           self.buf = after
 
@@ -122,7 +123,6 @@ class SerialSorter(threading.Thread):
 
 if __name__ == '__main__':
   import SimpleDisplay
-  from time import sleep 
   from random import randint
 
   end_event = threading.Event()

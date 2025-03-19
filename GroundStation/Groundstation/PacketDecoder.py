@@ -6,17 +6,22 @@ from construct import (
     Int32ul, Int16ul,
     Byte, this
 )
+from time import sleep
+from queue import Empty
 
 class PacketDecoder(threading.Thread):
     # Initialize PacketDecoder
     def __init__(
-            self, sorter_to_decoder: Queue, 
+            self, 
+            end_event: threading.Event,
+            sorter_to_decoder: Queue, 
             decoder_packets: Queue,
             bitmask_to_struct: dict,
             bitmask_to_name: dict,
             num_sensors: int
     ):
         super().__init__()
+        self.end_event = end_event
         self.sorter_to_decoder = sorter_to_decoder
         self.decoder_packets = decoder_packets
         self.bitmask_to_struct = bitmask_to_struct
@@ -40,9 +45,13 @@ class PacketDecoder(threading.Thread):
     
     # Run PacketDecoder
     def run(self):
-        while True:
+        while self.end_event.is_set() == False:
             # Get packet bytes from sorter
-            packet_bytes = self.sorter_to_decoder.get()
+            try: 
+                packet_bytes = self.sorter_to_decoder.get_nowait()
+            except Empty:
+                sleep(0.1)
+                continue 
 
             # Parse packet bytes & catch possible errors
             try:
