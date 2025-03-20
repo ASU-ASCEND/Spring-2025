@@ -293,43 +293,11 @@ void FlashStorage::erase() {
  * - Visual feedback
  * - Transfer statistics
  */
-void FlashStorage::download() {
-  // TODO: Implement download functionality
-  // 1. Show total number of files to transfer
-  // 2. For each file:
-  //    - Show file number and size
-  //    - Transfer data with progress updates
-  //    - Show completion status
-  // 3. Show final transfer statistics
-  // 4. Allow user to select which files to download
-  // 5. Download selected files
-  // 6. Show download progress
-  // 7. Show download completion status
-  // 8. Show download statistics
-  // 9. Show download completion time
-  // 10. Allow user to pause and resume download
-  // 11. Allow user to cancel download
-  // 12. Format data for GSW
-  // 13. Send data to GSW
-  // 14. Error handling
-  log_flash("==== FLASH STORAGE DOWNLOAD ====");
-  log_flash("Total files to transfer: " + String(this->file_data.size()));
-  
-  // Display file info and calculate sizes
-  for (size_t i = 0; i < this->file_data.size(); i++) {
-    uint32_t start_addr = this->file_data[i].start_address;
-    uint32_t end_addr = this->file_data[i].end_address;
-    uint32_t file_size = end_addr - start_addr;
-    
-    log_flash("File " + String(this->file_data[i].file_number) + " || Size: " +
-             String(file_size) + " bytes");
-  }
-  
-  log_flash("Please enter the file number you would like to download: ");
+void FlashStorage::download(int file_number) {
+  log_flash("==== DOWNLOAD " + String(file_number) + " ====");
 
-  int file_number = Serial.parseInt();
-
-  if (file_number > 0 && file_number <= this->file_data.size()) {
+  // Check if file number is valid & proceed with download
+  if ((file_number > 0) && (file_number <= this->file_data.size())) {
     int index = file_number - 1;
     FileHeader selected_file = this->file_data[index];
     
@@ -339,55 +307,23 @@ void FlashStorage::download() {
     uint32_t file_size = end_addr - start_addr;
 
     // Send ACK with file info
-    Serial.println("ACK File" + String(file_number) + " " + String(file_size));
-    
     log_flash("Downloading file " + String(file_number));
     log_flash("File size: " + String(file_size) + " bytes");
-    log_flash("Press 'c' to cancel download");
-    log_flash("Press 'p' to pause download");
-    log_flash("Press 'r' to resume download");
     
-    // TODO: Step 10 - Pause/Resume Implementation
-    // 1. Add pause state variable
-    // 2. Add pause/resume command check
-    // 3. Add pause/resume status messages
-    // 4. Add pause/resume timing adjustments
-    
+    // Track the download time
     unsigned long start_time = millis();
+
     //Download Occurs Here
     uint32_t current_pos = start_addr;
     uint32_t bytes_read = 0;
-    
     while (current_pos < end_addr) {
-        // TODO: Step 10 - Pause/Resume Check
-        // if (Serial.available()) {
-        //     char cmd = Serial.read();
-        //     if (cmd == 'p') {
-        //         // Pause download
-        //         // Store current position
-        //         // Update timing
-        //     }
-        //     else if (cmd == 'r') {
-        //         // Resume download
-        //         // Restore position
-        //         // Update timing
-        //     }
-        //     else if (cmd == 'c') {
-        //         // Cancel download
-        //     }
-        // }
-        
-        if (Serial.available() && Serial.read() == 'c') {
-            Serial.println("NAK Download Cancelled");
-            return;
-        }
         // Read data from flash
         uint8_t data = this->flash.readByte(current_pos);
         
         // Send data to Serial
         if (Serial.write(data) != 1) {
-            Serial.println("NAK Serial Write Error");
-            return;
+          log_flash("ERROR: Unsuccessful serial write");
+          return;
         }
         
         // Update progress
@@ -396,20 +332,19 @@ void FlashStorage::download() {
         
         // Show progress every 1000 bytes
         if (bytes_read % 1000 == 0) {
-            Serial.println("ACK Progress: " + String(bytes_read) + "/" + String(file_size));
+          log_flash("Progress: " + String(bytes_read) + "/" + String(file_size));
         }
         
-        // Optional: Visual feedback
+        // Visual feedback
         digitalWrite(HEARTBEAT_PIN_0, (current_pos & 0x60) != 0);
         digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
     }
     
     unsigned long end_time = millis();
-    unsigned long tot_time = (end_time - start_time) / 1000;
-    Serial.println("ACK Download Complete. Time: " + String(tot_time) + "s");
-  } else {
-    Serial.println("NAK Invalid File Number");
-  }
+    unsigned long total_time = (end_time - start_time) / 1000;
+    log_flash("Download Complete | Time: " + String(total_time) + "s");
+  } 
+  else log_flash("ERROR: Invalid File Number");
 }
 
 /**
@@ -418,7 +353,7 @@ void FlashStorage::download() {
  * Prints the current address, remaining storage, and stored files.
  */
 void FlashStorage::getStatus() {
-  log_flash("==== FLASH STORAGE STATUS ====");
+  log_flash("==== STATUS ====");
 
   log_flash("Address: " + String(this->address));
   log_flash("Remaining Storage: " + String(this->MAX_SIZE - this->address) +

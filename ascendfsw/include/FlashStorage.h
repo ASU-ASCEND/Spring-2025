@@ -47,7 +47,7 @@ class FlashStorage : public Storage {
   void storePacket(uint8_t*) override;
   void dump();
   void erase();
-  void download();
+  void download(int);
   void getStatus();
 };
 
