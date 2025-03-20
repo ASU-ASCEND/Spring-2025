@@ -24,4 +24,9 @@ static inline void log_data(String data) {
   Serial.print("[Data] " + data + "\n");
 }
 
+// Log flash-related data
+static inline void log_flash(String data) {
+  Serial.print("[Flash] " + data + '\n');
+}
+
 #endif  // LOGGER_H

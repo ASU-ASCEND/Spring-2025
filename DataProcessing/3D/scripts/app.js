@@ -30,6 +30,12 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.globe.enableLighting = true;
 
+// Configure scene to reduce render artifacts with transparent objects
+viewer.scene.globe.depthTestAgainstTerrain = true;
+viewer.scene.logarithmicDepthBuffer = false;
+viewer.scene.postProcessStages.fxaa.enabled = true;
+viewer.scene.highDynamicRange = false;
+
 // Declare global variables
 let flightData = [];
 let start, stop, timeStepInSeconds;
@@ -40,8 +46,8 @@ let atmosphereLayers = [];
 function analyzeFlightData(data) {
   return {
     height: {
-      min: Math.min(...data.map(d => parseFloat(d.height) * 3.28084)),  // Convert to feet
-      max: Math.max(...data.map(d => parseFloat(d.height) * 3.28084))   // Convert to feet
+      min: Math.min(...data.map(d => parseFloat(d.height))), 
+      max: Math.max(...data.map(d => parseFloat(d.height)))   
     },
     coordinates: {
       longitude: {
@@ -58,46 +64,58 @@ function analyzeFlightData(data) {
 
 // Update atmosphere layers to be static (Matthew Arenivas)
 function calculateAtmosphereLayers(flightStats) {
-  const { min, max } = flightStats.height;  // These are now in feet
+  const { min, max } = flightStats.height;  // These are in kilometers
   const layers = [
     {
       minHeight: 0,
-      maxHeight: 36000,  // Troposphere: 0-36,000ft
+      maxHeight: 11,  // Troposphere: 0-11km
       name: 'Troposphere (0-36,000ft)',
-      color: Cesium.Color.BLUE.withAlpha(0.2)
+      color: new Cesium.Color(0.0, 0.0, 1.0, 1.0), // Blue
+      baseAlpha: 0.2
     },
     {
-      minHeight: 36000,
-      maxHeight: 164000,  // Stratosphere: 36,000-164,000ft
-      name: 'Stratosphere (36,000-164,000ft)',
-      color: Cesium.Color.CYAN.withAlpha(0.15)
+      minHeight: 11,
+      maxHeight: 12,  // Tropopause: 11-12km
+      name: 'Tropopause (36,000-39,000ft)',
+      color: new Cesium.Color(1.0, 0.0, 0.0, 1.0), // Red
+      baseAlpha: 0.25
     },
     {
-      minHeight: 164000,
-      maxHeight: 278000,  // Mesosphere: 164,000-278,000ft
-      name: 'Mesosphere (164,000-278,000ft)',
-      color: Cesium.Color.YELLOW.withAlpha(0.1)
+      minHeight: 12,
+      maxHeight: 20,  // Lower Stratosphere: 12-20km
+      name: 'Lower Stratosphere (39,000-65,600ft)',
+      color: new Cesium.Color(0.5, 1.0, 0.5, 1.0), // Light Green
+      baseAlpha: 0.15
     },
     {
-      minHeight: 278000,
-      maxHeight: 1968000,  // Thermosphere: 278,000-1,968,000ft
-      name: 'Thermosphere (278,000-1,968,000ft)',
-      color: Cesium.Color.RED.withAlpha(0.1)
+      minHeight: 20,
+      maxHeight: 30,  // Ozone Layer: 20-30km
+      name: 'Ozone Layer (65,600-98,400ft)',
+      color: new Cesium.Color(1.0, 0.0, 1.0, 1.0), // Magenta
+      baseAlpha: 0.2
+    },
+    {
+      minHeight: 30,
+      maxHeight: 50,  // Upper Stratosphere: 30-50km
+      name: 'Upper Stratosphere (98,400-164,000ft)',
+      color: new Cesium.Color(0.5, 1.0, 0.5, 1.0), // Light Green
+      baseAlpha: 0.15
     }
   ];
 
-  // Only return layers that are relevant to our flight data range
-  return layers.filter(layer => layer.maxHeight >= min);
+  // Return all layers instead of filtering
+  return layers;
 }
 
-// Update getCurrentAtmosphereLayer to use static heights (Matthew Arenivas)
+// Update getCurrentAtmosphereLayer to include only lower layers (Matthew Arenivas)
 function getCurrentAtmosphereLayer(height, flightStats) {
-  const heightInFeet = height * 3.28084;
+  const heightInKm = height;  // Height is already in kilometers
   
-  if (heightInFeet < 36000) return 'Troposphere (0-36,000ft)';
-  if (heightInFeet < 164000) return 'Stratosphere (36,000-164,000ft)';
-  if (heightInFeet < 278000) return 'Mesosphere (164,000-278,000ft)';
-  return 'Thermosphere (278,000-1,968,000ft)';
+  if (heightInKm < 11) return 'Troposphere (0-36,000ft)';
+  if (heightInKm < 12) return 'Tropopause (36,000-39,000ft)';
+  if (heightInKm < 20) return 'Lower Stratosphere (39,000-65,600ft)';
+  if (heightInKm < 30) return 'Ozone Layer (65,600-98,400ft)';
+  return 'Upper Stratosphere (98,400-164,000ft)';
 }
 
 // Initialize the viewer's clock 
@@ -115,7 +133,7 @@ function setClockFromData() {
   viewer.clock.shouldAnimate = true;
 }
 
-// Update createFlight to use dynamic calculations (Matthew Arenivas)
+// Update createFlight to improve layer labeling (Matthew Arenivas)
 function createFlight() {
   sampledPositionProperty = new Cesium.SampledPositionProperty();
 
@@ -131,37 +149,41 @@ function createFlight() {
   const longitudeSpread = Math.abs(flightStats.coordinates.longitude.max - flightStats.coordinates.longitude.min);
   const latitudeSpread = Math.abs(flightStats.coordinates.latitude.max - flightStats.coordinates.latitude.min);
   const radiusInDegrees = Math.max(longitudeSpread, latitudeSpread);
-  const cylinderRadius = radiusInDegrees * 111000 / 2; // Convert degrees to meters (roughly)
+  const cylinderRadius = radiusInDegrees * 111000; // Increased radius for better visibility
 
   // Add atmosphere layer cylinders with correct heights and positions
   atmosphereLayers.forEach((layer, index) => {
     const layerHeight = layer.maxHeight - layer.minHeight;
-    viewer.entities.add({
+    const layerEntity = viewer.entities.add({
       name: layer.name,
+      show: true,
       cylinder: {
-        length: layerHeight,
+        length: layerHeight * 1000,
         topRadius: cylinderRadius,
         bottomRadius: cylinderRadius,
-        material: layer.color,
+        material: new Cesium.ColorMaterialProperty(
+          new Cesium.Color(
+            layer.color.red,
+            layer.color.green, 
+            layer.color.blue, 
+            layer.baseAlpha
+          )
+        ),
         outline: true,
         outlineColor: Cesium.Color.WHITE.withAlpha(0.3),
         slicePartitions: 4,
         shadows: Cesium.ShadowMode.ENABLED
       },
-      label: {
-        text: layer.name,
-        font: '14pt sans-serif',
-        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-        outlineWidth: 2,
-        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-        pixelOffset: new Cesium.Cartesian2(0, -10)
-      },
       position: Cesium.Cartesian3.fromDegrees(
         centerLongitude,
         centerLatitude,
-        layer.minHeight + (layerHeight / 2)  // Position the cylinder at the middle of its range
+        (layer.minHeight + (layerHeight / 2)) * 1000
       ),
     });
+
+    // Store the layer entity in global array for opacity control
+    if (!window.layerEntities) window.layerEntities = [];
+    window.layerEntities[index] = layerEntity;
   });
 
   // Iterate through the flight data and add samples to the position property
@@ -180,12 +202,12 @@ function createFlight() {
       const prevPos = Cesium.Cartesian3.fromDegrees(
         parseFloat(prevPoint.longitude),
         parseFloat(prevPoint.latitude),
-        parseFloat(prevPoint.height) * 3.28084
+        parseFloat(prevPoint.height)
       );
       const currentPos = Cesium.Cartesian3.fromDegrees(
         parseFloat(dataPoint.longitude),
         parseFloat(dataPoint.latitude),
-        parseFloat(dataPoint.height) * 3.28084
+        parseFloat(dataPoint.height)
       );
       const distance = Cesium.Cartesian3.distance(prevPos, currentPos);
       speed = (distance / timeDiff) * 3.6; // Convert to km/h
@@ -196,7 +218,7 @@ function createFlight() {
     const position = Cesium.Cartesian3.fromDegrees(
       parseFloat(dataPoint.longitude), 
       parseFloat(dataPoint.latitude), 
-      parseFloat(dataPoint.height) * 3.28084  // Convert to feet
+      parseFloat(dataPoint.height) 
     );
     sampledPositionProperty.addSample(time, position);
 
@@ -284,10 +306,11 @@ function createLayerControls() {
   masterCheckbox.checked = true;
   masterCheckbox.style.accentColor = 'rgb(0, 195, 255)';
   masterCheckbox.onchange = (e) => {
-    atmosphereLayers.forEach((_, index) => {
-      const entity = viewer.entities.values[index];
-      entity.show = e.target.checked;
-    });
+    if (window.layerEntities) {
+      window.layerEntities.forEach((entity) => {
+        if (entity) entity.show = e.target.checked;
+      });
+    }
   };
 
   const masterLabel = document.createElement('label');
@@ -313,7 +336,7 @@ function createLayerControls() {
     layerDiv.style.border = '1px solid rgba(0, 195, 255, 0.2)';
     
     const layerName = document.createElement('div');
-    layerName.style.color = 'rgb(0, 195, 255)';
+    layerName.style.color = layer.color.withAlpha(1.0).toCssColorString();
     layerName.style.fontSize = '12px';
     layerName.style.marginBottom = '5px';
     layerName.style.letterSpacing = '0.5px';
@@ -339,9 +362,41 @@ function createLayerControls() {
     slider.style.flex = '1';
     slider.style.accentColor = 'rgb(0, 195, 255)';
     slider.onchange = (e) => {
-      const entity = viewer.entities.values[index];
-      const alpha = e.target.value / 100;
-      entity.cylinder.material = layer.color.withAlpha(alpha);
+      if (window.layerEntities && window.layerEntities[index]) {
+        const alpha = e.target.value / 100;
+        
+        // Special case: if alpha is 0, just hide the entity
+        if (alpha <= 0.01) {
+          window.layerEntities[index].show = false;
+          return;
+        }
+        
+        // Show the entity (in case it was hidden)
+        window.layerEntities[index].show = true;
+        
+        // Get the current entity
+        const entity = window.layerEntities[index];
+        
+        // Create a stripe material with controlled even/odd colors for better transparency
+        const stripesMaterial = new Cesium.StripeMaterialProperty({
+          evenColor: new Cesium.Color(
+            layer.color.red,
+            layer.color.green,
+            layer.color.blue,
+            alpha * 0.6  // Even stripes are slightly more transparent
+          ),
+          oddColor: new Cesium.Color(
+            layer.color.red,
+            layer.color.green,
+            layer.color.blue,
+            alpha  // Odd stripes use full alpha
+          ),
+          repeat: Math.max(2, Math.floor(16 * alpha)) // More stripes at higher opacity
+        });
+        
+        // Apply the material to the cylinder
+        entity.cylinder.material = stripesMaterial;
+      }
     };
 
     sliderContainer.appendChild(opacityLabel);
@@ -365,7 +420,7 @@ function createAltitudeGraph() {
   const graphContainer = document.createElement('div');
   graphContainer.id = 'altitudeGraph';
   graphContainer.style.position = 'absolute';
-  graphContainer.style.top = '420px';  // Moved lower from 380px
+  graphContainer.style.top = '480px';  // Moved lower from 420px
   graphContainer.style.left = '10px';
   graphContainer.style.width = '350px';
   graphContainer.style.height = '200px';
@@ -397,7 +452,7 @@ function createAltitudeGraph() {
   const toggleButton = document.createElement('button');
   toggleButton.textContent = 'HIDE GRAPH';
   toggleButton.style.position = 'absolute';
-  toggleButton.style.top = '385px';  // Moved lower from 345px
+  toggleButton.style.top = '445px';  // Moved lower from 385px
   toggleButton.style.left = '10px';
   toggleButton.style.padding = '5px 12px';
   toggleButton.style.backgroundColor = 'rgba(13, 37, 53, 0.9)';
@@ -459,14 +514,14 @@ function updateAltitudeGraph(canvas, clock) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
   const flightStats = analyzeFlightData(flightData);
-  const { min, max } = flightStats.height;  // These are already in feet
+  const { min, max } = flightStats.height;  // These are in kilometers
   
   // Constants for graph layout
   const padding = {
-    left: 60,    // Increased space for y-axis labels (feet are longer numbers)
+    left: 60,
     right: 10,
     top: 10,
-    bottom: 30   // Space for x-axis labels
+    bottom: 30
   };
   const graphWidth = canvas.width - padding.left - padding.right;
   const graphHeight = canvas.height - padding.top - padding.bottom;
@@ -482,9 +537,11 @@ function updateAltitudeGraph(canvas, clock) {
   ctx.textAlign = 'right';
   
   // Horizontal grid lines (altitude in feet)
-  const altitudeStep = Math.ceil((max - min) / 5 / 1000) * 1000; // Round to nearest 1000ft
-  for (let alt = 0; alt <= max; alt += altitudeStep) {
-    const y = padding.top + graphHeight - (alt / max) * graphHeight;
+  // Use a smaller conversion factor - 1km = 3.28084 ft (divide by 1000)
+  const maxHeightFeet = max * 3.28084;
+  const altitudeStep = Math.ceil(maxHeightFeet / 5); // Adjust step size accordingly
+  for (let alt = 0; alt <= maxHeightFeet; alt += altitudeStep) {
+    const y = padding.top + graphHeight - (alt / maxHeightFeet) * graphHeight;
     
     // Grid line
     ctx.beginPath();
@@ -529,9 +586,9 @@ function updateAltitudeGraph(canvas, clock) {
   ctx.lineWidth = 2;
   
   flightData.forEach((point, i) => {
-    const heightInFeet = point.height * 3.28084;
+    const heightInKm = point.height;
     const x = padding.left + (i / (flightData.length - 1)) * graphWidth;
-    const y = padding.top + graphHeight - (heightInFeet / max) * graphHeight;
+    const y = padding.top + graphHeight - (heightInKm / max) * graphHeight;
     if (i === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
   });
@@ -544,9 +601,10 @@ function updateAltitudeGraph(canvas, clock) {
   );
   
   if (currentIndex > 0) {
-    const heightInFeet = flightData[currentIndex].height * 3.28084;
+    const heightInKm = flightData[currentIndex].height;
+    const heightInFeet = heightInKm * 3.28084; // Correct feet conversion
     const x = padding.left + (currentIndex / (flightData.length - 1)) * graphWidth;
-    const y = padding.top + graphHeight - (heightInFeet / max) * graphHeight;
+    const y = padding.top + graphHeight - (heightInKm / max) * graphHeight;
     
     // Draw vertical time indicator line
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
@@ -607,4 +665,5 @@ async function init() {
 }
 
 // Call main function to initialize the viewer
+//yo
 init();
