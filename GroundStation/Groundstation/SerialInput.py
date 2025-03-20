@@ -11,20 +11,9 @@ class SerialInput(threading.Thread):
         super().__init__()
         self.input_queue = input_queue
         self.end_event = end_event
-        self.port = self.select_serial_port()
-
-        try:
-            self.ser = serial.Serial(
-                port=self.port,
-                baudrate=115200,
-                parity=serial.PARITY_NONE,
-                stopbits=serial.STOPBITS_ONE,
-                bytesize=serial.EIGHTBITS,
-                timeout=1.0
-            )
-        except serial.SerialException as e:
-            print(f"Error opening serial port {self.port}: {e}")
-            sys.exit(1)
+        self.port = None
+        self.ser = None
+        
 
     def list_serial_ports(self):
         return [(port.device, port) for port in serial.tools.list_ports.comports()]
@@ -47,6 +36,21 @@ class SerialInput(threading.Thread):
                 print("Please enter a valid integer.")
 
     def run(self):
+        self.port = self.select_serial_port()
+
+        try:
+            self.ser = serial.Serial(
+                port=self.port,
+                baudrate=115200,
+                parity=serial.PARITY_NONE,
+                stopbits=serial.STOPBITS_ONE,
+                bytesize=serial.EIGHTBITS,
+                timeout=1.0
+            )
+        except serial.SerialException as e:
+            print(f"Error opening serial port {self.port}: {e}")
+            sys.exit(1)
+
         while not (self.end_event and self.end_event.is_set()):
             data = self.ser.read(512)   #1024)
             if data:
