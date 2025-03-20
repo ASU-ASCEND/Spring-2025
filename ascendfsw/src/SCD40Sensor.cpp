@@ -35,10 +35,26 @@ SCD40Sensor::SCD40Sensor(unsigned long minimum_period)
 bool SCD40Sensor::verify() {
   Wire.begin();
   this->scd.begin(Wire, SCD40_I2C_ADDR_62);
+  uint16_t error;
+  delay(30);
+  error = this->scd.wakeUp();
+  // if(error != 0) return false;
+
+  error = this->scd.stopPeriodicMeasurement();
+  // if(error != 0) return false;
+
+  error = this->scd.reinit();
+  // if(error != 0) return false;
+
+  uint64_t serial_number;
+  error = this->scd.getSerialNumber(serial_number);
+  // if(error != 0) return false;
+
+  error = this->scd.startPeriodicMeasurement();
+  // if(error != 0) return false;
 
   // Verify sensor has been initialized
-  uint64_t serial_number;
-  return (this->scd.getSerialNumber(serial_number) == 0);
+  return error == 0;
 }
 
 /**
