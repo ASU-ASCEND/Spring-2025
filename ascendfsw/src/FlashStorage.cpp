@@ -244,3 +244,146 @@ void FlashStorage::erase() {
   this->flash.erase();
   this->address = 0;
 }
+
+/**
+ * @brief Downloads data from flash memory with progress tracking
+ * 
+ * This function provides a more user-friendly way to download data from flash memory.
+ * It includes:
+ * - Progress tracking
+ * - File-by-file transfer
+ * - Visual feedback
+ * - Transfer statistics
+ */
+void FlashStorage::download() {
+  // TODO: Implement download functionality
+  // 1. Show total number of files to transfer
+  // 2. For each file:
+  //    - Show file number and size
+  //    - Transfer data with progress updates
+  //    - Show completion status
+  // 3. Show final transfer statistics
+  // 4. Allow user to select which files to download
+  // 5. Download selected files
+  // 6. Show download progress
+  // 7. Show download completion status
+  // 8. Show download statistics
+  // 9. Show download completion time
+  // 10. Allow user to pause and resume download
+  // 11. Allow user to cancel download
+  // 12. Format data for GSW
+  // 13. Send data to GSW
+  // 14. Error handling
+  log_core("==== FLASH STORAGE DOWNLOAD ====");
+  log_core("Total files to transfer: " + String(this->file_data.size()));
+  
+  // Display file info and calculate sizes
+  for (size_t i = 0; i < this->file_data.size(); i++) {
+    uint32_t start_addr = this->file_data[i].address;
+    uint32_t end_addr;
+    
+    // Calculate end address based on next file or current position
+    if (i < this->file_data.size() - 1) {
+      end_addr = this->file_data[i+1].address;
+    } else {
+      end_addr = this->address;
+    }
+    
+    uint32_t file_size = end_addr - start_addr;
+    log_core("File " + String(this->file_data[i].file_number) + " || Size: " +
+             String(file_size) + " bytes");
+  }
+  
+  log_core("Please enter the file number you would like to download: ");
+
+  int file_number = Serial.parseInt();
+
+  if (file_number > 0 && file_number <= this->file_data.size()) {
+    int index = file_number - 1;
+    FileHeader selected_file = this->file_data[index];
+    
+    // Calculate file size based on addresses
+    uint32_t start_addr = selected_file.address;
+    uint32_t end_addr;
+    
+    if (index < this->file_data.size() - 1) {
+      end_addr = this->file_data[index+1].address;
+    } else {
+      end_addr = this->address;
+    }
+    
+    uint32_t file_size = end_addr - start_addr;
+
+    // Send ACK with file info
+    Serial.println("ACK File" + String(file_number) + " " + String(file_size));
+    
+    log_core("Downloading file " + String(file_number));
+    log_core("File size: " + String(file_size) + " bytes");
+    log_core("Press 'c' to cancel download");
+    log_core("Press 'p' to pause download");
+    log_core("Press 'r' to resume download");
+    
+    // TODO: Step 10 - Pause/Resume Implementation
+    // 1. Add pause state variable
+    // 2. Add pause/resume command check
+    // 3. Add pause/resume status messages
+    // 4. Add pause/resume timing adjustments
+    
+    unsigned long start_time = millis();
+    //Download Occurs Here
+    uint32_t current_pos = start_addr;
+    uint32_t bytes_read = 0;
+    
+    while (current_pos < end_addr) {
+        // TODO: Step 10 - Pause/Resume Check
+        // if (Serial.available()) {
+        //     char cmd = Serial.read();
+        //     if (cmd == 'p') {
+        //         // Pause download
+        //         // Store current position
+        //         // Update timing
+        //     }
+        //     else if (cmd == 'r') {
+        //         // Resume download
+        //         // Restore position
+        //         // Update timing
+        //     }
+        //     else if (cmd == 'c') {
+        //         // Cancel download
+        //     }
+        // }
+        
+        if (Serial.available() && Serial.read() == 'c') {
+            Serial.println("NAK Download Cancelled");
+            return;
+        }
+        // Read data from flash
+        uint8_t data = this->flash.readByte(current_pos);
+        
+        // Send data to Serial
+        if (Serial.write(data) != 1) {
+            Serial.println("NAK Serial Write Error");
+            return;
+        }
+        
+        // Update progress
+        bytes_read++;
+        current_pos++;
+        
+        // Show progress every 1000 bytes
+        if (bytes_read % 1000 == 0) {
+            Serial.println("ACK Progress: " + String(bytes_read) + "/" + String(file_size));
+        }
+        
+        // Optional: Visual feedback
+        digitalWrite(HEARTBEAT_PIN_0, (current_pos & 0x60) != 0);
+        digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
+    }
+    
+    unsigned long end_time = millis();
+    unsigned long tot_time = (end_time - start_time) / 1000;
+    Serial.println("ACK Download Complete. Time: " + String(tot_time) + "s");
+  } else {
+    Serial.println("NAK Invalid File Number");
+  }
+}
