@@ -1,17 +1,18 @@
 #ifndef OZONE_SENSOR_H
 #define OZONE_SENSOR_H
 
-#include "Sensor.h"
 #include "DFRobot_OzoneSensor.h"
+#include "Sensor.h"
 
 /**
  * @brief Implementation of a Sensor for the onboard temperature sensor
  *
  */
 class OzoneSensor : public Sensor {
-private:
-  DFRobot_OzoneSensor ozone; 
-public:
+ private:
+  DFRobot_OzoneSensor ozone;
+
+ public:
   OzoneSensor();
   OzoneSensor(unsigned long minium_period);
 
@@ -21,5 +22,4 @@ public:
   String decodeToCSV(uint8_t*& packet) override;
 };
 
-
-#endif // OZONE_SENSOR_H
+#endif  // OZONE_SENSOR_H

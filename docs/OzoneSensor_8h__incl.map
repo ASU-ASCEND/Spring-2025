@@ -1,0 +1,16 @@
+<map id="OzoneSensor.h" name="OzoneSensor.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="113,5,231,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,187,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,33,120,71,117,67,158,29"/>
+<area shape="rect" id="Node000003" href="$Sensor_8h.html" title=" " alt="" coords="211,79,288,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,29,228,67,225,71,183,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="194,299,278,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,106,217,126,201,153,195,188,200,225,212,258,225,286,220,288,207,260,195,226,190,188,196,151,213,123,233,102"/>
+<area shape="rect" id="Node000005" href="$Device_8h.html" title=" " alt="" coords="210,152,289,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="252,104,252,138,247,138,247,104"/>
+<area shape="rect" id="Node000006" href="$Logger_8h.html" title=" " alt="" coords="273,225,351,251"/>
+<area shape="poly" id="edge8_Node000003_Node000006" title=" " alt="" coords="265,102,286,123,304,151,313,182,315,211,310,212,307,183,299,153,282,127,261,106"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="251,178,241,285,236,285,246,178"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="262,176,295,213,291,217,258,179"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="302,253,260,291,257,287,298,249"/>
+</map>

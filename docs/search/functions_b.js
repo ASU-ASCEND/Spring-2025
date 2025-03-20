@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pcf8523sensor_0',['pcf8523sensor',['../classPCF8523Sensor.html#a0b4ee84247f99ecdc97c6207cd4c7165',1,'PCF8523Sensor::PCF8523Sensor()'],['../classPCF8523Sensor.html#afb52f2ef4ae49dba0f7df1d882de8e71',1,'PCF8523Sensor::PCF8523Sensor(unsigned long minimum_period)']]]
+  ['ozonesensor_0',['ozonesensor',['../classOzoneSensor.html#af7de7eb03f88c415f701ab56e83646e8',1,'OzoneSensor::OzoneSensor()'],['../classOzoneSensor.html#a22370d5498a810ab6b2a8da042aec046',1,'OzoneSensor::OzoneSensor(unsigned long minium_period)']]]
 ];
