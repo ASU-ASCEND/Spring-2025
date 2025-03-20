@@ -6,7 +6,7 @@ var searchData=
   ['readempty_3',['readEmpty',['../classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571',1,'Sensor']]],
   ['readfileheader_4',['readFileHeader',['../classFlashStorage.html#aa64883a0b4aa2c9124d0be9b4722d729',1,'FlashStorage']]],
   ['readsensordata_5',['readSensorData',['../main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b',1,'main.cpp']]],
-  ['readsensordatapacket_6',['readSensorDataPacket',['../main_8cpp.html#a2720be1478ba44e12c6b983bfffab7b2',1,'main.cpp']]],
+  ['readsensordatapacket_6',['readSensorDataPacket',['../main_8cpp.html#a35aec64ebd5600523486586642a4fe23',1,'main.cpp']]],
   ['real_5floop1_7',['real_loop1',['../main_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7',1,'real_loop1():&#160;main1.cpp'],['../main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7',1,'real_loop1():&#160;main1.cpp']]],
   ['real_5fsetup1_8',['real_setup1',['../main_8cpp.html#a335f1df8d0b267769cb9842c12616214',1,'real_setup1():&#160;main1.cpp'],['../main1_8cpp.html#a335f1df8d0b267769cb9842c12616214',1,'real_setup1():&#160;main1.cpp']]],
   ['recoveryconfig_9',['recoveryConfig',['../classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565',1,'Device']]]

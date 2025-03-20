@@ -31,7 +31,7 @@
 int verifySensors();
 int verifySensorRecovery();
 String readSensorData();
-void readSensorDataPacket(uint8_t* packet);
+uint16_t readSensorDataPacket(uint8_t* packet);
 String decodePacket(uint8_t* packet);
 
 void handleDataInterface();
@@ -42,17 +42,17 @@ void handleDataInterface();
 // class        sensor            minimum period in ms
 INA260Sensor    ina260_sensor     (1000);
 TempSensor      temp_sensor       (1000);
-ENS160Sensor    ens160_sensor     (1000);
-AS7331Sensor    uv_sensor_1       (1000, UV_I2C_ADDR_1);
-AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
-MTK3339Sensor   gps_sensor        (5000);
+ENS160Sensor    ens160_sensor     (500);
+AS7331Sensor    uv_sensor_1       (500, UV_I2C_ADDR_1);
+AS7331Sensor    uv_sensor_2       (500, UV_I2C_ADDR_2);
+MTK3339Sensor   gps_sensor        (2000);
 ICM20948Sensor  icm_sensor        (0);
 PCF8523Sensor   rtc_sensor        (1000);
-BMP390Sensor    bmp_sensor        (1000);
-TMP117Sensor    tmp_sensor        (1000); 
+BMP390Sensor    bmp_sensor        (500);
+TMP117Sensor    tmp_sensor        (500); 
 SHTC3Sensor     shtc_sensor       (1000);
 SCD40Sensor     sdc_sensor        (1000); 
-OzoneSensor     ozone_sensor      (1000);
+OzoneSensor     ozone_sensor      (500);
 
 // clang-format on
 
@@ -191,27 +191,25 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
   // start print line with iteration number
   log_core("it: " + String(it) + "\t");
 
-#if PACKET_SYSTEM_TESTING
   // build csv row
   uint8_t packet[QT_ENTRY_SIZE];
   // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
   // debugging
-  readSensorDataPacket(packet);
+  uint16_t packet_len = readSensorDataPacket(packet);
   String csv_row = decodePacket(packet);
-#else
-  String csv_row = readSensorData();
-#endif
 
   // print csv row
-  log_data(csv_row);
+  // log_data(csv_row);
+  log_data_raw(packet, packet_len);
 
-  // send data to flash
-  // flash_storage.store(csv_row);
-
-  // send data to core1
+// send data to core1
+#if STORING_PACKETS
+  queue_add_blocking(&qt, packet);
+#else
   queue_add_blocking(&qt, csv_row.c_str());
+#endif
 
-  delay(1000);                                 // remove before flight
+  // delay(1000);                                 // remove before flight
   digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
 }
 
@@ -282,7 +280,7 @@ int verifySensors() {
  *
  * @param packet Pointer to the packet array
  */
-void readSensorDataPacket(uint8_t* packet) {
+uint16_t readSensorDataPacket(uint8_t* packet) {
   // set sync bytes
   uint8_t* temp_packet = packet;
   std::copy(SYNC_BYTES, SYNC_BYTES + sizeof(SYNC_BYTES), temp_packet);
@@ -327,6 +325,8 @@ void readSensorDataPacket(uint8_t* packet) {
     checksum += packet[i];
   }
   *(packet + packet_len - 1) = -checksum;
+
+  return packet_len;
 }
 
 /**
