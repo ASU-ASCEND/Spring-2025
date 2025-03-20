@@ -1,15 +1,15 @@
 <map id="Sensor" name="Sensor">
-<area shape="rect" id="Node000001" title="Parent class for sensor objects." alt="" coords="411,423,588,688"/>
+<area shape="rect" id="Node000001" title="Parent class for sensor objects." alt="" coords="411,423,588,788"/>
 <area shape="rect" id="Node000002" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="217,148,381,373"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="386,383,413,423,408,426,381,387"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="374,384,413,451,408,454,369,387"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,111,71"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="54,71,45,132,42,211,46,254,55,295,69,335,90,372,119,406,154,436,192,462,233,483,317,516,395,536,394,541,315,521,231,488,189,466,150,441,115,410,85,375,64,338,49,297,41,254,37,212,40,132,48,71"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="54,71,47,132,45,210,49,252,57,294,70,335,90,372,119,410,153,444,191,475,232,501,317,544,396,574,394,579,315,549,230,506,188,479,150,448,115,414,85,375,65,337,52,295,43,253,40,210,41,131,49,71"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,69,96,96,118,122,138,135,159,146,206,179,202,183,157,150,135,139,115,126,92,100,73,72"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="325,5,356,71"/>
-<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="357,38,460,56,515,72,536,81,550,93,555,109,557,136,553,213,528,407,522,406,548,213,552,136,550,111,545,96,533,86,513,77,459,61,356,44"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="357,38,460,56,515,72,536,81,550,93,556,109,558,135,556,211,533,407,528,406,551,210,553,135,550,110,545,96,533,86,513,77,459,61,356,44"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="327,57,314,75,303,96,295,132,290,131,298,94,309,72,323,54"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="548,5,600,71"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="602,61,634,99,649,122,660,147,679,209,686,261,680,312,660,374,635,423,601,467,597,464,631,421,656,372,675,311,681,261,674,211,656,149,645,125,630,102,598,65"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="602,61,634,99,649,122,661,147,678,209,684,260,678,312,661,374,635,435,600,491,595,489,630,433,655,372,672,311,679,260,673,210,655,149,645,125,630,102,598,65"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="549,63,396,185,393,181,546,58"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="182,5,225,71"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="211,70,226,123,229,132,224,134,221,125,206,72"/>

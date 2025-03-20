@@ -22,7 +22,7 @@ OzoneSensor::OzoneSensor(unsigned long minium_period)
  * @return false
  */
 bool OzoneSensor::verify() {
-  if (this->ozone.begin() == false) {
+  if (this->ozone.begin(OZONE_I2C_ADDR) == false) {
     return false;
   }
 

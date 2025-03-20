@@ -102,42 +102,46 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a645ee06f09470629d5fe40d1f716c299">   34</a></span><span class="preprocessor">#define UV_I2C_ADDR_1 0b1110110</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#ad58bcae54cd4fb77890d7bb18bfb76ea">   35</a></span><span class="preprocessor">#define UV_I2C_ADDR_2 0b1110100</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#add009e081e638094ee54b280661d862e">   38</a></span><span class="preprocessor">#define I2C1_SCL_PIN 27</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a68697a8aca56f616b38aa23f82edecd5">   39</a></span><span class="preprocessor">#define I2C1_SDA_PIN 26</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// storages</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// for radio</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a863cecd1886a3aab37477c89cff41c43">   44</a></span><span class="preprocessor">#define SERIAL1_RX_PIN 1</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a034e57e90772ad922631c79a6a154110">   46</a></span><span class="preprocessor">#define SERIAL1_TX_PIN 0</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#ac6d57f618dd957f5432fe6bec9cc1bf6">   38</a></span><span class="preprocessor">#define OZONE_I2C_ADDR 0x73</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#add009e081e638094ee54b280661d862e">   41</a></span><span class="preprocessor">#define I2C1_SCL_PIN 27</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a68697a8aca56f616b38aa23f82edecd5">   42</a></span><span class="preprocessor">#define I2C1_SDA_PIN 26</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// storages</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a8f0e89cf0d6f933f7f2e641f06fa7dc2">   46</a></span><span class="preprocessor">#define STORING_PACKETS 1</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a6b45b8a80c72eccdea7bb185463ca679">   49</a></span><span class="preprocessor">#define SD_SPI1 1</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a04d57a6c18b2d5e81f31093e58ed0c62">   51</a></span><span class="preprocessor">#define SD_CS_PIN 13</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#ac8f8e926c1f037a7bc4fe32cedabd9b4">   54</a></span><span class="preprocessor">#define FLASH_SPI1 0</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#aef52395a58c8191f3d4a21a6d1d950c3">   56</a></span><span class="preprocessor">#define FLASH_CS_PIN 17</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// spi1</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#ad78661760fc1a7e2851c49d3cead2519">   60</a></span><span class="preprocessor">#define SPI1_MISO_PIN 12</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#aafbcfb01e19fc70a09a6b130e1e7154a">   62</a></span><span class="preprocessor">#define SPI1_SCK_PIN 10</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a0eef22ccdc4fd88572ba8543445522c6">   64</a></span><span class="preprocessor">#define SPI1_MOSI_PIN 11</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">// main pin definitions</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a753dd0c5a5b93507df5b13ec346881e7">   68</a></span><span class="preprocessor">#define ON_BOARD_LED_PIN 25</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#abaa3035bca6ee12a60c3b4b03aa7574a">   70</a></span><span class="preprocessor">#define HEARTBEAT_PIN_0 20</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a1e93fe19ad4ef78d366cc8f619da977a">   72</a></span><span class="preprocessor">#define HEARTBEAT_PIN_1 21</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">// multicore transfer queue</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a8201d54530a1f4d0365d64f9b719abf0">   75</a></span><span class="preprocessor">#define QT_ENTRY_SIZE 500</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a7b5633633d812e26b17cde137daa3df4">   76</a></span><span class="preprocessor">#define QT_MAX_SIZE 10</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">// packet properties</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">   79</a></span><span class="keyword">const</span> uint8_t <a class="code hl_variable" href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a>[] = {<span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">// temporary toggle macros for testing</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a4168244e83bfe6fdfb37b001daea31ba">   82</a></span><span class="preprocessor">#define PACKET_SYSTEM_TESTING 1</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// for radio</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a863cecd1886a3aab37477c89cff41c43">   50</a></span><span class="preprocessor">#define SERIAL1_RX_PIN 1</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a034e57e90772ad922631c79a6a154110">   52</a></span><span class="preprocessor">#define SERIAL1_TX_PIN 0</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a6b45b8a80c72eccdea7bb185463ca679">   55</a></span><span class="preprocessor">#define SD_SPI1 1</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a04d57a6c18b2d5e81f31093e58ed0c62">   57</a></span><span class="preprocessor">#define SD_CS_PIN 13</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#ac8f8e926c1f037a7bc4fe32cedabd9b4">   60</a></span><span class="preprocessor">#define FLASH_SPI1 0</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#aef52395a58c8191f3d4a21a6d1d950c3">   62</a></span><span class="preprocessor">#define FLASH_CS_PIN 17</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// spi1</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#ad78661760fc1a7e2851c49d3cead2519">   66</a></span><span class="preprocessor">#define SPI1_MISO_PIN 12</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#aafbcfb01e19fc70a09a6b130e1e7154a">   68</a></span><span class="preprocessor">#define SPI1_SCK_PIN 10</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a0eef22ccdc4fd88572ba8543445522c6">   70</a></span><span class="preprocessor">#define SPI1_MOSI_PIN 11</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">// main pin definitions</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a753dd0c5a5b93507df5b13ec346881e7">   74</a></span><span class="preprocessor">#define ON_BOARD_LED_PIN 25</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#abaa3035bca6ee12a60c3b4b03aa7574a">   76</a></span><span class="preprocessor">#define HEARTBEAT_PIN_0 20</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a1e93fe19ad4ef78d366cc8f619da977a">   78</a></span><span class="preprocessor">#define HEARTBEAT_PIN_1 21</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">// multicore transfer queue</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a8201d54530a1f4d0365d64f9b719abf0">   81</a></span><span class="preprocessor">#define QT_ENTRY_SIZE 500</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a7b5633633d812e26b17cde137daa3df4">   82</a></span><span class="preprocessor">#define QT_MAX_SIZE 10</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aPayloadConfig_8h_html_abaacb8cdda17b6340a4d5aeaf72e2ca6"><div class="ttname"><a href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a></div><div class="ttdeci">const uint8_t SYNC_BYTES[]</div><div class="ttdef"><b>Definition</b> PayloadConfig.h:79</div></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">// packet properties</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">   85</a></span><span class="keyword">const</span> uint8_t <a class="code hl_variable" href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a>[] = {<span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;S&#39;</span>, <span class="charliteral">&#39;U&#39;</span>, <span class="charliteral">&#39;!&#39;</span>};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">// temporary toggle macros for testing</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="PayloadConfig_8h.html#a4168244e83bfe6fdfb37b001daea31ba">   88</a></span><span class="preprocessor">#define PACKET_SYSTEM_TESTING 1</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aPayloadConfig_8h_html_abaacb8cdda17b6340a4d5aeaf72e2ca6"><div class="ttname"><a href="PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6">SYNC_BYTES</a></div><div class="ttdeci">const uint8_t SYNC_BYTES[]</div><div class="ttdef"><b>Definition</b> PayloadConfig.h:85</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

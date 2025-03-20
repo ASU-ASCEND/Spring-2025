@@ -1,16 +1,18 @@
 <map id="OzoneSensor.h" name="OzoneSensor.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="113,5,231,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="215,5,334,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,187,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,33,120,71,117,67,158,29"/>
-<area shape="rect" id="Node000003" href="$Sensor_8h.html" title=" " alt="" coords="211,79,288,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,29,228,67,225,71,183,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="194,299,278,324"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,106,217,126,201,153,195,188,200,225,212,258,225,286,220,288,207,260,195,226,190,188,196,151,213,123,233,102"/>
-<area shape="rect" id="Node000005" href="$Device_8h.html" title=" " alt="" coords="210,152,289,177"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="252,104,252,138,247,138,247,104"/>
-<area shape="rect" id="Node000006" href="$Logger_8h.html" title=" " alt="" coords="273,225,351,251"/>
-<area shape="poly" id="edge8_Node000003_Node000006" title=" " alt="" coords="265,102,286,123,304,151,313,182,315,211,310,212,307,183,299,153,282,127,261,106"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="251,178,241,285,236,285,246,178"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="262,176,295,213,291,217,258,179"/>
-<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="302,253,260,291,257,287,298,249"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,33,139,76,137,71,245,28"/>
+<area shape="rect" id="Node000003" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="211,79,338,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,31,277,65,272,65,272,31"/>
+<area shape="rect" id="Node000004" href="$Sensor_8h.html" title=" " alt="" coords="363,79,440,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="296,28,370,69,367,74,294,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="346,299,430,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="389,106,369,126,353,153,347,188,352,225,364,258,377,286,372,288,359,260,347,226,342,188,348,151,365,123,385,102"/>
+<area shape="rect" id="Node000006" href="$Device_8h.html" title=" " alt="" coords="362,152,441,177"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="404,104,404,138,399,138,399,104"/>
+<area shape="rect" id="Node000007" href="$Logger_8h.html" title=" " alt="" coords="425,225,503,251"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="417,102,438,123,456,151,465,182,467,211,462,212,459,183,451,153,434,127,413,106"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="403,178,393,285,388,285,398,178"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="414,176,447,213,443,217,410,179"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="454,253,412,291,409,287,450,249"/>
 </map>
