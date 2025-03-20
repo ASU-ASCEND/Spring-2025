@@ -11,7 +11,8 @@
 
 struct FileHeader {
   uint32_t file_number;
-  uint32_t address;
+  uint32_t start_address;
+  uint32_t end_address;
 };
 
 class FlashStorage : public Storage {
@@ -47,6 +48,7 @@ class FlashStorage : public Storage {
   void dump();
   void erase();
   void download();
+  void getStatus();
 };
 
 #endif
