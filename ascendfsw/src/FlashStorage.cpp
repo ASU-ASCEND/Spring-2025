@@ -44,6 +44,11 @@ void FlashStorage::indexFlash() {
     empty = this->isSectorEmpty();
   }
 
+  // Set end_address for the last file if any
+  if (!this->file_data.empty()) {
+    this->file_data.back().end_address = this->address;
+  }
+
   // Write a file header at the beginning of the sector
   this->writeFileHeader();
   this->active_file =
@@ -279,13 +284,76 @@ void FlashStorage::erase() {
 }
 
 /**
+ * @brief Downloads data from flash memory with progress tracking
+ * 
+ * This function provides a more user-friendly way to download data from flash memory.
+ * It includes:
+ * - Progress tracking
+ * - File-by-file transfer
+ * - Visual feedback
+ * - Transfer statistics
+ */
+void FlashStorage::download(int file_number) {
+  log_flash("==== DOWNLOAD File " + String(file_number) + " ====");
+
+  // Check if file number is valid & proceed with download
+  if ((file_number > 0) && (file_number <= this->file_data.size())) {
+    int index = file_number - 1;
+    FileHeader selected_file = this->file_data[index];
+    
+    // Calculate file size based on addresses
+    uint32_t start_addr = selected_file.start_address;
+    uint32_t end_addr = selected_file.end_address;
+    uint32_t file_size = end_addr - start_addr;
+
+    // Send ACK with file info
+    log_flash("Downloading file " + String(file_number));
+    log_flash("File size: " + String(file_size) + " bytes");
+    
+    // Track the download time
+    unsigned long start_time = millis();
+
+    //Download Occurs Here
+    uint32_t current_pos = start_addr;
+    uint32_t bytes_read = 0;
+    while (current_pos < end_addr) {
+        // Read data from flash
+        uint8_t data = this->flash.readByte(current_pos);
+        
+        // Send data to Serial
+        if (Serial.write(data) != 1) {
+          log_flash("ERROR: Unsuccessful serial write");
+          return;
+        }
+        
+        // Update progress
+        bytes_read++;
+        current_pos++;
+        
+        // Show progress every 1000 bytes
+        if (bytes_read % 1000 == 0) {
+          log_flash("Progress: " + String(bytes_read) + "/" + String(file_size));
+        }
+        
+        // Visual feedback
+        digitalWrite(HEARTBEAT_PIN_0, (current_pos & 0x60) != 0);
+        digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
+    }
+    
+    unsigned long end_time = millis();
+    unsigned long total_time = (end_time - start_time) / 1000;
+    log_flash("Download Complete | Time: " + String(total_time) + "s");
+  } 
+  else log_flash("ERROR: Invalid File Number");
+}
+
+/**
  * @brief Prints the current status of the flash storage.
  *
  * Prints the current address, remaining storage, and stored files.
  */
-
 void FlashStorage::getStatus() {
-  log_flash("==== FLASH STORAGE STATUS ====");
+  log_flash("==== STATUS ====");
 
   log_flash("Address: " + String(this->address));
   log_flash("Remaining Storage: " + String(this->MAX_SIZE - this->address) +
