@@ -13,7 +13,8 @@ struct FileHeader {
   uint32_t file_number;
   uint32_t start_address;
   uint32_t end_address;
-};
+  uint8_t complete_flag;   // 0 = writing/incomplete, 1 = complete
+  uint16_t crc;           
 
 class FlashStorage : public Storage {
  private:
@@ -40,6 +41,9 @@ class FlashStorage : public Storage {
   bool readFileHeader();
   void writeFileHeader();
 
+  // New function to calculate a simple CRC (or checksum) for a file.
+  uint16_t computeCRC(uint32_t start, uint32_t end);
+  
  public:
   FlashStorage();
   bool verify() override;
@@ -47,6 +51,10 @@ class FlashStorage : public Storage {
   void storePacket(uint8_t*) override;
   void dump();
   void erase();
+  
+  // New function for deletion of a file (sector aligned deletion)
+  void deleteFile(uint32_t fileNumber);
+  void getStatus();
 };
 
 #endif
