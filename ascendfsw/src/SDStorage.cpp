@@ -27,18 +27,22 @@ bool SDStorage::verify() {
   }
 #endif
 
-  // find unused file name
+// find unused file name
+#if STORING_PACKETS
+  // for bin (eventually just have 1 of these)
+  int num = 0;
+  while (SD.exists("RAWDATA" + String(num) + ".BIN")) num++;
+  if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
+  this->file_name = "RAWDATA" + String(num) + ".BIN";
+  log_core("Created file: " + this->file_name);
+#else
   int num = 0;
   while (SD.exists("DATA" + String(num) + ".CSV")) num++;
   if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
   this->file_name = "DATA" + String(num) + ".CSV";
+#endif
 
-  // for bin (eventually just have 1 of these)
-  num = 0;
-  while (SD.exists("RAWDATA" + String(num) + ".BIN")) num++;
-  if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
-  this->bin_file_name = "RAWDATA" + String(num) + ".BIN";
-  log_core("Created file: " + this->file_name);
+  log_core("SD Filename: " + this->file_name);
 
   // create file
   File f = SD.open(this->file_name, FILE_WRITE);
@@ -78,7 +82,7 @@ void SDStorage::store(String data) {
  * @param packet Pointer to packet bytes
  */
 void SDStorage::storePacket(uint8_t* packet) {
-  File output = SD.open(this->bin_file_name, FILE_WRITE);
+  File output = SD.open(this->file_name, FILE_WRITE);
   if (!output) {
     log_core("SD card write failed");
     // set error if fails at all, but might still be working

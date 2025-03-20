@@ -1,3 +1,6 @@
 [submodule "ascendfsw/lib/SparkFun_SPI_SerialFlash_Arduino_Library"]
 	path = ascendfsw/lib/SparkFun_SPI_SerialFlash_Arduino_Library
 	url = https://github.com/sparkfun/SparkFun_SPI_SerialFlash_Arduino_Library.git
+[submodule "ascendfsw/lib/DFRobot_OzoneSensor"]
+	path = ascendfsw/lib/DFRobot_OzoneSensor
+	url = https://github.com/DFRobot/DFRobot_OzoneSensor.git
