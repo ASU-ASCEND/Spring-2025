@@ -276,3 +276,26 @@ void FlashStorage::erase() {
   this->flash.erase();
   this->address = 0;
 }
+
+/** 
+ * @brief Prints the current status of the flash storage.
+ * 
+ * Prints the current address, remaining storage, and stored files.
+ */
+
+void FlashStorage::getStatus() {
+
+  log_core("==== FLASH STORAGE STATUS ====");
+
+  log_core("Address: " + String(this->address));
+  log_core("Remaining Storage: " + String(this->MAX_SIZE - this->address) + " bytes");
+  
+  log_core("Stored Files:");
+  
+  for (const FileHeader& file : this->file_data) {
+    int file_size = file.end_address - file.start_address;
+
+    log_core("File " + String(file.file_number) + " || Size: " +
+             String(file_size) + " bytes");
+  }
+}
