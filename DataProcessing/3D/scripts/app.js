@@ -176,9 +176,37 @@ function createFlight() {
       ),
     });
 
+    // Add label at the edge of the cylinder
+    const labelEntity = viewer.entities.add({
+      name: `${layer.name} Label`,
+      position: Cesium.Cartesian3.fromDegrees(
+        centerLongitude + (radiusInDegrees * 0.8), // Offset the label to the edge
+        centerLatitude,
+        (layer.minHeight + (layerHeight / 2)) * 1000 // Same height as cylinder center
+      ),
+      label: {
+        text: layer.name,
+        font: 'bold 14px sans-serif',
+        fillColor: Cesium.Color.WHITE, // Changed to white for all labels
+        outlineColor: Cesium.Color.BLACK,
+        outlineWidth: 2,
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+        verticalOrigin: Cesium.VerticalOrigin.CENTER,
+        horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+        pixelOffset: new Cesium.Cartesian2(10, 0),
+        backgroundColor: new Cesium.Color(0, 0, 0, 0.5),
+        backgroundPadding: new Cesium.Cartesian2(7, 5),
+        disableDepthTestDistance: Number.POSITIVE_INFINITY // Always show above terrain
+      }
+    });
+
     // Store the layer entity in global array for opacity control
     if (!window.layerEntities) window.layerEntities = [];
     window.layerEntities[index] = layerEntity;
+    
+    // Store label entities for visibility control
+    if (!window.labelEntities) window.labelEntities = [];
+    window.labelEntities[index] = labelEntity;
   });
 
   // Iterate through the flight data and add samples to the position property
@@ -223,7 +251,7 @@ function createFlight() {
     <strong>Latitude:</strong> ${dataPoint.latitude}°</br>
     <strong>Height:</strong> ${(dataPoint.height * 3.28084).toFixed(2)} ft</br>
     <strong>Speed:</strong> ${speed.toFixed(2)} km/h</br>
-    <strong>Layer:</strong> ${getCurrentAtmosphereLayer(parseFloat(dataPoint.height), flightStats)}</br>
+    <strong>Layer:</strong> ${getCurrentAtmosphereLayer(parseFloat(dataPoint.height) / 1000, flightStats)}</br>
     <strong>Time:</strong> ${dataPoint.timestamp}</br>`;
   
     // Create a point entity for each data point with color based on speed
@@ -305,8 +333,14 @@ function createLayerControls() {
   masterCheckbox.style.accentColor = 'rgb(0, 195, 255)';
   masterCheckbox.onchange = (e) => {
     if (window.layerEntities) {
-      window.layerEntities.forEach((entity) => {
-        if (entity) entity.show = e.target.checked;
+      window.layerEntities.forEach((entity, index) => {
+        if (entity) {
+          entity.show = e.target.checked;
+          // Also show/hide labels
+          if (window.labelEntities && window.labelEntities[index]) {
+            window.labelEntities[index].show = e.target.checked;
+          }
+        }
       });
     }
   };
@@ -334,7 +368,7 @@ function createLayerControls() {
     layerDiv.style.border = '1px solid rgba(0, 195, 255, 0.2)';
     
     const layerName = document.createElement('div');
-    layerName.style.color = layer.color.withAlpha(1.0).toCssColorString();
+    layerName.style.color = 'white'; // Changed to white for all layer names
     layerName.style.fontSize = '12px';
     layerName.style.marginBottom = '5px';
     layerName.style.letterSpacing = '0.5px';
@@ -363,14 +397,20 @@ function createLayerControls() {
       if (window.layerEntities && window.layerEntities[index]) {
         const alpha = e.target.value / 100;
         
-        // Special case: if alpha is 0, just hide the entity
+        // Special case: if alpha is 0, just hide the entity and its label
         if (alpha <= 0.01) {
           window.layerEntities[index].show = false;
+          if (window.labelEntities && window.labelEntities[index]) {
+            window.labelEntities[index].show = false;
+          }
           return;
         }
         
-        // Show the entity (in case it was hidden)
+        // Show the entity and its label (in case they were hidden)
         window.layerEntities[index].show = true;
+        if (window.labelEntities && window.labelEntities[index]) {
+          window.labelEntities[index].show = true;
+        }
         
         // Get the current entity
         const entity = window.layerEntities[index];
@@ -535,7 +575,9 @@ function updateAltitudeGraph(canvas, clock) {
 
   // Draw background
   ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  // Create a rounded rectangle for the graph background
+  roundRect(ctx, 0, 0, canvas.width, canvas.height, 8);
+  ctx.fill();
   
   // Draw grid lines and labels
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
@@ -544,11 +586,12 @@ function updateAltitudeGraph(canvas, clock) {
   ctx.textAlign = 'right';
   
   // Horizontal grid lines (altitude in feet)
-  // Use a smaller conversion factor - 1km = 3.28084 ft (divide by 1000)
-  const maxHeightFeet = max * 3.28084;
-  const altitudeStep = Math.ceil(maxHeightFeet / 5); // Adjust step size accordingly
-  for (let alt = 0; alt <= maxHeightFeet; alt += altitudeStep) {
-    const y = padding.top + graphHeight - (alt / maxHeightFeet) * graphHeight;
+  // Fixed altitude intervals with some extra space at the top
+  const maxDisplayFeet = 120000; // Increased from 100,000ft to 120,000ft for extra space at top
+  const altitudeStep = 20000; // 20,000 ft intervals
+  
+  for (let alt = 0; alt <= maxDisplayFeet; alt += altitudeStep) {
+    const y = padding.top + graphHeight - (alt / maxDisplayFeet) * graphHeight;
     
     // Grid line
     ctx.beginPath();
@@ -560,11 +603,21 @@ function updateAltitudeGraph(canvas, clock) {
     ctx.fillText(alt.toFixed(0) + 'ft', padding.left - 5, y + 4);
   }
 
+  // Create a clipping region for the graph area (to contain atmospheric layers within borders)
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(padding.left, padding.top, graphWidth, graphHeight);
+  ctx.clip();
+
   // Draw atmospheric layers from bottom to top
   const layers = calculateAtmosphereLayers(flightStats);
   layers.forEach((layer, i) => {
-    const yBottom = padding.top + graphHeight - (layer.minHeight / max) * graphHeight;
-    const yTop = padding.top + graphHeight - (layer.maxHeight / max) * graphHeight;
+    // Convert layer heights from km to feet
+    const minHeightFeet = layer.minHeight * 3280.84; // Convert km to feet
+    const maxHeightFeet = layer.maxHeight * 3280.84; // Convert km to feet
+    
+    const yBottom = padding.top + graphHeight - (minHeightFeet / maxDisplayFeet) * graphHeight;
+    const yTop = padding.top + graphHeight - (maxHeightFeet / maxDisplayFeet) * graphHeight;
     const layerHeight = yBottom - yTop;
     
     ctx.fillStyle = layer.color.toCssColorString();
@@ -593,9 +646,10 @@ function updateAltitudeGraph(canvas, clock) {
   ctx.lineWidth = 2;
   
   flightData.forEach((point, i) => {
-    const heightInKm = point.height;
+    // Convert height from meters to feet for plotting
+    const heightFeet = parseFloat(point.height) * 3.28084;
     const x = padding.left + (i / (flightData.length - 1)) * graphWidth;
-    const y = padding.top + graphHeight - (heightInKm / max) * graphHeight;
+    const y = padding.top + graphHeight - (heightFeet / maxDisplayFeet) * graphHeight;
     if (i === 0) ctx.moveTo(x, y);
     else ctx.lineTo(x, y);
   });
@@ -608,10 +662,10 @@ function updateAltitudeGraph(canvas, clock) {
   );
   
   if (currentIndex > 0) {
-    const heightInKm = flightData[currentIndex].height;
-    const heightInFeet = heightInKm * 3.28084; // Correct feet conversion
+    // Convert height from meters to feet for display
+    const heightFeet = parseFloat(flightData[currentIndex].height) * 3.28084;
     const x = padding.left + (currentIndex / (flightData.length - 1)) * graphWidth;
-    const y = padding.top + graphHeight - (heightInKm / max) * graphHeight;
+    const y = padding.top + graphHeight - (heightFeet / maxDisplayFeet) * graphHeight;
     
     // Draw vertical time indicator line
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
@@ -635,13 +689,40 @@ function updateAltitudeGraph(canvas, clock) {
     ctx.fillStyle = 'white';
     ctx.font = 'bold 12px Arial';
     ctx.textAlign = 'left';
-    ctx.fillText(`${heightInFeet.toFixed(0)}ft`, x + 8, y - 8);
+    ctx.fillText(`${heightFeet.toFixed(0)}ft`, x + 8, y - 8);
   }
 
-  // Add border
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-  ctx.lineWidth = 1;
-  ctx.strokeRect(padding.left, padding.top, graphWidth, graphHeight);
+  // Restore the canvas state after clipping
+  ctx.restore();
+
+  // Add border with enhanced styling
+  ctx.strokeStyle = 'rgba(0, 195, 255, 0.3)';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  roundRect(ctx, padding.left, padding.top, graphWidth, graphHeight, 0);
+  ctx.stroke();
+}
+
+/**
+ * Helper function to draw a rounded rectangle
+ * @param {CanvasRenderingContext2D} ctx - Canvas context
+ * @param {number} x - X position
+ * @param {number} y - Y position
+ * @param {number} width - Width of rectangle
+ * @param {number} height - Height of rectangle
+ * @param {number} radius - Corner radius
+ */
+function roundRect(ctx, x, y, width, height, radius) {
+  if (width < 2 * radius) radius = width / 2;
+  if (height < 2 * radius) radius = height / 2;
+  
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.arcTo(x + width, y, x + width, y + height, radius);
+  ctx.arcTo(x + width, y + height, x, y + height, radius);
+  ctx.arcTo(x, y + height, x, y, radius);
+  ctx.arcTo(x, y, x + width, y, radius);
+  ctx.closePath();
 }
 
 // Load JSON data from the aprs-data-fall-2024.json file and initialize everything
