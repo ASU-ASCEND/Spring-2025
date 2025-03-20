@@ -26,7 +26,7 @@ class SerialInput(threading.Thread):
         print("Available serial ports:")
         for i, p in enumerate(ports, start=1):
             print(f"{i}. {p[1]}")
-        while True:
+        while self.end_event.is_set() == False:
             try:
                 index = int(input("Enter the index of the port you want to use: ")) - 1
                 if 0 <= index < len(ports):
