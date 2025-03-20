@@ -1,18 +1,17 @@
 <map id="Sensor::readEmpty" name="Sensor::readEmpty">
-<area shape="rect" id="Node000001" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="521,104,667,129"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html#a9163644b089001958496a71b73b9091a" title="Decodes the packet to a CSV row." alt="" coords="112,5,223,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="565,98,523,70,472,46,407,30,340,21,223,18,223,12,340,16,408,24,474,41,526,65,568,93"/>
-<area shape="rect" id="Node000004" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="300,55,452,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="523,104,432,83,434,77,525,98"/>
-<area shape="rect" id="Node000006" href="$classBMP390Sensor.html#ae0499577320b347c8fccf855193c57ac" title="Reads data to a csv stub." alt="" coords="283,104,469,129"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="508,119,469,119,469,114,508,114"/>
-<area shape="rect" id="Node000007" href="$classENS160Sensor.html#aac8ea849d26c4a6a567924805d378990" title="Reads Air Quality Index, TVOC (ppb), and ECOS (ppm)" alt="" coords="284,153,468,179"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="525,135,434,156,432,151,523,130"/>
-<area shape="rect" id="Node000008" href="$classMTK3339Sensor.html#a632c895115930d476540fed7d6537635" title="Reads and returns data from the MTK3339 GPS corresponding to the CSV header." alt="" coords="279,203,473,228"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="567,140,524,168,474,194,441,205,439,200,472,189,522,163,564,135"/>
-<area shape="rect" id="Node000003" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="5,31,56,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,33,57,41,56,36,98,28"/>
-<area shape="rect" id="Node000005" href="$main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b" title="Read data from each verified Sensor." alt="" coords="104,55,231,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="286,70,231,70,231,65,286,65"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="90,56,56,50,56,45,91,51"/>
+<area shape="rect" id="Node000001" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="423,104,568,129"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a9163644b089001958496a71b73b9091a" title="Decodes the packet to a CSV row." alt="" coords="222,5,333,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="465,98,423,70,374,44,332,31,334,26,376,40,426,66,468,94"/>
+<area shape="rect" id="Node000004" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="201,55,353,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="425,104,334,83,335,77,426,98"/>
+<area shape="rect" id="Node000006" href="$classBMP390Sensor.html#ae0499577320b347c8fccf855193c57ac" title="Reads data to a csv stub." alt="" coords="184,104,371,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="409,119,371,119,371,114,409,114"/>
+<area shape="rect" id="Node000007" href="$classENS160Sensor.html#aac8ea849d26c4a6a567924805d378990" title="Reads Air Quality Index, TVOC (ppb), and ECOS (ppm)" alt="" coords="185,153,369,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="426,135,335,156,334,151,425,130"/>
+<area shape="rect" id="Node000008" href="$classMTK3339Sensor.html#a632c895115930d476540fed7d6537635" title="Reads and returns data from the MTK3339 GPS corresponding to the CSV header." alt="" coords="180,203,375,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="467,140,425,167,376,192,339,205,337,200,374,188,422,162,464,135"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="43,5,94,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="208,21,95,21,95,15,208,15"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b" title="Read data from each verified Sensor." alt="" coords="5,55,132,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="188,70,132,70,132,65,188,65"/>
 </map>
