@@ -49,7 +49,6 @@ class FlashStorage : public Storage {
   void erase();
 
   void getStatus();
-
 };
 
 #endif

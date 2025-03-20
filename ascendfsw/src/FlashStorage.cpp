@@ -25,15 +25,16 @@ void FlashStorage::indexFlash() {
       // Update end address of previous file
       if (!this->file_data.empty()) {
         this->file_data.back().end_address = this->address - 4;
-        log_flash("File " + String(this->file_data.back().file_number) + " Size: " +
-                 String(this->file_data.back().start_address) + " to " +
-                 String(this->file_data.back().end_address));
+        log_flash("File " + String(this->file_data.back().file_number) +
+                  " Size: " + String(this->file_data.back().start_address) +
+                  " to " + String(this->file_data.back().end_address));
       }
 
       // Store new detected file
-      this->file_data.push_back({(this->file_data.size() + 1), this->address, this->address});
+      this->file_data.push_back(
+          {(this->file_data.size() + 1), this->address, this->address});
       log_flash("File " + String(this->file_data.size()) + " at address " +
-               String(this->address));
+                String(this->address));
     }
 
     // Iterate the address
@@ -102,16 +103,16 @@ void FlashStorage::writeFileHeader() {
   // Update end address of previous file
   if (!this->file_data.empty()) {
     this->file_data.back().end_address = this->address - 4;
-    log_flash("File " + String(this->file_data.back().file_number) + " Size: " +
-             String(this->file_data.back().start_address) + " to " +
-             String(this->file_data.back().end_address));
+    log_flash("File " + String(this->file_data.back().file_number) +
+              " Size: " + String(this->file_data.back().start_address) +
+              " to " + String(this->file_data.back().end_address));
   }
 
   // Store necessary file data for quick reference
-  this->file_data.push_back({(this->file_data.size() + 1), (this->address - 4),
-                             (this->address - 4)});
+  this->file_data.push_back(
+      {(this->file_data.size() + 1), (this->address - 4), (this->address - 4)});
   log_flash("New file " + String(this->file_data.size()) + " at address " +
-           String(this->address - 4) + " created");
+            String(this->address - 4) + " created");
 }
 
 /**
@@ -166,17 +167,17 @@ bool FlashStorage::verify() {
     this->indexFlash();  // Get address from flash and track files
 
     log_flash("Updated address: " + String(this->address) + " in sector " +
-             String(this->address / this->SECTOR_SIZE));
+              String(this->address / this->SECTOR_SIZE));
   } else {  // Provide status information if file is currently active
     log_flash("Flash storage is active, writing to File " +
-             String(this->file_data.back().file_number) + " at address " +
-             String(this->address) + " in sector " +
-             String(this->address / this->SECTOR_SIZE));
+              String(this->file_data.back().file_number) + " at address " +
+              String(this->address) + " in sector " +
+              String(this->address / this->SECTOR_SIZE));
   }
 
   // Log flash size
   log_flash("Remaining space: " + String(this->MAX_SIZE - this->address) +
-           " bytes");
+            " bytes");
 
   return true;
 }
@@ -202,10 +203,10 @@ void FlashStorage::store(String data) {
 
   // Log the number of bytes written
   log_flash("Writing " + String(data.length()) + " bytes at " +
-           String(this->address));
-  log_flash("File " + String(this->file_data.back().file_number) + " Size: " +
-           String(this->file_data.back().start_address) + " to " +
-           String(this->file_data.back().end_address));
+            String(this->address));
+  log_flash("File " + String(this->file_data.back().file_number) +
+            " Size: " + String(this->file_data.back().start_address) + " to " +
+            String(this->file_data.back().end_address));
 
   this->flash.blockingBusyWait();
 }
@@ -236,11 +237,11 @@ void FlashStorage::storePacket(uint8_t* packet) {
 
   // Log the number of bytes written
   log_flash("Writing " + String(packet_len) + " bytes at " +
-           String(this->address));
-  log_flash("File " + String(this->file_data.back().file_number) + " Size: " +
-           String(this->file_data.back().start_address) + " to " +
-           String(this->file_data.back().end_address));
-           
+            String(this->address));
+  log_flash("File " + String(this->file_data.back().file_number) +
+            " Size: " + String(this->file_data.back().start_address) + " to " +
+            String(this->file_data.back().end_address));
+
   this->flash.blockingBusyWait();
 }
 
@@ -277,25 +278,25 @@ void FlashStorage::erase() {
   this->address = 0;
 }
 
-/** 
+/**
  * @brief Prints the current status of the flash storage.
- * 
+ *
  * Prints the current address, remaining storage, and stored files.
  */
 
 void FlashStorage::getStatus() {
-
   log_flash("==== FLASH STORAGE STATUS ====");
 
   log_flash("Address: " + String(this->address));
-  log_flash("Remaining Storage: " + String(this->MAX_SIZE - this->address) + " bytes");
-  
+  log_flash("Remaining Storage: " + String(this->MAX_SIZE - this->address) +
+            " bytes");
+
   log_flash("Stored Files:");
-  
+
   for (const FileHeader& file : this->file_data) {
     int file_size = file.end_address - file.start_address;
 
-    log_flash("File " + String(file.file_number) + " || Size: " +
-             String(file_size) + " bytes");
+    log_flash("File " + String(file.file_number) +
+              " || Size: " + String(file_size) + " bytes");
   }
 }
