@@ -98,7 +98,7 @@ class GSEFrame(tk.Frame):
           if sensor in packet["sensor_data"]:
             for i in list(packet["sensor_data"][sensor].keys())[1:]:
               self.data_cells[col_index][0].configure(background="lightblue")
-              self.data_cells[col_index][1].set(packet["sensor_data"][sensor][i])
+              self.data_cells[col_index][1].set(round(packet["sensor_data"][sensor][i], 6))
               col_index += 1
           else: 
             for i in range(self.header_info[0][sensor]):
@@ -109,6 +109,7 @@ class GSEFrame(tk.Frame):
     self.updateTable()
 
     # update scrolledtexts
+    # while self.sorter_core0.empty() == False or self.sorter_core1.empty() == False:
     prefix =  datetime.now().strftime('%H:%M:%S.%f')[:-3] + " -> "
     if self.sorter_core0.empty() == False:
       self.core0_scrolled.configure(state="normal")

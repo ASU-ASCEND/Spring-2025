@@ -46,7 +46,7 @@ String SHTC3Sensor::readData() {
  */
 void SHTC3Sensor::readDataPacket(uint8_t*& packet) {
   sensors_event_t temp, humidity;
-  shtc3.getEvent(&temp, &humidity);
+  shtc3.getEvent(&humidity, &temp);
 
   memcpy(packet, &(temp.temperature), sizeof(temp.temperature));
   packet += sizeof(temp.temperature);

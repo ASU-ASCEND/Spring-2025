@@ -63,4 +63,5 @@ def load_config(filepath):
             bitmask_to_name[index] = name
             bitmask_to_struct[index] = Struct(*struct_fields)
 
+
     return bitmask_to_struct, bitmask_to_name, num_sensors

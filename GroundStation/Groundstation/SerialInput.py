@@ -4,6 +4,7 @@ import threading
 import serial
 import serial.tools.list_ports
 from datetime import datetime
+from time import sleep 
 
 class SerialInput(threading.Thread):
     def __init__(self, end_event, input_queue):
@@ -11,6 +12,7 @@ class SerialInput(threading.Thread):
         self.input_queue = input_queue
         self.end_event = end_event
         self.port = self.select_serial_port()
+
         try:
             self.ser = serial.Serial(
                 port=self.port,
@@ -46,10 +48,12 @@ class SerialInput(threading.Thread):
 
     def run(self):
         while not (self.end_event and self.end_event.is_set()):
-            data = self.ser.read(1024)
+            data = self.ser.read(512)   #1024)
             if data:
                 for byte in data:
                     self.input_queue.put(byte)
+                    print(chr(byte), end="")
+
         self.ser.close()
 
 if __name__ == "__main__":

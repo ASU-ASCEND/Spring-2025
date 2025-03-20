@@ -42,17 +42,17 @@ void handleDataInterface();
 // class        sensor            minimum period in ms
 INA260Sensor    ina260_sensor     (1000);
 TempSensor      temp_sensor       (1000);
-ENS160Sensor    ens160_sensor     (1000);
-AS7331Sensor    uv_sensor_1       (1000, UV_I2C_ADDR_1);
-AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
-MTK3339Sensor   gps_sensor        (5000);
+ENS160Sensor    ens160_sensor     (500);
+AS7331Sensor    uv_sensor_1       (500, UV_I2C_ADDR_1);
+AS7331Sensor    uv_sensor_2       (500, UV_I2C_ADDR_2);
+MTK3339Sensor   gps_sensor        (2000);
 ICM20948Sensor  icm_sensor        (0);
 PCF8523Sensor   rtc_sensor        (1000);
-BMP390Sensor    bmp_sensor        (1000);
-TMP117Sensor    tmp_sensor        (1000); 
+BMP390Sensor    bmp_sensor        (500);
+TMP117Sensor    tmp_sensor        (500); 
 SHTC3Sensor     shtc_sensor       (1000);
 SCD40Sensor     sdc_sensor        (1000); 
-OzoneSensor     ozone_sensor      (1000);
+OzoneSensor     ozone_sensor      (500);
 
 // clang-format on
 

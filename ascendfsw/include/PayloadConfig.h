@@ -34,6 +34,9 @@
 #define UV_I2C_ADDR_1 0b1110110
 #define UV_I2C_ADDR_2 0b1110100
 
+/** @brief Ozone I2C address */
+#define OZONE_I2C_ADDR 0x73
+
 /** @brief I2C1 pins */
 #define I2C1_SCL_PIN 27
 #define I2C1_SDA_PIN 26

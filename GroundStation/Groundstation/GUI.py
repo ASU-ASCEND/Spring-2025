@@ -103,7 +103,7 @@ class GUI():
       if self.sorter_misc.empty() == False: self.sorter_misc.get()
       self.current_frame.update()
 
-      self.window.after(500, update)
+      self.window.after(1, update)
 
     self.window.after(0, update)
 
