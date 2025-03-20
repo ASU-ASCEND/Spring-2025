@@ -200,14 +200,14 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
 
   // print csv row
   // log_data(csv_row);
-  log_data_raw(packet, packet_len); 
+  log_data_raw(packet, packet_len);
 
-  // send data to core1
-  #if STORING_PACKETS
+// send data to core1
+#if STORING_PACKETS
   queue_add_blocking(&qt, packet);
-  #else
+#else
   queue_add_blocking(&qt, csv_row.c_str());
-  #endif
+#endif
 
   // delay(1000);                                 // remove before flight
   digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration

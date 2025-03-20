@@ -27,22 +27,22 @@ bool SDStorage::verify() {
   }
 #endif
 
-  // find unused file name
-  #if STORING_PACKETS
+// find unused file name
+#if STORING_PACKETS
   // for bin (eventually just have 1 of these)
   int num = 0;
   while (SD.exists("RAWDATA" + String(num) + ".BIN")) num++;
   if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
   this->file_name = "RAWDATA" + String(num) + ".BIN";
   log_core("Created file: " + this->file_name);
-  #else
+#else
   int num = 0;
   while (SD.exists("DATA" + String(num) + ".CSV")) num++;
   if (num != 0) ErrorDisplay::instance().addCode(Error::POWER_CYCLED);
   this->file_name = "DATA" + String(num) + ".CSV";
-  #endif
-  
-  log_core("SD Filename: " + this->file_name); 
+#endif
+
+  log_core("SD Filename: " + this->file_name);
 
   // create file
   File f = SD.open(this->file_name, FILE_WRITE);
