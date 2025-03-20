@@ -1,28 +1,5 @@
-/**
- * Atmospheric Layer Visualization Implementation (Matthew Arenivas)
- * 
- * This implementation visualizes three main atmospheric layers:
- * - Troposphere (0-10km): Blue, where most weather phenomena occur
- * - Stratosphere (10-20km): Cyan, contains the ozone layer
- * - Mesosphere (20-35km): Yellow, where meteors usually burn up
- * - (Calculations can we wrong) lol
- * 
- * Each layer is represented by a semi-transparent cylinder centered on the flight path.
- * 
- * Customization Options:
- * - Layer heights: Modify the 'height' values in atmosphereLayers array
- * - Colors: Adjust the 'color' values using Cesium.Color
- * - Cylinder size: Modify topRadius and bottomRadius in createFlight()
- * - Center position: Adjust the position calculation in createFlight()
- * 
- * Interactive Features:
- * - Toggle layer visibility using checkboxes
- * - Adjust layer opacity using sliders
- * - Click on flight points to see altitude and current layer
- */
-
 // Provide access token for Cesium Ion
-Cesium.Ion.defaultAccessToken = 'your_access_token';
+Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmNzRmZDQ5MS0zODY1LTRjYjEtOGI3Ny0wZGMwNWQ1MjVhOGMiLCJpZCI6MjI1Mjg3LCJpYXQiOjE3MjA0NTM1NzV9.k5jpBA4KmrErsokf_kxNKNcYbE8tNwCavyzJNRQOFeQ';
 
 // Initialize the Cesium viewer with customized settings
 const viewer = new Cesium.Viewer('cesiumContainer', {
@@ -42,7 +19,15 @@ let start, stop, timeStepInSeconds;
 let sampledPositionProperty;
 let atmosphereLayers = [];
 
-// Add data analysis helper functions (Matthew Arenivas)
+/**
+ * @brief Min and max data analysis helper functions  
+ * 
+ * Calculates and returns the min and max height, longitude, and latitude 
+ * from the flight data.
+ * 
+ * @param {*} data 
+ * @returns Min and max height, longitude, and latitude
+ */
 function analyzeFlightData(data) {
   return {
     height: {
@@ -62,7 +47,17 @@ function analyzeFlightData(data) {
   };
 }
 
-// Update atmosphere layers to be static (Matthew Arenivas)
+// Update atmosphere layers to be static 
+/**
+ * @brief Calculate atmosphere layers based on flight statistics
+ * 
+ * Calculate atmospheric layers including the Troposphere, Tropopause, 
+ * Lower Stratosphere, Ozone Layer, and Upper Stratosphere based on flight 
+ * statistics.
+ * 
+ * @param {*} flightStats 
+ * @returns 
+ */
 function calculateAtmosphereLayers(flightStats) {
   const { min, max } = flightStats.height;  // These are in kilometers
   const layers = [
@@ -70,35 +65,35 @@ function calculateAtmosphereLayers(flightStats) {
       minHeight: 0,
       maxHeight: 11,  // Troposphere: 0-11km
       name: 'Troposphere (0-36,000ft)',
-      color: new Cesium.Color(0.0, 0.0, 1.0, 1.0), // Blue
+      color: new Cesium.Color.fromCssColorString("#95CADB"), // Blue
       baseAlpha: 0.2
     },
     {
       minHeight: 11,
       maxHeight: 12,  // Tropopause: 11-12km
       name: 'Tropopause (36,000-39,000ft)',
-      color: new Cesium.Color(1.0, 0.0, 0.0, 1.0), // Red
+      color: new Cesium.Color.fromCssColorString("#588BAE"), // Red
       baseAlpha: 0.25
     },
     {
       minHeight: 12,
       maxHeight: 20,  // Lower Stratosphere: 12-20km
       name: 'Lower Stratosphere (39,000-65,600ft)',
-      color: new Cesium.Color(0.5, 1.0, 0.5, 1.0), // Light Green
+      color: new Cesium.Color.fromCssColorString("#008ECC"), // Light Green
       baseAlpha: 0.15
     },
     {
       minHeight: 20,
       maxHeight: 30,  // Ozone Layer: 20-30km
       name: 'Ozone Layer (65,600-98,400ft)',
-      color: new Cesium.Color(1.0, 0.0, 1.0, 1.0), // Magenta
+      color: new Cesium.Color.fromCssColorString("#1D2951"), // Magenta
       baseAlpha: 0.2
     },
     {
       minHeight: 30,
       maxHeight: 50,  // Upper Stratosphere: 30-50km
       name: 'Upper Stratosphere (98,400-164,000ft)',
-      color: new Cesium.Color(0.5, 1.0, 0.5, 1.0), // Light Green
+      color: new Cesium.Color.fromCssColorString("#0147AB"), // Light Green
       baseAlpha: 0.15
     }
   ];
@@ -107,7 +102,7 @@ function calculateAtmosphereLayers(flightStats) {
   return layers;
 }
 
-// Update getCurrentAtmosphereLayer to include only lower layers (Matthew Arenivas)
+// Update getCurrentAtmosphereLayer to include only lower layers  
 function getCurrentAtmosphereLayer(height, flightStats) {
   const heightInKm = height;  // Height is already in kilometers
   
@@ -133,7 +128,7 @@ function setClockFromData() {
   viewer.clock.shouldAnimate = true;
 }
 
-// Update createFlight to improve layer labeling (Matthew Arenivas)
+// Update createFlight to improve layer labeling  
 function createFlight() {
   sampledPositionProperty = new Cesium.SampledPositionProperty();
 
@@ -247,7 +242,7 @@ function createFlight() {
   }
 }
 
-// Helper function to get color based on speed (Matthew Arenivas)
+// Helper function to get color based on speed  
 function getColorBasedOnSpeed(speed) {
   if (speed === 0) return Cesium.Color.BLUE.withAlpha(0.8);
   if (speed < 50) return Cesium.Color.GREEN.withAlpha(0.8);
@@ -276,7 +271,10 @@ function createEntity() {
   viewer.trackedEntity = payloadEntity;
 }
 
-// Add UI controls for layer opacity and visibility (Matthew Arenivas)
+/** 
+ * @brief Create layer controls for opacity and visibility
+ * 
+*/
 function createLayerControls() {
   const controlPanel = document.createElement('div');
   controlPanel.id = 'layerControls';
@@ -409,7 +407,10 @@ function createLayerControls() {
   document.body.appendChild(controlPanel);
 }
 
-// Add altitude graph visualization (Matthew Arenivas)
+/**
+ * @brief Create, style, and position altitude graph visualization
+ * 
+ */
 function createAltitudeGraph() {
   // Remove any existing graph
   const existingGraph = document.getElementById('altitudeGraph');
@@ -509,6 +510,12 @@ function createAltitudeGraph() {
   });
 }
 
+/**
+ * @brief Update altitude graph with current flight data
+ * 
+ * @param {*} canvas 
+ * @param {*} clock 
+ */
 function updateAltitudeGraph(canvas, clock) {
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -665,5 +672,4 @@ async function init() {
 }
 
 // Call main function to initialize the viewer
-//yo
 init();
