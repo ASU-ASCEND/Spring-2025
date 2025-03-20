@@ -73,6 +73,16 @@ class GUI():
 
     def set_frame(new_frame: tk.Frame):
       self.current_frame.destroy()
+      # clear queues between frames to avoid old data clogging it 
+      with self.sorter_core0.mutex:
+        self.sorter_core0.queue.clear()
+      with self.sorter_core1.mutex:
+        self.sorter_core1.queue.clear()
+      with self.sorter_misc.mutex:
+        self.sorter_misc.queue.clear()
+      with self.decoder_packets.mutex:
+        self.decoder_packets.queue.clear()
+      # print(self.decoder_packets._qsize())
       self.current_frame = new_frame
       self.current_frame.grid(row=1, column=0, columnspan=self.COLUMNS, sticky="nsew")
 

@@ -96,7 +96,7 @@ class GSEFrame(tk.Frame):
         for sensor in self.header_info[0].keys():
           if sensor == "Millis": continue  
           if sensor in packet["sensor_data"]:
-            for i in packet["sensor_data"][sensor].keys():
+            for i in list(packet["sensor_data"][sensor].keys())[1:]:
               self.data_cells[col_index][0].configure(background="lightblue")
               self.data_cells[col_index][1].set(packet["sensor_data"][sensor][i])
               col_index += 1

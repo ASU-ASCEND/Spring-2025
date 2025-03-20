@@ -30,7 +30,7 @@ class SerialSorter(threading.Thread):
         self.buf.append(c_in)
 
         if self.buf.find(self.encodings["ASU!"]) != -1:
-          print("hit packet")
+          # print("hit packet")
           # flush before to misc 
           before, sep, after = self.buf.partition(self.encodings["ASU!"])
           if before.decode().strip() != "": self.sorter_misc.put(before.decode())

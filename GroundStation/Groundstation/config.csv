@@ -1,12 +1,12 @@
 BitIndex, SensorName, FieldLabel_1, FieldType_1, FieldLabel_2, FieldType_2, FieldLabel_3, FieldType_3, FieldLabel_4, FieldType_4, FieldLabel_5, FieldType_5, FieldLabel_6, FieldType_6, FieldLabel_7, FieldType_7, FieldLabel_8, FieldType_8, FieldLabel_9, FieldType_9, FieldLabel_10, FieldType_10, FieldLabel_11, FieldType_11, FieldLabel_12, FieldType_12 
-0, PCF8523, Year, uint16_t, Month, uint8_t, Day, uint8_t, Hour, uint8_t, Minute, uint8_t, Second, uint8_t
-1, INA260, Current (mA), float, Voltage (mV), float, Power (mW), float
-2, PicoTemp, Temperature (C), float
-3, ENS160, AQI, uint8_t, TVOC (ppb), uint16_t, eCO2 (ppm), uint16_t
-4, UV Sensor 1, UVA2 (nm), float, UVB2 (nm), float, UVC2 (nm), float
+10, PCF8523, Year, uint16_t, Month, uint8_t, Day, uint8_t, Hour, uint8_t, Minute, uint8_t, Second, uint8_t
+9, INA260, Current (mA), float, Voltage (mV), float, Power (mW), float
+8, PicoTemp, Temperature (C), float
+7, ENS160, AQI, uint8_t, TVOC (ppb), uint16_t, eCO2 (ppm), uint16_t
+6, UV Sensor 1, UVA2 (nm), float, UVB2 (nm), float, UVC2 (nm), float
 5, UV Sensor 2, UVA0 (nm), float, UVB0 (nm), float, UVC0 (nm), float
-6, ICM20948, AccX (g), float, AccY (g), float, AccZ (g), float, GyroX (°/s), float, GyroY (°/s), float, GyroZ (°/s), float, MagX (µT), float, MagY (µT), float, MagZ (µT), float, Temperature (°C), float
-7, MTK3339, Year, uint16_t, Month, uint8_t, Day, uint8_t, Hour, uint8_t, Minute, uint8_t, Second, uint8_t, Latitude, float, Longitude, float, Speed, float, Heading, float, Altitude, float, Satellites, uint8_t
-8, BMP390, Temperature (°C), double, Pressure (Pa), double, Altitude (m), float
-9, TMP117, Temperature (°C), float
-10, SHTC3, Temperature (°C), float, Relative Humidity (%), float
+4, ICM20948, AccX (g), float, AccY (g), float, AccZ (g), float, GyroX (deg/s), float, GyroY (deg/s), float, GyroZ (deg/s), float, MagX (uT), float, MagY (uT), float, MagZ (uT), float, Temperature (C), float
+3, MTK3339, Year, uint16_t, Month, uint8_t, Day, uint8_t, Hour, uint8_t, Minute, uint8_t, Second, uint8_t, Latitude, float, Longitude, float, Speed, float, Heading, float, Altitude, float, Satellites, uint8_t
+2, BMP390, Temperature (C), double, Pressure (Pa), double, Altitude (m), float
+1, TMP117, Temperature (C), float
+0, SHTC3, Temperature (C), float, Relative Humidity (%), float
