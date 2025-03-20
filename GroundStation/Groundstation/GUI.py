@@ -11,7 +11,7 @@ import DataFrame
 
 class GUI():
 
-  def __init__(self, end_event: threading.Event, sorter_core0: Queue, sorter_core1: Queue, sorter_misc: Queue, decoder_packets: Queue):
+  def __init__(self, end_event: threading.Event, sorter_core0: Queue, sorter_core1: Queue, sorter_misc: Queue, decoder_packets: Queue, decoder_args: list):
     super().__init__()
     self.end_event = end_event 
     self.COLUMNS = 6
@@ -30,6 +30,7 @@ class GUI():
     self.sorter_core1 = sorter_core1
     self.sorter_misc = sorter_misc 
     self.decoder_packets = decoder_packets
+    self.decoder_args = decoder_args
 
     header_arr = ["Millis"]
     header_key = {
@@ -55,7 +56,7 @@ class GUI():
     return RadioFrame.RadioFrame(self.window, self.decoder_packets, self.header_info)
   
   def buildDataFrame(self):
-    return DataFrame.DataFrame(self.window)
+    return DataFrame.DataFrame(self.window, self.decoder_args, self.header_info)
 
   def run(self):
     print("GUI start")

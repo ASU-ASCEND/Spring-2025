@@ -42,6 +42,9 @@
 #define I2C1_SDA_PIN 26
 
 // storages
+/** @brief Toggle sending packets vs C strings over transfer queue */
+#define STORING_PACKETS 1
+
 // for radio
 /** @brief UART0 RX Pin */
 #define SERIAL1_RX_PIN 1

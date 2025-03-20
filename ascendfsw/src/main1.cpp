@@ -80,13 +80,28 @@ void real_loop1() {
   it2++;
   digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
 
+  #if STORING_PACKETS
+  uint8_t received_data[QT_ENTRY_SIZE]; 
+  #else
   char received_data[QT_ENTRY_SIZE];
+  #endif
   queue_remove_blocking(&qt, received_data);
 
+  #if STORING_PACKETS
+  unsigned long timestamp; 
+  memcpy(&timestamp, received_data + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint16_t), sizeof(timestamp)); 
+  log_core("Packet Received with Millis = " + String(timestamp)); 
+  #else
   log_core("Received: " + String(received_data));
+  #endif
 
   // store csv row
+  #if STORING_PACKETS
+  storeDataPacket(received_data); 
+  #else 
   storeData(String(received_data));
+  #endif 
+
 }
 
 /**

@@ -191,25 +191,25 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
   // start print line with iteration number
   log_core("it: " + String(it) + "\t");
 
-#if PACKET_SYSTEM_TESTING
   // build csv row
   uint8_t packet[QT_ENTRY_SIZE];
   // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
   // debugging
   uint16_t packet_len = readSensorDataPacket(packet);
   String csv_row = decodePacket(packet);
-#else
-  String csv_row = readSensorData();
-#endif
 
   // print csv row
   // log_data(csv_row);
   log_data_raw(packet, packet_len); 
 
   // send data to core1
+  #if STORING_PACKETS
+  queue_add_blocking(&qt, packet);
+  #else
   queue_add_blocking(&qt, csv_row.c_str());
+  #endif
 
-  delay(1000);                                 // remove before flight
+  // delay(1000);                                 // remove before flight
   digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
 }
 

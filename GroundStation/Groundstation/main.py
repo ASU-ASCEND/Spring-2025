@@ -61,7 +61,8 @@ if __name__ == "__main__":
         sorter_core0,
         sorter_core1,
         sorter_misc,
-        decoder_packets
+        decoder_packets,
+        [bitmask_to_struct, bitmask_to_name, num_sensors]
     )
 
 
