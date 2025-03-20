@@ -116,9 +116,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9db5e6113d9a0bd03a1b044059ae787b" id="r_a9db5e6113d9a0bd03a1b044059ae787b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b">readSensorData</a> ()</td></tr>
 <tr class="memdesc:a9db5e6113d9a0bd03a1b044059ae787b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from each verified <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a>.  <br /></td></tr>
 <tr class="separator:a9db5e6113d9a0bd03a1b044059ae787b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2720be1478ba44e12c6b983bfffab7b2" id="r_a2720be1478ba44e12c6b983bfffab7b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2720be1478ba44e12c6b983bfffab7b2">readSensorDataPacket</a> (uint8_t *packet)</td></tr>
-<tr class="memdesc:a2720be1478ba44e12c6b983bfffab7b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sensor data into a packet byte array.  <br /></td></tr>
-<tr class="separator:a2720be1478ba44e12c6b983bfffab7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35aec64ebd5600523486586642a4fe23" id="r_a35aec64ebd5600523486586642a4fe23"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a35aec64ebd5600523486586642a4fe23">readSensorDataPacket</a> (uint8_t *packet)</td></tr>
+<tr class="memdesc:a35aec64ebd5600523486586642a4fe23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads sensor data into a packet byte array.  <br /></td></tr>
+<tr class="separator:a35aec64ebd5600523486586642a4fe23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9163644b089001958496a71b73b9091a" id="r_a9163644b089001958496a71b73b9091a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9163644b089001958496a71b73b9091a">decodePacket</a> (uint8_t *packet)</td></tr>
 <tr class="memdesc:a9163644b089001958496a71b73b9091a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes the packet to a CSV row.  <br /></td></tr>
 <tr class="separator:a9163644b089001958496a71b73b9091a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,28 +148,28 @@ Variables</h2></td></tr>
 <tr class="separator:a6aaec7a466546ae9ce387852e01e5536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a54c1dabc1e13f503b7d5bb72fd588" id="r_a24a54c1dabc1e13f503b7d5bb72fd588"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTempSensor.html">TempSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a> (1000)</td></tr>
 <tr class="separator:a24a54c1dabc1e13f503b7d5bb72fd588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e98eb3264715a4fd62974bf534291db" id="r_a3e98eb3264715a4fd62974bf534291db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classENS160Sensor.html">ENS160Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3e98eb3264715a4fd62974bf534291db">ens160_sensor</a> (1000)</td></tr>
-<tr class="separator:a3e98eb3264715a4fd62974bf534291db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed9b2801c5393f81d792e952c21f403" id="r_a3ed9b2801c5393f81d792e952c21f403"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3ed9b2801c5393f81d792e952c21f403">uv_sensor_1</a> (1000, <a class="el" href="PayloadConfig_8h.html#a645ee06f09470629d5fe40d1f716c299">UV_I2C_ADDR_1</a>)</td></tr>
-<tr class="separator:a3ed9b2801c5393f81d792e952c21f403"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ae1b693163ff6962d1163d5e28e4606" id="r_a2ae1b693163ff6962d1163d5e28e4606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2ae1b693163ff6962d1163d5e28e4606">uv_sensor_2</a> (1000, <a class="el" href="PayloadConfig_8h.html#ad58bcae54cd4fb77890d7bb18bfb76ea">UV_I2C_ADDR_2</a>)</td></tr>
-<tr class="separator:a2ae1b693163ff6962d1163d5e28e4606"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad969436b83a3feb79af6deebf60d1b" id="r_a1ad969436b83a3feb79af6deebf60d1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMTK3339Sensor.html">MTK3339Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1ad969436b83a3feb79af6deebf60d1b">gps_sensor</a> (5000)</td></tr>
-<tr class="separator:a1ad969436b83a3feb79af6deebf60d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e5b78e1629b1b550fd5a8c12037a1f" id="r_a95e5b78e1629b1b550fd5a8c12037a1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classENS160Sensor.html">ENS160Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a95e5b78e1629b1b550fd5a8c12037a1f">ens160_sensor</a> (500)</td></tr>
+<tr class="separator:a95e5b78e1629b1b550fd5a8c12037a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb57fcf7606d4c8a23a86dec4921ed4a" id="r_abb57fcf7606d4c8a23a86dec4921ed4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abb57fcf7606d4c8a23a86dec4921ed4a">uv_sensor_1</a> (500, <a class="el" href="PayloadConfig_8h.html#a645ee06f09470629d5fe40d1f716c299">UV_I2C_ADDR_1</a>)</td></tr>
+<tr class="separator:abb57fcf7606d4c8a23a86dec4921ed4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aee5edbb1187d180841e68b691d96b2" id="r_a4aee5edbb1187d180841e68b691d96b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4aee5edbb1187d180841e68b691d96b2">uv_sensor_2</a> (500, <a class="el" href="PayloadConfig_8h.html#ad58bcae54cd4fb77890d7bb18bfb76ea">UV_I2C_ADDR_2</a>)</td></tr>
+<tr class="separator:a4aee5edbb1187d180841e68b691d96b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc3a17157f10274d10618f69c394766" id="r_a6fc3a17157f10274d10618f69c394766"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMTK3339Sensor.html">MTK3339Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6fc3a17157f10274d10618f69c394766">gps_sensor</a> (2000)</td></tr>
+<tr class="separator:a6fc3a17157f10274d10618f69c394766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac51c0614f4dbbed55b8345e48817d25f" id="r_ac51c0614f4dbbed55b8345e48817d25f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classICM20948Sensor.html">ICM20948Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac51c0614f4dbbed55b8345e48817d25f">icm_sensor</a> (0)</td></tr>
 <tr class="separator:ac51c0614f4dbbed55b8345e48817d25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9730d7033cb371fd86349cf1f7b0ad21" id="r_a9730d7033cb371fd86349cf1f7b0ad21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPCF8523Sensor.html">PCF8523Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a> (1000)</td></tr>
 <tr class="separator:a9730d7033cb371fd86349cf1f7b0ad21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0280d64f3f601a6cb90e29460e8ccf62" id="r_a0280d64f3f601a6cb90e29460e8ccf62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBMP390Sensor.html">BMP390Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0280d64f3f601a6cb90e29460e8ccf62">bmp_sensor</a> (1000)</td></tr>
-<tr class="separator:a0280d64f3f601a6cb90e29460e8ccf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1a189b3f408ea03e609977377d8a068" id="r_af1a189b3f408ea03e609977377d8a068"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTMP117Sensor.html">TMP117Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af1a189b3f408ea03e609977377d8a068">tmp_sensor</a> (1000)</td></tr>
-<tr class="separator:af1a189b3f408ea03e609977377d8a068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f184e69939ed4cd20c14a94ddf197d2" id="r_a0f184e69939ed4cd20c14a94ddf197d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBMP390Sensor.html">BMP390Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0f184e69939ed4cd20c14a94ddf197d2">bmp_sensor</a> (500)</td></tr>
+<tr class="separator:a0f184e69939ed4cd20c14a94ddf197d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc418c537167acff14a4ccc136a93a3" id="r_a6bc418c537167acff14a4ccc136a93a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTMP117Sensor.html">TMP117Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6bc418c537167acff14a4ccc136a93a3">tmp_sensor</a> (500)</td></tr>
+<tr class="separator:a6bc418c537167acff14a4ccc136a93a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6388b4ec6bfc9cf7be5f3e61c5ade273" id="r_a6388b4ec6bfc9cf7be5f3e61c5ade273"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSHTC3Sensor.html">SHTC3Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a> (1000)</td></tr>
 <tr class="separator:a6388b4ec6bfc9cf7be5f3e61c5ade273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f1b1900e276f31aaa9d26926d6350a" id="r_a23f1b1900e276f31aaa9d26926d6350a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSCD40Sensor.html">SCD40Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a23f1b1900e276f31aaa9d26926d6350a">sdc_sensor</a> (1000)</td></tr>
 <tr class="separator:a23f1b1900e276f31aaa9d26926d6350a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ff42159cb5a44cbdb11d0b15f2aebb4" id="r_a7ff42159cb5a44cbdb11d0b15f2aebb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOzoneSensor.html">OzoneSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7ff42159cb5a44cbdb11d0b15f2aebb4">ozone_sensor</a> (1000)</td></tr>
-<tr class="separator:a7ff42159cb5a44cbdb11d0b15f2aebb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3b8adf08b8d2e5b117ead8e0b00596" id="r_abf3b8adf08b8d2e5b117ead8e0b00596"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOzoneSensor.html">OzoneSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abf3b8adf08b8d2e5b117ead8e0b00596">ozone_sensor</a> (500)</td></tr>
+<tr class="separator:abf3b8adf08b8d2e5b117ead8e0b00596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fab47e83fc30a637dd287c8a920f070" id="r_a6fab47e83fc30a637dd287c8a920f070"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSensor.html">Sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6fab47e83fc30a637dd287c8a920f070">sensors</a> []</td></tr>
 <tr class="separator:a6fab47e83fc30a637dd287c8a920f070"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2e2e34d5a2889006d561d83bd0287a6" id="r_aa2e2e34d5a2889006d561d83bd0287a6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa2e2e34d5a2889006d561d83bd0287a6">sensors_len</a> = sizeof(<a class="el" href="main_8cpp.html#a6fab47e83fc30a637dd287c8a920f070">sensors</a>) / sizeof(<a class="el" href="main_8cpp.html#a6fab47e83fc30a637dd287c8a920f070">sensors</a>[0])</td></tr>
@@ -268,7 +268,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -290,7 +290,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a39ceba300a80e348e278539f57e0ca79_cgraph.svg" width="504" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a39ceba300a80e348e278539f57e0ca79_cgraph.svg" width="587" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -317,22 +317,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a9db5e6113d9a0bd03a1b044059ae787b_cgraph.svg" width="531" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a9db5e6113d9a0bd03a1b044059ae787b_icgraph.svg" width="236" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="a2720be1478ba44e12c6b983bfffab7b2" name="a2720be1478ba44e12c6b983bfffab7b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2720be1478ba44e12c6b983bfffab7b2">&#9670;&#160;</a></span>readSensorDataPacket()</h2>
+<a id="a35aec64ebd5600523486586642a4fe23" name="a35aec64ebd5600523486586642a4fe23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35aec64ebd5600523486586642a4fe23">&#9670;&#160;</a></span>readSensorDataPacket()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void readSensorDataPacket </td>
+          <td class="memname">uint16_t readSensorDataPacket </td>
           <td>(</td>
           <td class="paramtype">uint8_t *&#160;</td>
           <td class="paramname"><em>packet</em></td><td>)</td>
@@ -351,12 +346,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2720be1478ba44e12c6b983bfffab7b2_cgraph.svg" width="619" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a35aec64ebd5600523486586642a4fe23_cgraph.svg" width="619" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a2720be1478ba44e12c6b983bfffab7b2_icgraph.svg" width="278" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a35aec64ebd5600523486586642a4fe23_icgraph.svg" width="278" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -380,7 +375,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a5d5c43a90af6e8b0e11c818a7e1681e7_cgraph.svg" width="398" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="main_8cpp_a5d5c43a90af6e8b0e11c818a7e1681e7_cgraph.svg" width="480" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -508,16 +503,16 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a0280d64f3f601a6cb90e29460e8ccf62" name="a0280d64f3f601a6cb90e29460e8ccf62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0280d64f3f601a6cb90e29460e8ccf62">&#9670;&#160;</a></span>bmp_sensor</h2>
+<a id="a0f184e69939ed4cd20c14a94ddf197d2" name="a0f184e69939ed4cd20c14a94ddf197d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f184e69939ed4cd20c14a94ddf197d2">&#9670;&#160;</a></span>bmp_sensor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classBMP390Sensor.html">BMP390Sensor</a> bmp_sensor(1000) </td>
+          <td class="memname"><a class="el" href="classBMP390Sensor.html">BMP390Sensor</a> bmp_sensor(500) </td>
           <td>(</td>
-          <td class="paramtype">1000&#160;</td>
+          <td class="paramtype">500&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -526,16 +521,16 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a3e98eb3264715a4fd62974bf534291db" name="a3e98eb3264715a4fd62974bf534291db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e98eb3264715a4fd62974bf534291db">&#9670;&#160;</a></span>ens160_sensor</h2>
+<a id="a95e5b78e1629b1b550fd5a8c12037a1f" name="a95e5b78e1629b1b550fd5a8c12037a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95e5b78e1629b1b550fd5a8c12037a1f">&#9670;&#160;</a></span>ens160_sensor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classENS160Sensor.html">ENS160Sensor</a> ens160_sensor(1000) </td>
+          <td class="memname"><a class="el" href="classENS160Sensor.html">ENS160Sensor</a> ens160_sensor(500) </td>
           <td>(</td>
-          <td class="paramtype">1000&#160;</td>
+          <td class="paramtype">500&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -566,16 +561,16 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a1ad969436b83a3feb79af6deebf60d1b" name="a1ad969436b83a3feb79af6deebf60d1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ad969436b83a3feb79af6deebf60d1b">&#9670;&#160;</a></span>gps_sensor</h2>
+<a id="a6fc3a17157f10274d10618f69c394766" name="a6fc3a17157f10274d10618f69c394766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fc3a17157f10274d10618f69c394766">&#9670;&#160;</a></span>gps_sensor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMTK3339Sensor.html">MTK3339Sensor</a> gps_sensor(5000) </td>
+          <td class="memname"><a class="el" href="classMTK3339Sensor.html">MTK3339Sensor</a> gps_sensor(2000) </td>
           <td>(</td>
-          <td class="paramtype">5000&#160;</td>
+          <td class="paramtype">2000&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -648,16 +643,16 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a7ff42159cb5a44cbdb11d0b15f2aebb4" name="a7ff42159cb5a44cbdb11d0b15f2aebb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ff42159cb5a44cbdb11d0b15f2aebb4">&#9670;&#160;</a></span>ozone_sensor</h2>
+<a id="abf3b8adf08b8d2e5b117ead8e0b00596" name="abf3b8adf08b8d2e5b117ead8e0b00596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3b8adf08b8d2e5b117ead8e0b00596">&#9670;&#160;</a></span>ozone_sensor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classOzoneSensor.html">OzoneSensor</a> ozone_sensor(1000) </td>
+          <td class="memname"><a class="el" href="classOzoneSensor.html">OzoneSensor</a> ozone_sensor(500) </td>
           <td>(</td>
-          <td class="paramtype">1000&#160;</td>
+          <td class="paramtype">500&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -727,23 +722,23 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {&amp;<a class="code hl_variable" href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#a6aaec7a466546ae9ce387852e01e5536">ina260_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a3e98eb3264715a4fd62974bf534291db">ens160_sensor</a>,</div>
-<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a3ed9b2801c5393f81d792e952c21f403">uv_sensor_1</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a2ae1b693163ff6962d1163d5e28e4606">uv_sensor_2</a>,   &amp;<a class="code hl_variable" href="main_8cpp.html#ac51c0614f4dbbed55b8345e48817d25f">icm_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#a1ad969436b83a3feb79af6deebf60d1b">gps_sensor</a>,</div>
-<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a0280d64f3f601a6cb90e29460e8ccf62">bmp_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#af1a189b3f408ea03e609977377d8a068">tmp_sensor</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a23f1b1900e276f31aaa9d26926d6350a">sdc_sensor</a>,</div>
-<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a7ff42159cb5a44cbdb11d0b15f2aebb4">ozone_sensor</a>}</div>
-<div class="ttc" id="amain_8cpp_html_a0280d64f3f601a6cb90e29460e8ccf62"><div class="ttname"><a href="main_8cpp.html#a0280d64f3f601a6cb90e29460e8ccf62">bmp_sensor</a></div><div class="ttdeci">BMP390Sensor bmp_sensor(1000)</div></div>
-<div class="ttc" id="amain_8cpp_html_a1ad969436b83a3feb79af6deebf60d1b"><div class="ttname"><a href="main_8cpp.html#a1ad969436b83a3feb79af6deebf60d1b">gps_sensor</a></div><div class="ttdeci">MTK3339Sensor gps_sensor(5000)</div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {&amp;<a class="code hl_variable" href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#a6aaec7a466546ae9ce387852e01e5536">ina260_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a95e5b78e1629b1b550fd5a8c12037a1f">ens160_sensor</a>,</div>
+<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#abb57fcf7606d4c8a23a86dec4921ed4a">uv_sensor_1</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a4aee5edbb1187d180841e68b691d96b2">uv_sensor_2</a>,   &amp;<a class="code hl_variable" href="main_8cpp.html#ac51c0614f4dbbed55b8345e48817d25f">icm_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#a6fc3a17157f10274d10618f69c394766">gps_sensor</a>,</div>
+<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a0f184e69939ed4cd20c14a94ddf197d2">bmp_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#a6bc418c537167acff14a4ccc136a93a3">tmp_sensor</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a23f1b1900e276f31aaa9d26926d6350a">sdc_sensor</a>,</div>
+<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#abf3b8adf08b8d2e5b117ead8e0b00596">ozone_sensor</a>}</div>
+<div class="ttc" id="amain_8cpp_html_a0f184e69939ed4cd20c14a94ddf197d2"><div class="ttname"><a href="main_8cpp.html#a0f184e69939ed4cd20c14a94ddf197d2">bmp_sensor</a></div><div class="ttdeci">BMP390Sensor bmp_sensor(500)</div></div>
 <div class="ttc" id="amain_8cpp_html_a23f1b1900e276f31aaa9d26926d6350a"><div class="ttname"><a href="main_8cpp.html#a23f1b1900e276f31aaa9d26926d6350a">sdc_sensor</a></div><div class="ttdeci">SCD40Sensor sdc_sensor(1000)</div></div>
 <div class="ttc" id="amain_8cpp_html_a24a54c1dabc1e13f503b7d5bb72fd588"><div class="ttname"><a href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a></div><div class="ttdeci">TempSensor temp_sensor(1000)</div></div>
-<div class="ttc" id="amain_8cpp_html_a2ae1b693163ff6962d1163d5e28e4606"><div class="ttname"><a href="main_8cpp.html#a2ae1b693163ff6962d1163d5e28e4606">uv_sensor_2</a></div><div class="ttdeci">AS7331Sensor uv_sensor_2(1000, UV_I2C_ADDR_2)</div></div>
-<div class="ttc" id="amain_8cpp_html_a3e98eb3264715a4fd62974bf534291db"><div class="ttname"><a href="main_8cpp.html#a3e98eb3264715a4fd62974bf534291db">ens160_sensor</a></div><div class="ttdeci">ENS160Sensor ens160_sensor(1000)</div></div>
-<div class="ttc" id="amain_8cpp_html_a3ed9b2801c5393f81d792e952c21f403"><div class="ttname"><a href="main_8cpp.html#a3ed9b2801c5393f81d792e952c21f403">uv_sensor_1</a></div><div class="ttdeci">AS7331Sensor uv_sensor_1(1000, UV_I2C_ADDR_1)</div></div>
+<div class="ttc" id="amain_8cpp_html_a4aee5edbb1187d180841e68b691d96b2"><div class="ttname"><a href="main_8cpp.html#a4aee5edbb1187d180841e68b691d96b2">uv_sensor_2</a></div><div class="ttdeci">AS7331Sensor uv_sensor_2(500, UV_I2C_ADDR_2)</div></div>
 <div class="ttc" id="amain_8cpp_html_a6388b4ec6bfc9cf7be5f3e61c5ade273"><div class="ttname"><a href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a></div><div class="ttdeci">SHTC3Sensor shtc_sensor(1000)</div></div>
 <div class="ttc" id="amain_8cpp_html_a6aaec7a466546ae9ce387852e01e5536"><div class="ttname"><a href="main_8cpp.html#a6aaec7a466546ae9ce387852e01e5536">ina260_sensor</a></div><div class="ttdeci">INA260Sensor ina260_sensor(1000)</div></div>
-<div class="ttc" id="amain_8cpp_html_a7ff42159cb5a44cbdb11d0b15f2aebb4"><div class="ttname"><a href="main_8cpp.html#a7ff42159cb5a44cbdb11d0b15f2aebb4">ozone_sensor</a></div><div class="ttdeci">OzoneSensor ozone_sensor(1000)</div></div>
+<div class="ttc" id="amain_8cpp_html_a6bc418c537167acff14a4ccc136a93a3"><div class="ttname"><a href="main_8cpp.html#a6bc418c537167acff14a4ccc136a93a3">tmp_sensor</a></div><div class="ttdeci">TMP117Sensor tmp_sensor(500)</div></div>
+<div class="ttc" id="amain_8cpp_html_a6fc3a17157f10274d10618f69c394766"><div class="ttname"><a href="main_8cpp.html#a6fc3a17157f10274d10618f69c394766">gps_sensor</a></div><div class="ttdeci">MTK3339Sensor gps_sensor(2000)</div></div>
+<div class="ttc" id="amain_8cpp_html_a95e5b78e1629b1b550fd5a8c12037a1f"><div class="ttname"><a href="main_8cpp.html#a95e5b78e1629b1b550fd5a8c12037a1f">ens160_sensor</a></div><div class="ttdeci">ENS160Sensor ens160_sensor(500)</div></div>
 <div class="ttc" id="amain_8cpp_html_a9730d7033cb371fd86349cf1f7b0ad21"><div class="ttname"><a href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a></div><div class="ttdeci">PCF8523Sensor rtc_sensor(1000)</div></div>
+<div class="ttc" id="amain_8cpp_html_abb57fcf7606d4c8a23a86dec4921ed4a"><div class="ttname"><a href="main_8cpp.html#abb57fcf7606d4c8a23a86dec4921ed4a">uv_sensor_1</a></div><div class="ttdeci">AS7331Sensor uv_sensor_1(500, UV_I2C_ADDR_1)</div></div>
+<div class="ttc" id="amain_8cpp_html_abf3b8adf08b8d2e5b117ead8e0b00596"><div class="ttname"><a href="main_8cpp.html#abf3b8adf08b8d2e5b117ead8e0b00596">ozone_sensor</a></div><div class="ttdeci">OzoneSensor ozone_sensor(500)</div></div>
 <div class="ttc" id="amain_8cpp_html_ac51c0614f4dbbed55b8345e48817d25f"><div class="ttname"><a href="main_8cpp.html#ac51c0614f4dbbed55b8345e48817d25f">icm_sensor</a></div><div class="ttdeci">ICM20948Sensor icm_sensor(0)</div></div>
-<div class="ttc" id="amain_8cpp_html_af1a189b3f408ea03e609977377d8a068"><div class="ttname"><a href="main_8cpp.html#af1a189b3f408ea03e609977377d8a068">tmp_sensor</a></div><div class="ttdeci">TMP117Sensor tmp_sensor(1000)</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -797,16 +792,16 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af1a189b3f408ea03e609977377d8a068" name="af1a189b3f408ea03e609977377d8a068"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1a189b3f408ea03e609977377d8a068">&#9670;&#160;</a></span>tmp_sensor</h2>
+<a id="a6bc418c537167acff14a4ccc136a93a3" name="a6bc418c537167acff14a4ccc136a93a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc418c537167acff14a4ccc136a93a3">&#9670;&#160;</a></span>tmp_sensor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classTMP117Sensor.html">TMP117Sensor</a> tmp_sensor(1000) </td>
+          <td class="memname"><a class="el" href="classTMP117Sensor.html">TMP117Sensor</a> tmp_sensor(500) </td>
           <td>(</td>
-          <td class="paramtype">1000&#160;</td>
+          <td class="paramtype">500&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -815,16 +810,16 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a3ed9b2801c5393f81d792e952c21f403" name="a3ed9b2801c5393f81d792e952c21f403"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ed9b2801c5393f81d792e952c21f403">&#9670;&#160;</a></span>uv_sensor_1</h2>
+<a id="abb57fcf7606d4c8a23a86dec4921ed4a" name="abb57fcf7606d4c8a23a86dec4921ed4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb57fcf7606d4c8a23a86dec4921ed4a">&#9670;&#160;</a></span>uv_sensor_1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a> uv_sensor_1(1000, <a class="el" href="PayloadConfig_8h.html#a645ee06f09470629d5fe40d1f716c299">UV_I2C_ADDR_1</a>) </td>
+          <td class="memname"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a> uv_sensor_1(500, <a class="el" href="PayloadConfig_8h.html#a645ee06f09470629d5fe40d1f716c299">UV_I2C_ADDR_1</a>) </td>
           <td>(</td>
-          <td class="paramtype">1000&#160;</td>
+          <td class="paramtype">500&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -843,16 +838,16 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2ae1b693163ff6962d1163d5e28e4606" name="a2ae1b693163ff6962d1163d5e28e4606"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ae1b693163ff6962d1163d5e28e4606">&#9670;&#160;</a></span>uv_sensor_2</h2>
+<a id="a4aee5edbb1187d180841e68b691d96b2" name="a4aee5edbb1187d180841e68b691d96b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aee5edbb1187d180841e68b691d96b2">&#9670;&#160;</a></span>uv_sensor_2</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a> uv_sensor_2(1000, <a class="el" href="PayloadConfig_8h.html#ad58bcae54cd4fb77890d7bb18bfb76ea">UV_I2C_ADDR_2</a>) </td>
+          <td class="memname"><a class="el" href="classAS7331Sensor.html">AS7331Sensor</a> uv_sensor_2(500, <a class="el" href="PayloadConfig_8h.html#ad58bcae54cd4fb77890d7bb18bfb76ea">UV_I2C_ADDR_2</a>) </td>
           <td>(</td>
-          <td class="paramtype">1000&#160;</td>
+          <td class="paramtype">500&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>

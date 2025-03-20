@@ -2,6 +2,7 @@
 #define OZONE_SENSOR_H
 
 #include "DFRobot_OzoneSensor.h"
+#include "PayloadConfig.h"
 #include "Sensor.h"
 
 /**
