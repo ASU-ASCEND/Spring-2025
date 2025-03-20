@@ -11,6 +11,31 @@ class SerialInput(threading.Thread):
         super().__init__()
         self.input_queue = input_queue
         self.end_event = end_event
+        self.port = None
+        self.ser = None
+        
+
+    def list_serial_ports(self):
+        return [(port.device, port) for port in serial.tools.list_ports.comports()]
+
+    def select_serial_port(self):
+        ports = self.list_serial_ports()
+        if not ports:
+            print("No serial ports found. Exiting.")
+            sys.exit(0)
+        print("Available serial ports:")
+        for i, p in enumerate(ports, start=1):
+            print(f"{i}. {p[1]}")
+        while self.end_event.is_set() == False:
+            try:
+                index = int(input("Enter the index of the port you want to use: ")) - 1
+                if 0 <= index < len(ports):
+                    return ports[index][0]
+                print("Invalid selection. Try again.")
+            except ValueError:
+                print("Please enter a valid integer.")
+
+    def run(self):
         self.port = self.select_serial_port()
 
         try:
@@ -26,27 +51,6 @@ class SerialInput(threading.Thread):
             print(f"Error opening serial port {self.port}: {e}")
             sys.exit(1)
 
-    def list_serial_ports(self):
-        return [(port.device, port) for port in serial.tools.list_ports.comports()]
-
-    def select_serial_port(self):
-        ports = self.list_serial_ports()
-        if not ports:
-            print("No serial ports found. Exiting.")
-            sys.exit(0)
-        print("Available serial ports:")
-        for i, p in enumerate(ports, start=1):
-            print(f"{i}. {p[1]}")
-        while True:
-            try:
-                index = int(input("Enter the index of the port you want to use: ")) - 1
-                if 0 <= index < len(ports):
-                    return ports[index][0]
-                print("Invalid selection. Try again.")
-            except ValueError:
-                print("Please enter a valid integer.")
-
-    def run(self):
         while not (self.end_event and self.end_event.is_set()):
             data = self.ser.read(512)   #1024)
             if data:
