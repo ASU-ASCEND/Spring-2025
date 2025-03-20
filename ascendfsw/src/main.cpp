@@ -119,12 +119,6 @@ void setup() {
     }
   }
 
-// spi0
-#if FLASH_SPI1 == 0
-  if (flash_storage.verify()) {
-    log_core(flash_storage.getDeviceName() + " verified.");
-  }
-#endif
 
 #if 0  // header stuff
   // build csv header
@@ -209,7 +203,7 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
   queue_add_blocking(&qt, csv_row.c_str());
 #endif
 
-  // delay(1000);                                 // remove before flight
+  delay(1000);                                 // remove before flight
   digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
 }
 
