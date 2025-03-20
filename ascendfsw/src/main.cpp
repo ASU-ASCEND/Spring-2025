@@ -21,10 +21,10 @@
 #include "INA260Sensor.h"
 #include "MTK3339Sensor.h"
 #include "PCF8523Sensor.h"
+#include "SCD40Sensor.h"
 #include "SHTC3Sensor.h"
 #include "TMP117Sensor.h"
 #include "TempSensor.h"
-#include "SCD40Sensor.h"
 
 // helper function definitions
 int verifySensors();
@@ -50,7 +50,7 @@ PCF8523Sensor   rtc_sensor        (1000);
 BMP390Sensor    bmp_sensor        (1000);
 TMP117Sensor    tmp_sensor        (1000); 
 SHTC3Sensor     shtc_sensor       (1000);
-SCD40Sensor     sdc_sensor        (1000); 
+SCD40Sensor     sdc_sensor        (1000);
 // clang-format on
 
 // sensor array
