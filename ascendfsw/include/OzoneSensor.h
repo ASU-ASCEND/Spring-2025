@@ -3,6 +3,7 @@
 
 #include "DFRobot_OzoneSensor.h"
 #include "Sensor.h"
+#include "PayloadConfig.h"
 
 /**
  * @brief Implementation of a Sensor for the onboard temperature sensor

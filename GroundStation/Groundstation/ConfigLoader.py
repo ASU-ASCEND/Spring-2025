@@ -26,6 +26,7 @@ def load_config(filepath):
     with open(filepath, 'r', newline='') as f:
         reader = csv.reader(f)
         header = next(reader)
+        header = [str(i).strip() for i in header]
 
         # Identify columns
         bit_index   = header.index('BitIndex')
@@ -61,5 +62,6 @@ def load_config(filepath):
             # Build Construct struct & store for later use
             bitmask_to_name[index] = name
             bitmask_to_struct[index] = Struct(*struct_fields)
+
 
     return bitmask_to_struct, bitmask_to_name, num_sensors
