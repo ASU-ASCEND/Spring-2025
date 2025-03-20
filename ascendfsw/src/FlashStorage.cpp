@@ -22,7 +22,16 @@ void FlashStorage::indexFlash() {
   while (!empty && (this->address < this->MAX_SIZE)) {
     // Check for file at sector start
     if (!empty && this->readFileHeader()) {
-      this->file_data.push_back({(this->file_data.size() + 1), this->address});
+      // Update end address of previous file
+      if (!this->file_data.empty()) {
+        this->file_data.back().end_address = this->address - 4;
+        log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+                 String(this->file_data.back().start_address) + " to " +
+                 String(this->file_data.back().end_address));
+      }
+
+      // Store new detected file
+      this->file_data.push_back({(this->file_data.size() + 1), this->address, this->address});
       log_core("File " + String(this->file_data.size()) + " at address " +
                String(this->address));
     }
@@ -90,8 +99,17 @@ void FlashStorage::writeFileHeader() {
     this->flash.blockingBusyWait();
   }
 
+  // Update end address of previous file
+  if (!this->file_data.empty()) {
+    this->file_data.back().end_address = this->address - 4;
+    log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+             String(this->file_data.back().start_address) + " to " +
+             String(this->file_data.back().end_address));
+  }
+
   // Store necessary file data for quick reference
-  this->file_data.push_back({(this->file_data.size() + 1), this->address - 4});
+  this->file_data.push_back({(this->file_data.size() + 1), (this->address - 4),
+                             (this->address - 4)});
   log_core("New file " + String(this->file_data.size()) + " at address " +
            String(this->address - 4) + " created");
 }
@@ -179,8 +197,15 @@ void FlashStorage::store(String data) {
     this->flash.blockingBusyWait();
   }
 
+  // Update file length tracking
+  this->file_data.back().end_address += data.length();
+
+  // Log the number of bytes written
   log_core("Writing " + String(data.length()) + " bytes at " +
            String(this->address));
+  log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+           String(this->file_data.back().start_address) + " to " +
+           String(this->file_data.back().end_address));
 
   this->flash.blockingBusyWait();
 }
@@ -206,9 +231,16 @@ void FlashStorage::storePacket(uint8_t* packet) {
     this->flash.blockingBusyWait();
   }
 
+  // Update file length tracking
+  this->file_data.back().end_address += packet_len;
+
   // Log the number of bytes written
   log_core("Writing " + String(packet_len) + " bytes at " +
            String(this->address));
+  log_core("File " + String(this->file_data.back().file_number) + " Size: " +
+           String(this->file_data.back().start_address) + " to " +
+           String(this->file_data.back().end_address));
+           
   this->flash.blockingBusyWait();
 }
 
@@ -243,4 +275,144 @@ void FlashStorage::dump() {
 void FlashStorage::erase() {
   this->flash.erase();
   this->address = 0;
+}
+
+void FlashStorage::getStatus() {
+
+  log_core("==== FLASH STORAGE STATUS ====");
+
+  log_core("Address: " + String(this->address));
+  log_core("Remaining Storage: " + String(this->MAX_SIZE - this->address) + " bytes");
+  
+  log_core("Stored Files:");
+  
+  for (const FileHeader& file : this->file_data) {
+    int file_size = file.end_address - file.start_address;
+
+    log_core("File " + String(file.file_number) + " || Size: " +
+             String(file_size) + " bytes");
+  }
+  
+ //return "Flash Storage: " + String(this->address) + " bytes written";
+}
+
+/*
+maybe a debug command w/ more info similar to status
+*/
+
+/**
+ * @brief Downloads data from flash memory with progress tracking
+ * 
+ * This function provides a more user-friendly way to download data from flash memory.
+ * It includes:
+ * - Progress tracking
+ * - File-by-file transfer
+ * - Visual feedback
+ * - Transfer statistics
+ */
+void FlashStorage::download() {
+  // TODO: Implement download functionality
+  // 1. Show total number of files to transfer
+  // 2. For each file:
+  //    - Show file number and size
+  //    - Transfer data with progress updates
+  //    - Show completion status
+  // 3. Show final transfer statistics
+  // 4. Allow user to select which files to download
+  // 5. Download selected files
+  // 6. Show download progress
+  // 7. Show download completion status
+  // 8. Show download statistics
+  // 9. Show download completion time
+  // 10. Allow user to pause and resume download
+  // 11. Allow user to cancel download
+  // 12. Format data for GSW
+  // 13. Send data to GSW
+  // 14. Error handling
+  log_core("==== FLASH STORAGE DOWNLOAD ====");
+  log_core("Total files to transfer: " + String(this->file_data.size()));
+  for (const FileHeader& file : this->file_data) {
+    log_core("File " + String(file.file_number) + " || Size: " +
+             String(file.end_address - file.start_address) + " bytes");
+  }
+  log_core("Please enter the file number you would like to download: ");
+
+  int file_number = Serial.parseInt();
+
+  if (file_number > 0 && file_number <= this->file_data.size()) {
+    FileHeader selected_file = this->file_data[file_number - 1];
+    uint32_t file_size = selected_file.end_address - selected_file.start_address;
+
+    // Send ACK with file info
+    Serial.println("ACK File" + String(file_number) + " " + String(file_size));
+    
+    log_core("Downloading file " + String(file_number));
+    log_core("File size: " + String(file_size) + " bytes");
+    log_core("Press 'c' to cancel download");
+    log_core("Press 'p' to pause download");
+    log_core("Press 'r' to resume download");
+    
+    // TODO: Step 10 - Pause/Resume Implementation
+    // 1. Add pause state variable
+    // 2. Add pause/resume command check
+    // 3. Add pause/resume status messages
+    // 4. Add pause/resume timing adjustments
+    
+    unsigned long start_time = millis();
+    //Download Occurs Here
+    uint32_t current_pos = selected_file.start_address;
+    uint32_t bytes_read = 0;
+    
+    while (current_pos < selected_file.end_address) {
+        // TODO: Step 10 - Pause/Resume Check
+        // if (Serial.available()) {
+        //     char cmd = Serial.read();
+        //     if (cmd == 'p') {
+        //         // Pause download
+        //         // Store current position
+        //         // Update timing
+        //     }
+        //     else if (cmd == 'r') {
+        //         // Resume download
+        //         // Restore position
+        //         // Update timing
+        //     }
+        //     else if (cmd == 'c') {
+        //         // Cancel download
+        //     }
+        // }
+        
+        if (Serial.available() && Serial.read() == 'c') {
+            Serial.println("NAK Download Cancelled");
+            return;
+        }
+        // Read data from flash
+        uint8_t data = this->flash.readByte(current_pos);
+        
+        // Send data to Serial
+        if (Serial.write(data) != 1) {
+            Serial.println("NAK Serial Write Error");
+            return;
+        }
+        
+        // Update progress
+        bytes_read++;
+        current_pos++;
+        
+        // Show progress every 1000 bytes
+        if (bytes_read % 1000 == 0) {
+            Serial.println("ACK Progress: " + String(bytes_read) + "/" + String(file_size));
+        }
+        
+        // Optional: Visual feedback
+        digitalWrite(HEARTBEAT_PIN_0, (current_pos & 0x60) != 0);
+        digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
+    }
+    
+    unsigned long end_time = millis();
+    unsigned long tot_time = (end_time - start_time) / 1000;
+    Serial.println("ACK Download Complete. Time: " + String(tot_time) + "s");
+  } else {
+    Serial.println("NAK Invalid File Number");
+  }
 }
