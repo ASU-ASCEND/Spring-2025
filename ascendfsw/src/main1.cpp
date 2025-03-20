@@ -27,11 +27,7 @@ RadioStorage radio_storage;
 FlashStorage flash_storage;
 
 // storage array
-#if FLASH_SPI1 == 0
-Storage* storages[] = {&sd_storage, &radio_storage};
-#else
 Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
-#endif
 
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
 

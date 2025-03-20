@@ -42,10 +42,22 @@ class DataFrame(tk.Frame):
     self.convert_bin_button.grid(row=1, column=1, **button_cell_config)
 
     self.file_list_widgets = []
-    self.bitmask_to_struck = decoder_args[0]
+    self.bitmask_to_struct = decoder_args[0]
     self.bitmask_to_name = decoder_args[1]
     self.num_sensors = decoder_args[2]
     self.header_info = header_info
+
+    self.header_size = 4 + 4 + 2 + 4
+    self.checksum_size = 1
+    # Define packet structure
+    self.packet_struct = Struct(
+        "sync"        / Const(b"ASU!"), # Sync byte: b"\x41\x53\x55\x21"
+        "bitmask"     / Int32ul,
+        "length"      / Int16ul,
+        "timestamp"   / Int32ul,
+        "sensor_data" / Array(this.length - self.header_size - self.checksum_size, Byte),
+        "checksum"    / Int8sl #Checksum(Byte, self.validate, this)
+    )
 
     self.get_file_list()    
 
@@ -135,17 +147,19 @@ class DataFrame(tk.Frame):
       return total + checksum == 0
 
   def convert_bin(self, filename: str):
-    with open(filename, "r") as f, open(path.join("converted_data", filename[:-4] + ".csv"), "w") as fout: 
+    print("Converting " + filename)
+    with open(filename, "rb") as f, open(path.join("converted_data", filename[:-4] + ".csv"), "w") as fout: 
 
       # add header 
       fout.write(",".join(self.header_info[1]) + "\n")
 
       buffer = bytearray()
       while(byte := f.read(1)):
-        buffer.append(byte)
+        buffer.append(byte[0])
 
-        if buffer.find(b"ASU!") > 0: # not if it's the first one 
-          packet_bytes = buffer[0:buffer.find(b"ASU!", start=len(b"ASU!")+1)]
+        if buffer.find(b"ASU!", 1) > 0: # not if it's the first one 
+          # print("Attempting conversion")
+          packet_bytes = buffer[0:buffer.find(b"ASU!", len(b"ASU!")+1)]
           # Parse packet bytes & catch possible errors
           try:
             if self.validate(packet_bytes) == False: raise ChecksumError("Checksum Error")
@@ -197,6 +211,7 @@ class DataFrame(tk.Frame):
           # print(parsed)
 
           if parse_error == False:
+            # print("\tSuccess")
             packet = {
                 "timestamp": timestamp,
                 "sensor_data": parsed
@@ -204,12 +219,12 @@ class DataFrame(tk.Frame):
 
             row = [] 
 
-            row.append(packet["timestamp"])
+            row.append(str(packet["timestamp"]))
             for sensor in self.header_info[0].keys():
               if sensor == "Millis": continue 
               if sensor in packet["sensor_data"]:
                 for i in list(packet["sensor_data"][sensor].keys())[1:]:
-                  row.append(packet["sensor_data"][sensor][i])
+                  row.append(str(packet["sensor_data"][sensor][i]))
               else:
                 for i in range(self.header_info[0][sensor]):
                   row.append("")
@@ -218,7 +233,9 @@ class DataFrame(tk.Frame):
                  
 
           else: 
+            # print("\tFailure")
             pass
+    print("Done")
 
 
     
