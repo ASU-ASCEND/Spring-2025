@@ -285,9 +285,9 @@ void FlashStorage::erase() {
 
 /**
  * @brief Downloads data from flash memory with progress tracking
- * 
- * This function provides a more user-friendly way to download data from flash memory.
- * It includes:
+ *
+ * This function provides a more user-friendly way to download data from flash
+ * memory. It includes:
  * - Progress tracking
  * - File-by-file transfer
  * - Visual feedback
@@ -300,7 +300,7 @@ void FlashStorage::download(int file_number) {
   if ((file_number > 0) && (file_number <= this->file_data.size())) {
     int index = file_number - 1;
     FileHeader selected_file = this->file_data[index];
-    
+
     // Calculate file size based on addresses
     uint32_t start_addr = selected_file.start_address;
     uint32_t end_addr = selected_file.end_address;
@@ -309,42 +309,42 @@ void FlashStorage::download(int file_number) {
     // Send ACK with file info
     log_flash("Downloading file " + String(file_number));
     log_flash("File size: " + String(file_size) + " bytes");
-    
+
     // Track the download time
     unsigned long start_time = millis();
 
-    //Download Occurs Here
+    // Download Occurs Here
     uint32_t current_pos = start_addr;
     uint32_t bytes_read = 0;
     while (current_pos < end_addr) {
-        // Read data from flash
-        uint8_t data = this->flash.readByte(current_pos);
-        
-        // Send data to Serial
-        if (Serial.write(data) != 1) {
-          log_flash("ERROR: Unsuccessful serial write");
-          return;
-        }
-        
-        // Update progress
-        bytes_read++;
-        current_pos++;
-        
-        // Show progress every 1000 bytes
-        if (bytes_read % 1000 == 0) {
-          log_flash("Progress: " + String(bytes_read) + "/" + String(file_size));
-        }
-        
-        // Visual feedback
-        digitalWrite(HEARTBEAT_PIN_0, (current_pos & 0x60) != 0);
-        digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
+      // Read data from flash
+      uint8_t data = this->flash.readByte(current_pos);
+
+      // Send data to Serial
+      if (Serial.write(data) != 1) {
+        log_flash("ERROR: Unsuccessful serial write");
+        return;
+      }
+
+      // Update progress
+      bytes_read++;
+      current_pos++;
+
+      // Show progress every 1000 bytes
+      if (bytes_read % 1000 == 0) {
+        log_flash("Progress: " + String(bytes_read) + "/" + String(file_size));
+      }
+
+      // Visual feedback
+      digitalWrite(HEARTBEAT_PIN_0, (current_pos & 0x60) != 0);
+      digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
     }
-    
+
     unsigned long end_time = millis();
     unsigned long total_time = (end_time - start_time) / 1000;
     log_flash("Download Complete | Time: " + String(total_time) + "s");
-  } 
-  else log_flash("ERROR: Invalid File Number");
+  } else
+    log_flash("ERROR: Invalid File Number");
 }
 
 /**
