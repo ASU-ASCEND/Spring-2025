@@ -21,8 +21,11 @@
 #include "INA260Sensor.h"
 #include "MTK3339Sensor.h"
 #include "PCF8523Sensor.h"
+#include "SHTC3Sensor.h"
+#include "TMP117Sensor.h"
 #include "TempSensor.h"
 #include "OzoneSensor.h"
+#include "SCD40Sensor.h"
 
 // helper function definitions
 int verifySensors();
@@ -43,16 +46,19 @@ ENS160Sensor    ens160_sensor     (1000);
 AS7331Sensor    uv_sensor_1       (1000, UV_I2C_ADDR_1);
 AS7331Sensor    uv_sensor_2       (1000, UV_I2C_ADDR_2);
 MTK3339Sensor   gps_sensor        (5000);
-ICM20948Sensor  icm_sensor        (20);
+ICM20948Sensor  icm_sensor        (0);
 PCF8523Sensor   rtc_sensor        (1000);
 BMP390Sensor    bmp_sensor        (1000);
+TMP117Sensor    tmp_sensor        (1000); 
+SHTC3Sensor     shtc_sensor       (1000);
+SCD40Sensor     sdc_sensor        (1000); 
 OzoneSensor     ozone_sensor      (1000); 
 // clang-format on
 
 // sensor array
-Sensor* sensors[] = {&rtc_sensor,    &ina260_sensor, &temp_sensor,
-                     &ens160_sensor, &uv_sensor_1,   &uv_sensor_2,
-                     &icm_sensor,    &gps_sensor,    &bmp_sensor,
+Sensor* sensors[] = {&rtc_sensor,  &ina260_sensor, &temp_sensor, &ens160_sensor,
+                     &uv_sensor_1, &uv_sensor_2,   &icm_sensor,  &gps_sensor,
+                     &bmp_sensor,  &tmp_sensor,    &shtc_sensor, &sdc_sensor,
                      &ozone_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
