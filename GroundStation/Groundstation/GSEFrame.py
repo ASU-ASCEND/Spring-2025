@@ -105,7 +105,7 @@ class GSEFrame(tk.Frame):
               self.data_cells[col_index][0].configure(background="pink")
               col_index += 1 
 
-  def update(self):
+  def update_frame(self):
     self.updateTable()
 
     # update scrolledtexts

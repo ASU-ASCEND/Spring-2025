@@ -104,6 +104,7 @@ if __name__ == "__main__":
 
     # Start threads
     serial_input.start()
+    serial_saver.start()
     serial_sorter.start()
     packet_decoder.start()
     packet_saver.start()
@@ -125,6 +126,7 @@ if __name__ == "__main__":
 
     # Wait for threads to finish
     serial_input.join()
+    serial_saver.join()
     serial_sorter.join()
     packet_decoder.join()
     packet_saver.join()

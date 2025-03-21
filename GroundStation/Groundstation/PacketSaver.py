@@ -32,7 +32,7 @@ class PacketSaver(threading.Thread):
         except Empty:
           sleep(0.1) 
           continue
-        print("Got packet")
+        # print("Got packet")
         row = [] 
 
         row.append(str(packet["timestamp"]))

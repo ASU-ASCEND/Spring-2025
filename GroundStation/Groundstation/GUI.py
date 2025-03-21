@@ -94,7 +94,7 @@ class GUI():
     def update():
       # throw away for now, eventually an intermediary will do this 
       if self.sorter_misc.empty() == False: self.sorter_misc.get()
-      self.current_frame.update()
+      self.current_frame.update_frame()
 
       self.window.after(1, update)
 

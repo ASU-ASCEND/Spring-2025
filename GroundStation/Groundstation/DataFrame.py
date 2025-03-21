@@ -125,7 +125,7 @@ class DataFrame(tk.Frame):
       row_index += 1
 
   
-  def update(self):
+  def update_frame(self):
     pass
 
   def convert_button(self):

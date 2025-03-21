@@ -58,6 +58,7 @@ class SerialInput(threading.Thread):
         while not (self.end_event and self.end_event.is_set()):
             data = self.ser.read(512)   #1024)
             if data:
+                # print(data.decode(), end="")
                 self.input_queue.put(data)
                 self.serial_stream.put(data)
 
