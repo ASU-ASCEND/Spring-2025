@@ -6,6 +6,7 @@ import SerialInput
 import SerialSorter
 import SimpleDisplay
 import PacketSaver
+import SerialSaver 
 import GUI
 from time import sleep
 
@@ -23,6 +24,7 @@ if __name__ == "__main__":
     sorter_misc = Queue()
     decoder_packets = Queue()
     decoder_packet_saver = Queue()
+    serial_stream = Queue()
 
     # Load configuration file
     bitmask_to_struct, bitmask_to_name, num_sensors = load_config(FILE_PATH)
@@ -48,7 +50,13 @@ if __name__ == "__main__":
     # Create threads
     serial_input = SerialInput.SerialInput(
         end_event,
-        input_to_sorter
+        input_to_sorter,
+        serial_stream
+    )
+
+    serial_saver = SerialSaver.SerialSaver(
+       end_event,
+       serial_stream
     )
 
     serial_sorter = SerialSorter.SerialSorter(

@@ -26,8 +26,10 @@ class SerialSorter(threading.Thread):
   def run(self):
     while self.end_event.is_set() == False: 
       try: 
-        c_in = self.input_to_sorter.get_nowait()
-        self.buf.append(c_in)
+        # get input as bytes 
+        c_in: bytes = self.input_to_sorter.get_nowait()
+        # append to bytearray 
+        self.buf += c_in
 
         if self.buf.find(self.encodings["ASU!"]) != -1:
           # print("hit packet")
