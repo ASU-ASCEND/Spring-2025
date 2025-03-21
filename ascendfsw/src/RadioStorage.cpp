@@ -31,7 +31,7 @@ void RadioStorage::store(String data) {
   if (transmission_count % transmission_mod == 0) {
     Serial1.println(data);
   }
-  transmission_count++; 
+  transmission_count++;
 }
 
 /**
@@ -47,9 +47,9 @@ void RadioStorage::storePacket(uint8_t* packet) {
   uint16_t packet_len;
   memcpy(&packet_len, (packet + 8), sizeof(uint16_t));
 
-  // write to packet 
+  // write to packet
   if (transmission_count % transmission_mod == 0) {
     Serial1.write(packet, packet_len);
   }
-  transmission_count++; 
+  transmission_count++;
 }

@@ -31,7 +31,7 @@ bool MTK3339Sensor::verify() {
 
   GPS.setI2COutput(COM_TYPE_UBX);
   GPS.setNavigationFrequency(1);
-  GPS.setDynamicModel(DYN_MODEL_AIRBORNE4g); 
+  GPS.setDynamicModel(DYN_MODEL_AIRBORNE4g);
 
   return true;
 #else
