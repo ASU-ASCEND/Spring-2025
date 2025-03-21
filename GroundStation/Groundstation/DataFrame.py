@@ -148,7 +148,7 @@ class DataFrame(tk.Frame):
 
   def convert_bin(self, filename: str):
     print("Converting " + filename)
-    with open(filename, "rb") as f, open(path.join("converted_data", filename[:-4] + ".csv"), "w") as fout: 
+    with open(filename, "rb") as f, open(filename[:-4] + ".csv", "w") as fout: 
 
       # add header 
       fout.write(",".join(self.header_info[1]) + "\n")

@@ -16,6 +16,7 @@ class PacketDecoder(threading.Thread):
             end_event: threading.Event,
             sorter_to_decoder: Queue, 
             decoder_packets: Queue,
+            packet_saver: Queue, 
             bitmask_to_struct: dict,
             bitmask_to_name: dict,
             num_sensors: int
@@ -24,6 +25,7 @@ class PacketDecoder(threading.Thread):
         self.end_event = end_event
         self.sorter_to_decoder = sorter_to_decoder
         self.decoder_packets = decoder_packets
+        self.packet_saver = packet_saver
         self.bitmask_to_struct = bitmask_to_struct
         self.bitmask_to_name = bitmask_to_name 
         self.num_sensors = num_sensors
@@ -114,6 +116,10 @@ class PacketDecoder(threading.Thread):
                 self.decoder_packets.put({
                     "timestamp": timestamp,
                     "sensor_data": parsed
+                })
+                self.packet_saver.put({
+                    "timestamp": timestamp, 
+                    "sensor_data": parsed 
                 })
             else: 
                 self.decoder_packets.put("ERROR")

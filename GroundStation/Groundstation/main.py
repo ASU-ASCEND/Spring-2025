@@ -5,6 +5,7 @@ import PacketDecoder
 import SerialInput
 import SerialSorter
 import SimpleDisplay
+import PacketSaver
 import GUI
 from time import sleep
 
@@ -21,9 +22,28 @@ if __name__ == "__main__":
     sorter_core1 = Queue()
     sorter_misc = Queue()
     decoder_packets = Queue()
+    decoder_packet_saver = Queue()
 
     # Load configuration file
     bitmask_to_struct, bitmask_to_name, num_sensors = load_config(FILE_PATH)
+
+    # set up header 
+    header_arr = ["Millis"]
+    header_key = {
+      "Millis": 1, 
+    }
+    with open(FILE_PATH) as f:
+      for line in f: 
+        fields = [str(i).strip() for i in line.split(",")]
+        if fields[0] == "BitIndex": continue 
+
+        # add to header_key 
+        header_key[fields[1]] = len(fields) // 2 - 1 
+
+        # populate header array 
+        for i in range(2, len(fields), 2): 
+          header_arr.append(fields[1] + " " + fields[i])
+    header_info = (header_key, header_arr)
 
     # Create threads
     serial_input = SerialInput.SerialInput(
@@ -44,9 +64,16 @@ if __name__ == "__main__":
         end_event,
         sorter_to_decoder, 
         decoder_packets,
+        decoder_packet_saver,
         bitmask_to_struct,
         bitmask_to_name,
         num_sensors
+    )
+
+    packet_saver = PacketSaver.PacketSaver(
+        end_event, 
+        decoder_packet_saver, 
+        header_info
     )
     
     # simple_display = SimpleDisplay.SimpleDisplay(
@@ -62,7 +89,8 @@ if __name__ == "__main__":
         sorter_core1,
         sorter_misc,
         decoder_packets,
-        [bitmask_to_struct, bitmask_to_name, num_sensors]
+        [bitmask_to_struct, bitmask_to_name, num_sensors],
+        header_info
     )
 
 
@@ -70,6 +98,7 @@ if __name__ == "__main__":
     serial_input.start()
     serial_sorter.start()
     packet_decoder.start()
+    packet_saver.start()
     # simple_display.start()
 
     # run the gui in the main thread 
@@ -90,4 +119,5 @@ if __name__ == "__main__":
     serial_input.join()
     serial_sorter.join()
     packet_decoder.join()
+    packet_saver.join()
     # simple_display.join()

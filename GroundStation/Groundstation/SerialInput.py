@@ -5,6 +5,7 @@ import serial
 import serial.tools.list_ports
 from datetime import datetime
 from time import sleep 
+from os import path 
 
 class SerialInput(threading.Thread):
     def __init__(self, end_event, input_queue):
@@ -13,6 +14,7 @@ class SerialInput(threading.Thread):
         self.end_event = end_event
         self.port = None
         self.ser = None
+        self.session_filename = path.join("session_data", f"ASCEND_DATA_{datetime.now().strftime('%H_%M_%S')}.bin")
         
 
     def list_serial_ports(self):
@@ -35,6 +37,7 @@ class SerialInput(threading.Thread):
             except ValueError:
                 print("Please enter a valid integer.")
 
+
     def run(self):
         self.port = self.select_serial_port()
 
@@ -51,12 +54,14 @@ class SerialInput(threading.Thread):
             print(f"Error opening serial port {self.port}: {e}")
             sys.exit(1)
 
-        while not (self.end_event and self.end_event.is_set()):
-            data = self.ser.read(512)   #1024)
-            if data:
-                for byte in data:
-                    self.input_queue.put(byte)
-                    print(chr(byte), end="")
+        with open(self.session_filename, "wb") as fout:
+            while not (self.end_event and self.end_event.is_set()):
+                data = self.ser.read(512)   #1024)
+                if data:
+                    for byte in data:
+                        self.input_queue.put(byte)
+                        print(chr(byte), end="")
+                    fout.write(data)
 
         self.ser.close()
 

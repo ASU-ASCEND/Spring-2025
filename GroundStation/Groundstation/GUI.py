@@ -11,7 +11,14 @@ import DataFrame
 
 class GUI():
 
-  def __init__(self, end_event: threading.Event, sorter_core0: Queue, sorter_core1: Queue, sorter_misc: Queue, decoder_packets: Queue, decoder_args: list):
+  def __init__(self, 
+               end_event: threading.Event, 
+               sorter_core0: Queue, 
+               sorter_core1: Queue, 
+               sorter_misc: Queue, 
+               decoder_packets: Queue, 
+               decoder_args: list,
+               header_info: tuple[dict, list]):
     super().__init__()
     self.end_event = end_event 
     self.COLUMNS = 6
@@ -32,22 +39,7 @@ class GUI():
     self.decoder_packets = decoder_packets
     self.decoder_args = decoder_args
 
-    header_arr = ["Millis"]
-    header_key = {
-      "Millis": 1, 
-    }
-    with open("config.csv") as f:
-      for line in f: 
-        fields = [str(i).strip() for i in line.split(",")]
-        if fields[0] == "BitIndex": continue 
-
-        # add to header_key 
-        header_key[fields[1]] = len(fields) // 2 - 1 
-
-        # populate header array 
-        for i in range(2, len(fields), 2): 
-          header_arr.append(fields[1] + " " + fields[i])
-    self.header_info = (header_key, header_arr)
+    self.header_info = header_info
 
   def buildGSEFrame(self):
     return GSEFrame.GSEFrame(self.window, self.sorter_core0, self.sorter_core1, self.decoder_packets, self.header_info)
