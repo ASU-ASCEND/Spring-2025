@@ -31,6 +31,7 @@ void RadioStorage::store(String data) {
   if (transmission_count % transmission_mod == 0) {
     Serial1.println(data);
   }
+  transmission_count++; 
 }
 
 /**
@@ -39,11 +40,16 @@ void RadioStorage::store(String data) {
  * @param packet Packet to send
  */
 void RadioStorage::storePacket(uint8_t* packet) {
+  static const unsigned long transmission_mod = 1;
+  static unsigned long transmission_count = 0;
   // length of packet will be after sync bytes (4) and sensor presence (4)
   // it is uint16_t
   uint16_t packet_len;
   memcpy(&packet_len, (packet + 8), sizeof(uint16_t));
 
-  // write those bytes to the radio
-  Serial1.write(packet, packet_len);
+  // write to packet 
+  if (transmission_count % transmission_mod == 0) {
+    Serial1.write(packet, packet_len);
+  }
+  transmission_count++; 
 }
