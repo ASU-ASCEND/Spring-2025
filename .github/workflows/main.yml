@@ -50,6 +50,7 @@ jobs:
           git status 
       - name: Merge main into docs with theirs strategy 
         run: |
+          git fetch origin main --depth 1
           git merge -X theirs origin/main
       - name: Install Doxygen and Graphviz
         run: |
