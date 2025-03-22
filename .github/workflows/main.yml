@@ -60,7 +60,7 @@ jobs:
           sudo apt install graphviz
       - name: Clean old docs
         run:
-          rm -r ../docs/*
+          rm -rf ../docs/*
       - name: Run doxygen on ascendfsw
         run:
           doxygen fswDoxyfile 
@@ -68,13 +68,13 @@ jobs:
       #   run: |
       #     mv ../docs/html/* ../docs/
       #     rmdir ../docs/html
-      - name: Push formatting changes to repo   
+      - name: Push documentation changes to repo   
         run: |
           git config user.name "autodoc[bot]"
           git config user.email "autodoc[bot]@users.noreply.github.com"
           git status
           if [ "$(git diff)" = "" ]; then
-            echo "No formatting needed"
+            echo "No Documentation changes"
           else 
             git add .. 
             git commit -m "[bot] - generated doxygen docs"
