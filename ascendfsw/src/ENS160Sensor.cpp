@@ -22,9 +22,9 @@ ENS160Sensor::ENS160Sensor(unsigned long minium_period)
  * @return false if the ENS isn't connected
  */
 bool ENS160Sensor::verify() {
-  Wire.begin();
+  STRATOSENSE_I2C.begin();
 
-  if (!ens.begin()) {
+  if (!ens.begin(STRATOSENSE_I2C)) {
     return false;
   }
 

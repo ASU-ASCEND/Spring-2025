@@ -3,6 +3,7 @@
 
 #include "Adafruit_SHTC3.h"
 #include "Sensor.h"
+#include "PayloadConfig.h"
 
 /**
  * @brief Implementation of a Sensor for the SHTC3

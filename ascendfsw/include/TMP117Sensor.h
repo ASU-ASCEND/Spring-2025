@@ -3,7 +3,7 @@
 
 #include <SparkFun_TMP117.h>
 #include <Wire.h>
-
+#include "PayloadConfig.h"
 #include "Sensor.h"
 
 /**

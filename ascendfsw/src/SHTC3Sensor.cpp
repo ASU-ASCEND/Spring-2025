@@ -23,7 +23,7 @@ SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)
  */
 bool SHTC3Sensor::verify() {
   shtc3 = Adafruit_SHTC3();
-  return shtc3.begin();
+  return shtc3.begin(&STRATOSENSE_I2C);
 }
 
 /**

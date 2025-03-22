@@ -4,6 +4,7 @@
 #include <SparkFun_AS7331.h>
 #include <Wire.h>
 #include <string.h>
+#include "PayloadConfig.h"
 
 #include "Sensor.h"
 

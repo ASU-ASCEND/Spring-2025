@@ -22,8 +22,8 @@ TMP117Sensor::TMP117Sensor(unsigned long minimum_period)
  * @return false if sensor is not.
  */
 bool TMP117Sensor::verify() {
-  Wire.begin();
-  return tmp.begin();
+  STRATOSENSE_I2C.begin();
+  return tmp.begin(TMP117_I2C_ADDR, STRATOSENSE_I2C);
 }
 
 /**

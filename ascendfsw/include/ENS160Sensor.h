@@ -5,6 +5,7 @@
 
 #include "Sensor.h"
 #include "SparkFun_ENS160.h"
+#include "PayloadConfig.h"
 
 /**
  * @brief Implementation of a Sensor for the ENS160
