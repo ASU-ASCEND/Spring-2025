@@ -1,7 +1,0 @@
-<map id="INA260Sensor.h" name="INA260Sensor.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="79,5,203,31"/>
-<area shape="rect" id="Node000002" href="$INA260Sensor_8cpp.html" title=" " alt="" coords="5,79,144,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,43,87,80,84,77,119,39"/>
-<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main functions for Core 0, responsible for reading data from sensor peripherals." alt="" coords="168,79,251,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,39,200,77,196,80,160,42"/>
-</map>
