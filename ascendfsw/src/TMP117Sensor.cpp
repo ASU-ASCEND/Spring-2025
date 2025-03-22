@@ -14,8 +14,8 @@ TMP117Sensor::TMP117Sensor() : TMP117Sensor(0) {}
  */
 TMP117Sensor::TMP117Sensor(unsigned long minimum_period)
     : Sensor("TMP117", "TMP117Temp(C)", 1, minimum_period) {
-      this->tempC = 0.0; 
-    }
+  this->tempC = 0.0;
+}
 
 /**
  * @brief Returns if sensor is connected and working.
@@ -36,7 +36,6 @@ bool TMP117Sensor::verify() {
 String TMP117Sensor::readData() {
   this->tempC = (float)tmp.readTempC();
 
-
   return String(this->tempC) + ",";
 }
 
@@ -48,7 +47,6 @@ String TMP117Sensor::readData() {
  */
 void TMP117Sensor::readDataPacket(uint8_t*& packet) {
   this->tempC = (float)tmp.readTempC();
-
 
   std::copy((uint8_t*)(&tempC), (uint8_t*)(&tempC) + sizeof(tempC), packet);
 
@@ -71,10 +69,8 @@ String TMP117Sensor::decodeToCSV(uint8_t*& packet) {
 }
 
 /**
- * @brief Getter for tempC 
- * 
- * @return float Last recorded temperature in Celsius 
+ * @brief Getter for tempC
+ *
+ * @return float Last recorded temperature in Celsius
  */
-float TMP117Sensor::getTempC(){
-  return this->tempC; 
-}
+float TMP117Sensor::getTempC() { return this->tempC; }

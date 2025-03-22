@@ -14,7 +14,7 @@
 class TMP117Sensor : public Sensor {
  private:
   TMP117 tmp;
-  float tempC; 
+  float tempC;
 
  public:
   TMP117Sensor();
@@ -28,7 +28,7 @@ class TMP117Sensor : public Sensor {
   // Function to decode sensor data from a packet and return a CSV string
   String decodeToCSV(uint8_t*& packet);
 
-  float getTempC(); 
+  float getTempC();
 };
 
 #endif

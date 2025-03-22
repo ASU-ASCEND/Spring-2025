@@ -1,9 +1,10 @@
 #include "ENS160Sensor.h"
-#include "TMP117Sensor.h"
-#include "SHTC3Sensor.h"
 
-extern TMP117Sensor tmp_sensor; 
-extern SHTC3Sensor shtc_sensor; 
+#include "SHTC3Sensor.h"
+#include "TMP117Sensor.h"
+
+extern TMP117Sensor tmp_sensor;
+extern SHTC3Sensor shtc_sensor;
 
 /**
  * @brief Construct a new ENS160 Sensor object with default minimum_period of 0
@@ -51,13 +52,14 @@ String ENS160Sensor::readData() {
     return this->readEmpty();
   }
 
-  // set compensation values after read if we have them so that conversion doesn't slow the read
-  // not sure if it actually does but this will let it take until the next read
-  // which should be more than enough time, make sure that tmp117 and shtc3 
-  if(tmp_sensor.getVerified()) {
+  // set compensation values after read if we have them so that conversion
+  // doesn't slow the read not sure if it actually does but this will let it
+  // take until the next read which should be more than enough time, make sure
+  // that tmp117 and shtc3
+  if (tmp_sensor.getVerified()) {
     ens.setTempCompensationCelsius(tmp_sensor.getTempC());
   }
-  if(shtc_sensor.getVerified()) {
+  if (shtc_sensor.getVerified()) {
     ens.setRHCompensationFloat(shtc_sensor.getRelHum());
   }
 }
@@ -78,13 +80,14 @@ void ENS160Sensor::readDataPacket(uint8_t*& packet) {
   memcpy(packet, &eco2, sizeof(eco2));
   packet += sizeof(eco2);
 
-  // set compensation values after read if we have them so that conversion doesn't slow the read
-  // not sure if it actually does but this will let it take until the next read
-  // which should be more than enough time, make sure that tmp117 and shtc3 
-  if(tmp_sensor.getVerified()) {
+  // set compensation values after read if we have them so that conversion
+  // doesn't slow the read not sure if it actually does but this will let it
+  // take until the next read which should be more than enough time, make sure
+  // that tmp117 and shtc3
+  if (tmp_sensor.getVerified()) {
     ens.setTempCompensationCelsius(tmp_sensor.getTempC());
   }
-  if(shtc_sensor.getVerified()) {
+  if (shtc_sensor.getVerified()) {
     ens.setRHCompensationFloat(shtc_sensor.getRelHum());
   }
 }

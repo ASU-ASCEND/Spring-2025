@@ -14,8 +14,8 @@ SHTC3Sensor::SHTC3Sensor() : SHTC3Sensor(0) {}
  */
 SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)
     : Sensor("SHTC3", "Temp(C), Humidity(%)", 2, minimum_period) {
-      this->relative_humidity = 0.0; 
-    }
+  this->relative_humidity = 0.0;
+}
 
 /**
  * @brief Returns if sensor is connected and working.
@@ -36,8 +36,8 @@ bool SHTC3Sensor::verify() {
 String SHTC3Sensor::readData() {
   sensors_event_t temp, humidity;
   shtc3.getEvent(&humidity, &temp);
-  
-  this->relative_humidity = humidity.relative_humidity; 
+
+  this->relative_humidity = humidity.relative_humidity;
 
   return String(temp.temperature) + "," + String(humidity.relative_humidity) +
          ",";
@@ -52,7 +52,7 @@ void SHTC3Sensor::readDataPacket(uint8_t*& packet) {
   sensors_event_t temp, humidity;
   shtc3.getEvent(&humidity, &temp);
 
-  this->relative_humidity = humidity.relative_humidity; 
+  this->relative_humidity = humidity.relative_humidity;
 
   memcpy(packet, &(temp.temperature), sizeof(temp.temperature));
   packet += sizeof(temp.temperature);
@@ -82,10 +82,8 @@ String SHTC3Sensor::decodeToCSV(uint8_t*& packet) {
 }
 
 /**
- * @brief Getter for relative humidity 
- * 
+ * @brief Getter for relative humidity
+ *
  * @return float Relative humidity as %
  */
-float SHTC3Sensor::getRelHum(){
-  return this->relative_humidity; 
-}
+float SHTC3Sensor::getRelHum() { return this->relative_humidity; }

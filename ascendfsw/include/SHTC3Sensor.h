@@ -12,7 +12,7 @@
 class SHTC3Sensor : public Sensor {
  private:
   Adafruit_SHTC3 shtc3;
-  float relative_humidity; 
+  float relative_humidity;
 
  public:
   SHTC3Sensor();
@@ -23,7 +23,7 @@ class SHTC3Sensor : public Sensor {
   void readDataPacket(uint8_t*& packet) override;
   String decodeToCSV(uint8_t*& packet) override;
 
-  float getRelHum(); 
+  float getRelHum();
 };
 
 #endif
