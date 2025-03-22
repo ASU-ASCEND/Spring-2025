@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.BOT_AUTH }}
+          fetch-depth: 0
       - name: Install clang-format
         run: |
           sudo apt-get update
@@ -39,11 +40,11 @@ jobs:
             git commit -m "[bot] - autoformatted code"
             git push
           fi
-      - name: Checkout docs 
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.BOT_AUTH }}
-          ref: docs
+      # - name: Checkout docs 
+      #   uses: actions/checkout@v4
+      #   with:
+      #     token: ${{ secrets.BOT_AUTH }}
+      #     ref: docs
       - name: Checkout docs branch 
         run: |
           git checkout docs 
