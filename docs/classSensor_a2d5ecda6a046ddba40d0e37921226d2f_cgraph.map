@@ -1,0 +1,5 @@
+<map id="Sensor::getDataCSV" name="Sensor::getDataCSV">
+<area shape="rect" id="node1" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="5,31,157,57"/>
+<area shape="rect" id="node2" href="$classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format." alt="" coords="211,5,345,32"/>
+<area shape="rect" id="node3" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="205,56,351,83"/>
+</map>

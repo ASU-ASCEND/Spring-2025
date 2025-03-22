@@ -1,0 +1,5 @@
+<map id="ENS160Sensor.h" name="ENS160Sensor.h">
+<area shape="rect" id="node1" title=" " alt="" coords="81,5,209,32"/>
+<area shape="rect" id="node2" href="$ENS160Sensor_8cpp.html" title=" " alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Main functions for Core 0, responsible for reading data from sensor peripherals." alt="" coords="173,80,255,107"/>
+</map>

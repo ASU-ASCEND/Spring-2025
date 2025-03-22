@@ -1,0 +1,4 @@
+<map id="BMP390Sensor::readData" name="BMP390Sensor::readData">
+<area shape="rect" id="node1" title="Reads data to a csv stub." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node2" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="240,5,385,32"/>
+</map>

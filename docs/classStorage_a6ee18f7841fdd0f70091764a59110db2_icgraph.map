@@ -1,0 +1,4 @@
+<map id="Storage::storePacket" name="Storage::storePacket">
+<area shape="rect" id="node1" title="Send packet data to storage device." alt="" coords="183,5,339,32"/>
+<area shape="rect" id="node2" href="$main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43" title="Sends data to each storage device." alt="" coords="5,5,135,32"/>
+</map>

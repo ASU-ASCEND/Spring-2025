@@ -1,0 +1,5 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node1" title="Loop for core 0, handling sensor reads." alt="" coords="5,31,56,57"/>
+<area shape="rect" id="node2" href="$classErrorDisplay.html#a164dea875d8b3215203e5d6f0076f237" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="104,5,268,32"/>
+<area shape="rect" id="node3" href="$classErrorDisplay.html#a493bde338b369414abffe90e0d49e93b" title="Toggles the level of the error display." alt="" coords="111,56,261,83"/>
+</map>

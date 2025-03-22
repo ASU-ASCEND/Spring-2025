@@ -1,0 +1,11 @@
+<map id="LSM9DS1Sensor.h" name="LSM9DS1Sensor.h">
+<area shape="rect" id="node1" title=" " alt="" coords="312,5,451,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="185,80,322,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="346,80,417,107"/>
+<area shape="rect" id="node5" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="441,80,569,107"/>
+<area shape="rect" id="node6" href="$Sensor_8h.html" title=" " alt="" coords="594,80,673,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="578,304,662,331"/>
+<area shape="rect" id="node8" href="$Device_8h.html" title=" " alt="" coords="594,155,673,181"/>
+<area shape="rect" id="node9" href="$Logger_8h.html" title=" " alt="" coords="658,229,737,256"/>
+</map>

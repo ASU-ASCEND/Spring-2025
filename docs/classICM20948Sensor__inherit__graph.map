@@ -1,0 +1,5 @@
+<map id="ICM20948Sensor" name="ICM20948Sensor">
+<area shape="rect" id="node1" title="Implementation of the Sensor class for the Adafruit ICM20948 (9&#45;axis IMU)" alt="" coords="20,725,176,935"/>
+<area shape="rect" id="node2" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,321,191,677"/>
+<area shape="rect" id="node3" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="12,5,184,273"/>
+</map>

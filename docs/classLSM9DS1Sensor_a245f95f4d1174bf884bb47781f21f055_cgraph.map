@@ -1,0 +1,4 @@
+<map id="LSM9DS1Sensor::verify" name="LSM9DS1Sensor::verify">
+<area shape="rect" id="node1" title="Verifies that the LSM is connected and working." alt="" coords="5,5,179,32"/>
+<area shape="rect" id="node2" href="$classLSM9DS1Sensor.html#a3f06cfc776d797dbb8d454794a7c9fc2" title="Helper function to set up sensor ranges and data rates." alt="" coords="227,5,441,32"/>
+</map>

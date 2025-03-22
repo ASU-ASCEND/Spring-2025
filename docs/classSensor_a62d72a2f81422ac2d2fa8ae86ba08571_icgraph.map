@@ -1,0 +1,9 @@
+<map id="Sensor::readEmpty" name="Sensor::readEmpty">
+<area shape="rect" id="node1" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="423,107,568,133"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a9163644b089001958496a71b73b9091a" title="Decodes the packet to a CSV row." alt="" coords="221,5,333,32"/>
+<area shape="rect" id="node3" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="201,56,353,83"/>
+<area shape="rect" id="node5" href="$classBMP390Sensor.html#ae0499577320b347c8fccf855193c57ac" title="Reads data to a csv stub." alt="" coords="184,107,371,133"/>
+<area shape="rect" id="node6" href="$classENS160Sensor.html#aac8ea849d26c4a6a567924805d378990" title="Reads Air Quality Index, TVOC (ppb), and ECOS (ppm)" alt="" coords="185,157,369,184"/>
+<area shape="rect" id="node7" href="$classMTK3339Sensor.html#a632c895115930d476540fed7d6537635" title="Reads and returns data from the MTK3339 GPS corresponding to the CSV header." alt="" coords="180,208,375,235"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a9db5e6113d9a0bd03a1b044059ae787b" title="Read data from each verified Sensor." alt="" coords="5,56,132,83"/>
+</map>

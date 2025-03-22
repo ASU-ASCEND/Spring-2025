@@ -1,0 +1,8 @@
+<map id="Sensor" name="Sensor">
+<area shape="rect" id="node1" title="Parent class for sensor objects." alt="" coords="384,404,569,701"/>
+<area shape="rect" id="node2" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="195,160,367,355"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,65,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="364,5,477,83"/>
+<area shape="rect" id="node5" title=" " alt="" coords="508,5,547,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="159,5,210,83"/>
+</map>

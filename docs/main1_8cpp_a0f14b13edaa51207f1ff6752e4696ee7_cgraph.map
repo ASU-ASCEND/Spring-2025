@@ -1,0 +1,4 @@
+<map id="storeData" name="storeData">
+<area shape="rect" id="node1" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node2" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send string data to storage device." alt="" coords="140,5,253,32"/>
+</map>

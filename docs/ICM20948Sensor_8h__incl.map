@@ -1,0 +1,12 @@
+<map id="ICM20948Sensor.h" name="ICM20948Sensor.h">
+<area shape="rect" id="node1" title=" " alt="" coords="416,5,559,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="188,80,331,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="355,80,492,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="516,80,587,107"/>
+<area shape="rect" id="node6" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="611,80,739,107"/>
+<area shape="rect" id="node7" href="$Sensor_8h.html" title=" " alt="" coords="764,80,843,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="748,304,832,331"/>
+<area shape="rect" id="node9" href="$Device_8h.html" title=" " alt="" coords="764,155,843,181"/>
+<area shape="rect" id="node10" href="$Logger_8h.html" title=" " alt="" coords="828,229,907,256"/>
+</map>

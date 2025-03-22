@@ -1,0 +1,4 @@
+<map id="FlashStorage::readFileHeader" name="FlashStorage::readFileHeader">
+<area shape="rect" id="node1" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="240,5,453,32"/>
+<area shape="rect" id="node2" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="5,5,192,32"/>
+</map>

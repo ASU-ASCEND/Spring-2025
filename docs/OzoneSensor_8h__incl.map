@@ -1,0 +1,9 @@
+<map id="OzoneSensor.h" name="OzoneSensor.h">
+<area shape="rect" id="node1" title=" " alt="" coords="217,5,336,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,188,107"/>
+<area shape="rect" id="node3" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="213,80,341,107"/>
+<area shape="rect" id="node4" href="$Sensor_8h.html" title=" " alt="" coords="365,80,444,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="349,304,433,331"/>
+<area shape="rect" id="node6" href="$Device_8h.html" title=" " alt="" coords="365,155,444,181"/>
+<area shape="rect" id="node7" href="$Logger_8h.html" title=" " alt="" coords="429,229,508,256"/>
+</map>

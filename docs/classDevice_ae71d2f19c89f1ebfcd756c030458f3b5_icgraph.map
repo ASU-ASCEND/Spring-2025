@@ -1,0 +1,4 @@
+<map id="Device::setWaitFactor" name="Device::setWaitFactor">
+<area shape="rect" id="node1" title="Set wait_factor." alt="" coords="228,5,393,32"/>
+<area shape="rect" id="node2" href="$classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565" title="Set recovery config (used keep default constructor)" alt="" coords="5,5,180,32"/>
+</map>

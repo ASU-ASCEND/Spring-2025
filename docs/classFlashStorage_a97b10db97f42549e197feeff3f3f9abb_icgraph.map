@@ -1,0 +1,4 @@
+<map id="FlashStorage::isSectorEmpty" name="FlashStorage::isSectorEmpty">
+<area shape="rect" id="node1" title="Determines if the current sector is empty." alt="" coords="240,5,449,32"/>
+<area shape="rect" id="node2" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="5,5,192,32"/>
+</map>

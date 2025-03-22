@@ -1,0 +1,12 @@
+<map id="SCD40Sensor.h" name="SCD40Sensor.h">
+<area shape="rect" id="node1" title=" " alt="" coords="360,5,481,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="167,80,319,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="343,80,407,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="432,80,503,107"/>
+<area shape="rect" id="node6" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="527,80,655,107"/>
+<area shape="rect" id="node7" href="$Sensor_8h.html" title=" " alt="" coords="680,80,759,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="664,304,748,331"/>
+<area shape="rect" id="node9" href="$Device_8h.html" title=" " alt="" coords="680,155,759,181"/>
+<area shape="rect" id="node10" href="$Logger_8h.html" title=" " alt="" coords="744,229,823,256"/>
+</map>

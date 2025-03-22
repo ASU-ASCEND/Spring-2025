@@ -1,0 +1,7 @@
+<map id="Storage" name="Storage">
+<area shape="rect" id="node1" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="178,321,301,443"/>
+<area shape="rect" id="node3" href="$classFlashStorage.html" title=" " alt="" coords="5,491,148,847"/>
+<area shape="rect" id="node4" href="$classRadioStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="172,608,307,729"/>
+<area shape="rect" id="node5" href="$classSDStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="331,601,454,737"/>
+<area shape="rect" id="node2" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="153,5,325,273"/>
+</map>

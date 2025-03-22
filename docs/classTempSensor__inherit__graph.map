@@ -1,0 +1,5 @@
+<map id="TempSensor" name="TempSensor">
+<area shape="rect" id="node1" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="23,725,173,876"/>
+<area shape="rect" id="node2" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,321,191,677"/>
+<area shape="rect" id="node3" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="12,5,184,273"/>
+</map>

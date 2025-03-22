@@ -1,0 +1,6 @@
+<map id="decodePacket" name="decodePacket">
+<area shape="rect" id="node1" title="Decodes the packet to a CSV row." alt="" coords="5,31,117,57"/>
+<area shape="rect" id="node2" href="$classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6" title="Used for onboard decoding of packets." alt="" coords="165,5,327,32"/>
+<area shape="rect" id="node4" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="173,56,319,83"/>
+<area shape="rect" id="node3" href="$classDevice.html#ac851c03f4bddc08577d64e0638075654" title=" " alt="" coords="375,5,555,32"/>
+</map>
