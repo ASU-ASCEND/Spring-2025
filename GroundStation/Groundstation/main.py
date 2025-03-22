@@ -7,6 +7,8 @@ import SerialSorter
 import SimpleDisplay
 import PacketSaver
 import SerialSaver 
+import ServerProcess
+import ServerInterface
 import GUI
 from time import sleep
 
@@ -24,6 +26,7 @@ if __name__ == "__main__":
     sorter_misc = Queue()
     decoder_packets = Queue()
     decoder_packet_saver = Queue()
+    packet_saver_server = Queue()
     serial_stream = Queue()
 
     # Load configuration file
@@ -81,6 +84,7 @@ if __name__ == "__main__":
     packet_saver = PacketSaver.PacketSaver(
         end_event, 
         decoder_packet_saver, 
+        packet_saver_server,
         header_info
     )
     
@@ -101,6 +105,17 @@ if __name__ == "__main__":
         header_info
     )
 
+    server_process = ServerProcess.ServerProcess()
+
+    server_interface = ServerInterface.ServerInterface(
+       end_event,
+       server_process,
+       packet_saver_server
+    )
+
+    # start process for server
+    server_process.start()
+    sleep(1) # wait for server to start so that port selection prints after
 
     # Start threads
     serial_input.start()
@@ -108,6 +123,7 @@ if __name__ == "__main__":
     serial_sorter.start()
     packet_decoder.start()
     packet_saver.start()
+    server_interface.start()
     # simple_display.start()
 
     # run the gui in the main thread 
@@ -130,4 +146,8 @@ if __name__ == "__main__":
     serial_sorter.join()
     packet_decoder.join()
     packet_saver.join()
+    server_interface.join()
     # simple_display.join()
+
+    # wait for process to finish 
+    server_process.join()

@@ -9,18 +9,19 @@ class PacketSaver(threading.Thread):
   def __init__(self, 
                end_event: threading.Event, 
                decoder_packet_saver: Queue, 
+               packet_saver_server: Queue,
                header_info: tuple[dict, list]
                ):
     super().__init__()
-
     self.end_event = end_event
     self.decoder_packet_saver = decoder_packet_saver
+    self.packet_saver_server = packet_saver_server
     self.header_info = header_info
 
     if path.isdir("session_data") == False:
       mkdir("session_data")
     self.session_filename = path.join("session_data", f"ASCEND_DATA_{datetime.now().strftime('%H_%M_%S')}.csv")
-    print("Saving to:", self.session_filename)
+    # print("Saving to:", self.session_filename)
 
   def run(self):
     with open(self.session_filename, "w") as fout:
@@ -32,6 +33,10 @@ class PacketSaver(threading.Thread):
         except Empty:
           sleep(0.1) 
           continue
+
+        # forward to server_interface - here not in PacketDecoder because I think PacketDecoder has slower throughput currently 
+        self.packet_saver_server.put(packet)
+
         # print("Got packet")
         row = [] 
 
