@@ -2,8 +2,8 @@
 #define SHTC3SENSOR_H
 
 #include "Adafruit_SHTC3.h"
-#include "Sensor.h"
 #include "PayloadConfig.h"
+#include "Sensor.h"
 
 /**
  * @brief Implementation of a Sensor for the SHTC3
@@ -12,6 +12,7 @@
 class SHTC3Sensor : public Sensor {
  private:
   Adafruit_SHTC3 shtc3;
+  float relative_humidity; 
 
  public:
   SHTC3Sensor();
@@ -21,6 +22,8 @@ class SHTC3Sensor : public Sensor {
 
   void readDataPacket(uint8_t*& packet) override;
   String decodeToCSV(uint8_t*& packet) override;
+
+  float getRelHum(); 
 };
 
 #endif

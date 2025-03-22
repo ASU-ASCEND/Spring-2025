@@ -45,7 +45,7 @@
 #define TMP117_I2C_ADDR 0x48
 
 /** @brief StratoSense board I2C Bus */
-#define STRATOSENSE_I2C Wire1
+#define STRATOSENSE_I2C Wire
 
 // storages
 /** @brief Toggle sending packets vs C strings over transfer queue */

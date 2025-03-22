@@ -3,6 +3,7 @@
 
 #include <SparkFun_TMP117.h>
 #include <Wire.h>
+
 #include "PayloadConfig.h"
 #include "Sensor.h"
 
@@ -13,6 +14,7 @@
 class TMP117Sensor : public Sensor {
  private:
   TMP117 tmp;
+  float tempC; 
 
  public:
   TMP117Sensor();
@@ -25,6 +27,8 @@ class TMP117Sensor : public Sensor {
 
   // Function to decode sensor data from a packet and return a CSV string
   String decodeToCSV(uint8_t*& packet);
+
+  float getTempC(); 
 };
 
 #endif
