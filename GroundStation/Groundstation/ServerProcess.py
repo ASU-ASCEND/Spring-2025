@@ -20,7 +20,7 @@ class DataTransfer(Resource):
       else:
         found_all = False
 
-    data["no_missing_fields"] = found_all
+    data["missing_fields"] = not found_all
 
     return jsonify(data)
   
@@ -35,7 +35,7 @@ class DataTransfer(Resource):
         server_current_data[k] = args[k]
         fields_updated += 1
     
-    return jsonify({'updated_field_count': fields_updated})
+    return jsonify({'fields_updated': fields_updated})
 
 
 class ServerProcess(multiprocessing.Process):
@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
   server.start()
 
-  sleep(5)
+  sleep(10)
   server.terminate()
 
   server.join()
