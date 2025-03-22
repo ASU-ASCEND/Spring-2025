@@ -11,10 +11,9 @@ Flight software for the ASU Spring 2025 ASCEND Payload
 
 [ascendfsw](https://github.com/ASU-ASCEND/Spring-2025/tree/main/ascendfsw): Payload flight software.
 
-[docs](https://github.com/ASU-ASCEND/Spring-2025/tree/main/docs): Doxygen auto-generated documentation site for GitHub pages. 
-
 [scripts](https://github.com/ASU-ASCEND/Spring-2025/tree/main/scripts): Various organizational and automation scripts. 
 
+A Doxygen auto-generated documentation site for GitHub pages is deployed from the docs branch 
 
 ## Meeting Schedule
 
