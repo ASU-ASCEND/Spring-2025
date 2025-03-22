@@ -1,5 +1,0 @@
-<map id="FlashStorage::indexFlash" name="FlashStorage::indexFlash">
-<area shape="rect" id="Node000001" title="Locates the next available file block &amp; tracks existing files." alt="" coords="205,5,392,31"/>
-<area shape="rect" id="Node000002" href="$classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" title="Verifies the flash connection and prepares for data storage." alt="" coords="5,5,157,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,21,157,21,157,15,192,15"/>
-</map>

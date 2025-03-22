@@ -1,7 +1,0 @@
-<map id="SDStorage::storePacket" name="SDStorage::storePacket">
-<area shape="rect" id="Node000001" title="Store data on the SD card." alt="" coords="5,31,179,56"/>
-<area shape="rect" id="Node000002" href="$classErrorDisplay.html#a25018c85cd6b4055a5e796153b997d13" title="Sets the error code to the given value if the given error is of a higher priority then the current er..." alt="" coords="227,5,393,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,31,212,27,213,32,179,36"/>
-<area shape="rect" id="Node000003" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="228,55,392,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,50,214,54,214,59,179,56"/>
-</map>
