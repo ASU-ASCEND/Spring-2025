@@ -43,8 +43,7 @@ void handleDataInterface();
 INA260Sensor    ina260_sensor     (1000);
 TempSensor      temp_sensor       (1000);
 ENS160Sensor    ens160_sensor     (500);
-AS7331Sensor    uv_sensor_1       (500, UV_I2C_ADDR_1);
-AS7331Sensor    uv_sensor_2       (500, UV_I2C_ADDR_2);
+AS7331Sensor    uv_sensor         (500, UV_I2C_ADDR_1);
 MTK3339Sensor   gps_sensor        (2000);
 ICM20948Sensor  icm_sensor        (0);
 PCF8523Sensor   rtc_sensor        (1000);
@@ -57,10 +56,10 @@ OzoneSensor     ozone_sensor      (500);
 // clang-format on
 
 // sensor array
-Sensor* sensors[] = {&rtc_sensor,  &ina260_sensor, &temp_sensor, &ens160_sensor,
-                     &uv_sensor_1, &uv_sensor_2,   &icm_sensor,  &gps_sensor,
-                     &bmp_sensor,  &tmp_sensor,    &shtc_sensor, &sdc_sensor,
-                     &ozone_sensor};
+Sensor* sensors[] = {&rtc_sensor, &ina260_sensor, &temp_sensor,
+                     &uv_sensor,  &icm_sensor,    &gps_sensor,
+                     &bmp_sensor, &tmp_sensor,    &shtc_sensor,
+                     &sdc_sensor, &ens160_sensor, &ozone_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 

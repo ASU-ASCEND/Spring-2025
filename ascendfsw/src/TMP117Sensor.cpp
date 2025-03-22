@@ -13,7 +13,9 @@ TMP117Sensor::TMP117Sensor() : TMP117Sensor(0) {}
  * @param minimum_period Minimum time to wait between readings in ms
  */
 TMP117Sensor::TMP117Sensor(unsigned long minimum_period)
-    : Sensor("TMP117", "TMP117Temp(C)", 1, minimum_period) {}
+    : Sensor("TMP117", "TMP117Temp(C)", 1, minimum_period) {
+  this->tempC = 0.0;
+}
 
 /**
  * @brief Returns if sensor is connected and working.
@@ -22,8 +24,8 @@ TMP117Sensor::TMP117Sensor(unsigned long minimum_period)
  * @return false if sensor is not.
  */
 bool TMP117Sensor::verify() {
-  Wire.begin();
-  return tmp.begin();
+  STRATOSENSE_I2C.begin();
+  return tmp.begin(TMP117_I2C_ADDR, STRATOSENSE_I2C);
 }
 
 /**
@@ -32,8 +34,9 @@ bool TMP117Sensor::verify() {
  * @return String Temp (C) in csv format.
  */
 String TMP117Sensor::readData() {
-  float tempC = tmp.readTempC();
-  return String(tempC) + ",";
+  this->tempC = (float)tmp.readTempC();
+
+  return String(this->tempC) + ",";
 }
 
 /**
@@ -43,11 +46,11 @@ String TMP117Sensor::readData() {
  * @param packet Pointer to the packet byte array.
  */
 void TMP117Sensor::readDataPacket(uint8_t*& packet) {
-  float tempC = tmp.readTempC();
+  this->tempC = (float)tmp.readTempC();
 
   std::copy((uint8_t*)(&tempC), (uint8_t*)(&tempC) + sizeof(tempC), packet);
 
-  packet += sizeof(tempC);
+  packet += sizeof(this->tempC);
 }
 
 /**
@@ -64,3 +67,10 @@ String TMP117Sensor::decodeToCSV(uint8_t*& packet) {
 
   return String(tempC) + ",";
 }
+
+/**
+ * @brief Getter for tempC
+ *
+ * @return float Last recorded temperature in Celsius
+ */
+float TMP117Sensor::getTempC() { return this->tempC; }

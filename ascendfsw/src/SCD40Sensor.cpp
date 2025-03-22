@@ -33,8 +33,8 @@ SCD40Sensor::SCD40Sensor(unsigned long minimum_period)
  * @return false - If the sensor is not detected or fails to initialize.
  */
 bool SCD40Sensor::verify() {
-  Wire.begin();
-  this->scd.begin(Wire, SCD40_I2C_ADDR_62);
+  STRATOSENSE_I2C.begin();
+  this->scd.begin(STRATOSENSE_I2C, SCD40_I2C_ADDR_62);
   uint16_t error;
   delay(30);
   error = this->scd.wakeUp();

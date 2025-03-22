@@ -3,6 +3,7 @@
 
 #include <Wire.h>
 
+#include "PayloadConfig.h"
 #include "Sensor.h"
 #include "SparkFun_ENS160.h"
 
