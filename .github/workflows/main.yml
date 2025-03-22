@@ -39,6 +39,11 @@ jobs:
             git commit -m "[bot] - autoformatted code"
             git push
           fi
+      - name: Checkout docs 
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_AUTH }}
+          ref: docs
       - name: Checkout docs branch 
         run: |
           git checkout docs 
