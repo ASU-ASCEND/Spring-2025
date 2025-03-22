@@ -60,7 +60,7 @@ jobs:
           sudo apt install graphviz
       - name: Clean old docs
         run:
-          rm -r ../docs/*
+          rm -rf ../docs/*
       - name: Run doxygen on ascendfsw
         run:
           doxygen fswDoxyfile 
