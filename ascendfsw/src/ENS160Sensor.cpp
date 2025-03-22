@@ -1,5 +1,11 @@
 #include "ENS160Sensor.h"
 
+#include "SHTC3Sensor.h"
+#include "TMP117Sensor.h"
+
+extern TMP117Sensor tmp_sensor;
+extern SHTC3Sensor shtc_sensor;
+
 /**
  * @brief Construct a new ENS160 Sensor object with default minimum_period of 0
  * ms
@@ -22,9 +28,9 @@ ENS160Sensor::ENS160Sensor(unsigned long minium_period)
  * @return false if the ENS isn't connected
  */
 bool ENS160Sensor::verify() {
-  Wire.begin();
+  STRATOSENSE_I2C.begin();
 
-  if (!ens.begin()) {
+  if (!ens.begin(STRATOSENSE_I2C)) {
     return false;
   }
 
@@ -45,6 +51,17 @@ String ENS160Sensor::readData() {
   } else {
     return this->readEmpty();
   }
+
+  // set compensation values after read if we have them so that conversion
+  // doesn't slow the read not sure if it actually does but this will let it
+  // take until the next read which should be more than enough time, make sure
+  // that tmp117 and shtc3
+  if (tmp_sensor.getVerified()) {
+    ens.setTempCompensationCelsius(tmp_sensor.getTempC());
+  }
+  if (shtc_sensor.getVerified()) {
+    ens.setRHCompensationFloat(shtc_sensor.getRelHum());
+  }
 }
 void ENS160Sensor::readDataPacket(uint8_t*& packet) {
   if (!ens.checkDataStatus()) {
@@ -62,6 +79,17 @@ void ENS160Sensor::readDataPacket(uint8_t*& packet) {
 
   memcpy(packet, &eco2, sizeof(eco2));
   packet += sizeof(eco2);
+
+  // set compensation values after read if we have them so that conversion
+  // doesn't slow the read not sure if it actually does but this will let it
+  // take until the next read which should be more than enough time, make sure
+  // that tmp117 and shtc3
+  if (tmp_sensor.getVerified()) {
+    ens.setTempCompensationCelsius(tmp_sensor.getTempC());
+  }
+  if (shtc_sensor.getVerified()) {
+    ens.setRHCompensationFloat(shtc_sensor.getRelHum());
+  }
 }
 
 String ENS160Sensor::decodeToCSV(uint8_t*& packet) {
