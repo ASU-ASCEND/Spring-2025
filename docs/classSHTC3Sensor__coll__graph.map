@@ -1,7 +1,7 @@
 <map id="SHTC3Sensor" name="SHTC3Sensor">
-<area shape="rect" id="Node000001" title="Implementation of a Sensor for the SHTC3." alt="" coords="514,851,655,1016"/>
+<area shape="rect" id="Node000001" title="Implementation of a Sensor for the SHTC3." alt="" coords="599,851,741,1036"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="411,423,588,788"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="553,801,566,850,561,851,548,802"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="597,792,626,849,621,852,592,795"/>
 <area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="217,148,381,373"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,384,413,451,408,454,369,387"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="5,5,111,71"/>
@@ -16,5 +16,7 @@
 <area shape="rect" id="Node000007" title=" " alt="" coords="182,5,225,71"/>
 <area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="212,70,227,123,231,132,226,134,222,125,207,72"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="613,573,727,638"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="664,639,613,835,608,834,659,638"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="673,638,673,834,667,834,667,638"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="751,573,794,638"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="772,638,761,708,742,789,724,837,719,835,737,787,756,707,767,638"/>
 </map>

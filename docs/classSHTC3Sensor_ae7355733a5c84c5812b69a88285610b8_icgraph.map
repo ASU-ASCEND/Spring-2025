@@ -1,0 +1,7 @@
+<map id="SHTC3Sensor::getRelHum" name="SHTC3Sensor::getRelHum">
+<area shape="rect" id="Node000001" title="Getter for relative humidity." alt="" coords="280,31,469,56"/>
+<area shape="rect" id="Node000002" href="$classENS160Sensor.html#aac8ea849d26c4a6a567924805d378990" title="Reads Air Quality Index, TVOC (ppb), and ECOS (ppm)" alt="" coords="27,5,211,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="266,35,210,30,211,24,267,30"/>
+<area shape="rect" id="Node000003" href="$classENS160Sensor.html#a967adb086f27d1ce5ea911bcd6d4f948" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="5,55,232,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,56,232,59,232,54,266,51"/>
+</map>

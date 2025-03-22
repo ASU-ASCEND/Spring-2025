@@ -1,7 +1,7 @@
 <map id="TMP117Sensor" name="TMP117Sensor">
-<area shape="rect" id="Node000001" title="Implementation of a Sensor for the TMP117." alt="" coords="502,851,643,1016"/>
+<area shape="rect" id="Node000001" title="Implementation of a Sensor for the TMP117." alt="" coords="575,851,717,1036"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="411,423,588,788"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="546,801,557,850,552,851,541,802"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="587,800,608,849,604,852,582,802"/>
 <area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="217,148,381,373"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,384,413,451,408,454,369,387"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="5,5,111,71"/>
@@ -16,5 +16,7 @@
 <area shape="rect" id="Node000007" title=" " alt="" coords="182,5,225,71"/>
 <area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="212,70,227,123,231,132,226,134,222,125,207,72"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="613,573,679,638"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="641,639,597,835,592,834,636,638"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="649,638,649,834,643,834,643,638"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="703,573,746,638"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="724,638,711,724,690,827,688,836,682,834,685,826,706,723,718,638"/>
 </map>

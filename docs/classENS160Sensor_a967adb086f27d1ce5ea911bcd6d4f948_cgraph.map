@@ -1,0 +1,9 @@
+<map id="ENS160Sensor::readDataPacket" name="ENS160Sensor::readDataPacket">
+<area shape="rect" id="Node000001" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="5,55,232,80"/>
+<area shape="rect" id="Node000002" href="$classSHTC3Sensor.html#ae7355733a5c84c5812b69a88285610b8" title="Getter for relative humidity." alt="" coords="281,5,470,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,52,295,31,296,36,186,57"/>
+<area shape="rect" id="Node000003" href="$classTMP117Sensor.html#a8fcbf5633c60d32b43ea87d89e781e39" title="Getter for tempC." alt="" coords="280,55,471,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,65,266,65,266,70,232,70"/>
+<area shape="rect" id="Node000004" href="$classDevice.html#a030b016bedb9a917634091199a946c94" title="Get if the Device is Verified." alt="" coords="303,104,448,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="186,77,296,99,295,104,185,83"/>
+</map>

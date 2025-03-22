@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 2108;
+var viewWidth = 2110;
 var viewHeight = 857;
 var sectionId = 'dynsection-0';
 </script>
@@ -641,10 +641,12 @@ var sectionId = 'dynsection-0';
 <g id="Node000017" class="node">
 <title>Node17</title>
 <g id="a_Node000017"><a xlink:href="classSHTC3Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the SHTC3.">
-<polygon fill="white" stroke="transparent" points="1852,-161.5 1746,-161.5 1746,-37.5 1852,-37.5 1852,-161.5"/>
-<text text-anchor="start" x="1766.5" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">SHTC3Sensor</text>
+<polygon fill="white" stroke="transparent" points="1854,-176.5 1746,-176.5 1746,-22.5 1854,-22.5 1854,-176.5"/>
+<text text-anchor="start" x="1767.5" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00">SHTC3Sensor</text>
+<text text-anchor="start" x="1752.5" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1763" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">shtc3</text>
 <text text-anchor="start" x="1752.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1763" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">shtc3</text>
+<text text-anchor="start" x="1763" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">relative_humidity</text>
 <text text-anchor="start" x="1750" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1763" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">SHTC3Sensor()</text>
 <text text-anchor="start" x="1750" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
@@ -657,10 +659,12 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="1763" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
 <text text-anchor="start" x="1750" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="1763" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
-<polygon fill="#666666" stroke="#666666" points="1746,-144.5 1746,-144.5 1852,-144.5 1852,-144.5 1746,-144.5"/>
+<text text-anchor="start" x="1750" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1763" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">getRelHum()</text>
+<polygon fill="#666666" stroke="#666666" points="1746,-159.5 1746,-159.5 1854,-159.5 1854,-159.5 1746,-159.5"/>
 <polygon fill="#666666" stroke="#666666" points="1746,-129.5 1746,-129.5 1761,-129.5 1761,-129.5 1746,-129.5"/>
-<polygon fill="#666666" stroke="#666666" points="1761,-129.5 1761,-129.5 1852,-129.5 1852,-129.5 1761,-129.5"/>
-<polygon fill="none" stroke="#666666" points="1746,-37.5 1746,-161.5 1852,-161.5 1852,-37.5 1746,-37.5"/>
+<polygon fill="#666666" stroke="#666666" points="1761,-129.5 1761,-129.5 1854,-129.5 1854,-129.5 1761,-129.5"/>
+<polygon fill="none" stroke="#666666" points="1746,-22.5 1746,-176.5 1854,-176.5 1854,-22.5 1746,-22.5"/>
 </a>
 </g>
 </g>
@@ -668,8 +672,8 @@ var sectionId = 'dynsection-0';
 <g id="edge16_Node000001_Node000017" class="edge">
 <title>Node1&#45;&gt;Node17</title>
 <g id="a_edge16_Node000001_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1128.86,-395.88C1264.51,-383.33 1549.72,-340.75 1737,-199 1750.13,-189.06 1761.19,-175.47 1770.15,-161.55"/>
-<polygon fill="none" stroke="#63b8ff" points="1128.21,-392.43 1118.57,-396.8 1128.84,-399.4 1128.21,-392.43"/>
+<path fill="none" stroke="#63b8ff" d="M1129.02,-395.72C1264.61,-382.92 1549.32,-339.98 1737,-199 1745.28,-192.78 1752.76,-185.13 1759.43,-176.87"/>
+<polygon fill="none" stroke="#63b8ff" points="1128.37,-392.26 1118.73,-396.66 1129,-399.24 1128.37,-392.26"/>
 </a>
 </g>
 </g>
@@ -677,26 +681,30 @@ var sectionId = 'dynsection-0';
 <g id="Node000018" class="node">
 <title>Node18</title>
 <g id="a_Node000018"><a xlink:href="classTMP117Sensor.html" target="_top" xlink:title="Implementation of a Sensor for the TMP117.">
-<polygon fill="white" stroke="transparent" points="1976,-161.5 1870,-161.5 1870,-37.5 1976,-37.5 1976,-161.5"/>
-<text text-anchor="start" x="1886.5" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor</text>
-<text text-anchor="start" x="1876.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1887" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">tmp</text>
-<text text-anchor="start" x="1874" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1887" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
-<text text-anchor="start" x="1874" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1887" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
-<text text-anchor="start" x="1874" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1887" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1874" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1887" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="1874" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1887" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
-<text text-anchor="start" x="1874" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1887" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
-<polygon fill="#666666" stroke="#666666" points="1870,-144.5 1870,-144.5 1976,-144.5 1976,-144.5 1870,-144.5"/>
-<polygon fill="#666666" stroke="#666666" points="1870,-129.5 1870,-129.5 1885,-129.5 1885,-129.5 1870,-129.5"/>
-<polygon fill="#666666" stroke="#666666" points="1885,-129.5 1885,-129.5 1976,-129.5 1976,-129.5 1885,-129.5"/>
-<polygon fill="none" stroke="#666666" points="1870,-37.5 1870,-161.5 1976,-161.5 1976,-37.5 1870,-37.5"/>
+<polygon fill="white" stroke="transparent" points="1978,-176.5 1872,-176.5 1872,-22.5 1978,-22.5 1978,-176.5"/>
+<text text-anchor="start" x="1888.5" y="-164.5" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor</text>
+<text text-anchor="start" x="1878.5" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1889" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">tmp</text>
+<text text-anchor="start" x="1878.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1889" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">tempC</text>
+<text text-anchor="start" x="1876" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1889" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
+<text text-anchor="start" x="1876" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1889" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">TMP117Sensor()</text>
+<text text-anchor="start" x="1876" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1889" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1876" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1889" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="1876" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1889" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="1876" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1889" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<text text-anchor="start" x="1876" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1889" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">getTempC()</text>
+<polygon fill="#666666" stroke="#666666" points="1872,-159.5 1872,-159.5 1978,-159.5 1978,-159.5 1872,-159.5"/>
+<polygon fill="#666666" stroke="#666666" points="1872,-129.5 1872,-129.5 1887,-129.5 1887,-129.5 1872,-129.5"/>
+<polygon fill="#666666" stroke="#666666" points="1887,-129.5 1887,-129.5 1978,-129.5 1978,-129.5 1887,-129.5"/>
+<polygon fill="none" stroke="#666666" points="1872,-22.5 1872,-176.5 1978,-176.5 1978,-22.5 1872,-22.5"/>
 </a>
 </g>
 </g>
@@ -704,8 +712,8 @@ var sectionId = 'dynsection-0';
 <g id="edge17_Node000001_Node000018" class="edge">
 <title>Node1&#45;&gt;Node18</title>
 <g id="a_edge17_Node000001_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1128.92,-400.27C1282.59,-395.12 1632.36,-364.61 1861,-199 1874.42,-189.28 1885.6,-175.68 1894.61,-161.69"/>
-<polygon fill="none" stroke="#63b8ff" points="1128.53,-396.78 1118.65,-400.58 1128.75,-403.77 1128.53,-396.78"/>
+<path fill="none" stroke="#63b8ff" d="M1128.82,-400.33C1282.71,-395.31 1633.63,-365.03 1863,-199 1871.51,-192.84 1879.12,-185.12 1885.85,-176.72"/>
+<polygon fill="none" stroke="#63b8ff" points="1128.42,-396.84 1118.53,-400.64 1128.63,-403.84 1128.42,-396.84"/>
 </a>
 </g>
 </g>
@@ -713,24 +721,24 @@ var sectionId = 'dynsection-0';
 <g id="Node000019" class="node">
 <title>Node19</title>
 <g id="a_Node000019"><a xlink:href="classTempSensor.html" target="_top" xlink:title="Implementation of a Sensor for the onboard temperature sensor.">
-<polygon fill="white" stroke="transparent" points="2100,-161.5 1994,-161.5 1994,-37.5 2100,-37.5 2100,-161.5"/>
-<text text-anchor="start" x="2017" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor</text>
-<text text-anchor="start" x="2045" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<text text-anchor="start" x="1998" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2011" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
-<text text-anchor="start" x="1998" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2011" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
-<text text-anchor="start" x="1998" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2011" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1998" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2011" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="1998" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2011" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
-<text text-anchor="start" x="1998" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="2011" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
-<polygon fill="#666666" stroke="#666666" points="1994,-144.5 1994,-144.5 2100,-144.5 2100,-144.5 1994,-144.5"/>
-<polygon fill="#666666" stroke="#666666" points="1994,-129.5 1994,-129.5 2100,-129.5 2100,-129.5 1994,-129.5"/>
-<polygon fill="none" stroke="#666666" points="1994,-37.5 1994,-161.5 2100,-161.5 2100,-37.5 1994,-37.5"/>
+<polygon fill="white" stroke="transparent" points="2102,-161.5 1996,-161.5 1996,-37.5 2102,-37.5 2102,-161.5"/>
+<text text-anchor="start" x="2019" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor</text>
+<text text-anchor="start" x="2047" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<text text-anchor="start" x="2000" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2013" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
+<text text-anchor="start" x="2000" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2013" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">TempSensor()</text>
+<text text-anchor="start" x="2000" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2013" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="2000" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2013" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="2000" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2013" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="2000" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="2013" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="1996,-144.5 1996,-144.5 2102,-144.5 2102,-144.5 1996,-144.5"/>
+<polygon fill="#666666" stroke="#666666" points="1996,-129.5 1996,-129.5 2102,-129.5 2102,-129.5 1996,-129.5"/>
+<polygon fill="none" stroke="#666666" points="1996,-37.5 1996,-161.5 2102,-161.5 2102,-37.5 1996,-37.5"/>
 </a>
 </g>
 </g>
@@ -738,8 +746,8 @@ var sectionId = 'dynsection-0';
 <g id="edge18_Node000001_Node000019" class="edge">
 <title>Node1&#45;&gt;Node19</title>
 <g id="a_edge18_Node000001_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1128.75,-392.12C1326.04,-368.09 1845.16,-296.97 1985,-199 1998.65,-189.43 2009.95,-175.81 2018.98,-161.72"/>
-<polygon fill="none" stroke="#63b8ff" points="1128.26,-388.65 1118.75,-393.33 1129.1,-395.6 1128.26,-388.65"/>
+<path fill="none" stroke="#63b8ff" d="M1128.56,-392.18C1326,-368.24 1846.77,-297.19 1987,-199 2000.66,-189.44 2011.95,-175.81 2020.98,-161.73"/>
+<polygon fill="none" stroke="#63b8ff" points="1128.07,-388.71 1118.56,-393.39 1128.9,-395.66 1128.07,-388.71"/>
 </a>
 </g>
 </g>

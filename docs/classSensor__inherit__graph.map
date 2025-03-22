@@ -28,12 +28,12 @@
 <area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1511,628,1618,664,1744,716,1810,748,1874,784,1935,825,1992,870,2015,894,2035,920,2030,924,2011,897,1989,874,1932,829,1871,789,1807,752,1742,720,1616,669,1509,633"/>
 <area shape="rect" id="Node000016" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="2168,922,2309,1087"/>
 <area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1511,615,1649,644,1732,666,1819,693,1907,727,1995,767,2080,815,2158,870,2182,893,2201,920,2197,924,2177,897,2154,874,2077,819,1993,772,1905,732,1817,699,1730,671,1648,649,1510,620"/>
-<area shape="rect" id="Node000017" href="$classSHTC3Sensor.html" title="Implementation of a Sensor for the SHTC3." alt="" coords="2333,922,2475,1087"/>
-<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1511,607,1679,628,1781,647,1891,674,2004,708,2116,751,2224,805,2275,836,2323,870,2348,893,2368,920,2363,924,2344,897,2320,874,2272,840,2221,809,2114,756,2002,713,1889,679,1780,653,1678,634,1510,612"/>
-<area shape="rect" id="Node000018" href="$classTMP117Sensor.html" title="Implementation of a Sensor for the TMP117." alt="" coords="2499,922,2640,1087"/>
-<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1511,601,1599,605,1707,615,1829,631,1962,655,2099,689,2235,735,2302,763,2367,795,2429,830,2488,870,2513,893,2534,920,2529,923,2509,897,2485,874,2426,835,2364,800,2300,768,2233,740,2097,694,1961,660,1829,636,1706,620,1599,611,1510,606"/>
-<area shape="rect" id="Node000019" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="2664,922,2805,1087"/>
-<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="1511,612,1774,647,1938,673,2110,704,2279,739,2433,779,2561,822,2613,846,2654,870,2679,893,2699,920,2695,923,2675,896,2650,874,2610,850,2559,827,2431,784,2278,744,2109,709,1938,678,1773,653,1510,617"/>
+<area shape="rect" id="Node000017" href="$classSHTC3Sensor.html" title="Implementation of a Sensor for the SHTC3." alt="" coords="2333,902,2477,1107"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1511,607,1679,629,1781,648,1891,674,2003,708,2116,752,2223,805,2323,870,2353,900,2349,903,2320,874,2221,810,2113,757,2002,713,1889,679,1780,653,1678,634,1510,612"/>
+<area shape="rect" id="Node000018" href="$classTMP117Sensor.html" title="Implementation of a Sensor for the TMP117." alt="" coords="2501,902,2643,1107"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1511,601,1599,605,1707,615,1830,630,1963,655,2100,689,2237,735,2304,763,2369,795,2432,830,2491,870,2522,900,2518,904,2488,874,2429,835,2367,800,2302,768,2235,740,2099,694,1962,660,1829,636,1707,620,1599,611,1510,606"/>
+<area shape="rect" id="Node000019" href="$classTempSensor.html" title="Implementation of a Sensor for the onboard temperature sensor." alt="" coords="2667,922,2808,1087"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="1510,612,1774,647,1939,673,2111,703,2280,739,2435,778,2564,822,2615,846,2656,870,2682,893,2702,920,2698,923,2678,896,2653,874,2613,850,2562,827,2433,784,2279,744,2110,709,1938,678,1773,652,1510,617"/>
 <area shape="rect" id="Node000002" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="1326,5,1490,331"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1411,344,1411,378,1405,378,1405,344"/>
 </map>

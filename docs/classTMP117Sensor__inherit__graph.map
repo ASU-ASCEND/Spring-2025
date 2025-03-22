@@ -1,5 +1,5 @@
 <map id="TMP117Sensor" name="TMP117Sensor">
-<area shape="rect" id="Node000001" title="Implementation of a Sensor for the TMP117." alt="" coords="23,872,165,1037"/>
+<area shape="rect" id="Node000001" title="Implementation of a Sensor for the TMP117." alt="" coords="23,872,165,1077"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="5,379,183,824"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,838,97,872,91,872,91,838"/>
 <area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="12,5,176,331"/>
