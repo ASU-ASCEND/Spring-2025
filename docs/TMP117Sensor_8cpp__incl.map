@@ -1,10 +1,20 @@
 <map id="TMP117Sensor.cpp" name="TMP117Sensor.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="143,5,288,32"/>
-<area shape="rect" id="node2" href="$TMP117Sensor_8h.html" title=" " alt="" coords="150,80,281,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,159,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="183,155,247,181"/>
-<area shape="rect" id="node5" href="$Sensor_8h.html" title=" " alt="" coords="272,155,351,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="256,379,340,405"/>
-<area shape="rect" id="node7" href="$Device_8h.html" title=" " alt="" coords="272,229,351,256"/>
-<area shape="rect" id="node8" href="$Logger_8h.html" title=" " alt="" coords="336,304,415,331"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="143,5,287,31"/>
+<area shape="rect" id="Node000002" href="$TMP117Sensor_8h.html" title=" " alt="" coords="151,79,280,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,31,218,65,213,65,213,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,159,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="195,106,117,148,115,143,193,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="183,152,247,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="218,104,218,138,213,138,213,104"/>
+<area shape="rect" id="Node000005" href="$Sensor_8h.html" title=" " alt="" coords="271,152,349,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="232,102,285,141,282,146,229,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="255,372,339,397"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="298,179,278,200,262,226,256,262,261,298,272,332,285,359,281,361,267,334,256,299,251,262,257,224,274,196,294,176"/>
+<area shape="rect" id="Node000007" href="$Device_8h.html" title=" " alt="" coords="271,225,349,251"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="313,178,313,212,307,212,307,178"/>
+<area shape="rect" id="Node000008" href="$Logger_8h.html" title=" " alt="" coords="334,299,411,324"/>
+<area shape="poly" id="edge10_Node000005_Node000008" title=" " alt="" coords="326,176,346,197,364,224,373,255,376,285,371,285,368,256,360,226,342,200,322,179"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="312,251,302,359,296,358,306,251"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="322,249,355,286,351,290,318,253"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="362,326,321,364,317,361,359,322"/>
 </map>

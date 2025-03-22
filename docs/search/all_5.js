@@ -1,15 +1,19 @@
 var searchData=
 [
-  ['file_5fdata_51',['file_data',['../classFlashStorage.html#aeba3016a30603e66520e2756ae897f82',1,'FlashStorage']]],
-  ['file_5fheader_52',['FILE_HEADER',['../classFlashStorage.html#abe2a6dcd06802fce141a5c54186b4912',1,'FlashStorage']]],
-  ['file_5fname_53',['file_name',['../classRadioStorage.html#a81c2bff39345dd63c62b166a59af678c',1,'RadioStorage::file_name()'],['../classSDStorage.html#a940beb3d7849473c7c96a4fe57479c1a',1,'SDStorage::file_name()']]],
-  ['file_5fnumber_54',['file_number',['../structFileHeader.html#a42bb674d2ca43dcde03aad98dcf8970c',1,'FileHeader']]],
-  ['fileheader_55',['FileHeader',['../structFileHeader.html',1,'']]],
-  ['flash_56',['flash',['../classFlashStorage.html#a5188d338465ba1c2056d775a7e0bcb8b',1,'FlashStorage']]],
-  ['flash_5fcs_5fpin_57',['FLASH_CS_PIN',['../PayloadConfig_8h.html#aef52395a58c8191f3d4a21a6d1d950c3',1,'PayloadConfig.h']]],
-  ['flash_5fspi1_58',['FLASH_SPI1',['../PayloadConfig_8h.html#ac8f8e926c1f037a7bc4fe32cedabd9b4',1,'PayloadConfig.h']]],
-  ['flash_5fstorage_59',['flash_storage',['../main_8cpp.html#a38404ff215fdd423068709aafb8b772b',1,'flash_storage():&#160;main1.cpp'],['../main1_8cpp.html#a38404ff215fdd423068709aafb8b772b',1,'flash_storage():&#160;main1.cpp']]],
-  ['flashstorage_60',['FlashStorage',['../classFlashStorage.html',1,'FlashStorage'],['../classFlashStorage.html#af66fb7c3d6072e26071e862b11b09a07',1,'FlashStorage::FlashStorage()']]],
-  ['flashstorage_2ecpp_61',['FlashStorage.cpp',['../FlashStorage_8cpp.html',1,'']]],
-  ['flashstorage_2eh_62',['FlashStorage.h',['../FlashStorage_8h.html',1,'']]]
+  ['earlier_0',['FSWv3 (and earlier)',['../index.html#autotoc_md5',1,'']]],
+  ['empty_5fcsv_1',['empty_csv',['../classSensor.html#aa56504850fe946907553b83e9cf94c4f',1,'Sensor']]],
+  ['end_5faddress_2',['end_address',['../structFileHeader.html#a25fd464f9a963c641692b7b2eccbc0f8',1,'FileHeader']]],
+  ['ens_3',['ens',['../classENS160Sensor.html#acd102707ec44e2480b3e2d9bf8fc4bd4',1,'ENS160Sensor']]],
+  ['ens160_5fsensor_4',['ens160_sensor',['../main_8cpp.html#a95e5b78e1629b1b550fd5a8c12037a1f',1,'main.cpp']]],
+  ['ens160sensor_5',['ens160sensor',['../classENS160Sensor.html#a34b8a0b14049bff232bb98a69f102409',1,'ENS160Sensor::ENS160Sensor()'],['../classENS160Sensor.html',1,'ENS160Sensor'],['../classENS160Sensor.html#a713ee03716a806ed6b676f7179ee9b22',1,'ENS160Sensor::ENS160Sensor()']]],
+  ['ens160sensor_2ecpp_6',['ENS160Sensor.cpp',['../ENS160Sensor_8cpp.html',1,'']]],
+  ['ens160sensor_2eh_7',['ENS160Sensor.h',['../ENS160Sensor_8h.html',1,'']]],
+  ['erase_8',['erase',['../classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727',1,'FlashStorage']]],
+  ['error_9',['Error',['../ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5',1,'ErrorDisplay.h']]],
+  ['error_5fdisplay_5fmutex_10',['error_display_mutex',['../classErrorDisplay.html#acb319f797d97bda8672644d80e188893',1,'ErrorDisplay']]],
+  ['error_5fpin_5f0_11',['ERROR_PIN_0',['../PayloadConfig_8h.html#a48a86006eb436b950e5277fdf8a3ae53',1,'PayloadConfig.h']]],
+  ['error_5fpin_5f1_12',['ERROR_PIN_1',['../PayloadConfig_8h.html#a5d6e22e2c3ab3c12e8cd61594815925a',1,'PayloadConfig.h']]],
+  ['error_5fpin_5f2_13',['ERROR_PIN_2',['../PayloadConfig_8h.html#af230e937fbf21c24dab2e1c834330a52',1,'PayloadConfig.h']]],
+  ['errordisplay_14',['errordisplay',['../classErrorDisplay.html#a05b483632a3680f52ea94beeffb5a9ca',1,'ErrorDisplay::ErrorDisplay()'],['../classErrorDisplay.html',1,'ErrorDisplay']]],
+  ['errordisplay_2eh_15',['ErrorDisplay.h',['../ErrorDisplay_8h.html',1,'']]]
 ];

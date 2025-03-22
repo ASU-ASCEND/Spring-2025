@@ -1,4 +1,7 @@
 <map id="Sensor::getDataPacket" name="Sensor::getDataPacket">
-<area shape="rect" id="node1" title="Append the data from a sensor to the packet if the minium period is satisfied." alt="" coords="223,5,392,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a35aec64ebd5600523486586642a4fe23" title="Reads sensor data into a packet byte array." alt="" coords="5,5,175,32"/>
+<area shape="rect" id="Node000001" title="Append the data from a sensor to the packet if the minium period is satisfied." alt="" coords="320,5,488,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a35aec64ebd5600523486586642a4fe23" title="Reads sensor data into a packet byte array." alt="" coords="104,5,272,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,21,272,21,272,15,306,15"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="5,5,56,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,21,56,21,56,15,90,15"/>
 </map>

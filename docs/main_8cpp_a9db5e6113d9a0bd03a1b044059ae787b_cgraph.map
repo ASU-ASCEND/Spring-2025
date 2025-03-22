@@ -1,6 +1,9 @@
 <map id="readSensorData" name="readSensorData">
-<area shape="rect" id="node1" title="Read data from each verified Sensor." alt="" coords="5,31,132,57"/>
-<area shape="rect" id="node2" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="180,31,332,57"/>
-<area shape="rect" id="node3" href="$classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format." alt="" coords="385,5,520,32"/>
-<area shape="rect" id="node4" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="380,56,525,83"/>
+<area shape="rect" id="Node000001" title="Read data from each verified Sensor." alt="" coords="5,31,132,56"/>
+<area shape="rect" id="Node000002" href="$classSensor.html#a2d5ecda6a046ddba40d0e37921226d2f" title="Uses readData and readEmpty to get the data&#45;filled or empty&#45;celled CSV line for the sensor." alt="" coords="180,31,332,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,41,166,41,166,46,132,46"/>
+<area shape="rect" id="Node000003" href="$classSensor.html#a56153cab066abc01692301d11965f9b8" title="Returns the collected data from the sensor in CSV format." alt="" coords="385,5,520,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="332,31,371,26,372,31,333,36"/>
+<area shape="rect" id="Node000004" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="380,55,525,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="333,50,366,54,366,59,332,55"/>
 </map>

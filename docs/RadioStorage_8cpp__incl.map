@@ -1,9 +1,19 @@
 <map id="RadioStorage.cpp" name="RadioStorage.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="17,5,153,32"/>
-<area shape="rect" id="node2" href="$RadioStorage_8h.html" title=" " alt="" coords="24,80,145,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="83,379,167,405"/>
-<area shape="rect" id="node4" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="21,155,149,181"/>
-<area shape="rect" id="node5" href="$Storage_8h.html" title=" " alt="" coords="173,155,257,181"/>
-<area shape="rect" id="node6" href="$Device_8h.html" title=" " alt="" coords="137,229,216,256"/>
-<area shape="rect" id="node7" href="$Logger_8h.html" title=" " alt="" coords="188,304,267,331"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="17,5,153,31"/>
+<area shape="rect" id="Node000002" href="$RadioStorage_8h.html" title=" " alt="" coords="24,79,145,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,31,87,65,82,65,82,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="81,372,165,397"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,106,33,126,21,138,11,153,8,164,11,177,30,231,56,282,108,360,103,362,52,284,25,233,6,178,3,164,6,151,16,135,30,122,59,102"/>
+<area shape="rect" id="Node000004" href="$PayloadConfig_8h.html" title="Central location for pinout and config defines." alt="" coords="21,152,148,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="87,104,87,138,82,138,82,104"/>
+<area shape="rect" id="Node000005" href="$Storage_8h.html" title=" " alt="" coords="172,152,256,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="107,102,182,143,179,147,104,106"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="184,180,152,198,138,211,127,227,115,260,112,296,114,330,119,358,114,359,109,330,107,296,110,259,122,224,134,208,149,194,182,175"/>
+<area shape="rect" id="Node000006" href="$Device_8h.html" title=" " alt="" coords="136,225,215,251"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="210,179,190,215,186,212,205,176"/>
+<area shape="rect" id="Node000007" href="$Logger_8h.html" title=" " alt="" coords="186,299,263,324"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="220,177,230,225,230,285,224,285,225,226,215,178"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="173,252,134,360,129,358,168,250"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="186,249,211,286,207,289,181,253"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="210,326,152,366,149,362,207,322"/>
 </map>

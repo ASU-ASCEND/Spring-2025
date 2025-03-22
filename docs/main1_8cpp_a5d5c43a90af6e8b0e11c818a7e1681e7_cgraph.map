@@ -1,0 +1,11 @@
+<map id="real_loop1" name="real_loop1">
+<area shape="rect" id="Node000001" title="Loop for core 1." alt="" coords="5,31,96,56"/>
+<area shape="rect" id="Node000002" href="$main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="165,5,251,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,33,151,24,152,30,97,39"/>
+<area shape="rect" id="Node000004" href="$main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43" title="Sends data to each storage device." alt="" coords="144,55,272,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="97,48,131,53,130,58,96,53"/>
+<area shape="rect" id="Node000003" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send string data to storage device." alt="" coords="341,5,454,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,15,327,15,327,21,252,21"/>
+<area shape="rect" id="Node000005" href="$classStorage.html#a6ee18f7841fdd0f70091764a59110db2" title="Send packet data to storage device." alt="" coords="320,55,475,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="272,65,306,65,306,70,272,70"/>
+</map>

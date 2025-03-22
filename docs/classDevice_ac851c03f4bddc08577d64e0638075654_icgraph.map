@@ -1,5 +1,0 @@
-<map id="Device::getDeviceName" name="Device::getDeviceName">
-<area shape="rect" id="node1" title=" " alt="" coords="375,5,555,32"/>
-<area shape="rect" id="node2" href="$classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6" title="Used for onboard decoding of packets." alt="" coords="165,5,327,32"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a9163644b089001958496a71b73b9091a" title="Decodes the packet to a CSV row." alt="" coords="5,5,117,32"/>
-</map>

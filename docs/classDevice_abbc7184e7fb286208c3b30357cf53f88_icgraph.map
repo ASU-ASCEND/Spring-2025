@@ -1,0 +1,9 @@
+<map id="Device::getDeviceName" name="Device::getDeviceName">
+<area shape="rect" id="Node000001" title=" " alt="" coords="472,5,652,31"/>
+<area shape="rect" id="Node000002" href="$classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6" title="Used for onboard decoding of packets." alt="" coords="263,5,424,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,21,424,21,424,15,458,15"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a9163644b089001958496a71b73b9091a" title="Decodes the packet to a CSV row." alt="" coords="104,5,215,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="249,21,215,21,215,15,249,15"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="5,5,56,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="90,21,56,21,56,15,90,15"/>
+</map>

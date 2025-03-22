@@ -1,4 +1,7 @@
 <map id="FlashStorage::readFileHeader" name="FlashStorage::readFileHeader">
-<area shape="rect" id="node1" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="240,5,453,32"/>
-<area shape="rect" id="node2" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="5,5,192,32"/>
+<area shape="rect" id="Node000001" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="440,5,655,31"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="205,5,392,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="426,21,392,21,392,15,426,15"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" title="Verifies the flash connection and prepares for data storage." alt="" coords="5,5,157,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="192,21,157,21,157,15,192,15"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="Sensor::decodeToCSV" name="Sensor::decodeToCSV">
-<area shape="rect" id="node1" title="Used for onboard decoding of packets." alt="" coords="5,5,167,32"/>
-<area shape="rect" id="node2" href="$classDevice.html#ac851c03f4bddc08577d64e0638075654" title=" " alt="" coords="215,5,395,32"/>
+<area shape="rect" id="Node000001" title="Used for onboard decoding of packets." alt="" coords="5,5,167,31"/>
+<area shape="rect" id="Node000002" href="$classDevice.html#abbc7184e7fb286208c3b30357cf53f88" title=" " alt="" coords="215,5,395,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,15,201,15,201,21,167,21"/>
 </map>

@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['on_5fboard_5fled_5fpin_127',['ON_BOARD_LED_PIN',['../PayloadConfig_8h.html#a753dd0c5a5b93507df5b13ec346881e7',1,'PayloadConfig.h']]],
-  ['ozone_128',['ozone',['../classOzoneSensor.html#a0deca2bc818df028a66301e7377e8271',1,'OzoneSensor']]],
-  ['ozone_5fi2c_5faddr_129',['OZONE_I2C_ADDR',['../PayloadConfig_8h.html#ac6d57f618dd957f5432fe6bec9cc1bf6',1,'PayloadConfig.h']]],
-  ['ozone_5fsensor_130',['ozone_sensor',['../main_8cpp.html#abf3b8adf08b8d2e5b117ead8e0b00596',1,'main.cpp']]],
-  ['ozonesensor_131',['OzoneSensor',['../classOzoneSensor.html',1,'OzoneSensor'],['../classOzoneSensor.html#af7de7eb03f88c415f701ab56e83646e8',1,'OzoneSensor::OzoneSensor()'],['../classOzoneSensor.html#a22370d5498a810ab6b2a8da042aec046',1,'OzoneSensor::OzoneSensor(unsigned long minium_period)']]],
-  ['ozonesensor_2ecpp_132',['OzoneSensor.cpp',['../OzoneSensor_8cpp.html',1,'']]],
-  ['ozonesensor_2eh_133',['OzoneSensor.h',['../OzoneSensor_8h.html',1,'']]]
+  ['mag_5foffsets_0',['mag_offsets',['../classLSM9DS1Sensor.html#a412305477e39c9a5e46ebc7dd9f2caaf',1,'LSM9DS1Sensor']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['main1_2ecpp_2',['main1.cpp',['../main1_8cpp.html',1,'']]],
+  ['max_5fattempts_3',['max_attempts',['../classDevice.html#ae27da3b2ca8c3821a65d5e1b2f13393d',1,'Device']]],
+  ['max_5fsize_4',['MAX_SIZE',['../classFlashStorage.html#a4c65f1e55370a07f427a18b7a2fe1536',1,'FlashStorage']]],
+  ['meeting_20schedule_5',['Meeting Schedule',['../index.html#autotoc_md2',1,'']]],
+  ['milestones_6',['Potential Milestones',['../index.html#autotoc_md3',1,'']]],
+  ['minimum_5fperiod_7',['minimum_period',['../classSensor.html#ab44ddb52915d3308953718c4ba3f63c4',1,'Sensor']]],
+  ['minute_5fin_5fmillis_8',['MINUTE_IN_MILLIS',['../Device_8h.html#ae3f14d5c786fb27f4cb9a5b934590f10',1,'Device.h']]],
+  ['mtk3339sensor_9',['mtk3339sensor',['../classMTK3339Sensor.html',1,'MTK3339Sensor'],['../classMTK3339Sensor.html#a97dcd5d72db33226c075b962adc94157',1,'MTK3339Sensor::MTK3339Sensor()'],['../classMTK3339Sensor.html#a756a728a65297f1b463b2c9ab445b388',1,'MTK3339Sensor::MTK3339Sensor(unsigned long minimum_period)']]],
+  ['mtk3339sensor_2ecpp_10',['MTK3339Sensor.cpp',['../MTK3339Sensor_8cpp.html',1,'']]],
+  ['mtk3339sensor_2eh_11',['MTK3339Sensor.h',['../MTK3339Sensor_8h.html',1,'']]],
+  ['myuvsensor_12',['myUVSensor',['../classAS7331Sensor.html#a3b065be9f006920d2f8102ce7c60ee27',1,'AS7331Sensor']]]
 ];

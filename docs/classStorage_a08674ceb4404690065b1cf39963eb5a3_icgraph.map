@@ -1,4 +1,9 @@
 <map id="Storage::store" name="Storage::store">
-<area shape="rect" id="node1" title="Send string data to storage device." alt="" coords="140,5,253,32"/>
-<area shape="rect" id="node2" href="$main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="5,5,92,32"/>
+<area shape="rect" id="Node000001" title="Send string data to storage device." alt="" coords="385,5,499,31"/>
+<area shape="rect" id="Node000002" href="$main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="251,5,337,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="372,21,337,21,337,15,372,15"/>
+<area shape="rect" id="Node000003" href="$main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7" title="Loop for core 1." alt="" coords="112,5,203,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,21,203,21,203,15,237,15"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a39ceba300a80e348e278539f57e0ca79" title=" " alt="" coords="5,5,64,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="98,21,64,21,64,15,98,15"/>
 </map>

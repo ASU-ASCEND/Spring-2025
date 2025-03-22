@@ -1,9 +1,18 @@
 <map id="TMP117Sensor.h" name="TMP117Sensor.h">
-<area shape="rect" id="node1" title=" " alt="" coords="150,5,281,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,159,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="183,80,247,107"/>
-<area shape="rect" id="node4" href="$Sensor_8h.html" title=" " alt="" coords="272,80,351,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="256,304,340,331"/>
-<area shape="rect" id="node6" href="$Device_8h.html" title=" " alt="" coords="272,155,351,181"/>
-<area shape="rect" id="node7" href="$Logger_8h.html" title=" " alt="" coords="336,229,415,256"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="151,5,280,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,159,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,33,117,74,115,70,193,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="183,79,247,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,31,218,65,213,65,213,31"/>
+<area shape="rect" id="Node000004" href="$Sensor_8h.html" title=" " alt="" coords="271,79,349,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,29,285,68,282,72,229,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="255,299,339,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="298,106,278,126,262,153,256,188,261,225,272,258,285,286,281,288,267,260,256,226,251,188,257,151,274,123,294,102"/>
+<area shape="rect" id="Node000006" href="$Device_8h.html" title=" " alt="" coords="271,152,349,177"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="313,104,313,138,307,138,307,104"/>
+<area shape="rect" id="Node000007" href="$Logger_8h.html" title=" " alt="" coords="334,225,411,251"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="326,102,346,123,364,151,373,182,376,211,371,212,368,183,360,153,342,127,322,106"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="312,178,302,285,296,285,306,178"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="322,176,355,213,351,217,318,179"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="362,253,321,291,317,287,359,249"/>
 </map>

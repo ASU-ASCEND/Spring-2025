@@ -1,0 +1,15 @@
+<map id="real_setup1" name="real_setup1">
+<area shape="rect" id="Node000001" title="Setup for core 1." alt="" coords="5,80,104,105"/>
+<area shape="rect" id="Node000002" href="$classErrorDisplay.html#a25018c85cd6b4055a5e796153b997d13" title="Sets the error code to the given value if the given error is of a higher priority then the current er..." alt="" coords="155,5,322,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,77,151,40,171,32,173,37,153,44,78,82"/>
+<area shape="rect" id="Node000003" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="157,55,321,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,83,143,78,143,83,104,89"/>
+<area shape="rect" id="Node000004" href="$classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565" title="Set recovery config (used keep default constructor)" alt="" coords="152,104,325,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="104,96,139,101,138,106,104,102"/>
+<area shape="rect" id="Node000007" href="$main1_8cpp.html#ae906e774900a66757cd10a72cdfc458d" title="Verifies the connection with each storage device, and defines the header_condensed field,..." alt="" coords="153,153,324,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="80,103,153,138,177,147,175,152,151,143,78,108"/>
+<area shape="rect" id="Node000005" href="$classDevice.html#a55cbddb95f3d79876d10e8d5bc85ba5d" title="Set max_attempts." alt="" coords="373,80,556,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="325,105,359,101,360,106,326,110"/>
+<area shape="rect" id="Node000006" href="$classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5" title="Set wait_factor." alt="" coords="383,129,546,155"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="326,124,370,129,369,134,325,129"/>
+</map>

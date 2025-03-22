@@ -1,0 +1,17 @@
+<map id="setup1" name="setup1">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,72,105"/>
+<area shape="rect" id="Node000002" href="$main1_8cpp.html#a335f1df8d0b267769cb9842c12616214" title="Setup for core 1." alt="" coords="120,80,219,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,90,106,90,106,95,72,95"/>
+<area shape="rect" id="Node000003" href="$classErrorDisplay.html#a25018c85cd6b4055a5e796153b997d13" title="Sets the error code to the given value if the given error is of a higher priority then the current er..." alt="" coords="270,5,437,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,77,266,40,286,32,288,37,268,44,193,82"/>
+<area shape="rect" id="Node000004" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="271,55,435,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="218,83,257,78,258,83,219,89"/>
+<area shape="rect" id="Node000005" href="$classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565" title="Set recovery config (used keep default constructor)" alt="" coords="267,104,440,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="219,96,253,101,253,106,218,102"/>
+<area shape="rect" id="Node000008" href="$main1_8cpp.html#ae906e774900a66757cd10a72cdfc458d" title="Verifies the connection with each storage device, and defines the header_condensed field,..." alt="" coords="268,153,439,179"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="195,103,268,138,292,147,290,152,266,143,192,108"/>
+<area shape="rect" id="Node000006" href="$classDevice.html#a55cbddb95f3d79876d10e8d5bc85ba5d" title="Set max_attempts." alt="" coords="488,80,671,105"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="440,105,474,101,475,106,441,110"/>
+<area shape="rect" id="Node000007" href="$classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5" title="Set wait_factor." alt="" coords="498,129,661,155"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="441,124,485,129,484,134,440,129"/>
+</map>

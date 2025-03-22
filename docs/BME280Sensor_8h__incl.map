@@ -1,8 +1,16 @@
 <map id="BME280Sensor.h" name="BME280Sensor.h">
-<area shape="rect" id="node1" title=" " alt="" coords="65,5,195,32"/>
-<area shape="rect" id="node2" href="$Sensor_8h.html" title=" " alt="" coords="23,80,101,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="126,80,273,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="7,304,91,331"/>
-<area shape="rect" id="node4" href="$Device_8h.html" title=" " alt="" coords="23,155,101,181"/>
-<area shape="rect" id="node5" href="$Logger_8h.html" title=" " alt="" coords="87,229,165,256"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="65,5,195,31"/>
+<area shape="rect" id="Node000002" href="$Sensor_8h.html" title=" " alt="" coords="23,79,101,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,33,85,70,81,67,117,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="125,79,271,104"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="143,29,179,67,175,70,139,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="7,299,91,324"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="50,106,30,126,14,153,8,188,13,225,24,258,37,286,33,288,19,260,8,226,3,188,9,151,26,123,46,102"/>
+<area shape="rect" id="Node000004" href="$Device_8h.html" title=" " alt="" coords="23,152,101,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="65,104,65,138,59,138,59,104"/>
+<area shape="rect" id="Node000005" href="$Logger_8h.html" title=" " alt="" coords="86,225,163,251"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="78,102,98,123,116,151,125,182,128,211,123,212,120,183,112,153,94,127,74,106"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="64,178,54,285,48,285,58,178"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="74,176,107,213,103,217,70,179"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="114,253,73,291,69,287,111,249"/>
 </map>

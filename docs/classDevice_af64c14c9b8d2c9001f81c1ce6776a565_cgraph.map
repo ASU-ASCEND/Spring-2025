@@ -1,5 +1,7 @@
 <map id="Device::recoveryConfig" name="Device::recoveryConfig">
-<area shape="rect" id="node1" title="Set recovery config (used keep default constructor)" alt="" coords="5,31,180,57"/>
-<area shape="rect" id="node2" href="$classDevice.html#a55cbddb95f3d79876d10e8d5bc85ba5d" title="Set max_attempts." alt="" coords="228,5,411,32"/>
-<area shape="rect" id="node3" href="$classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5" title="Set wait_factor." alt="" coords="237,56,402,83"/>
+<area shape="rect" id="Node000001" title="Set recovery config (used keep default constructor)" alt="" coords="5,31,179,56"/>
+<area shape="rect" id="Node000002" href="$classDevice.html#a55cbddb95f3d79876d10e8d5bc85ba5d" title="Set max_attempts." alt="" coords="227,5,409,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,31,213,27,213,32,179,36"/>
+<area shape="rect" id="Node000003" href="$classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5" title="Set wait_factor." alt="" coords="237,55,399,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,50,223,55,222,60,179,55"/>
 </map>
