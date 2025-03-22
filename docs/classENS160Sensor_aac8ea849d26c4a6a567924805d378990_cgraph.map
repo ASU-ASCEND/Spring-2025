@@ -1,5 +1,0 @@
-<map id="ENS160Sensor::readData" name="ENS160Sensor::readData">
-<area shape="rect" id="Node000001" title="Reads Air Quality Index, TVOC (ppb), and ECOS (ppm)" alt="" coords="5,5,189,31"/>
-<area shape="rect" id="Node000002" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="237,5,383,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,15,224,15,224,21,190,21"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="LSM9DS1Sensor::setupSensor" name="LSM9DS1Sensor::setupSensor">
-<area shape="rect" id="Node000001" title="Helper function to set up sensor ranges and data rates." alt="" coords="225,5,440,31"/>
-<area shape="rect" id="Node000002" href="$classLSM9DS1Sensor.html#a245f95f4d1174bf884bb47781f21f055" title="Verifies that the LSM is connected and working." alt="" coords="5,5,177,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,21,178,21,178,15,212,15"/>
-</map>
