@@ -50,7 +50,7 @@ jobs:
           git status 
       - name: Merge main into docs with theirs strategy 
         run: |
-          git merge -X theirs main
+          git merge -X theirs origin/main
       - name: Install Doxygen and Graphviz
         run: |
           sudo apt-get install doxygen 
