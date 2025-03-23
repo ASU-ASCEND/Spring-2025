@@ -36,6 +36,7 @@ Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
 
 // use definition in main.cpp
+extern String cmd;
 extern volatile bool system_paused;
 extern queue_t qt;
 
@@ -81,29 +82,43 @@ void real_loop1() {
   it2++;
   digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
 
-#if STORING_PACKETS
-  uint8_t received_data[QT_ENTRY_SIZE];
-#else
-  char received_data[QT_ENTRY_SIZE];
-#endif
-  queue_remove_blocking(&qt, received_data);
+  #if STORING_PACKETS
+    uint8_t received_data[QT_ENTRY_SIZE];
+  #else
+    char received_data[QT_ENTRY_SIZE];
+  #endif
+    queue_remove_blocking(&qt, received_data);
 
-#if STORING_PACKETS
-  unsigned long timestamp;
-  memcpy(&timestamp,
-         received_data + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint16_t),
-         sizeof(timestamp));
-  log_core("Packet Received with Millis = " + String(timestamp));
-#else
-  log_core("Received: " + String(received_data));
-#endif
+  #if STORING_PACKETS
+    unsigned long timestamp;
+    memcpy(&timestamp,
+          received_data + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint16_t),
+          sizeof(timestamp));
+    log_core("Packet Received with Millis = " + String(timestamp));
+  #else
+    log_core("Received: " + String(received_data));
+  #endif
 
-// store csv row
-#if STORING_PACKETS
-  storeDataPacket(received_data);
-#else
-  storeData(String(received_data));
-#endif
+  // store csv row
+  #if STORING_PACKETS
+    storeDataPacket(received_data);
+  #else
+    storeData(String(received_data));
+  #endif
+
+  // Determine if a command has been received
+  if (system_paused) {
+    while (queue_get_level(&qt) != 0) delay(10); // Flush the queued data
+
+    // Execute the command
+    if      (cmd.equalsIgnoreCase("status")) flash_storage.getStatus();
+    else if (cmd.equalsIgnoreCase("download")); // TODO: Implement DOWNLOAD
+    else if (cmd.equalsIgnoreCase("delete"));   // TODO: Implement DELETE
+    else log_core("ERROR: Invalid command - " + cmd);
+
+    // Resume data collection & storage
+    system_paused = false;
+  }
 }
 
 /**

@@ -29,6 +29,7 @@
 
 // helper function definitions
 int verifySensors();
+void handleCommand(String& cmd);
 int verifySensorRecovery();
 String readSensorData();
 uint16_t readSensorDataPacket(uint8_t* packet);
@@ -74,6 +75,7 @@ extern FlashStorage flash_storage;
 // loop counter
 unsigned int it = 0;
 
+String cmd;
 volatile uint32_t time_paused;
 volatile bool system_paused = false;
 const uint32_t MAX_PAUSE_DURATION = 60'000; 
@@ -191,49 +193,44 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
 #endif
   }*/
 
-  // Check serial for input
-  if (Serial.available() > 0) {
-    String cmd = Serial.readStringUntil('\n').trim();
-
-    switch(cmd) {
-      case "status":
-        // TODO: Implement status command
-        break;
-      
-      case "download":
-        // TODO: Implement download command
-        break;
-      
-      case "delete":
-        // TODO: Implement delete command
-        break;
-    }
-
-  }
+  // Check for serial input commands
+  if (Serial.available() > 0) handleCommand(cmd);
 
   // start print line with iteration number
   log_core("it: " + String(it) + "\t");
 
-  // build csv row
-  uint8_t packet[QT_ENTRY_SIZE];
-  // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
-  // debugging
-  uint16_t packet_len = readSensorDataPacket(packet);
-  String csv_row = decodePacket(packet);
+  // Check if system is paused & skip data collection if so
+  if (system_paused) {
+    uint32_t remaining_time = millis() - time_paused;
 
-  // print csv row
-  // log_data(csv_row);
-  log_data_raw(packet, packet_len);
+    // Force resume if timeout
+    if (remaining_time > MAX_PAUSE_DURATION) {
+      system_paused = false;
+      log_core("ERROR: System Timeout");
+    }
+  }
+  else { // Read sensors
+    // build csv row
+    uint8_t packet[QT_ENTRY_SIZE];
+    // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
+    // debugging
+    uint16_t packet_len = readSensorDataPacket(packet);
+    String csv_row = decodePacket(packet);
 
-// send data to core1
-#if STORING_PACKETS
-  queue_add_blocking(&qt, packet);
-#else
-  queue_add_blocking(&qt, csv_row.c_str());
-#endif
+    // print csv row
+    // log_data(csv_row);
+    log_data_raw(packet, packet_len);
 
-  // delay(1000);                                 // remove before flight
-  digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
+    // send data to core1
+    #if STORING_PACKETS
+      queue_add_blocking(&qt, packet);
+    #else
+      queue_add_blocking(&qt, csv_row.c_str());
+    #endif
+
+    // delay(1000);                                 // remove before flight
+    digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
+  }
 }
 
 /**
@@ -260,6 +257,30 @@ int verifySensorRecovery() {
   }
   log_core("");
   return count;
+}
+
+/**
+ * @brief Handle commands read from serial input
+ * 
+ * Pause data collection and storage for a specified duration to execute
+ * a command, including STATUS, DOWNLOAD, DELETE, etc.
+ * 
+ * @param cmd 
+ */
+void handleCommand(String& cmd) {
+  cmd = Serial.readStringUntil('\n');
+    
+  // Process the command
+  if (cmd.equalsIgnoreCase("status") ||
+      cmd.equalsIgnoreCase("download") ||
+      cmd.equalsIgnoreCase("delete")) {
+    system_paused = true;
+    time_paused = millis();
+    log_core("COMMAND: System Paused - " + cmd);
+  }
+  else {
+    log_core("ERROR: Invalid command - " + cmd);
+  }
 }
 
 #if 0  // part of the old verification system 
