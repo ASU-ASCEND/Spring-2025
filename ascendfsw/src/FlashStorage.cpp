@@ -293,7 +293,7 @@ void FlashStorage::erase() {
  * - Visual feedback
  * - Transfer statistics
  */
-void FlashStorage::download(int file_number) {
+void FlashStorage::downloadFile(int file_number) {
   log_flash("==== DOWNLOAD File " + String(file_number) + " ====");
 
   // Check if file number is valid & proceed with download
