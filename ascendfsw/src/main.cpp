@@ -10,6 +10,9 @@
 #include "Logger.h"
 #include "PayloadConfig.h"
 
+// Shared stuctures indicating command-based system status
+#include "CommandMessage.h"
+
 // parent classes
 #include "Sensor.h"
 
@@ -29,7 +32,7 @@
 
 // helper function definitions
 int verifySensors();
-void handleCommand(String& cmd);
+void handleCommand();
 int verifySensorRecovery();
 String readSensorData();
 uint16_t readSensorDataPacket(uint8_t* packet);
@@ -76,9 +79,8 @@ extern FlashStorage flash_storage;
 unsigned int it = 0;
 
 // Global variables shared with core 1
+volatile CommandMessage cmd_data = { CMD_NONE, 0, false };
 queue_t qt;
-String cmd;
-volatile bool system_paused = false;
 
 uint32_t time_paused;
 const uint32_t MAX_PAUSE_DURATION = 60'000; 
@@ -193,15 +195,15 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
   }*/
 
   // Check for serial input commands
-  if (Serial.available() > 0) handleCommand(cmd);
+  if (Serial.available() > 0) handleCommand();
 
   // Check if system is paused & skip data collection if so
-  if (system_paused) {
+  if (cmd_data.system_paused) {
     uint32_t remaining_time = millis() - time_paused;
 
     // Force resume if timeout
     if (remaining_time > MAX_PAUSE_DURATION) {
-      system_paused = false;
+      cmd_data.system_paused = false;
       log_core("ERROR: System Timeout");
     }
   }
@@ -271,14 +273,15 @@ int verifySensorRecovery() {
  * 
  * @param cmd 
  */
-void handleCommand(String& cmd) {
+void handleCommand() {
   // Fetch & format command
-  cmd = Serial.readStringUntil('\n');
+  String cmd = Serial.readStringUntil('\n');
   cmd.trim();
   cmd.toUpperCase();
     
   // Process the command
   if (cmd.equals("STATUS")) {
+    cmd_data.type = CMD_STATUS;
     log_core("Command: " + cmd + " - System Paused");
   }
   else if (cmd.startsWith("DOWNLOAD F")) {
@@ -288,8 +291,9 @@ void handleCommand(String& cmd) {
 
     log_core("Command [DOWNLOAD]: Download File " + extracted_num + " - System Paused");
 
-    // Store the file number
-    int file_number = extracted_num.toInt();
+    // Store the command info
+    cmd_data.type = CMD_DOWNLOAD;
+    cmd_data.file_number = extracted_num.toInt();
   }
   else if (cmd.startsWith("DELETE F")) {
     // Extract the file number from command
@@ -298,15 +302,16 @@ void handleCommand(String& cmd) {
 
     log_core("Command [DELETE]: Delete File " + extracted_num + " - System Paused");
     
-    // Store the file number
-    int file_number = extracted_num.toInt();
+    // Store the command info
+    cmd_data.type = CMD_DELETE;
+    cmd_data.file_number = extracted_num.toInt();
   }
   else {
     log_core("ERROR: Invalid command - " + cmd);
     return;
   }
 
-  system_paused = true;
+  cmd_data.system_paused = true;
   time_paused = millis();
 }
 
