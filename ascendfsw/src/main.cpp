@@ -75,6 +75,10 @@ extern FlashStorage flash_storage;
 // loop counter
 unsigned int it = 0;
 
+volatile uint32_t time_paused;
+volatile bool system_paused = false;
+const uint32_t MAX_PAUSE_DURATION = 60'000; 
+
 queue_t qt;
 // char qt_entry[QT_ENTRY_SIZE];
 
@@ -187,6 +191,26 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
     rp2040.resumeOtherCore();
 #endif
   }*/
+
+  // Check serial for input
+  if (Serial.available() > 0) {
+    String cmd = Serial.readStringUntil('\n').trim();
+
+    switch(cmd) {
+      case "status":
+        // TODO: Implement status command
+        break;
+      
+      case "download":
+        // TODO: Implement download command
+        break;
+      
+      case "delete":
+        // TODO: Implement delete command
+        break;
+    }
+
+  }
 
   // start print line with iteration number
   log_core("it: " + String(it) + "\t");

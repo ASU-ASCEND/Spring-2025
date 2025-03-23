@@ -36,6 +36,7 @@ Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
 
 // use definition in main.cpp
+extern volatile bool system_paused;
 extern queue_t qt;
 
 // separate 8k stacks
