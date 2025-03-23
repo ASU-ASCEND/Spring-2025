@@ -13,7 +13,9 @@ SHTC3Sensor::SHTC3Sensor() : SHTC3Sensor(0) {}
  * @param minium_period Minimum time to wait between readings in ms
  */
 SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)
-    : Sensor("SHTC3", "Temp(C), Humidity(%)", 2, minimum_period) {}
+    : Sensor("SHTC3", "Temp(C), Humidity(%)", 2, minimum_period) {
+  this->relative_humidity = 0.0;
+}
 
 /**
  * @brief Returns if sensor is connected and working.
@@ -23,7 +25,7 @@ SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)
  */
 bool SHTC3Sensor::verify() {
   shtc3 = Adafruit_SHTC3();
-  return shtc3.begin();
+  return shtc3.begin(&STRATOSENSE_I2C);
 }
 
 /**
@@ -33,7 +35,9 @@ bool SHTC3Sensor::verify() {
  */
 String SHTC3Sensor::readData() {
   sensors_event_t temp, humidity;
-  shtc3.getEvent(&temp, &humidity);
+  shtc3.getEvent(&humidity, &temp);
+
+  this->relative_humidity = humidity.relative_humidity;
 
   return String(temp.temperature) + "," + String(humidity.relative_humidity) +
          ",";
@@ -47,6 +51,8 @@ String SHTC3Sensor::readData() {
 void SHTC3Sensor::readDataPacket(uint8_t*& packet) {
   sensors_event_t temp, humidity;
   shtc3.getEvent(&humidity, &temp);
+
+  this->relative_humidity = humidity.relative_humidity;
 
   memcpy(packet, &(temp.temperature), sizeof(temp.temperature));
   packet += sizeof(temp.temperature);
@@ -74,3 +80,10 @@ String SHTC3Sensor::decodeToCSV(uint8_t*& packet) {
 
   return String(temperature) + "," + String(humidity) + ",";
 }
+
+/**
+ * @brief Getter for relative humidity
+ *
+ * @return float Relative humidity as %
+ */
+float SHTC3Sensor::getRelHum() { return this->relative_humidity; }

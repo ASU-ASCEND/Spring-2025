@@ -1,9 +1,0 @@
-<map id="ErrorDisplay" name="ErrorDisplay">
-<area shape="rect" id="Node000001" title="Singleton class for the 3 GPIO LED Error Display." alt="" coords="155,133,273,259"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,73,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,70,56,90,67,108,101,139,141,163,139,168,98,143,63,111,51,92,43,72"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="199,5,229,71"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,71,217,117,211,117,211,71"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="291,5,337,71"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="305,72,287,111,280,122,275,119,282,108,301,70"/>
-</map>

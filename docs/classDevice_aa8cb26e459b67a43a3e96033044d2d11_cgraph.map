@@ -1,5 +1,0 @@
-<map id="Device::attemptConnection" name="Device::attemptConnection">
-<area shape="rect" id="Node000001" title="If the sensor is verified, return true, if not and it has been long enough since the last attempt (de..." alt="" coords="5,5,205,31"/>
-<area shape="rect" id="Node000002" href="$classDevice.html#a184e51f1823af3e3b828e09ab571cbc5" title="Verifies if the Device is connected and working." alt="" coords="253,5,365,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,15,239,15,239,21,206,21"/>
-</map>
