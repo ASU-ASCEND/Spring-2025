@@ -75,12 +75,14 @@ extern FlashStorage flash_storage;
 // loop counter
 unsigned int it = 0;
 
+// Global variables shared with core 1
+queue_t qt;
 String cmd;
-volatile uint32_t time_paused;
 volatile bool system_paused = false;
+
+uint32_t time_paused;
 const uint32_t MAX_PAUSE_DURATION = 60'000; 
 
-queue_t qt;
 // char qt_entry[QT_ENTRY_SIZE];
 
 /**
@@ -161,13 +163,10 @@ bool was_dumping = false;
  *
  */
 void loop() {
-  it++;
+  delay(1000);
 
   // toggle error display
   ErrorDisplay::instance().toggle();
-
-  // toggle heartbeats
-  digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
   // switch to data recovery mode is commented out for testing without switch
   // installed
@@ -196,9 +195,6 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
   // Check for serial input commands
   if (Serial.available() > 0) handleCommand(cmd);
 
-  // start print line with iteration number
-  log_core("it: " + String(it) + "\t");
-
   // Check if system is paused & skip data collection if so
   if (system_paused) {
     uint32_t remaining_time = millis() - time_paused;
@@ -209,7 +205,15 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
       log_core("ERROR: System Timeout");
     }
   }
-  else { // Read sensors
+  // Read sensor data
+  else {
+    // start print line with iteration number
+    log_core("it: " + String(it) + "\t");
+    it++;
+
+    // toggle heartbeats
+    digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
+
     // build csv row
     uint8_t packet[QT_ENTRY_SIZE];
     // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
@@ -268,19 +272,42 @@ int verifySensorRecovery() {
  * @param cmd 
  */
 void handleCommand(String& cmd) {
+  // Fetch & format command
   cmd = Serial.readStringUntil('\n');
+  cmd.trim();
+  cmd.toUpperCase();
     
   // Process the command
-  if (cmd.equalsIgnoreCase("status") ||
-      cmd.equalsIgnoreCase("download") ||
-      cmd.equalsIgnoreCase("delete")) {
-    system_paused = true;
-    time_paused = millis();
-    log_core("COMMAND: System Paused - " + cmd);
+  if (cmd.equals("STATUS")) {
+    log_core("Command: " + cmd + " - System Paused");
+  }
+  else if (cmd.startsWith("DOWNLOAD F")) {
+    // Extract the file number from command
+    String extracted_num = cmd.substring(String("DOWNLOAD F").length());
+    extracted_num.trim();
+
+    log_core("Command [DOWNLOAD]: Download File " + extracted_num + " - System Paused");
+
+    // Store the file number
+    int file_number = extracted_num.toInt();
+  }
+  else if (cmd.startsWith("DELETE F")) {
+    // Extract the file number from command
+    String extracted_num = cmd.substring(String("DOWNLOAD F").length());
+    extracted_num.trim();
+
+    log_core("Command [DELETE]: Delete File " + extracted_num + " - System Paused");
+    
+    // Store the file number
+    int file_number = extracted_num.toInt();
   }
   else {
     log_core("ERROR: Invalid command - " + cmd);
+    return;
   }
+
+  system_paused = true;
+  time_paused = millis();
 }
 
 #if 0  // part of the old verification system 
