@@ -165,8 +165,6 @@ bool was_dumping = false;
  *
  */
 void loop() {
-  delay(1000);
-
   // toggle error display
   ErrorDisplay::instance().toggle();
 
