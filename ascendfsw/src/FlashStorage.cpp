@@ -454,7 +454,6 @@ void FlashStorage::removeFile(uint32_t file_number) {
   uint32_t endSector = ((target.end_address - 1) / SECTOR_SIZE) * SECTOR_SIZE;
   
   for (uint32_t sector = startSector; sector <= endSector; sector += SECTOR_SIZE) {
-    // Using the flash library's sector erase function (assumed available)
     // Erase sector by writing 0xFF to each byte in the sector
     for (uint32_t addr = sector; addr < sector + this->SECTOR_SIZE; addr++) {
       this->flash.writeByte(addr, 0xFF);
