@@ -9,6 +9,13 @@ from os import path, mkdir
 
 data_write_lock = threading.Lock()
 server_current_data = {}
+
+class AllData(Resource):
+
+  def get(self):
+    
+    return jsonify(server_current_data)
+
 class DataTransfer(Resource):
 
   def get(self):
@@ -57,6 +64,7 @@ class ServerProcess(multiprocessing.Process):
     api = Api(self.app)
 
     api.add_resource(DataTransfer, "/dataserver")
+    api.add_resource(AllData, "/alldata")
 
     handler = RotatingFileHandler(self.log_file, maxBytes=1000000, backupCount=1)
     handler.setLevel(logging.INFO)
