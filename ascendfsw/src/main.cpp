@@ -118,7 +118,6 @@ void setup() {
     }
   }
 
-
 #if 0  // header stuff
   // build csv header
   String header = "Header,Millis,";
