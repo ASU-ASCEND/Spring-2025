@@ -1,7 +1,7 @@
 import threading
 from queue import Queue, Empty 
 from time import sleep
-from os import path 
+from os import path, mkdir 
 from datetime import datetime
 
 class SerialSaver(threading.Thread):
@@ -10,6 +10,8 @@ class SerialSaver(threading.Thread):
     super().__init__()
     self.end_event = end_event
     self.serial_stream = serial_stream
+    if path.isdir("session_data") == False:
+      mkdir("session_data")
     self.session_filename = path.join("session_data", f"ASCEND_DATA_{datetime.now().strftime('%H_%M_%S')}.bin")
 
   def run(self):
