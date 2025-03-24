@@ -16,6 +16,7 @@ class PacketDecoder(threading.Thread):
             end_event: threading.Event,
             sorter_to_decoder: Queue, 
             decoder_packets: Queue,
+            packet_saver: Queue, 
             bitmask_to_struct: dict,
             bitmask_to_name: dict,
             num_sensors: int
@@ -24,6 +25,7 @@ class PacketDecoder(threading.Thread):
         self.end_event = end_event
         self.sorter_to_decoder = sorter_to_decoder
         self.decoder_packets = decoder_packets
+        self.packet_saver = packet_saver
         self.bitmask_to_struct = bitmask_to_struct
         self.bitmask_to_name = bitmask_to_name 
         self.num_sensors = num_sensors
@@ -65,13 +67,17 @@ class PacketDecoder(threading.Thread):
                 parsed_packet = self.packet_struct.parse(packet_bytes)
             except ConstError as e: # Catch sync byte mistmatch
                 print(f"[ERROR] Sync byte mismatch: {e}")
+                self.decoder_packets.put("ERROR") # convey this failure to the gui 
                 continue
             except ChecksumError as e: # Catch checksum validation errors
                 print(f"[ERROR] Checksum validation failed: {e}")
+                self.decoder_packets.put("ERROR") # convey this failure to the gui 
                 continue
             except ConstructError as e: # Catch-all for other parse errors
                 print(f"[ERROR] Packet parsing failed: {e}")
+                self.decoder_packets.put("ERROR") # convey this failure to the gui 
                 continue
+            
 
             # Extract sensor ID & sensor data
             bitmask = parsed_packet.bitmask
@@ -114,6 +120,10 @@ class PacketDecoder(threading.Thread):
                 self.decoder_packets.put({
                     "timestamp": timestamp,
                     "sensor_data": parsed
+                })
+                self.packet_saver.put({
+                    "timestamp": timestamp, 
+                    "sensor_data": parsed 
                 })
             else: 
                 self.decoder_packets.put("ERROR")
