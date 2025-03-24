@@ -92,9 +92,21 @@ class GUI():
 
 
     def update():
-      # throw away for now, eventually an intermediary will do this 
-      if self.sorter_misc.empty() == False: self.sorter_misc.get()
+      # throw away for now, eventually an intermediary will do likely this 
+      if self.sorter_misc.empty() == False:
+        with self.sorter_misc.mutex:
+          self.sorter_misc.queue.clear()
+    
       self.current_frame.update_frame()
+
+      # if we are in the data frame consume the other queues 
+      if isinstance(self.current_frame, DataFrame.DataFrame):
+        with self.sorter_core0.mutex:
+          self.sorter_core0.queue.clear()
+        with self.sorter_core1.mutex:
+          self.sorter_core1.queue.clear()
+        with self.decoder_packets.mutex:
+          self.decoder_packets.queue.clear()
 
       self.window.after(1, update)
 

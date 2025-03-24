@@ -67,13 +67,17 @@ class PacketDecoder(threading.Thread):
                 parsed_packet = self.packet_struct.parse(packet_bytes)
             except ConstError as e: # Catch sync byte mistmatch
                 print(f"[ERROR] Sync byte mismatch: {e}")
+                self.decoder_packets.put("ERROR") # convey this failure to the gui 
                 continue
             except ChecksumError as e: # Catch checksum validation errors
                 print(f"[ERROR] Checksum validation failed: {e}")
+                self.decoder_packets.put("ERROR") # convey this failure to the gui 
                 continue
             except ConstructError as e: # Catch-all for other parse errors
                 print(f"[ERROR] Packet parsing failed: {e}")
+                self.decoder_packets.put("ERROR") # convey this failure to the gui 
                 continue
+            
 
             # Extract sensor ID & sensor data
             bitmask = parsed_packet.bitmask
