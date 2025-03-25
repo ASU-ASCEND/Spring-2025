@@ -30,16 +30,11 @@ RadioStorage radio_storage;
 FlashStorage flash_storage;
 
 // storage array
-#if FLASH_SPI1 == 0
-Storage* storages[] = {&sd_storage, &radio_storage};
-#else
 Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
-#endif
 
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
 
 // Global variables shared with core 0
-extern volatile CommandMessage cmd_data;
 extern queue_t qt;
 
 // separate 8k stacks
@@ -114,8 +109,9 @@ void real_loop1() {
   }
 
   // Determine if a command has been received
-  if (cmd_data.system_paused) {
-    while (queue_get_level(&qt) != 0) delay(10); // Flush the queued data
+  CommandMessage cmd_data = getCmdData(); 
+  if (cmd_data.system_paused && queue_get_level(&qt) == 0) {
+    // while () delay(10); // Flush the queued data
 
     // Execute the command
     if      (cmd_data.type == 1) flash_storage.getStatus();
@@ -127,7 +123,8 @@ void real_loop1() {
     cmd_data.system_paused = false;
     cmd_data.file_number = 0;
     cmd_data.type = CMD_NONE;
-  }
+    setCmdData(cmd_data); 
+  } 
 
   // Prevent a busy loop
   delay(10);

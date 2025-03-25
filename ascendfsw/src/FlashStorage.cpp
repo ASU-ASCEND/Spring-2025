@@ -294,7 +294,7 @@ void FlashStorage::erase() {
  * - Transfer statistics
  */
 void FlashStorage::downloadFile(int file_number) {
-  log_flash("==== DOWNLOAD File " + String(file_number) + " ====");
+  log_core("==== DOWNLOAD File " + String(file_number) + " ====");
 
   // Check if file number is valid & proceed with download
   if ((file_number > 0) && (file_number <= this->file_data.size())) {
@@ -307,8 +307,8 @@ void FlashStorage::downloadFile(int file_number) {
     uint32_t file_size = end_addr - start_addr;
 
     // Send ACK with file info
-    log_flash("Downloading file " + String(file_number));
-    log_flash("File size: " + String(file_size) + " bytes");
+    log_core("Downloading file " + String(file_number));
+    log_core("File size: " + String(file_size) + " bytes");
 
     // Track the download time
     unsigned long start_time = millis();
@@ -316,13 +316,14 @@ void FlashStorage::downloadFile(int file_number) {
     // Download Occurs Here
     uint32_t current_pos = start_addr;
     uint32_t bytes_read = 0;
+    log_flash("START_DATA"); 
     while (current_pos < end_addr) {
       // Read data from flash
       uint8_t data = this->flash.readByte(current_pos);
 
       // Send data to Serial
       if (Serial.write(data) != 1) {
-        log_flash("ERROR: Unsuccessful serial write");
+        log_core("ERROR: Unsuccessful serial write");
         return;
       }
 
@@ -332,19 +333,19 @@ void FlashStorage::downloadFile(int file_number) {
 
       // Show progress every 1000 bytes
       if (bytes_read % 1000 == 0) {
-        log_flash("Progress: " + String(bytes_read) + "/" + String(file_size));
+        log_core("Progress: " + String(bytes_read) + "/" + String(file_size));
       }
 
       // Visual feedback
-      digitalWrite(HEARTBEAT_PIN_0, (current_pos & 0x60) != 0);
       digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
     }
+    log_flash("STOP_DATA"); 
 
     unsigned long end_time = millis();
     unsigned long total_time = (end_time - start_time) / 1000;
-    log_flash("Download Complete | Time: " + String(total_time) + "s");
+    log_core("Download Complete | Time: " + String(total_time) + "s");
   } else
-    log_flash("ERROR: Invalid File Number");
+    log_core("ERROR: Invalid File Number");
 }
 
 /**
@@ -353,18 +354,20 @@ void FlashStorage::downloadFile(int file_number) {
  * Prints the current address, remaining storage, and stored files.
  */
 void FlashStorage::getStatus() {
-  log_flash("==== STATUS ====");
+  log_core("==== STATUS ====");
 
-  log_flash("Address: " + String(this->address));
-  log_flash("Remaining Storage: " + String(this->MAX_SIZE - this->address) +
+  log_core("Address: " + String(this->address));
+  log_core("Remaining Storage: " + String(this->MAX_SIZE - this->address) +
             " bytes");
 
-  log_flash("Stored Files:");
+  log_core("Stored Files:");
 
+  log_flash("STATUS_START"); 
   for (const FileHeader& file : this->file_data) {
     int file_size = file.end_address - file.start_address;
 
     log_flash("File " + String(file.file_number) +
               " || Size: " + String(file_size) + " bytes");
   }
+  log_flash("STATUS_END"); 
 }

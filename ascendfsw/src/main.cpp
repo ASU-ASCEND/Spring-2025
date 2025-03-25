@@ -69,17 +69,12 @@ const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 
 String header_condensed = "";
 
-// for flash data recovery
-#include "FlashStorage.h"
-// defined in main1.cpp
-extern FlashStorage flash_storage;
-
 // global variables for main
 // loop counter
 unsigned int it = 0;
 
 // Global variables shared with core 1
-volatile CommandMessage cmd_data = { CMD_NONE, 0, false };
+
 queue_t qt;
 
 uint32_t time_paused;
@@ -94,6 +89,7 @@ const uint32_t MAX_PAUSE_DURATION = 60'000;
 void setup() {
   // multicore setup
   queue_init(&qt, QT_ENTRY_SIZE, QT_MAX_SIZE);
+  mutex_init(&cmd_data_mutex); 
   ErrorDisplay::instance().addCode(Error::NONE);  // for safety
 
   // start serial
@@ -128,13 +124,6 @@ void setup() {
     }
   }
 
-// spi0
-#if FLASH_SPI1 == 0
-  if (flash_storage.verify()) {
-    log_core(flash_storage.getDeviceName() + " verified.");
-  }
-#endif
-
 #if 0  // header stuff
   // build csv header
   String header = "Header,Millis,";
@@ -168,40 +157,23 @@ void loop() {
   // toggle error display
   ErrorDisplay::instance().toggle();
 
-  // switch to data recovery mode is commented out for testing without switch
-  // installed
-  /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) { // will be replaced with
-Software control #if FLASH_SPI1 if (was_dumping == false) { while
-(queue_get_level(&qt) != 0)
-        ;
-      delay(10);
-      rp2040.idleOtherCore();
-    }
-#endif
-    was_dumping = true;
-    handleDataInterface();
-    return;
-  }
-
-  if (was_dumping == true) {
-    log_core("\nErasing flash chip....");
-    was_dumping = false;
-    flash_storage.erase();
-#if FLASH_SPI1
-    rp2040.resumeOtherCore();
-#endif
-  }*/
+  // toggle heartbeats
+  digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
   // Check for serial input commands
-  if (Serial.available() > 0) handleCommand();
+  if (Serial.available() > 0){
+    handleCommand();
+  }
 
   // Check if system is paused & skip data collection if so
-  if (cmd_data.system_paused) {
+
+  
+  if (getCmdData().system_paused) {
     uint32_t remaining_time = millis() - time_paused;
 
     // Force resume if timeout
     if (remaining_time > MAX_PAUSE_DURATION) {
-      cmd_data.system_paused = false;
+      setCmdData({CMD_NONE, 0, false}); 
       log_core("ERROR: System Timeout");
     }
   }
@@ -211,15 +183,14 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
     log_core("it: " + String(it) + "\t");
     it++;
 
-    // toggle heartbeats
-    digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
-
     // build csv row
     uint8_t packet[QT_ENTRY_SIZE];
     // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
     // debugging
     uint16_t packet_len = readSensorDataPacket(packet);
+    #if STORING_PACKETS == false 
     String csv_row = decodePacket(packet);
+    #endif
 
     // print csv row
     // log_data(csv_row);
@@ -232,7 +203,7 @@ Software control #if FLASH_SPI1 if (was_dumping == false) { while
       queue_add_blocking(&qt, csv_row.c_str());
     #endif
 
-    // delay(1000);                                 // remove before flight
+    delay(500);                                 // remove before flight
     digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
   }
 }
@@ -276,6 +247,8 @@ void handleCommand() {
   String cmd = Serial.readStringUntil('\n');
   cmd.trim();
   cmd.toUpperCase();
+
+  CommandMessage cmd_data = getCmdData(); 
     
   // Process the command
   if (cmd.equals("STATUS")) {
@@ -311,6 +284,8 @@ void handleCommand() {
 
   cmd_data.system_paused = true;
   time_paused = millis();
+
+  setCmdData(cmd_data); 
 }
 
 #if 0  // part of the old verification system 
@@ -476,19 +451,6 @@ String readSensorData() {
     }
   }
   return csv_row;
-}
-
-/**
- * @brief Handles data interface mode for retrieving data from flash memory
- *
- */
-void handleDataInterface() {
-  static unsigned long last_dump = 0;
-  // dump every 30 seconds
-  if (millis() - last_dump > 30'000) {
-    flash_storage.dump();
-    last_dump = millis();
-  }
 }
 
 //-------------------------------------
