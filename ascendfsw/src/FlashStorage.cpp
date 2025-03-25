@@ -316,7 +316,7 @@ void FlashStorage::downloadFile(int file_number) {
     // Download Occurs Here
     uint32_t current_pos = start_addr;
     uint32_t bytes_read = 0;
-    log_flash("START_DATA"); 
+    log_flash("START_DATA");
     while (current_pos < end_addr) {
       // Read data from flash
       uint8_t data = this->flash.readByte(current_pos);
@@ -339,7 +339,7 @@ void FlashStorage::downloadFile(int file_number) {
       // Visual feedback
       digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
     }
-    log_flash("STOP_DATA"); 
+    log_flash("STOP_DATA");
 
     unsigned long end_time = millis();
     unsigned long total_time = (end_time - start_time) / 1000;
@@ -358,16 +358,16 @@ void FlashStorage::getStatus() {
 
   log_core("Address: " + String(this->address));
   log_core("Remaining Storage: " + String(this->MAX_SIZE - this->address) +
-            " bytes");
+           " bytes");
 
   log_core("Stored Files:");
 
-  log_flash("STATUS_START"); 
+  log_flash("STATUS_START");
   for (const FileHeader& file : this->file_data) {
     int file_size = file.end_address - file.start_address;
 
     log_flash("File " + String(file.file_number) +
               " || Size: " + String(file_size) + " bytes");
   }
-  log_flash("STATUS_END"); 
+  log_flash("STATUS_END");
 }

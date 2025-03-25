@@ -78,7 +78,7 @@ unsigned int it = 0;
 queue_t qt;
 
 uint32_t time_paused;
-const uint32_t MAX_PAUSE_DURATION = 60'000; 
+const uint32_t MAX_PAUSE_DURATION = 60'000;
 
 // char qt_entry[QT_ENTRY_SIZE];
 
@@ -89,7 +89,7 @@ const uint32_t MAX_PAUSE_DURATION = 60'000;
 void setup() {
   // multicore setup
   queue_init(&qt, QT_ENTRY_SIZE, QT_MAX_SIZE);
-  mutex_init(&cmd_data_mutex); 
+  mutex_init(&cmd_data_mutex);
   ErrorDisplay::instance().addCode(Error::NONE);  // for safety
 
   // start serial
@@ -161,19 +161,18 @@ void loop() {
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
   // Check for serial input commands
-  if (Serial.available() > 0){
+  if (Serial.available() > 0) {
     handleCommand();
   }
 
   // Check if system is paused & skip data collection if so
 
-  
   if (getCmdData().system_paused) {
     uint32_t remaining_time = millis() - time_paused;
 
     // Force resume if timeout
     if (remaining_time > MAX_PAUSE_DURATION) {
-      setCmdData({CMD_NONE, 0, false}); 
+      setCmdData({CMD_NONE, 0, false});
       log_core("ERROR: System Timeout");
     }
   }
@@ -188,22 +187,22 @@ void loop() {
     // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
     // debugging
     uint16_t packet_len = readSensorDataPacket(packet);
-    #if STORING_PACKETS == false 
+#if STORING_PACKETS == false
     String csv_row = decodePacket(packet);
-    #endif
+#endif
 
     // print csv row
     // log_data(csv_row);
     log_data_raw(packet, packet_len);
 
-    // send data to core1
-    #if STORING_PACKETS
-      queue_add_blocking(&qt, packet);
-    #else
-      queue_add_blocking(&qt, csv_row.c_str());
-    #endif
+// send data to core1
+#if STORING_PACKETS
+    queue_add_blocking(&qt, packet);
+#else
+    queue_add_blocking(&qt, csv_row.c_str());
+#endif
 
-    delay(500);                                 // remove before flight
+    delay(500);                                  // remove before flight
     digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
   }
 }
@@ -236,11 +235,11 @@ int verifySensorRecovery() {
 
 /**
  * @brief Handle commands read from serial input
- * 
+ *
  * Pause data collection and storage for a specified duration to execute
  * a command, including STATUS, DOWNLOAD, DELETE, etc.
- * 
- * @param cmd 
+ *
+ * @param cmd
  */
 void handleCommand() {
   // Fetch & format command
@@ -248,36 +247,35 @@ void handleCommand() {
   cmd.trim();
   cmd.toUpperCase();
 
-  CommandMessage cmd_data = getCmdData(); 
-    
+  CommandMessage cmd_data = getCmdData();
+
   // Process the command
   if (cmd.equals("STATUS")) {
     cmd_data.type = CMD_STATUS;
     log_core("Command: " + cmd + " - System Paused");
-  }
-  else if (cmd.startsWith("DOWNLOAD F")) {
+  } else if (cmd.startsWith("DOWNLOAD F")) {
     // Extract the file number from command
     String extracted_num = cmd.substring(String("DOWNLOAD F").length());
     extracted_num.trim();
 
-    log_core("Command [DOWNLOAD]: Download File " + extracted_num + " - System Paused");
+    log_core("Command [DOWNLOAD]: Download File " + extracted_num +
+             " - System Paused");
 
     // Store the command info
     cmd_data.type = CMD_DOWNLOAD;
     cmd_data.file_number = extracted_num.toInt();
-  }
-  else if (cmd.startsWith("DELETE F")) {
+  } else if (cmd.startsWith("DELETE F")) {
     // Extract the file number from command
     String extracted_num = cmd.substring(String("DOWNLOAD F").length());
     extracted_num.trim();
 
-    log_core("Command [DELETE]: Delete File " + extracted_num + " - System Paused");
-    
+    log_core("Command [DELETE]: Delete File " + extracted_num +
+             " - System Paused");
+
     // Store the command info
     cmd_data.type = CMD_DELETE;
     cmd_data.file_number = extracted_num.toInt();
-  }
-  else {
+  } else {
     log_core("ERROR: Invalid command - " + cmd);
     return;
   }
@@ -285,7 +283,7 @@ void handleCommand() {
   cmd_data.system_paused = true;
   time_paused = millis();
 
-  setCmdData(cmd_data); 
+  setCmdData(cmd_data);
 }
 
 #if 0  // part of the old verification system 
