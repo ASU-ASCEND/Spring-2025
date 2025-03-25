@@ -24,6 +24,7 @@ jobs:
       - name: Checkout branch 
         run: |
           git checkout main
+          git pull
           git status
       - name: Run formatting script
         run: 
@@ -48,6 +49,7 @@ jobs:
       - name: Checkout docs branch 
         run: |
           git checkout docs 
+          git pull
           git status 
       - name: Merge main into docs with theirs strategy 
         run: |

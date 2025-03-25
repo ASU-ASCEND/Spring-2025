@@ -10,6 +10,9 @@
 #include "Logger.h"
 #include "PayloadConfig.h"
 
+// Shared stuctures indicating command-based system status
+#include "CommandMessage.h"
+
 // parent classes
 #include "Sensor.h"
 
@@ -29,6 +32,7 @@
 
 // helper function definitions
 int verifySensors();
+void handleCommand();
 int verifySensorRecovery();
 String readSensorData();
 uint16_t readSensorDataPacket(uint8_t* packet);
@@ -65,16 +69,17 @@ const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 
 String header_condensed = "";
 
-// for flash data recovery
-#include "FlashStorage.h"
-// defined in main1.cpp
-extern FlashStorage flash_storage;
-
 // global variables for main
 // loop counter
 unsigned int it = 0;
 
+// Global variables shared with core 1
+
 queue_t qt;
+
+uint32_t time_paused;
+const uint32_t MAX_PAUSE_DURATION = 60'000;
+
 // char qt_entry[QT_ENTRY_SIZE];
 
 /**
@@ -84,6 +89,7 @@ queue_t qt;
 void setup() {
   // multicore setup
   queue_init(&qt, QT_ENTRY_SIZE, QT_MAX_SIZE);
+  mutex_init(&cmd_data_mutex);
   ErrorDisplay::instance().addCode(Error::NONE);  // for safety
 
   // start serial
@@ -118,7 +124,6 @@ void setup() {
     }
   }
 
-
 #if 0  // header stuff
   // build csv header
   String header = "Header,Millis,";
@@ -149,61 +154,57 @@ bool was_dumping = false;
  *
  */
 void loop() {
-  it++;
-
   // toggle error display
   ErrorDisplay::instance().toggle();
 
   // toggle heartbeats
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
-  // switch to data recovery mode is commented out for testing without switch
-  // installed
-  /*if (digitalRead(DATA_INTERFACE_PIN) == LOW) { // will be replaced with
-Software control #if FLASH_SPI1 if (was_dumping == false) { while
-(queue_get_level(&qt) != 0)
-        ;
-      delay(10);
-      rp2040.idleOtherCore();
-    }
-#endif
-    was_dumping = true;
-    handleDataInterface();
-    return;
+  // Check for serial input commands
+  if (Serial.available() > 0) {
+    handleCommand();
   }
 
-  if (was_dumping == true) {
-    log_core("\nErasing flash chip....");
-    was_dumping = false;
-    flash_storage.erase();
-#if FLASH_SPI1
-    rp2040.resumeOtherCore();
+  // Check if system is paused & skip data collection if so
+
+  if (getCmdData().system_paused) {
+    uint32_t remaining_time = millis() - time_paused;
+
+    // Force resume if timeout
+    if (remaining_time > MAX_PAUSE_DURATION) {
+      setCmdData({CMD_NONE, 0, false});
+      log_core("ERROR: System Timeout");
+    }
+  }
+  // Read sensor data
+  else {
+    // start print line with iteration number
+    log_core("it: " + String(it) + "\t");
+    it++;
+
+    // build csv row
+    uint8_t packet[QT_ENTRY_SIZE];
+    // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
+    // debugging
+    uint16_t packet_len = readSensorDataPacket(packet);
+#if STORING_PACKETS == false
+    String csv_row = decodePacket(packet);
 #endif
-  }*/
 
-  // start print line with iteration number
-  log_core("it: " + String(it) + "\t");
-
-  // build csv row
-  uint8_t packet[QT_ENTRY_SIZE];
-  // for (int i = 0; i < QT_ENTRY_SIZE; i++) packet[i] = 0; // useful for
-  // debugging
-  uint16_t packet_len = readSensorDataPacket(packet);
-  String csv_row = decodePacket(packet);
-
-  // print csv row
-  // log_data(csv_row);
-  log_data_raw(packet, packet_len);
+    // print csv row
+    // log_data(csv_row);
+    log_data_raw(packet, packet_len);
 
 // send data to core1
 #if STORING_PACKETS
-  queue_add_blocking(&qt, packet);
+    queue_add_blocking(&qt, packet);
 #else
-  queue_add_blocking(&qt, csv_row.c_str());
+    queue_add_blocking(&qt, csv_row.c_str());
 #endif
 
-  delay(1000);                                 // remove before flight
-  digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
+    delay(500);                                  // remove before flight
+    digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
+  }
 }
 
 /**
@@ -230,6 +231,59 @@ int verifySensorRecovery() {
   }
   log_core("");
   return count;
+}
+
+/**
+ * @brief Handle commands read from serial input
+ *
+ * Pause data collection and storage for a specified duration to execute
+ * a command, including STATUS, DOWNLOAD, DELETE, etc.
+ *
+ * @param cmd
+ */
+void handleCommand() {
+  // Fetch & format command
+  String cmd = Serial.readStringUntil('\n');
+  cmd.trim();
+  cmd.toUpperCase();
+
+  CommandMessage cmd_data = getCmdData();
+
+  // Process the command
+  if (cmd.equals("STATUS")) {
+    cmd_data.type = CMD_STATUS;
+    log_core("Command: " + cmd + " - System Paused");
+  } else if (cmd.startsWith("DOWNLOAD F")) {
+    // Extract the file number from command
+    String extracted_num = cmd.substring(String("DOWNLOAD F").length());
+    extracted_num.trim();
+
+    log_core("Command [DOWNLOAD]: Download File " + extracted_num +
+             " - System Paused");
+
+    // Store the command info
+    cmd_data.type = CMD_DOWNLOAD;
+    cmd_data.file_number = extracted_num.toInt();
+  } else if (cmd.startsWith("DELETE F")) {
+    // Extract the file number from command
+    String extracted_num = cmd.substring(String("DOWNLOAD F").length());
+    extracted_num.trim();
+
+    log_core("Command [DELETE]: Delete File " + extracted_num +
+             " - System Paused");
+
+    // Store the command info
+    cmd_data.type = CMD_DELETE;
+    cmd_data.file_number = extracted_num.toInt();
+  } else {
+    log_core("ERROR: Invalid command - " + cmd);
+    return;
+  }
+
+  cmd_data.system_paused = true;
+  time_paused = millis();
+
+  setCmdData(cmd_data);
 }
 
 #if 0  // part of the old verification system 
@@ -395,19 +449,6 @@ String readSensorData() {
     }
   }
   return csv_row;
-}
-
-/**
- * @brief Handles data interface mode for retrieving data from flash memory
- *
- */
-void handleDataInterface() {
-  static unsigned long last_dump = 0;
-  // dump every 30 seconds
-  if (millis() - last_dump > 30'000) {
-    flash_storage.dump();
-    last_dump = millis();
-  }
 }
 
 //-------------------------------------

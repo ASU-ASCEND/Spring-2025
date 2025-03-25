@@ -12,6 +12,7 @@ class ServerInterface(threading.Thread):
     self.data_in = data_in
     self.server_process = server_process
     self.post_endpoint = "http://127.0.0.1:5000/dataserver"
+    
 
 
   def run(self):
@@ -21,13 +22,13 @@ class ServerInterface(threading.Thread):
       except Empty:
         sleep(0.1)
         continue 
-      print("data:", data["sensor_data"].keys())
+      # print("data:", data["sensor_data"].keys())
       post_data = {
         "timestamp": data["timestamp"]
       }
       for sensor_name in data["sensor_data"].keys():
         for value_name in list(data["sensor_data"][sensor_name].keys())[1:]:
-          print("adding", f"{sensor_name}_{value_name}")
+          # print("adding", f"{sensor_name}_{value_name}")
           post_data[f"{sensor_name}_{value_name}"] = data["sensor_data"][sensor_name][value_name]
 
       requests.post(url = self.post_endpoint, params=post_data)
