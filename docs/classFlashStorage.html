@@ -111,9 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2dd4e8b7b4a85d5820f4277d0fb6727" id="r_ac2dd4e8b7b4a85d5820f4277d0fb6727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727">erase</a> ()</td></tr>
 <tr class="memdesc:ac2dd4e8b7b4a85d5820f4277d0fb6727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases all data stored in flash memory.  <br /></td></tr>
 <tr class="separator:ac2dd4e8b7b4a85d5820f4277d0fb6727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75f10cbf07f28b763a10ba9468c5e7b1" id="r_a75f10cbf07f28b763a10ba9468c5e7b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a75f10cbf07f28b763a10ba9468c5e7b1">download</a> (int)</td></tr>
-<tr class="memdesc:a75f10cbf07f28b763a10ba9468c5e7b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads data from flash memory with progress tracking.  <br /></td></tr>
-<tr class="separator:a75f10cbf07f28b763a10ba9468c5e7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96a663c3434d8783b30c12ec706ad81" id="r_ad96a663c3434d8783b30c12ec706ad81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#ad96a663c3434d8783b30c12ec706ad81">downloadFile</a> (int)</td></tr>
+<tr class="memdesc:ad96a663c3434d8783b30c12ec706ad81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads data from flash memory with progress tracking.  <br /></td></tr>
+<tr class="separator:ad96a663c3434d8783b30c12ec706ad81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a318825f36239ed4e7c5bf345c6f95366" id="r_a318825f36239ed4e7c5bf345c6f95366"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlashStorage.html#a318825f36239ed4e7c5bf345c6f95366">getStatus</a> ()</td></tr>
 <tr class="memdesc:a318825f36239ed4e7c5bf345c6f95366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the current status of the flash storage.  <br /></td></tr>
 <tr class="separator:a318825f36239ed4e7c5bf345c6f95366"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,14 +212,14 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a75f10cbf07f28b763a10ba9468c5e7b1" name="a75f10cbf07f28b763a10ba9468c5e7b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75f10cbf07f28b763a10ba9468c5e7b1">&#9670;&#160;</a></span>download()</h2>
+<a id="ad96a663c3434d8783b30c12ec706ad81" name="ad96a663c3434d8783b30c12ec706ad81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad96a663c3434d8783b30c12ec706ad81">&#9670;&#160;</a></span>downloadFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> FlashStorage::download </td>
+          <td class="memname"><a class="el" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">void</a> FlashStorage::downloadFile </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>file_number</em></td><td>)</td>
@@ -235,6 +235,11 @@ Additional Inherited Members</h2></td></tr>
 <li>Visual feedback</li>
 <li>Transfer statistics </li>
 </ul>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_ad96a663c3434d8783b30c12ec706ad81_icgraph.svg" width="458" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -255,11 +260,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Dumps the contents of flash memory to the serial monitor. </p>
 <p>Reads each byte of flash memory starting from the beginning and prints it to the serial monitor. The process continues until the end of the memory or the end code (0xFF) is reached. </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_afffc9c3ffc2886608f7ebef3420a6069_icgraph.svg" width="366" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -300,6 +300,11 @@ Here is the caller graph for this function:</div>
 
 <p>Prints the current status of the flash storage. </p>
 <p>Prints the current address, remaining storage, and stored files. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFlashStorage_a318825f36239ed4e7c5bf345c6f95366_icgraph.svg" width="434" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>

@@ -74,7 +74,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="404.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="417.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">erase()</text>
 <text text-anchor="start" x="404.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="417.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">download()</text>
+<text text-anchor="start" x="417.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">downloadFile()</text>
 <text text-anchor="start" x="404.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="417.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">getStatus()</text>
 <text text-anchor="start" x="407" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>

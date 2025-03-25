@@ -7,7 +7,7 @@ var searchData=
   ['device_4',['device',['../classDevice.html#a0a1bb0e6339958fb2aab9161e2449537',1,'Device::Device(String device_name)'],['../classDevice.html#a202d889eda8970e5f606b2a1b9a7be48',1,'Device::Device(String device_name, int max_attempts, int wait_factor)'],['../classDevice.html',1,'Device']]],
   ['device_2eh_5',['Device.h',['../Device_8h.html',1,'']]],
   ['device_5fname_6',['device_name',['../classDevice.html#aa7c06f47307932859953bf976827c26b',1,'Device']]],
-  ['download_7',['download',['../classFlashStorage.html#a75f10cbf07f28b763a10ba9468c5e7b1',1,'FlashStorage']]],
+  ['downloadfile_7',['downloadFile',['../classFlashStorage.html#ad96a663c3434d8783b30c12ec706ad81',1,'FlashStorage']]],
   ['ds3231sensor_8',['ds3231sensor',['../classDS3231Sensor.html#ac8b72bc3924e23cf7a36fbb4d766979c',1,'DS3231Sensor::DS3231Sensor()'],['../classDS3231Sensor.html#aa1404e8c86a6ce68c6fe2ac336ae1de3',1,'DS3231Sensor::DS3231Sensor(unsigned long minimum_period)'],['../classDS3231Sensor.html',1,'DS3231Sensor']]],
   ['ds3231sensor_2ecpp_9',['DS3231Sensor.cpp',['../DS3231Sensor_8cpp.html',1,'']]],
   ['ds3231sensor_2eh_10',['DS3231Sensor.h',['../DS3231Sensor_8h.html',1,'']]],

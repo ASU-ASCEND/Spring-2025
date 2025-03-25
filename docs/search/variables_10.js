@@ -13,5 +13,6 @@ var searchData=
   ['start_5faddress_10',['start_address',['../structFileHeader.html#abfd07b5063e2f45ecfc0e5e88296f5a7',1,'FileHeader::start_address'],['../classFlashStorage.html#a5216340e4a74290300e21e318ba019a8',1,'FlashStorage::START_ADDRESS']]],
   ['storages_11',['storages',['../main1_8cpp.html#a39db351a5a127ccbd3893f4de5936b05',1,'main1.cpp']]],
   ['storages_5flen_12',['storages_len',['../main1_8cpp.html#a12b260a884350838d7056cd758cd8cbe',1,'main1.cpp']]],
-  ['sync_5fbytes_13',['SYNC_BYTES',['../PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6',1,'PayloadConfig.h']]]
+  ['sync_5fbytes_13',['SYNC_BYTES',['../PayloadConfig_8h.html#abaacb8cdda17b6340a4d5aeaf72e2ca6',1,'PayloadConfig.h']]],
+  ['system_5fpaused_14',['system_paused',['../structCommandMessage.html#acc47b3751cb94962a36625c4b04b51c7',1,'CommandMessage']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fileheader_0',['FileHeader',['../structFileHeader.html',1,'']]],
-  ['flashstorage_1',['FlashStorage',['../classFlashStorage.html',1,'']]]
+  ['ens160sensor_0',['ENS160Sensor',['../classENS160Sensor.html',1,'']]],
+  ['errordisplay_1',['ErrorDisplay',['../classErrorDisplay.html',1,'']]]
 ];

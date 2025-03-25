@@ -1,13 +1,21 @@
 <map id="loop1" name="loop1">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,64,56"/>
-<area shape="rect" id="Node000002" href="$main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7" title="Loop for core 1." alt="" coords="112,31,203,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,41,98,41,98,46,64,46"/>
-<area shape="rect" id="Node000003" href="$main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="271,5,358,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,33,257,24,258,30,203,39"/>
-<area shape="rect" id="Node000005" href="$main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43" title="Sends data to each storage device." alt="" coords="251,55,379,80"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="203,48,238,53,237,58,203,53"/>
-<area shape="rect" id="Node000004" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send string data to storage device." alt="" coords="447,5,561,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="358,15,433,15,433,21,358,21"/>
-<area shape="rect" id="Node000006" href="$classStorage.html#a6ee18f7841fdd0f70091764a59110db2" title="Send packet data to storage device." alt="" coords="427,55,581,80"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="379,65,413,65,413,70,379,70"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,129,64,155"/>
+<area shape="rect" id="Node000002" href="$main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7" title="Loop for core 1." alt="" coords="112,129,203,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,139,98,139,98,145,64,145"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html#ad96a663c3434d8783b30c12ec706ad81" title="Downloads data from flash memory with progress tracking." alt="" coords="251,5,452,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,127,198,84,222,60,249,40,262,33,265,38,252,44,225,64,202,88,169,131"/>
+<area shape="rect" id="Node000004" href="$CommandMessage_8cpp.html#a614e558f381a8d26db49eed9b12fd14f" title=" " alt="" coords="299,55,403,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="177,127,210,107,250,89,285,78,287,83,252,94,213,112,180,131"/>
+<area shape="rect" id="Node000005" href="$classFlashStorage.html#a318825f36239ed4e7c5bf345c6f95366" title="Prints the current status of the flash storage." alt="" coords="263,104,440,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="203,133,249,127,249,133,203,139"/>
+<area shape="rect" id="Node000006" href="$CommandMessage_8cpp.html#ad408818d8c69721c19d63006e8ef4d22" title=" " alt="" coords="300,153,403,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="203,145,287,155,286,161,203,150"/>
+<area shape="rect" id="Node000007" href="$main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="308,203,395,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="181,152,252,188,296,201,294,206,250,192,178,157"/>
+<area shape="rect" id="Node000009" href="$main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43" title="Sends data to each storage device." alt="" coords="287,252,415,277"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="169,153,202,195,226,218,252,237,275,248,273,253,249,242,222,222,198,199,165,157"/>
+<area shape="rect" id="Node000008" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send string data to storage device." alt="" coords="521,203,634,228"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="395,213,507,213,507,218,395,218"/>
+<area shape="rect" id="Node000010" href="$classStorage.html#a6ee18f7841fdd0f70091764a59110db2" title="Send packet data to storage device." alt="" coords="500,252,655,277"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="415,262,486,262,486,267,415,267"/>
 </map>

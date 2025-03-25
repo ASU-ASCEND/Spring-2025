@@ -1,21 +1,29 @@
 <map id="loop" name="loop">
-<area shape="rect" id="Node000001" title="Loop for core 0, handling sensor reads." alt="" coords="5,104,56,129"/>
+<area shape="rect" id="Node000001" title="Loop for core 0, handling sensor reads." alt="" coords="5,181,56,207"/>
 <area shape="rect" id="Node000002" href="$main_8cpp.html#a9163644b089001958496a71b73b9091a" title="Decodes the packet to a CSV row." alt="" coords="133,29,243,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,102,71,82,103,64,119,57,121,62,105,68,74,87,49,106"/>
-<area shape="rect" id="Node000006" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="106,79,270,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="56,110,95,104,96,109,57,115"/>
-<area shape="rect" id="Node000007" href="$main_8cpp.html#a35aec64ebd5600523486586642a4fe23" title="Reads sensor data into a packet byte array." alt="" coords="104,128,272,153"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="57,118,92,123,91,129,56,123"/>
-<area shape="rect" id="Node000010" href="$classErrorDisplay.html#a493bde338b369414abffe90e0d49e93b" title="Toggles the level of the error display." alt="" coords="113,177,263,203"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="50,127,75,145,105,162,125,170,123,175,103,167,72,150,47,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="34,180,58,129,77,98,102,72,124,58,127,62,106,76,82,102,62,131,39,182"/>
+<area shape="rect" id="Node000006" href="$CommandMessage_8cpp.html#a614e558f381a8d26db49eed9b12fd14f" title=" " alt="" coords="352,117,456,143"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="37,180,63,146,81,129,103,116,134,105,166,98,232,95,295,101,348,111,347,117,294,106,232,100,167,104,135,110,105,120,84,133,67,150,41,183"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#a76a2f3ef1d3b3d36284ea02246512daa" title="Handle commands read from serial input." alt="" coords="121,131,255,156"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="55,184,134,158,135,163,57,189"/>
+<area shape="rect" id="Node000008" href="$CommandMessage_8cpp.html#ad408818d8c69721c19d63006e8ef4d22" title=" " alt="" coords="353,175,455,200"/>
+<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="56,191,339,186,339,191,56,196"/>
+<area shape="rect" id="Node000009" href="$classErrorDisplay.html#a4f9e7e64ffc64711653b539bf3d8d24f" title="Accesses the only instance of ErrorDisplay (Singleton)" alt="" coords="106,232,270,257"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="57,199,135,225,134,230,55,204"/>
+<area shape="rect" id="Node000010" href="$main_8cpp.html#a35aec64ebd5600523486586642a4fe23" title="Reads sensor data into a packet byte array." alt="" coords="104,281,272,307"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="43,205,69,237,105,268,117,274,114,279,103,272,65,240,39,208"/>
+<area shape="rect" id="Node000013" href="$classErrorDisplay.html#a493bde338b369414abffe90e0d49e93b" title="Toggles the level of the error display." alt="" coords="113,331,263,356"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="38,206,61,260,80,291,106,317,112,322,109,326,102,321,76,294,56,262,33,208"/>
 <area shape="rect" id="Node000003" href="$classSensor.html#ab344e7fbc9acdc5dcc7ae59d0a3fb5f6" title="Used for onboard decoding of packets." alt="" coords="323,5,485,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,33,309,26,310,31,244,39"/>
 <area shape="rect" id="Node000005" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="331,55,477,80"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="244,46,318,55,317,60,243,51"/>
 <area shape="rect" id="Node000004" href="$classDevice.html#abbc7184e7fb286208c3b30357cf53f88" title=" " alt="" coords="536,5,716,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="485,15,522,15,522,21,485,21"/>
-<area shape="rect" id="Node000008" href="$classSensor.html#a1d128dc295e634de6506da5cbb716b64" title="Append the data from a sensor to the packet if the minium period is satisfied." alt="" coords="320,128,488,153"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="272,138,306,138,306,143,272,143"/>
-<area shape="rect" id="Node000009" href="$classSensor.html#ae835436cbb1fd60580e72a4ee7014c48" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="538,128,714,153"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="488,138,524,138,524,143,488,143"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="255,137,338,131,339,137,255,142"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="252,153,340,172,339,177,250,159"/>
+<area shape="rect" id="Node000011" href="$classSensor.html#a1d128dc295e634de6506da5cbb716b64" title="Append the data from a sensor to the packet if the minium period is satisfied." alt="" coords="320,281,488,307"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="272,291,306,291,306,297,272,297"/>
+<area shape="rect" id="Node000012" href="$classSensor.html#ae835436cbb1fd60580e72a4ee7014c48" title="Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin..." alt="" coords="538,281,714,307"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="488,291,524,291,524,297,488,297"/>
 </map>

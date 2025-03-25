@@ -1,0 +1,12 @@
+<map id="getCmdData" name="getCmdData">
+<area shape="rect" id="Node000001" title=" " alt="" coords="293,56,397,81"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a76a2f3ef1d3b3d36284ea02246512daa" title="Handle commands read from serial input." alt="" coords="112,5,245,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,54,221,33,222,28,290,49"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#afe461d27b9c48d5921c00d521181f12f" title="Loop for core 0, handling sensor reads." alt="" coords="9,31,60,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="279,66,60,48,61,43,280,61"/>
+<area shape="rect" id="Node000004" href="$main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7" title="Loop for core 1." alt="" coords="133,107,224,132"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="290,88,222,109,221,104,288,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,35,61,42,60,36,98,30"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a39ceba300a80e348e278539f57e0ca79" title=" " alt="" coords="5,107,64,132"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="119,122,64,122,64,117,119,117"/>
+</map>
