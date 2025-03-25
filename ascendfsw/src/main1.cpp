@@ -11,6 +11,9 @@
 #include "PayloadConfig.h"
 #include "Storage.h"
 
+// Shared stuctures indicating command-based system status
+#include "CommandMessage.h"
+
 int verifyStorage();
 int verifyStorageRecovery();
 void storeData(String data);
@@ -31,7 +34,7 @@ Storage* storages[] = {&sd_storage, &radio_storage, &flash_storage};
 
 const int storages_len = sizeof(storages) / sizeof(storages[0]);
 
-// use definition in main.cpp
+// Global variables shared with core 0
 extern queue_t qt;
 
 // separate 8k stacks
@@ -72,33 +75,59 @@ int it2 = 0;
  *
  */
 void real_loop1() {
-  log_core("it2: " + String(it2));
-  it2++;
-  digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
+  #if STORING_PACKETS
+    uint8_t received_data[QT_ENTRY_SIZE];
+  #else
+    char received_data[QT_ENTRY_SIZE];
+  #endif
 
-#if STORING_PACKETS
-  uint8_t received_data[QT_ENTRY_SIZE];
-#else
-  char received_data[QT_ENTRY_SIZE];
-#endif
-  queue_remove_blocking(&qt, received_data);
+  // Block if data is in the queue
+  if (queue_get_level(&qt) > 0) {
+    log_core("it2: " + String(it2));
+    it2++;
+    digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
 
-#if STORING_PACKETS
-  unsigned long timestamp;
-  memcpy(&timestamp,
-         received_data + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint16_t),
-         sizeof(timestamp));
-  log_core("Packet Received with Millis = " + String(timestamp));
-#else
-  log_core("Received: " + String(received_data));
-#endif
+    // Retrieve sensor data from queue
+    queue_remove_blocking(&qt, received_data);
 
-// store csv row
-#if STORING_PACKETS
-  storeDataPacket(received_data);
-#else
-  storeData(String(received_data));
-#endif
+    #if STORING_PACKETS
+      unsigned long timestamp;
+      memcpy(&timestamp,
+            received_data + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint16_t),
+            sizeof(timestamp));
+      log_core("Packet Received with Millis = " + String(timestamp));
+    #else
+      log_core("Received: " + String(received_data));
+    #endif
+  
+    // store csv row
+    #if STORING_PACKETS
+      storeDataPacket(received_data);
+    #else
+      storeData(String(received_data));
+    #endif
+  }
+
+  // Determine if a command has been received
+  CommandMessage cmd_data = getCmdData(); 
+  if (cmd_data.system_paused && queue_get_level(&qt) == 0) {
+    // while () delay(10); // Flush the queued data
+
+    // Execute the command
+    if      (cmd_data.type == 1) flash_storage.getStatus();
+    else if (cmd_data.type == 2) flash_storage.downloadFile(cmd_data.file_number);
+    else if (cmd_data.type == 3); /* flash_storage.deleteFile(cmd_data.file_number) */ // TODO: Implement DELETE
+    else log_core("ERROR: Invalid command");
+
+    // Reset command meta data & resume processes
+    cmd_data.system_paused = false;
+    cmd_data.file_number = 0;
+    cmd_data.type = CMD_NONE;
+    setCmdData(cmd_data); 
+  } 
+
+  // Prevent a busy loop
+  delay(10);
 }
 
 /**
