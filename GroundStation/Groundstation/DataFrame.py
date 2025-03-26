@@ -8,14 +8,26 @@ from construct import (
     Int32ul, Int16ul, Int8sl,
     Byte, Bytes, this, Pointer
 )
-from os import path 
+from os import path, mkdir
+from queue import Queue, Empty 
+import re
+from time import sleep 
 
 class DataFrame(tk.Frame):
 
-  def __init__(self, container, decoder_args: list, header_info: tuple[dict, list]):
+  def __init__(self, 
+               container, 
+               decoder_args: list, 
+               header_info: tuple[dict, list], 
+               serial_output: Queue,
+               sorter_flash: Queue,
+               end_event: threading.Event):
     super().__init__(container)
     self.file_list = []
     self.COLUMNS = 4
+    self.serial_output = serial_output
+    self.sorter_flash = sorter_flash
+    self.end_event = end_event
 
     button_config = {
       "width": 20, 
@@ -59,22 +71,68 @@ class DataFrame(tk.Frame):
         "checksum"    / Int8sl #Checksum(Byte, self.validate, this)
     )
 
+    if path.isdir("session_data") == False:
+      mkdir("flash_data")
+
     self.get_file_list()    
 
   def transfer_file(self, file_name: str):
-    # implement with serial interface
+    # send command
+    file_num = re.search("\d+", file_name)
+    if file_num == None: 
+      print("error on file name")
+      return 
+    self.serial_output.put("DOWNLOAD F" + file_num.group())
+
+    # transfer data to file 
+    with open(path.join("flash_data", file_name + ".bin"), "wb") as fout: 
+      while self.end_event.is_set() == False: 
+        try: 
+          data = self.sorter_flash.get()
+          if data == "FLASH OPERATION TRANSFER COMPLETE": 
+            break
+          else:
+            fout.write(data) 
+        except Empty:
+          sleep(0.1)
+
     self.status_label.config(text=f"Status: File transferred as data/{file_name}")
 
   def delete_file(self, file_name: str):
     # implement with serial interface
     self.file_list.remove(file_name)
 
+    # send command
+    file_num = re.search("\d+", file_name)
+    if file_num == None: 
+      print("error on file name")
+      return 
+    self.serial_output.put("DELETE F" + file_num.group())
+
     self.update_file_list()
     self.status_label.config(text=f"Status: {file_name} has been deleted")
     
   def get_file_list(self):
     # implement with serial interface  
-    self.file_list = ["file1", "file2"]
+    self.file_list = ["dummy"]
+
+    # send command
+    self.serial_output.put("STATUS")
+
+    # populate list from data
+    buf = "" 
+    while self.end_event.is_set() == False:
+      try: 
+        data: bytearray = self.sorter_flash.get_nowait()
+
+        if data == "FLASH OPERATION TRANSFER COMPLETE": 
+          break
+        else:
+          buf += data.decode()
+      except Empty:
+        sleep(0.1)
+    
+    self.file_list = [i.strip() for i in buf.split("[Flash]")] 
 
     self.update_file_list()
     self.status_label.config(text=f"Status: File list retrieved")

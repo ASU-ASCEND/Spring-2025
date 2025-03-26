@@ -13,14 +13,22 @@ class SerialSorter(threading.Thread):
     "[Core 1]": "[Core 1]".encode()
   }
 
-  def __init__(self, end_event: threading.Event, input_to_sorter: Queue, sorter_to_decoder: Queue, sorter_core0: Queue, sorter_core1: Queue, sorter_misc: Queue):
+  def __init__(self, 
+               end_event: threading.Event, 
+               input_to_sorter: Queue, 
+               sorter_to_decoder: Queue, 
+               sorter_core0: Queue, 
+               sorter_core1: Queue, 
+               sorter_misc: Queue,
+               sorter_flash: Queue):
     super().__init__()
     self.input_to_sorter = input_to_sorter
     self.sorter_core0 = sorter_core0
     self.sorter_core1 = sorter_core1
     self.sorter_misc = sorter_misc
+    self.sorter_flash = sorter_flash
     self.sorter_to_decoder = sorter_to_decoder 
-    self.buf = bytearray()
+    self.buf: bytearray = bytearray()
     self.end_event = end_event
 
   def run(self):
@@ -37,7 +45,8 @@ class SerialSorter(threading.Thread):
           core0_index = self.buf.find("[Core 0]".encode())
           core1_index = self.buf.find("[Core 1]".encode())
           misc_ender = self.buf.find("\n".encode())
-          present = [i for i in [packet_header_index, core0_index, core1_index, misc_ender] if i != -1]
+          flash_index = self.buf.find("[Flash]".encode())
+          present = [i for i in [packet_header_index, core0_index, core1_index, misc_ender, flash_index] if i != -1]
           if len(present) == 0: 
             break
           min_index = min(present)
@@ -123,7 +132,53 @@ class SerialSorter(threading.Thread):
             message, endline, after = self.buf.partition("\n".encode())
 
             self.sorter_core1.put(sep.decode() + message.decode())
-            self.buf = after         
+            self.buf = after
+          elif flash_index == min_index:
+            # flush before to misc 
+            before, sep, after = self.buf.partition("[Flash]".encode())
+            if before.decode().strip() != "": self.sorter_misc.put(before.decode())
+            self.buf = after 
+
+            # wait for \n to end prefix if not already received (probably not)
+            if self.buf.find("\n".encode()) == -1: 
+              c_in = self.input_to_sorter.get(block=True)
+              self.buf += c_in
+              while c_in.find("\n".encode()) == -1:
+                if self.end_event.is_set(): return
+                try: 
+                  c_in = self.input_to_sorter.get_nowait()
+                  self.buf += c_in
+                except Empty:
+                  sleep(0.1)
+
+            # pull out message until '\n' 
+            message, endline, after = self.buf.partition("\n".encode())
+
+            self.buf = after
+
+            if message.decode().strip() == "START_DATA":
+              if self.buf.find("[FLASH] STOP_DATA\n".encode()) == -1:
+                c_in = self.input_to_sorter.get(block=True)
+                self.buf += c_in
+                while c_in.find("\n".encode()) == -1:
+                  # send data periodically so that it can start being processed 
+                  if len(self.buf) > 500: 
+                    # send all but that last 100 to not miss "START_DATA"
+                    self.sorter_flash.put(self.buf[:-100]) 
+                    self.buf = self.buf[-100:] 
+                  if self.end_event.is_set(): return
+                  try: 
+                    c_in = self.input_to_sorter.get_nowait()
+                    self.buf += c_in
+                  except Empty:
+                    sleep(0.1)
+              tail, endline, after = self.buf.partition("[Flash] STOP_DATA\n".encode())
+              self.sorter_flash.put(tail); 
+              self.buf = after
+              self.sorter_flash.put("FLASH OPERATION TRANSFER COMPLETE")
+
+
+          
           elif misc_ender == min_index:
             # print("hit misc")
             before, sep, after = self.buf.partition("\n".encode())
