@@ -6,15 +6,17 @@
  * Initializes the sensor object with a default minimum period of 0
  * milliseconds.
  */
-SHTC3Sensor::SHTC3Sensor() : SHTC3Sensor(0) {}
+SHTC3Sensor::SHTC3Sensor(TwoWire* i2c_bus) : SHTC3Sensor(0, i2c_bus) {}
 
 /**
  * @brief Construct a new SHTC3Sensor object.
  * @param minium_period Minimum time to wait between readings in ms
  */
-SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)
+SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period, TwoWire* i2c_bus)
     : Sensor("SHTC3", "Temp(C), Humidity(%)", 2, minimum_period) {
   this->relative_humidity = 0.0;
+  this->i2c_bus = i2c_bus;
+  if (this->i2c_bus == &Wire1) this->device_name += "_1";
 }
 
 /**
@@ -25,7 +27,7 @@ SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)
  */
 bool SHTC3Sensor::verify() {
   shtc3 = Adafruit_SHTC3();
-  return shtc3.begin(&STRATOSENSE_I2C);
+  return shtc3.begin(this->i2c_bus);
 }
 
 /**

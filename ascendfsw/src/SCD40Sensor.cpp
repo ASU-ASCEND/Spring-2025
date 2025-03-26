@@ -6,7 +6,7 @@
  * Initializes the sensor object with a default minimum period of 0
  * milliseconds.
  */
-SCD40Sensor::SCD40Sensor() : SCD40Sensor(0) {}
+SCD40Sensor::SCD40Sensor(TwoWire* i2c_bus) : SCD40Sensor(0, i2c_bus) {}
 
 /**
  * @brief Parameterized constructor for the SCD40Sensor class.
@@ -19,9 +19,12 @@ SCD40Sensor::SCD40Sensor() : SCD40Sensor(0) {}
  * @param minimum_period The minimum time (in milliseconds) between consecutive
  * sensor reads.
  */
-SCD40Sensor::SCD40Sensor(unsigned long minimum_period)
+SCD40Sensor::SCD40Sensor(unsigned long minimum_period, TwoWire* i2c_bus)
     : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3,
-             minimum_period) {}
+             minimum_period) {
+  this->i2c_bus = i2c_bus;
+  if (this->i2c_bus == &Wire1) this->device_name += "_1";
+}
 
 /**
  * @brief Verifies the connection and readiness of the SCD40 sensor.
@@ -33,8 +36,8 @@ SCD40Sensor::SCD40Sensor(unsigned long minimum_period)
  * @return false - If the sensor is not detected or fails to initialize.
  */
 bool SCD40Sensor::verify() {
-  STRATOSENSE_I2C.begin();
-  this->scd.begin(STRATOSENSE_I2C, SCD40_I2C_ADDR_62);
+  (*this->i2c_bus).begin();
+  this->scd.begin(*(this->i2c_bus), SCD40_I2C_ADDR_62);
   uint16_t error;
   delay(30);
   error = this->scd.wakeUp();
