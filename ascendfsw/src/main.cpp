@@ -46,25 +46,30 @@ void handleDataInterface();
 // class        sensor            minimum period in ms
 INA260Sensor    ina260_sensor     (1000);
 TempSensor      temp_sensor       (1000);
-ENS160Sensor    ens160_sensor     (500);
-AS7331Sensor    uv_sensor         (500, UV_I2C_ADDR_1);
 MTK3339Sensor   gps_sensor        (2000);
 ICM20948Sensor  icm_sensor        (0);
 PCF8523Sensor   rtc_sensor        (1000);
 BMP390Sensor    bmp_sensor        (500);
-TMP117Sensor    tmp_sensor        (500); 
-SHTC3Sensor     shtc_sensor       (1000);
-SCD40Sensor     sdc_sensor        (1000, &Wire); 
-SCD40Sensor     sdc_sensor_out    (1000, &Wire1); 
 OzoneSensor     ozone_sensor      (500);
+SCD40Sensor     scd_sensor        (1000,  &Wire); 
+TMP117Sensor    tmp_sensor        (500,   &Wire); 
+ENS160Sensor    ens160_sensor     (500,   &Wire);
+SHTC3Sensor     shtc_sensor       (1000,  &Wire);
 
+// StratoSense
+AS7331Sensor    uv_sensor_out     (500, UV_I2C_ADDR);
+SCD40Sensor     scd_sensor_out    (1000,  &Wire1);  
+TMP117Sensor    tmp_sensor_out    (500,   &Wire1); 
+ENS160Sensor    ens160_sensor_out (500,   &Wire1);
+SHTC3Sensor     shtc_sensor_out   (1000,  &Wire1);
 // clang-format on
 
 // sensor array
 Sensor* sensors[] = {
-    &rtc_sensor,     &ina260_sensor, &temp_sensor, &uv_sensor,   &icm_sensor,
-    &gps_sensor,     &bmp_sensor,    &tmp_sensor,  &shtc_sensor, &sdc_sensor,
-    &sdc_sensor_out, &ens160_sensor, &ozone_sensor};
+    &rtc_sensor,     &ina260_sensor,  &temp_sensor,       &icm_sensor,
+    &gps_sensor,     &bmp_sensor,     &tmp_sensor,        &shtc_sensor,
+    &scd_sensor,     &ens160_sensor,  &ozone_sensor,      &uv_sensor_out,
+    &scd_sensor_out, &tmp_sensor_out, &ens160_sensor_out, &shtc_sensor_out};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 
@@ -92,6 +97,13 @@ void setup() {
   queue_init(&qt, QT_ENTRY_SIZE, QT_MAX_SIZE);
   mutex_init(&cmd_data_mutex);
   ErrorDisplay::instance().addCode(Error::NONE);  // for safety
+
+  // setup i2c1
+  Wire1.setSCL(I2C1_SCL_PIN);
+  Wire1.setSDA(I2C1_SDA_PIN);
+
+  Wire.begin();
+  Wire1.begin();
 
   // start serial
   Serial.begin(115200);

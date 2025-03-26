@@ -15,10 +15,11 @@ class TMP117Sensor : public Sensor {
  private:
   TMP117 tmp;
   float tempC;
+  TwoWire* i2c_bus;
 
  public:
-  TMP117Sensor();
-  TMP117Sensor(unsigned long minium_period);
+  TMP117Sensor(TwoWire* i2c_bus = &Wire);
+  TMP117Sensor(unsigned long minium_period, TwoWire* i2c_bus = &Wire);
   bool verify();
   String readData();
 
