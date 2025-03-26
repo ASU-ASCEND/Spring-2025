@@ -5,6 +5,8 @@
 
 extern TMP117Sensor tmp_sensor;
 extern SHTC3Sensor shtc_sensor;
+extern TMP117Sensor tmp_sensor_out;
+extern SHTC3Sensor shtc_sensor_out;
 
 /**
  * @brief Construct a new ENS160 Sensor object with default minimum_period of 0
@@ -59,11 +61,34 @@ String ENS160Sensor::readData() {
   // doesn't slow the read not sure if it actually does but this will let it
   // take until the next read which should be more than enough time, make sure
   // that tmp117 and shtc3
-  if (tmp_sensor.getVerified()) {
-    ens.setTempCompensationCelsius(tmp_sensor.getTempC());
+
+  TMP117Sensor* tmp_options[2];
+  SHTC3Sensor* shtc_options[2];
+
+  if (this->i2c_bus == &Wire) {
+    tmp_options[0] = &tmp_sensor;
+    tmp_options[1] = &tmp_sensor_out;
+    shtc_options[0] = &shtc_sensor;
+    shtc_options[1] = &shtc_sensor_out;
+  } else {
+    tmp_options[0] = &tmp_sensor_out;
+    tmp_options[1] = &tmp_sensor;
+    shtc_options[0] = &shtc_sensor_out;
+    shtc_options[1] = &shtc_sensor;
   }
-  if (shtc_sensor.getVerified()) {
-    ens.setRHCompensationFloat(shtc_sensor.getRelHum());
+
+  for (int i = 0; i < 2; i++) {
+    if (tmp_options[i]->getVerified()) {
+      this->ens.setTempCompensation(tmp_options[i]->getTempC());
+      break;
+    }
+  }
+
+  for (int i = 0; i < 2; i++) {
+    if (shtc_options[i]->getVerified()) {
+      this->ens.setRHCompensationFloat(shtc_options[i]->getRelHum());
+      break;
+    }
   }
 }
 void ENS160Sensor::readDataPacket(uint8_t*& packet) {
