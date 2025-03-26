@@ -14,10 +14,11 @@
 class ENS160Sensor : public Sensor {
  private:
   SparkFun_ENS160 ens;
+  TwoWire* i2c_bus;
 
  public:
-  ENS160Sensor();
-  ENS160Sensor(unsigned long minium_period);
+  ENS160Sensor(TwoWire* i2c_bus = &Wire);
+  ENS160Sensor(unsigned long minium_period, TwoWire* i2c_bus = &Wire);
   bool verify() override;
   String readData() override;
   void readDataPacket(uint8_t*& packet) override;

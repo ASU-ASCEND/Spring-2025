@@ -13,10 +13,11 @@ class SHTC3Sensor : public Sensor {
  private:
   Adafruit_SHTC3 shtc3;
   float relative_humidity;
+  TwoWire* i2c_bus;
 
  public:
-  SHTC3Sensor();
-  SHTC3Sensor(unsigned long minimum_period);
+  SHTC3Sensor(TwoWire* i2c_bus = &Wire);
+  SHTC3Sensor(unsigned long minimum_period, TwoWire* i2c_bus = &Wire);
   bool verify() override;
   String readData() override;
 

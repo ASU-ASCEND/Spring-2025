@@ -11,15 +11,18 @@ extern SHTC3Sensor shtc_sensor;
  * ms
  *
  */
-ENS160Sensor::ENS160Sensor() : ENS160Sensor(0) {}
+ENS160Sensor::ENS160Sensor(TwoWire* i2c_bus) : ENS160Sensor(0, i2c_bus) {}
 
 /**
  * @brief Construct a new ENS160 Sensor object
  *
  * @param minium_period Minimum time to wait between readings in ms
  */
-ENS160Sensor::ENS160Sensor(unsigned long minium_period)
-    : Sensor("ENS160", "ENSAQI,ENSTVOC ppb,ENSECO2 ppm,", 3, minium_period) {}
+ENS160Sensor::ENS160Sensor(unsigned long minium_period, TwoWire* i2c_bus)
+    : Sensor("ENS160", "ENSAQI,ENSTVOC ppb,ENSECO2 ppm,", 3, minium_period) {
+  this->i2c_bus = i2c_bus;
+  if (this->i2c_bus == &Wire1) this->device_name += "1";
+}
 
 /**
  * @brief Returns if the ENS160 sensor can be reached
@@ -28,9 +31,9 @@ ENS160Sensor::ENS160Sensor(unsigned long minium_period)
  * @return false if the ENS isn't connected
  */
 bool ENS160Sensor::verify() {
-  STRATOSENSE_I2C.begin();
+  this->i2c_bus->begin();
 
-  if (!ens.begin(STRATOSENSE_I2C)) {
+  if (!ens.begin(*(this->i2c_bus))) {
     return false;
   }
 
