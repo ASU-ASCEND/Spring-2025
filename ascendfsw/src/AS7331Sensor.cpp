@@ -29,6 +29,7 @@ AS7331Sensor::AS7331Sensor(unsigned long minium_period, uint8_t i2c_addr)
  * @return false never
  */
 bool AS7331Sensor::verify() {
+  STRATOSENSE_I2C.begin();
   return myUVSensor.begin(this->i2c_addr, STRATOSENSE_I2C);
 }
 

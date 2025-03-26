@@ -105,20 +105,20 @@ class GSEFrame(tk.Frame):
               self.data_cells[col_index][0].configure(background="pink")
               col_index += 1 
 
-  def update(self):
+  def update_frame(self):
     self.updateTable()
 
     # update scrolledtexts
-    # while self.sorter_core0.empty() == False or self.sorter_core1.empty() == False:
-    prefix =  datetime.now().strftime('%H:%M:%S.%f')[:-3] + " -> "
-    if self.sorter_core0.empty() == False:
-      self.core0_scrolled.configure(state="normal")
-      self.core0_scrolled.insert(tk.INSERT, prefix + str(self.sorter_core0.get()) + "\n")
-      self.core0_scrolled.yview(tk.END)
-      self.core0_scrolled.configure(state="disabled")
-    if self.sorter_core1.empty() == False:
-      self.core1_scrolled.configure(state="normal")
-      self.core1_scrolled.insert(tk.INSERT, prefix + str(self.sorter_core1.get()) + "\n")
-      self.core1_scrolled.yview(tk.END)
-      self.core1_scrolled.configure(state="disabled")  
+    while self.sorter_core0.empty() == False or self.sorter_core1.empty() == False:
+      prefix =  datetime.now().strftime('%H:%M:%S.%f')[:-3] + " -> "
+      if self.sorter_core0.empty() == False:
+        self.core0_scrolled.configure(state="normal")
+        self.core0_scrolled.insert(tk.INSERT, prefix + str(self.sorter_core0.get()) + "\n")
+        self.core0_scrolled.yview(tk.END)
+        self.core0_scrolled.configure(state="disabled")
+      if self.sorter_core1.empty() == False:
+        self.core1_scrolled.configure(state="normal")
+        self.core1_scrolled.insert(tk.INSERT, prefix + str(self.sorter_core1.get()) + "\n")
+        self.core1_scrolled.yview(tk.END)
+        self.core1_scrolled.configure(state="disabled")  
 

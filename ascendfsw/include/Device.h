@@ -18,12 +18,12 @@ class Device {
   int max_attempts;
   int attempt_number;
   unsigned long wait_factor;
-  String device_name;
 
  protected:
   // current verification of the sensor, can be set by children to trigger a
   // verify
   bool verified;
+  String device_name;
 
  public:
   /**

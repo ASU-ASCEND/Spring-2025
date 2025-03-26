@@ -66,7 +66,7 @@ class RadioFrame(tk.Frame):
           if sensor in packet["sensor_data"]:
             for i in list(packet["sensor_data"][sensor].keys())[1:]:
               self.data_cells[col_index][0].configure(background="lightblue")
-              self.data_cells[col_index][1].set(packet["sensor_data"][sensor][i])
+              self.data_cells[col_index][1].set(round(packet["sensor_data"][sensor][i], 6))
               col_index += 1
           else: 
             for i in range(self.header_info[0][sensor]):
@@ -75,5 +75,5 @@ class RadioFrame(tk.Frame):
 
         self.stats_stringvar.set(f"Packets received: {self.packets_received} \tPackets dropped: {self.packets_dropped} \tSuccess Rate: {round((self.packets_received / max(self.packets_dropped + self.packets_received, 1)) * 100, 2)}%")
 
-  def update(self):
+  def update_frame(self):
     self.updateTable()

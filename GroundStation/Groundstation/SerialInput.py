@@ -5,14 +5,19 @@ import serial
 import serial.tools.list_ports
 from datetime import datetime
 from time import sleep 
+from os import path 
+from queue import Queue, Empty
 
 class SerialInput(threading.Thread):
-    def __init__(self, end_event, input_queue):
+    def __init__(self, end_event: threading.Event, input_queue: Queue, serial_stream: Queue, serial_output: Queue):
         super().__init__()
         self.input_queue = input_queue
         self.end_event = end_event
         self.port = None
         self.ser = None
+        self.serial_stream = serial_stream
+        self.serial_output = serial_output
+        self.baud = 115200
         
 
     def list_serial_ports(self):
@@ -34,14 +39,40 @@ class SerialInput(threading.Thread):
                 print("Invalid selection. Try again.")
             except ValueError:
                 print("Please enter a valid integer.")
+    
+    def select_device(self):
+        # for baud 
+        while self.end_event.is_set() == False: 
+            try: 
+                choice = int(input("Set Input Device (0 for Hardline, 1 for Radio): "))
+                if choice == 0:
+                    self.baud = 115200
+                elif choice == 1:
+                    self.baud = 57600
+                else:
+                    raise ValueError
+                return 
+            except ValueError:
+                print("Please enter a valid integer (0 or 1).")
+
+    def command_output(self):
+        # send everything it gets to output 
+        while self.end_event.is_set() == False:
+            try: 
+                data_out = self.serial_output.get_nowait()
+
+                self.ser.write(data_out + "\n")
+            except Empty: 
+                sleep(0.1)
 
     def run(self):
         self.port = self.select_serial_port()
+        self.select_device()
 
         try:
             self.ser = serial.Serial(
                 port=self.port,
-                baudrate=115200,
+                baudrate=self.baud,
                 parity=serial.PARITY_NONE,
                 stopbits=serial.STOPBITS_ONE,
                 bytesize=serial.EIGHTBITS,
@@ -51,12 +82,15 @@ class SerialInput(threading.Thread):
             print(f"Error opening serial port {self.port}: {e}")
             sys.exit(1)
 
+        output_thread = threading.Thread(target=self.command_output)
+        output_thread.start()
         while not (self.end_event and self.end_event.is_set()):
             data = self.ser.read(512)   #1024)
             if data:
-                for byte in data:
-                    self.input_queue.put(byte)
-                    print(chr(byte), end="")
+                # print(data.decode(), end="")
+                self.input_queue.put(data)
+                self.serial_stream.put(data)
+        output_thread.join()
 
         self.ser.close()
 

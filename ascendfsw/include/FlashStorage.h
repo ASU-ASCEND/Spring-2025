@@ -47,7 +47,7 @@ class FlashStorage : public Storage {
   void storePacket(uint8_t*) override;
   void dump();
   void erase();
-  void download(int);
+  void downloadFile(int);
   void getStatus();
   void atomicStore(String data);
   void removeFile(uint32_t file_number);
