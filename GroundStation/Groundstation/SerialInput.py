@@ -9,13 +9,14 @@ from os import path
 from queue import Queue
 
 class SerialInput(threading.Thread):
-    def __init__(self, end_event: threading.Event, input_queue: Queue, serial_stream: Queue):
+    def __init__(self, end_event: threading.Event, input_queue: Queue, serial_stream: Queue, serial_output: Queue):
         super().__init__()
         self.input_queue = input_queue
         self.end_event = end_event
         self.port = None
         self.ser = None
         self.serial_stream = serial_stream
+        self.serial_output = serial_output
         
 
     def list_serial_ports(self):
@@ -38,6 +39,11 @@ class SerialInput(threading.Thread):
             except ValueError:
                 print("Please enter a valid integer.")
 
+    def command_output(self):
+        while self.end_event.is_set() == False:
+            data_out = self.serial_output.get()
+
+            self.ser.write(data_out)
 
     def run(self):
         self.port = self.select_serial_port()
@@ -55,12 +61,15 @@ class SerialInput(threading.Thread):
             print(f"Error opening serial port {self.port}: {e}")
             sys.exit(1)
 
+        output_thread = threading.Thread(target=self.command_output)
+        output_thread.start()
         while not (self.end_event and self.end_event.is_set()):
             data = self.ser.read(512)   #1024)
             if data:
                 # print(data.decode(), end="")
                 self.input_queue.put(data)
                 self.serial_stream.put(data)
+        output_thread.join()
 
         self.ser.close()
 

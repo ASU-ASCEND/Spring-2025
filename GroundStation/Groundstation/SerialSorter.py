@@ -13,12 +13,20 @@ class SerialSorter(threading.Thread):
     "[Core 1]": "[Core 1]".encode()
   }
 
-  def __init__(self, end_event: threading.Event, input_to_sorter: Queue, sorter_to_decoder: Queue, sorter_core0: Queue, sorter_core1: Queue, sorter_misc: Queue):
+  def __init__(self, 
+               end_event: threading.Event, 
+               input_to_sorter: Queue, 
+               sorter_to_decoder: Queue, 
+               sorter_core0: Queue, 
+               sorter_core1: Queue, 
+               sorter_misc: Queue,
+               sorter_flash: Queue):
     super().__init__()
     self.input_to_sorter = input_to_sorter
     self.sorter_core0 = sorter_core0
     self.sorter_core1 = sorter_core1
     self.sorter_misc = sorter_misc
+    self.sorter_flash = sorter_flash
     self.sorter_to_decoder = sorter_to_decoder 
     self.buf = bytearray()
     self.end_event = end_event
