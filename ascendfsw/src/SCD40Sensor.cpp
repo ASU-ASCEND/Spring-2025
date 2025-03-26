@@ -23,7 +23,7 @@ SCD40Sensor::SCD40Sensor(unsigned long minimum_period, TwoWire* i2c_bus)
     : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3,
              minimum_period) {
   this->i2c_bus = i2c_bus;
-  if (this->i2c_bus == &Wire1) this->device_name += "1";
+  if (this->i2c_bus == &Wire1) this->device_name += "_1";
 }
 
 /**

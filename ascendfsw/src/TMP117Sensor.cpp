@@ -16,7 +16,7 @@ TMP117Sensor::TMP117Sensor(unsigned long minimum_period, TwoWire* i2c_bus)
     : Sensor("TMP117", "TMP117Temp(C)", 1, minimum_period) {
   this->tempC = 0.0;
   this->i2c_bus = i2c_bus;
-  if (this->i2c_bus == &Wire1) this->device_name += "1";
+  if (this->i2c_bus == &Wire1) this->device_name += "_1";
 }
 
 /**

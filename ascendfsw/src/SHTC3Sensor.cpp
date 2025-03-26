@@ -16,7 +16,7 @@ SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period, TwoWire* i2c_bus)
     : Sensor("SHTC3", "Temp(C), Humidity(%)", 2, minimum_period) {
   this->relative_humidity = 0.0;
   this->i2c_bus = i2c_bus;
-  if (this->i2c_bus == &Wire1) this->device_name += "1";
+  if (this->i2c_bus == &Wire1) this->device_name += "_1";
 }
 
 /**

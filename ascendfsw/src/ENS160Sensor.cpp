@@ -21,7 +21,7 @@ ENS160Sensor::ENS160Sensor(TwoWire* i2c_bus) : ENS160Sensor(0, i2c_bus) {}
 ENS160Sensor::ENS160Sensor(unsigned long minium_period, TwoWire* i2c_bus)
     : Sensor("ENS160", "ENSAQI,ENSTVOC ppb,ENSECO2 ppm,", 3, minium_period) {
   this->i2c_bus = i2c_bus;
-  if (this->i2c_bus == &Wire1) this->device_name += "1";
+  if (this->i2c_bus == &Wire1) this->device_name += "_1";
 }
 
 /**
