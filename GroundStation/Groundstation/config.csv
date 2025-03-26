@@ -9,5 +9,6 @@ BitIndex, SensorName, FieldLabel_1, FieldType_1, FieldLabel_2, FieldType_2, Fiel
 7, TMP117, Temperature (C), float
 8, SHTC3, Temperature (C), float, Relative Humidity (%), float
 9, SCD40, CO2 Conc (ppm), uint16_t, Temperature (C), float, Rel Humidity (%), float
-10, ENS160, AQI, uint8_t, TVOC (ppb), uint16_t, eCO2 (ppm), uint16_t
-11, Ozone, Conc (ppb), int16_t
+10, SCD40_Out, CO2 ConcO (ppm), uint16_t, TemperatureO (C), float, Rel HumidityO (%), float
+11, ENS160, AQI, uint8_t, TVOC (ppb), uint16_t, eCO2 (ppm), uint16_t
+12, Ozone, Conc (ppb), int16_t
