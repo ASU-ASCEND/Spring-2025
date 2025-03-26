@@ -31,8 +31,7 @@
 
 /** @brief UV sensor I2C Addresses */
 // [1, 1, 1, 0, 1, A1, A0]
-#define UV_I2C_ADDR_1 0b1110110
-#define UV_I2C_ADDR_2 0b1110100
+#define UV_I2C_ADDR 0x74
 
 /** @brief Ozone I2C address */
 #define OZONE_I2C_ADDR 0x73
@@ -45,7 +44,7 @@
 #define TMP117_I2C_ADDR 0x48
 
 /** @brief StratoSense board I2C Bus */
-#define STRATOSENSE_I2C Wire
+#define STRATOSENSE_I2C Wire1
 
 // storages
 /** @brief Toggle sending packets vs C strings over transfer queue */

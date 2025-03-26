@@ -5,16 +5,18 @@
  * ms.
  *
  */
-TMP117Sensor::TMP117Sensor() : TMP117Sensor(0) {}
+TMP117Sensor::TMP117Sensor(TwoWire* i2c_bus) : TMP117Sensor(0, i2c_bus) {}
 
 /**
  * @brief Construct a new TMP117Sensor object.
  *
  * @param minimum_period Minimum time to wait between readings in ms
  */
-TMP117Sensor::TMP117Sensor(unsigned long minimum_period)
+TMP117Sensor::TMP117Sensor(unsigned long minimum_period, TwoWire* i2c_bus)
     : Sensor("TMP117", "TMP117Temp(C)", 1, minimum_period) {
   this->tempC = 0.0;
+  this->i2c_bus = i2c_bus;
+  if (this->i2c_bus == &Wire1) this->device_name += "_1";
 }
 
 /**
@@ -24,8 +26,8 @@ TMP117Sensor::TMP117Sensor(unsigned long minimum_period)
  * @return false if sensor is not.
  */
 bool TMP117Sensor::verify() {
-  STRATOSENSE_I2C.begin();
-  return tmp.begin(TMP117_I2C_ADDR, STRATOSENSE_I2C);
+  this->i2c_bus->begin();
+  return tmp.begin(TMP117_I2C_ADDR, *(this->i2c_bus));
 }
 
 /**
