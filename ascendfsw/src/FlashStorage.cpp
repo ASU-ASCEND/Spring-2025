@@ -362,12 +362,12 @@ void FlashStorage::getStatus() {
 
   log_core("Stored Files:");
 
-  log_flash("STATUS_START");
+  log_flash("START_DATA");
   for (const FileHeader& file : this->file_data) {
     int file_size = file.end_address - file.start_address;
 
     log_flash("File " + String(file.file_number) +
               " || Size: " + String(file_size) + " bytes");
   }
-  log_flash("STATUS_END");
+  log_flash("STOP_DATA");
 }

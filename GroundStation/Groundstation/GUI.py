@@ -16,9 +16,11 @@ class GUI():
                sorter_core0: Queue, 
                sorter_core1: Queue, 
                sorter_misc: Queue, 
+               sorter_flash: Queue, 
                decoder_packets: Queue, 
                decoder_args: list,
-               header_info: tuple[dict, list]):
+               header_info: tuple[dict, list],
+               serial_output: Queue):
     super().__init__()
     self.end_event = end_event 
     self.COLUMNS = 6
@@ -36,8 +38,10 @@ class GUI():
     self.sorter_core0 = sorter_core0
     self.sorter_core1 = sorter_core1
     self.sorter_misc = sorter_misc 
+    self.sorter_flash = sorter_flash
     self.decoder_packets = decoder_packets
     self.decoder_args = decoder_args
+    self.serial_output = serial_output
 
     self.header_info = header_info
 

@@ -24,10 +24,12 @@ if __name__ == "__main__":
     sorter_core0 = Queue()
     sorter_core1 = Queue()
     sorter_misc = Queue()
+    sorter_flash = Queue()
     decoder_packets = Queue()
     decoder_packet_saver = Queue()
     packet_saver_server = Queue()
     serial_stream = Queue()
+    serial_output = Queue()
 
     # Load configuration file
     bitmask_to_struct, bitmask_to_name, num_sensors = load_config(FILE_PATH)
@@ -54,7 +56,8 @@ if __name__ == "__main__":
     serial_input = SerialInput.SerialInput(
         end_event,
         input_to_sorter,
-        serial_stream
+        serial_stream, 
+        serial_output
     )
 
     serial_saver = SerialSaver.SerialSaver(
@@ -68,7 +71,8 @@ if __name__ == "__main__":
         sorter_to_decoder, 
         sorter_core0, 
         sorter_core1, 
-        sorter_misc
+        sorter_misc,
+        sorter_flash
     )
     
     packet_decoder = PacketDecoder.PacketDecoder(
@@ -100,9 +104,11 @@ if __name__ == "__main__":
         sorter_core0,
         sorter_core1,
         sorter_misc,
+        sorter_flash, 
         decoder_packets,
         [bitmask_to_struct, bitmask_to_name, num_sensors],
-        header_info
+        header_info, 
+        serial_output
     )
 
     server_process = ServerProcess.ServerProcess()
