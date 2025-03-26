@@ -31,10 +31,11 @@
 class SCD40Sensor : public Sensor {
  private:
   SensirionI2cScd4x scd;
+  TwoWire* i2c_bus;
 
  public:
-  SCD40Sensor();
-  SCD40Sensor(unsigned long minimum_period);
+  SCD40Sensor(TwoWire* i2c_bus = &Wire);
+  SCD40Sensor(unsigned long minimum_period, TwoWire* i2c_bus = &Wire);
 
   bool verify() override;
   String readData() override;
