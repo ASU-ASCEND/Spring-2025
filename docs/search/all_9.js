@@ -3,7 +3,7 @@ var searchData=
   ['i2c1_5fscl_5fpin_0',['I2C1_SCL_PIN',['../PayloadConfig_8h.html#add009e081e638094ee54b280661d862e',1,'PayloadConfig.h']]],
   ['i2c1_5fsda_5fpin_1',['I2C1_SDA_PIN',['../PayloadConfig_8h.html#a68697a8aca56f616b38aa23f82edecd5',1,'PayloadConfig.h']]],
   ['i2c_5faddr_2',['i2c_addr',['../classAS7331Sensor.html#a7bf9a8e37c93f58db2f41187fd4f3363',1,'AS7331Sensor']]],
-  ['i2c_5fbus_3',['i2c_bus',['../classSCD40Sensor.html#af5457baf646b81ddb11d8670361fa330',1,'SCD40Sensor']]],
+  ['i2c_5fbus_3',['i2c_bus',['../classTMP117Sensor.html#ad58e72746f5256708fdfa7861809c275',1,'TMP117Sensor::i2c_bus'],['../classSHTC3Sensor.html#afe1238c0dc553009aaef255b22b579a9',1,'SHTC3Sensor::i2c_bus'],['../classSCD40Sensor.html#af5457baf646b81ddb11d8670361fa330',1,'SCD40Sensor::i2c_bus'],['../classENS160Sensor.html#a7bdc5061dc15bd90037a122929d9a1a4',1,'ENS160Sensor::i2c_bus']]],
   ['icm_4',['icm',['../classICM20948Sensor.html#a79e354702d11ae27a348f64db78fde22',1,'ICM20948Sensor']]],
   ['icm20948sensor_5',['icm20948sensor',['../classICM20948Sensor.html#a8a574df240372e4a1c475e229d9f4b2d',1,'ICM20948Sensor::ICM20948Sensor()'],['../classICM20948Sensor.html#a589c36813a59a5640cfc68eddbfe52cc',1,'ICM20948Sensor::ICM20948Sensor(unsigned long minimum_period)'],['../classICM20948Sensor.html',1,'ICM20948Sensor']]],
   ['icm20948sensor_2ecpp_6',['ICM20948Sensor.cpp',['../ICM20948Sensor_8cpp.html',1,'']]],

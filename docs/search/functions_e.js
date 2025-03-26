@@ -13,7 +13,7 @@ var searchData=
   ['setupsensor_10',['setupSensor',['../classLSM9DS1Sensor.html#a3f06cfc776d797dbb8d454794a7c9fc2',1,'LSM9DS1Sensor']]],
   ['setwaitfactor_11',['setWaitFactor',['../classDevice.html#ae71d2f19c89f1ebfcd756c030458f3b5',1,'Device']]],
   ['sgp30sensor_12',['sgp30sensor',['../classSGP30Sensor.html#a884d39d3cbdde603d75d43d6c4f5b89d',1,'SGP30Sensor::SGP30Sensor()'],['../classSGP30Sensor.html#a22e23104fef4d49ab10260ca2730c5b7',1,'SGP30Sensor::SGP30Sensor(unsigned long minimum_period)']]],
-  ['shtc3sensor_13',['shtc3sensor',['../classSHTC3Sensor.html#ae694fdbfa9383289a2ed4cf19f82086d',1,'SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period)'],['../classSHTC3Sensor.html#a55d1d6106b108e69399b52e75916b051',1,'SHTC3Sensor::SHTC3Sensor()']]],
+  ['shtc3sensor_13',['shtc3sensor',['../classSHTC3Sensor.html#a99e3fc8c79b8a8b0abdd779b06791ef0',1,'SHTC3Sensor::SHTC3Sensor(unsigned long minimum_period, TwoWire *i2c_bus=&amp;Wire)'],['../classSHTC3Sensor.html#aec37e03ca2a2bbb52a42674ef782a641',1,'SHTC3Sensor::SHTC3Sensor(TwoWire *i2c_bus=&amp;Wire)']]],
   ['storage_14',['Storage',['../classStorage.html#a2f5803f60b5c3cd8e9c35fc744ab3058',1,'Storage']]],
   ['store_15',['store',['../classSDStorage.html#a731b7e40012d3ab63bbf2ae0afe2d800',1,'SDStorage::store()'],['../classStorage.html#a08674ceb4404690065b1cf39963eb5a3',1,'Storage::store()'],['../classRadioStorage.html#a72c09891b0f77bef7a53f710415a503c',1,'RadioStorage::store()'],['../classFlashStorage.html#a4890571487bb855dd72c050dc37a73f1',1,'FlashStorage::store()']]],
   ['storedata_16',['storeData',['../main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7',1,'main1.cpp']]],

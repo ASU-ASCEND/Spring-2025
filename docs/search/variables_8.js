@@ -1,7 +1,7 @@
 var searchData=
 [
   ['i2c_5faddr_0',['i2c_addr',['../classAS7331Sensor.html#a7bf9a8e37c93f58db2f41187fd4f3363',1,'AS7331Sensor']]],
-  ['i2c_5fbus_1',['i2c_bus',['../classSCD40Sensor.html#af5457baf646b81ddb11d8670361fa330',1,'SCD40Sensor']]],
+  ['i2c_5fbus_1',['i2c_bus',['../classENS160Sensor.html#a7bdc5061dc15bd90037a122929d9a1a4',1,'ENS160Sensor::i2c_bus'],['../classSCD40Sensor.html#af5457baf646b81ddb11d8670361fa330',1,'SCD40Sensor::i2c_bus'],['../classSHTC3Sensor.html#afe1238c0dc553009aaef255b22b579a9',1,'SHTC3Sensor::i2c_bus'],['../classTMP117Sensor.html#ad58e72746f5256708fdfa7861809c275',1,'TMP117Sensor::i2c_bus']]],
   ['icm_2',['icm',['../classICM20948Sensor.html#a79e354702d11ae27a348f64db78fde22',1,'ICM20948Sensor']]],
   ['icm_5faccel_3',['icm_accel',['../classICM20948Sensor.html#a84af140cb894641f89c35cc653f61384',1,'ICM20948Sensor']]],
   ['icm_5fgyro_4',['icm_gyro',['../classICM20948Sensor.html#a70de39227856aa96c07ef65c1a67f367',1,'ICM20948Sensor']]],
