@@ -9,8 +9,9 @@ from construct import (
     Byte, Bytes, this, Pointer
 )
 from os import path, mkdir
-from queue import Queue 
+from queue import Queue, Empty 
 import re
+from time import sleep 
 
 class DataFrame(tk.Frame):
 
@@ -19,12 +20,14 @@ class DataFrame(tk.Frame):
                decoder_args: list, 
                header_info: tuple[dict, list], 
                serial_output: Queue,
-               sorter_flash: Queue):
+               sorter_flash: Queue,
+               end_event: threading.Event):
     super().__init__(container)
     self.file_list = []
     self.COLUMNS = 4
     self.serial_output = serial_output
     self.sorter_flash = sorter_flash
+    self.end_event = end_event
 
     button_config = {
       "width": 20, 
@@ -83,10 +86,15 @@ class DataFrame(tk.Frame):
 
     # transfer data to file 
     with open(path.join("flash_data", file_name + ".bin"), "wb") as fout: 
-      data = self.sorter_flash.get()
-      while data != "FLASH OPERATION TRANSFER COMPLETE": 
-        fout.write(data) 
-        data = self.sorter_flash.get()
+      while self.end_event.is_set() == False: 
+        try: 
+          data = self.sorter_flash.get()
+          if data == "FLASH OPERATION TRANSFER COMPLETE": 
+            break
+          else:
+            fout.write(data) 
+        except Empty:
+          sleep(0.1)
 
     self.status_label.config(text=f"Status: File transferred as data/{file_name}")
 
@@ -112,9 +120,19 @@ class DataFrame(tk.Frame):
     self.serial_output.put("STATUS")
 
     # populate list from data
-    while data != "FLASH OPERATION TRANSFER COMPLETE": 
-      data = self.sorter_flash.get()
-      self.file_list.append(data)
+    buf = "" 
+    while self.end_event.is_set() == False:
+      try: 
+        data: bytearray = self.sorter_flash.get_nowait()
+
+        if data == "FLASH OPERATION TRANSFER COMPLETE": 
+          break
+        else:
+          buf += data.decode()
+      except Empty:
+        sleep(0.1)
+    
+    self.file_list = [i.strip() for i in buf.split("[Flash]")] 
 
     self.update_file_list()
     self.status_label.config(text=f"Status: File list retrieved")

@@ -6,7 +6,7 @@ import serial.tools.list_ports
 from datetime import datetime
 from time import sleep 
 from os import path 
-from queue import Queue
+from queue import Queue, Empty
 
 class SerialInput(threading.Thread):
     def __init__(self, end_event: threading.Event, input_queue: Queue, serial_stream: Queue, serial_output: Queue):
@@ -56,10 +56,14 @@ class SerialInput(threading.Thread):
                 print("Please enter a valid integer (0 or 1).")
 
     def command_output(self):
+        # send everything it gets to output 
         while self.end_event.is_set() == False:
-            data_out = self.serial_output.get()
+            try: 
+                data_out = self.serial_output.get_nowait()
 
-            self.ser.write(data_out)
+                self.ser.write(data_out)
+            except Empty: 
+                sleep(0.1)
 
     def run(self):
         self.port = self.select_serial_port()
