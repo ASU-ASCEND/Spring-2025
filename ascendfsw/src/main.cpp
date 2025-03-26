@@ -54,7 +54,8 @@ PCF8523Sensor   rtc_sensor        (1000);
 BMP390Sensor    bmp_sensor        (500);
 TMP117Sensor    tmp_sensor        (500); 
 SHTC3Sensor     shtc_sensor       (1000);
-SCD40Sensor     sdc_sensor        (1000); 
+SCD40Sensor     sdc_sensor        (1000, &Wire); 
+SCD40Sensor     sdc_sensor_out    (1000, &Wire1); 
 OzoneSensor     ozone_sensor      (500);
 
 // clang-format on
@@ -63,7 +64,7 @@ OzoneSensor     ozone_sensor      (500);
 Sensor* sensors[] = {&rtc_sensor, &ina260_sensor, &temp_sensor,
                      &uv_sensor,  &icm_sensor,    &gps_sensor,
                      &bmp_sensor, &tmp_sensor,    &shtc_sensor,
-                     &sdc_sensor, &ens160_sensor, &ozone_sensor};
+                     &sdc_sensor, &sdc_sensor_out, &ens160_sensor, &ozone_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 
