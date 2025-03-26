@@ -1,0 +1,5 @@
+<map id="FlashStorage::atomicStore" name="FlashStorage::atomicStore">
+<area shape="rect" id="Node000001" title="Writes a string to flash atomically." alt="" coords="5,5,200,31"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#a3f4de49bad97284528ebd5279abf3985" title="Writes the file header to the start of a new sector." alt="" coords="248,5,467,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,15,235,15,235,21,200,21"/>
+</map>

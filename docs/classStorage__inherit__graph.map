@@ -1,11 +1,11 @@
 <map id="Storage" name="Storage">
-<area shape="rect" id="Node000001" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="177,379,290,504"/>
-<area shape="rect" id="Node000003" href="$classFlashStorage.html" title=" " alt="" coords="5,552,147,997"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,517,161,553,149,577,144,575,156,551,178,514"/>
-<area shape="rect" id="Node000004" href="$classRadioStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="171,712,296,837"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,518,236,712,231,712,231,518"/>
-<area shape="rect" id="Node000005" href="$classSDStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="321,702,434,847"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="290,514,310,551,341,627,363,701,358,702,336,629,306,553,285,517"/>
-<area shape="rect" id="Node000002" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="151,5,315,331"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,344,236,378,231,378,231,344"/>
+<area shape="rect" id="Node000001" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="240,379,353,504"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html" title=" " alt="" coords="5,552,209,1057"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,517,224,553,212,576,207,574,220,551,242,514"/>
+<area shape="rect" id="Node000004" href="$classRadioStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="234,742,359,867"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="299,518,299,742,294,742,294,518"/>
+<area shape="rect" id="Node000005" href="$classSDStorage.html" title="Implementation of a Storage device to interface with an SD card." alt="" coords="384,732,497,877"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="353,514,374,551,408,643,430,731,425,732,403,645,369,553,349,517"/>
+<area shape="rect" id="Node000002" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="215,5,379,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,344,299,378,294,378,294,344"/>
 </map>

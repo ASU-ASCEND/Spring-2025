@@ -9,5 +9,6 @@ var searchData=
   ['readsensordatapacket_6',['readSensorDataPacket',['../main_8cpp.html#a35aec64ebd5600523486586642a4fe23',1,'main.cpp']]],
   ['real_5floop1_7',['real_loop1',['../main_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7',1,'real_loop1():&#160;main1.cpp'],['../main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7',1,'real_loop1():&#160;main1.cpp']]],
   ['real_5fsetup1_8',['real_setup1',['../main_8cpp.html#a335f1df8d0b267769cb9842c12616214',1,'real_setup1():&#160;main1.cpp'],['../main1_8cpp.html#a335f1df8d0b267769cb9842c12616214',1,'real_setup1():&#160;main1.cpp']]],
-  ['recoveryconfig_9',['recoveryConfig',['../classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565',1,'Device']]]
+  ['recoveryconfig_9',['recoveryConfig',['../classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565',1,'Device']]],
+  ['removefile_10',['removeFile',['../classFlashStorage.html#ad8daa31feba03cb7d02efb3124962f20',1,'FlashStorage']]]
 ];

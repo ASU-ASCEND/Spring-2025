@@ -1,7 +1,9 @@
 <map id="FlashStorage::writeFileHeader" name="FlashStorage::writeFileHeader">
-<area shape="rect" id="Node000001" title="Writes the file header to the start of a new sector." alt="" coords="440,5,659,31"/>
-<area shape="rect" id="Node000002" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="205,5,392,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="426,21,392,21,392,15,426,15"/>
-<area shape="rect" id="Node000003" href="$classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" title="Verifies the flash connection and prepares for data storage." alt="" coords="5,5,157,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="192,21,157,21,157,15,192,15"/>
+<area shape="rect" id="Node000001" title="Writes the file header to the start of a new sector." alt="" coords="448,31,667,56"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#a7354ff496fb0a6c4148d1328b4048d46" title="Writes a string to flash atomically." alt="" coords="205,5,400,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="434,34,400,30,401,25,435,28"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="209,55,396,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="435,58,396,61,396,56,434,52"/>
+<area shape="rect" id="Node000004" href="$classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" title="Verifies the flash connection and prepares for data storage." alt="" coords="5,55,157,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="196,70,157,70,157,65,196,65"/>
 </map>
