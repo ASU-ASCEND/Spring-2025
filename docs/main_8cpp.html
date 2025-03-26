@@ -166,8 +166,10 @@ Variables</h2></td></tr>
 <tr class="separator:a6bc418c537167acff14a4ccc136a93a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6388b4ec6bfc9cf7be5f3e61c5ade273" id="r_a6388b4ec6bfc9cf7be5f3e61c5ade273"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSHTC3Sensor.html">SHTC3Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a> (1000)</td></tr>
 <tr class="separator:a6388b4ec6bfc9cf7be5f3e61c5ade273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23f1b1900e276f31aaa9d26926d6350a" id="r_a23f1b1900e276f31aaa9d26926d6350a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSCD40Sensor.html">SCD40Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a23f1b1900e276f31aaa9d26926d6350a">sdc_sensor</a> (1000)</td></tr>
-<tr class="separator:a23f1b1900e276f31aaa9d26926d6350a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09ca4291da9062b79a6b9ef3d0c46911" id="r_a09ca4291da9062b79a6b9ef3d0c46911"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSCD40Sensor.html">SCD40Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a09ca4291da9062b79a6b9ef3d0c46911">sdc_sensor</a> (1000, &amp;Wire)</td></tr>
+<tr class="separator:a09ca4291da9062b79a6b9ef3d0c46911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a573b5c50e96bfd9d46dc26b38b4a6e37" id="r_a573b5c50e96bfd9d46dc26b38b4a6e37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSCD40Sensor.html">SCD40Sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a573b5c50e96bfd9d46dc26b38b4a6e37">sdc_sensor_out</a> (1000, &amp;Wire1)</td></tr>
+<tr class="separator:a573b5c50e96bfd9d46dc26b38b4a6e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3b8adf08b8d2e5b117ead8e0b00596" id="r_abf3b8adf08b8d2e5b117ead8e0b00596"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOzoneSensor.html">OzoneSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abf3b8adf08b8d2e5b117ead8e0b00596">ozone_sensor</a> (500)</td></tr>
 <tr class="separator:abf3b8adf08b8d2e5b117ead8e0b00596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fab47e83fc30a637dd287c8a920f070" id="r_a6fab47e83fc30a637dd287c8a920f070"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSensor.html">Sensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6fab47e83fc30a637dd287c8a920f070">sensors</a> []</td></tr>
@@ -716,18 +718,56 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a23f1b1900e276f31aaa9d26926d6350a" name="a23f1b1900e276f31aaa9d26926d6350a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23f1b1900e276f31aaa9d26926d6350a">&#9670;&#160;</a></span>sdc_sensor</h2>
+<a id="a09ca4291da9062b79a6b9ef3d0c46911" name="a09ca4291da9062b79a6b9ef3d0c46911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ca4291da9062b79a6b9ef3d0c46911">&#9670;&#160;</a></span>sdc_sensor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classSCD40Sensor.html">SCD40Sensor</a> sdc_sensor(1000) </td>
+          <td class="memname"><a class="el" href="classSCD40Sensor.html">SCD40Sensor</a> sdc_sensor(1000, &amp;Wire) </td>
           <td>(</td>
           <td class="paramtype">1000&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&amp;&#160;</td>
+          <td class="paramname"><em>Wire</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a573b5c50e96bfd9d46dc26b38b4a6e37" name="a573b5c50e96bfd9d46dc26b38b4a6e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a573b5c50e96bfd9d46dc26b38b4a6e37">&#9670;&#160;</a></span>sdc_sensor_out</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSCD40Sensor.html">SCD40Sensor</a> sdc_sensor_out(1000, &amp;Wire1) </td>
+          <td>(</td>
+          <td class="paramtype">1000&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&amp;&#160;</td>
+          <td class="paramname"><em>Wire1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -745,13 +785,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {&amp;<a class="code hl_variable" href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a6aaec7a466546ae9ce387852e01e5536">ina260_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a>,</div>
-<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a6b2b2e49589d51987c4e3d30f0dfac3f">uv_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#ac51c0614f4dbbed55b8345e48817d25f">icm_sensor</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a6fc3a17157f10274d10618f69c394766">gps_sensor</a>,</div>
-<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a0f184e69939ed4cd20c14a94ddf197d2">bmp_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a6bc418c537167acff14a4ccc136a93a3">tmp_sensor</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a>,</div>
-<div class="line">                     &amp;<a class="code hl_variable" href="main_8cpp.html#a23f1b1900e276f31aaa9d26926d6350a">sdc_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a95e5b78e1629b1b550fd5a8c12037a1f">ens160_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#abf3b8adf08b8d2e5b117ead8e0b00596">ozone_sensor</a>}</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    &amp;<a class="code hl_variable" href="main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21">rtc_sensor</a>,     &amp;<a class="code hl_variable" href="main_8cpp.html#a6aaec7a466546ae9ce387852e01e5536">ina260_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a6b2b2e49589d51987c4e3d30f0dfac3f">uv_sensor</a>,   &amp;<a class="code hl_variable" href="main_8cpp.html#ac51c0614f4dbbed55b8345e48817d25f">icm_sensor</a>,</div>
+<div class="line">    &amp;<a class="code hl_variable" href="main_8cpp.html#a6fc3a17157f10274d10618f69c394766">gps_sensor</a>,     &amp;<a class="code hl_variable" href="main_8cpp.html#a0f184e69939ed4cd20c14a94ddf197d2">bmp_sensor</a>,    &amp;<a class="code hl_variable" href="main_8cpp.html#a6bc418c537167acff14a4ccc136a93a3">tmp_sensor</a>,  &amp;<a class="code hl_variable" href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a09ca4291da9062b79a6b9ef3d0c46911">sdc_sensor</a>,</div>
+<div class="line">    &amp;<a class="code hl_variable" href="main_8cpp.html#a573b5c50e96bfd9d46dc26b38b4a6e37">sdc_sensor_out</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#a95e5b78e1629b1b550fd5a8c12037a1f">ens160_sensor</a>, &amp;<a class="code hl_variable" href="main_8cpp.html#abf3b8adf08b8d2e5b117ead8e0b00596">ozone_sensor</a>}</div>
+<div class="ttc" id="amain_8cpp_html_a09ca4291da9062b79a6b9ef3d0c46911"><div class="ttname"><a href="main_8cpp.html#a09ca4291da9062b79a6b9ef3d0c46911">sdc_sensor</a></div><div class="ttdeci">SCD40Sensor sdc_sensor(1000, &amp;Wire)</div></div>
 <div class="ttc" id="amain_8cpp_html_a0f184e69939ed4cd20c14a94ddf197d2"><div class="ttname"><a href="main_8cpp.html#a0f184e69939ed4cd20c14a94ddf197d2">bmp_sensor</a></div><div class="ttdeci">BMP390Sensor bmp_sensor(500)</div></div>
-<div class="ttc" id="amain_8cpp_html_a23f1b1900e276f31aaa9d26926d6350a"><div class="ttname"><a href="main_8cpp.html#a23f1b1900e276f31aaa9d26926d6350a">sdc_sensor</a></div><div class="ttdeci">SCD40Sensor sdc_sensor(1000)</div></div>
 <div class="ttc" id="amain_8cpp_html_a24a54c1dabc1e13f503b7d5bb72fd588"><div class="ttname"><a href="main_8cpp.html#a24a54c1dabc1e13f503b7d5bb72fd588">temp_sensor</a></div><div class="ttdeci">TempSensor temp_sensor(1000)</div></div>
+<div class="ttc" id="amain_8cpp_html_a573b5c50e96bfd9d46dc26b38b4a6e37"><div class="ttname"><a href="main_8cpp.html#a573b5c50e96bfd9d46dc26b38b4a6e37">sdc_sensor_out</a></div><div class="ttdeci">SCD40Sensor sdc_sensor_out(1000, &amp;Wire1)</div></div>
 <div class="ttc" id="amain_8cpp_html_a6388b4ec6bfc9cf7be5f3e61c5ade273"><div class="ttname"><a href="main_8cpp.html#a6388b4ec6bfc9cf7be5f3e61c5ade273">shtc_sensor</a></div><div class="ttdeci">SHTC3Sensor shtc_sensor(1000)</div></div>
 <div class="ttc" id="amain_8cpp_html_a6aaec7a466546ae9ce387852e01e5536"><div class="ttname"><a href="main_8cpp.html#a6aaec7a466546ae9ce387852e01e5536">ina260_sensor</a></div><div class="ttdeci">INA260Sensor ina260_sensor(1000)</div></div>
 <div class="ttc" id="amain_8cpp_html_a6b2b2e49589d51987c4e3d30f0dfac3f"><div class="ttname"><a href="main_8cpp.html#a6b2b2e49589d51987c4e3d30f0dfac3f">uv_sensor</a></div><div class="ttdeci">AS7331Sensor uv_sensor(500, UV_I2C_ADDR_1)</div></div>

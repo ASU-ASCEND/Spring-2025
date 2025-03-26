@@ -28,8 +28,8 @@
 <area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="1590,744,1628,806,1662,871,1694,942,1719,1011,1714,1013,1689,944,1658,873,1623,809,1586,746"/>
 <area shape="rect" id="Node000014" href="$classPCF8523Sensor.html" title="Implementation of the PCF8523 sensor." alt="" coords="1837,1002,1979,1187"/>
 <area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="1594,661,1652,702,1715,751,1775,808,1828,870,1864,934,1888,1001,1883,1003,1859,937,1823,874,1771,811,1711,755,1649,706,1591,665"/>
-<area shape="rect" id="Node000015" href="$classSCD40Sensor.html" title="A class to interface with the Sensirion SCD40 sensor for CO2 data collection." alt="" coords="2003,1012,2144,1177"/>
-<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="1595,631,1689,667,1795,719,1849,750,1901,786,1949,826,1993,870,2016,903,2035,939,2060,1011,2055,1013,2030,941,2012,906,1989,874,1946,830,1898,790,1846,755,1793,723,1687,672,1593,636"/>
+<area shape="rect" id="Node000015" href="$classSCD40Sensor.html" title="A class to interface with the Sensirion SCD40 sensor for CO2 data collection." alt="" coords="2003,1002,2144,1187"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="1595,631,1689,667,1795,719,1849,750,1901,786,1949,826,1993,870,2015,900,2032,933,2057,1001,2052,1002,2028,935,2010,903,1989,874,1946,830,1898,790,1846,755,1793,723,1687,672,1593,636"/>
 <area shape="rect" id="Node000016" href="$classSGP30Sensor.html" title="Implementation of a Sensor for the SGP Air Quality sensor." alt="" coords="2168,1012,2309,1177"/>
 <area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="1595,615,1722,644,1795,665,1872,693,1949,726,2024,766,2095,814,2158,870,2183,902,2202,938,2217,975,2228,1011,2222,1013,2212,977,2198,940,2179,905,2154,874,2092,818,2022,771,1947,731,1870,698,1794,670,1720,649,1594,620"/>
 <area shape="rect" id="Node000017" href="$classSHTC3Sensor.html" title="Implementation of a Sensor for the SHTC3." alt="" coords="2333,992,2477,1197"/>

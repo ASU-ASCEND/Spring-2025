@@ -523,26 +523,28 @@
 <g id="Node000015" class="node">
 <title>Node15</title>
 <g id="a_Node000015"><a xlink:href="classSCD40Sensor.html" target="_top" xlink:title="A class to interface with the Sensirion SCD40 sensor for CO2 data collection.">
-<polygon fill="white" stroke="transparent" points="1604,-161.5 1498,-161.5 1498,-37.5 1604,-37.5 1604,-161.5"/>
-<text text-anchor="start" x="1518" y="-149.5" font-family="Helvetica,sans-Serif" font-size="10.00">SCD40Sensor</text>
-<text text-anchor="start" x="1504.5" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text text-anchor="start" x="1515" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">scd</text>
-<text text-anchor="start" x="1502" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">SCD40Sensor()</text>
-<text text-anchor="start" x="1502" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-104.5" font-family="Helvetica,sans-Serif" font-size="10.00">SCD40Sensor()</text>
-<text text-anchor="start" x="1502" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
-<text text-anchor="start" x="1502" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
-<text text-anchor="start" x="1502" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
-<text text-anchor="start" x="1502" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="1515" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
-<polygon fill="#666666" stroke="#666666" points="1498,-144.5 1498,-144.5 1604,-144.5 1604,-144.5 1498,-144.5"/>
-<polygon fill="#666666" stroke="#666666" points="1498,-129.5 1498,-129.5 1513,-129.5 1513,-129.5 1498,-129.5"/>
-<polygon fill="#666666" stroke="#666666" points="1513,-129.5 1513,-129.5 1604,-129.5 1604,-129.5 1513,-129.5"/>
-<polygon fill="none" stroke="#666666" points="1498,-37.5 1498,-161.5 1604,-161.5 1604,-37.5 1498,-37.5"/>
+<polygon fill="white" stroke="transparent" points="1604,-169 1498,-169 1498,-30 1604,-30 1604,-169"/>
+<text text-anchor="start" x="1518" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">SCD40Sensor</text>
+<text text-anchor="start" x="1504.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1515" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">scd</text>
+<text text-anchor="start" x="1504.5" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text text-anchor="start" x="1515" y="-126.5" font-family="Helvetica,sans-Serif" font-size="10.00">i2c_bus</text>
+<text text-anchor="start" x="1502" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1515" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">SCD40Sensor()</text>
+<text text-anchor="start" x="1502" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1515" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">SCD40Sensor()</text>
+<text text-anchor="start" x="1502" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1515" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">verify()</text>
+<text text-anchor="start" x="1502" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1515" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">readData()</text>
+<text text-anchor="start" x="1502" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1515" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">readDataPacket()</text>
+<text text-anchor="start" x="1502" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text text-anchor="start" x="1515" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">decodeToCSV()</text>
+<polygon fill="#666666" stroke="#666666" points="1498,-151.5 1498,-151.5 1604,-151.5 1604,-151.5 1498,-151.5"/>
+<polygon fill="#666666" stroke="#666666" points="1498,-121.5 1498,-121.5 1513,-121.5 1513,-121.5 1498,-121.5"/>
+<polygon fill="#666666" stroke="#666666" points="1513,-121.5 1513,-121.5 1604,-121.5 1604,-121.5 1513,-121.5"/>
+<polygon fill="none" stroke="#666666" points="1498,-30 1498,-169 1604,-169 1604,-30 1498,-30"/>
 </a>
 </g>
 </g>
@@ -550,7 +552,7 @@
 <g id="edge14_Node000001_Node000015" class="edge">
 <title>Node1&#45;&gt;Node15</title>
 <g id="a_edge14_Node000001_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1128.32,-380.4C1221.92,-352.08 1381.37,-293.59 1489,-199 1500.99,-188.46 1511.48,-175.05 1520.26,-161.54"/>
+<path fill="none" stroke="#63b8ff" d="M1128.32,-380.4C1221.92,-352.08 1381.37,-293.59 1489,-199 1498.71,-190.46 1507.45,-180.04 1515.08,-169.2"/>
 <polygon fill="none" stroke="#63b8ff" points="1127.22,-377.08 1118.64,-383.29 1129.22,-383.78 1127.22,-377.08"/>
 </a>
 </g>

@@ -1,7 +1,7 @@
 <map id="SCD40Sensor" name="SCD40Sensor">
-<area shape="rect" id="Node000001" title="A class to interface with the Sensirion SCD40 sensor for CO2 data collection." alt="" coords="518,851,659,1016"/>
+<area shape="rect" id="Node000001" title="A class to interface with the Sensirion SCD40 sensor for CO2 data collection." alt="" coords="607,851,749,1016"/>
 <area shape="rect" id="Node000002" href="$classSensor.html" title="Parent class for sensor objects." alt="" coords="411,423,588,788"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="555,801,569,850,564,851,550,802"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="597,779,636,849,631,852,592,781"/>
 <area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="217,148,381,373"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,384,413,451,408,454,369,387"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="5,5,111,71"/>
@@ -16,5 +16,7 @@
 <area shape="rect" id="Node000007" title=" " alt="" coords="182,5,225,71"/>
 <area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="212,70,227,123,231,132,226,134,222,125,207,72"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="612,573,744,638"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="672,639,618,835,613,834,667,638"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="681,638,681,834,675,834,675,638"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="769,573,849,638"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="804,639,786,709,759,789,737,837,732,835,754,787,781,707,799,638"/>
 </map>

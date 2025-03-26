@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scd40sensor_0',['scd40sensor',['../classSCD40Sensor.html#a874ad4197149c576d651c95158ca4367',1,'SCD40Sensor::SCD40Sensor(unsigned long minimum_period)'],['../classSCD40Sensor.html#a98b8c1bf61d71a635155e8f79e5c5704',1,'SCD40Sensor::SCD40Sensor()']]],
+  ['scd40sensor_0',['scd40sensor',['../classSCD40Sensor.html#ae3cd24a612710aa9ec94a58c418b205e',1,'SCD40Sensor::SCD40Sensor(unsigned long minimum_period, TwoWire *i2c_bus=&amp;Wire)'],['../classSCD40Sensor.html#a523761db7eb97be2acceb59c13031e9d',1,'SCD40Sensor::SCD40Sensor(TwoWire *i2c_bus=&amp;Wire)']]],
   ['sdstorage_1',['SDStorage',['../classSDStorage.html#a992cb710f41462a7a35c6dfdc838f01f',1,'SDStorage']]],
   ['sensor_2',['sensor',['../classSensor.html#a47013fb0a7d3e8d95944e309ce2bf88f',1,'Sensor::Sensor(String sensor_name, String csv_header, unsigned long minimum_period)'],['../classSensor.html#a292d8088e6839fa9a9cce7d64220ce69',1,'Sensor::Sensor(String sensor_name, String csv_header)'],['../classSensor.html#ac961611fe726ecce2236efa3b9ee450c',1,'Sensor::Sensor(String sensor_name, String csv_header, int fields)'],['../classSensor.html#a861ed177b65f0d04543e7b6fae6b8c85',1,'Sensor::Sensor(String sensor_name, String csv_header, int fields, unsigned long minimum_period)']]],
   ['setcmddata_3',['setcmddata',['../CommandMessage_8h.html#ad408818d8c69721c19d63006e8ef4d22',1,'setCmdData(CommandMessage new_cmd_data):&#160;CommandMessage.cpp'],['../CommandMessage_8cpp.html#ad408818d8c69721c19d63006e8ef4d22',1,'setCmdData(CommandMessage new_cmd_data):&#160;CommandMessage.cpp']]],
