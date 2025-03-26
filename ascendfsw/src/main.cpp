@@ -252,7 +252,6 @@ int verifySensorRecovery() {
  * Pause data collection and storage for a specified duration to execute
  * a command, including STATUS, DOWNLOAD, DELETE, etc.
  *
- * @param cmd
  */
 void handleCommand() {
   // Fetch & format command

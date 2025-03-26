@@ -333,9 +333,9 @@ void FlashStorage::downloadFile(int file_number) {
       current_pos++;
 
       // Show progress every 1000 bytes
-      if (bytes_read % 1000 == 0) {
-        log_core("Progress: " + String(bytes_read) + "/" + String(file_size));
-      }
+      // if (bytes_read % 1000 == 0) {
+      //   log_core("Progress: " + String(bytes_read) + "/" + String(file_size));
+      // }
 
       // Visual feedback
       digitalWrite(HEARTBEAT_PIN_1, (current_pos & 0x60) != 0);
@@ -345,8 +345,12 @@ void FlashStorage::downloadFile(int file_number) {
     unsigned long end_time = millis();
     unsigned long total_time = (end_time - start_time) / 1000;
     log_core("Download Complete | Time: " + String(total_time) + "s");
-  } else
+  } else {
     log_core("ERROR: Invalid File Number");
+    log_flash("START_DATA");
+    log_flash("ERROR"); 
+    log_flash("STOP_Data"); 
+  }
 }
 
 /**

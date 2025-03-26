@@ -85,12 +85,15 @@ class DataFrame(tk.Frame):
     self.serial_output.put("DOWNLOAD F" + file_num.group())
 
     # transfer data to file 
-    with open(path.join("flash_data", file_name + ".bin"), "wb") as fout: 
+    with open(path.join("flash_data", f"ASCEND_flash_data_file_{str(file_num.group())}.bin"), "wb") as fout: 
       while self.end_event.is_set() == False: 
         try: 
           data = self.sorter_flash.get()
           if data == "FLASH OPERATION TRANSFER COMPLETE": 
             break
+          if data == "[Flash] ERROR": 
+            self.status_label.config(text=f"Status: File transfer failed")
+            return 
           else:
             fout.write(data) 
         except Empty:
