@@ -31,7 +31,7 @@
 class SCD40Sensor : public Sensor {
  private:
   SensirionI2cScd4x scd;
-  TwoWire* i2c_bus; 
+  TwoWire* i2c_bus;
 
  public:
   SCD40Sensor(TwoWire* i2c_bus = &Wire);

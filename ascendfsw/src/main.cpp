@@ -61,10 +61,10 @@ OzoneSensor     ozone_sensor      (500);
 // clang-format on
 
 // sensor array
-Sensor* sensors[] = {&rtc_sensor, &ina260_sensor, &temp_sensor,
-                     &uv_sensor,  &icm_sensor,    &gps_sensor,
-                     &bmp_sensor, &tmp_sensor,    &shtc_sensor,
-                     &sdc_sensor, &sdc_sensor_out, &ens160_sensor, &ozone_sensor};
+Sensor* sensors[] = {
+    &rtc_sensor,     &ina260_sensor, &temp_sensor, &uv_sensor,   &icm_sensor,
+    &gps_sensor,     &bmp_sensor,    &tmp_sensor,  &shtc_sensor, &sdc_sensor,
+    &sdc_sensor_out, &ens160_sensor, &ozone_sensor};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 

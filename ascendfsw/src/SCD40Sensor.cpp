@@ -21,7 +21,8 @@ SCD40Sensor::SCD40Sensor(TwoWire* i2c_bus) : SCD40Sensor(0, i2c_bus) {}
  */
 SCD40Sensor::SCD40Sensor(unsigned long minimum_period, TwoWire* i2c_bus)
     : Sensor("SCD40", "SCD40CO2(ppm),SCD40Temp(C),SCD40Hum(%RH),", 3,
-             minimum_period), i2c_bus(i2c_bus) {}
+             minimum_period),
+      i2c_bus(i2c_bus) {}
 
 /**
  * @brief Verifies the connection and readiness of the SCD40 sensor.
