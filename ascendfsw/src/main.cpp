@@ -84,7 +84,7 @@ unsigned int it = 0;
 queue_t qt;
 
 uint32_t time_paused;
-const uint32_t MAX_PAUSE_DURATION = 60'000;
+const uint32_t MAX_PAUSE_DURATION = 60'000 * 2;
 
 // char qt_entry[QT_ENTRY_SIZE];
 
