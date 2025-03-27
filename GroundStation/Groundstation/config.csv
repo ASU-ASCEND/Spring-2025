@@ -13,5 +13,5 @@ BitIndex, SensorName, FieldLabel_1, FieldType_1, FieldLabel_2, FieldType_2, Fiel
 11, UV Sensor, UVA2 (nm), float, UVB2 (nm), float, UVC2 (nm), float
 12, SCD40_O, CO2 Conc_O (ppm), uint16_t, Temp_O (C), float, Rel Hum_O (%), float
 13, TMP117_O, Temp_O (C), float
-14, ENS160_O, AQI_O, uint8_t, TVOC_O (ppb), uint16_t, eCO2_O (ppm), uint16_t
-15, SHTC3_O, Temp_O (C), float, Rel_Hum_O (%), float
+14, SHTC3_O, Temp_O (C), float, Rel_Hum_O (%), float
+15, ENS160_O, AQI_O, uint8_t, TVOC_O (ppb), uint16_t, eCO2_O (ppm), uint16_t
