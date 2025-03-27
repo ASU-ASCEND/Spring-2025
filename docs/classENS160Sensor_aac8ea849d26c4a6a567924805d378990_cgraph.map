@@ -1,11 +1,7 @@
 <map id="ENS160Sensor::readData" name="ENS160Sensor::readData">
-<area shape="rect" id="Node000001" title="Reads Air Quality Index, TVOC (ppb), and ECOS (ppm)" alt="" coords="5,80,189,105"/>
-<area shape="rect" id="Node000002" href="$classSHTC3Sensor.html#ae7355733a5c84c5812b69a88285610b8" title="Getter for relative humidity." alt="" coords="238,5,427,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,77,237,39,263,32,265,37,238,45,132,82"/>
-<area shape="rect" id="Node000003" href="$classTMP117Sensor.html#a8fcbf5633c60d32b43ea87d89e781e39" title="Getter for tempC." alt="" coords="237,55,428,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,80,223,76,224,82,190,85"/>
-<area shape="rect" id="Node000004" href="$classDevice.html#a030b016bedb9a917634091199a946c94" title="Get if the Device is Verified." alt="" coords="260,104,405,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,99,246,105,246,111,189,105"/>
-<area shape="rect" id="Node000005" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="260,153,405,179"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="134,103,238,138,269,147,268,152,237,143,132,108"/>
+<area shape="rect" id="Node000001" title="Reads Air Quality Index, TVOC (ppb), and ECOS (ppm)" alt="" coords="5,31,189,56"/>
+<area shape="rect" id="Node000002" href="$classDevice.html#a030b016bedb9a917634091199a946c94" title="Get if the Device is Verified." alt="" coords="237,5,383,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,30,223,26,224,31,190,35"/>
+<area shape="rect" id="Node000003" href="$classSensor.html#a62d72a2f81422ac2d2fa8ae86ba08571" title="Returns CSV line in the same format as readData() but with &quot;&#45;&quot; instead of data." alt="" coords="237,55,383,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,51,224,55,223,60,189,56"/>
 </map>
