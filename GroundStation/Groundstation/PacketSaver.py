@@ -20,7 +20,7 @@ class PacketSaver(threading.Thread):
 
     if path.isdir("session_data") == False:
       mkdir("session_data")
-    self.session_filename = path.join("session_data", f"ASCEND_DATA_{datetime.now().strftime('%H_%M_%S')}.csv")
+    self.session_filename = path.join("session_data", f"ASCEND_DATA_PACKETS_{datetime.now().strftime('%m_%d_%H_%M_%S')}.csv")
     # print("Saving to:", self.session_filename)
 
   def run(self):

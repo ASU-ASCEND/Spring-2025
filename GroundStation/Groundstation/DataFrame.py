@@ -12,6 +12,7 @@ from os import path, mkdir
 from queue import Queue, Empty 
 import re
 from time import sleep 
+from datetime import datetime 
 
 class DataFrame(tk.Frame):
 
@@ -53,6 +54,9 @@ class DataFrame(tk.Frame):
     self.convert_bin_button = tk.Button(self, text="Convert .bin", **button_config, command=self.convert_button)
     self.convert_bin_button.grid(row=1, column=1, **button_cell_config)
 
+    self.erase_all_button = tk.Button(self, text="Erase all flash", **button_config, command=self.erase_all_action)
+    self.erase_all_button.grid(row=1, column=2, **button_cell_config)
+
     self.file_list_widgets = []
     self.bitmask_to_struct = decoder_args[0]
     self.bitmask_to_name = decoder_args[1]
@@ -71,10 +75,10 @@ class DataFrame(tk.Frame):
         "checksum"    / Int8sl #Checksum(Byte, self.validate, this)
     )
 
-    if path.isdir("session_data") == False:
+    if path.isdir("flash_data") == False:
       mkdir("flash_data")
 
-    self.get_file_list()    
+    # self.get_file_list()    
 
   def transfer_file(self, file_name: str):
     # send command
@@ -85,7 +89,7 @@ class DataFrame(tk.Frame):
     self.serial_output.put("DOWNLOAD F" + file_num.group())
 
     # transfer data to file 
-    with open(path.join("flash_data", f"ASCEND_flash_data_file_{str(file_num.group())}.bin"), "wb") as fout: 
+    with open(path.join("flash_data", f"ASCEND_flash_data_file_{str(file_num.group())}_{datetime.now().strftime('%m_%d_%H_%M_%S')}.bin"), "wb") as fout: 
       while self.end_event.is_set() == False: 
         try: 
           data = self.sorter_flash.get()
@@ -127,7 +131,6 @@ class DataFrame(tk.Frame):
     while self.end_event.is_set() == False:
       try: 
         data: bytearray = self.sorter_flash.get_nowait()
-
         if data == "FLASH OPERATION TRANSFER COMPLETE": 
           break
         else:
@@ -135,10 +138,15 @@ class DataFrame(tk.Frame):
       except Empty:
         sleep(0.1)
     
-    self.file_list = [i.strip() for i in buf.split("[Flash]")] 
+    self.file_list = [i.strip() for i in buf.split("[Flash]") if len(i.strip()) != 0] 
 
     self.update_file_list()
     self.status_label.config(text=f"Status: File list retrieved")
+
+  def erase_all_action(self):
+    self.serial_output.put("FLASH DELETE ALL")
+  
+    self.status_label.config(text="sent erase all command")
 
   def update_file_list(self):
     file_name_config = {
@@ -218,8 +226,11 @@ class DataFrame(tk.Frame):
       while(byte := f.read(1)):
         buffer.append(byte[0])
 
-        if buffer.find(b"ASU!", 1) > 0: # not if it's the first one 
+        if buffer.find(b"ASU!", 10) > 0: # not if it's the first one 
           # print("Attempting conversion")
+          # ignore mismatches 
+          if buffer[0:len(b"ASU!")] != b"ASU!": 
+            buffer = buffer[buffer.find(b"ASU!"):]
           packet_bytes = buffer[0:buffer.find(b"ASU!", len(b"ASU!")+1)]
           # Parse packet bytes & catch possible errors
           try:

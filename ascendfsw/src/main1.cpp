@@ -121,7 +121,11 @@ void real_loop1() {
       flash_storage.downloadFile(cmd_data.file_number);
     else if (cmd_data.type == 3)
       ; /* flash_storage.deleteFile(cmd_data.file_number) */  // TODO: Implement
-                                                              // DELETE
+                                                             // DELETE
+    else if (cmd_data.type == 4) {
+      flash_storage.erase(); 
+      flash_storage.reinitFlash();  
+    }
     else
       log_core("ERROR: Invalid command");
 

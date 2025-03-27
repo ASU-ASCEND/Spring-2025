@@ -185,7 +185,32 @@ bool FlashStorage::verify() {
   log_core("Remaining space: " + String(this->MAX_SIZE - this->address) +
             " bytes");
 
-  return true;
+  return true; 
+}
+
+bool FlashStorage::reinitFlash(){
+  // Check if flash is full
+  if (this->address >= this->MAX_SIZE) {
+    log_core("Flash memory is full.");
+    return false;
+  }
+
+  // Check, update, and log current flash storage status
+  this->address = this->START_ADDRESS;
+  log_core("Initial flash address: " + String(this->address));
+
+  this->file_data.clear(); // wipe previous indexing 
+
+  this->indexFlash();  // Get address from flash and track files
+
+  log_core("Updated address: " + String(this->address) + " in sector " +
+            String(this->address / this->SECTOR_SIZE));
+
+  // Log flash size
+  log_core("Remaining space: " + String(this->MAX_SIZE - this->address) +
+            " bytes");
+
+  return true; 
 }
 
 /**
@@ -234,7 +259,7 @@ void FlashStorage::storePacket(uint8_t* packet) {
 
   // Iterate through packet and write to flash
   for (uint16_t i = 0; i < packet_len; i++) {
-    this->flash.writeByte(this->address++, packet[packet_header + i]);
+    this->flash.writeByte(this->address++, packet[i]);
     this->flash.blockingBusyWait();
   }
 
