@@ -1,6 +1,7 @@
 # ASU ASCEND Ground Station 
 
 ## Using the ground station 
+Before doing these steps make sure you have the most recent ground station software by running `git pull` somewhere in your local repo for the project (for example the folder that this README is in). All of the commands given in these instructions should be executed from the the folder that is README is in.  
 ### Starting it up 
 The first time you run the ground station on a computer you need to either set up the .venv (see [Development: Using venv](#development-using-venv)) or install the dependencies onto your machine directly. Using venv is preferred, and you'll need to do [step 2](#2-activate-the-new-environment) each time you start a new terminal. 
 
