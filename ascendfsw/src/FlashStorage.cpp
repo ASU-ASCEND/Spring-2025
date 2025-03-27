@@ -1,5 +1,6 @@
 #include "FlashStorage.h"
 
+#include <string.h>
 /**
  * @brief Constructs a new FlashStorage object.
  *
@@ -370,4 +371,125 @@ void FlashStorage::getStatus() {
               " || Size: " + String(file_size) + " bytes");
   }
   log_flash("STOP_DATA");
+}
+
+/**
+ * @brief Writes a string to flash atomically.
+ *
+ * This function creates a new file entry by first writing a header; then it
+ * writes a marker (0xAA) indicating that the file is in progress and reserves
+ * one byte for a checksum. It then writes the given data (with a trailing
+ * newline) while computing a simple checksum. Once data writing completes, it
+ * updates the checksum and changes the marker to 0xBB (complete).
+ */
+void FlashStorage::atomicStore(String data) {
+  // Create a new file via the existing header write function.
+  writeFileHeader();
+
+  // Reserve 2 bytes after the file header for marker & checksum.
+  // marker: 0xAA (writing state), then checksum: 0x00 as a placeholder.
+  uint32_t markerAddress = this->address;
+  this->flash.writeByte(markerAddress, 0xAA);  // 0xAA = writing/in-progress
+  this->flash.blockingBusyWait();
+  this->address++;  // advance after marker
+
+  uint32_t checksumAddress = this->address;
+  this->flash.writeByte(checksumAddress, 0x00);  // placeholder checksum
+  this->flash.blockingBusyWait();
+  this->address++;  // advance after checksum
+
+  // Prepare data (append newline as in store())
+  String dataToStore = data + "\n";
+  uint8_t checksum = 0;
+
+  // Write out each character and update checksum.
+  for (const uint8_t& character : dataToStore) {
+    this->flash.writeByte(this->address, character);
+    this->flash.blockingBusyWait();
+    checksum += character;  // simple checksum: sum of bytes
+    this->address++;
+  }
+
+  // Update the file_data record for the file just written.
+  if (!this->file_data.empty()) {
+    this->file_data.back().end_address = this->address;
+  }
+
+  // Write the computed checksum.
+  this->flash.writeByte(checksumAddress, checksum);
+  this->flash.blockingBusyWait();
+
+  // Mark the file entry as complete.
+  this->flash.writeByte(markerAddress, 0xBB);  // 0xBB = complete
+  this->flash.blockingBusyWait();
+
+  log_flash("AtomicStore complete. Data written with checksum: " +
+            String(checksum));
+}
+
+/**
+ * @brief Deletes a file by erasing the sectors it occupies.
+ *
+ * This function locates the specified file in the file_data vector. It then
+ * calculates the range of sectors affected (using the sector size) and erases
+ * them. For every sector erased, a log is produced.
+ *
+ * @param file_number The number identifying the file to delete.
+ */
+void FlashStorage::removeFile(uint32_t file_number) {
+  bool found = false;
+  FileHeader target;
+  // Search for the file by number and remove it from file_data
+  for (auto it = this->file_data.begin(); it != this->file_data.end(); ++it) {
+    if (it->file_number == file_number) {
+      target = *it;
+      this->file_data.erase(it);
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    log_flash("ERROR: File number " + String(file_number) +
+              " not found for deletion.");
+    return;
+  }
+
+  // Calculate the sector range to be erased.
+  uint32_t startSector = (target.start_address / SECTOR_SIZE) * SECTOR_SIZE;
+  // Ensure endSector covers the last byte of the file.
+  uint32_t endSector = ((target.end_address - 1) / SECTOR_SIZE) * SECTOR_SIZE;
+
+  for (uint32_t sector = startSector; sector <= endSector;
+       sector += SECTOR_SIZE) {
+    // Erase sector by writing 0xFF to each byte in the sector
+    for (uint32_t addr = sector; addr < sector + this->SECTOR_SIZE; addr++) {
+      this->flash.writeByte(addr, 0xFF);
+      this->flash.blockingBusyWait();
+    }
+    log_flash("Erased sector at address: " + String(sector));
+  }
+
+  log_flash("File " + String(file_number) + " removed successfully.");
+}
+
+/**
+ * @brief Checks available flash space and logs warnings when thresholds are
+ * reached.
+ *
+ * Thresholds: 64KB, 16KB, 4KB, and 0 bytes.
+ */
+void FlashStorage::checkFreeSpaceWarnings() {
+  uint32_t remaining =
+      (this->MAX_SIZE > this->address) ? (this->MAX_SIZE - this->address) : 0;
+
+  if (remaining == 0) {
+    log_flash("WARNING: Flash memory is full (0 bytes remaining)!");
+  } else if (remaining <= 4096) {  // 4 KB threshold
+    log_flash("WARNING: Only 4KB remaining!");
+  } else if (remaining <= 16384) {  // 16 KB threshold
+    log_flash("WARNING: Only 16KB remaining!");
+  } else if (remaining <= 65536) {  // 64 KB threshold
+    log_flash("WARNING: Only 64KB remaining!");
+  }
 }

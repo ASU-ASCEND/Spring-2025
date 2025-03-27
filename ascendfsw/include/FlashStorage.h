@@ -49,6 +49,9 @@ class FlashStorage : public Storage {
   void erase();
   void downloadFile(int);
   void getStatus();
+  void atomicStore(String data);
+  void removeFile(uint32_t file_number);
+  void checkFreeSpaceWarnings();
 };
 
 #endif
