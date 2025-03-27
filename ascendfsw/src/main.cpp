@@ -66,10 +66,10 @@ SHTC3Sensor     shtc_sensor_out   (1000,  &Wire1);
 
 // sensor array
 Sensor* sensors[] = {
-    &rtc_sensor,     &ina260_sensor,  &temp_sensor,       &icm_sensor,
-    &gps_sensor,     &bmp_sensor,     &tmp_sensor,        &shtc_sensor,
-    &scd_sensor,     &ens160_sensor,  &ozone_sensor,      &uv_sensor_out,
-    &scd_sensor_out, &tmp_sensor_out, &ens160_sensor_out, &shtc_sensor_out};
+    &rtc_sensor,     &ina260_sensor,  &temp_sensor,     &icm_sensor,
+    &gps_sensor,     &bmp_sensor,     &tmp_sensor,      &shtc_sensor,
+    &scd_sensor,     &ens160_sensor,  &ozone_sensor,    &uv_sensor_out,
+    &scd_sensor_out, &tmp_sensor_out, &shtc_sensor_out, &ens160_sensor_out};
 
 const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 
