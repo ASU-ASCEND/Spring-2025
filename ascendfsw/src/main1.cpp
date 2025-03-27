@@ -122,10 +122,9 @@ void real_loop1() {
     else if (cmd_data.type == 3)
       flash_storage.removeFile(cmd_data.file_number);
     else if (cmd_data.type == 4) {
-      flash_storage.erase(); 
-      flash_storage.reinitFlash();  
-    }
-    else
+      flash_storage.erase();
+      flash_storage.reinitFlash();
+    } else
       log_core("ERROR: Invalid command");
 
     // Reset command meta data & resume processes

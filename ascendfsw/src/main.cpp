@@ -289,7 +289,7 @@ void handleCommand() {
     cmd_data.type = CMD_DELETE;
     cmd_data.file_number = extracted_num.toInt();
   } else if (cmd.equals("FLASH DELETE ALL")) {
-    cmd_data.type = CMD_ERASE_ALL; 
+    cmd_data.type = CMD_ERASE_ALL;
   } else {
     log_core("ERROR: Invalid command - " + cmd);
     return;

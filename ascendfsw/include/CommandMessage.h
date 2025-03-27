@@ -3,7 +3,13 @@
 #include "pico/multicore.h"
 #include "pico/stdlib.h"
 
-enum CommandType { CMD_NONE, CMD_STATUS, CMD_DOWNLOAD, CMD_DELETE, CMD_ERASE_ALL };
+enum CommandType {
+  CMD_NONE,
+  CMD_STATUS,
+  CMD_DOWNLOAD,
+  CMD_DELETE,
+  CMD_ERASE_ALL
+};
 
 struct CommandMessage {
   CommandType type;

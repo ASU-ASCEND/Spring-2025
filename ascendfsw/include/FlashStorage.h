@@ -33,7 +33,6 @@ class FlashStorage : public Storage {
   uint32_t address = 0;
   bool active_file = false;
 
-
   void indexFlash();
   void loadAddress();
   bool isSectorEmpty();
@@ -47,7 +46,7 @@ class FlashStorage : public Storage {
   void store(String) override;
   void storePacket(uint8_t*) override;
   void dump();
-  bool reinitFlash(); 
+  bool reinitFlash();
   void erase();
   void downloadFile(int);
   void getStatus();
