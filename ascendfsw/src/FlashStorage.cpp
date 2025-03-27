@@ -305,7 +305,12 @@ void FlashStorage::dump() {
  * and resetting the internal write address to 0.
  */
 void FlashStorage::erase() {
-  this->flash.erase();
+  // this->flash.erase();
+  for(unsigned long sector = 0; sector < this->MAX_SIZE; sector += SECTOR_SIZE){
+    this->flash.eraseSector(sector); 
+    this->flash.blockingBusyWait(); 
+    digitalWrite(HEARTBEAT_PIN_1, (sector & 0x20000) != 0);
+  }
   this->address = 0;
 }
 
@@ -499,7 +504,10 @@ void FlashStorage::removeFile(uint32_t file_number) {
     this->flash.eraseSector(sector); 
     this->flash.blockingBusyWait(); 
     log_core("Erased sector at address: " + String(sector));
+    digitalWrite(HEARTBEAT_PIN_1, (sector & 0x20000) != 0);
   }
+
+  this->reinitFlash(); 
 
   log_core("File " + String(file_number) + " removed successfully.");
 }
