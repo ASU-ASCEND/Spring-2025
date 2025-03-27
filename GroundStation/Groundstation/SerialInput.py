@@ -61,7 +61,7 @@ class SerialInput(threading.Thread):
             try: 
                 data_out = self.serial_output.get_nowait()
 
-                self.ser.write(data_out + "\n")
+                self.ser.write(str(data_out + "\n").encode())
             except Empty: 
                 sleep(0.1)
 
