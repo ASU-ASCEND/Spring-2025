@@ -52,7 +52,7 @@ class GUI():
     return RadioFrame.RadioFrame(self.window, self.decoder_packets, self.header_info)
   
   def buildDataFrame(self):
-    return DataFrame.DataFrame(self.window, self.decoder_args, self.header_info)
+    return DataFrame.DataFrame(self.window, self.decoder_args, self.header_info, self.serial_output, self.sorter_flash, self.end_event)
 
   def run(self):
     print("GUI start")

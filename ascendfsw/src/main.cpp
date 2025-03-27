@@ -107,8 +107,8 @@ void setup() {
 
   // start serial
   Serial.begin(115200);
-  while (!Serial)  // remove before flight
-    ;
+  // while (!Serial)  // remove before flight
+  //   ;
   log_core("setup begin");
 
   // setup heartbeat pins
@@ -210,7 +210,8 @@ void loop() {
 
 // send data to core1
 #if STORING_PACKETS
-    queue_add_blocking(&qt, packet);
+    // queue_add_blocking(&qt, packet);
+    queue_try_add(&qt, packet);
 #else
     queue_add_blocking(&qt, csv_row.c_str());
 #endif
@@ -252,7 +253,6 @@ int verifySensorRecovery() {
  * Pause data collection and storage for a specified duration to execute
  * a command, including STATUS, DOWNLOAD, DELETE, etc.
  *
- * @param cmd
  */
 void handleCommand() {
   // Fetch & format command
@@ -279,7 +279,7 @@ void handleCommand() {
     cmd_data.file_number = extracted_num.toInt();
   } else if (cmd.startsWith("DELETE F")) {
     // Extract the file number from command
-    String extracted_num = cmd.substring(String("DOWNLOAD F").length());
+    String extracted_num = cmd.substring(String("DELETE F").length());
     extracted_num.trim();
 
     log_core("Command [DELETE]: Delete File " + extracted_num +
@@ -288,6 +288,8 @@ void handleCommand() {
     // Store the command info
     cmd_data.type = CMD_DELETE;
     cmd_data.file_number = extracted_num.toInt();
+  } else if (cmd.equals("FLASH DELETE ALL")) {
+    cmd_data.type = CMD_ERASE_ALL; 
   } else {
     log_core("ERROR: Invalid command - " + cmd);
     return;

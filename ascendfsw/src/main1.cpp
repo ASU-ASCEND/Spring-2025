@@ -46,7 +46,7 @@ bool core1_separate_stack = true;
  *
  */
 void real_setup1() {
-  while (!Serial);
+  // while (!Serial);
   delay(500);  // wait for other setup to run
   log_core("Setup1 begin");
 
@@ -120,8 +120,11 @@ void real_loop1() {
     else if (cmd_data.type == 2)
       flash_storage.downloadFile(cmd_data.file_number);
     else if (cmd_data.type == 3)
-      ; /* flash_storage.deleteFile(cmd_data.file_number) */  // TODO: Implement
-                                                              // DELETE
+      flash_storage.removeFile(cmd_data.file_number);
+    else if (cmd_data.type == 4) {
+      flash_storage.erase(); 
+      flash_storage.reinitFlash();  
+    }
     else
       log_core("ERROR: Invalid command");
 

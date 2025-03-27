@@ -12,7 +12,7 @@ class SerialSaver(threading.Thread):
     self.serial_stream = serial_stream
     if path.isdir("session_data") == False:
       mkdir("session_data")
-    self.session_filename = path.join("session_data", f"ASCEND_DATA_{datetime.now().strftime('%H_%M_%S')}.bin")
+    self.session_filename = path.join("session_data", f"ASCEND_DATA_SERIAL_{datetime.now().strftime('%m_%d_%H_%M_%S')}.bin")
 
   def run(self):
     with open(self.session_filename, "wb") as fout: 
