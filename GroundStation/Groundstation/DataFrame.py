@@ -82,7 +82,7 @@ class DataFrame(tk.Frame):
 
   def transfer_file(self, file_name: str):
     # send command
-    file_num = re.search("\d+", file_name)
+    file_num = re.search(r"\d+", file_name)
     if file_num == None: 
       print("error on file name")
       return 
@@ -110,7 +110,7 @@ class DataFrame(tk.Frame):
     self.file_list.remove(file_name)
 
     # send command
-    file_num = re.search("\d+", file_name)
+    file_num = re.search(r"\d+", file_name)
     if file_num == None: 
       print("error on file name")
       return 
