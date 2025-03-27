@@ -16,6 +16,8 @@ If you get errors saying a package can't be found try activating the environment
 ### After running
 You should see prompt in the terminal for which port to connect to, enter the index of the port for the usb device in the list. And the a prompt for which device to connect to, this is because the radio and pico serial connections use different baud rates so select the device accordingly. 
 
+Once in the gui, use the buttons on the top row to switch between operation modes. GSE and Radio are very similar and they should both save what they get to a file in the untracked folder session_data. The difference between the 2 is that Radio will give you packet dropping stats and GSE will give you Core debug messages. The last mode, Data, will let you get flash data off the payload and decode it, and the data we get from the SD Card, which will be saved as a binary as well.
+
 ### Closing the ground station 
 To close the ground station, avoid using CTRL+C in the terminal as this has the danger of orphaning processes. Just close out of the GUI and then if a prompt is still open in the terminal you should be able to just press enter and it'll end the terminal portion of the program as well. 
 
