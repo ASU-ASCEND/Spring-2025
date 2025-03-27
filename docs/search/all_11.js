@@ -14,8 +14,9 @@ var searchData=
   ['real_5floop1_11',['real_loop1',['../main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7',1,'real_loop1():&#160;main1.cpp'],['../main_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7',1,'real_loop1():&#160;main1.cpp']]],
   ['real_5fsetup1_12',['real_setup1',['../main1_8cpp.html#a335f1df8d0b267769cb9842c12616214',1,'real_setup1():&#160;main1.cpp'],['../main_8cpp.html#a335f1df8d0b267769cb9842c12616214',1,'real_setup1():&#160;main1.cpp']]],
   ['recoveryconfig_13',['recoveryConfig',['../classDevice.html#af64c14c9b8d2c9001f81c1ce6776a565',1,'Device']]],
-  ['relative_5fhumidity_14',['relative_humidity',['../classSHTC3Sensor.html#a1582def3fa602bb2b37097a906985961',1,'SHTC3Sensor']]],
-  ['removefile_15',['removeFile',['../classFlashStorage.html#ad8daa31feba03cb7d02efb3124962f20',1,'FlashStorage']]],
-  ['rtc_16',['rtc',['../classPCF8523Sensor.html#a4b8554bc0b84da8c6429d8a201d5bd90',1,'PCF8523Sensor::rtc'],['../classDS3231Sensor.html#a7ef3bb961c4dff9c9759b16eacfd7c39',1,'DS3231Sensor::rtc']]],
-  ['rtc_5fsensor_17',['rtc_sensor',['../main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21',1,'main.cpp']]]
+  ['reinitflash_14',['reinitFlash',['../classFlashStorage.html#ad024a499e7eb8774a26f46369f50ad05',1,'FlashStorage']]],
+  ['relative_5fhumidity_15',['relative_humidity',['../classSHTC3Sensor.html#a1582def3fa602bb2b37097a906985961',1,'SHTC3Sensor']]],
+  ['removefile_16',['removeFile',['../classFlashStorage.html#ad8daa31feba03cb7d02efb3124962f20',1,'FlashStorage']]],
+  ['rtc_17',['rtc',['../classPCF8523Sensor.html#a4b8554bc0b84da8c6429d8a201d5bd90',1,'PCF8523Sensor::rtc'],['../classDS3231Sensor.html#a7ef3bb961c4dff9c9759b16eacfd7c39',1,'DS3231Sensor::rtc']]],
+  ['rtc_5fsensor_18',['rtc_sensor',['../main_8cpp.html#a9730d7033cb371fd86349cf1f7b0ad21',1,'main.cpp']]]
 ];

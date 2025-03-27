@@ -1,19 +1,34 @@
 <map id="real_loop1" name="real_loop1">
-<area shape="rect" id="Node000001" title="Loop for core 1." alt="" coords="5,129,96,155"/>
+<area shape="rect" id="Node000001" title="Loop for core 1." alt="" coords="5,204,96,229"/>
 <area shape="rect" id="Node000002" href="$classFlashStorage.html#ad96a663c3434d8783b30c12ec706ad81" title="Downloads data from flash memory with progress tracking." alt="" coords="144,5,345,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,127,91,84,115,60,143,40,155,33,158,38,145,44,119,64,95,88,62,131"/>
-<area shape="rect" id="Node000003" href="$CommandMessage_8cpp.html#a614e558f381a8d26db49eed9b12fd14f" title=" " alt="" coords="193,55,297,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="70,127,104,107,143,89,178,78,180,83,145,94,106,112,73,131"/>
-<area shape="rect" id="Node000004" href="$classFlashStorage.html#a318825f36239ed4e7c5bf345c6f95366" title="Prints the current status of the flash storage." alt="" coords="156,104,333,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="96,133,142,127,143,133,97,139"/>
-<area shape="rect" id="Node000005" href="$CommandMessage_8cpp.html#ad408818d8c69721c19d63006e8ef4d22" title=" " alt="" coords="193,153,296,179"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="97,145,180,155,179,161,96,150"/>
-<area shape="rect" id="Node000006" href="$main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="201,203,288,228"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="74,152,145,188,189,201,187,206,143,192,72,157"/>
-<area shape="rect" id="Node000008" href="$main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43" title="Sends data to each storage device." alt="" coords="181,252,309,277"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="63,153,96,195,119,218,145,237,168,248,166,253,143,242,116,222,92,199,58,157"/>
-<area shape="rect" id="Node000007" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send string data to storage device." alt="" coords="414,203,527,228"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="288,213,400,213,400,218,288,218"/>
-<area shape="rect" id="Node000009" href="$classStorage.html#a6ee18f7841fdd0f70091764a59110db2" title="Send packet data to storage device." alt="" coords="393,252,548,277"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="309,262,379,262,379,267,309,267"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,203,62,170,79,126,106,79,123,58,142,40,150,35,153,39,146,44,127,62,110,82,84,128,67,172,57,205"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html#ac2dd4e8b7b4a85d5820f4277d0fb6727" title="Erases all data stored in flash memory." alt="" coords="169,55,320,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,202,87,147,112,116,142,89,155,82,158,87,146,94,116,119,91,150,60,205"/>
+<area shape="rect" id="Node000004" href="$CommandMessage_8cpp.html#a614e558f381a8d26db49eed9b12fd14f" title=" " alt="" coords="193,104,297,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="62,202,96,170,143,138,178,125,180,130,145,143,99,174,66,206"/>
+<area shape="rect" id="Node000005" href="$classFlashStorage.html#a318825f36239ed4e7c5bf345c6f95366" title="Prints the current status of the flash storage." alt="" coords="156,153,333,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="96,202,181,180,183,185,97,207"/>
+<area shape="rect" id="Node000006" href="$classFlashStorage.html#ad024a499e7eb8774a26f46369f50ad05" title=" " alt="" coords="393,229,577,255"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="96,217,380,233,379,239,96,222"/>
+<area shape="rect" id="Node000011" href="$classFlashStorage.html#ad8daa31feba03cb7d02efb3124962f20" title="Deletes a file by erasing the sectors it occupies." alt="" coords="151,255,339,280"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="97,226,183,248,181,254,96,231"/>
+<area shape="rect" id="Node000012" href="$CommandMessage_8cpp.html#ad408818d8c69721c19d63006e8ef4d22" title=" " alt="" coords="193,304,296,329"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="66,228,100,259,145,289,181,302,179,307,143,294,97,263,63,232"/>
+<area shape="rect" id="Node000013" href="$main1_8cpp.html#a0f14b13edaa51207f1ff6752e4696ee7" title="Sends data to each storage device, assumes storage devices take care of newline/data end themselves." alt="" coords="201,353,288,379"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="60,228,91,282,116,313,145,338,166,349,189,356,187,361,164,354,143,343,112,316,87,285,55,231"/>
+<area shape="rect" id="Node000015" href="$main1_8cpp.html#a5ea9df4efc2cfe37ef8d6fcfb3157a43" title="Sends data to each storage device." alt="" coords="181,403,309,428"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="57,229,67,262,84,305,110,351,127,372,146,389,168,402,166,406,142,393,123,375,106,354,79,308,62,263,52,230"/>
+<area shape="rect" id="Node000007" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="625,229,812,255"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="578,239,612,239,612,245,578,245"/>
+<area shape="rect" id="Node000008" href="$classFlashStorage.html#a97b10db97f42549e197feeff3f3f9abb" title="Determines if the current sector is empty." alt="" coords="865,180,1074,205"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="783,227,890,205,891,211,784,232"/>
+<area shape="rect" id="Node000009" href="$classFlashStorage.html#aa64883a0b4aa2c9124d0be9b4722d729" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="862,229,1077,255"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="812,239,848,239,848,245,812,245"/>
+<area shape="rect" id="Node000010" href="$classFlashStorage.html#a3f4de49bad97284528ebd5279abf3985" title="Writes the file header to the start of a new sector." alt="" coords="860,279,1079,304"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="784,252,891,273,890,279,783,257"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="338,255,379,250,380,256,339,260"/>
+<area shape="rect" id="Node000014" href="$classStorage.html#a08674ceb4404690065b1cf39963eb5a3" title="Send string data to storage device." alt="" coords="429,353,542,379"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="288,363,415,363,415,369,288,369"/>
+<area shape="rect" id="Node000016" href="$classStorage.html#a6ee18f7841fdd0f70091764a59110db2" title="Send packet data to storage device." alt="" coords="408,403,563,428"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="309,413,394,413,394,418,309,418"/>
 </map>

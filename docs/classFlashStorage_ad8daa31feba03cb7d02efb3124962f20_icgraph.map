@@ -1,0 +1,7 @@
+<map id="FlashStorage::removeFile" name="FlashStorage::removeFile">
+<area shape="rect" id="Node000001" title="Deletes a file by erasing the sectors it occupies." alt="" coords="251,5,439,31"/>
+<area shape="rect" id="Node000002" href="$main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7" title="Loop for core 1." alt="" coords="112,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,21,203,21,203,15,237,15"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a39ceba300a80e348e278539f57e0ca79" title=" " alt="" coords="5,5,64,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,21,64,21,64,15,98,15"/>
+</map>

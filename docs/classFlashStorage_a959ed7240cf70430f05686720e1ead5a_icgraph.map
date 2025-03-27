@@ -1,5 +1,14 @@
 <map id="FlashStorage::indexFlash" name="FlashStorage::indexFlash">
-<area shape="rect" id="Node000001" title="Locates the next available file block &amp; tracks existing files." alt="" coords="205,5,392,31"/>
-<area shape="rect" id="Node000002" href="$classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" title="Verifies the flash connection and prepares for data storage." alt="" coords="5,5,157,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,21,157,21,157,15,192,15"/>
+<area shape="rect" id="Node000001" title="Locates the next available file block &amp; tracks existing files." alt="" coords="719,31,905,56"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#ad024a499e7eb8774a26f46369f50ad05" title=" " alt="" coords="487,5,671,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="704,34,671,31,671,25,705,29"/>
+<area shape="rect" id="Node000006" href="$classFlashStorage.html#addf2a0a14a0a92ccce2d55eac60282e4" title="Verifies the flash connection and prepares for data storage." alt="" coords="503,55,655,80"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="705,57,655,62,655,57,704,52"/>
+<area shape="rect" id="Node000003" href="$main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7" title="Loop for core 1." alt="" coords="112,5,203,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="473,21,203,21,203,15,473,15"/>
+<area shape="rect" id="Node000005" href="$classFlashStorage.html#ad8daa31feba03cb7d02efb3124962f20" title="Deletes a file by erasing the sectors it occupies." alt="" coords="251,31,439,56"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="473,32,439,36,438,31,473,27"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a39ceba300a80e348e278539f57e0ca79" title=" " alt="" coords="5,5,64,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="98,21,64,21,64,15,98,15"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="237,31,203,27,203,21,237,26"/>
 </map>

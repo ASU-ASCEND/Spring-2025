@@ -1,0 +1,10 @@
+<map id="FlashStorage::reinitFlash" name="FlashStorage::reinitFlash">
+<area shape="rect" id="Node000001" title=" " alt="" coords="487,5,671,31"/>
+<area shape="rect" id="Node000002" href="$main1_8cpp.html#a5d5c43a90af6e8b0e11c818a7e1681e7" title="Loop for core 1." alt="" coords="112,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="473,21,203,21,203,15,473,15"/>
+<area shape="rect" id="Node000004" href="$classFlashStorage.html#ad8daa31feba03cb7d02efb3124962f20" title="Deletes a file by erasing the sectors it occupies." alt="" coords="251,31,439,56"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="473,32,439,36,438,31,473,27"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a39ceba300a80e348e278539f57e0ca79" title=" " alt="" coords="5,5,64,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,21,64,21,64,15,98,15"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="237,31,203,27,203,21,237,26"/>
+</map>

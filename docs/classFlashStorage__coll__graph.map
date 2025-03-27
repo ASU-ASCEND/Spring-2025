@@ -1,7 +1,7 @@
 <map id="FlashStorage" name="FlashStorage">
-<area shape="rect" id="Node000001" title=" " alt="" coords="476,683,680,1048"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="476,683,680,1068"/>
 <area shape="rect" id="Node000002" href="$classStorage.html" title="Parent class for all data storage devices (sd card, radio, etc)" alt="" coords="331,436,444,561"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="428,572,485,681,481,684,423,574"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="427,572,483,681,478,684,422,575"/>
 <area shape="rect" id="Node000003" href="$classDevice.html" title="Implements the recovery system for Sensor and Storage objects." alt="" coords="212,148,376,373"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,385,365,435,360,437,341,387"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="117,5,223,71"/>
@@ -16,7 +16,7 @@
 <area shape="rect" id="Node000008" title=" " alt="" coords="550,466,617,531"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="584,532,582,585,581,667,575,667,577,585,579,531"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="646,466,801,531"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="723,532,714,592,697,659,689,679,684,677,691,658,709,591,718,531"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="723,532,714,592,697,659,689,680,684,678,691,658,709,591,718,531"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="825,466,939,531"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="867,533,832,594,785,660,741,712,694,761,690,758,737,709,781,657,827,591,863,530"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="867,533,831,593,784,660,694,764,690,761,780,657,826,590,862,530"/>
 </map>

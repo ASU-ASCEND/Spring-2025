@@ -1,0 +1,11 @@
+<map id="FlashStorage::reinitFlash" name="FlashStorage::reinitFlash">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,189,80"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="237,55,424,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,65,224,65,224,70,190,70"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html#a97b10db97f42549e197feeff3f3f9abb" title="Determines if the current sector is empty." alt="" coords="477,5,686,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,52,502,31,503,36,396,57"/>
+<area shape="rect" id="Node000004" href="$classFlashStorage.html#aa64883a0b4aa2c9124d0be9b4722d729" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="474,55,689,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="424,65,460,65,460,70,424,70"/>
+<area shape="rect" id="Node000005" href="$classFlashStorage.html#a3f4de49bad97284528ebd5279abf3985" title="Writes the file header to the start of a new sector." alt="" coords="472,104,691,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="396,77,503,99,502,104,395,83"/>
+</map>

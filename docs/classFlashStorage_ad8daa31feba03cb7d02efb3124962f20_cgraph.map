@@ -1,0 +1,13 @@
+<map id="FlashStorage::removeFile" name="FlashStorage::removeFile">
+<area shape="rect" id="Node000001" title="Deletes a file by erasing the sectors it occupies." alt="" coords="5,55,193,80"/>
+<area shape="rect" id="Node000002" href="$classFlashStorage.html#ad024a499e7eb8774a26f46369f50ad05" title=" " alt="" coords="241,55,425,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,65,228,65,228,70,193,70"/>
+<area shape="rect" id="Node000003" href="$classFlashStorage.html#a959ed7240cf70430f05686720e1ead5a" title="Locates the next available file block &amp; tracks existing files." alt="" coords="473,55,660,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,65,460,65,460,70,426,70"/>
+<area shape="rect" id="Node000004" href="$classFlashStorage.html#a97b10db97f42549e197feeff3f3f9abb" title="Determines if the current sector is empty." alt="" coords="713,5,922,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="631,52,738,31,739,36,632,57"/>
+<area shape="rect" id="Node000005" href="$classFlashStorage.html#aa64883a0b4aa2c9124d0be9b4722d729" title="Determines if the first 4 bytes of a sector are a file header." alt="" coords="710,55,925,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="660,65,696,65,696,70,660,70"/>
+<area shape="rect" id="Node000006" href="$classFlashStorage.html#a3f4de49bad97284528ebd5279abf3985" title="Writes the file header to the start of a new sector." alt="" coords="708,104,927,129"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="632,77,739,99,738,104,631,83"/>
+</map>
