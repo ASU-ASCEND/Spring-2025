@@ -115,8 +115,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    this-&gt;pin_level = 1;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    this-&gt;code = <a class="code hl_enumvalue" href="ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    pinMode(<a class="code hl_define" href="PayloadConfig_8h.html#af230e937fbf21c24dab2e1c834330a52">ERROR_PIN_2</a>, OUTPUT);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    pinMode(<a class="code hl_define" href="PayloadConfig_8h.html#a5d6e22e2c3ab3c12e8cd61594815925a">ERROR_PIN_1</a>, OUTPUT);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    pinMode(<a class="code hl_define" href="PayloadConfig_8h.html#a48a86006eb436b950e5277fdf8a3ae53">ERROR_PIN_0</a>, OUTPUT);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    pinMode(<a class="code hl_define" href="PayloadConfig_8h.html#a5d6e22e2c3ab3c12e8cd61594815925a">ERROR_PIN_1</a>, INPUT);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    pinMode(<a class="code hl_define" href="PayloadConfig_8h.html#a48a86006eb436b950e5277fdf8a3ae53">ERROR_PIN_0</a>, INPUT);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
 </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
@@ -150,17 +150,18 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span> (this-&gt;code == <a class="code hl_enumvalue" href="ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac157bdf0b85a40d2619cbc8bc1ae5fe2">Error::NONE</a>) display_code = 0b001;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    digitalWrite(<a class="code hl_define" href="PayloadConfig_8h.html#af230e937fbf21c24dab2e1c834330a52">ERROR_PIN_2</a>, this-&gt;pin_level &amp;&amp; (display_code &amp; 0b100));</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    digitalWrite(<a class="code hl_define" href="PayloadConfig_8h.html#a5d6e22e2c3ab3c12e8cd61594815925a">ERROR_PIN_1</a>, this-&gt;pin_level &amp;&amp; (display_code &amp; 0b010));</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    digitalWrite(<a class="code hl_define" href="PayloadConfig_8h.html#a48a86006eb436b950e5277fdf8a3ae53">ERROR_PIN_0</a>, this-&gt;pin_level &amp;&amp; (display_code &amp; 0b001));</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    mutex_exit(&amp;<a class="code hl_variable" href="classErrorDisplay.html#acb319f797d97bda8672644d80e188893">error_display_mutex</a>);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// digitalWrite(ERROR_PIN_2, this-&gt;pin_level &amp;&amp; (display_code &amp; 0b100));</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// digitalWrite(ERROR_PIN_1, this-&gt;pin_level &amp;&amp; (display_code &amp; 0b010));</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">// digitalWrite(ERROR_PIN_0, this-&gt;pin_level &amp;&amp; (display_code &amp; 0b001));</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    digitalWrite(<a class="code hl_define" href="PayloadConfig_8h.html#af230e937fbf21c24dab2e1c834330a52">ERROR_PIN_2</a>, this-&gt;pin_level);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    mutex_exit(&amp;<a class="code hl_variable" href="classErrorDisplay.html#acb319f797d97bda8672644d80e188893">error_display_mutex</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  }</div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
 </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aErrorDisplay_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5"><div class="ttname"><a href="ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5">Error</a></div><div class="ttdeci">Error</div><div class="ttdef"><b>Definition</b> ErrorDisplay.h:16</div></div>
 <div class="ttc" id="aErrorDisplay_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5a0b8cbe4a1604b3c87fa3207a2a38037e"><div class="ttname"><a href="ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a0b8cbe4a1604b3c87fa3207a2a38037e">CRITICAL_FAIL</a></div><div class="ttdeci">@ CRITICAL_FAIL</div><div class="ttdef"><b>Definition</b> ErrorDisplay.h:17</div></div>
 <div class="ttc" id="aErrorDisplay_8h_html_a2c3e4bb40f36b262a5214e2da2bca9c5a1ad5e7c87dfa348cdcf44d3ca5038624"><div class="ttname"><a href="ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a1ad5e7c87dfa348cdcf44d3ca5038624">POWER_CYCLED</a></div><div class="ttdeci">@ POWER_CYCLED</div><div class="ttdef"><b>Definition</b> ErrorDisplay.h:21</div></div>
