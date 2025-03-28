@@ -38,8 +38,8 @@ class ErrorDisplay {
     this->pin_level = 1;
     this->code = NONE;
     pinMode(ERROR_PIN_2, OUTPUT);
-    pinMode(ERROR_PIN_1, OUTPUT);
-    pinMode(ERROR_PIN_0, OUTPUT);
+    pinMode(ERROR_PIN_1, INPUT);
+    pinMode(ERROR_PIN_0, INPUT);
   }
 
  public:
@@ -82,9 +82,10 @@ class ErrorDisplay {
 
     if (this->code == Error::NONE) display_code = 0b001;
 
-    digitalWrite(ERROR_PIN_2, this->pin_level && (display_code & 0b100));
-    digitalWrite(ERROR_PIN_1, this->pin_level && (display_code & 0b010));
-    digitalWrite(ERROR_PIN_0, this->pin_level && (display_code & 0b001));
+    // digitalWrite(ERROR_PIN_2, this->pin_level && (display_code & 0b100));
+    // digitalWrite(ERROR_PIN_1, this->pin_level && (display_code & 0b010));
+    // digitalWrite(ERROR_PIN_0, this->pin_level && (display_code & 0b001));
+    digitalWrite(ERROR_PIN_2, this->pin_level);
 
     mutex_exit(&error_display_mutex);
   }
