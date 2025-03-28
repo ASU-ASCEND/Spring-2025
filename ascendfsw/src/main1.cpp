@@ -81,12 +81,14 @@ void real_loop1() {
   char received_data[QT_ENTRY_SIZE];
 #endif
 
+  // toggle heartbeat 
+  it2++;
+  digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
+
   // Block if data is in the queue
   if (queue_get_level(&qt) > 0) {
     log_core("it2: " + String(it2));
-    it2++;
-    digitalWrite(HEARTBEAT_PIN_1, (it2 & 0x1));
-
+    
     // Retrieve sensor data from queue
     queue_remove_blocking(&qt, received_data);
 

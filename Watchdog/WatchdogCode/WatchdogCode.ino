@@ -17,8 +17,8 @@ ISR(PCINT0_vect) {
 }
 
 // 1 minute before looking for heartbeat
-#define MS_WAIT_AFTER_BOOT 10000 //60000 //* 5
-#define MS_WAIT_IN_OP 10000 //60000
+#define MS_WAIT_AFTER_BOOT 60000 * 5
+#define MS_WAIT_IN_OP 60000
 
 void setup() {
   // setup

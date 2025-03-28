@@ -232,6 +232,7 @@ class DataFrame(tk.Frame):
           if buffer[0:len(b"ASU!")] != b"ASU!": 
             buffer = buffer[buffer.find(b"ASU!"):]
           packet_bytes = buffer[0:buffer.find(b"ASU!", len(b"ASU!")+1)]
+          buffer = buffer[buffer.find(b"ASU!", len(b"ASU")+1):]
           # Parse packet bytes & catch possible errors
           try:
             if self.validate(packet_bytes) == False: raise ChecksumError("Checksum Error")
@@ -279,8 +280,6 @@ class DataFrame(tk.Frame):
               # Store parsed sensor data
               parsed[sensor_name] = temp_parsed
               offset += sensor_fields.sizeof()
-
-          # print(parsed)
 
           if parse_error == False:
             # print("\tSuccess")

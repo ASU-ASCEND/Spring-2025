@@ -171,6 +171,7 @@ void loop() {
   ErrorDisplay::instance().toggle();
 
   // toggle heartbeats
+  it++;
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
   // Check for serial input commands
@@ -193,7 +194,6 @@ void loop() {
   else {
     // start print line with iteration number
     log_core("it: " + String(it) + "\t");
-    it++;
 
     // build csv row
     uint8_t packet[QT_ENTRY_SIZE];
@@ -217,8 +217,9 @@ void loop() {
 #endif
 
     delay(500);                                  // remove before flight
-    digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
   }
+
+  digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
 }
 
 /**
