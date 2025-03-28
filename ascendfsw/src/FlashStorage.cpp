@@ -355,7 +355,7 @@ void FlashStorage::storePacket(uint8_t* packet) {
 }
 
 /**
- * @brief Dumps the contents of flash memory to the serial monitor.
+ * @brief Dumps the contents of flash memory to the serial monitor. [DEPRECIATED]
  *
  * Reads each byte of flash memory starting from the beginning and prints it to
  * the serial monitor. The process continues until the end of the memory or the
@@ -383,14 +383,32 @@ void FlashStorage::dump() {
  * and resetting the internal write address to 0.
  */
 void FlashStorage::erase() {
-  // this->flash.erase();
-  for (unsigned long sector = 0; sector < this->MAX_SIZE;
-       sector += SECTOR_SIZE) {
+  log_core("==== Erasing FLASH ====");
+
+  // Track the erase time
+  unsigned long start_time = millis();
+  int progress = 0;
+
+  // Clear flash
+  for (unsigned long sector = 0; sector < this->MAX_SIZE; sector += SECTOR_SIZE) {
     this->flash.eraseSector(sector);
     this->flash.blockingBusyWait();
     digitalWrite(HEARTBEAT_PIN_1, (sector & 0x20000) != 0);
+
+    // Log erase progress
+    ++progress;
+    if ((progress % 100) == 0) {
+      log_core("Progress: " + String(progress) + "/3600 sectors erased");
+    }
   }
+
   this->address = 0;
+
+  // Log total time
+  unsigned long end_time = millis();
+  unsigned long total_time = (end_time - start_time) / 1000;
+
+  log_core("Erase Complete | Time: " + String(total_time) + "s");
 }
 
 /**
@@ -433,6 +451,7 @@ void FlashStorage::downloadFile(int file_number) {
 
       // Send data to Serial
       if (Serial.write(data) != 1) {
+        log_flash("STOP_DATA");
         log_core("ERROR: Unsuccessful serial write");
         return;
       }
