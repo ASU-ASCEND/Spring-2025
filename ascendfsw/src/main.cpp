@@ -216,7 +216,7 @@ void loop() {
     queue_add_blocking(&qt, csv_row.c_str());
 #endif
 
-    delay(500);                                  // remove before flight
+    delay(500);  // remove before flight
   }
 
   digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
