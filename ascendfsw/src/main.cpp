@@ -84,7 +84,7 @@ unsigned int it = 0;
 queue_t qt;
 
 uint32_t time_paused;
-const uint32_t MAX_PAUSE_DURATION = 60'000 * 2;
+uint32_t max_pause_duration = 60'000 * 2;
 
 // char qt_entry[QT_ENTRY_SIZE];
 
@@ -171,6 +171,7 @@ void loop() {
   ErrorDisplay::instance().toggle();
 
   // toggle heartbeats
+  it++;
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
 
   // Check for serial input commands
@@ -184,7 +185,7 @@ void loop() {
     uint32_t remaining_time = millis() - time_paused;
 
     // Force resume if timeout
-    if (remaining_time > MAX_PAUSE_DURATION) {
+    if (remaining_time > max_pause_duration) {
       setCmdData({CMD_NONE, 0, false});
       log_core("ERROR: System Timeout");
     }
@@ -193,7 +194,6 @@ void loop() {
   else {
     // start print line with iteration number
     log_core("it: " + String(it) + "\t");
-    it++;
 
     // build csv row
     uint8_t packet[QT_ENTRY_SIZE];
@@ -216,9 +216,10 @@ void loop() {
     queue_add_blocking(&qt, csv_row.c_str());
 #endif
 
-    delay(500);                                  // remove before flight
-    digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
+    delay(500);  // remove before flight
   }
+
+  digitalWrite(ON_BOARD_LED_PIN, (it & 0x1));  // toggle light with iteration
 }
 
 /**
@@ -266,6 +267,7 @@ void handleCommand() {
   if (cmd.equals("STATUS")) {
     cmd_data.type = CMD_STATUS;
     log_core("Command: " + cmd + " - System Paused");
+    max_pause_duration = 60'000 / 2;
   } else if (cmd.startsWith("DOWNLOAD F")) {
     // Extract the file number from command
     String extracted_num = cmd.substring(String("DOWNLOAD F").length());
@@ -277,6 +279,9 @@ void handleCommand() {
     // Store the command info
     cmd_data.type = CMD_DOWNLOAD;
     cmd_data.file_number = extracted_num.toInt();
+
+    // Set pause duration
+    max_pause_duration = 60'000 * 30;
   } else if (cmd.startsWith("DELETE F")) {
     // Extract the file number from command
     String extracted_num = cmd.substring(String("DELETE F").length());
@@ -288,8 +293,10 @@ void handleCommand() {
     // Store the command info
     cmd_data.type = CMD_DELETE;
     cmd_data.file_number = extracted_num.toInt();
+    max_pause_duration = 60'000 * 15;
   } else if (cmd.equals("FLASH DELETE ALL")) {
     cmd_data.type = CMD_ERASE_ALL;
+    max_pause_duration = 60'000 * 5;
   } else {
     log_core("ERROR: Invalid command - " + cmd);
     return;
