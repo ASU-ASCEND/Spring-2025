@@ -173,7 +173,6 @@ void loop() {
   // toggle heartbeats
   it++;
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
-  it++;
 
   // Check for serial input commands
   if (Serial.available() > 0) {
