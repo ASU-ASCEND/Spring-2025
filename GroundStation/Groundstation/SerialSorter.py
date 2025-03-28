@@ -55,7 +55,7 @@ class SerialSorter(threading.Thread):
             # print("hit packet")
             # flush before to misc 
             before, sep, after = self.buf.partition(self.encodings["ASU!"])
-            if before.decode().strip() != "": self.sorter_misc.put(before.decode())
+            if before.decode(errors="ignore").strip() != "": self.sorter_misc.put(before.decode(errors="ignore"))
             self.buf = sep + after 
 
             while(len(self.buf) < 4+4+2):
@@ -136,7 +136,7 @@ class SerialSorter(threading.Thread):
           elif flash_index == min_index:
             # flush before to misc 
             before, sep, after = self.buf.partition("[Flash]".encode())
-            if before.decode().strip() != "": self.sorter_misc.put(before.decode())
+            if before.decode(errors="replace").strip() != "": self.sorter_misc.put(before.decode(errors="replace"))
             self.buf = after 
 
             # wait for \n to end prefix if not already received (probably not)
@@ -156,7 +156,7 @@ class SerialSorter(threading.Thread):
 
             self.buf = after
 
-            if message.decode().strip() == "START_DATA":
+            if message.decode(errors="replace").strip() == "START_DATA":
               if self.buf.find("[FLASH] STOP_DATA\n".encode()) == -1:
                 c_in = self.input_to_sorter.get(block=True)
                 self.buf += c_in
@@ -165,10 +165,13 @@ class SerialSorter(threading.Thread):
                   if len(self.buf) > 500: 
                     # send all but that last 100 to not miss "START_DATA"
                     self.sorter_flash.put(self.buf[:-100]) 
+                    print("ADDED")
                     self.buf = self.buf[-100:] 
                   if self.end_event.is_set(): return
                   try: 
+                    print("TRY")
                     c_in = self.input_to_sorter.get_nowait()
+                    print("ADD2")
                     self.buf += c_in
                   except Empty:
                     sleep(0.1)

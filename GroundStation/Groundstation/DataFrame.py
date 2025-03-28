@@ -130,7 +130,7 @@ class DataFrame(tk.Frame):
     buf = "" 
     while self.end_event.is_set() == False:
       try: 
-        data: bytearray = self.sorter_flash.get_nowait()
+        data = self.sorter_flash.get_nowait()
         if data == "FLASH OPERATION TRANSFER COMPLETE": 
           break
         else:
