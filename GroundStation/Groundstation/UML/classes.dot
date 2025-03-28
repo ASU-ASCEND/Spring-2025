@@ -1,0 +1,18 @@
+digraph "classes" {
+charset="utf-8"
+rankdir=BT
+"0" [label="{AllData|\l|get()\l}", shape="record"];
+"1" [label="{DataFrame|COLUMNS : int\lbitmask_to_name\lbitmask_to_struct\lchecksum_size : int\lconvert_bin_button : Button\lend_event\lerase_all_button : Button\lfile_list : list\lfile_list_widgets : list\lget_file_list_button : Button\lheader_info\lheader_size : int\llabel : Label\lnum_sensors\lpacket_struct : Struct\lserial_output\lsorter_flash\lstatus_label : Label\l|convert_bin(filename)\lconvert_button()\ldelete_file(file_name)\lerase_all_action()\lget_file_list()\ltransfer_file(file_name)\lupdate_file_list()\lupdate_frame()\lvalidate(packet)\l}", shape="record"];
+"2" [label="{DataTransfer|\l|get()\lpost()\l}", shape="record"];
+"3" [label="{GSEFrame|HIST_SIZE : int\lTABLE_WIDTH : int\lcore0_scrolled : ScrolledText\lcore1_scrolled : ScrolledText\ldata_cells : list\ldecoder_packets\lheader_info\llabel : Label\lsorter_core0\lsorter_core1\l|createTable()\lupdateTable()\lupdate_frame()\l}", shape="record"];
+"4" [label="{GUI|COLUMNS : int\lcurrent_frame : Frame\ldecoder_args\ldecoder_packets\lend_event\lheader_info\lserial_output\lsorter_core0\lsorter_core1\lsorter_flash\lsorter_misc\lwindow : Tk\l|buildDataFrame()\lbuildGSEFrame()\lbuildRadioFrame()\lrun()\l}", shape="record"];
+"5" [label="{PacketDecoder|bitmask_to_name\lbitmask_to_struct\lchecksum_size : int\ldecoder_packets\lend_event\lheader_size : int\lnum_sensors\lpacket_saver\lpacket_struct : Struct\lsorter_to_decoder\l|run()\lvalidate(packet)\l}", shape="record"];
+"6" [label="{PacketSaver|decoder_packet_saver\lend_event\lheader_info\lpacket_saver_server\lsession_filename : str\l|run()\l}", shape="record"];
+"7" [label="{RadioFrame|HIST_SIZE : int\lTABLE_WIDTH : int\ldata_cells : list\ldecoder_packets\lheader_info\llabel : Label\lpackets_dropped : int\lpackets_received : int\lstats_label : Label\lstats_stringvar : StringVar\l|createTable()\lupdateTable()\lupdate_frame()\l}", shape="record"];
+"8" [label="{SerialInput|baud : int\lend_event\linput_queue\lport : NoneType\lser : NoneType, Serial\lserial_output\lserial_stream\l|command_output()\llist_serial_ports()\lrun()\lselect_device()\lselect_serial_port()\l}", shape="record"];
+"9" [label="{SerialSaver|end_event\lserial_stream\lsession_filename : str\l|run()\l}", shape="record"];
+"10" [label="{SerialSorter|buf : bytearray\lencodings : dict\lend_event\linput_to_sorter\lsorter_core0\lsorter_core1\lsorter_flash\lsorter_misc\lsorter_to_decoder\l|run()\l}", shape="record"];
+"11" [label="{ServerInterface|data_in\lend_event\lpost_endpoint : str\lserver_process\l|run()\l}", shape="record"];
+"12" [label="{ServerProcess|app\llog_file : str\lserver_name : str\l|run()\l}", shape="record"];
+"13" [label="{SimpleDisplay|decoder_packets\lend_event\lsorter_core0\lsorter_core1\lsorter_misc\l|run()\l}", shape="record"];
+}

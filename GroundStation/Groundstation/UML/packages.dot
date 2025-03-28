@@ -1,0 +1,20 @@
+digraph "packages" {
+charset="utf-8"
+rankdir=BT
+"0" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/ConfigLoader.py", shape="box"];
+"1" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/DataFrame.py", shape="box"];
+"2" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/GSEFrame.py", shape="box"];
+"3" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/GUI.py", shape="box"];
+"4" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/PacketDecoder.py", shape="box"];
+"5" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/PacketSaver.py", shape="box"];
+"6" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/RadioFrame.py", shape="box"];
+"7" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/SerialInput.py", shape="box"];
+"8" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/SerialSaver.py", shape="box"];
+"9" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/SerialSorter.py", shape="box"];
+"10" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/ServerInterface.py", shape="box"];
+"11" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/ServerProcess.py", shape="box"];
+"12" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/SimpleDisplay.py", shape="box"];
+"13" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/__init__.py", shape="box"];
+"14" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/main.py", shape="box"];
+"15" [label="/mnt/c/Users/tyler/Documents/ASCEND/Spring-2025/GroundStation/Groundstation/test.py", shape="box"];
+}
