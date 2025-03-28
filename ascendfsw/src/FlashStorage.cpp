@@ -277,7 +277,8 @@ void FlashStorage::storePacket(uint8_t* packet) {
 }
 
 /**
- * @brief Dumps the contents of flash memory to the serial monitor. [DEPRECIATED]
+ * @brief Dumps the contents of flash memory to the serial monitor.
+ * [DEPRECIATED]
  *
  * Reads each byte of flash memory starting from the beginning and prints it to
  * the serial monitor. The process continues until the end of the memory or the
@@ -312,7 +313,8 @@ void FlashStorage::erase() {
   int progress = 0;
 
   // Clear flash
-  for (unsigned long sector = 0; sector < this->MAX_SIZE; sector += SECTOR_SIZE) {
+  for (unsigned long sector = 0; sector < this->MAX_SIZE;
+       sector += SECTOR_SIZE) {
     this->flash.eraseSector(sector);
     this->flash.blockingBusyWait();
     digitalWrite(HEARTBEAT_PIN_1, (sector & 0x20000) != 0);

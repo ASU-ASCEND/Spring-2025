@@ -268,8 +268,7 @@ void handleCommand() {
     cmd_data.type = CMD_STATUS;
     log_core("Command: " + cmd + " - System Paused");
     max_pause_duration = 60'000 / 2;
-  } 
-  else if (cmd.startsWith("DOWNLOAD F")) {
+  } else if (cmd.startsWith("DOWNLOAD F")) {
     // Extract the file number from command
     String extracted_num = cmd.substring(String("DOWNLOAD F").length());
     extracted_num.trim();
@@ -283,8 +282,7 @@ void handleCommand() {
 
     // Set pause duration
     max_pause_duration = 60'000 * 30;
-  } 
-  else if (cmd.startsWith("DELETE F")) {
+  } else if (cmd.startsWith("DELETE F")) {
     // Extract the file number from command
     String extracted_num = cmd.substring(String("DELETE F").length());
     extracted_num.trim();
@@ -296,12 +294,10 @@ void handleCommand() {
     cmd_data.type = CMD_DELETE;
     cmd_data.file_number = extracted_num.toInt();
     max_pause_duration = 60'000 * 15;
-  } 
-  else if (cmd.equals("FLASH DELETE ALL")) {
+  } else if (cmd.equals("FLASH DELETE ALL")) {
     cmd_data.type = CMD_ERASE_ALL;
     max_pause_duration = 60'000 * 5;
-  } 
-  else {
+  } else {
     log_core("ERROR: Invalid command - " + cmd);
     return;
   }
