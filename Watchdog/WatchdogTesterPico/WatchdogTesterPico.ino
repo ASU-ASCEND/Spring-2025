@@ -1,7 +1,7 @@
 // pico code to test watchdog, flatlines after 50 iterations, resets around 100
 // iterations
-#define h1 14
-#define h2 15
+#define h1 20
+#define h2 21
 
 // the setup function runs once when you press reset or power the board
 void setup() {
