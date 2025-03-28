@@ -4,7 +4,7 @@ var searchData=
   ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
   ['main1_2ecpp_2',['main1.cpp',['../main1_8cpp.html',1,'']]],
   ['max_5fattempts_3',['max_attempts',['../classDevice.html#ae27da3b2ca8c3821a65d5e1b2f13393d',1,'Device']]],
-  ['max_5fpause_5fduration_4',['MAX_PAUSE_DURATION',['../main_8cpp.html#ac4f422fc1abdff2465d9ebc8a98be207',1,'main.cpp']]],
+  ['max_5fpause_5fduration_4',['max_pause_duration',['../main_8cpp.html#af14c7b92dc0d838f932692fccfd9dfc2',1,'main.cpp']]],
   ['max_5fsize_5',['MAX_SIZE',['../classFlashStorage.html#a4c65f1e55370a07f427a18b7a2fe1536',1,'FlashStorage']]],
   ['meeting_20schedule_6',['Meeting Schedule',['../index.html#autotoc_md2',1,'']]],
   ['milestones_7',['Potential Milestones',['../index.html#autotoc_md3',1,'']]],
