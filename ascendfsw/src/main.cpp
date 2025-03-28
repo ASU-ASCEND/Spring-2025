@@ -76,8 +76,6 @@ const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 String header_condensed = "";
 
 // global variables for main
-// loop counter
-unsigned int it = 0;
 
 // Global variables shared with core 1
 
@@ -162,6 +160,8 @@ void setup() {
 }
 
 bool was_dumping = false;
+// loop counter
+unsigned int it = 0;
 /**
  * @brief Loop for core 0, handling sensor reads
  *
@@ -172,6 +172,7 @@ void loop() {
 
   // toggle heartbeats
   digitalWrite(HEARTBEAT_PIN_0, (it & 0x1));
+  it++;
 
   // Check for serial input commands
   if (Serial.available() > 0) {
@@ -193,7 +194,6 @@ void loop() {
   else {
     // start print line with iteration number
     log_core("it: " + String(it) + "\t");
-    it++;
 
     // build csv row
     uint8_t packet[QT_ENTRY_SIZE];
