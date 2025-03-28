@@ -26,6 +26,7 @@ class FlashStorage : public Storage {
   inline static const uint32_t MAX_SIZE =
       15'000'000;  // 16 MByte (less for safety)
   inline static const uint32_t SECTOR_SIZE = 4'096;  // 4KB
+  inline static const uint32_t DEFRAG_SIZE = 512;
   inline static const uint32_t START_ADDRESS = 0;
 
   std::vector<FileHeader> file_data;
@@ -39,6 +40,8 @@ class FlashStorage : public Storage {
 
   bool readFileHeader();
   void writeFileHeader();
+
+  void defragFlash(uint32_t, FileHeader);
 
  public:
   FlashStorage();

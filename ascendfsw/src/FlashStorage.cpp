@@ -214,6 +214,56 @@ bool FlashStorage::reinitFlash() {
 }
 
 /**
+ * @brief Reorganize flash data to be contiguous after file deletion operations.
+ * 
+ * Reorganize flash data after delete operations to prevent file indexing to 
+ * detect "false summits" where a free sector may lead to a following occupied 
+ * sector. 
+ * 
+ */
+void FlashStorage::defragFlash(uint32_t freed_start_address, FileHeader next_file) {
+  uint8_t buffer[this->DEFRAG_SIZE]; // Configurable memory transfer buffer
+
+  uint32_t read_head = next_file.start_address;
+  uint32_t write_head = freed_start_address;
+
+  // Calculate the sector range to be erased.
+  uint32_t freed_space = (((next_file.start_address - 5) / this->SECTOR_SIZE) - 
+                            (freed_start_address / this->SECTOR_SIZE)) * 
+                           this->SECTOR_SIZE;
+
+  int flagged_sector = next_file.start_address;
+  int sector_progress = 0;
+
+  // Iterate through flash until all file shifting has completed
+  while((file_data.back().end_address > read_head) && (this->MAX_SIZE > read_head)) {
+    // Copy over flash memory to buffer
+    for (int i = 0; i < this->DEFRAG_SIZE; ++i) {
+      buffer[i] = this->flash.readByte(read_head++);
+    }
+    
+    // Erase sector if it has all been shifted
+    sector_progress += this->DEFRAG_SIZE;
+    if (this->SECTOR_SIZE == sector_progress) {
+      this->flash.eraseSector(flagged_sector);
+      flagged_sector += this->SECTOR_SIZE;
+      sector_progress = 0;
+
+      this->flash.blockingBusyWait();
+    }
+
+    // Write data to free space in flash
+    for (uint8_t data : buffer) {
+      this->flash.writeByte(write_head++, data);
+      this->flash.blockingBusyWait();
+    }
+  }
+
+  // Update address
+  this->address -= freed_space;
+}
+
+/**
  * @brief Stores a string in flash memory, appending a newline at the end.
  *
  * Iterates through each character of the string and writes it to flash. The
@@ -473,12 +523,17 @@ void FlashStorage::atomicStore(String data) {
  * @param file_number The number identifying the file to delete.
  */
 void FlashStorage::removeFile(uint32_t file_number) {
+  bool defrag = (this->file_data.size() > file_number) ? true : false;
   bool found = false;
   FileHeader target;
+  FileHeader next_file;
+
   // Search for the file by number and remove it from file_data
   for (auto it = this->file_data.begin(); it != this->file_data.end(); ++it) {
     if (it->file_number == file_number) {
       target = *it;
+      next_file = *(it + 1);
+
       this->file_data.erase(it);
       found = true;
       break;
@@ -509,7 +564,12 @@ void FlashStorage::removeFile(uint32_t file_number) {
     digitalWrite(HEARTBEAT_PIN_1, (sector & 0x20000) != 0);
   }
 
-  this->reinitFlash();
+  // this->reinitFlash();
+
+  // Perform defragmentation on flash
+  if (defrag) {
+    this->defragFlash(target.start_address, next_file);
+  }
 
   log_core("File " + String(file_number) + " removed successfully.");
 }
