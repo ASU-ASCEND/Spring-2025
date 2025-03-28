@@ -238,32 +238,34 @@ void FlashStorage::defragFlash(FileHeader removed_file) {
   uint32_t freed_space = (end_sector - start_sector) + this->SECTOR_SIZE;
   log_flash("Space Freed: " + String(freed_space));
 
-  uint8_t buffer[this->DEFRAG_SIZE]; // Configurable memory transfer buffer
+  const uint32_t BUFFER_SIZE = 1024;
+  uint8_t buffer[BUFFER_SIZE]; // Configurable memory transfer buffer
 
   uint32_t read_head = next_file.start_address;
   uint32_t write_head = removed_file.start_address;
 
-  int flagged_sector = next_file.start_address;
-  int sector_progress = 0;
+  uint32_t flagged_sector = next_file.start_address;
+  uint32_t sector_progress = 0;
 
   uint32_t progress = 0;
   uint32_t transfer_size = file_data.back().end_address - next_file.start_address;
 
   // Iterate through flash until all file shifting has completed
   while((file_data.back().end_address > read_head) && (this->MAX_SIZE > read_head)) {
-    // Copy over flash memory to buffer
-    for (int i = 0; i < this->DEFRAG_SIZE; ++i) {
-      buffer[i] = this->flash.readByte(read_head++);
+    // Copy over block of flash memory to buffer
+    if (this->flash.readBlock(read_head, buffer, BUFFER_SIZE) != 1) {
+      log_core("ERROR: Failed to read block.");
+      return;
     }
     
     // Erase sector if it has all been shifted
-    sector_progress += this->DEFRAG_SIZE;
+    sector_progress += BUFFER_SIZE;
     if (this->SECTOR_SIZE == sector_progress) {
       this->flash.eraseSector(flagged_sector);
       
       // Log progress
       progress += sector_progress;
-      log_flash("Progress: " + String(progress) + " of " + String(transfer_size) + 
+      log_flash("Progress: " + String(progress) + "/" + String(transfer_size) + 
                 " bytes transferred.");
       
       flagged_sector += this->SECTOR_SIZE;
@@ -273,10 +275,17 @@ void FlashStorage::defragFlash(FileHeader removed_file) {
     }
 
     // Write data to free space in flash
-    for (uint8_t data : buffer) {
-      this->flash.writeByte(write_head++, data);
-      this->flash.blockingBusyWait();
+    if (this->flash.writeBlock(write_head, buffer, BUFFER_SIZE) != 1) {
+      log_core("ERROR: Failed to write block.");
+      return;
     }
+
+    // Update iterators
+    read_head += BUFFER_SIZE;
+    write_head += BUFFER_SIZE;
+
+    // Wait to ensure process is finished
+    this->flash.blockingBusyWait();
   }
 
   // Update address
@@ -287,8 +296,7 @@ void FlashStorage::defragFlash(FileHeader removed_file) {
   // Log completion
   unsigned long end_time = millis();
   unsigned long total_time = (end_time - start_time) / 1000;
-  log_flash("Defragmentation completed.");
-  log_flash("Operation Timespan: " + String(total_time));
+  log_flash("Defragmentation complete | Time: " + String(total_time) "s");
 }
 
 /**
