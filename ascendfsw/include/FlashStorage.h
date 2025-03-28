@@ -41,7 +41,7 @@ class FlashStorage : public Storage {
   bool readFileHeader();
   void writeFileHeader();
 
-  void defragFlash(uint32_t, FileHeader);
+  void defragFlash(FileHeader);
 
  public:
   FlashStorage();

@@ -221,19 +221,33 @@ bool FlashStorage::reinitFlash() {
  * sector. 
  * 
  */
-void FlashStorage::defragFlash(uint32_t freed_start_address, FileHeader next_file) {
+void FlashStorage::defragFlash(FileHeader removed_file) {
+  unsigned long start_time = millis(); // Time defragmentation process
+  
+  // Grab the next file following the removed file 
+  FileHeader next_file;
+  for (const FileHeader& file : file_data) {
+    if (file.file_number == (removed_file.file_number + 1)) {
+      next_file = file;
+    }
+  }
+
+  // Calculate freed space
+  uint32_t start_sector = (removed_file.start_address / SECTOR_SIZE) * SECTOR_SIZE;
+  uint32_t end_sector = ((removed_file.end_address - 1) / SECTOR_SIZE) * SECTOR_SIZE;
+  uint32_t freed_space = (end_sector - start_sector) + this->SECTOR_SIZE;
+  log_flash("Space Freed: " + String(freed_space));
+
   uint8_t buffer[this->DEFRAG_SIZE]; // Configurable memory transfer buffer
 
   uint32_t read_head = next_file.start_address;
-  uint32_t write_head = freed_start_address;
-
-  // Calculate the sector range to be erased.
-  uint32_t freed_space = (((next_file.start_address - 5) / this->SECTOR_SIZE) - 
-                            (freed_start_address / this->SECTOR_SIZE)) * 
-                           this->SECTOR_SIZE;
+  uint32_t write_head = removed_file.start_address;
 
   int flagged_sector = next_file.start_address;
   int sector_progress = 0;
+
+  uint32_t progress = 0;
+  uint32_t transfer_size = file_data.back().end_address - next_file.start_address;
 
   // Iterate through flash until all file shifting has completed
   while((file_data.back().end_address > read_head) && (this->MAX_SIZE > read_head)) {
@@ -246,6 +260,12 @@ void FlashStorage::defragFlash(uint32_t freed_start_address, FileHeader next_fil
     sector_progress += this->DEFRAG_SIZE;
     if (this->SECTOR_SIZE == sector_progress) {
       this->flash.eraseSector(flagged_sector);
+      
+      // Log progress
+      progress += sector_progress;
+      log_flash("Progress: " + String(progress) + " of " + String(transfer_size) + 
+                " bytes transferred.");
+      
       flagged_sector += this->SECTOR_SIZE;
       sector_progress = 0;
 
@@ -260,7 +280,15 @@ void FlashStorage::defragFlash(uint32_t freed_start_address, FileHeader next_fil
   }
 
   // Update address
+  log_flash("Previous Address: " + String(this->address));
   this->address -= freed_space;
+  log_flash("Updated Address: " + String(this->address));
+
+  // Log completion
+  unsigned long end_time = millis();
+  unsigned long total_time = (end_time - start_time) / 1000;
+  log_flash("Defragmentation completed.");
+  log_flash("Operation Timespan: " + String(total_time));
 }
 
 /**
@@ -564,14 +592,17 @@ void FlashStorage::removeFile(uint32_t file_number) {
     digitalWrite(HEARTBEAT_PIN_1, (sector & 0x20000) != 0);
   }
 
+  log_core("File " + String(file_number) + " removed successfully.");
+
   // this->reinitFlash();
 
   // Perform defragmentation on flash
   if (defrag) {
-    this->defragFlash(target.start_address, next_file);
+    log_core("Beginning file defragmentation...");
+    unsigned long start_time = millis();
+    
+    this->defragFlash(target);
   }
-
-  log_core("File " + String(file_number) + " removed successfully.");
 }
 
 /**
