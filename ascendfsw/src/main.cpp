@@ -76,8 +76,6 @@ const int sensors_len = sizeof(sensors) / sizeof(sensors[0]);
 String header_condensed = "";
 
 // global variables for main
-// loop counter
-unsigned int it = 0;
 
 // Global variables shared with core 1
 
@@ -162,6 +160,8 @@ void setup() {
 }
 
 bool was_dumping = false;
+// loop counter
+unsigned int it = 0;
 /**
  * @brief Loop for core 0, handling sensor reads
  *
