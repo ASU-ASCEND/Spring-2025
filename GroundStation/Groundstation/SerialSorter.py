@@ -157,21 +157,18 @@ class SerialSorter(threading.Thread):
             self.buf = after
 
             if message.decode(errors="replace").strip() == "START_DATA":
-              if self.buf.find("[FLASH] STOP_DATA\n".encode()) == -1:
+              if self.buf.find("[Flash] STOP_DATA\n".encode()) == -1:
                 c_in = self.input_to_sorter.get(block=True)
                 self.buf += c_in
-                while c_in.find("\n".encode()) == -1:
+                while self.buf.find("[Flash] STOP_DATA\n".encode()) == -1:
                   # send data periodically so that it can start being processed 
                   if len(self.buf) > 500: 
                     # send all but that last 100 to not miss "START_DATA"
                     self.sorter_flash.put(self.buf[:-100]) 
-                    print("ADDED")
                     self.buf = self.buf[-100:] 
                   if self.end_event.is_set(): return
                   try: 
-                    print("TRY")
                     c_in = self.input_to_sorter.get_nowait()
-                    print("ADD2")
                     self.buf += c_in
                   except Empty:
                     sleep(0.1)
