@@ -78,7 +78,7 @@ class ErrorDisplay {
 
     this->pin_level = !(this->pin_level);
 
-    uint8_t display_code = 7 - this->code;  // 0 is heightest
+    uint8_t display_code = 7 - this->code;  // 0 is highest
 
     if (this->code == Error::NONE) display_code = 0b001;
 
