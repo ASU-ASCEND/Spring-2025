@@ -39,6 +39,8 @@ if __name__ == "__main__":
     header_key = {
       "Millis": 1, 
     }
+    sensor_arr = []
+    sensor_reading_order_key = {}
     with open(FILE_PATH) as f:
       for line in f: 
         fields = [str(i).strip() for i in line.split(",")]
@@ -46,11 +48,14 @@ if __name__ == "__main__":
 
         # add to header_key 
         header_key[fields[1]] = len(fields) // 2 - 1 
+        sensor_arr.append(fields[1])
+        sensor_reading_order_key[fields[1]] = [] 
 
         # populate header array 
         for i in range(2, len(fields), 2): 
-          header_arr.append(fields[1] + " " + fields[i])
-    header_info = (header_key, header_arr)
+          header_arr.append(fields[1] + " " + fields[i]) # spaces are ok (only for display)
+          sensor_reading_order_key[fields[1]].append("_".join(fields[i].split())) # no spaces in actual keys only underscores 
+    header_info = (header_key, header_arr, sensor_arr, sensor_reading_order_key)
 
     # Create threads
     serial_input = SerialInput.SerialInput(
