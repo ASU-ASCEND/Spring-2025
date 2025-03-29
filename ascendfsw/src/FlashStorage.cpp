@@ -375,7 +375,7 @@ void FlashStorage::downloadFile(int file_number) {
 
       // Send data to Serial
       if (Serial.write(data) != 1) {
-        // log_flash("STOP_DATA");
+        log_flash("STOP_DATA");
         log_core("ERROR: Unsuccessful serial write");
         return;
       }
