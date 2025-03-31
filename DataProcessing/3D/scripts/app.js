@@ -18,7 +18,7 @@ let flightData = [];
 let start, stop, timeStepInSeconds;
 let sampledPositionProperty;
 let atmosphereLayers = [];
-let semesterData = "spring-2025";
+let semester = "spring-2025";
 
 /**
  * @brief Min and max data analysis helper functions  
