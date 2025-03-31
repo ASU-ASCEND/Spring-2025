@@ -1,8 +1,10 @@
 import csv
 import json
 
-input_csv = './data/aprs-data-fall-2024.csv'
-output_json = './data/aprs-data-fall-2024.json'
+semester = 'spring-2025'
+
+input_csv = f'./data/{semester}/aprs-data.csv'
+output_json = f'./data/{semester}/aprs-data.json'
 
 with open(input_csv, 'r', newline='') as csv_file:
     reader = csv.reader(csv_file)
