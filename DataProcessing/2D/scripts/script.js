@@ -23,7 +23,8 @@ d3.csv(DATA_PATH, function(d, i) {
     }
 
     // Fetch pico data in farenheit
-    const temperature = +d["PicoTemp Temp (C)"] * 9/5 + 32;
+    const picoTemp = +d["PicoTemp Temp (C)"] * 9/5 + 32;
+    const icmTemp = +d["ICM20948 Temp (C)"] * 9/5 + 32;
 
     // Fetch row MTK time data
     const year = +d["MTK3339 Year"];
@@ -46,7 +47,8 @@ d3.csv(DATA_PATH, function(d, i) {
     return {
         date: new Date(year, month, day, hour, minute, second),
         altitude: altitude,
-        temperature: temperature
+        picoTemp: picoTemp,
+        icmTemp: icmTemp
     };
 }).then(function(data) {
     console.log("SUCCESS: Data Processed.");
@@ -74,9 +76,9 @@ d3.csv(DATA_PATH, function(d, i) {
         .domain([0, 110000])
         .range([height, 0]);
     
-    // Create temperature scale (Fahrenheit) 
-    const yTemp = d3.scaleLinear()
-        .domain(d3.extent(data, d => d.temperature))
+    // Create picoTemp scale (Fahrenheit) 
+    const yPicoTemp = d3.scaleLinear()
+        .domain([-40, 70])
         .range([height, 0]);
 
     // y-axis with grid lines
@@ -88,22 +90,22 @@ d3.csv(DATA_PATH, function(d, i) {
             .attr("stroke-opacity", 0.1));
 
     svg.append("g")
-        .attr("transform", `translate(${width},-2)`)
-        .call(d3.axisRight(yTemp).ticks(height / 40))
+        .attr("transform", `translate(${width})`)
+        .call(d3.axisRight(yPicoTemp).ticks(height / 40))
         .call(g => g.select(".domain").remove());
 
-    // Create a line generator for temperature
-    const tempLine = d3.line()
+    // Create a line generator for picoTemp
+    const picoTempLine = d3.line()
         .x(d => x(d.date))
-        .y(d => yTemp(d.temperature));
+        .y(d => yPicoTemp(d.picoTemp));
 
-    // Append the temperature line (choose a different stroke color, e.g., blue)
+    // Append the picoTemp line (choose a different stroke color, e.g., blue)
     svg.append("path")
         .datum(data)
         .attr("fill", "none")
         .attr("stroke", "blue")
         .attr("stroke-width", 2)
-        .attr("d", tempLine);
+        .attr("d", picoTempLine);
 
     // Add Atmospheric Layer Backgrounds
     addAtmosphericLayering(x, y);
@@ -115,7 +117,7 @@ d3.csv(DATA_PATH, function(d, i) {
     addLegend();
 
     // Add a flight path
-    addFlightPath(x, y, yTemp, data);
+    addFlightPath(x, y, yPicoTemp, data);
 
 }).catch(function(error) {
     console.error("Error loading the CSV data:", error);
@@ -128,7 +130,7 @@ d3.csv(DATA_PATH, function(d, i) {
  * @param {*} y 
  * @param {*} data 
  */
-function addFlightPath(x, y, yTemp, data) {
+function addFlightPath(x, y, yPicoTemp, data) {
     const lineGenerator = d3.line()
         .x(d => x(d.date))
         .y(d => y(d.altitude));
