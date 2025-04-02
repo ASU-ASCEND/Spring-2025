@@ -22,6 +22,9 @@ d3.csv(DATA_PATH, function(d, i) {
         return null;
     }
 
+    // Fetch pico data in farenheit
+    const temperature = +d["PicoTemp Temp (C)"] * 9/5 + 32;
+
     // Fetch row MTK time data
     const year = +d["MTK3339 Year"];
     const month = +d["MTK3339 Month"] - 1;
@@ -42,7 +45,8 @@ d3.csv(DATA_PATH, function(d, i) {
 
     return {
         date: new Date(year, month, day, hour, minute, second),
-        altitude: altitude
+        altitude: altitude,
+        temperature: temperature
     };
 }).then(function(data) {
     console.log("SUCCESS: Data Processed.");
@@ -65,8 +69,14 @@ d3.csv(DATA_PATH, function(d, i) {
         .domain(d3.extent(data, d => d.date))
         .range([0, width]);
 
+    // Create altitude scale
     const y = d3.scaleLinear()
         .domain([0, 110000])
+        .range([height, 0]);
+    
+    // Create temperature scale (Fahrenheit) 
+    const yTemp = d3.scaleLinear()
+        .domain(d3.extent(data, d => d.temperature))
         .range([height, 0]);
 
     // y-axis with grid lines
@@ -76,6 +86,24 @@ d3.csv(DATA_PATH, function(d, i) {
         .call(g => g.selectAll(".tick line").clone()
             .attr("x2", width)
             .attr("stroke-opacity", 0.1));
+
+    svg.append("g")
+        .attr("transform", `translate(${width},-2)`)
+        .call(d3.axisRight(yTemp).ticks(height / 40))
+        .call(g => g.select(".domain").remove());
+
+    // Create a line generator for temperature
+    const tempLine = d3.line()
+        .x(d => x(d.date))
+        .y(d => yTemp(d.temperature));
+
+    // Append the temperature line (choose a different stroke color, e.g., blue)
+    svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "blue")
+        .attr("stroke-width", 2)
+        .attr("d", tempLine);
 
     // Add Atmospheric Layer Backgrounds
     addAtmosphericLayering(x, y);
@@ -87,7 +115,7 @@ d3.csv(DATA_PATH, function(d, i) {
     addLegend();
 
     // Add a flight path
-    addFlightPath(x, y, data);
+    addFlightPath(x, y, yTemp, data);
 
 }).catch(function(error) {
     console.error("Error loading the CSV data:", error);
@@ -100,7 +128,7 @@ d3.csv(DATA_PATH, function(d, i) {
  * @param {*} y 
  * @param {*} data 
  */
-function addFlightPath(x, y, data) {
+function addFlightPath(x, y, yTemp, data) {
     const lineGenerator = d3.line()
         .x(d => x(d.date))
         .y(d => y(d.altitude));
@@ -128,6 +156,7 @@ function addFlightPath(x, y, data) {
         .attr("x", x(maxDataPoint.date))
         .attr("y", y(maxDataPoint.altitude) - 40)
         .style("font-size", "15px");
+    
     annotation.append("tspan")
         .text("Burst!")
         .attr("x", x(maxDataPoint.date) + 20)
@@ -176,7 +205,15 @@ function addLabels(x, y) {
         .attr("dy", "1em")
         .attr("text-anchor", "middle")
         .text("Altitude (ft)");
-  
+
+    // Vertical y-axis label
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)              // center vertically along the chart
+        .attr("y", width + margin.right + 20)  // position near the right edge
+        .attr("text-anchor", "middle")
+        .text("Temperature (°F)");
+
     // x-axis label
     svg.append("g")
         .attr("transform", `translate(0,${height})`)
@@ -246,20 +283,21 @@ function addLegend() {
 
     // Define legend items for atmospheric layers and flight path.
     const legendData = [
-      { label: "Ozone (64.5k–97k ft)", color: "#73A5C6" },
-      { label: "Stratosphere (35k–163k ft)", color: "#b5e2ff" },
-      { label: "Troposphere (0–35k ft)", color: "#daf0ff" },
+      { label: "Ozone (64.5k–97k ft)", color: "#73A5C6", type: "box" },
+      { label: "Stratosphere (35k–163k ft)", color: "#b5e2ff", type: "box" },
+      { label: "Troposphere (0–35k ft)", color: "#daf0ff", type: "box" },
+      { label: "Altitude (MTK3339)", color: "#ff2400", type: "line" },
+      { label: "Pico Temperature", color: "blue", type: "line" }
     ];
 
     const legendItemSize = 15;
     const legendSpacing = 5;
-    const legendHeight = legendData.length * (legendItemSize + legendSpacing) + 2;
 
     // Add legend to right-hand side
     const legendGroup = d3.select("svg")
       .append("g")
       .attr("class", "legend")
-      .attr("transform", `translate(${margin.left + width + margin.right}, ${margin.top + (height - legendHeight) / 2})`);
+      .attr("transform", `translate(${margin.left + width + margin.right}, ${margin.top})`);
 
     // Create a group for each legend item.
     const legendItems = legendGroup.selectAll(".legend-item")
@@ -267,15 +305,31 @@ function addLegend() {
       .enter()
       .append("g")
       .attr("class", "legend-item")
-      .attr("transform", (d, i) => `translate(${0}, ${i * (legendItemSize + legendSpacing)})`);
+      .attr("transform", (d, i) => `translate(${10}, ${10 + i * (legendItemSize + legendSpacing)})`);
 
-    // Append a rectangle with border for each legend item.
-    legendItems.append("rect")
-      .attr("width", legendItemSize)
-      .attr("height", legendItemSize)
-      .attr("fill", d => d.color)
-      .attr("stroke", "black")
-      .attr("stroke-width", 1);
+    // For each item, conditionally append either a rectangle (box) or a line.
+    legendItems.each(function(d) {
+      const g = d3.select(this);
+      if (d.type === "line") {
+        // Draw a horizontal line centered vertically in the legend item area.
+        g.append("line")
+          .attr("x1", 0)
+          .attr("x2", legendItemSize)
+          .attr("y1", legendItemSize / 2)
+          .attr("y2", legendItemSize / 2)
+          .attr("stroke", d.color)
+          .attr("stroke-width", 2)
+          .attr("stroke-linecap", "round");
+      } else {
+        // Draw a rectangle with a border.
+        g.append("rect")
+          .attr("width", legendItemSize)
+          .attr("height", legendItemSize)
+          .attr("fill", d.color)
+          .attr("stroke", "black")
+          .attr("stroke-width", 1);
+      }
+    });
 
     // Append text for each legend item.
     legendItems.append("text")
