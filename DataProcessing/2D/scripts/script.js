@@ -12,6 +12,8 @@ const svg = d3.select("svg")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
 // Fetch & parse flight CSV data
+let prevBmpTemp = null;
+let prevPicoTemp = null;
 d3.csv(DATA_PATH, function(d, i) {
     if (i < 21) return null; // Filter first 21 data rows out
 
@@ -24,7 +26,7 @@ d3.csv(DATA_PATH, function(d, i) {
 
     // Fetch pico data in farenheit
     const picoTemp = +d["PicoTemp Temp (C)"] * 9/5 + 32;
-    const icmTemp = +d["ICM20948 Temp (C)"] * 9/5 + 32;
+    const bmpTemp = +d["BMP390 Temp (C)"] * 9/5 + 32;
 
     // Fetch row MTK time data
     const year = +d["MTK3339 Year"];
@@ -36,7 +38,7 @@ d3.csv(DATA_PATH, function(d, i) {
 
     // Ensure anomalies in time data are discarded
     if (year !== 2025) {
-        console.log("ERROR: Unexpected row:", d);
+        console.log("ERROR: Unexpected time:", d);
         return null;
     }
 
@@ -44,11 +46,31 @@ d3.csv(DATA_PATH, function(d, i) {
     const altitude = +d["MTK3339 Altitude"] * 0.00328084;
     if (isNaN(altitude)) return null;
 
+    // Detect sudden temperature changes in the ICM
+    if (prevBmpTemp !== null) {
+        if (Math.abs(bmpTemp - prevBmpTemp) > 5) {
+            console.log("ERROR: Unexpected temperature:", d);
+            return null;
+        }
+    }
+
+    // Detect sudden temperature changes in the pico
+    if (prevPicoTemp !== null) {
+        if (Math.abs(picoTemp - prevPicoTemp) > 5) {
+            console.log("ERROR: Unexpected temperature:", d);
+            return null;
+        }
+    }
+
+    // Track previous temperature
+    prevBmpTemp = bmpTemp;
+    prevPicoTemp = picoTemp;
+
     return {
         date: new Date(year, month, day, hour, minute, second),
         altitude: altitude,
         picoTemp: picoTemp,
-        icmTemp: icmTemp
+        bmpTemp: bmpTemp
     };
 }).then(function(data) {
     console.log("SUCCESS: Data Processed.");
@@ -80,6 +102,10 @@ d3.csv(DATA_PATH, function(d, i) {
     const yPicoTemp = d3.scaleLinear()
         .domain([-40, 70])
         .range([height, 0]);
+    
+    const yBmpTemp = d3.scaleLinear()
+        .domain([-40, 100])
+        .range([height, 0]);
 
     // y-axis with grid lines
     svg.append("g")
@@ -98,6 +124,10 @@ d3.csv(DATA_PATH, function(d, i) {
     const picoTempLine = d3.line()
         .x(d => x(d.date))
         .y(d => yPicoTemp(d.picoTemp));
+    
+    const bmpTempLine = d3.line()
+        .x(d => x(d.date))
+        .y(d => yBmpTemp(d.bmpTemp));
 
     // Append the picoTemp line (choose a different stroke color, e.g., blue)
     svg.append("path")
@@ -106,6 +136,13 @@ d3.csv(DATA_PATH, function(d, i) {
         .attr("stroke", "blue")
         .attr("stroke-width", 2)
         .attr("d", picoTempLine);
+
+    svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "orange")
+        .attr("stroke-width", 2)
+        .attr("d", bmpTempLine);
 
     // Add Atmospheric Layer Backgrounds
     addAtmosphericLayering(x, y);
@@ -197,7 +234,7 @@ function addLabels(x, y) {
         .attr("text-anchor", "middle")
         .style("font-size", "18px")
         .style("font-weight", "bold")
-        .text("Payload Travel Path (MTK3339)");
+        .text("Payload Altitude & Temperature");
   
     // Vertical y-axis label
     svg.append("text")
@@ -289,7 +326,8 @@ function addLegend() {
       { label: "Stratosphere (35k–163k ft)", color: "#b5e2ff", type: "box" },
       { label: "Troposphere (0–35k ft)", color: "#daf0ff", type: "box" },
       { label: "Altitude (MTK3339)", color: "#ff2400", type: "line" },
-      { label: "Pico Temperature", color: "blue", type: "line" }
+      { label: "Pico Temperature", color: "blue", type: "line" },
+      { label: "Temperature (BMP390)", color: "orange", type: "line" }
     ];
 
     const legendItemSize = 15;
