@@ -41,10 +41,12 @@ class PacketSaver(threading.Thread):
         row = [] 
 
         row.append(str(packet["timestamp"]))
-        for sensor in self.header_info[0].keys():
+        # for sensor in self.header_info[0].keys():
+        for sensor in self.header_info[2]: # list of keys ordered by packet?
           if sensor == "Millis": continue 
           if sensor in packet["sensor_data"]:
-            for i in list(packet["sensor_data"][sensor].keys())[1:]:
+            # for i in list(packet["sensor_data"][sensor].keys())[1:]:
+            for i in self.header_info[3][sensor]: # key through it from header info list 
               row.append(str(packet["sensor_data"][sensor][i]))
           else:
             for i in range(self.header_info[0][sensor]):

@@ -127,16 +127,18 @@ class DataFrame(tk.Frame):
     self.serial_output.put("STATUS")
 
     # populate list from data
-    buf = "" 
+    buf = bytearray()
     while self.end_event.is_set() == False:
       try: 
-        data: bytearray = self.sorter_flash.get_nowait()
+        data = self.sorter_flash.get_nowait()
         if data == "FLASH OPERATION TRANSFER COMPLETE": 
           break
         else:
-          buf += data.decode()
+          buf += data
       except Empty:
         sleep(0.1)
+
+    buf = buf.decode(errors="replace")
     
     self.file_list = [i.strip() for i in buf.split("[Flash]") if len(i.strip()) != 0] 
 

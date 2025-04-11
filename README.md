@@ -1,6 +1,11 @@
 # Spring-2025
 Flight software for the ASU Spring 2025 ASCEND Payload
 
+## Electrical Subsystem 
+### StratoCore PCB 
+https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing 
+### StratoSense PCB
+https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing 
 ## GitHub Subfolders
 
 [DataProcessing](https://github.com/ASU-ASCEND/Spring-2025/tree/main/DataProcessing): Scripts and programs for processing and visualizing flight data.
