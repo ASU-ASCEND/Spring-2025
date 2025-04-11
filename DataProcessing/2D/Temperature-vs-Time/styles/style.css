@@ -1,0 +1,20 @@
+#chart-container {
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block; /* so it wraps tightly around the SVG */
+}
+  
+#chart-container .grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+  
+#chart-container .grid path {
+    stroke-width: 0;
+}
+  
+#chart-container .grid line.bottom {
+    stroke: none;
+}
