@@ -265,8 +265,6 @@ function createFlight() {
       point: { 
         pixelSize: 10, 
         color: pointColor,
-        outlineColor: Cesium.Color.WHITE,
-        outlineWidth: 2
       }
     });
   }

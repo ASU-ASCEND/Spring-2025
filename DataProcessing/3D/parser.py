@@ -3,7 +3,7 @@ import json
 import sys
 
 SEMESTER = 'spring-2025'
-DATA = 'flash'
+DATA = 'sd'
 
 input_csv = f'./data/{SEMESTER}/{DATA}-data.csv'
 output_json = f'./data/{SEMESTER}/{DATA}-data.json'
@@ -58,15 +58,17 @@ with open(input_csv, 'r', newline='') as csv_file:
                                                                   'year', 'month', 'day', 'hour', 'minute', 'second']):
                 continue
 
+            # Stop recording data past 11:15 (Data is recorded in UTC-7)
+            if int(row[position['hour']]) > (11 + 7) or (int(row[position['hour']]) == (11 + 7) and int(row[position['minute']]) > 5):
+                continue
+
             # Check for unusual values
             if int(row[position['year']]) != 2025 or any(float(row[position[field]]) == 0 for field in ('latitude', 'longitude', 'height')):
                 continue
 
-
             # Concat data into Cesium-readable format
             time = f"{int(row[position['year']]):04d}-{int(row[position['month']]):02d}-{int(row[position['day']]):02d}T" \
                    f"{int(row[position['hour']]):02d}:{int(row[position['minute']]):02d}:{int(row[position['second']]):02d}Z"
-
 
             data_dict = {
                 'latitude': f"{float(row[position['latitude']]):.4f}",
