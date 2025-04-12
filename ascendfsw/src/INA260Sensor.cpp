@@ -85,7 +85,7 @@ String INA260Sensor::decodeToCSV(uint8_t*& packet) {
   float data[3];
 
   for (int i = 0; i < 3; i++) {
-    memcpy(packet, &data[i], sizeof(float));
+    memcpy(&data[i], packet, sizeof(float));
     packet += sizeof(float);
   }
 
