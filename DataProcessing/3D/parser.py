@@ -64,13 +64,14 @@ with open(input_csv, 'r', newline='') as csv_file:
 
 
             # Concat data into Cesium-readable format
-            time = f"{row[position['year']]}-{row[position['month']]}-{row[position['day']]}T" \
-                   f"{row[position['hour']]}:{row[position['minute']]}:{row[position['second']]}Z"
+            time = f"{int(row[position['year']]):04d}-{int(row[position['month']]):02d}-{int(row[position['day']]):02d}T" \
+                   f"{int(row[position['hour']]):02d}:{int(row[position['minute']]):02d}:{int(row[position['second']]):02d}Z"
+
 
             data_dict = {
                 'latitude': f"{float(row[position['latitude']]):.4f}",
                 'longitude': f"{float(row[position['longitude']]):.4f}",
-                'height': f"{float(row[position['height']]):.4f}",
+                'height': f"{float(row[position['height']]) / 1000:.4f}", # Convert to meters
                 'timestamp': time,
             }
             data_list.append(data_dict)

@@ -1,5 +1,5 @@
 // Provide access token for Cesium Ion
-Cesium.Ion.defaultAccessToken = 'your_access_token';
+Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmNzRmZDQ5MS0zODY1LTRjYjEtOGI3Ny0wZGMwNWQ1MjVhOGMiLCJpZCI6MjI1Mjg3LCJpYXQiOjE3MjA0NTM1NzV9.k5jpBA4KmrErsokf_kxNKNcYbE8tNwCavyzJNRQOFeQ';
 
 // Initialize the Cesium viewer with customized settings
 const viewer = new Cesium.Viewer('cesiumContainer', {
@@ -19,6 +19,7 @@ let start, stop, timeStepInSeconds;
 let sampledPositionProperty;
 let atmosphereLayers = [];
 let semester = "spring-2025";
+let data = "flash";
 
 /**
  * @brief Min and max data analysis helper functions  
@@ -729,7 +730,7 @@ function roundRect(ctx, x, y, width, height, radius) {
 // Load JSON data from the aprs-data-fall-2024.json file and initialize everything
 async function init() {
   try {
-    const response = await fetch(`../data/${semester}/aprs-data.json`);
+    const response = await fetch(`../data/${semester}/${data}-data.json`);
     flightData = await response.json();
     console.log(flightData);
     
