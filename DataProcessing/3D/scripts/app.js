@@ -18,6 +18,7 @@ let flightData = [];
 let start, stop, timeStepInSeconds;
 let sampledPositionProperty;
 let atmosphereLayers = [];
+let semester = "spring-2025";
 
 /**
  * @brief Min and max data analysis helper functions  
@@ -728,7 +729,7 @@ function roundRect(ctx, x, y, width, height, radius) {
 // Load JSON data from the aprs-data-fall-2024.json file and initialize everything
 async function init() {
   try {
-    const response = await fetch('../data/aprs-data-fall-2024.json');
+    const response = await fetch(`../data/${semester}/aprs-data.json`);
     flightData = await response.json();
     console.log(flightData);
     
