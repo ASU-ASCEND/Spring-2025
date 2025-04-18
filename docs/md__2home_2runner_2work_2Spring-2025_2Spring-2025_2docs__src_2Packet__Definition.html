@@ -131,47 +131,38 @@ Packet Length</h3>
 Data</h2>
 <p>This is the largest difference for the packet this semester. Rather than encoding each value as characters and then transmitting a csv line, instead we are packing those values together. This allows for the packet to be smaller as instead of a byte for each character, we can represent numbers directly. For example, 8 bits as a character can only hold 10 values (0 to 9), but 8 bits as a number can hold 256 values (from 0 to 256 or -128 to 127).</p>
 <p>To do this we use the copy function to transfer bytes directly from each value into the packet, then increment the packet, which as a pointer will then be used by the next sensor as the position to start writing its data. Another syntax thing to understand is that in C++ the &amp; on an argument’s data type indicates that it will be passed by reference, which means that the argument when changed and used is really changing and using the variable passed to it. In our case, incrementing the packet argument of the function will increment the packet variable passed to it, allowing each sensor to move the packet pointer as they add value to the packet.</p>
-<p>The parent class functions that sensors need to override to implement the packeting system are </p><div class="fragment"><div class="line">/**</div>
-<div class="line">* @brief Used for creating packets, reads data from the sensor and appends it</div>
-<div class="line">* to the passed uint8_t array pointer, incrementing it while doing so</div>
-<div class="line">*</div>
-<div class="line">* @param packet Pointer to the packet byte array</div>
-<div class="line">* @return int The number of bytes appended</div>
-<div class="line">*/</div>
-<div class="line">void readDataPacket(uint8_t*&amp; packet) {};</div>
+<p>The parent class functions that sensors need to override to implement the packeting system are </p><div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> readDataPacket(uint8_t*&amp; packet) {};</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line">/**</div>
-<div class="line">* @brief Used for onboard decoding of packets</div>
-<div class="line">*</div>
-<div class="line">* @param packet  Pointer to the packet byte array</div>
-<div class="line">* @return String The senors data decoded from the packet in csv format</div>
-<div class="line">*/</div>
-<div class="line">String decodeToCSV(uint8_t*&amp; packet) { return &quot;&quot;; };</div>
-</div><!-- fragment --><p>And then an example of implementation from the Temperature <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> class </p><div class="fragment"><div class="line">void TempSensor::readDataPacket(uint8_t*&amp; packet) {</div>
-<div class="line">  // read sensor value to a variable</div>
-<div class="line">  float temp = analogReadTemp();</div>
+<div class="line">String decodeToCSV(uint8_t*&amp; packet) { <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; };</div>
+</div><!-- fragment --><p>And then an example of implementation from the Temperature <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> class </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="classTempSensor.html#aef99face4fe66c0d41099a525c6af0e9">TempSensor::readDataPacket</a>(uint8_t*&amp; packet) {</div>
+<div class="line">  <span class="comment">// read sensor value to a variable</span></div>
+<div class="line">  <span class="keywordtype">float</span> <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a> = <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">analogReadTemp</a>();</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line">  // cast the pointer to that value to a uint8_t pointer, copy the bytes at that pointer to packet (using the size of the variable to tell copy the number of bytes to copy)</div>
-<div class="line">  std::copy((uint8_t*)(&amp;temp), (uint8_t*)(&amp;temp) + sizeof(temp), packet);</div>
-<div class="line">  // increment the packet pointer past the new bytes</div>
-<div class="line">  packet += sizeof(temp);</div>
+<div class="line">  <span class="comment">// cast the pointer to that value to a uint8_t pointer, copy the bytes at that pointer to packet (using the size of the variable to tell copy the number of bytes to copy)</span></div>
+<div class="line">  std::copy((uint8_t*)(&amp;<a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>), (uint8_t*)(&amp;<a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>) + <span class="keyword">sizeof</span>(<a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>), <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>);</div>
+<div class="line">  <span class="comment">// increment the packet pointer past the new bytes</span></div>
+<div class="line">  <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a> += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>);</div>
 <div class="line">}</div>
-</div><!-- fragment --><p> And then to decode we do the opposite (this will be used for testing the packet system and debugging in the time before the ground station decoding is set up) </p><div class="fragment"><div class="line">String TempSensor::decodeToCSV(uint8_t*&amp; packet) {</div>
-<div class="line">  // cast the packet pointer to pointer of the data type to read (float) then</div>
-<div class="line">  // dereference it</div>
-<div class="line">  float temp;</div>
-<div class="line">  memcpy(&amp;temp, packet, sizeof(float));</div>
+<div class="ttc" id="aclassDevice_html_a71f95d4b8d4a7af394d3e9c89ae87f7b"><div class="ttname"><a href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">Device::attempt_number</a></div><div class="ttdeci">int attempt_number</div><div class="ttdef"><b>Definition</b> Device.h:19</div></div>
+<div class="ttc" id="aclassTempSensor_html_aef99face4fe66c0d41099a525c6af0e9"><div class="ttname"><a href="classTempSensor.html#aef99face4fe66c0d41099a525c6af0e9">TempSensor::readDataPacket</a></div><div class="ttdeci">void readDataPacket(uint8_t *&amp;packet) override</div><div class="ttdoc">Used for creating packets, reads data from the sensor and appends it to the passed uint8_t array poin...</div><div class="ttdef"><b>Definition</b> TempSensor.cpp:34</div></div>
+</div><!-- fragment --><p> And then to decode we do the opposite (this will be used for testing the packet system and debugging in the time before the ground station decoding is set up) </p><div class="fragment"><div class="line">String <a class="code hl_function" href="classTempSensor.html#a4018ccd78833acd4ce610156649639a8">TempSensor::decodeToCSV</a>(uint8_t*&amp; packet) {</div>
+<div class="line">  <span class="comment">// cast the packet pointer to pointer of the data type to read (float) then</span></div>
+<div class="line">  <span class="comment">// dereference it</span></div>
+<div class="line">  <span class="keywordtype">float</span> <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>;</div>
+<div class="line">  <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">memcpy</a>(&amp;<a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>, <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line">  // increment packet by the size of the read data type (float)</div>
-<div class="line">  packet += sizeof(temp);</div>
+<div class="line">  <span class="comment">// increment packet by the size of the read data type (float)</span></div>
+<div class="line">  <a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">packet</a> += <span class="keyword">sizeof</span>(<a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>);</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line">  // return in csv snippet format</div>
-<div class="line">  return String(temp) + &quot;,&quot;;</div>
+<div class="line">  <span class="comment">// return in csv snippet format</span></div>
+<div class="line">  <span class="keywordflow">return</span> String(<a class="code hl_variable" href="classDevice.html#a71f95d4b8d4a7af394d3e9c89ae87f7b">temp</a>) + <span class="stringliteral">&quot;,&quot;</span>;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassTempSensor_html_a4018ccd78833acd4ce610156649639a8"><div class="ttname"><a href="classTempSensor.html#a4018ccd78833acd4ce610156649639a8">TempSensor::decodeToCSV</a></div><div class="ttdeci">String decodeToCSV(uint8_t *&amp;packet) override</div><div class="ttdoc">Used for onboard decoding of packets.</div><div class="ttdef"><b>Definition</b> TempSensor.cpp:45</div></div>
 </div><!-- fragment --><p> This all works because in C++, you can tell your program to interpret any pointer as any other pointer, which, to encode the data, lets us fake the data pointer being a pointer to a uint8_t array which can then be read byte by byte into the packet. And then to decode the packet, copy the data in reverse from the packet array to the appropriate data type variable.</p>
 <p>NOTE: Before this we did recommend casting the pointer to decode the packet, which is something that would be allowed in C++ on, for instance, your computer, but we have since discovered that on the ARM processor we use, it will crash if that cast makes it read in a way that breaks their assumption that variables we word-aligned</p>
 <p>These functions are then called in a parent class function that implements the sensor presence bit setting logic similar to the previous semester, allowing a packet to have any combination of sensor data in it, while still being decodable to the ground station.</p>
