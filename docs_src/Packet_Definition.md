@@ -15,21 +15,21 @@ ELSE
 ```
 
 So with a sensor setup defined as follows: 
-| Sensor          | CSV Header snippet |
-|-----------------|--------------------|
-| Millis()        | “Millis, ”         |
-| Temp            | “TempF,”           |
-| BME280          | “TempC, PresshPa, RelHum%, ” |
+| Sensor          | CSV Header snippet            |
+|-----------------|-------------------------------|
+| Millis()        | “Millis, ”                    |
+| Temp            | “TempF,”                      |
+| BME280          | “TempC, PresshPa, RelHum%, ”  |
 
 Header starts as 0000 0000 0000 0001 with a bit for the header value itself as it is a cell in the csv
 CSV Header starts as “Header, ” 
 
 Then when a sensor is read in order ones are shifted in (in this case we’ll assume Temp is being skipped)
 
-| Sensor Visited | Header Val (in hex) | CSV Header | CSV Row(dummy values) |
-|----------------|---------------------|------------|-----------------------|
-| Millis         | 0000 0000 0000 0011 | “Header, Millis, ” | “(header val), 84949, ” |
-| Temp           | 0000 0000 0000 0110 | “Header, Millis, ” | “(header val), 84949, ” |
+| Sensor Visited | Header Val (in hex) | CSV Header                                   | CSV Row(dummy values)               |
+|----------------|---------------------|----------------------------------------------|-------------------------------------|
+| Millis         | 0000 0000 0000 0011 | “Header, Millis, ”                           | “(header val), 84949, ”             |
+| Temp           | 0000 0000 0000 0110 | “Header, Millis, ”                           | “(header val), 84949, ”             |
 | BME280         | 0000 0000 0000 1101 | “Header, Millis, TempC, PresshPa, RelHum%, ” | “(header val), 84949, 18, 30, 15, ” |
 
 So when this is decoded the header is populated by a header with corresponding definitions in the ground software, which lets them know what the values mean. 
@@ -62,7 +62,7 @@ This is the largest difference for the packet this semester. Rather than encodin
 To do this we use the copy function to transfer bytes directly from each value into the packet, then increment the packet, which as a pointer will then be used by the next sensor as the position to start writing its data. Another syntax thing to understand is that in C++ the & on an argument’s data type indicates that it will be passed by reference, which means that the argument when changed and used is really changing and using the variable passed to it. In our case, incrementing the packet argument of the function will increment the packet variable passed to it, allowing each sensor to move the packet pointer as they add value to the packet.
 
 The parent class functions that sensors need to override to implement the packeting system are 
-```
+```cpp
 /**
 * @brief Used for creating packets, reads data from the sensor and appends it
 * to the passed uint8_t array pointer, incrementing it while doing so
@@ -83,7 +83,7 @@ String decodeToCSV(uint8_t*& packet) { return ""; };
 ```
 
 And then an example of implementation from the Temperature Sensor class
-```
+```cpp
 void TempSensor::readDataPacket(uint8_t*& packet) {
   // read sensor value to a variable
   float temp = analogReadTemp();
@@ -96,7 +96,7 @@ void TempSensor::readDataPacket(uint8_t*& packet) {
 }
 ```
 And then to decode we do the opposite (this will be used for testing the packet system and debugging in the time before the ground station decoding is set up) 
-```
+```cpp
 String TempSensor::decodeToCSV(uint8_t*& packet) {
   // cast the packet pointer to pointer of the data type to read (float) then
   // dereference it
