@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ASCEND Flight Software: Test</title>
+<title>ASCEND Flight Software: More on The Packeting System</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,10 +69,113 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">Test</div></div>
+  <div class="headertitle"><div class="title">More on The Packeting System</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Previous Iteration</h1>
+<p>Last semester our packets were text and csv based, with the first csv cell serving as a Header code. Iterating through the sensors, each sensor would append its csv fields onto the packet string and toggle its corresponding bit in the Header</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+The Header</h1>
+<p>The Header is a 32 bit unsigned integer that is treated like just an array of bits, so when a sensor’s data is added to the packet string, its corresponding bit is set. The procedure for setting each bit is as follows:</p>
+<div class="fragment"><div class="line">SHIFT Header left by 1</div>
+<div class="line">IF sensor is read</div>
+<div class="line">    Set leftmost Header bit to 1 (Header = Header | 1) (bitwise OR)</div>
+<div class="line">ELSE </div>
+<div class="line">    Set leftmost Header bit to 0 (do nothing) </div>
+</div><!-- fragment --><p>So with a sensor setup defined as follows: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"><a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a>   </th><th class="markdownTableHeadNone">CSV Header snippet    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Millis()   </td><td class="markdownTableBodyNone">“Millis, ”    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Temp   </td><td class="markdownTableBodyNone">“TempF,”    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">BME280   </td><td class="markdownTableBodyNone">“TempC, PresshPa, RelHum%, ”   </td></tr>
+</table>
+<p>Header starts as 0000 0000 0000 0001 with a bit for the header value itself as it is a cell in the csv CSV Header starts as “Header, ”</p>
+<p>Then when a sensor is read in order ones are shifted in (in this case we’ll assume Temp is being skipped)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"><a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> Visited   </th><th class="markdownTableHeadNone">Header Val (in hex)   </th><th class="markdownTableHeadNone">CSV Header   </th><th class="markdownTableHeadNone">CSV Row(dummy values)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Millis   </td><td class="markdownTableBodyNone">0000 0000 0000 0011   </td><td class="markdownTableBodyNone">“Header, Millis, ”   </td><td class="markdownTableBodyNone">“(header val), 84949, ”    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Temp   </td><td class="markdownTableBodyNone">0000 0000 0000 0110   </td><td class="markdownTableBodyNone">“Header, Millis, ”   </td><td class="markdownTableBodyNone">“(header val), 84949, ”    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">BME280   </td><td class="markdownTableBodyNone">0000 0000 0000 1101   </td><td class="markdownTableBodyNone">“Header, Millis, TempC, PresshPa, RelHum%, ”   </td><td class="markdownTableBodyNone">“(header val), 84949, 18, 30, 15, ”   </td></tr>
+</table>
+<p>So when this is decoded the header is populated by a header with corresponding definitions in the ground software, which lets them know what the values mean.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Changes for this iteration</h1>
+<p>This semester, expanding on those ideas, the new packeting scheme uses the same logic, but without the data values being stored as csv strings. This scheme relies on an understanding of pointers, if you’re not familiar with pointers I would recommend reviewing them, here’s a helpful short video: <a href="https://www.youtube.com/watch?v=2ybLD6_2gKM">https://www.youtube.com/watch?v=2ybLD6_2gKM</a></p>
+<p>So instead we start with</p>
+<p>Header for the system as 0000 0000 0000 0000 (now called sensor presence as Header becomes more complex)</p>
+<p>And the packet as an array of uint8_t (plain bytes)</p>
+<p><img src="Packet_Definition.png" alt="Packet Definition Diagram" class="inline"/></p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Header</h2>
+<h3><a class="anchor" id="autotoc_md5"></a>
+ID/Sync Bytes</h3>
+<p>These are predefined identifier bytes that allow the ground station to determine when a packet begins (4 Bytes). </p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Sensor Presence</h3>
+<p>This serves the same purpose as last semester’s Header, 4 bytes has enough bits for all of our sensors </p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Packet Length</h3>
+<p>The length of the entire packet in bytes. This is 2 bytes as an unsigned integer.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Data</h2>
+<p>This is the largest difference for the packet this semester. Rather than encoding each value as characters and then transmitting a csv line, instead we are packing those values together. This allows for the packet to be smaller as instead of a byte for each character, we can represent numbers directly. For example, 8 bits as a character can only hold 10 values (0 to 9), but 8 bits as a number can hold 256 values (from 0 to 256 or -128 to 127).</p>
+<p>To do this we use the copy function to transfer bytes directly from each value into the packet, then increment the packet, which as a pointer will then be used by the next sensor as the position to start writing its data. Another syntax thing to understand is that in C++ the &amp; on an argument’s data type indicates that it will be passed by reference, which means that the argument when changed and used is really changing and using the variable passed to it. In our case, incrementing the packet argument of the function will increment the packet variable passed to it, allowing each sensor to move the packet pointer as they add value to the packet.</p>
+<p>The parent class functions that sensors need to override to implement the packeting system are </p><div class="fragment"><div class="line">/**</div>
+<div class="line">* @brief Used for creating packets, reads data from the sensor and appends it</div>
+<div class="line">* to the passed uint8_t array pointer, incrementing it while doing so</div>
+<div class="line">*</div>
+<div class="line">* @param packet Pointer to the packet byte array</div>
+<div class="line">* @return int The number of bytes appended</div>
+<div class="line">*/</div>
+<div class="line">void readDataPacket(uint8_t*&amp; packet) {};</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">/**</div>
+<div class="line">* @brief Used for onboard decoding of packets</div>
+<div class="line">*</div>
+<div class="line">* @param packet  Pointer to the packet byte array</div>
+<div class="line">* @return String The senors data decoded from the packet in csv format</div>
+<div class="line">*/</div>
+<div class="line">String decodeToCSV(uint8_t*&amp; packet) { return &quot;&quot;; };</div>
+</div><!-- fragment --><p>And then an example of implementation from the Temperature <a class="el" href="classSensor.html" title="Parent class for sensor objects.">Sensor</a> class </p><div class="fragment"><div class="line">void TempSensor::readDataPacket(uint8_t*&amp; packet) {</div>
+<div class="line">  // read sensor value to a variable</div>
+<div class="line">  float temp = analogReadTemp();</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">  // cast the pointer to that value to a uint8_t pointer, copy the bytes at that pointer to packet (using the size of the variable to tell copy the number of bytes to copy)</div>
+<div class="line">  std::copy((uint8_t*)(&amp;temp), (uint8_t*)(&amp;temp) + sizeof(temp), packet);</div>
+<div class="line">  // increment the packet pointer past the new bytes</div>
+<div class="line">  packet += sizeof(temp);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> And then to decode we do the opposite (this will be used for testing the packet system and debugging in the time before the ground station decoding is set up) </p><div class="fragment"><div class="line">String TempSensor::decodeToCSV(uint8_t*&amp; packet) {</div>
+<div class="line">  // cast the packet pointer to pointer of the data type to read (float) then</div>
+<div class="line">  // dereference it</div>
+<div class="line">  float temp;</div>
+<div class="line">  memcpy(&amp;temp, packet, sizeof(float));</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">  // increment packet by the size of the read data type (float)</div>
+<div class="line">  packet += sizeof(temp);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">  // return in csv snippet format</div>
+<div class="line">  return String(temp) + &quot;,&quot;;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> This all works because in C++, you can tell your program to interpret any pointer as any other pointer, which, to encode the data, lets us fake the data pointer being a pointer to a uint8_t array which can then be read byte by byte into the packet. And then to decode the packet, copy the data in reverse from the packet array to the appropriate data type variable.</p>
+<p>NOTE: Before this we did recommend casting the pointer to decode the packet, which is something that would be allowed in C++ on, for instance, your computer, but we have since discovered that on the ARM processor we use, it will crash if that cast makes it read in a way that breaks their assumption that variables we word-aligned</p>
+<p>These functions are then called in a parent class function that implements the sensor presence bit setting logic similar to the previous semester, allowing a packet to have any combination of sensor data in it, while still being decodable to the ground station.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Checksum</h2>
+<p>Finally, the last part of the packet is a checksum, which is used to determine if there have been any bits flipped in the rest of the packet. You can read more about how they work here: <a href="https://en.wikipedia.org/wiki/Checksum">https://en.wikipedia.org/wiki/Checksum</a>. But essentially it relies on the rest of the packet to set its value and can be calculated by the ground station to check if it matches with what is transmitted, and if it isn’t there are bits that are wrong. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
