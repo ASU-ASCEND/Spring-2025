@@ -1,11 +1,14 @@
-# Spring-2025
+# ASU StratoDevils ASCEND Spring 2025
+[Website](https://asuascend.weebly.com/) | [YouTube](https://www.youtube.com/@ASUStratoDevilsASCEND)
+
+### Subsystems 
+* [Software](#software)
+* [Electrical](#electrical)
+* [Mechanical](#mechanical)
+
+# Software
 Flight software for the ASU Spring 2025 ASCEND Payload
 
-## Electrical Subsystem 
-### StratoCore PCB 
-https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing 
-### StratoSense PCB
-https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing 
 ## GitHub Subfolders
 
 [DataProcessing](https://github.com/ASU-ASCEND/Spring-2025/tree/main/DataProcessing): Scripts and programs for processing and visualizing flight data.
@@ -20,9 +23,8 @@ https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=shari
 
 A Doxygen auto-generated documentation site for GitHub pages is deployed from the [docs branch](https://github.com/ASU-ASCEND/Spring-2025/tree/docs). 
 
-## Meeting Schedule
 
-# Potential Milestones 
+# Milestones 
 
 ## FSW Versions 
 
@@ -32,28 +34,45 @@ A Doxygen auto-generated documentation site for GitHub pages is deployed from th
 ### FSWv4
 * Packeting (un-packeting)
   * Data to uint8_t array over String
-* Device Management System
+* Device Recovery System
   * Trigger sensor reconnection attempts
-* Prefixing Serial Messages ([Core 1], etc)
+* Prefixing Serial Messages ([Core 1], etc) for sorting
 * Flash System Recovery System
 
 ## Data Processing Tools
 
 ### Visualization 
-#### Cesium.js 
-* 3D Visualization 
-#### D3.js 
-* 2D Visualization 
+* [Cesium.js](https://cesium.com/platform/cesiumjs/) 
+  * 3D Visualization of the flight ([/DataProcessing/3D](/DataProcessing/3D/))
+  * Visualization from Spring 2025: https://www.youtube.com/watch?v=eEC_ttqKnY8
+* [D3.js](https://d3js.org/) 
+  * 2D Visualization of sensor reading ([/DataProcessing/2D](/DataProcessing/2D/))
+* [Jupyter Notebooks](https://jupyter.org/)
+  * Data cleaning and [Skew-T Log-P Diagram](https://en.wikipedia.org/wiki/Skew-T_log-P_diagram) using [MetPy](https://unidata.github.io/MetPy/latest/)
 
 ### Groundstation GUI
-#### Backend 
+[/GroundStation/GroundStation](/GroundStation/GroundStation/)
+#### Backend
 * Serial Connection 
-* Hardline Sorter 
+* Serial Sorter 
 * Packet Parser 
-* Recovery Iterface
-* File log dumps 
+* Serial Sender
+* File log dumps
+* Server Interface/Process
 
 #### Frontend 
-* Command line tool (settings/config file)
-* Server/Database output 
-* GUI 
+* GUI for displaying 
+  * Decoded Packet 
+  * Sorted Core Debug Prints 
+* Flash Data Recovery Interface 
+
+# Electrical
+Links to the PCBs design files  
+
+### StratoCore PCB 
+https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing 
+### StratoSense PCB
+https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing 
+
+# Mechanical 
+### CAD Models 
