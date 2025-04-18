@@ -36,7 +36,7 @@ If the software ends in an unexpected way or is interrupted it might be ok, but 
 3. Rerun the software (you may need to restart your venv)  
 
 ## Interacting with the RESTful API 
-The RESTful API has a single endpoint which can be interacted with via GET and POST. The server is intended to be hosted locally with the url for the single endpoint being: [http://127.0.0.1:5000/dataserver]("http://127.0.0.1:5000/dataserver"). 
+The RESTful API has a single endpoint which can be interacted with via GET and POST. The server is intended to be hosted locally with the url for the single endpoint being: http://127.0.0.1:5000/dataserver 
 
 ### Adding Data
 The server holds a single dictionary of values with keys set by the field name when it was posted. When the server receives a POST method with a duplicate key the new value replaces the old one. The POST method with then return the count of fields update in json format. 
