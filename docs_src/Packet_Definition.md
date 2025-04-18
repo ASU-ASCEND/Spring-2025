@@ -44,8 +44,9 @@ Header for the system as 0000 0000 0000 0000 (now called sensor presence as Head
 
 And the packet as an array of uint8_t (plain bytes) 
 
-
-![Packet Definition Diagram](Packet_Definition.png)
+#### Packet Definition 
+<!-- ![packet definition](../docs_src/Packet_Definition.png) -->
+<img src="../docs_src/Packet_Definition.png" alt="Packet Definition" width="100%"/>
 
 ### Header
 #### ID/Sync Bytes
