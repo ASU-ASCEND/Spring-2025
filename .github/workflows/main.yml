@@ -66,6 +66,10 @@ jobs:
       - name: Run doxygen on ascendfsw
         run:
           doxygen fswDoxyfile 
+      - name: Move docs_src to /docs/
+        run: 
+          mkdir -p ../docs/images/
+          cp ../docs_src/images/* ../docs/images/
       # - name: Pull everything out of html folder
       #   run: |
       #     mv ../docs/html/* ../docs/

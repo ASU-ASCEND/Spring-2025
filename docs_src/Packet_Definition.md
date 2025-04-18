@@ -46,7 +46,7 @@ And the packet as an array of uint8_t (plain bytes)
 
 #### Packet Definition 
 <!-- ![packet definition](../docs_src/Packet_Definition.png) -->
-<img src="../docs_src/Packet_Definition.png" alt="Packet Definition" width="100%"/>
+<img src="images/Packet_Definition.png" alt="Packet Definition" width="100%"/>
 
 ### Header
 #### ID/Sync Bytes
