@@ -7,7 +7,7 @@
 * [Mechanical](#mechanical)
 
 # Software
-Flight software for the ASU Spring 2025 ASCEND Payload
+Flight software for the ASU Spring 2025 ASCEND Payload. More documentation can be found under [Related Pages](https://asu-ascend.github.io/Spring-2025/pages.html).
 
 ## GitHub Subfolders
 
