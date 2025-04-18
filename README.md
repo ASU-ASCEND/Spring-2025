@@ -71,12 +71,8 @@ A Doxygen auto-generated documentation site for GitHub pages is deployed from th
 * Flash Data Recovery Interface 
 
 # Electrical
-Links to the PCBs design files  
+The PCBs were designed using KiCad, CAD files can be found as a Release of this repo: https://github.com/ASU-ASCEND/Spring-2025/releases/tag/Electrical 
 
-### StratoCore PCB 
-https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing 
-### StratoSense PCB
-https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing 
 
 # Mechanical 
 ### CAD Models 
