@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ASCEND Flight Software: Spring-2025</title>
+<title>ASCEND Flight Software: ASU StratoDevils ASCEND Spring 2025</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,81 +69,105 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Spring-2025 </div></div>
+  <div class="headertitle"><div class="title">ASU StratoDevils ASCEND Spring 2025 </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2Spring-2025_2Spring-2025_2README"></a>Flight software for the ASU Spring 2025 ASCEND Payload</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
-Electrical Subsystem</h1>
-<h2><a class="anchor" id="autotoc_md13"></a>
-StratoCore PCB</h2>
-<p><a href="https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing">https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing</a> </p>
+<div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2Spring-2025_2Spring-2025_2README"></a><a href="https://asuascend.weebly.com/">Website</a> | <a href="https://www.youtube.com/@ASUStratoDevilsASCEND">YouTube</a></p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Subsystems</h2>
+<ul>
+<li>Software</li>
+<li>Electrical</li>
+<li>Mechanical</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Software</h1>
+<p>Flight software for the ASU Spring 2025 ASCEND Payload</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
-StratoSense PCB</h2>
-<p><a href="https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing">https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing</a> </p>
-<h1><a class="anchor" id="autotoc_md15"></a>
-GitHub Subfolders</h1>
+GitHub Subfolders</h2>
 <p><a href="https://github.com/ASU-ASCEND/Spring-2025/tree/main/DataProcessing">DataProcessing</a>: Scripts and programs for processing and visualizing flight data.</p>
 <p><a href="https://github.com/ASU-ASCEND/Spring-2025/tree/main/Testing">Testing</a>: Test and calibration information for sensor and storage modules.</p>
 <p><a href="https://github.com/ASU-ASCEND/Spring-2025/tree/main/Watchdog">Watchdog</a>: Software for watchdog Attiny85 chip.</p>
 <p><a href="https://github.com/ASU-ASCEND/Spring-2025/tree/main/ascendfsw">ascendfsw</a>: Payload flight software.</p>
 <p><a href="https://github.com/ASU-ASCEND/Spring-2025/tree/main/scripts">scripts</a>: Various organizational and automation scripts.</p>
 <p>A Doxygen auto-generated documentation site for GitHub pages is deployed from the <a href="https://github.com/ASU-ASCEND/Spring-2025/tree/docs">docs branch</a>.</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
-Meeting Schedule</h1>
-<h1><a class="anchor" id="autotoc_md17"></a>
-Potential Milestones</h1>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
+Milestones</h1>
+<h2><a class="anchor" id="autotoc_md16"></a>
 FSW Versions</h2>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md17"></a>
 FSWv3 (and earlier)</h3>
 <p><a href="https://github.com/ASU-ASCEND/Fall-2024">Fall 2024 Github</a></p>
-<h3><a class="anchor" id="autotoc_md20"></a>
+<h3><a class="anchor" id="autotoc_md18"></a>
 FSWv4</h3>
 <ul>
 <li>Packeting (un-packeting)<ul>
 <li>Data to uint8_t array over String</li>
 </ul>
 </li>
-<li><a class="el" href="classDevice.html" title="Implements the recovery system for Sensor and Storage objects.">Device</a> Management System<ul>
+<li><a class="el" href="classDevice.html" title="Implements the recovery system for Sensor and Storage objects.">Device</a> Recovery System<ul>
 <li>Trigger sensor reconnection attempts</li>
 </ul>
 </li>
-<li>Prefixing Serial Messages ([Core 1], etc)</li>
+<li>Prefixing Serial Messages ([Core 1], etc) for sorting</li>
 <li>Flash System Recovery System</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Data Processing Tools</h2>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md20"></a>
 Visualization</h3>
-<h4><a class="anchor" id="autotoc_md23"></a>
-Cesium.js</h4>
 <ul>
-<li>3D Visualization </li>
+<li><a href="https://cesium.com/platform/cesiumjs/">Cesium.js</a><ul>
+<li>3D Visualization of the flight (<a href="/DataProcessing/3D/">/DataProcessing/3D</a>)</li>
+<li>Visualization from Spring 2025: <a href="https://www.youtube.com/watch?v=eEC_ttqKnY8">https://www.youtube.com/watch?v=eEC_ttqKnY8</a></li>
 </ul>
-<h4><a class="anchor" id="autotoc_md24"></a>
-D3.js</h4>
-<ul>
-<li>2D Visualization</li>
+</li>
+<li><a href="https://d3js.org/">D3.js</a><ul>
+<li>2D Visualization of sensor reading (<a href="/DataProcessing/2D/">/DataProcessing/2D</a>)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md25"></a>
+</li>
+<li><a href="https://jupyter.org/">Jupyter Notebooks</a><ul>
+<li>Data cleaning and <a href="https://en.wikipedia.org/wiki/Skew-T_log-P_diagram">Skew-T Log-P Diagram</a> using <a href="https://unidata.github.io/MetPy/latest/">MetPy</a></li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md21"></a>
 Groundstation GUI</h3>
-<h4><a class="anchor" id="autotoc_md26"></a>
+<p><a href="/GroundStation/GroundStation/">/GroundStation/GroundStation</a> </p>
+<h4><a class="anchor" id="autotoc_md22"></a>
 Backend</h4>
 <ul>
 <li>Serial Connection</li>
-<li>Hardline Sorter</li>
+<li>Serial Sorter</li>
 <li>Packet Parser</li>
-<li>Recovery Iterface</li>
+<li>Serial Sender</li>
 <li>File log dumps</li>
+<li>Server Interface/Process</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md27"></a>
+<h4><a class="anchor" id="autotoc_md23"></a>
 Frontend</h4>
 <ul>
-<li>Command line tool (settings/config file)</li>
-<li>Server/Database output</li>
-<li>GUI </li>
+<li>GUI for displaying<ul>
+<li>Decoded Packet</li>
+<li>Sorted Core Debug Prints</li>
 </ul>
+</li>
+<li>Flash Data Recovery Interface</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md24"></a>
+Electrical</h1>
+<p>Links to the PCBs design files <br  />
+</p>
+<h3><a class="anchor" id="autotoc_md25"></a>
+StratoCore PCB</h3>
+<p><a href="https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing">https://drive.google.com/file/d/1e-bXs0K2BFJtf7aeRV-rmkgyk9yUyAgQ/view?usp=sharing</a> </p>
+<h3><a class="anchor" id="autotoc_md26"></a>
+StratoSense PCB</h3>
+<p><a href="https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing">https://drive.google.com/file/d/113i7Ffd7eHaCxem99AW3rWAT8VqHN-kn/view?usp=sharing</a></p>
+<h1><a class="anchor" id="autotoc_md27"></a>
+Mechanical</h1>
+<h3><a class="anchor" id="autotoc_md28"></a>
+CAD Models</h3>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
