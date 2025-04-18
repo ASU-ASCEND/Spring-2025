@@ -1,17 +1,8 @@
 var searchData=
 [
-  ['packet_20definition_0',['Packet Definition',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2Packet__Definition.html#autotoc_md4',1,'']]],
-  ['packet_20length_1',['Packet Length',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2Packet__Definition.html#autotoc_md8',1,'']]],
-  ['packet_5fdefinition_2emd_2',['Packet_Definition.md',['../Packet__Definition_8md.html',1,'']]],
-  ['packet_5fsystem_5ftesting_3',['PACKET_SYSTEM_TESTING',['../PayloadConfig_8h.html#a4168244e83bfe6fdfb37b001daea31ba',1,'PayloadConfig.h']]],
-  ['packeting_20system_4',['More on The Packeting System',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2Packet__Definition.html',1,'']]],
-  ['payloadconfig_2eh_5',['PayloadConfig.h',['../PayloadConfig_8h.html',1,'']]],
-  ['pcf8523sensor_6',['pcf8523sensor',['../classPCF8523Sensor.html',1,'PCF8523Sensor'],['../classPCF8523Sensor.html#a0b4ee84247f99ecdc97c6207cd4c7165',1,'PCF8523Sensor::PCF8523Sensor()'],['../classPCF8523Sensor.html#afb52f2ef4ae49dba0f7df1d882de8e71',1,'PCF8523Sensor::PCF8523Sensor(unsigned long minimum_period)']]],
-  ['pcf8523sensor_2ecpp_7',['PCF8523Sensor.cpp',['../PCF8523Sensor_8cpp.html',1,'']]],
-  ['pcf8523sensor_2eh_8',['PCF8523Sensor.h',['../PCF8523Sensor_8h.html',1,'']]],
-  ['pin_5flevel_9',['pin_level',['../classErrorDisplay.html#a2b76f33e66982754402934117fa3b682',1,'ErrorDisplay']]],
-  ['power_5fcycled_10',['POWER_CYCLED',['../ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5a1ad5e7c87dfa348cdcf44d3ca5038624',1,'ErrorDisplay.h']]],
-  ['presence_11',['Sensor Presence',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2Packet__Definition.html#autotoc_md7',1,'']]],
-  ['previous_20iteration_12',['Previous Iteration',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2Packet__Definition.html#autotoc_md1',1,'']]],
-  ['processing_20tools_13',['Data Processing Tools',['../index.html#autotoc_md19',1,'']]]
+  ['new_20environment_0',['2\. Activate the new environment',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2GroundSoftware.html#autotoc_md14',1,'']]],
+  ['new_20local_20virtual_20environment_1',['1\. Create a new local virtual environment',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2GroundSoftware.html#autotoc_md13',1,'']]],
+  ['none_2',['NONE',['../ErrorDisplay_8h.html#a2c3e4bb40f36b262a5214e2da2bca9c5ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'ErrorDisplay.h']]],
+  ['notes_20on_20using_20the_20ground_20station_3',['Some Notes on Using the Ground Station',['../md__2home_2runner_2work_2Spring-2025_2Spring-2025_2docs__src_2GroundSoftware.html#autotoc_md2',1,'']]],
+  ['num_5ffields_4',['num_fields',['../classSensor.html#a9d20fef44a249f1f484c15851bd71473',1,'Sensor']]]
 ];
