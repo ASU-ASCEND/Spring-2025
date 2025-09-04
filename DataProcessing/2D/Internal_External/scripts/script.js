@@ -161,6 +161,7 @@ d3.csv(DATA_PATH, function(d, i) {
     console.error("Error loading the CSV data:", error);
 });
 
+
 /**
  * @brief Create the main flight path using the parsed data
  * 
@@ -439,4 +440,36 @@ function addLegend() {
       .style("font-size", "12px")
       .style("fill", "black")
       .text(d => d.label);
+}
+
+setupSaveSVG("chart_container");
+
+function setupSaveSVG(target, name = target){
+//   var svg = document.getElementById(target); 
+  console.log("svg:", svg); 
+
+  var serializer = new XMLSerializer(); 
+  var source = serializer.serializeToString(svg); 
+
+  //add name spaces.
+  if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+      source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+  }
+  if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
+      source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+  }
+
+  source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+
+  const blob = new Blob([source], { type: 'text/plain'}); 
+  const url = URL.createObjectURL(blob); 
+
+  let newA = document.createElement('a'); 
+  newA.text = "Download Graphic"; 
+  newA.href = url; 
+  newA.download = `${name}.svg`; 
+
+  document.getElementById(target).append(document.createElement('br')); 
+  document.getElementById(target).append(newA); 
+  console.log("svg ready"); 
 }

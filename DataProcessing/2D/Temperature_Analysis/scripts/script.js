@@ -142,10 +142,9 @@ d3.csv("../data/Spring2025.csv",
     // Add a flight path
     addFlightPath(x, y, data);
 
-    
 });
 
-saveSVG("internals_temps"); 
+setupSaveSVG("internals_temps"); 
 
 /**
  * @brief Create the main flight path using the parsed data
@@ -412,7 +411,7 @@ function addLegend() {
 }
 
 
-function saveSVG(target){
+function setupSaveSVG(target, name = target){
   var svg = document.getElementById(target); 
   console.log("svg:", svg); 
 
@@ -431,8 +430,13 @@ function saveSVG(target){
 
   const blob = new Blob([source], { type: 'text/plain'}); 
   const url = URL.createObjectURL(blob); 
-  
-  document.getElementById("download").href = url; 
-  document.getElementById("download").download = 'example.svg'; 
+
+  let newA = document.createElement('a'); 
+  newA.text = "Download Graphic"; 
+  newA.href = url; 
+  newA.download = `${name}.svg`; 
+
+  document.getElementById(target).append(document.createElement('br')); 
+  document.getElementById(target).append(newA); 
 
 }
