@@ -134,14 +134,14 @@ d3.csv(DATA_PATH, function(d, i) {
     svg.append("path")
         .datum(data)
         .attr("fill", "none")
-        .attr("stroke", "blue")
+        .attr("stroke", internal_temp_color)
         .attr("stroke-width", 2)
         .attr("d", internal_tempLine);
 
     svg.append("path")
         .datum(data)
         .attr("fill", "none")
-        .attr("stroke", "orange")
+        .attr("stroke", external_temp_color)
         .attr("stroke-width", 2)
         .attr("d", external_tempLine);
 
@@ -177,7 +177,7 @@ function addFlightPath(x, y, yinternal_temp, data) {
     svg.append("path")
         .datum(data)
         .attr("fill", "none")
-        .attr("stroke", "#FF2400")
+        .attr("stroke", alt_line_color)
         .attr("stroke-width", 2)
         .attr("d", lineGenerator);
 
@@ -202,9 +202,9 @@ function addFlightPath(x, y, yinternal_temp, data) {
         .text("Burst!")
         .attr("x", x(maxDataPoint.date) + 20)
         .attr("dy", "0em")
-        .style("color", "#7C0A02")
+        .style("color", burst_color)
         .style("font-weight", "bold")
-        .style("fill", "#B22222");
+        .style("fill", burst_fill);
 
     // Include altitude data
     annotation.append("tspan")
@@ -289,6 +289,16 @@ function altToTime(alt, dir, data){
     return res; 
 }
 
+const troposphere_color = "#ede6de";
+const tropopause_color = "#d1d0de";
+const stratosphere_color = "#636d97";
+const alt_line_color = "black"; //"#ff2400"; 
+const internal_temp_color = "blue";
+const external_temp_color = "orange";
+const burst_color = "black"; //"#7C0A02";
+const burst_fill = "black"; //"#B22222"; 
+
+
 /**
  * @brief Represent the layers of atmosphere traveled by the payload
  * 
@@ -326,7 +336,7 @@ function addAtmosphericLayering(x, y, data) {
         .attr("y", 0)
         .attr("width", x(tp_start))
         .attr("height", height)
-        .attr("fill", "#daf0ff");
+        .attr("fill", troposphere_color);
 
     // tropopause 
     svg.insert("rect", ":first-child")
@@ -334,7 +344,7 @@ function addAtmosphericLayering(x, y, data) {
         .attr("y", 0)
         .attr("width", x(tp_end) - x(tp_start))
         .attr("height", height)
-        .attr("fill", "#c7e9ff");
+        .attr("fill", tropopause_color);
 
     // Stratosphere: ~35,000 ft to ~64,500 ft
     svg.insert("rect", ":first-child")
@@ -342,7 +352,7 @@ function addAtmosphericLayering(x, y, data) {
         .attr("y", 0)
         .attr("width", x(tp_start_down) - x(tp_end))
         .attr("height", height)
-        .attr("fill", "#b5e2ff");
+        .attr("fill", stratosphere_color);
 
     console.log(x(tp_end_down) - x(tp_start_down))
     // tropopause
@@ -351,7 +361,7 @@ function addAtmosphericLayering(x, y, data) {
         .attr("y", 0)
         .attr("width", x(tp_end_down) - x(tp_start_down))
         .attr("height", height)
-        .attr("fill", "#c7e9ff");
+        .attr("fill", tropopause_color);
 
     // Troposphere: 0 ft to ~35,000 ft
     svg.insert("rect", ":first-child")
@@ -359,7 +369,7 @@ function addAtmosphericLayering(x, y, data) {
         .attr("y", 0)
         .attr("width", width - x(tp_end_down))
         .attr("height", height)
-        .attr("fill", "#daf0ff");
+        .attr("fill", troposphere_color);
     
 }
 
@@ -382,13 +392,13 @@ function addLegend() {
     const legendData = [
       { label: "Layer (approx. start)", color: "white", type: "line" },
     //   { label: "Ozone (64.5–97k ft)", color: "#73A5C6", type: "box" },
-      { label: "Stratosphere (~56k ft)", color: "#b5e2ff", type: "box" },
-      { label: "Tropopause (~36k ft)", color: "#c7e9ff", type: "box" },
-      { label: "Troposphere (0 ft)", color: "#daf0ff", type: "box" },
+      { label: "Stratosphere (~56k ft)", color: stratosphere_color, type: "box" },
+      { label: "Tropopause (~36k ft)", color: tropopause_color, type: "box" },
+      { label: "Troposphere (0 ft)", color: troposphere_color, type: "box" },
       { label: "Data", color: "white", type: "line" },
-      { label: "Altitude (GPS)", color: "#ff2400", type: "line" },
-      { label: "Internal Temperature", color: "blue", type: "line" },
-      { label: "External Temperature", color: "orange", type: "line" }
+      { label: "Altitude (GPS)", color: alt_line_color, type: "line" },
+      { label: "Internal Temperature", color: internal_temp_color, type: "line" },
+      { label: "External Temperature", color: external_temp_color, type: "line" }
     ];
 
     const legendItemSize = 15;
@@ -442,6 +452,134 @@ function addLegend() {
       .text(d => d.label);
 }
 
+
+/**
+ * @brief Create a legend to complement atmospheric layering
+ * 
+ */
+function addLegend() {
+    // Calculate full SVG dimensions
+    const fullWidth = width + margin.left + margin.right;
+    const fullHeight = height + margin.top + margin.bottom;
+    
+    // Increase width for legend
+    const newFullheight = fullHeight + 160;
+    d3.select("svg")
+        .attr("width", fullWidth + 30)
+        .attr("height", newFullheight);
+
+    // Define legend items for atmospheric layers and flight path.
+    const legendLayer = [
+      { label: "Layer (approx. start)", color: "white", type: "line" },
+    //   { label: "Ozone (64.5–97k ft)", color: "#73A5C6", type: "box" },
+      { label: "Stratosphere (~56k ft)", color: stratosphere_color, type: "box" },
+      { label: "Tropopause (~36k ft)", color: tropopause_color, type: "box" },
+      { label: "Troposphere (0 ft)", color: troposphere_color, type: "box" },
+    ];
+
+    const legendData = [      
+      { label: "Data", color: "white", type: "line" },
+      { label: "Altitude (GPS)", color: alt_line_color, type: "line" },
+      { label: "Internal Temperature", color: internal_temp_color, type: "line" },
+      { label: "External Temperature", color: external_temp_color, type: "line" }
+    ];
+
+    const legendItemSize = 15;
+    const legendSpacing = 5;
+
+    // Add legend to bottom 
+    const legendGroup = d3.select("svg")
+      .append("g")
+      .attr("class", "legend")
+      .attr("transform", `translate(${(margin.left + width + margin.right) / 3 - 50}, ${margin.top + height + margin.bottom})`);
+
+    const legendGroupLayer = d3.select("svg")
+      .append("g")
+      .attr("class", "legend")
+      .attr("transform", `translate(${2 * (margin.left + width + margin.right) / 3 - 50}, ${margin.top + height + margin.bottom})`);
+
+    // Create a group for each legend item.
+    const legendItems = legendGroup.selectAll(".legend-item")
+      .data(legendData)
+      .enter()
+      .append("g")
+      .attr("class", "legend-item")
+      .attr("transform", (d, i) => `translate(${10}, ${10 + i * (legendItemSize + legendSpacing)})`);
+
+    const legendItemsLayer = legendGroupLayer.selectAll(".legend-item")
+      .data(legendLayer)
+      .enter()
+      .append("g")
+      .attr("class", "legend-item")
+      .attr("transform", (d, i) => `translate(${10}, ${10 + i * (legendItemSize + legendSpacing)})`);
+
+
+    // For each item, conditionally append either a rectangle (box) or a line.
+    legendItems.each(function(d) {
+      const g = d3.select(this);
+      if (d.type === "line") {
+        // Draw a horizontal line centered vertically in the legend item area.
+        g.append("line")
+          .attr("x1", 0)
+          .attr("x2", legendItemSize)
+          .attr("y1", legendItemSize / 2)
+          .attr("y2", legendItemSize / 2)
+          .attr("stroke", d.color)
+          .attr("stroke-width", 2)
+          .attr("stroke-linecap", "round");
+      } else {
+        // Draw a rectangle with a border.
+        g.append("rect")
+          .attr("width", legendItemSize)
+          .attr("height", legendItemSize)
+          .attr("fill", d.color)
+          .attr("stroke", "black")
+          .attr("stroke-width", 1);
+      }
+    });
+
+    legendItemsLayer.each(function(d) {
+      const g = d3.select(this);
+      if (d.type === "line") {
+        // Draw a horizontal line centered vertically in the legend item area.
+        g.append("line")
+          .attr("x1", 0)
+          .attr("x2", legendItemSize)
+          .attr("y1", legendItemSize / 2)
+          .attr("y2", legendItemSize / 2)
+          .attr("stroke", d.color)
+          .attr("stroke-width", 2)
+          .attr("stroke-linecap", "round");
+      } else {
+        // Draw a rectangle with a border.
+        g.append("rect")
+          .attr("width", legendItemSize)
+          .attr("height", legendItemSize)
+          .attr("fill", d.color)
+          .attr("stroke", "black")
+          .attr("stroke-width", 1);
+      }
+    });
+
+    // Append text for each legend item.
+    legendItems.append("text")
+      .attr("x", legendItemSize + 5)
+      .attr("y", legendItemSize / 2)
+      .attr("dy", "0.35em")
+      .style("font-size", "12px")
+      .style("fill", "black")
+      .text(d => d.label);
+
+    // Append text for each legend item.
+    legendItemsLayer.append("text")
+      .attr("x", legendItemSize + 5)
+      .attr("y", legendItemSize / 2)
+      .attr("dy", "0.35em")
+      .style("font-size", "12px")
+      .style("fill", "black")
+      .text(d => d.label);
+}
+
 setupSaveSVG("chart_container");
 
 function setupSaveSVG(target, name = target){
@@ -473,3 +611,4 @@ function setupSaveSVG(target, name = target){
   document.getElementById(target).append(newA); 
   console.log("svg ready"); 
 }
+
